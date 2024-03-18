@@ -4,7 +4,8 @@ image = image.substring(3, image.length - 1);
 class PichaiUX {
     construct(options) {
         options = {
-            source:  ?? '#008dcd',
+image = image.substring(3, image.length - 1);
+            source: image ?? '#008dcd',
         }
     }
 }
