@@ -11,7 +11,7 @@ class PichaiUX {
     }
 
     initialize() {
-        alert(typeof exports)
+        alert(exports)
         let cssId = 'PichaiUXCss';  // you could encode the css path itself to generate id..
         if (!document.getElementById(cssId)) {
             let head = document.getElementsByTagName('head')[0];
