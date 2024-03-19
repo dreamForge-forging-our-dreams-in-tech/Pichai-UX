@@ -9,4 +9,18 @@ class PichaiUX {
             overrideColorsOnScroll: true
         }
     }
+
+    initialize() {
+        let cssId = 'PichaiUXCss';  // you could encode the css path itself to generate id..
+        if (!document.getElementById(cssId)) {
+            let head = document.getElementsByTagName('head')[0];
+            let link = document.createElement('link');
+            link.id = cssId;
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = './CSS/main.css';
+            link.media = 'all';
+            head.appendChild(link);
+        }
+    }
 }

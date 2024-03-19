@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "colorthief": "^2.4.0"
+    "colorthief": "^2.4.0",
+    "material-icons": "^1.13.12"
   }
 }
