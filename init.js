@@ -5,6 +5,8 @@ class PichaiUX {
     construct(options) {
         options = {
             source: image ?? '#008dcd',
+            darkMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
+            overrideColorsOnScroll: true
         }
     }
 }
