@@ -11,7 +11,6 @@ class PichaiUX {
     }
 
     initialize() {
-        alert(exports)
         let cssId = 'PichaiUXCss';  // you could encode the css path itself to generate id..
         if (!document.getElementById(cssId)) {
             let head = document.getElementsByTagName('head')[0];
@@ -19,7 +18,7 @@ class PichaiUX {
             link.id = cssId;
             link.rel = 'stylesheet';
             link.type = 'text/css';
-            link.href = 'Pichai-UX/CSS/main.css' ??  'https://lukeplays33.github.io/Pichai-UX/CSS/main.css';
+            link.href = typeof exports != "undefined" ? 'Pichai-UX/CSS/main.css' : 'https://lukeplays33.github.io/Pichai-UX/CSS/main.css';
             link.media = 'all';
 
             head.appendChild(link);
