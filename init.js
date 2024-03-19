@@ -20,7 +20,13 @@ class PichaiUX {
             link.type = 'text/css';
             link.href = 'Pichai-UX/CSS/main.css';
             link.media = 'all';
-            head.appendChild(link);
+
+            try {
+                head.appendChild(link);
+            } catch (e) {
+                link.href = 'https://lukeplays33.github.io/Pichai-UX/CSS/main.css';
+                head.appendChild(link);
+            }
         }
     }
 }
