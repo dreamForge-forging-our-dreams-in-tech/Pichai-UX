@@ -18,7 +18,7 @@ class PichaiUX {
             link.id = cssId;
             link.rel = 'stylesheet';
             link.type = 'text/css';
-            link.href = 'CSS/main.css';
+            link.href = '/CSS/main.css';
             link.media = 'all';
             head.appendChild(link);
         }
