@@ -25,3 +25,5 @@ class PichaiUX {
         }
     }
 }
+
+export { PichaiUX };
