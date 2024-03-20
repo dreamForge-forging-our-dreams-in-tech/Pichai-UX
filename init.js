@@ -26,8 +26,7 @@ class PichaiUX {
             head.appendChild(link);
         }
 
-        console.log(this.options);
-        // Call your other functions here (e.g., generate3ColorPallete())
+        generate3ColorPallete();
     }
 }
 
