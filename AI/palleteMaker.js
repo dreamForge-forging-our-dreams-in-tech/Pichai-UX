@@ -1,4 +1,4 @@
-import { ColorThief } from './colorThief.js';
+import ColorThief from '../node_modules/colorthief/dist/color-thief.mjs'
 
 import { PichaiUX } from '../init.js';
 
