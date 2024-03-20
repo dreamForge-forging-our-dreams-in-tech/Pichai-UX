@@ -10,6 +10,7 @@ class PichaiUX {
             darkMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
             overrideColorsOnScroll: true
         }
+        alert(this.options)
     }
 
     initialize() {
