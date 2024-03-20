@@ -1,11 +1,22 @@
 import { generate3ColorPallete } from "./AI/palleteMaker.js";
 
 class PichaiUX {
-    constructor(options) {
+    constructor(options = {
+        source: '#008dcd',
+        darkMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
+        overrideColorsOnScroll: true
+    }) {
         this.options = options;
     }
 
     initialize() {
+        let comp = window.getComputedStyle(document.body);
+        alert(comp['backgroundImage'])
+        let image = String(comp['backgroundImage']);
+        image = image.substring(3, image.length - 1);
+
+        this.options.source = image || '#008dcd';
+
         let cssId = 'PichaiUXCss';
         if (!document.getElementById(cssId)) {
             let head = document.getElementsByTagName('head')[0];
