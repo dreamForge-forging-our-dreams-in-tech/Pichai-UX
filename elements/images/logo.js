@@ -30,4 +30,4 @@ class Logo extends HTMLElement {
     }
 }
 
-customElements.define("favIcon", Logo);
+customElements.define("x-logo", Logo);
