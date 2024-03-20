@@ -1,0 +1,3 @@
+// these are notes when certain items dont work.
+
+If you are using background iamges from a link, and it blocks due to CORS, you can install a CORS unblocker plugin to make it work.
