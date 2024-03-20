@@ -26,7 +26,7 @@ class PichaiUX {
             head.appendChild(link);
         }
 
-        generate3ColorPallete();
+        generate3ColorPallete(this.options);
     }
 }
 
