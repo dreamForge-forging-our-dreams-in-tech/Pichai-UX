@@ -13,6 +13,7 @@ class PichaiUX {
     }
 
     initialize() {
+        window.onload = function () {
         let cssId = 'PichaiUXCss';  // you could encode the css path itself to generate id..
         if (!document.getElementById(cssId)) {
             let head = document.getElementsByTagName('head')[0];
@@ -28,6 +29,7 @@ class PichaiUX {
 
         alert(this.options)
         generate3ColorPallete();
+    }
     }
 }
 
