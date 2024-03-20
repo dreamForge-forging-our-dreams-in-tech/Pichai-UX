@@ -1,5 +1,6 @@
 import { generate3ColorPallete } from "./AI/palleteMaker.js";
 
+alert(document.body.style.backgroundImage)
 let image = String(document.body.style.backgroundImage);
 image = image.substring(3, image.length - 1);
 
