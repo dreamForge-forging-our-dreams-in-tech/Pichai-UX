@@ -12,7 +12,7 @@ function generate3ColorPallete(options) {
         const img = new Image();
     
         img.addEventListener('load', function () {
-            colors = colorThief.getColor(img);
+            colors = colorThief.getPalette(img);
             console.log(colors);
         });
     
