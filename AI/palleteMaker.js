@@ -11,7 +11,7 @@ function getPallete(options) {
             const img = new Image();
 
             img.addEventListener('load', () => {
-                resolve(colorThief.getPalette(img));
+                resolve(colorThief.getPalette(img))
             });
 
             img.crossOrigin = 'Anonymous';
