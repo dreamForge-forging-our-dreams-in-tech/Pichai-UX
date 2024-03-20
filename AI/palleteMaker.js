@@ -4,14 +4,14 @@ import { PichaiUX } from '../init.js';
 
 let colors;
 
-function generate3ColorPallete(options) {
+async function generate3ColorPallete(options) {
     if(String(options.source).includes('#')) {
 
     } else {
         const colorThief = new ColorThief();
         const img = new Image();
     
-        img.addEventListener('load', async function () {
+        img.addEventListener('load', function () {
             colors = await colorThief.getPalette(img);
             console.log(colors);
         });
