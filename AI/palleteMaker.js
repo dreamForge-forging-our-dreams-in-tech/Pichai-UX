@@ -11,7 +11,7 @@ async function generate3ColorPallete(options) {
         const colorThief = new ColorThief();
         const img = new Image();
     
-        img.addEventListener('load', function () {
+        img.addEventListener('load', () => {
             colors = await colorThief.getPalette(img);
             console.log(colors);
         });
