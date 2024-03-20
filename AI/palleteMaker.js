@@ -6,22 +6,18 @@ function getPallete(options) {
     return new Promise((resolve) => {
         if (String(options.source).includes('#')) {
 
-        } else {
-            const colorThief = new ColorThief();
-            const img = new Image();
-
-            img.addEventListener('load', () => {
-                resolve(colorThief.getPalette(img))
-            });
-
-            img.crossOrigin = 'Anonymous';
-            img.src = options.source;
-        }
-    });
-}
-
-async function generate3ColorPallete(options) {
-    let colors = await getPallete(options);
+    } else {
+        const colorThief = new ColorThief();
+        const img = new Image();
+    
+        img.addEventListener('load', () => {
+            colors = await colorThief.getPalette(img);
+            console.log(colors);
+        });
+    
+        img.crossOrigin = 'Anonymous';
+        img.src = options.source;
+    }
 
     const root = document.documentElement;
     let primary = colors[0].replaceAll('[', '(').replaceAll(']', ')');
