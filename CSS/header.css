@@ -8,6 +8,8 @@ header {
 }
 
 x-icon {
+    display:block;
+    
     border-radius:200px;
     background-color:var(--primary);
 
