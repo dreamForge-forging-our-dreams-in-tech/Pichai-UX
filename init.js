@@ -10,7 +10,6 @@ class PichaiUX {
             darkMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
             overrideColorsOnScroll: true
         }
-        alert(this.options)
     }
 
     initialize() {
@@ -27,7 +26,7 @@ class PichaiUX {
             head.appendChild(link);
         }
 
-        alert(this.options)
+        console.log(this.options)
         generate3ColorPallete();
     }
 }
