@@ -1,3 +1,5 @@
+import { generate3ColorPallete } from "./AI/palleteMaker.js";
+
 let image = String(document.body.style.backgroundImage);
 image = image.substring(3, image.length - 1);
 
@@ -23,6 +25,8 @@ class PichaiUX {
 
             head.appendChild(link);
         }
+
+        generate3ColorPallete();
     }
 }
 
