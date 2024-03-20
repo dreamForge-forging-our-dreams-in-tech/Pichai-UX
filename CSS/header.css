@@ -5,14 +5,23 @@ header {
     border-width:0px 0px 2px 0px;
     border-style:solid;;
     border-color:var(--primary);
+
+    display:flex;
+    flex-direction:row;
 }
 
 x-icon {
-    display:block;
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-left:16px;
     
+    display:block;
+
     border-radius:200px;
     background-color:var(--primary);
 
     width:60px;
     height:60px;
+
+    margin-top:auto;
 }
