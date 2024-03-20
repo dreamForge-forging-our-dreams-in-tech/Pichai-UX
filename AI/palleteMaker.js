@@ -2,8 +2,23 @@ import * as ColorThief from './colorThief.js';
 
 import { PichaiUX } from '../init.js';
 
-function generate3ColorPallete (options) {
-    console.log(options);
+let colors;
+
+function generate3ColorPallete(options) {
+    if(String(options.source).includes('#')) {
+
+    } else {
+        const colorThief = new ColorThief();
+        const img = new Image();
+    
+        img.addEventListener('load', function () {
+            colors = colorThief.getColor(img);
+            console.log(colors);
+        });
+    
+        img.crossOrigin = 'Anonymous';
+        img.src = options.source;
+    }
 }
 
-export { generate3ColorPallete };
+    export { generate3ColorPallete };
