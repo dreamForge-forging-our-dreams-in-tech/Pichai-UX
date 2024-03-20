@@ -24,13 +24,9 @@ async function generate3ColorPallete(options) {
     let colors = await getPallete(options);
 
     const root = document.documentElement;
-    let primary = colors[0].replaceAll('[','(').replaceAll(']',')');
-    let secondairy = colors[4].replaceAll('[','(').replaceAll(']',')');
-    let tertiary = colors[9].replaceAll('[','(').replaceAll(']',')');
-
-    root.style.setProperty('--primary', `rgb ${primary}`);
-    root.style.setProperty('--secondairy', `rgb ${secondairy}`);
-    root.style.setProperty('--tertiary', `rgb ${tertiary}`);
+    root.style.setProperty('--primary', `rgb ${colors[0].toString()}`);
+    root.style.setProperty('--secondairy', `rgb ${colors[4].toString()}`);
+    root.style.setProperty('--tertiary', `rgb ${colors[9].toString()}`);
 }
 
     export { generate3ColorPallete };
