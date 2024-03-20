@@ -14,7 +14,7 @@ class Logo extends HTMLElement {
         // Get the favicon URL
         const faviconUrl = faviconLink ? faviconLink.href : null;
 
-        this.style.backgourndImage = `url(${faviconUrl})`
+        this.style.backgourndImage = `url("${faviconUrl}")`; 
     }
 
     disconnectedCallback() {
