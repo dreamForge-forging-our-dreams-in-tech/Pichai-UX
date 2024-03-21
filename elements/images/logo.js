@@ -37,9 +37,9 @@ function generateDynamicIcon(image) {
                 Math.abs(blue - 0) > colorTolerance
             ) {
                 // Replace with your desired color (e.g., green)
-                imageData.data[i] = 0; // Red channel
-                imageData.data[i + 1] = 255; // Green channel
-                imageData.data[i + 2] = 0; // Blue channel
+                imageData.data[i] = rgb[0]; // Red channel
+                imageData.data[i + 1] = rgb[1]; // Green channel
+                imageData.data[i + 2] = rgb[2]; // Blue channel
             }
         }
 
