@@ -13,7 +13,7 @@ function generateDynamicIcon(image) {
     let dynamicImage = new Image();
     dynamicImage.src = image; // Replace with the actual path to your image
 
-    alert('test')
+    alert(image)
     dynamicImage.onload = function () {
         alert('test')
         // Draw the image on the canvas
