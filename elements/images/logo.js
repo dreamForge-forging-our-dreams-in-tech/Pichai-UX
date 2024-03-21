@@ -7,6 +7,7 @@ function generateDynamicIcon(image) {
     const root = document.documentElement;
 
     let rgb = getComputedStyle(root).getPropertyValue('--primary');
+    alert(rgb)
     rgb = rgb.substring(3, rgb.length - 1);
     rgb = rgb.split(',');
 
