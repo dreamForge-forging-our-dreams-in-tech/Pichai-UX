@@ -22,7 +22,7 @@ function generateDynamicIcon(image) {
             context.drawImage(dynamicImage, 0, 0);
 
             // Define the tolerance for color matching (adjust as needed)
-            const colorTolerance = 50; // You can experiment with this value
+            const colorTolerance = 90; // You can experiment with this value
 
             // Get the entire image data as an array of pixel data
             const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
