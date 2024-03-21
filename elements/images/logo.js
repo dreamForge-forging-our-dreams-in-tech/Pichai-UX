@@ -14,12 +14,9 @@ function generateDynamicIcon(image) {
         let dynamicImage = new Image();
         dynamicImage.src = image; //idk substring 6 breaks cod for smr
 
-        console.log(dynamicImage.style.width)
-        console.log(dynamicImage.style.height)
-        canvas.width = dynamicImage.width;
-        canvas.height = dynamicImage.height;
-
         dynamicImage.onload = function () {
+            canvas.width = dynamicImage.width;
+            canvas.height = dynamicImage.height;
             // Draw the image on the canvas
             context.drawImage(dynamicImage, 0, 0);
 
