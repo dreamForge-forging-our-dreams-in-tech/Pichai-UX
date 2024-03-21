@@ -22,7 +22,7 @@ function generateDynamicIcon(image) {
             context.drawImage(dynamicImage, 0, 0);
 
             // Define the tolerance for color matching (adjust as needed)
-            const colorTolerance = 90; // You can experiment with this value
+            const colorTolerance = 240; // You can experiment with this value
 
             // Get the entire image data as an array of pixel data
             const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
@@ -35,9 +35,9 @@ function generateDynamicIcon(image) {
 
                 // Check if the pixel is not black or white
                 if (
-                    Math.abs(red - 0) > colorTolerance ||
-                    Math.abs(green - 0) > colorTolerance ||
-                    Math.abs(blue - 0) > colorTolerance
+                    red > colorTolerance ||
+                    green > colorTolerance ||
+                    blue > colorTolerance
                 ) {
                     // Replace with your desired color (e.g., green)
                     imageData.data[i] = rgb[0]; // Red channel
