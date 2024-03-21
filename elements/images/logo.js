@@ -12,7 +12,7 @@ function generateDynamicIcon(image) {
 
         // Load your image onto the canvas
         let dynamicImage = new Image();
-        dynamicImage.src = image.substring(5, image.length - 2); // Replace with the actual path to your image
+        dynamicImage.src = image.substring(6, image.length - 2); // Replace with the actual path to your image
 
         canvas.width = dynamicImage.width;
         canvas.height = dynamicImage.height;
