@@ -10,7 +10,7 @@ function generateDynamicIcon(image) {
     rgb = rgb.split(',');
 
     // Load your image onto the canvas
-    const image = new Image();
+    let image = new Image();
     image.src = image; // Replace with the actual path to your image
 
     image.onload = function () {
