@@ -74,7 +74,7 @@ class Logo extends HTMLElement {
         this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
 
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
-            window.onload = () => {
+            window.onload = async () => {
            console.log(await generateDynamicIcon(this.style.backgroundImage))
             this.style.backgroundImage = await generateDynamicIcon(this.style.backgroundImage);
             }
