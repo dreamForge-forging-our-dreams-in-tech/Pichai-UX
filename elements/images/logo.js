@@ -14,6 +14,7 @@ function generateDynamicIcon(image) {
     dynamicImage.src = image; // Replace with the actual path to your image
 
     dynamicImage.onload = function () {
+        alert('test')
         // Draw the image on the canvas
         context.drawImage(dynamicImage, 0, 0);
 
@@ -66,8 +67,6 @@ class Logo extends HTMLElement {
 
         this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
 
-        alert(!this.hasAttribute('dynamic'))
-        alert(typeof this.getAttribute('dynamic'))
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
             alert()
             this.style.backgroundImage = await generateDynamicIcon(this.style.backgroundImage);
