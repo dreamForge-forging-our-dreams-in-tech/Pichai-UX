@@ -69,7 +69,7 @@ class Logo extends HTMLElement {
         this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
 
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
-            window.open(await generateDynamicIcon(this.style.backgroundImage))
+           console.log(await generateDynamicIcon(this.style.backgroundImage))
             this.style.backgroundImage = await generateDynamicIcon(this.style.backgroundImage);
         }
     }
