@@ -72,7 +72,7 @@ class Logo extends HTMLElement {
             window.onload = async () => {
                 let newIcon = await generateDynamicIcon(faviconUrl);
                 console.log(newIcon)
-                this.style.backgroundImage = `url${newIcon}`;
+                this.style.backgroundImage = `url(${newIcon})`;
             }
         } else {
             this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
