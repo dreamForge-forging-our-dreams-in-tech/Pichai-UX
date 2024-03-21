@@ -2,7 +2,6 @@ function generateDynamicIcon(image) {
     return new Promise((resolve) => {
         // Assume you have an HTML canvas element with the id "myCanvas"
         const canvas = document.createElement('canvas');
-        document.body.appendChild(canvas);
         const context = canvas.getContext("2d");
 
         const root = document.documentElement;
@@ -15,6 +14,9 @@ function generateDynamicIcon(image) {
         let dynamicImage = new Image();
         dynamicImage.src = image.substring(5, image.length - 2); // Replace with the actual path to your image
 
+        canvas.width = dynamicImage.width;
+        canvas.height = dynamicImage.height;
+
         dynamicImage.onload = function () {
             // Draw the image on the canvas
             context.drawImage(dynamicImage, 0, 0);
@@ -24,9 +26,6 @@ function generateDynamicIcon(image) {
 
             // Get the entire image data as an array of pixel data
             const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-
-            canvas.width = imageData.width;
-            canvas.height = imageData.height;
 
             // Iterate through each pixel
             for (let i = 0; i < imageData.data.length; i += 4) {
