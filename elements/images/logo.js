@@ -1,4 +1,5 @@
 function generateDynamicIcon(image) {
+    return new Promise((resolve) => {
     // Assume you have an HTML canvas element with the id "myCanvas"
     const canvas = document.createElement('canvas');
     const context = canvas.getContext("2d");
@@ -14,7 +15,6 @@ function generateDynamicIcon(image) {
     dynamicImage.src = image.substring(5, image.length - 2); // Replace with the actual path to your image
 
     dynamicImage.onload = function () {
-        alert('test')
         // Draw the image on the canvas
         context.drawImage(dynamicImage, 0, 0);
 
@@ -47,6 +47,7 @@ function generateDynamicIcon(image) {
         context.putImageData(imageData, 0, 0);
         resolve(canvas.toDataURL());
     };
+});
 }
 
 // Create a class for the element
