@@ -69,14 +69,14 @@ class Logo extends HTMLElement {
         // Get the favicon URL
         const faviconUrl = faviconLink ? faviconLink.href : null;
 
-        this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
-
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
             window.onload = async () => {
                 let newIcon = await generateDynamicIcon(faviconUrl);
                 console.log(newIcon)
                 this.style.backgroundImage = newIcon;
             }
+        } else {
+            this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
         }
     }
 
