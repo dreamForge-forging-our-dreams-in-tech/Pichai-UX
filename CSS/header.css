@@ -1,6 +1,6 @@
 header {
     width:100%;
-    min-height: 80px;
+    min-height: 60px;
 
     border-width:0px 0px 2px 0px;
     border-style:solid;;
@@ -19,8 +19,8 @@ x-icon {
 
     border-radius:200px;
 
-    width:60px;
-    height:60px;
+    width:40px;
+    height:40px;
 
     margin-top:auto;
 }
