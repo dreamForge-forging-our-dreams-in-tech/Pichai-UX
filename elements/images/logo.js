@@ -40,7 +40,6 @@ function generateDynamicIcon(image) {
                     Math.abs(blue - 0) > colorTolerance
                 ) {
                     // Replace with your desired color (e.g., green)
-                    console.log(rgb)
                     imageData.data[i] = rgb[0]; // Red channel
                     imageData.data[i + 1] = rgb[1]; // Green channel
                     imageData.data[i + 2] = rgb[2]; // Blue channel
