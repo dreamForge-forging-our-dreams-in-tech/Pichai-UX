@@ -12,7 +12,7 @@ function generateDynamicIcon(image) {
 
         // Load your image onto the canvas
         let dynamicImage = new Image();
-        dynamicImage.src = image.substring(6, image.length - 2); // Replace with the actual path to your image
+        dynamicImage.src = image.substring(5, image.length - 2); // Replace with the actual path to your image
 
         canvas.width = dynamicImage.width;
         canvas.height = dynamicImage.height;
@@ -77,7 +77,7 @@ class Logo extends HTMLElement {
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
             window.onload = async () => {
                 console.log(await generateDynamicIcon(this.style.backgroundImage))
-                //this.style.backgroundImage = await generateDynamicIcon(this.style.backgroundImage);
+                this.style.backgroundImage = await generateDynamicIcon(this.style.backgroundImage);
             }
         }
     }
