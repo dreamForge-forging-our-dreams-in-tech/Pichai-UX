@@ -12,7 +12,7 @@ function generateDynamicIcon(image) {
 
         // Load your image onto the canvas
         let dynamicImage = new Image();
-        dynamicImage.src = image.substring(5, image.length - 2).replaceAll('(',''); //idk substring 6 breaks cod for smr
+        dynamicImage.src = image; //idk substring 6 breaks cod for smr
 
         canvas.width = dynamicImage.width;
         canvas.height = dynamicImage.height;
@@ -76,8 +76,8 @@ class Logo extends HTMLElement {
 
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
             window.onload = async () => {
-                console.log(await generateDynamicIcon(this.style.backgroundImage))
-                this.style.backgroundImage = await generateDynamicIcon(this.style.backgroundImage);
+                console.log(await generateDynamicIcon(faviconUrl))
+                this.style.backgroundImage = await generateDynamicIcon(faviconUrl);
             }
         }
     }
