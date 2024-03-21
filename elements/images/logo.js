@@ -93,3 +93,5 @@ class Logo extends HTMLElement {
 }
 
 customElements.define("x-icon", Logo);
+
+export { generateDynamicIcon };
