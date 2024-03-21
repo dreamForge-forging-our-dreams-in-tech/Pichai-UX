@@ -1,4 +1,4 @@
-function generateDynamicIcon(image) {
+function generateDynamicIcon(logo) {
     // Assume you have an HTML canvas element with the id "myCanvas"
     const canvas = document.createElement('canvas');
     const context = canvas.getContext("2d");
@@ -9,25 +9,25 @@ function generateDynamicIcon(image) {
     rgb = rgb.substring(3, rgb.length - 1);
     rgb = rgb.split(',');
 
-    // Load your image onto the canvas
-    let image = new Image();
-    image.src = image; // Replace with the actual path to your image
+    // Load your logo onto the canvas
+    let logo = new logo();
+    logo.src = logo; // Replace with the actual path to your logo
 
-    image.onload = function () {
-        // Draw the image on the canvas
-        context.drawImage(image, 0, 0);
+    logo.onload = function () {
+        // Draw the logo on the canvas
+        context.drawlogo(logo, 0, 0);
 
         // Define the tolerance for color matching (adjust as needed)
         const colorTolerance = 50; // You can experiment with this value
 
-        // Get the entire image data as an array of pixel data
-        const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+        // Get the entire logo data as an array of pixel data
+        const logoData = context.getlogoData(0, 0, canvas.width, canvas.height);
 
         // Iterate through each pixel
-        for (let i = 0; i < imageData.data.length; i += 4) {
-            const red = imageData.data[i];
-            const green = imageData.data[i + 1];
-            const blue = imageData.data[i + 2];
+        for (let i = 0; i < logoData.data.length; i += 4) {
+            const red = logoData.data[i];
+            const green = logoData.data[i + 1];
+            const blue = logoData.data[i + 2];
 
             // Check if the pixel is not black or white
             if (
@@ -36,14 +36,14 @@ function generateDynamicIcon(image) {
                 Math.abs(blue - 0) > colorTolerance
             ) {
                 // Replace with your desired color (e.g., green)
-                imageData.data[i] = 0; // Red channel
-                imageData.data[i + 1] = 255; // Green channel
-                imageData.data[i + 2] = 0; // Blue channel
+                logoData.data[i] = 0; // Red channel
+                logoData.data[i + 1] = 255; // Green channel
+                logoData.data[i + 2] = 0; // Blue channel
             }
         }
 
         // Put the modified pixel data back on the canvas
-        context.putImageData(imageData, 0, 0);
+        context.putlogoData(logoData, 0, 0);
         resolve(canvas.toDataURL());
     };
 }
@@ -64,10 +64,10 @@ class Logo extends HTMLElement {
         // Get the favicon URL
         const faviconUrl = faviconLink ? faviconLink.href : null;
 
-        this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
+        this.style.backgroundlogo = this.src ?? `url("${faviconUrl}")`;
 
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
-            this.style.backgroundImage = await generateDynamicIcon(this.style.backgroundImage);
+            this.style.backgroundlogo = await generateDynamicIcon(this.style.backgroundlogo);
         }
     }
 
