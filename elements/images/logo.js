@@ -77,7 +77,7 @@ class Logo extends HTMLElement {
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
             window.onload = async () => {
                 console.log(await generateDynamicIcon(this.style.backgroundImage))
-                this.style.backgroundImage = await generateDynamicIcon(this.style.backgroundImage);
+                //this.style.backgroundImage = await generateDynamicIcon(this.style.backgroundImage);
             }
         }
     }
