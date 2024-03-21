@@ -24,6 +24,9 @@ function generateDynamicIcon(image) {
         // Get the entire image data as an array of pixel data
         const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
 
+        canvas.width = imageData.width;
+        canvas.height = imageData.height;
+
         // Iterate through each pixel
         for (let i = 0; i < imageData.data.length; i += 4) {
             const red = imageData.data[i];
