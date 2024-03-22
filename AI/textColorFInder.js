@@ -1,4 +1,4 @@
-import {brain } from './Brain.js';
+import './Brain.js';
 
 var net = new brain.NeuralNetwork();
 
