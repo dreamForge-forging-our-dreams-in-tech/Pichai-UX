@@ -4,4 +4,4 @@ import './elements/images/logo.js';
 
 import './elements/text/title.js';
 
-export { PichaiUX, generateDynamicIcon };
+export { PichaiUX };
