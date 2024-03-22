@@ -1,0 +1,12 @@
+x-title {
+    width:min-content;
+    height:40px;
+
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-left:8px;
+    
+    display:block;
+
+    border-radius:200px;
+}

@@ -1,5 +1,7 @@
 @import "../CSS/icons/all.css";
 @import "./header.css";
+@import "./text.css";
+
 
 body, html {
     width:100%;
