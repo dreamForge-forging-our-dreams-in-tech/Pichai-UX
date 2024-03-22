@@ -1,5 +1,7 @@
 import ColorThief from './colorThief.js';
 
+import { getTextColor  } from './textColorFInder.js';
+
 import { PichaiUX } from '../init.js';
 
 function getPallete (options) {
@@ -27,6 +29,8 @@ async function generate3ColorPallete(options) {
     root.style.setProperty('--primary', `rgb(${colors[0].toString()})`);
     root.style.setProperty('--secondairy', `rgb(${colors[4].toString()})`);
     root.style.setProperty('--tertiary', `rgb(${colors[9].toString()})`);
+
+    root.style.setProperty('--primaryTextColor', getTextColor(colors[0]));
 }
 
     export { generate3ColorPallete };
