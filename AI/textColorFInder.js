@@ -42,8 +42,11 @@ function getTextColor(color) {
         b: 0
       });
 
+      console.log(result)
+      console.log(Math.max(Object.values(result)))
       for(i of Object.keys(result)) {
         if(result[i] == Math.max(Object.values(result))) {
+            alert(i)
             return i;
             break;
         }
