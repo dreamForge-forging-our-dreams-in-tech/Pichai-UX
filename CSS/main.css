@@ -17,4 +17,9 @@ body, html {
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center;
+
+    text-align:center;
+    padding:8px;
+
+    align-items:center;
 }
