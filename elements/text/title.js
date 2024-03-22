@@ -8,8 +8,8 @@ class title extends HTMLElement {
     }
 
     connectedCallback() {
+        this.remove()
         this.innerHTML = document.title;
-        console.log(this.innerHTML)
 
         if(!this.hasAttribute('title') || this.getAttribute('title') !== '') {
             this.innerHTML = this.getAttribute('title')
