@@ -11,6 +11,7 @@ class title extends HTMLElement {
         this.innerHTML = 'lol' //document.title;
 
         if(!this.hasAttribute('title') || this.getAttribute('title') != '') {
+            alert()
             this.innerHTML = this.getAttribute('title')
         }
     }
