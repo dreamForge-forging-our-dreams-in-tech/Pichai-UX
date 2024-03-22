@@ -1,6 +1,6 @@
 x-title {
     width:min-content;
-    height:24px;
+    height:14px;
 
     margin-top:auto;
     margin-bottom:auto;
@@ -12,7 +12,7 @@ x-title {
 
     background-color:var(--primary);
 
-    line-height: 24px;
+    line-height: 14px;
 
     padding: 8px;
 
