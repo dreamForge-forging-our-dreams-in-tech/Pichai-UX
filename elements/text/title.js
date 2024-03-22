@@ -8,10 +8,9 @@ class title extends HTMLElement {
     }
 
     connectedCallback() {
-        this.innerHTML = 'lol' //document.title;
+        this.innerHTML = document.title;
 
         if(!this.hasAttribute('title') || this.getAttribute('title') === '') {} else {
-            alert()
             this.innerHTML = this.getAttribute('title')
         }
     }
@@ -27,7 +26,7 @@ class title extends HTMLElement {
     attributeChangedCallback(name, oldValue, newValue) {
         this.innerHTML = document.title;
 
-        if(!this.hasAttribute('title') || this.getAttribute('title') === '') {
+        if(!this.hasAttribute('title') || this.getAttribute('title') === '') {} else {
             this.innerHTML = this.getAttribute('title')
         }
     }
