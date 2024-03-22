@@ -15,4 +15,6 @@ x-title {
     line-height: 24px;
 
     padding: 8px;
+
+    color:var(--primaryTextColor);
 }

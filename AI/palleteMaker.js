@@ -31,6 +31,8 @@ async function generate3ColorPallete(options) {
     root.style.setProperty('--tertiary', `rgb(${colors[9].toString()})`);
 
     root.style.setProperty('--primaryTextColor', getTextColor(colors[0]));
+    root.style.setProperty('--secondairyTextColor', getTextColor(colors[4]));
+    root.style.setProperty('--tertiaryTextColor', getTextColor(colors[9]));
 }
 
     export { generate3ColorPallete };
