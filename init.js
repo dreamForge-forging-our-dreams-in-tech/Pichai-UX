@@ -1,4 +1,5 @@
 import { generate3ColorPallete } from "./AI/palleteMaker.js";
+import { generateDynamicIcon } from './elements/images/logo.js';
 
 class PichaiUX {
     constructor(options = {
@@ -30,6 +31,10 @@ class PichaiUX {
         }
 
         generate3ColorPallete(this.options);
+    }
+
+    generateDynamicIcon (icon) {
+        this.generateDynamicIcon(icon);
     }
 }
 
