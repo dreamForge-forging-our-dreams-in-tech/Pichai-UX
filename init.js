@@ -34,7 +34,7 @@ class PichaiUX {
     }
 
     generateDynamicIcon (icon) {
-        this.generateDynamicIcon(icon);
+        generateDynamicIcon(icon);
     }
 }
 
