@@ -35,11 +35,19 @@ net.train([{
 ]);
 
 function getTextColor(color) {
-    return net.run({
+    let i;
+    let result = net.run({
         r: 1,
         g: 0.4,
         b: 0
       });
+
+      for(i of Object.keys(result)) {
+        if(result[i] == Math.max(Object.values(result))) {
+            return i;
+            break;
+        }
+      }
 }
 
 export { getTextColor };
