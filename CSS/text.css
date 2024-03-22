@@ -11,4 +11,7 @@ x-title {
     border-radius:200px;
 
     background-color:var(--primary);
+
+    padding:8px;
+    align-items:center;
 }
