@@ -33,8 +33,8 @@ class PichaiUX {
         generate3ColorPallete(this.options);
     }
 
-    generateDynamicIcon (icon) {
-        generateDynamicIcon(icon);
+    async generateDynamicIcon (icon) {
+        return await generateDynamicIcon(icon);
     }
 }
 
