@@ -9,4 +9,6 @@ x-title {
     display:block;
 
     border-radius:200px;
+
+    background-color:var(--primary);
 }
