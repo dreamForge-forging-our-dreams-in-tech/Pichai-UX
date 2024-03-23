@@ -1,6 +1,8 @@
 @import "../CSS/icons/all.css";
 @import "./header.css";
 @import "./text.css";
+@import "./buttons.css";
+
 
 
 body, html {

@@ -11,6 +11,7 @@ class Header extends HTMLElement {
         this.innerHTML = `<header>
         <x-icon></x-icon>
         <x-title></x-title>
+        <log-in></log-in>
     </header>`;
     }
 }
