@@ -34,4 +34,7 @@ display-profile {
     color:var(--primaryTextColor);
 
     background-color:var(--primary);
+
+    line-height:30px;
+    text-align:center;
 }
