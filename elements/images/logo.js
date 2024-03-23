@@ -23,7 +23,7 @@ function generateDynamicIcon(image) {
             canvas.width = dynamicImage.width;
             canvas.height = dynamicImage.height;
             // Draw the image on the canvas
-            //context.drawImage(dynamicImage, 0, 0);
+            context.drawImage(dynamicImage, 0, 0);
 
             // Define the tolerance for color matching (adjust as needed)
             const colorTolerance = 240; // You can experiment with this value
