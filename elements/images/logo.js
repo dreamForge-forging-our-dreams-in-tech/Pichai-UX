@@ -15,8 +15,6 @@ function generateDynamicIcon(image) {
             rgb = rgb.substring(4, rgb.length - 1);
             rgb = rgb.split(',');
 
-            console.log(rgb)
-
             canvas.width = dynamicImage.width;
             canvas.height = dynamicImage.height;
             // Draw the image on the canvas
@@ -64,6 +62,7 @@ class Logo extends HTMLElement {
     }
 
     async connectedCallback() {
+        window.onload = function () {
                 // Get the favicon link element
                 const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
 
@@ -78,6 +77,7 @@ class Logo extends HTMLElement {
                 } else {
                     this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
                 }
+            }
     }
 
     disconnectedCallback() {
