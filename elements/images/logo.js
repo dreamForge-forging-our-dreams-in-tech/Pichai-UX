@@ -62,7 +62,6 @@ class Logo extends HTMLElement {
     }
 
     async connectedCallback() {
-        window.onload = function () {
                 // Get the favicon link element
                 const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
 
@@ -77,7 +76,6 @@ class Logo extends HTMLElement {
                 } else {
                     this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
                 }
-            }
     }
 
     disconnectedCallback() {
