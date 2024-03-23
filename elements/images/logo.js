@@ -14,8 +14,7 @@ function generateDynamicIcon(image) {
             let rgb = getComputedStyle(root).getPropertyValue('--primary');
 
             context.fillStyle = rgb;
-            context.fill();
-            alert(context.fillStyle)
+            context.fillRect(0, 0, canvas.width, canvas.height);
 
             rgb = rgb.substring(4, rgb.length - 1);
             rgb = rgb.split(',');
