@@ -4,17 +4,17 @@ function generateDynamicIcon(image) {
         const canvas = document.createElement('canvas');
         const context = canvas.getContext("2d");
 
-        const root = document.documentElement;
-
-        let rgb = getComputedStyle(root).getPropertyValue('--primary');
-        rgb = rgb.substring(4, rgb.length - 1);
-        rgb = rgb.split(',');
-
         // Load your image onto the canvas
         let dynamicImage = new Image();
         dynamicImage.src = image; //idk substring 6 breaks cod for smr
 
         dynamicImage.onload = function () {
+            const root = document.documentElement;
+
+            let rgb = getComputedStyle(root).getPropertyValue('--primary');
+            rgb = rgb.substring(4, rgb.length - 1);
+            rgb = rgb.split(',');
+            
             canvas.width = dynamicImage.width;
             canvas.height = dynamicImage.height;
             // Draw the image on the canvas
