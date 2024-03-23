@@ -15,6 +15,7 @@ function generateDynamicIcon(image) {
 
             context.fillStyle = rgb;
             context.fill();
+            alert(context.fillStyle)
 
             rgb = rgb.substring(4, rgb.length - 1);
             rgb = rgb.split(',');
