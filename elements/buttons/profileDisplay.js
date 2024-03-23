@@ -9,6 +9,7 @@ class DisplayProfile extends HTMLElement {
 
     async connectedCallback() {
         this.innerHTML = 'account_circle';
+        this.classList.add('material-symbols-outlined');
     }
 
     disconnectedCallback() {
