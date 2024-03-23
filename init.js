@@ -11,8 +11,6 @@ class PichaiUX {
     }
 
     initialize() {
-        generate3ColorPallete(this.options);
-        
         let comp = window.getComputedStyle(document.body);
         let image = String(comp['backgroundImage']);
         image = image.substring(5, image.length - 2);
@@ -31,6 +29,8 @@ class PichaiUX {
 
             head.appendChild(link);
         }
+
+        generate3ColorPallete(this.options);
     }
 
     async generateDynamicIcon (icon) {
