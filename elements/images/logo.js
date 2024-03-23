@@ -14,7 +14,9 @@ function generateDynamicIcon(image) {
             let rgb = getComputedStyle(root).getPropertyValue('--primary');
             rgb = rgb.substring(4, rgb.length - 1);
             rgb = rgb.split(',');
-            
+
+            console.log(rgb)
+
             canvas.width = dynamicImage.width;
             canvas.height = dynamicImage.height;
             // Draw the image on the canvas
