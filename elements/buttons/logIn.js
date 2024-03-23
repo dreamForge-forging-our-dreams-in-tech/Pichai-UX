@@ -6,7 +6,7 @@ class logIn extends HTMLElement {
     }
 
     connectedCallback() {
-        this.innerHTML = 'Log-In account_circle';
+        this.innerHTML = 'Log-In';
     }
 }
 

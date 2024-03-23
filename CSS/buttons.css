@@ -18,3 +18,20 @@ log-in {
 
     color:var(--primaryTextColor);
 }
+
+profile {
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-left:8px;
+
+    display:block;
+
+    border-radius:200px;
+
+    width:30px;
+    height:30px;
+
+    color:var(--primaryTextColor);
+
+    background-color:var(--priamry)''
+}
