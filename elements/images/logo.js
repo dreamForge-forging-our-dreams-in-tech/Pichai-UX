@@ -12,6 +12,9 @@ function generateDynamicIcon(image) {
             const root = document.documentElement;
 
             let rgb = getComputedStyle(root).getPropertyValue('--primary');
+
+            context.fillStyle = rgb;
+
             rgb = rgb.substring(4, rgb.length - 1);
             rgb = rgb.split(',');
 
@@ -39,9 +42,9 @@ function generateDynamicIcon(image) {
                     blue < colorTolerance
                 ) {
                     // Replace with your desired color (e.g., green)
-                    imageData.data[i] = rgb[0]; // Red channel
-                    imageData.data[i + 1] = rgb[1]; // Green channel
-                    imageData.data[i + 2] = rgb[2]; // Blue channel
+                    imageData.data[i] = 255;//rgb[0]; // Red channel
+                    imageData.data[i + 1] = 255;//rgb[1]; // Green channel
+                    imageData.data[i + 2] = 255;//rgb[2]; // Blue channel
                 }
             }
 
