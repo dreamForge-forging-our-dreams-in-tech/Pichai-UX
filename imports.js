@@ -5,6 +5,7 @@ import './elements/images/logo.js';
 import './elements/text/title.js';
 
 import './elements/buttons/logIn.js';
+import './elements/buttons/profileDisplay.js';
 
 import './elements/templates/header.js';
 
