@@ -37,4 +37,4 @@ class DisplayProfile extends HTMLElement {
     }
 }
 
-customElements.define("profile", DisplayProfile);
+customElements.define("display-profile", DisplayProfile);

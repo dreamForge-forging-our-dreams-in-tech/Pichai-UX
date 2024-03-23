@@ -10,7 +10,7 @@ class Header extends HTMLElement {
         <x-icon></x-icon>
         <x-title></x-title>
         <log-in></log-in>
-        <profile></profile>
+        <display-profile></display-profile>
     </header>`;
     }
 }
