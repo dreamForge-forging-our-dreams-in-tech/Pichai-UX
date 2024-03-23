@@ -2,6 +2,7 @@ function generateDynamicIcon(image) {
     return new Promise((resolve) => {
         // Assume you have an HTML canvas element with the id "myCanvas"
         const canvas = document.createElement('canvas');
+        document.body.appendChild(canvas)
         const context = canvas.getContext("2d");
 
         // Load your image onto the canvas
@@ -13,7 +14,7 @@ function generateDynamicIcon(image) {
 
             let rgb = getComputedStyle(root).getPropertyValue('--primary');
 
-            context.fillStyle = 'red';//rgb;
+            context.fillStyle = rgb;
             context.fillRect(0, 0, canvas.width, canvas.height);
 
             rgb = rgb.substring(4, rgb.length - 1);
