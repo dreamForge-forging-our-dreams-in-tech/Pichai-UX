@@ -5,12 +5,13 @@ class PichaiUX {
     constructor(options = {
         source: '#008dcd',
         darkMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
-        overrideColorsOnScroll: true
+        overrideColorsOnScroll: true,
+        themedFavIcon:true
     }) {
         this.options = options;
     }
 
-    initialize() {
+    async initialize() {
         let comp = window.getComputedStyle(document.body);
         let image = String(comp['backgroundImage']);
         image = image.substring(5, image.length - 2);
@@ -30,7 +31,23 @@ class PichaiUX {
             head.appendChild(link);
         }
 
-        generate3ColorPallete(this.options);
+        await generate3ColorPallete(this.options);
+
+        if(this.options.themedFavIcon) {
+                //update favIcon to match themed one.
+    const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
+
+    // Get the favicon URL
+    const faviconUrl = faviconLink ? faviconLink.href : null;
+
+    var link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.head.appendChild(link);
+    }
+    link.href = await pichai.generateDynamicIcon(faviconUrl);
+        }
     }
 
     async generateDynamicIcon (icon) {
