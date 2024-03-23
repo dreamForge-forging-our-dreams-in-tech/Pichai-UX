@@ -35,6 +35,6 @@ display-profile {
 
     background-color:var(--primary);
 
-    line-height:30px;
+    line-height:30px !important;
     text-align:center;
 }
