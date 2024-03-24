@@ -41,7 +41,6 @@ function generateDynamicIcon(image) {
                 const blue = imageData.data[i + 2];
 
                 // Check if the pixel is not white or theme color
-                console.log(findColorClass(red, green, blue))
                 if (
                     (findColorClass(red, green, blue) == 'white') && !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
                 ) {
