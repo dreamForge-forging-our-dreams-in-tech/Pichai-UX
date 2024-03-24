@@ -24,9 +24,9 @@ net.train([{
   }
 ]);
 
-function findColorClass (colr,g,bor) {
+function findColorClass (r,g,b) {
     let i;
-    
+
     let result = net.run({
         r: r,
         g: g,
