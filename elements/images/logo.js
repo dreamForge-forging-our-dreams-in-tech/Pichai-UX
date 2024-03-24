@@ -37,9 +37,7 @@ function generateDynamicIcon(image) {
 
                 // Check if the pixel is not black or white
                 if (
-                    red < colorTolerance ||
-                    green < colorTolerance ||
-                    blue < colorTolerance
+                    (red < colorTolerance || green < colorTolerance || blue < colorTolerance) && (red == rgb[0] || green == rgb[1] || blue == rgb[2])
                 ) {
                     // Replace with your desired color (e.g., green)
                     imageData.data[i] = 255;//rgb[0]; // Red channel
@@ -47,15 +45,6 @@ function generateDynamicIcon(image) {
                     imageData.data[i + 2] = 255;//rgb[2]; // Blue channel
                 }
             }
-
-            // Put the modified pixel data back on the canvas
-            context.putImageData(imageData, 0, 0);
-            dynamicImage.src = canvas.toDataURL(); // draw the logo onto a themed bg
-            context.fillStyle = getComputedStyle(root).getPropertyValue('--primary');
-            context.fillRect(0, 0, canvas.width, canvas.height);
-
-            context.drawImage(dynamicImage, 0, 0);
-
             context.putImageData(imageData, 0, 0);
             resolve(canvas.toDataURL());
         };
