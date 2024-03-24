@@ -25,6 +25,7 @@ net.train([{
 ]);
 
 function findColorClass (color) {
+    let i;
     let r = color[0];
     let g = color[1];
     let b = color[2];
