@@ -40,7 +40,7 @@ function generateDynamicIcon(image) {
 
                 // Check if the pixel is not white
                 if (
-                    (red < colorTolerance || green < colorTolerance || blue < colorTolerance) && !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
+                    (red > colorTolerance || green > colorTolerance || blue > colorTolerance) && !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
                 ) {
                     // Replace with your desired color (e.g., green)
                     imageData.data[i] = 255;//rgb[0]; // Red channel
