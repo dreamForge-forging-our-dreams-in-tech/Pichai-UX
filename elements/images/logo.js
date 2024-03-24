@@ -14,14 +14,13 @@ function generateDynamicIcon(image) {
 
             let rgb = getComputedStyle(root).getPropertyValue('--primary');
 
-            context.fillStyle = rgb;
-
             rgb = rgb.substring(4, rgb.length - 1);
             rgb = rgb.split(',');
 
             canvas.width = dynamicImage.width;
             canvas.height = dynamicImage.height;
 
+            context.fillStyle = getComputedStyle(root).getPropertyValue('--primary');
             context.fillRect(0, 0, canvas.width, canvas.height);
             // Draw the image on the canvas
             //context.drawImage(dynamicImage, 0, 0);
