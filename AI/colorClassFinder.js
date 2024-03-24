@@ -25,11 +25,12 @@ net.train([{
 ]);
 
 function findColorClass (color) {
-    alert(typeof color)
     let i;
     let r = color[0];
     let g = color[1];
     let b = color[2];
+
+    alert(color)
 
     let result = net.run({
         r: r,
