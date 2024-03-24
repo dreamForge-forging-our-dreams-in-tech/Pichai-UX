@@ -4,19 +4,9 @@ var net = new brain.NeuralNetwork();
 
 net.train([{
     input: {
-      r: 0.03,
-      g: 0.7,
-      b: 0.5
-    },
-    output: {
-      black: 1
-    }
-  },
-  {
-    input: {
-      r: 0.16,
-      g: 0.09,
-      b: 0.2
+      r: 0.255,
+      g: 0.255,
+      b: 0.255
     },
     output: {
       white: 1
@@ -24,9 +14,9 @@ net.train([{
   },
   {
     input: {
-      r: 0.5,
-      g: 0.5,
-      b: 1.0
+      r: 0.240,
+      g: 0.240,
+      b: 0.240
     },
     output: {
       white: 1
@@ -38,7 +28,7 @@ function findColorClass (color) {
     let r = color[0];
     let g = color[1];
     let b = color[2];
-    
+
     let result = net.run({
         r: r,
         g: g,
