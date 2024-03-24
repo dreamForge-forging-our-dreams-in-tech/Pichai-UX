@@ -50,11 +50,11 @@ function generateDynamicIcon(image) {
 
             // Put the modified pixel data back on the canvas
             context.putImageData(imageData, 0, 0);
-            let uri = canvas.toDataURL(); // draw the logo onto a themed bg
+            dynamicImage.src = canvas.toDataURL(); // draw the logo onto a themed bg
             context.fillStyle = getComputedStyle(root).getPropertyValue('--primary');
             context.fillRect(0, 0, canvas.width, canvas.height);
 
-            context.drawImage(uri, 0, 0);
+            context.drawImage(dynamicImage, 0, 0);
 
             context.putImageData(imageData, 0, 0);
             resolve(canvas.toDataURL());
