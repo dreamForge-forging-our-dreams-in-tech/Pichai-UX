@@ -42,3 +42,5 @@ function findColorClass (color) {
         }
       }
 }
+
+export { findColorClass };
