@@ -36,7 +36,7 @@ function generateDynamicIcon(image) {
                 const blue = imageData.data[i + 2];
 
                 // Check if the pixel is not black or white
-                console.log(red, green, blue)
+                console.log(imageData.data[i], imageData.data[i + 1], imageData.data[i + 2])
                 console.log(rgb)
                 console.log(red == rgb[0]);
                 console.log(green == rgb[1])
