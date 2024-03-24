@@ -20,11 +20,8 @@ function generateDynamicIcon(image) {
             canvas.width = dynamicImage.width;
             canvas.height = dynamicImage.height;
 
-            context.fillStyle = '#ba465a' //getComputedStyle(root).getPropertyValue('--primary');
-            console.log(context.fillStyle)
-            context.fillRect(0, 0, canvas.width, canvas.height);
             // Draw the image on the canvas
-            //context.drawImage(dynamicImage, 0, 0);
+            context.drawImage(dynamicImage, 0, 0);
 
             // Define the tolerance for color matching (adjust as needed)
             const colorTolerance = 240; // You can experiment with this value
@@ -52,6 +49,14 @@ function generateDynamicIcon(image) {
             }
 
             // Put the modified pixel data back on the canvas
+
+            let uri = canvas.toDataURL(); // draw the logo onto a themed bg
+            context.fillStyle = getComputedStyle(root).getPropertyValue('--primary');
+            console.log(context.fillStyle)
+            context.fillRect(0, 0, canvas.width, canvas.height);
+
+            context.drawImage(uri, 0, 0);
+
             context.putImageData(imageData, 0, 0);
             resolve(canvas.toDataURL());
         };
