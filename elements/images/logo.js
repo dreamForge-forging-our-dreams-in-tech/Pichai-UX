@@ -20,6 +20,9 @@ function generateDynamicIcon(image) {
             canvas.width = dynamicImage.width;
             canvas.height = dynamicImage.height;
 
+            context.fillStyle = getComputedStyle(root).getPropertyValue('--primary');
+            context.fillRect(0, 0, canvas.width, canvas.height);
+
             // Draw the image on the canvas
             context.drawImage(dynamicImage, 0, 0);
 
@@ -35,12 +38,9 @@ function generateDynamicIcon(image) {
                 const green = imageData.data[i + 1];
                 const blue = imageData.data[i + 2];
 
-                console.log(red)
-                console.log(rgb)
-
                 // Check if the pixel is not white
                 if (
-                    (red < colorTolerance || green < colorTolerance || blue < colorTolerance)
+                    (red < colorTolerance || green < colorTolerance || blue < colorTolerance) && (red == rgb[0] || green == rgb[1] || blue == rgb[2])
                 ) {
                     // Replace with your desired color (e.g., green)
                     imageData.data[i] = 255;//rgb[0]; // Red channel
