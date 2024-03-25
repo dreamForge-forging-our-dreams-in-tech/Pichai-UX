@@ -52,6 +52,16 @@ net.train([{
     output: {
       turquose: 1
     }
+  },
+  {
+    input: {
+      r: 0.52,
+      g: 0.168,
+      b: 0.83
+    },
+    output: {
+      green: 1
+    }
   }
 ]);
 
