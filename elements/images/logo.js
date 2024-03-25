@@ -46,7 +46,8 @@ function generateDynamicIcon(image) {
                 if (
                     (findColorClass(red, green, blue) == 'white') && !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
                 ) {
-                    colorClass = findColorClass(red, green, blue)
+                    colorClass = findColorClass(red, green, blue);
+                    console.log(colorClass)
                     // Replace with your desired color (e.g., green)
                     imageData.data[i] = 255;//rgb[0]; // Red channel
                     imageData.data[i + 1] = 255;//rgb[1]; // Green channel
