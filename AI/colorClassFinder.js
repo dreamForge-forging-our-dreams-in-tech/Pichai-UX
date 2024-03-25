@@ -21,8 +21,7 @@ net.train([{
     output: {
       white: 1
     }
-  }
-  ,
+  },
   {
     input: {
       r: 0.0,
@@ -82,7 +81,17 @@ net.train([{
     output: {
       yellow: 1
     }
-  }
+  },
+  {
+    input: {
+      r: 0.255,
+      g: 0.0,
+      b: 0.0
+    },
+    output: {
+      red: 1
+    }
+  },
 ]);
 
 function findColorClass (r,g,b) {
