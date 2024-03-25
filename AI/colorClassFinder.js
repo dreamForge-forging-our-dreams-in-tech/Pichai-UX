@@ -103,8 +103,6 @@ function findColorClass (r,g,b) {
         b: b
       });
 
-      console.log(result)
-
       for(i of Object.keys(result)) {
         if(result[i] == Math.max(... Object.values(result))) {
             return i;
