@@ -40,9 +40,8 @@ function generateDynamicIcon(image) {
                 const green = imageData.data[i + 1];
                 const blue = imageData.data[i + 2];
 
-                console.log(red,green,blue)
-
                 let colorClass = findColorClass(red, green, blue);
+                console.log(colorClass)
 
                 // Check if the pixel is not white or theme color
                 if (
@@ -52,8 +51,6 @@ function generateDynamicIcon(image) {
                     imageData.data[i] = colorClass == findColorClass(red, green, blue) ? 255 : rgb[0]; // Red channel
                     imageData.data[i + 1] = colorClass == findColorClass(red, green, blue) ? 255 : rgb[1]; // Green channel
                     imageData.data[i + 2] = colorClass == findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
-
-                    colorClass = findColorClass(red, green, blue);
                 }
             }
             context.putImageData(imageData, 0, 0);
