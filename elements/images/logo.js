@@ -40,10 +40,13 @@ function generateDynamicIcon(image) {
                 const green = imageData.data[i + 1];
                 const blue = imageData.data[i + 2];
 
+                let colorClass = findColorClass(red, green, blue);
+
                 // Check if the pixel is not white or theme color
                 if (
-                    (findColorClass(red, green, blue) == 'white') && !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
+                    (findColorClass(red, green, blue) == 'white') && !(red == rgb[0] || green == rgb[1] || blue == rgb[2]) || (colorClass != findColorClass(red, green, blue))
                 ) {
+                    colorClass = findColorClass(red, green, blue)
                     // Replace with your desired color (e.g., green)
                     imageData.data[i] = 255;//rgb[0]; // Red channel
                     imageData.data[i + 1] = 255;//rgb[1]; // Green channel
