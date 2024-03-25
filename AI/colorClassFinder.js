@@ -39,7 +39,7 @@ net.train([{
       b: 0.228
     },
     output: {
-      lightBlue: 1
+      lightblue: 1
     }
   },
   {
@@ -49,7 +49,7 @@ net.train([{
       b: 0.90
     },
     output: {
-      lightBlue: 1
+      lightblue: 1
     }
   },
   {
