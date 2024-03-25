@@ -40,7 +40,7 @@ function generateDynamicIcon(image) {
                 const green = imageData.data[i + 1];
                 const blue = imageData.data[i + 2];
 
-                console.log(r,g,b)
+                console.log(red,green,blue)
 
                 let colorClass = findColorClass(red, green, blue);
 
