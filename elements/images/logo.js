@@ -43,11 +43,15 @@ function generateDynamicIcon(image) {
                 let colorClass = findColorClass(red, green, blue);
 
                 // Check if the pixel is not white or theme color
+                if (
+                    (findColorClass(red, green, blue) == 'white') && !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
+                ) {
                     colorClass = findColorClass(red, green, blue);
                     // Replace with your desired color (e.g., green)
                     imageData.data[i] = 255;//rgb[0]; // Red channel
                     imageData.data[i + 1] = 255;//rgb[1]; // Green channel
                     imageData.data[i + 2] = 255;//rgb[2]; // Blue channel
+                }
             }
             context.putImageData(imageData, 0, 0);
             resolve(canvas.toDataURL());
