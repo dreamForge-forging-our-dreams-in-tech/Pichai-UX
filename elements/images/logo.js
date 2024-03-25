@@ -44,7 +44,7 @@ function generateDynamicIcon(image) {
 
                 // Check if the pixel is not white or theme color
                 if (
-                    (findColorClass(red, green, blue) == 'white') && !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
+                    (findColorClass(red, green, blue) == 'white')  
                 ) {
                     colorClass = findColorClass(red, green, blue)
                     // Replace with your desired color (e.g., green)
