@@ -44,16 +44,6 @@ net.train([{
   },
   {
     input: {
-      r: 186,
-      g: 70,
-      b: 90
-    },
-    output: {
-      lightblue: 1
-    }
-  },
-  {
-    input: {
       r: 46,
       g: 211,
       b: 197
