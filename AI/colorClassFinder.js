@@ -4,9 +4,9 @@ var net = new brain.NeuralNetwork();
 
 net.train([{
     input: {
-      r: 0.255,
-      g: 0.255,
-      b: 0.255
+      r: 255,
+      g: 255,
+      b: 255
     },
     output: {
       white: 1
@@ -14,9 +14,9 @@ net.train([{
   },
   {
     input: {
-      r: 0.240,
-      g: 0.240,
-      b: 0.240
+      r: 240,
+      g: 240,
+      b: 240
     },
     output: {
       white: 1
@@ -24,9 +24,9 @@ net.train([{
   },
   {
     input: {
-      r: 0.0,
-      g: 0.1,
-      b: 0.252
+      r: 0,
+      g: 1,
+      b: 252
     },
     output: {
       blue: 1
@@ -34,9 +34,9 @@ net.train([{
   },
   {
     input: {
-      r: 0.56,
-      g: 0.195,
-      b: 0.228
+      r: 56,
+      g: 195,
+      b: 228
     },
     output: {
       lightblue: 1
@@ -44,9 +44,9 @@ net.train([{
   },
   {
     input: {
-      r: 0.186,
-      g: 0.70,
-      b: 0.90
+      r: 186,
+      g: 70,
+      b: 90
     },
     output: {
       lightblue: 1
@@ -54,9 +54,9 @@ net.train([{
   },
   {
     input: {
-      r: 0.46,
-      g: 0.211,
-      b: 0.197
+      r: 46,
+      g: 211,
+      b: 197
     },
     output: {
       turquose: 1
@@ -64,9 +64,9 @@ net.train([{
   },
   {
     input: {
-      r: 0.52,
-      g: 0.168,
-      b: 0.83
+      r: 52,
+      g: 168,
+      b: 83
     },
     output: {
       green: 1
@@ -74,9 +74,9 @@ net.train([{
   },
   {
     input: {
-      r: 0.250,
-      g: 0.187,
-      b: 0.8
+      r: 250,
+      g: 187,
+      b: 8
     },
     output: {
       yellow: 1
@@ -84,9 +84,9 @@ net.train([{
   },
   {
     input: {
-      r: 0.255,
-      g: 0.0,
-      b: 0.0
+      r: 255,
+      g: 0,
+      b: 0
     },
     output: {
       red: 1
