@@ -22,6 +22,37 @@ net.train([{
       white: 1
     }
   }
+  ,
+  {
+    input: {
+      r: 0.0,
+      g: 0.1,
+      b: 0.252
+    },
+    output: {
+      blue: 1
+    }
+  },
+  {
+    input: {
+      r: 0.56,
+      g: 0.195,
+      b: 0.228
+    },
+    output: {
+      lightBlue: 1
+    }
+  },
+  {
+    input: {
+      r: 0.46,
+      g: 0.211,
+      b: 0.197
+    },
+    output: {
+      turquose: 1
+    }
+  }
 ]);
 
 function findColorClass (r,g,b) {
