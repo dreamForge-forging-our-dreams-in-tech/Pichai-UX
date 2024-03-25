@@ -103,11 +103,11 @@ function findColorClass (r,g,b) {
         b: b
       });
 
-      for(i of Object.keys(result)) {
-        if(result[i] == Math.max(... Object.values(result))) {
-            return i;
-            break;
-        }
+      let maxOutput = Math.max(...Object.values(result));
+      for (let label in result) {
+          if (result[label] === maxOutput) {
+              return label;
+          }
       }
 }
 
