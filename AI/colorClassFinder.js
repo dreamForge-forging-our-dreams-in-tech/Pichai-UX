@@ -34,6 +34,26 @@ net.train([{
   },
   {
     input: {
+      r: 0.56,
+      g: 0.195,
+      b: 0.228
+    },
+    output: {
+      lightBlue: 1
+    }
+  },
+  {
+    input: {
+      r: 0.186,
+      g: 0.70,
+      b: 0.90
+    },
+    output: {
+      lightBlue: 1
+    }
+  },
+  {
+    input: {
       r: 0.46,
       g: 0.211,
       b: 0.197
@@ -82,6 +102,8 @@ function findColorClass (r,g,b) {
         g: g,
         b: b
       });
+
+      console.log(result)
 
       for(i of Object.keys(result)) {
         if(result[i] == Math.max(... Object.values(result))) {
