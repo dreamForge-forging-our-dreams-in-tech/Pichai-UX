@@ -34,8 +34,6 @@ function generateDynamicIcon(image) {
             // Get the entire image data as an array of pixel data
             const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
 
-            let colorClass, skip = 0;
-            let max = 4; //divider thickness
             // Iterate through each pixel
             for (let i = 0; i < imageData.data.length; i += 4) {
                 const red = imageData.data[i];
@@ -47,31 +45,15 @@ function generateDynamicIcon(image) {
                     !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
                 ) {
                     // Replace with your desired color (e.g., green)
-                    imageData.data[i] = colorClass != findColorClass(red, green, blue) && skip < max ? 255 : rgb[0]; // Red channel
-                    imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) && skip < max ? 255 : rgb[1]; // Green channel
-                    imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) && skip < max ? 255 : rgb[2]; // Blue channel
+                    imageData.data[i] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[0]; // Red channel
+                    imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[1]; // Green channel
+                    imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
             
-                    if(skip >= max) {
-                        skip = 0;
-                    }
-
                     colorClass = findColorClass(red, green, blue);
                     console.log(colorClass);
-
-                    if(colorClass != findColorClass(red, green, blue)) {
-                        skip++
-                    }
                 } else {
-                    if(skip >= max) {
-                        skip = 0;
-                    }
-
                     colorClass = 'none';
                     console.log(colorClass);
-
-                    if(colorClass != findColorClass(red, green, blue)) {
-                        skip++
-                    }
                 }
             }
             context.putImageData(imageData, 0, 0);
