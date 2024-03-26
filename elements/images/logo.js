@@ -51,7 +51,10 @@ function generateDynamicIcon(image) {
                     imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
             
                     colorClass = findColorClass(red, green, blue);
-                    console.log(colorClass)
+                    console.log(colorClass);
+                } else {
+                    colorClass = 'none';
+                    console.log(colorClass);
                 }
             }
             context.putImageData(imageData, 0, 0);
