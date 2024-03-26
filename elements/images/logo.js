@@ -37,12 +37,12 @@ function generateDynamicIcon(image) {
             let colorClass;
             let skip = 0;
             // Iterate through each pixel
-            for (let i = 0; i < imageData.data.length; i += 4) {
+            for (let i = 0; i < imageData.data.length; i ++) {
                 const red = imageData.data[i];
                 const green = imageData.data[i + 1];
                 const blue = imageData.data[i + 2];
 
-                // Check if the pixel is not white or theme color
+                // Check if the pixel is not theme color
                 if (
                     !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
                 ) {
