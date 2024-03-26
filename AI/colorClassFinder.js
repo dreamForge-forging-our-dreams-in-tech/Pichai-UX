@@ -9,6 +9,8 @@ const trainingData = [
   { input: { r: 1, g: 1, b: 0 }, output: { yellow: 1 } }, // Adding yellow
   { input: { r: 0, g: 0.5, b: 0.5 }, output: { blue: 1 } }, // Adding Google blue
   { input: { r: 1, g: 0.2, b: 0 }, output: { red: 1 } }, // Adding Google red
+  { input: { r: 0, g: 1, b: 0 }, output: { green: 1 } }, // Adding Google green
+  { input: { r: 1, g: 1, b: 0 }, output: { yellow: 1 } },
   // Add more data as needed
   // Add more data as needed
 ];
