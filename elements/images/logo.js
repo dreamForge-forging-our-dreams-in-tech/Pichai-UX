@@ -50,21 +50,21 @@ function generateDynamicIcon(image) {
                     imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) || skip < 4 ? 255 : rgb[1]; // Green channel
                     imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) || skip < 4 ? 255 : rgb[2]; // Blue channel
             
+                    if(skip >= 4) {
+                        skip = 0;
+                    }
+
                     colorClass = findColorClass(red, green, blue);
                     console.log(colorClass);
                     skip++
-
+                } else {
                     if(skip >= 4) {
                         skip = 0;
                     }
-                } else {
+
                     colorClass = 'none';
                     console.log(colorClass);
                     skip++
-
-                    if(skip >= 4) {
-                        skip = 0;
-                    }
                 }
             }
             context.putImageData(imageData, 0, 0);
