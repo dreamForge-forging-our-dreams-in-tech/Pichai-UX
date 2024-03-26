@@ -50,23 +50,25 @@ function generateDynamicIcon(image) {
                     imageData.data[i] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[0]; // Red channel
                     imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[1]; // Green channel
                     imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
-            
-                    if(skip > 6) {
-                    colorClass = findColorClass(red, green, blue);
-                    console.log(colorClass);
 
-                    skip = 0;
-                    }
+                    if (skip > 6) {
+                        colorClass = findColorClass(red, green, blue);
+                        console.log(colorClass);
+
+                        skip = 0;
+                    } else {
                         skip++
+                        }
                 } else {
-                                
-                    if(skip > 6) {
+
+                    if (skip > 6) {
                         colorClass = 'themeColor';
                         console.log(colorClass);
-    
+
                         skip = 0;
-                        }
-                            skip++
+                    } else {
+                    skip++
+                    }
                 }
             }
             context.putImageData(imageData, 0, 0);
@@ -85,20 +87,20 @@ class Logo extends HTMLElement {
     }
 
     async connectedCallback() {
-                // Get the favicon link element
-                const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
+        // Get the favicon link element
+        const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
 
-                // Get the favicon URL
-                const faviconUrl = faviconLink ? faviconLink.href : null;
-        
-                if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
-                    window.onload = async () => {
-                        let newIcon = await generateDynamicIcon(faviconUrl);
-                        this.style.backgroundImage = `url(${newIcon})`;
-                    }
-                } else {
-                    this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
-                }
+        // Get the favicon URL
+        const faviconUrl = faviconLink ? faviconLink.href : null;
+
+        if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
+            window.onload = async () => {
+                let newIcon = await generateDynamicIcon(faviconUrl);
+                this.style.backgroundImage = `url(${newIcon})`;
+            }
+        } else {
+            this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
+        }
     }
 
     disconnectedCallback() {
@@ -110,20 +112,20 @@ class Logo extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-                // Get the favicon link element
-                const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
+        // Get the favicon link element
+        const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
 
-                // Get the favicon URL
-                const faviconUrl = faviconLink ? faviconLink.href : null;
-        
-                if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
-                    window.onload = async () => {
-                        let newIcon = await generateDynamicIcon(faviconUrl);
-                        this.style.backgroundImage = `url(${newIcon})`;
-                    }
-                } else {
-                    this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
-                }
+        // Get the favicon URL
+        const faviconUrl = faviconLink ? faviconLink.href : null;
+
+        if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
+            window.onload = async () => {
+                let newIcon = await generateDynamicIcon(faviconUrl);
+                this.style.backgroundImage = `url(${newIcon})`;
+            }
+        } else {
+            this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
+        }
     }
 }
 
