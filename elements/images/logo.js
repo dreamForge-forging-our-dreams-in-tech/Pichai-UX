@@ -51,7 +51,7 @@ function generateDynamicIcon(image) {
                     imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[1]; // Green channel
                     imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
             
-                    if(skip > 4) {
+                    if(skip > 6) {
                     colorClass = findColorClass(red, green, blue);
                     console.log(colorClass);
 
@@ -60,7 +60,7 @@ function generateDynamicIcon(image) {
                         skip++
                 } else {
                                 
-                    if(skip > 4) {
+                    if(skip > 6) {
                         colorClass = 'themeColor';
                         console.log(colorClass);
     
