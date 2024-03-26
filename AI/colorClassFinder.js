@@ -5,6 +5,7 @@ const trainingData = [
   { input: { r: 1, g: 0, b: 0 }, output: { red: 1 } },
   { input: { r: 0, g: 1, b: 0 }, output: { green: 1 } },
   { input: { r: 0, g: 0, b: 1 }, output: { blue: 1 } },
+  { input: { r: 1, g: 1, b: 1 }, output: { white: 1 } },
   // Add more data as needed
 ];
 
