@@ -27,7 +27,7 @@ function recognizeColor(r, g, b) {
 }
 
 function findColorClass (r,g,b) {
-  return g(r,g,b);
+  return recognizeColor(r,g,b);
 }
 
 export { findColorClass };
