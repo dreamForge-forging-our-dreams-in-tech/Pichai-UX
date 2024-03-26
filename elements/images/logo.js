@@ -37,7 +37,7 @@ function generateDynamicIcon(image) {
             let colorClass;
             let skip = 0;
             // Iterate through each pixel
-            for (let i = 0; i < imageData.data.length; i ++) {
+            for (let i = 0; i < imageData.data.length; i +=2) {
                 const red = imageData.data[i];
                 const green = imageData.data[i + 1];
                 const blue = imageData.data[i + 2];
