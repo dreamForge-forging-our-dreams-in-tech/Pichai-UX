@@ -50,12 +50,18 @@ function generateDynamicIcon(image) {
                     imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[1]; // Green channel
                     imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
 
-                        colorClass = findColorClass(red, green, blue);
-                        console.log(colorClass);
+                    colorClass = findColorClass(red, green, blue);
+                    console.log(colorClass);
                 } else {
 
-                        colorClass = 'themeColor';
-                        console.log(colorClass);
+                    colorClass = 'themeColor';
+                    console.log(colorClass);
+
+                     // Replace with your desired color (e.g., green)
+                     imageData.data[i] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[0]; // Red channel
+                     imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[1]; // Green channel
+                     imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
+ 
                 }
             }
             context.putImageData(imageData, 0, 0);
