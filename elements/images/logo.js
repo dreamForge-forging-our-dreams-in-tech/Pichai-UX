@@ -35,6 +35,7 @@ function generateDynamicIcon(image) {
             const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
 
             let colorClass;
+            let skip = 0;
             // Iterate through each pixel
             for (let i = 0; i < imageData.data.length; i += 4) {
                 const red = imageData.data[i];
@@ -50,11 +51,22 @@ function generateDynamicIcon(image) {
                     imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[1]; // Green channel
                     imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
             
+                    if(skip > 4) {
                     colorClass = findColorClass(red, green, blue);
                     console.log(colorClass);
+
+                    skip = 0;
+                    }
+                        skip++
                 } else {
-                    colorClass = 'none';
-                    console.log(colorClass);
+                                
+                    if(skip > 4) {
+                        colorClass = 'themeColor';
+                        console.log(colorClass);
+    
+                        skip = 0;
+                        }
+                            skip++
                 }
             }
             context.putImageData(imageData, 0, 0);
