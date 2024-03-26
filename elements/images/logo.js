@@ -46,11 +46,11 @@ function generateDynamicIcon(image) {
                     !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
                 ) {
                     // Replace with your desired color (e.g., green)
-                    imageData.data[i] = colorClass != findColorClass(red, green, blue) || skip < 4 ? 255 : rgb[0]; // Red channel
-                    imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) || skip < 4 ? 255 : rgb[1]; // Green channel
-                    imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) || skip < 4 ? 255 : rgb[2]; // Blue channel
+                    imageData.data[i] = colorClass != findColorClass(red, green, blue) || skip < 1 ? 255 : rgb[0]; // Red channel
+                    imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) || skip < 1 ? 255 : rgb[1]; // Green channel
+                    imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) || skip < 1 ? 255 : rgb[2]; // Blue channel
             
-                    if(skip >= 4) {
+                    if(skip >= 1) {
                         skip = 0;
                     }
 
@@ -58,7 +58,7 @@ function generateDynamicIcon(image) {
                     console.log(colorClass);
                     skip++
                 } else {
-                    if(skip >= 4) {
+                    if(skip >= 1) {
                         skip = 0;
                     }
 
