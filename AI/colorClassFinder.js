@@ -1,104 +1,33 @@
 import './Brain.js';
 
-var net = new brain.NeuralNetwork();
+// Sample dataset
+const trainingData = [
+  { input: { r: 1, g: 0, b: 0 }, output: { red: 1 } },
+  { input: { r: 0, g: 1, b: 0 }, output: { green: 1 } },
+  { input: { r: 0, g: 0, b: 1 }, output: { blue: 1 } },
+  // Add more data as needed
+];
 
-net.train([{
-    input: {
-      r: 255/255,
-      g: 255/255,
-      b: 255/255
-    },
-    output: {
-      white: 1
+// Create and configure the neural network
+const net = new brain.NeuralNetwork();
+net.train(trainingData);
+
+// Function to recognize color based on RGB values
+function recognizeColor(r, g, b) {
+  const output = net.run({ r, g, b });
+  let colorName = '';
+  let maxProbability = 0;
+  for (const key in output) {
+    if (output[key] > maxProbability) {
+      maxProbability = output[key];
+      colorName = key;
     }
-  },
-  {
-    input: {
-      r: 240/255,
-      g: 240/255,
-      b: 240/255
-    },
-    output: {
-      white: 1
-    }
-  },
-  {
-    input: {
-      r: 0/255,
-      g: 1/255,
-      b: 252/255
-    },
-    output: {
-      blue: 1
-    }
-  },
-  {
-    input: {
-      r: 56/255,
-      g: 195/255,
-      b: 228/255
-    },
-    output: {
-      lightblue: 1
-    }
-  },
-  {
-    input: {
-      r: 46/255,
-      g: 211/255,
-      b: 197/255
-    },
-    output: {
-      turquose: 1
-    }
-  },
-  {
-    input: {
-      r: 52/255,
-      g: 168/255,
-      b: 83/255
-    },
-    output: {
-      green: 1
-    }
-  },
-  {
-    input: {
-      r: 250/255,
-      g: 187/255,
-      b: 8/255
-    },
-    output: {
-      yellow: 1
-    }
-  },
-  {
-    input: {
-      r: 255/255,
-      g: 0/255,
-      b: 0/255
-    },
-    output: {
-      red: 1
-    }
-  },
-]);
+  }
+  return colorName;
+}
 
 function findColorClass (r,g,b) {
-    let i;
-
-    let result = net.run({
-        r: r,
-        g: g,
-        b: b
-      });
-
-      let maxOutput = Math.max(...Object.values(result));
-      for (let label in result) {
-          if (result[label] === maxOutput) {
-              return label;
-          }
-      }
+  return g(r,g,b);
 }
 
 export { findColorClass };
