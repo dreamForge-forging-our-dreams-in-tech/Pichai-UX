@@ -61,8 +61,7 @@ function generateDynamicIcon(image) {
             }
             context.putImageData(imageData, 0, 0);
 
-}
-            }
+
 
             resolve(canvas.toDataURL());
         };
