@@ -1,6 +1,6 @@
 log-in {
     width:max-content;
-    height:19px;
+    height:29px;
 
     margin-top:auto;
     margin-bottom:auto;
@@ -12,7 +12,7 @@ log-in {
 
     background-color:var(--secondairy);
 
-    line-height: 20px;
+    line-height: 30px;
 
     padding: 8px;
 
@@ -29,13 +29,13 @@ display-profile {
 
     border-radius:200px;
 
-    width:35px;
-    height:35px;
+    width:45px;
+    height:45px;
 
     color:var(--primaryTextColor);
 
     background-color:var(--primary);
 
-    line-height:36px !important;
+    line-height:46px !important;
     text-align:center;
 }
