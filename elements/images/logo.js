@@ -73,7 +73,7 @@ function generateDynamicIcon(image) {
                 if (
                     (red == 255 && green == 255 && blue == 255)
                 ) {
-                    console.log('square')
+                    console.log(i)
                     context.fillRect(i,i, lineThicknes, lineThicknes);
                 }
             }
