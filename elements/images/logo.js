@@ -63,7 +63,7 @@ function generateDynamicIcon(image) {
 
             for (let y = 0; y < canvas.height; y++) {
                 for (let x = 0; x < canvas.width; x++) {
-                    const index = (y * canvas.width + x) * 6;
+                    const index = (y * canvas.width + x) * 4;
                     const red = imageData.data[index];
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
@@ -72,7 +72,7 @@ function generateDynamicIcon(image) {
                     if (red === 255 && green === 255 && blue === 255) {
                         // Replace the pixel with a 5x5 square
                         context.fillStyle = 'white'; // Set your desired color here
-                        context.fillRect(x, y, 5, 5); // Draw a 5x5 square
+                        context.fillRect(x, y, 8, 8); // Draw a 5x5 square
                     }
                 }
             }
