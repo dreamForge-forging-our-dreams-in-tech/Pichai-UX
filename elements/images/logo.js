@@ -35,7 +35,7 @@ function generateDynamicIcon(image) {
             const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
 
             let colorClass;
-            context.fillStyle = '#fff';
+            context.fillStyle = '#000';
             let lineThicknes = 1600;
             // Iterate through each pixel
             for (let i = 0; i < imageData.data.length; i += 4) {
