@@ -36,7 +36,7 @@ function generateDynamicIcon(image) {
 
             let colorClass;
             context.fillStyle = '#fff';
-            let lineThicknes = 16;
+            let lineThicknes = 1600;
             // Iterate through each pixel
             for (let i = 0; i < imageData.data.length; i += 4) {
                 const red = imageData.data[i];
