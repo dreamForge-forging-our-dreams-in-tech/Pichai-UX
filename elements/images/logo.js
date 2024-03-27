@@ -35,7 +35,6 @@ function generateDynamicIcon(image) {
             let imageData = context.getImageData(0, 0, canvas.width, canvas.height);
 
             let colorClass;
-            let lineThicknes = 5;
             // Iterate through each pixel
             for (let i = 0; i < imageData.data.length; i += 4) {
                 const red = imageData.data[i];
@@ -64,7 +63,7 @@ function generateDynamicIcon(image) {
 
             for (let y = 0; y < canvas.height; y++) {
                 for (let x = 0; x < canvas.width; x++) {
-                    const index = (y * canvas.width + x) * 4;
+                    const index = (y * canvas.width + x) * 6;
                     const red = imageData.data[index];
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
