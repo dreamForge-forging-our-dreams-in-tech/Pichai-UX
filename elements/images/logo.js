@@ -32,11 +32,11 @@ function generateDynamicIcon(image) {
             const colorTolerance = 240; // You can experiment with this value
 
             // Get the entire image data as an array of pixel data
-            const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+            let imageData = context.getImageData(0, 0, canvas.width, canvas.height);
 
             let colorClass;
             context.fillStyle = '#000';
-            let lineThicknes = 4;
+            let lineThicknes = 5;
             // Iterate through each pixel
             for (let i = 0; i < imageData.data.length; i += 4) {
                 const red = imageData.data[i];
@@ -62,6 +62,21 @@ function generateDynamicIcon(image) {
                 }
             }
             context.putImageData(imageData, 0, 0);
+
+            imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < imageData.data.length; i += 4) {
+                const red = imageData.data[i];
+                const green = imageData.data[i + 1];
+                const blue = imageData.data[i + 2];
+
+                // Check if the pixel is not theme color
+                if (
+                    (red == 255|| green == 255 || blue == 255)
+                ) {
+                    context.fillRect(i,i, lineThicknes, lineThicknes);
+                }
+            }
+
             resolve(canvas.toDataURL());
         };
     });
