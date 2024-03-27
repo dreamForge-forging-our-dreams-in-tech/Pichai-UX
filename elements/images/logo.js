@@ -26,7 +26,7 @@ function generateDynamicIcon(image) {
             context.fillRect(0, 0, canvas.width, canvas.height);
 
             // Draw the image on the canvas
-            context.rotate(0.001);
+            context.rotate(0.01);
             context.drawImage(dynamicImage, 0, 0);
 
             // Define the tolerance for color matching (adjust as needed)
