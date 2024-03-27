@@ -47,9 +47,9 @@ function generateDynamicIcon(image) {
                     !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
                 ) {
                     // Replace with your desired color (e.g., green)
-                    imageData.data[i] = rgb[0]; // Red channel
-                    imageData.data[i + 1] = rgb[1]; // Green channel
-                    imageData.data[i + 2] = rgb[2]; // Blue channel
+                    imageData.data[i] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[0]; // Red channel
+                    imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[1]; // Green channel
+                    imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
 
                     if(colorClass != findColorClass(red, green, blue)) {
                         context.fillRect(i,i, 4, 4);
