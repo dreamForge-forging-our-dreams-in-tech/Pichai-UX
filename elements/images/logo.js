@@ -35,6 +35,7 @@ function generateDynamicIcon(image) {
             const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
 
             let colorClass;
+            context.fillStyle = '#fff';
             // Iterate through each pixel
             for (let i = 0; i < imageData.data.length; i += 4) {
                 const red = imageData.data[i];
@@ -46,9 +47,14 @@ function generateDynamicIcon(image) {
                     !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
                 ) {
                     // Replace with your desired color (e.g., green)
-                    imageData.data[i] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[0]; // Red channel
-                    imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[1]; // Green channel
-                    imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
+                    imageData.data[i] = rgb[0]; // Red channel
+                    imageData.data[i + 1] = rgb[1]; // Green channel
+                    imageData.data[i + 2] = rgb[2]; // Blue channel
+
+                    if(colorClass != findColorClass(red, green, blue)) {
+                        context.fillRect(i,i, 4, 4);
+
+                    }
 
                     colorClass = findColorClass(red, green, blue);
                     console.log(colorClass);
