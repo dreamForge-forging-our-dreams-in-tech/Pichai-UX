@@ -71,7 +71,7 @@ function generateDynamicIcon(image) {
                     // Check if the pixel is not the theme color (white in this case)
                     if (red === 255 && green === 255 && blue === 255) {
                         // Replace the pixel with a 5x5 square
-                        //context.fillStyle = 'white'; // Set your desired color here
+                        context.fillStyle = 'white'; // Set your desired color here
                         context.fillRect(x, y, 3, 3); // Draw a 5x5 square
                     }
                 }
