@@ -23,7 +23,7 @@ function generateDynamicIcon(image) {
             canvas.height = dynamicImage.height;
 
             context.fillStyle = getComputedStyle(root).getPropertyValue('--primary');
-            alert(context.fillStlye)
+            alert(getComputedStyle(root).getPropertyValue('--primary'))
             context.fillRect(0, 0, canvas.width, canvas.height);
 
             // Draw the image on the canvas
