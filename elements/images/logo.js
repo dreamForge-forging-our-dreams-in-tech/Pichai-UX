@@ -69,7 +69,7 @@ function generateDynamicIcon(image) {
                 const green = imageData.data[i + 1];
                 const blue = imageData.data[i + 2];
 
-                console.log(red, gree, blue)
+                console.log(red, green, blue)
 
                 // Check if the pixel is not theme color
                 if (
