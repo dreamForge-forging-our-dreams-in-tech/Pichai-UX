@@ -71,9 +71,9 @@ function generateDynamicIcon(image) {
 
                 // Check if the pixel is not theme color
                 if (
-                    console.log('square')
                     (red == 255 && green == 255 && blue == 255)
                 ) {
+                    console.log('square')
                     context.fillRect(i,i, lineThicknes, lineThicknes);
                 }
             }
