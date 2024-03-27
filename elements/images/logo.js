@@ -53,7 +53,7 @@ function generateDynamicIcon(image) {
                     imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
 
                     if(colorClass != findColorClass(red, green, blue)) {
-                        console.log('added line')
+                        console.log(i)
                         context.fillRect(i,i, lineThicknes, lineThicknes);
                     }
 
