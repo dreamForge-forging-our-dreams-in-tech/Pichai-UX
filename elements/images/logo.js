@@ -52,8 +52,7 @@ function generateDynamicIcon(image) {
                     imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
 
                     if(colorClass != findColorClass(red, green, blue)) {
-                        context.fillRect(i,i, 4, 4);
-
+                        context.fillRect(i,i, 8, 8);
                     }
 
                     colorClass = findColorClass(red, green, blue);
@@ -63,6 +62,10 @@ function generateDynamicIcon(image) {
                     imageData.data[i] = colorClass == findColorClass(red, green, blue) ? 255 : rgb[0]; // Red channel
                     imageData.data[i + 1] = colorClass == findColorClass(red, green, blue) ? 255 : rgb[1]; // Green channel
                     imageData.data[i + 2] = colorClass == findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
+
+                    if(colorClass != findColorClass(red, green, blue)) {
+                        context.fillRect(i,i, 8, 8);
+                    }
 
                     colorClass = 'themeColor';
                     console.log(colorClass);
