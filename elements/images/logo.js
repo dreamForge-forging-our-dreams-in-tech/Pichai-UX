@@ -72,7 +72,7 @@ function generateDynamicIcon(image) {
 
                 // Check if the pixel is not theme color
                 if (
-                    (red == 255|| green == 255 || blue == 255)
+                    (red == 255 && green == 255 && blue == 255)
                 ) {
                     context.fillRect(i,i, lineThicknes, lineThicknes);
                 }
