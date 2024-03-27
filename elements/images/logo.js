@@ -27,6 +27,7 @@ function generateDynamicIcon(image) {
 
             // Draw the image on the canvas
             context.drawImage(dynamicImage, 0, 0);
+            context.rotate(1)
 
             // Define the tolerance for color matching (adjust as needed)
             const colorTolerance = 240; // You can experiment with this value
