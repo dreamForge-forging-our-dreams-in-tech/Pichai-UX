@@ -36,7 +36,7 @@ function generateDynamicIcon(image) {
 
             let colorClass;
             context.fillStyle = '#000';
-            let lineThicknes = 1600;
+            let lineThicknes = 4;
             // Iterate through each pixel
             for (let i = 0; i < imageData.data.length; i += 4) {
                 const red = imageData.data[i];
@@ -52,21 +52,12 @@ function generateDynamicIcon(image) {
                     imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[1]; // Green channel
                     imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
 
-                    if(colorClass != findColorClass(red, green, blue)) {
-                        console.log(i)
-                        context.fillRect(i,i, lineThicknes, lineThicknes);
-                    }
-
                     colorClass = findColorClass(red, green, blue);
                 } else {
                     // Replace with your desired color (e.g., green)
-                    imageData.data[i] = colorClass == findColorClass(red, green, blue) ? 255 : rgb[0]; // Red channel
-                    imageData.data[i + 1] = colorClass == findColorClass(red, green, blue) ? 255 : rgb[1]; // Green channel
-                    imageData.data[i + 2] = colorClass == findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
-
-                    if(colorClass == findColorClass(red, green, blue)) {
-                        context.fillRect(i,i, lineThicknes, lineThicknes);
-                    }
+                    imageData.data[i] = 255;//colorClass == findColorClass(red, green, blue) ? 255 : rgb[0]; // Red channel
+                    imageData.data[i + 1] = 255;//colorClass == findColorClass(red, green, blue) ? 255 : rgb[1]; // Green channel
+                    imageData.data[i + 2] = 255;//colorClass == findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
 
                     colorClass = 'themeColor';
                 }
