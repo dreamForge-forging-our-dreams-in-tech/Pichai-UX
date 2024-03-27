@@ -35,7 +35,6 @@ function generateDynamicIcon(image) {
             let imageData = context.getImageData(0, 0, canvas.width, canvas.height);
 
             let colorClass;
-            context.fillStyle = 'white'; // Set your desired color here
             // Iterate through each pixel
             for (let i = 0; i < imageData.data.length; i += 4) {
                 const red = imageData.data[i];
@@ -72,6 +71,7 @@ function generateDynamicIcon(image) {
                     // Check if the pixel is not the theme color (white in this case)
                     if (red === 255 && green === 255 && blue === 255) {
                         // Replace the pixel with a 5x5 square
+                        context.fillStyle = 'white'; // Set your desired color here
                         context.fillRect(x, y, 3, 3); // Draw a 5x5 square
                     }
                 }
