@@ -4,9 +4,8 @@ function generateDynamicIcon(image) {
     return new Promise((resolve) => {
         // Assume you have an HTML canvas element with the id "myCanvas"
         const canvas = document.createElement('canvas');
-        canvas.willReadFrequently = true;
         document.body.appendChild(canvas)
-        const context = canvas.getContext("2d");
+        const context = canvas.getContext("2d", {willReadFrequently: true});
 
         // Load your image onto the canvas
         let dynamicImage = new Image();
