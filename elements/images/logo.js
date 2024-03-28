@@ -82,7 +82,7 @@ function generateDynamicIcon(image) {
                     (red == 255 && green == 255 && blue == 255)
                 ) {
                     context.fillStyle = 'white'; // Set your desired color here
-                    context.fillRect(x, y, 8, 8); // Draw a 5x5 square
+                    context.fillRect(i, i, 8, 8); // Draw a 5x5 square
                 }
             }
 
