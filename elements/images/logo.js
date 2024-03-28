@@ -27,9 +27,8 @@ function generateDynamicIcon(image) {
 
             context.save();
             // Draw the image on the canvas
-            context.setTransform(1, 0.5, 0.5, 1, 0, 0); // This resets the canvas to its original state
-            //context.translate(canvas.width / 2, canvas.height / 2)
-            //context.rotate(0.5);
+            context.translate(canvas.width / 2, canvas.height / 2)
+            context.rotate(0.5);
             context.drawImage(dynamicImage, -dynamicImage.width / 2, -dynamicImage.height / 2);
 
             // Define the tolerance for color matching (adjust as needed)
@@ -64,7 +63,8 @@ function generateDynamicIcon(image) {
                 }
             }
 
-            context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
+            context.translate(canvas.width / 2, canvas.height / 2)
+            context.rotate(-0.5);
             context.putImageData(imageData, 0, 0);
 
             for (let y = 0; y < canvas.height; y++) {
