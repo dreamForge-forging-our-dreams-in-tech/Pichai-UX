@@ -19,8 +19,8 @@ function generateDynamicIcon(image) {
             rgb = rgb.substring(4, rgb.length - 1);
             rgb = rgb.split(',');
 
-            canvas.width = 300;
-            canvas.height = 300;
+            canvas.width = 3000;
+            canvas.height = 3000;
 
             context.fillStyle = getComputedStyle(root).getPropertyValue('--primary');
             context.fillRect(0, 0, canvas.width, canvas.height);
