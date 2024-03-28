@@ -63,7 +63,7 @@ function generateDynamicIcon(image) {
             }
 
             context.setTransform(1, 0, 0, 1, 0, 0);
-            context.rotate(-1);
+            //context.rotate(-1);
             context.putImageData(imageData, 0, 0);
 
             for (let y = 0; y < canvas.height; y++) {
