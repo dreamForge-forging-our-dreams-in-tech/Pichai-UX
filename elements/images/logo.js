@@ -60,6 +60,8 @@ function generateDynamicIcon(image) {
                     colorClass = 'themeColor';
                 }
             }
+
+            context.rotate(0);
             context.putImageData(imageData, 0, 0);
 
             for (let y = 0; y < canvas.height; y++) {
@@ -78,7 +80,6 @@ function generateDynamicIcon(image) {
                 }
             }
 
-            context.rotate(0);
             resolve(canvas.toDataURL());
         };
     });
