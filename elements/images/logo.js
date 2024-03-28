@@ -63,7 +63,6 @@ function generateDynamicIcon(image) {
                 }
             }
 
-            context.translate(canvas.width / 2, canvas.height / 2)
             context.rotate(-0.5);
             context.putImageData(imageData, 0, 0);
 
