@@ -79,7 +79,7 @@ function generateDynamicIcon(image) {
                     if (red === 255 && green === 255 && blue === 255) {
                         // Replace the pixel with a 5x5 square
                         context.fillStyle = 'white'; // Set your desired color here
-                        context.fillRect(x / 2, y, 8, 8); // Draw a 5x5 square
+                        context.fillRect(x / 2, y / 2, 8, 8); // Draw a 5x5 square
                     }
                 }
             }
