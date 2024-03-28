@@ -70,7 +70,7 @@ function generateDynamicIcon(image) {
 
             for (let y = 0; y < canvas.height; y++) {
                 for (let x = 0; x < canvas.width; x++) {
-                    const index = (y * canvas.width / 2 + x) * 4;
+                    const index = (y * canvas.width) * 4;
                     const red = imageData.data[index];
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
