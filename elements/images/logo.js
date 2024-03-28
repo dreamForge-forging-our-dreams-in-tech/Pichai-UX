@@ -61,7 +61,8 @@ function generateDynamicIcon(image) {
                 }
             }
 
-
+            canvas.width = dynamicImage.width;
+            canvas.height = dynamicImage.height;
 
             context.rotate(-1);
             context.putImageData(imageData, 0, 0);
