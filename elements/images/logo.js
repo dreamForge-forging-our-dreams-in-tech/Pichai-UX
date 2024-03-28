@@ -80,9 +80,9 @@ function generateDynamicIcon(image) {
                     //if (red === 255 && green === 255 && blue === 255) {
                         // Replace the pixel with a 5x5 square
                         context.fillStyle = 'white'; // Set your desired color here
-                        context.fillRect(xi, iy, 8, 8); // Draw a 5x5 square
+                        context.fillRect(x, y, 8, 8); // Draw a 5x5 square
                     //}
-
+                }
             }
 
             resolve(canvas.toDataURL());
