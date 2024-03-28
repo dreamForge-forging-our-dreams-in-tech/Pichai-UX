@@ -70,10 +70,9 @@ function generateDynamicIcon(image) {
             context.putImageData(imageData, 0, 0);
 
             for (let i = 0; y < imageData; i++) {
-                    const index = (y * canvas.width + x) * 4;
-                    const red = imageData.data[index];
-                    const green = imageData.data[index + 1];
-                    const blue = imageData.data[index + 2];
+                    const red = imageData.data[i];
+                    const green = imageData.data[i + 1];
+                    const blue = imageData.data[i + 2];
             
                     // Check if the pixel is not the theme color (white in this case)
                     if (red === 255 && green === 255 && blue === 255) {
