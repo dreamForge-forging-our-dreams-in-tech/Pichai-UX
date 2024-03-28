@@ -19,8 +19,8 @@ function generateDynamicIcon(image) {
             rgb = rgb.substring(4, rgb.length - 1);
             rgb = rgb.split(',');
 
-            canvas.width = window.innerWidth + 'px';
-            canvas.height = window.innerHeight + 'px';
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
 
             context.fillStyle = getComputedStyle(root).getPropertyValue('--primary');
             context.fillRect(0, 0, canvas.width, canvas.height);
@@ -61,8 +61,7 @@ function generateDynamicIcon(image) {
                 }
             }
 
-            canvas.width = dynamicImage.width;
-            canvas.height = dynamicImage.height;
+
 
             context.rotate(-1);
             context.putImageData(imageData, 0, 0);
