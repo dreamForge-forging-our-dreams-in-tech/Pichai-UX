@@ -26,6 +26,7 @@ function generateDynamicIcon(image) {
             context.fillRect(0, 0, canvas.width, canvas.height);
 
             // Draw the image on the canvas
+            context.translate(canvas.width /2, canvas.height / 2);
             context.rotate(0.5);
             context.drawImage(dynamicImage, 0, 0);
 
