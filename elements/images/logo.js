@@ -19,13 +19,14 @@ function generateDynamicIcon(image) {
             rgb = rgb.substring(4, rgb.length - 1);
             rgb = rgb.split(',');
 
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight  + 30;
+            canvas.width = dynamicImage.width;
+            canvas.height = dynamicImage.height;
 
             context.fillStyle = getComputedStyle(root).getPropertyValue('--primary');
             context.fillRect(0, 0, canvas.width, canvas.height);
 
             // Draw the image on the canvas
+            context.translate(canvas.width / 2, canvas.height / 2)
             context.rotate(0.5);
             context.drawImage(dynamicImage, 300, 0);
 
@@ -60,9 +61,6 @@ function generateDynamicIcon(image) {
                     colorClass = 'themeColor';
                 }
             }
-
-            canvas.width = dynamicImage.width;
-            canvas.height = dynamicImage.height;
 
             context.rotate(-1);
             context.putImageData(imageData, 0, 0);
