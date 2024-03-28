@@ -67,7 +67,7 @@ function generateDynamicIcon(image) {
 
             context.translate(canvas.width / 2, canvas.height / 2);
             context.rotate(-0.5);
-            context.putImageData(imageData, 0, 0);
+            context.putImageData(imageData, canvas.width, 0);
 
             for (let y = 0; y < canvas.height; y++) {
                 for (let x = 0; x < canvas.width; x++) {
