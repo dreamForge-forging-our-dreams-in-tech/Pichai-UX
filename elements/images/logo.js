@@ -65,6 +65,7 @@ function generateDynamicIcon(image) {
 
             context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
 
+            context.translate(canvas.width / 2, canvas.height / 2);
             context.rotate(-0.5);
             context.putImageData(imageData, 0, 0);
 
@@ -79,7 +80,7 @@ function generateDynamicIcon(image) {
                     if (red === 255 && green === 255 && blue === 255) {
                         // Replace the pixel with a 5x5 square
                         context.fillStyle = 'white'; // Set your desired color here
-                        context.fillRect(x / 2, y / 2, 8, 8); // Draw a 5x5 square
+                        context.fillRect(x, y, 8, 8); // Draw a 5x5 square
                     }
                 }
             }
