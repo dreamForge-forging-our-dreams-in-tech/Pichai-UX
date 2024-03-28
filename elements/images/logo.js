@@ -25,7 +25,6 @@ function generateDynamicIcon(image) {
             context.fillStyle = getComputedStyle(root).getPropertyValue('--primary');
             context.fillRect(0, 0, canvas.width, canvas.height);
 
-            context.save();
             // Draw the image on the canvas
             context.translate(canvas.width / 2, canvas.height / 2)
             context.rotate(0.5);
@@ -63,7 +62,7 @@ function generateDynamicIcon(image) {
                 }
             }
 
-            context.restore();
+            context.rotate(-1);
 
             for (let y = 0; y < canvas.height; y++) {
                 for (let x = 0; x < canvas.width; x++) {
