@@ -64,7 +64,7 @@ function generateDynamicIcon(image) {
             }
 
 
-            context.rotate(800);
+            context.rotate(1000);
             context.drawImage(dynamicImage, -dynamicImage.width / 2, -dynamicImage.height / 2);
             context.putImageData(imageData, 0, 0);
 
