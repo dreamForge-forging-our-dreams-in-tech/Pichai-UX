@@ -78,9 +78,8 @@ function generateDynamicIcon(image) {
                 const blue = imageData.data[i + 2];
 
                 // Check if the pixel is not theme color
-                if (
-                    (red == 255 && green == 255 && blue == 255)
-                ) {
+                if (red == 255 && green == 255 && blue == 255) {
+                    console.log(i)
                     context.fillStyle = 'white'; // Set your desired color here
                     context.fillRect(i, i, 8, 8); // Draw a 5x5 square
                 }
