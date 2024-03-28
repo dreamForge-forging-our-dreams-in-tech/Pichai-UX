@@ -78,6 +78,7 @@ function generateDynamicIcon(image) {
                 }
             }
 
+            context.rotate(0);
             resolve(canvas.toDataURL());
         };
     });
