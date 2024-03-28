@@ -69,21 +69,23 @@ function generateDynamicIcon(image) {
             context.rotate(-0.5);
             context.putImageData(imageData, 0, 0);
 
-            for (let y = 0; y < canvas.height; y++) {
-                for (let x = 0; x < canvas.width; x++) {
-                    const index = (y * canvas.width + x) * 4;
-                    const red = imageData.data[index];
-                    const green = imageData.data[index + 1];
-                    const blue = imageData.data[index + 2];
-            
-                    // Check if the pixel is not the theme color (white in this case)
-                    //if (red === 255 && green === 255 && blue === 255) {
-                        // Replace the pixel with a 5x5 square
-                        context.fillStyle = 'white'; // Set your desired color here
-                        context.fillRect(x, y, 8, 8); // Draw a 5x5 square
-                    //}
+            imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+
+            // Iterate through each pixel
+            for (let i = 0; i < imageData.data.length; i += 4) {
+                const red = imageData.data[i];
+                const green = imageData.data[i + 1];
+                const blue = imageData.data[i + 2];
+
+                // Check if the pixel is not theme color
+                if (
+                    (red == 255 && green == 255 && blue == 255)
+                ) {
+                    context.fillStyle = 'white'; // Set your desired color here
+                    context.fillRect(x, y, 8, 8); // Draw a 5x5 square
                 }
             }
+
 
             resolve(canvas.toDataURL());
         };
