@@ -67,10 +67,9 @@ function generateDynamicIcon(image) {
 
             context.translate(canvas.width / 2, canvas.height / 2);
             context.rotate(-0.5);
-            context.putImageData(imageData, canvas.width / 2, 0);
+            context.putImageData(imageData, 0, 0);
 
-            for (let y = 0; y < canvas.height; y++) {
-                for (let x = 0; x < canvas.width; x++) {
+            for (let i = 0; y < imageData; i++) {
                     const index = (y * canvas.width + x) * 4;
                     const red = imageData.data[index];
                     const green = imageData.data[index + 1];
@@ -80,9 +79,8 @@ function generateDynamicIcon(image) {
                     if (red === 255 && green === 255 && blue === 255) {
                         // Replace the pixel with a 5x5 square
                         context.fillStyle = 'white'; // Set your desired color here
-                        context.fillRect(x, y, 8, 8); // Draw a 5x5 square
+                        context.fillRect(xi, iy, 8, 8); // Draw a 5x5 square
                     }
-                }
             }
 
             resolve(canvas.toDataURL());
