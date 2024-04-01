@@ -22,7 +22,11 @@ body, html {
 
     border-style:solid;
     border-radius:27px;
-    border-color:var(--tertiary)
+    border-color:var(--tertiary);
+
+    color:var(--onPrimaryText);
+
+    background-color:var(--primary)
 
     text-align:center;
 }
