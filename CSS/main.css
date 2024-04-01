@@ -27,7 +27,7 @@ body, html {
 
     color:var(--onPrimaryText);
 
-    background-color:var(--primary)
+    background-color:var(--primary);
 
     text-align:center;
 }
