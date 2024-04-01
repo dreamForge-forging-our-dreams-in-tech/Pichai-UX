@@ -19,14 +19,11 @@ body, html {
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center;
-    background-color:var(--primary);
 
     border-style:solid;
     border-radius:27px;
     border-color:var(--tertiary);
     border-width:0px;
-
-    color:var(--onPrimaryText);
 
     text-align:center;
 }
