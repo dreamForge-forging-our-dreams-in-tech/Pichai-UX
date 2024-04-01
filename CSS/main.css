@@ -23,6 +23,7 @@ body, html {
     border-style:solid;
     border-radius:27px;
     border-color:var(--tertiary);
+    border-width:0px;
 
     color:var(--onPrimaryText);
 
