@@ -20,5 +20,9 @@ body, html {
     background-size:cover;
     background-position:center;
 
+    border-style:solid;
+    border-radius:27px;
+    border-color:var(--tertiary)
+
     text-align:center;
 }
