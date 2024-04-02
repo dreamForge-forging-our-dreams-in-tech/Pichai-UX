@@ -1,4 +1,4 @@
-import { PichaiUX } from '../init.js';
+import { PichaiUX } from '../../init.js';
 // Create a class for the element
 class logIn extends HTMLElement {
     constructor() {
