@@ -29,11 +29,11 @@ function recognizeColor(r, g, b) {
       colorName = key;
     }
   }
-  console.log(colorName)
   return colorName;
 }
 
 function findColorClass (r,g,b) {
+  console.log(r,g,b)
   return recognizeColor(r / 255,g / 255,b / 255);
 }
 
