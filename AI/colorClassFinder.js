@@ -7,10 +7,21 @@ const trainingData = [
   { input: { r: 0.2, g: 0.6, b: 0.3 }, output: { green: 1 } },
   { input: { r: 0.2, g: 0.5, b: 0.9 }, output: { blue: 1 } },
   { input: { r: 0, g: 0.5, b: 0.5 }, output: { blue: 1 } },
-  { input: { r: 1, g: 1, b: 1 }, output: { white: 1 } }, // Adding white
-  { input: { r: 0.9, g: 0.7, b: 0 }, output: { yellow: 1 } }, // Adding yellow
-  // Add more data as needed
-  // Add more data as needed
+  { input: { r: 1, g: 1, b: 1 }, output: { white: 1 } },
+  { input: { r: 0.9, g: 0.7, b: 0 }, output: { yellow: 1 } },
+  { input: { r: 1, g: 0.6, b: 0 }, output: { orange: 1 } },
+  { input: { r: 1, g: 0.8, b: 0.8 }, output: { pink: 1 } },
+  { input: { r: 0.6, g: 0, b: 0.5 }, output: { purple: 1 } },
+  { input: { r: 1, g: 0.5, b: 1 }, output: { violet: 1 } },
+  { input: { r: 0, g: 0.9, b: 0.8 }, output: { turqouse: 1 } },
+  { input: { r: 0, g: 0.8, b: 0 }, output: { gold: 1 } },
+  { input: { r: 0, g: 1, b: 0 }, output: { lime: 1 } },
+  { input: { r: 0.1, g: 0.1, b: 0.1 }, output: { aqua: 1 } },
+  { input: { r: 0, g: 0, b: 0.5 }, output: { navy: 1 } },
+  { input: { r: 1, g: 0.5, b: 0.3 }, output: { coral: 1 } },
+  { input: { r: 0, g: 0.5, b: 0.5 }, output: { teal: 1 } },
+  { input: { r: 0.8, g: 0.1, b: 0.1 }, output: { brown: 1 } },
+  { input: { r: 0, g: 0, b: 0 }, output: { black: 1 } },
 ];
 
 // Create and configure the neural network
