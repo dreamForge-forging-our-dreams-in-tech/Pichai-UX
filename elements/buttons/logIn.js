@@ -11,7 +11,7 @@ class logIn extends HTMLElement {
 
         this.onclick = function () {
             console.log(window.sessionSotrge.getItem('options').loginDialog)
-            if(window.sessionSotrge.getITem('options').loginDialog) {
+            if(window.sessionSotrge.getItem('options').loginDialog) {
                 
                 document.body.appendChild(PichaiUX.loginDialog);
             }
