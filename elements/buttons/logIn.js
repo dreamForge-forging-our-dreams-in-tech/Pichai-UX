@@ -1,3 +1,4 @@
+import { PichaiUX } from '../init.js';
 // Create a class for the element
 class logIn extends HTMLElement {
     constructor() {
@@ -7,7 +8,13 @@ class logIn extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = 'Log-In';
+
+        this.onclick = function () {
+            if(PichaiUX.loginDialog) {
+                document.body.appendChild(PichaiUX.loginDialog);
+            }
+        }
     }
 }
 
-customElements.define("log-in", logIn);
+customElements.define("log-in", logIn);  
