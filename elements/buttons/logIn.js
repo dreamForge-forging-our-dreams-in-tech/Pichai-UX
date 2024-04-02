@@ -10,10 +10,10 @@ class logIn extends HTMLElement {
         this.innerHTML = 'Log-In';
 
         this.onclick = function () {
-            console.log(JSON.parse(window.sessionStorage.getItem('options')).loginDialog)
-            if(JSON.parse(window.sessionStorage.getItem('options')).loginDialog) {
+            console.log(JSON.parse(window.sessionStorage.getItem('options')))
+            if(JSON.parse(window.sessionStorage.getItem('options'))) {
                 
-                document.body.appendChild(PichaiUX.loginDialog);
+                document.body.appendChild();
             }
         }
     }
