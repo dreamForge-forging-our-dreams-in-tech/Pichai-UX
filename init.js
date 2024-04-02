@@ -11,7 +11,7 @@ class PichaiUX {
         accountMenu: document.createElement('template-account-menu'),  //todo: write docs about this, determines wich elements is shown when the user is logged in and allows settings modifications, saving etc
     }) {
         this.options = options;
-        window.sessionStorage.setItem('options', JSON.stringify(options))
+        window['options'] = JSON.stringify(options);
     }
 
     async initialize() {

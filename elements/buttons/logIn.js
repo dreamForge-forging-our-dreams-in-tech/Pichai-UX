@@ -10,8 +10,8 @@ class logIn extends HTMLElement {
         this.innerHTML = 'Log-In';
 
         this.onclick = function () {
-            console.log(JSON.parse(window.sessionStorage.getItem('options')).LoginDialog)
-            if(JSON.parse(window.sessionStorage.getItem('options'))) {
+            console.log(window['options'].LoginDialog)
+            if(window['options']) {
                 
                 document.body.appendChild();
             }
