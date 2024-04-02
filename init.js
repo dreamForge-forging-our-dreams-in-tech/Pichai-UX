@@ -6,7 +6,9 @@ class PichaiUX {
         source: '#008dcd',
         darkMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
         overrideColorsOnScroll: true,
-        themedFavIcon: true
+        themedFavIcon: true,
+        loginDialog: ,  //write docs about this, determines wich elements is shown when clicking the log in button
+        AccountMenu: ,  //write docs about this, determines wich elements is shown when the user is logged in and allows settings modifications, saving etc
     }) {
         this.options = options;
     }
