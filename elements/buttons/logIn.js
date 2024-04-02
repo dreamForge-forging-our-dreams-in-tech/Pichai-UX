@@ -10,7 +10,7 @@ class logIn extends HTMLElement {
         this.innerHTML = 'Log-In';
 
         this.onclick = function () {
-            console.log(PichaiUX)
+            console.log(PichaiUX.options)
             if(PichaiUX.loginDialog) {
                 
                 document.body.appendChild(PichaiUX.loginDialog);
