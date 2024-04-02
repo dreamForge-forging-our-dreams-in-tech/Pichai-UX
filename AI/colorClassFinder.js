@@ -19,7 +19,7 @@ net.train(trainingData);
 
 // Function to recognize color based on RGB values
 function recognizeColor(r, g, b) {
-  console.log('eeee')
+
   const output = net.run({ r, g, b });
   let colorName = '';
   let maxProbability = 0;
@@ -29,6 +29,7 @@ function recognizeColor(r, g, b) {
       colorName = key;
     }
   }
+  console.log(colorName)
   return colorName;
 }
 
