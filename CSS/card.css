@@ -1,7 +1,5 @@
 .card {
     background-color:var(--primary);
-
-    padding:8px;
 }
 
 .card * {

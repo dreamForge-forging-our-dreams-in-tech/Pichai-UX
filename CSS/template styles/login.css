@@ -9,6 +9,10 @@
     width:300px;
 }
 
+#loginCard * {
+    padding:8px;
+}
+
 #loginCard h2 {
     border-bottom-width:2px;
     border-color:var(--primaryTextColor);
