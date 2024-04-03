@@ -17,9 +17,9 @@ class logIn extends HTMLElement {
                 return;
             }
             document.body.appendChild(dialog);
-            dialog.firstChild.style.position = 'fixed';
-            dialog.firstChild.style.top = '65px'
-            dialog.firstChild.style.right = '8px';
+            dialog.firstChild.firstChild.style.position = 'fixed';
+            dialog.firstChild.firstChild.style.top = '65px'
+            dialog.firstChild.firstChild.style.right = '8px';
         }
     }
 }
