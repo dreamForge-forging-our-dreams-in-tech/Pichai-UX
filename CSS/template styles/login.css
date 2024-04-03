@@ -11,5 +11,6 @@
 
 #loginCard h2 {
     border-bottom-width:2px;
-    border-color:var(--primaryTextColor)
+    border-color:var(--primaryTextColor);
+    border-radius:0px;
 }
