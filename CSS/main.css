@@ -4,6 +4,8 @@
 @import "./buttons.css";
 @import "./card.css";
 
+@import "./template styles/login.css";
+
 
 
 body, html {
