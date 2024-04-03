@@ -8,5 +8,6 @@ import './elements/buttons/logIn.js';
 import './elements/buttons/profileDisplay.js';
 
 import './elements/templates/header.js';
+import './elements/templates/login.js';
 
 export { PichaiUX };
