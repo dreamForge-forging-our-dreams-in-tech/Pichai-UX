@@ -2,6 +2,8 @@
     background-color:var(--primary);
 
     width:30%;
+
+    padding:8px;
 }
 
 .card * {
