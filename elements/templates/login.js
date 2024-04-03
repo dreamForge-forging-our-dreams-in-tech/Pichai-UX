@@ -6,7 +6,7 @@ class Login extends HTMLElement {
         super();
     }
 
-    async connectedCallback() {
+    connectedCallback() {
         this.innerHTML = `<section class="card">
         <h2> Log-In or Sign-Up</h2>
         <p>By logging in with GitHub you agree to Sketch privacy policy and usage of GitHub repo’s and account data.</p>
