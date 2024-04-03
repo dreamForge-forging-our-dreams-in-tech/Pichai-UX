@@ -10,7 +10,11 @@ class logIn extends HTMLElement {
         this.innerHTML = 'Log-In';
 
         this.onclick = function () {
-            document.body.appendChild(window['options'].loginDialog);
+            let dialog = window['options'].loginDialog
+            document.body.appendChild(dialog);
+            dialog.style.position = 'fixed';
+            dialog.style.top = '65px'
+            dialog.style.right = '8px';
         }
     }
 }
