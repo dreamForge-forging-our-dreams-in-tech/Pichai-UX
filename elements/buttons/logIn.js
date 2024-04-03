@@ -12,9 +12,9 @@ class logIn extends HTMLElement {
         this.onclick = function () {
             let dialog = window['options'].loginDialog
             document.body.appendChild(dialog);
-            dialog.style.position = 'fixed';
-            dialog.style.top = '65px'
-            dialog.style.right = '8px';
+            dialog.firstChild.firstChild.style.position = 'fixed';
+            dialog.firstChild.style.top = '65px'
+            dialog.firstChild.style.right = '8px';
         }
     }
 }
