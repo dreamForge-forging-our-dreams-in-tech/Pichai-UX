@@ -10,7 +10,7 @@ class logIn extends HTMLElement {
         this.innerHTML = 'Log-In';
 
         this.onclick = function () {
-            let dialog = window['options'].loginDialog
+            let dialog = window['options'].loginDialog;
 
             if(dialog.parentNode == document.body) {
                 dialog.remove();

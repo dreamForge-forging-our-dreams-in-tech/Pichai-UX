@@ -8,3 +8,8 @@
 #loginCard {
     width:300px;
 }
+
+#loginCard h2 {
+    border-bottom-width:2px;
+    border-color:var(--primaryTextColor)
+}
