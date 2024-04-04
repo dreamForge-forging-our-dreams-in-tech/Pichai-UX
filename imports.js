@@ -9,5 +9,6 @@ import './elements/buttons/profileDisplay.js';
 
 import './elements/templates/header.js';
 import './elements/templates/login.js';
+import './elements/templates/accountDrawer.js';
 
 export { PichaiUX };
