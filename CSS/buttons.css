@@ -1,4 +1,25 @@
-log-in, button {
+log-in {
+    width:max-content;
+    height:14px;
+
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-left:auto;
+    
+    display:block;
+
+    border-radius:200px;
+
+    background-color:var(--secondairy);
+
+    line-height: 15px;
+
+    padding: 8px;
+
+    color:var(--primaryTextColor);
+}
+
+button {
     width:max-content;
     height:19px;
 
