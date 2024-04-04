@@ -7,8 +7,8 @@ class PichaiUX {
         darkMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
         overrideColorsOnScroll: true,
         themedFavIcon: true,
-        loginDialog: document.createElement('template-login'),  //todo: write docs about this, determines wich elements is shown when clicking the log in button
-        accountMenu: document.createElement('template-account-menu'),  //todo: write docs about this, determines wich elements is shown when the user is logged in and allows settings modifications, saving etc
+        loginDialog: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when clicking the log in button
+        accountMenu: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when the user is logged in and allows settings modifications, saving etc
     }) {
         this.options = options;
         window['options'] = options;
