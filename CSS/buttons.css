@@ -1,6 +1,6 @@
 log-in {
     width:max-content;
-    height:14px;
+    height:12px;
 
     margin-top:auto;
     margin-bottom:auto;
@@ -12,7 +12,7 @@ log-in {
 
     background-color:var(--secondairy);
 
-    line-height: 15px;
+    line-height: 13px;
 
     padding: 8px;
 
