@@ -6,6 +6,10 @@
     background-color:var(--tertiary);
 }
 
+.card .card * {
+    color:var(--tertiaryTextColor)
+}
+
 
 .card * {
     color:var(--primaryTextColor);
