@@ -29,6 +29,8 @@ body, html {
     border-width:0px;
 
     text-align:center;
+
+    overflow:auto;
 }
 
 h1 {
