@@ -2,6 +2,11 @@
     background-color:var(--primary);
 }
 
+.card .card {
+    background-color:var(--tertiaru);
+}
+
+
 .card * {
     color:var(--primaryTextColor);
 }
