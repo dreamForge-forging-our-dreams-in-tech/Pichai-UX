@@ -9,10 +9,9 @@ class AccountDrawer extends HTMLElement {
     async connectedCallback() {
         this.innerHTML = `<section class="card" id='drawer'>
         <article class='card'>
-        <h2> Log-In or Sign-Up</h2>
-        <p>By logging in with GitHub you agree to Sketch privacy policy and usage of GitHub repo’s and account data.</p>
-        <button id="auth"> Authenticate With GitHub</button>
-        <button id="offline">Authenticate Offline</button>
+        <h2>Set-Up Storage</h2>
+        <p>Do you want to have you data stored accross your devices or just want to have a backup? <br> Setup a local storage system with a local storage, Google Drive or Dropbox to ensure that your data is safe and sound!</p>
+        <button id="auth">Set-Up</button>
         </article>
         </section>`;
     }
