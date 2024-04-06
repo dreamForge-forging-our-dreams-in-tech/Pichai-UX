@@ -11,7 +11,7 @@ class AccountDrawer extends HTMLElement {
         <article class='card'>
         <h2>Set-Up Storage</h2>
         <p>Do you want to have you data stored accross your devices or just want to have a backup? <br> Setup a local storage system with a local storage, Google Drive or Dropbox to ensure that your data is safe and sound!</p>
-        <button id="auth">Set-Up</button>
+        <button id="auth">Set-Up Storage </button>
         </article>
         </section>`;
     }
