@@ -14,6 +14,11 @@ class AccountDrawer extends HTMLElement {
         <button id="auth">Set-Up Storage </button>
         </article>
         </section>`;
+
+        let auth = document.getElementById('auth');
+        auth.onclick = function () {
+            window.showDirectoryPicker();
+        }
     }
 }
 
