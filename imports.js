@@ -6,6 +6,7 @@ import './elements/text/title.js';
 
 import './elements/buttons/logIn.js';
 import './elements/buttons/profileDisplay.js';
+import './elements/navigation/tabbar.js';
 
 import './elements/templates/header.js';
 import './elements/templates/login.js';
