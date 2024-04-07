@@ -12,7 +12,7 @@ class TabBar extends HTMLElement {
         this.classList.add('tabBarHolder');
 
         if(this.hasAttribute('options')) {
-            for(i of Ogject.keys(this.getAttribute('options'))) {
+            for(i of Object.keys(this.getAttribute('options'))) {
                 alert(i)
                 let button = document.createElement('button');
                 button.innerHTML = i;
