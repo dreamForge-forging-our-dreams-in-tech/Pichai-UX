@@ -26,7 +26,7 @@ body, html {
 
     border-style:solid;
     border-radius:20px;
-    border-color:var(--tertiary);
+    border-color:var(--primary);
     border-width:0px;
 
     text-align:center;
