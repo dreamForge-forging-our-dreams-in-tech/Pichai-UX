@@ -13,6 +13,7 @@ class TabBar extends HTMLElement {
 
         if(this.hasAttribute('options')) {
             for(i of Ogject.keys(this.getAttribute('options'))) {
+                alert(i)
                 let button = document.createElement('button');
                 button.innerHTML = i;
                 this.appendChild(button);
