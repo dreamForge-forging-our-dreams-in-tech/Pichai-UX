@@ -8,6 +8,7 @@
 
 .tabBarHolder a {
     background-color:var(--primary);
+    color:var(--primaryTextColor)
 
     text-decoration:none;
 
