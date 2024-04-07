@@ -16,8 +16,12 @@ class AccountDrawer extends HTMLElement {
         </section>`;
 
         let auth = document.getElementById('auth');
-        auth.onclick = function () {
-            window.showDirectoryPicker();
+        auth.onclick = async function () {
+            if ((await fileHandle.queryPermission({ mode: "readwrite" })) === "granted") {
+
+            } else {
+                let directory = await window.showDirectoryPicker();
+            }
         }
     }
 }
