@@ -19,6 +19,10 @@ class TabBar extends HTMLElement {
                 let button = document.createElement('a');
                 button.innerHTML = i;
                 button.href = opt[i];
+
+                if(i == Object.keys(opt)[0]) {
+                    this.classList.add('current');
+                }
                 this.appendChild(button);
             }
         }
