@@ -1,4 +1,10 @@
 .tabBarHolder {
     border-width:1px;
     padding:8px;
+
+    display:flex;
+}
+
+.tabBarHolder a {
+    background-color:var(--primary);
 }
