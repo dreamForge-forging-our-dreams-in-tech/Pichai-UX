@@ -2,8 +2,8 @@
     border-width:2px;
     padding:3px;
 
-    display:flex;
-    flex-direction:row;
+    display:grid;
+    grid-row-gap:8px;
 }
 
 .tabBarHolder a {

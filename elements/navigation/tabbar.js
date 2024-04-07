@@ -13,8 +13,9 @@ class TabBar extends HTMLElement {
 
         if(this.hasAttribute('options')) {
             let opt = JSON.parse(this.getAttribute('options'))
+            this.style.gridTemplateColumns = `repeat(1fr , ` + opt.length + `);`;
+
             for(i of Object.keys(opt)) {
-                alert(i)
                 let button = document.createElement('a');
                 button.innerHTML = i;
                 button.href = opt[i];
