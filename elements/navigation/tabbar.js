@@ -13,7 +13,8 @@ class TabBar extends HTMLElement {
 
         if(this.hasAttribute('options')) {
             let opt = JSON.parse(this.getAttribute('options'))
-            this.style.gridTemplateColumns = `repeat(` + opt.length + `, 1fr);`;
+            this.style.gridTemplateColumns = `repeat(` + opt.length + `, 1fr)`;
+            console.log(this.style)
 
             for(i of Object.keys(opt)) {
                 let button = document.createElement('a');
