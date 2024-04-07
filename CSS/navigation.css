@@ -3,7 +3,7 @@
     padding:3px;
 
     display:grid;
-    grid-row-gap:8px;
+    grid-column-gap:8px;
 }
 
 .tabBarHolder a {
