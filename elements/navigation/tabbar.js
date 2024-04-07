@@ -12,6 +12,7 @@ class TabBar extends HTMLElement {
         this.classList.add('tabBarHolder');
 
         if(this.hasAttribute('options')) {
+            console.log(this.getAttribute('options'))
             for(i of Object.keys(JSON.parse(this.getAttribute('options')))) {
                 alert(i)
                 let button = document.createElement('button');
