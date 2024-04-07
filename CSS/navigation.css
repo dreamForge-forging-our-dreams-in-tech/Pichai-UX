@@ -1,6 +1,6 @@
 .tabBarHolder {
-    border-width:1px;
-    padding:2px;
+    border-width:2px;
+    padding:3px;
 
     display:flex;
     flex-direction:row;
@@ -8,12 +8,12 @@
 
 .tabBarHolder a {
     background-color:var(--primary);
-    color:var(--primaryTextColor)
+    color:var(--primaryTextColor);
 
     text-decoration:none;
 
     height:19px;
     padding: 8px;
 
-    width:200px;
+    width:400px;
 }
