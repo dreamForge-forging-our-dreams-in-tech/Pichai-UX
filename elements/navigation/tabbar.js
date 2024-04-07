@@ -12,16 +12,18 @@ class TabBar extends HTMLElement {
         this.classList.add('tabBarHolder');
 
         if(this.hasAttribute('options')) {
-            let opt = JSON.parse(this.getAttribute('options'))
-            this.style.gridTemplateColumns = `repeat(` + Object.keys(opt).length + `, 1fr)`;
+            let opt = JSON.parse(this.getAttribute('options'));
+            let keys = Object.keys(opt);
+
+            this.style.gridTemplateColumns = `repeat(` + keys.length + `, 1fr)`;
             console.log(this.style)
 
-            for(i of Object.keys(opt)) {
+            for(i of keys) {
                 let button = document.createElement('a');
                 button.innerHTML = i;
                 button.href = opt[i];
 
-                if(i == Object.keys(opt)[0]) {
+                if(i == keys[0]) {
                     button.classList.add('current');
                 }
                 this.appendChild(button);
