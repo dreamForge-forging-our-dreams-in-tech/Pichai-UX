@@ -16,7 +16,6 @@ class TabBar extends HTMLElement {
             let keys = Object.keys(opt);
 
             this.style.gridTemplateColumns = `repeat(` + keys.length + `, 1fr)`;
-            console.log(this.style)
 
             for(i of keys) {
                 let button = document.createElement('a');
