@@ -4,5 +4,5 @@
 }
 
 .card input::placeholder {
-    var(--tertiaryTextColor);
+    color:var(--tertiaryTextColor);
 }
