@@ -6,6 +6,8 @@
     grid-column-gap:8px;
 
     border-radius:800px;
+
+    width:min-content;
 }
 
 .tabBarHolder a {
