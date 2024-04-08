@@ -23,9 +23,7 @@ class TabBar extends HTMLElement {
                 button.innerHTML = i;
                 button.href = opt[i];
 
-                console.log(button.href, window.location.href)
-
-                if(i.href == window.location.href) {
+                if(button.href == window.location.href) {
                     button.classList.add('current');
                 }
                 
