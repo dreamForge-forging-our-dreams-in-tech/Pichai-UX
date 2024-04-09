@@ -15,6 +15,10 @@ class PichaiUX {
     }
 
     async initialize() {
+        let styles = window.getComputedStyle(document.body)
+        document.documentElement.style.backgroundImage = styles.backgroundImage;
+        document.body.style.backgroundImage = '';
+
         let comp = window.getComputedStyle(document.body);
         let image = String(comp['backgroundImage']);
         image = image.substring(5, image.length - 2);
