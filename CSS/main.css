@@ -39,36 +39,54 @@ h1 {
     font-size: 2em;
 
     margin:8px;
+
+    background-color:var(--tertiary);
+    color:var(--tertiaryTextColor);
 }
 
 h2 {
     font-size: 1.5em;
 
     margin-top:8px;
+
+    background-color:var(--tertiary);
+    color:var(--tertiaryTextColor);
 }
 
 h3 {
     font-size: 1.3em;
 
     margin:8px;
+
+    background-color:var(--tertiary);
+    color:var(--tertiaryTextColor);
 }
 
 h4 {
     font-size: 1em;
 
     margin:8px;
+
+    background-color:var(--tertiary);
+    color:var(--tertiaryTextColor);
 }
 
 h5 {
     font-size: 0.8em;
 
     margin:8px;
+
+    background-color:var(--tertiary);
+    color:var(--tertiaryTextColor);
 }
 
 h6 {
     font-size: 0.7em;
 
     margin:8px;
+
+    background-color:var(--tertiary);
+    color:var(--tertiaryTextColor);
 }
 
 label{
