@@ -51,9 +51,9 @@ function getTextColor(color) {
 
   let i;
   let result = net.run({
-    r: r,
-    g: g,
-    b: b
+    r: r/255,
+    g: g/255,
+    b: b/255
   });
 
   for (i of Object.keys(result)) {
