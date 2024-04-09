@@ -19,7 +19,7 @@ class PichaiUX {
         document.documentElement.style.backgroundImage = styles.backgroundImage;
         document.body.style.backgroundImage = 'initial';
 
-        let comp = window.getComputedStyle(document.body);
+        let comp = window.getComputedStyle(document.documentElement);
         let image = String(comp['backgroundImage']);
         image = image.substring(5, image.length - 2);
 
