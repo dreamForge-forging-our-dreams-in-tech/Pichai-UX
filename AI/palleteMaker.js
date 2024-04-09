@@ -27,8 +27,8 @@ async function generate3ColorPallete(options) {
 
         const root = document.documentElement;
         root.style.setProperty('--primary', `rgb(${colors[1].toString()})`);
-        root.style.setProperty('--secondairy', `rgb(${colors[4].toString()})`);
-        root.style.setProperty('--tertiary', `rgb(${colors[9].toString()})`);
+        root.style.setProperty('--secondairy', `rgb(${colors[5].toString()})`);
+        root.style.setProperty('--tertiary', `rgb(${colors[0].toString()})`);
 
         root.style.setProperty('--primaryTextColor', getTextColor(colors[0]));
         root.style.setProperty('--secondairyTextColor', getTextColor(colors[4]));
