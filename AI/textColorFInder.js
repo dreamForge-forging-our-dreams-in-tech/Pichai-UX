@@ -14,6 +14,16 @@ net.train([{
 },
 {
   input: {
+    r: 0.04,
+    g: 0.4,
+    b: 0.5
+  },
+  output: {
+    white: 1
+  }
+},
+{
+  input: {
     r: 0.16,
     g: 0.09,
     b: 0.2
