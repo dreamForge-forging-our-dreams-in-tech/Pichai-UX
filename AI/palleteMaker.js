@@ -25,11 +25,10 @@ function getPallete(options) {
 async function generate3ColorPallete(options) {
         let colors = await getPallete(options);
 
-        // light mode should bo back to 0, 4, 9
         const root = document.documentElement;
-        root.style.setProperty('--primary', `rgb(${colors[1].toString()})`); 
-        root.style.setProperty('--secondairy', `rgb(${colors[5].toString()})`);
-        root.style.setProperty('--tertiary', `rgb(${colors[0].toString()})`);
+        root.style.setProperty('--primary', `rgb(${colors[0].toString()})`);
+        root.style.setProperty('--secondairy', `rgb(${colors[4].toString()})`);
+        root.style.setProperty('--tertiary', `rgb(${colors[9].toString()})`);
 
         root.style.setProperty('--primaryTextColor', getTextColor(colors[0]));
         root.style.setProperty('--secondairyTextColor', getTextColor(colors[4]));
