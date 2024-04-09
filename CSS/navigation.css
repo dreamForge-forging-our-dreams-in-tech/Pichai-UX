@@ -13,7 +13,7 @@
 .tabBarHolder a {
     background-color:TRANSPARENT;
 
-    color:var(--primary);
+    color:var(--primaryTextColor);
 
     border-width:2px;
 
