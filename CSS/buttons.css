@@ -65,7 +65,7 @@ display-profile {
     display:fixed;
     right:8px;
     bottom:8px;
-    
+
     border-radius:10px;
 
     width:max-content;
@@ -74,8 +74,6 @@ display-profile {
     margin-top:auto;
     margin-bottom:auto;
     margin-left:auto;
-    
-    display:block;
 
     background-color:var(--secondairy);
 
