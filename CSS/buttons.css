@@ -60,3 +60,7 @@ display-profile {
     line-height:36px !important;
     text-align:center;
 }
+
+.fab {
+    border-radius:10px;
+}
