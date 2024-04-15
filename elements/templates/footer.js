@@ -8,9 +8,10 @@ class Footer extends HTMLElement {
     async connectedCallback() {
         this.innerHTML = `<footer>
         <x-icon></x-icon>
-        <x-title></x-title>
-        <log-in></log-in>
-        <display-profile></display-profile>
+        <company-sketch></company-sketch>
+        <icon-discord></icon-discord>
+        <icon-youtube></icon-youtube>
+        <icon-X></icon-X>
     </footer>`;
     }
 }
