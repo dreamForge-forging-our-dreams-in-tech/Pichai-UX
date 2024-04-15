@@ -63,4 +63,21 @@ display-profile {
 
 .fab {
     border-radius:10px;
+
+    width:max-content;
+    height:19px;
+
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-left:auto;
+    
+    display:block;
+
+    background-color:var(--secondairy);
+
+    line-height: 20px;
+
+    padding: 8px;
+
+    color:var(--primaryTextColor);
 }
