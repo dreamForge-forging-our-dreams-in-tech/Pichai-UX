@@ -62,6 +62,10 @@ display-profile {
 }
 
 .fab {
+    display:fixed;
+    right:8px;
+    bottom:8px;
+    
     border-radius:10px;
 
     width:max-content;
