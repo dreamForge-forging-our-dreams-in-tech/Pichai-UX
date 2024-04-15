@@ -62,22 +62,22 @@ display-profile {
 }
 
 .fab {
-    display:fixed;
+    display:block;
+
+    position:fixed;
     right:8px;
     bottom:8px;
 
     border-radius:10px;
 
     width:max-content;
-    height:19px;
+    height:max-content;
 
     margin-top:auto;
     margin-bottom:auto;
     margin-left:auto;
 
     background-color:var(--secondairy);
-
-    line-height: 20px;
 
     padding: 8px;
 
