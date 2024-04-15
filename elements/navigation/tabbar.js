@@ -11,22 +11,13 @@ class TabBar extends HTMLElement {
 
         this.classList.add('tabBarHolder');
 
-        if(this.hasAttribute('options')) {
-            let opt = JSON.parse(this.getAttribute('options'));
-            let keys = Object.keys(opt);
+        let keys = this.children;
 
-            this.style.gridTemplateColumns = `repeat(` + keys.length + `, 1fr)`;
+        this.style.gridTemplateColumns = `repeat(` + keys.length + `, 1fr)`;
 
-            for(i of keys) {
-                let button = document.createElement('a');
-                button.innerHTML = i;
-                button.href = opt[i];
-
-                if(button.href == window.location.href) {
-                    button.classList.add('current');
-                }
-                
-                this.appendChild(button);
+        for (i of keys) {
+            if (button.href == window.location.href) {
+                button.classList.add('current');
             }
         }
     }
