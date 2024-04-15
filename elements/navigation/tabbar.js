@@ -16,8 +16,8 @@ class TabBar extends HTMLElement {
         this.style.gridTemplateColumns = `repeat(` + keys.length + `, 1fr)`;
 
         for (i of keys) {
-            if (button.href == window.location.href) {
-                button.classList.add('current');
+            if (i.href == window.location.href) {
+                i.classList.add('current');
             }
         }
     }
