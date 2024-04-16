@@ -9,8 +9,9 @@ class Footer extends HTMLElement {
         this.innerHTML = `<footer>
         <x-icon></x-icon>
         <x-title></x-title>
-        <log-in></log-in>
-        <display-profile></display-profile>
+        <icon-discord></icon-discord>
+        <icon-youtube></icon-youtube>
+        <icon-X></icon-X>
     </footer>`;
     }
 }
