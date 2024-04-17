@@ -1,5 +1,12 @@
 import './Brain.js';
 
+function roundTo(n, digits) {
+  const multiplicator = Math.pow(10, digits);
+  n = parseFloat((n * multiplicator).toFixed(11));
+  const rounded = Math.round(n) / multiplicator;
+  return +rounded.toFixed(digits);
+}
+
 var net = new brain.NeuralNetwork();
 
 net.train([{
@@ -71,9 +78,9 @@ function getTextColor(color) {
 
   let i;
   console.log({
-    r: Math.round(r * 100) / 100,
-    g: Math.round(g * 100) / 100,
-    b: Math.round(b * 100) / 100
+    r: roundTo(r, 2),
+    g: roundTo(g, 2),
+    b: roundTo(b, 2)
   })
 
   let result = net.run({
