@@ -62,7 +62,7 @@ class PichaiUX {
         return await generateDynamicIcon(icon);
     }
 
-    optimseTextColor() {
+    optimiseTextColor() {
         let elements = document.getElementsByTagName('*');
         let i;
         
@@ -70,7 +70,7 @@ class PichaiUX {
             let rgb = window.getComputedStyle(i)['background-color'];
             rgb = rgb.replaceAll('a', '').substring(4, rgb.length).replaceAll(')', '');
             rgb = rgb.split(',');
-            
+
             console.log(rgb)
             i.style.color = getTextColor(rgb);
         }
