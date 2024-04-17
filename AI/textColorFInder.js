@@ -61,16 +61,6 @@ net.train([{
   output: {
     black: 1
   }
-},
-{
-  input: {
-    r: 1.0,
-    g: 1.0,
-    b: 1.0
-  },
-  output: {
-    black: 1
-  }
 }
 ]);
 
@@ -81,9 +71,9 @@ function getTextColor(color) {
 
   let i;
   let result = net.run({
-    r: r/255,
-    g: g/255,
-    b: b/255
+    r: 1.0,
+    g: 1.0,
+    b: 1.0
   });
 
   for (i of Object.keys(result)) {
