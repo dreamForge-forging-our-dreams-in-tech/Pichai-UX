@@ -59,7 +59,7 @@ net.train([{
     b: 253/255
   },
   output: {
-    white: 1
+    black: 1
   }
 }
 ]);
