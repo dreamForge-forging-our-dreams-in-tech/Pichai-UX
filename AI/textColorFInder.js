@@ -77,15 +77,14 @@ function getTextColor(color) {
   })
 
   let result = net.run({
-    r: (r / 255).toFixed(2),
-    g: (g / 255).toFixed(2),
-    b: (b / 255).toFixed(2)
+    r: r.toFixed(2),
+    g: g.toFixed(2),
+    b: b.toFixed(2)
   });
 
   for (i of Object.keys(result)) {
     if (result[i] == Math.max(...Object.values(result))) {
       return i;
-      break;
     }
   }
 }
