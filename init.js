@@ -1,5 +1,6 @@
 import { generate3ColorPallete } from "./AI/palleteMaker.js";
 import { generateDynamicIcon } from './elements/images/logo.js';
+import { getTextColor } from './AI/textColorFInder.js';
 
 class PichaiUX {
     constructor(options = {
@@ -59,6 +60,16 @@ class PichaiUX {
 
     async generateDynamicIcon(icon) {
         return await generateDynamicIcon(icon);
+    }
+
+    async optimseTextColor() {
+        let elements = document.getElementsByTagName('*');
+        let i;
+        
+        for (i of elements) {
+            let rgb = window.getComputedStyle(i)['background-color'];
+            i.style.color = await getTextColor(rgb);
+        }
     }
 }
 
