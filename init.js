@@ -71,9 +71,6 @@ class PichaiUX {
             rgb = rgb.replaceAll('a', '').substring(4, rgb.length).replaceAll(')', '');
             rgb = rgb.split(',');
 
-            console.log(i)
-            console.log(getTextColor(rgb))
-
             i.style.color = getTextColor(rgb);
         }
     }
