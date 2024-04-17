@@ -63,7 +63,7 @@ class PichaiUX {
     }
 
     async optimseTextColor() {
-        console.log(i)
+        console.log('lol')
         let elements = document.getElementsByTagName('*');
         let i;
         
