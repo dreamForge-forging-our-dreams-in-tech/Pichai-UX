@@ -61,6 +61,16 @@ net.train([{
   output: {
     black: 1
   }
+},
+{
+  input: {
+    r: 1.0,
+    g: 1.0,
+    b: 0.0
+  },
+  output: {
+    black: 1
+  }
 }
 ]);
 
@@ -78,7 +88,6 @@ function getTextColor(color) {
   });
 
   for (i of Object.keys(result)) {
-    console.log(i)
     if (result[i] == Math.max(...Object.values(result))) {
       return i;
     }
