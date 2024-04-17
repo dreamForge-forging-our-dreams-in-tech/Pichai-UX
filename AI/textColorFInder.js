@@ -70,14 +70,16 @@ function getTextColor(color) {
   let b = color[2];
 
   let i;
-  console.log({r: Math.floor(r/255),
-  g: Math.floor(g/255),
-  b: Math.floor(b/255)})
+  console.log({
+    r: (r / 255).toFixed(2),
+    g: (g / 255).toFixed(2),
+    b: (b / 255).toFixed(2)
+  })
 
   let result = net.run({
-    r: r/255,
-    g: g/255,
-    b: b/255
+    r: (r / 255).toFixed(2),
+    g: (g / 255).toFixed(2),
+    b: (b / 255).toFixed(2)
   });
 
   for (i of Object.keys(result)) {
