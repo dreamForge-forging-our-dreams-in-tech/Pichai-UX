@@ -70,9 +70,10 @@ function getTextColor(color) {
   let b = color[2];
 
   let i;
-  console.log({r: r/255,
-  g: g/255,
-  b: b/255})
+  console.log({r: Math.floor(r/255),
+  g: Math.floor(g/255),
+  b: Math.floor(b/255)})
+
   let result = net.run({
     r: r/255,
     g: g/255,
