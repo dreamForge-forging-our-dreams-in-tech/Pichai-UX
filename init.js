@@ -62,15 +62,17 @@ class PichaiUX {
         return await generateDynamicIcon(icon);
     }
 
-    async optimseTextColor() {
+    optimseTextColor() {
         let elements = document.getElementsByTagName('*');
         let i;
         
         for (i of elements) {
             let rgb = window.getComputedStyle(i)['background-color'];
-            rgb = rgb.replaceAll('a', '').substring(4, rgb.length - 1);
+            rgb = rgb.replaceAll('a', '').substring(4, rgb.length).replaceAll(')', '');
+            rgb = rgb.split(',');
+            
             console.log(rgb)
-            i.style.color = await getTextColor(rgb);
+            i.style.color = getTextColor(rgb);
         }
     }
 }
