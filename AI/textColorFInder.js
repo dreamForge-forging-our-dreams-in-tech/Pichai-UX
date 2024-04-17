@@ -44,9 +44,9 @@ net.train([{
 },
 {
   input: {
-    r: 0.2,
-    g: 0.4,
-    b: 0.6
+    r: 0.24,
+    g: 0.44,
+    b: 0.55
   },
   output: {
     white: 1
