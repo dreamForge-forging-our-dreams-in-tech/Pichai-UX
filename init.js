@@ -63,11 +63,11 @@ class PichaiUX {
     }
 
     async optimseTextColor() {
-        console.log('lol')
         let elements = document.getElementsByTagName('*');
         let i;
         
         for (i of elements) {
+            console.log(i)
             let rgb = window.getComputedStyle(i)['background-color'];
             i.style.color = await getTextColor(rgb);
         }
