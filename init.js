@@ -68,7 +68,7 @@ class PichaiUX {
         
         for (i of elements) {
             let rgb = window.getComputedStyle(i)['background-color'];
-            console.log(await getTextColor(rgb))
+            console.log(rgb)
             i.style.color = await getTextColor(rgb);
         }
     }
