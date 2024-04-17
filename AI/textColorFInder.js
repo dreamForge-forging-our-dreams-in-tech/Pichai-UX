@@ -117,7 +117,6 @@ function getTextColor(color) {
     b: (b / 255).toFixed(2)
   });
 
-  console.log(result);
   for (i of Object.keys(result)) {
     if (result[i] == Math.max(...Object.values(result))) {
       return i;
