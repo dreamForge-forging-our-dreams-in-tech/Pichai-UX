@@ -41,6 +41,16 @@ net.train([{
   output: {
     white: 1
   }
+},
+{
+  input: {
+    r: 61/255,
+    g: 111/255,
+    b: 141/255
+  },
+  output: {
+    white: 1
+  }
 }
 ]);
 
