@@ -70,11 +70,6 @@ function getTextColor(color) {
   let b = color[2];
 
   let i;
-  console.log({
-    r: (r / 255).toFixed(2),
-    g: (g / 255).toFixed(2),
-    b: (b / 255).toFixed(2)
-  })
 
   let result = net.run({
     r: (r / 255).toFixed(2),
@@ -83,6 +78,7 @@ function getTextColor(color) {
   });
 
   for (i of Object.keys(result)) {
+    console.log(i)
     if (result[i] == Math.max(...Object.values(result))) {
       return i;
     }
