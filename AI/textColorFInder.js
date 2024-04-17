@@ -54,9 +54,9 @@ net.train([{
 },
 {
   input: {
-    r: 1.0,
-    g: 1.0,
-    b: 1.0
+    r: 1.00,
+    g: 1.00,
+    b: 1.00
   },
   output: {
     black: 1
@@ -64,9 +64,9 @@ net.train([{
 },
 {
   input: {
-    r: 1.0,
-    g: 1.0,
-    b: 0.0
+    r: 1.00,
+    g: 1.00,
+    b: 0.00
   },
   output: {
     black: 1
