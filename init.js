@@ -64,13 +64,15 @@ class PichaiUX {
 
     optimiseTextColor() {
         let elements = document.getElementsByTagName('*');
-        console.log(elements)
         let i;
         
         for (i of elements) {
             let rgb = window.getComputedStyle(i)['background-color'];
             rgb = rgb.replaceAll('a', '').substring(4, rgb.length).replaceAll(')', '');
             rgb = rgb.split(',');
+
+            console.log(i)
+            console.log(rgb)
 
             i.style.color = getTextColor(rgb);
         }
