@@ -14,7 +14,7 @@ log-in {
 
     padding: 8px;
 
-    color:var(--primaryTextColor);
+    color:var(--secondairyTextColor);
 }
 
 button {
@@ -35,7 +35,7 @@ button {
 
     padding: 8px;
 
-    color:var(--primaryTextColor);
+    color:var(--secondairyTextColor);
 }
 
 display-profile {
@@ -79,5 +79,5 @@ display-profile {
 
     padding: 8px;
 
-    color:var(--primaryTextColor);
+    color:var(--secondairyTextColor);
 }
