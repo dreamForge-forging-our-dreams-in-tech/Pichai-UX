@@ -71,9 +71,9 @@ function getTextColor(color) {
 
   let i;
   console.log({
-    r: (r / 255).toFixed(2),
-    g: (g / 255).toFixed(2),
-    b: (b / 255).toFixed(2)
+    r: Math.round(r * 100) / 100,
+    g: Math.round(g * 100) / 100,
+    b: Math.round(b * 100) / 100
   })
 
   let result = net.run({
