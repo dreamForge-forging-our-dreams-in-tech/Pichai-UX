@@ -71,7 +71,7 @@ net.train([{
   output: {
     black: 1
   }
-},,
+},
 {
   input: {
     r: 1.0,
