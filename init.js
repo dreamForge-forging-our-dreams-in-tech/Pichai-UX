@@ -62,8 +62,8 @@ class PichaiUX {
         return await generateDynamicIcon(icon);
     }
 
-    optimiseTextColor() {
-        let elements = document.getElementsByTagName('*');
+    optimizeTextColor(el = document) {
+        let elements = el.getElementsByTagName('*');
         let i;
         
         for (i of elements) {
