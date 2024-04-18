@@ -10,11 +10,10 @@ class ViewPager extends HTMLElement {
         let i;
 
         for(i of this.children) {
+            if(this.children[0] == i) {} else {
             i.style.visibility = 'hidden';
+            }
         }
-
-        console.log(this.children[0])
-        this.children[0].visibility = 'visible';
 
         this.onwheel = function (e) {
             console.log(e)
