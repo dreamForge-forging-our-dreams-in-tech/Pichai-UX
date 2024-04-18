@@ -33,3 +33,14 @@
     background-color:var(--primary);
     color:var(--primaryTextColor);
 }
+
+view-pager * {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+view-pager:first-child {
+    display: block;
+  }
