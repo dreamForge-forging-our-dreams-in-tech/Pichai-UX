@@ -36,6 +36,9 @@ body, html {
     border-width:0px;
 
     text-align:center;
+
+    width:max-content;
+    height:max-content;
 }
 
 h1 {
