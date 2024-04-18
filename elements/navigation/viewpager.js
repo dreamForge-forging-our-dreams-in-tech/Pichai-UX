@@ -28,7 +28,7 @@ class ViewPager extends HTMLElement {
                 index = 0;
             }
 
-            if(index == 0 || index == children.length) {
+            if(index == children.length) {
                 index--;
             }
 
