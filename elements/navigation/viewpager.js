@@ -12,20 +12,20 @@ class ViewPager extends HTMLElement {
 
         for(i of this.children) {
             if(this.children[index] == i) {} else {
-            i.style.visibility = 'hidden';
+            i.style.display = 'none';
             }
         }
 
         this.onwheel = function (e) {
             console.log(e)
-            this.children[index].style.visibility = 'hidden';
+            this.children[index].style.display = 'none';
             if (e.deltaY == 100) {
                 index++;
             } else {
                 index--;
             }
             console.log(this.children[index])
-            this.children[index].style.visibility = 'visible';
+            this.children[index].style.removeProperty('display');
         }
     }
 }
