@@ -24,6 +24,7 @@ class ViewPager extends HTMLElement {
             } else {
                 index--;
             }
+            console.log(index)
             this.children[index].style.visibility = 'visible';
         }
     }
