@@ -17,16 +17,14 @@ class ViewPager extends HTMLElement {
         }
 
         this.onwheel = function (e) {
-            if(index == 0 || index == this.children.length) {} else {
             this.children[index].style.display = 'none';
-            if (e.deltaY == 100) {
+            if (e.deltaY == 100 && index != this.children.length) {
                 index++;
-            } else {
+            } else if(!index == 0) {
                 index--;
             }
             console.log(this.children[index])
             this.children[index].style.removeProperty('display');
-        }
         }
     }
 }
