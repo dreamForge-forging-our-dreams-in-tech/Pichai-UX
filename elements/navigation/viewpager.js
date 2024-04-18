@@ -28,10 +28,10 @@ class ViewPager extends HTMLElement {
                 index = 0;
             }
 
-            if(index == 0 || index == chidlren.length) {
+            if(index == 0 || index == children.length) {
                 index--;
             }
-            
+
             console.log(this.children[index])
             this.children[index].style.removeProperty('display');
         }
