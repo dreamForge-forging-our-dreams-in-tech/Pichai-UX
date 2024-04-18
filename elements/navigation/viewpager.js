@@ -18,7 +18,7 @@ class ViewPager extends HTMLElement {
 
         this.onwheel = function (e) {
             this.children[index].style.display = 'none';
-            if (e.deltaY == 100 && index != this.children.length) {
+            if (e.deltaY == 100 && !index == this.children.length) {
                 index++;
             } else if(!index == 0) {
                 index--;
