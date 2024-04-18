@@ -13,6 +13,7 @@ class ViewPager extends HTMLElement {
             i.style.visibility = 'hidden';
         }
 
+        console.log(this.children[0])
         this.children[0].visibility = 'visible';
 
         this.onwheel = function (e) {
