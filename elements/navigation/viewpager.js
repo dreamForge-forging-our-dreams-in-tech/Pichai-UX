@@ -29,7 +29,7 @@ class ViewPager extends HTMLElement {
                 index = this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1;
             }
 
-            if(index <= 0) {
+            if(index < 0) {
                 index = this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0;
             }
 
