@@ -13,6 +13,8 @@ class ViewPager extends HTMLElement {
         let wheelIndex = 0;
         let sensitivity = this.hasAttribute('sensitivity') ? Number(this.getAttribute('sensitivity')) : 4;
 
+        console.log(this.pageIndex)
+        
         for(i of this.children) {
             if(this.children[this.pageIndex] == i) {} else {
             i.style.display = 'none';
