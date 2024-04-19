@@ -16,11 +16,10 @@ class ViewPager extends HTMLElement {
         if(!this.hasAttribute('pageIndex')) {
             this.setAttribute('pageIndex', 0);
 
-            console.log(this.attributes.pageindex)
         }
-
+        
         for(i of this.children) {
-            if(this.children[this.attributes.pageIndex] == i) {} else {
+            if(this.children[this.getAttribute('pageIndex')] == i) {} else {
             i.style.display = 'none';
             }
         }
@@ -31,33 +30,33 @@ class ViewPager extends HTMLElement {
             if(wheelIndex == sensitivity) {
                 wheelIndex = 0;
 
-                this.children[this.attributes.pageIndex].style.display = 'none';
+                this.children[this.getAttribute('pageIndex')].style.display = 'none';
                 if (e.deltaY == 100) {
-                    this.attributes.pageIndex = this.attributes.pageIndex + 1;
+                    this.setAttribute('pageIndex', this.getAttribute('pageIndex') + 1);
                 } else {
-                    this.attributes.pageIndex = this.attributes.pageIndex - 1;
+                    this.setAttribute('pageIndex', this.getAttribute('pageIndex') - 1);
                 }
     
-                if(this.attributes.pageIndex >= this.children.length - 1) {
-                    this.attributes.pageIndex = this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1;
+                if(this.getAttribute('pageIndex') >= this.children.length - 1) {
+                    this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1);
                 }
     
-                if(this.attributes.pageIndex < 0) {
-                    this.attributes.pageIndex = this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0;
+                if(this.getAttribute('pageIndex') < 0) {
+                    this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0);
                 }
     
-                this.children[this.attributes.pageIndex].style.removeProperty('display');
+                this.children[this.getAttribute('pageIndex')].style.removeProperty('display');
             }
         }
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
-            if(this.attributes.pageIndex >= this.children.length - 1) {
-                this.attributes.pageIndex = this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1;
+            if(this.getAttribute('pageIndex') >= this.children.length - 1) {
+                this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1);
             }
 
-            if(this.attributes.pageIndex < 0) {
-                this.attributes.pageIndex = this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0;
+            if(this.getAttribute('pageIndex') < 0) {
+                this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0);
             }
 
             this.children[oldValue].style.display = 'none';
