@@ -16,6 +16,13 @@ class ViewPager extends HTMLElement {
             }
         }
 
+        this.showPage = function (page) {
+            this.children[index].style.display = 'none';
+            index = page;
+
+            this.children[index].style.removeProperty('display');
+        }
+
         this.onwheel = function (e) {
 
             this.children[index].style.display = 'none';
