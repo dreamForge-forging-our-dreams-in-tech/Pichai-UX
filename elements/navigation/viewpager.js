@@ -10,7 +10,6 @@ class ViewPager extends HTMLElement {
         let i;
         let index = 0;
         let wheelIndex = 0;
-
         let sensitivity = this.hasAttribute('sensitivity') ? Number(this.getAttribute('sensitivity')) : 4;
 
         for(i of this.children) {
@@ -18,8 +17,6 @@ class ViewPager extends HTMLElement {
             i.style.display = 'none';
             }
         }
-
-        this.pageChanged = function () {}
 
         this.showPage = function (page) {
             this.children[index].style.display = 'none';
@@ -51,7 +48,7 @@ class ViewPager extends HTMLElement {
     
                 console.log(this.children[index])
                 this.children[index].style.removeProperty('display');
-                this.pageChanged(index, this.children[index]);
+                //this.pageChanged(index, this.children[index]);
             }
         }
         }
