@@ -1,7 +1,7 @@
 
 // Create a class for the element
 class ViewPager extends HTMLElement {
-    static observedAttributes = ["pageIndex"];
+    static observedAttributes = ["pageindex"];
 
     constructor() {
         // Always call super first in constructor
