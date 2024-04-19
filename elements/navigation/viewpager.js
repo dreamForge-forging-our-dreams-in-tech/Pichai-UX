@@ -30,33 +30,23 @@ class ViewPager extends HTMLElement {
             if(wheelIndex == sensitivity) {
                 wheelIndex = 0;
 
-                //this.children[this.getAttribute('pageIndex')].style.display = 'none';
                 if (e.deltaY == 100) {
                     this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex') + 1));
                 } else {
                     this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex') - 1));
                 }
-    
-                if(Number(this.getAttribute('pageIndex')) >= this.children.length - 1) {
-                    this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1);
-                }
-    
-                if(Number(this.getAttribute('pageIndex')) < 0) {
-                    this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0);
-                }
-    
-                //this.children[this.getAttribute('pageIndex')].style.removeProperty('display');
+
             }
         }
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
-            if(this.getAttribute('pageIndex') >= this.children.length - 1) {
-                this.setAttribute('pageIndex', Number(this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1));
+            if(Number(this.getAttribute('pageIndex')) >= this.children.length - 1) {
+                this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1);
             }
 
-            if(this.getAttribute('pageIndex') < 0) {
-                this.setAttribute('pageIndex', Number(this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0));
+            if(Number(this.getAttribute('pageIndex')) < 0) {
+                this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0);
             }
 
             this.children[oldValue].style.display = 'none';
