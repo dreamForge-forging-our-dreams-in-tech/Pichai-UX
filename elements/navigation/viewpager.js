@@ -16,7 +16,7 @@ class ViewPager extends HTMLElement {
         if(!this.hasAttribute('pageIndex')) {
             this.setAttribute('pageIndex', 0);
 
-            alert(this.attributes.pageindex)
+            console.log(this.attributes.pageindex)
         }
 
         for(i of this.children) {
