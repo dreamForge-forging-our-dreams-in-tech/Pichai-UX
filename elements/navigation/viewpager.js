@@ -21,12 +21,16 @@ class ViewPager extends HTMLElement {
             this.children[index].style.display = 'none';
             if (e.deltaY == 100) {
                 index++;
-            } else if(!index == 0) {
+            } else {
                 index--;
             }
+
             if(index >= this.children.length - 1) {
-                index = this.children.length - 1
-                console.log(index)
+                index = this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1;
+            }
+
+            if(index <= 0) {
+                index = this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0;
             }
 
             console.log(this.children[index])
