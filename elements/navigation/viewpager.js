@@ -50,7 +50,6 @@ class ViewPager extends HTMLElement {
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
-            console.log(this.pageIndex)
             if(this.pageIndex >= this.children.length - 1) {
                 this.pageIndex = this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1;
             }
@@ -61,7 +60,7 @@ class ViewPager extends HTMLElement {
 
             this.children[oldValue].style.display = 'none';
 
-            this.children[newValue].style.removeProperty('display');
+            this.children[this.pageIndex].style.removeProperty('display');
           }
     }
 
