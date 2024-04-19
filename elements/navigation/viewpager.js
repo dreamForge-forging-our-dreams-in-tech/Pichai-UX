@@ -31,9 +31,9 @@ class ViewPager extends HTMLElement {
 
                 this.children[this.pageIndex].style.display = 'none';
                 if (e.deltaY == 100) {
-                    this.pageIndex++;
+                    this.pageIndex = this.pageIndex + 1;
                 } else {
-                    this.pageIndex--;
+                    this.pageIndex = this.pageIndex - 1;
                 }
     
                 if(this.pageIndex >= this.children.length - 1) {
