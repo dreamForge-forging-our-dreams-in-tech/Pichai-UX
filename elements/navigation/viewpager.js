@@ -9,6 +9,7 @@ class ViewPager extends HTMLElement {
     connectedCallback() {
         let i;
         let index = 0;
+        let wheelIndex = 0;
 
         for(i of this.children) {
             if(this.children[index] == i) {} else {
@@ -24,24 +25,28 @@ class ViewPager extends HTMLElement {
         }
 
         this.onwheel = function (e) {
+            wheelIndex++;
+            if(wheelIndex == 3) {
+                wheelIndex = 0;
 
-            this.children[index].style.display = 'none';
-            if (e.deltaY == 100) {
-                index++;
-            } else {
-                index--;
+                this.children[index].style.display = 'none';
+                if (e.deltaY == 100) {
+                    index++;
+                } else {
+                    index--;
+                }
+    
+                if(index >= this.children.length - 1) {
+                    index = this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1;
+                }
+    
+                if(index < 0) {
+                    index = this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0;
+                }
+    
+                console.log(this.children[index])
+                this.children[index].style.removeProperty('display');
             }
-
-            if(index >= this.children.length - 1) {
-                index = this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1;
-            }
-
-            if(index < 0) {
-                index = this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0;
-            }
-
-            console.log(this.children[index])
-            this.children[index].style.removeProperty('display');
         }
         }
     }
