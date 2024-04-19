@@ -24,9 +24,12 @@ class ViewPager extends HTMLElement {
             } else if(!index == 0) {
                 index--;
             }
+            if(index == this.children.length - 1) {
+                console.log(end)
+            }
             console.log(index)
             console.log(this.children.length - 1)
-            
+
             console.log(this.children[index])
             this.children[index].style.removeProperty('display');
         }
