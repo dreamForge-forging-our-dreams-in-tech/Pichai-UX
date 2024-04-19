@@ -29,7 +29,7 @@ class ViewPager extends HTMLElement {
             if(wheelIndex == sensitivity) {
                 wheelIndex = 0;
 
-                //this.children[this.pageIndex].style.display = 'none';
+                this.children[this.pageIndex].style.display = 'none';
                 if (e.deltaY == 100) {
                     this.pageIndex = this.pageIndex + 1;
                 } else {
@@ -44,12 +44,20 @@ class ViewPager extends HTMLElement {
                     this.pageIndex = this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0;
                 }
     
-                //this.children[this.pageIndex].style.removeProperty('display');
+                this.children[this.pageIndex].style.removeProperty('display');
             }
         }
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
+            if(this.pageIndex >= this.children.length - 1) {
+                this.pageIndex = this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1;
+            }
+
+            if(this.pageIndex < 0) {
+                this.pageIndex = this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0;
+            }
+
             this.children[oldValue].style.display = 'none';
 
             this.children[newValue].style.removeProperty('display');
