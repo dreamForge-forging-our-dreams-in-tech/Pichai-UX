@@ -38,11 +38,11 @@ class ViewPager extends HTMLElement {
                 }
     
                 if(Number(this.getAttribute('pageIndex')) >= this.children.length - 1) {
-                    this.setAttribute('pageIndex', Number(this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1));
+                    this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1);
                 }
     
                 if(Number(this.getAttribute('pageIndex')) < 0) {
-                    this.setAttribute('pageIndex', Number(this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0));
+                    this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0);
                 }
     
                 //this.children[this.getAttribute('pageIndex')].style.removeProperty('display');
