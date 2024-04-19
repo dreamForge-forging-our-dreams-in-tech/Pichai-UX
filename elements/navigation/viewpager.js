@@ -25,7 +25,7 @@ class ViewPager extends HTMLElement {
                 index--;
             }
             if(index == this.children.length - 1) {
-                console.log(end)
+                index = this.children.length - 1
             }
             console.log(index)
             console.log(this.children.length - 1)
