@@ -24,11 +24,13 @@ class ViewPager extends HTMLElement {
             } else if(!index == 0) {
                 index--;
             }
+            console.log(index)
+            console.log(this.children.length - 1)
+            
             console.log(this.children[index])
             this.children[index].style.removeProperty('display');
         }
         }
     }
-}
 
 customElements.define("view-pager", ViewPager);  
