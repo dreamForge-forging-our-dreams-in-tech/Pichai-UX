@@ -19,6 +19,8 @@ class ViewPager extends HTMLElement {
             }
         }
 
+        this.pageChanged = function () {}
+
         this.showPage = function (page) {
             this.children[index].style.display = 'none';
             index = page;
@@ -49,6 +51,7 @@ class ViewPager extends HTMLElement {
     
                 console.log(this.children[index])
                 this.children[index].style.removeProperty('display');
+                this.pageChanged(index, this.children[index]);
             }
         }
         }
