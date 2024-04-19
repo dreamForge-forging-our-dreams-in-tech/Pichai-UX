@@ -14,16 +14,9 @@ class ViewPager extends HTMLElement {
         let sensitivity = this.hasAttribute('sensitivity') ? Number(this.getAttribute('sensitivity')) : 4;
 
         for(i of this.children) {
-            if(this.children[index] == i) {} else {
+            if(this.children[this.pageIndex] == i) {} else {
             i.style.display = 'none';
             }
-        }
-
-        this.showPage = function (page) {
-            this.children[index].style.display = 'none';
-            index = page;
-
-            this.children[index].style.removeProperty('display');
         }
 
         this.onwheel = function (e) {
