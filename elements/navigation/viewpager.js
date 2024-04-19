@@ -51,7 +51,6 @@ class ViewPager extends HTMLElement {
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
-            alert()
             if(this.getAttribute('pageIndex') >= this.children.length - 1) {
                 this.setAttribute('pageIndex', Number(this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1));
             }
