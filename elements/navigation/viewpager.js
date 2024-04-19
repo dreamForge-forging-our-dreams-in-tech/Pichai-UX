@@ -29,7 +29,7 @@ class ViewPager extends HTMLElement {
         this.onwheel = function (e) {
             wheelIndex++;
 
-            if(wheelIndex == ) {
+            if(wheelIndex == sensitivity) {
                 wheelIndex = 0;
 
                 this.children[index].style.display = 'none';
