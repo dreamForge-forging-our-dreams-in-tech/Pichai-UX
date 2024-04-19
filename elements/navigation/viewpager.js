@@ -58,6 +58,7 @@ class ViewPager extends HTMLElement {
                 this.pageIndex = this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0;
             }
 
+            alert(oldValue)
             this.children[oldValue].style.display = 'none';
 
             this.children[this.pageIndex].style.removeProperty('display');
