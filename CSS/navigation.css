@@ -7,7 +7,7 @@
 
     border-radius:800px;
 
-    width:min-content;
+    width:max-content;
 }
 
 .tabBarHolder a {
@@ -49,5 +49,5 @@ view-pager:first-child {
 
   .verticalTabbar a {
     max-width:12px;
-    height:min-content;
+    height:max-content;
   }
