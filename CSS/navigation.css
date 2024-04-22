@@ -49,4 +49,5 @@ view-pager:first-child {
 
   .verticalTabbar a {
     max-width:12px;
+    height:min-content;
   }
