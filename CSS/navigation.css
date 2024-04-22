@@ -42,3 +42,11 @@ view-pager {
 view-pager:first-child {
     display: block;
   }
+
+  .verticalTabbar {
+    writing-mode: vertical-rl;
+  }
+
+  .verticalTabbar a {
+    ,ax-width:12px;
+  }
