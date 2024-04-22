@@ -29,7 +29,11 @@ class TabBar extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-
+        if(this.getAttribute('direction') == 'vertical') {
+            this.classList.add('verticalTabbar');
+        } else {
+            this.classList.remove('verticalTabbar');
+        }
       }
 }
 
