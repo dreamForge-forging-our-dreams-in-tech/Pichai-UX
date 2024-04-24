@@ -1,12 +1,15 @@
 .card {
     background-color:var(--primary);
 
+    color:var(--primaryTextColor);
     
     overflow:auto;
 }
 
 .card .card {
     background-color:var(--tertiary);
+
+    color:var(--tertiaryTextColor)
 }
 
 .card .card * {
