@@ -4,36 +4,24 @@ import { getTextColor } from './textColorFInder.js';
 
 import { PichaiUX } from '../init.js';
 
-function hslToRgb(h, s, l) {
-    h = h / 100;
-    s = s / 100;
-    l = l / 100;
+function hslToHex(h, s, l) {
+    l /= 100;
+    const a = s * Math.min(l, 1 - l) / 100;
+    const f = n => {
+      const k = (n + h / 30) % 12;
+      const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+      return Math.round(255 * color).toString(16).padStart(2, '0');   // convert to Hex and prefix "0" if needed
+    };
+    return `#${f(0)}${f(8)}${f(4)}`;
+  }
 
-    let r, g, b;
-
-    if (s === 0) {
-        r = g = b = l; // achromatic
-    } else {
-        const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-        const p = 2 * l - q;
-        r = hueToRgb(p, q, h + 1 / 3);
-        g = hueToRgb(p, q, h);
-        b = hueToRgb(p, q, h - 1 / 3);
-
-        console.log(r)
-    }
-
-    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
-}
-
-function hueToRgb(p, q, t) {
-    if (t < 0) t += 1;
-    if (t > 1) t -= 1;
-    if (t < 1 / 6) return p + (q - p) * 6 * t;
-    if (t < 1 / 2) return q;
-    if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-    return p;
-}
+  function rgbToHex(value) {
+    let r = value.split(',')[0];
+    let g = value.split(',')[1];
+    let b = value.split(',')[2];
+  
+    return "#" + (1 << 24 | r << 16 | g << 8 | b).toString(16).slice(1);
+  }
 
 function RGBToHSL(value) {
     let r = value[0];
@@ -118,7 +106,8 @@ function generateContainerTextColor (colors) {
     let newColors = [];
 
     for(i of colors) {
-        let rgb = hslToRgb(colors[0], colors[1], colors[2]);
+        let hsl = hslToHex(colors[0], colors[1], colors[2])
+        let rgb = rgbToHex(hsl[0], hsl[1], hsl[2]);
 
         console.log(rgb)
 
