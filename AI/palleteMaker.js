@@ -19,6 +19,8 @@ function hslToRgb(h, s, l) {
         r = hueToRgb(p, q, h + 1 / 3);
         g = hueToRgb(p, q, h);
         b = hueToRgb(p, q, h - 1 / 3);
+
+        console.log(r)
     }
 
     return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
