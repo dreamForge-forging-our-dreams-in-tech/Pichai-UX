@@ -15,12 +15,9 @@ function hslToHex(h, s, l) {
     return `#${f(0)}${f(8)}${f(4)}`;
   }
 
-  function rgbToHex(value) {
-    let r = value.split(',')[0];
-    let g = value.split(',')[1];
-    let b = value.split(',')[2];
-  
-    return "#" + (1 << 24 | r << 16 | g << 8 | b).toString(16).slice(1);
+  function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? `rgb(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)})` : null;
   }
 
 function RGBToHSL(value) {
@@ -107,7 +104,7 @@ function generateContainerTextColor (colors) {
 
     for(i of colors) {
         let hsl = hslToHex(colors[0], colors[1], colors[2])
-        let rgb = rgbToHex(hsl[0], hsl[1], hsl[2]);
+        let rgb = hexToRgb(hsl[0]);
 
         console.log(rgb)
 
