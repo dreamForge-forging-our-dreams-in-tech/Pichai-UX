@@ -45,6 +45,7 @@ function RGBToHSL(value) {
     s = Math.round(s * 100);
     l = Math.round(l * 100);
 
+    console.log( `${h}, ${s}, ${l}`)
   return `${h}, ${s}, ${l}`;
 }
 
