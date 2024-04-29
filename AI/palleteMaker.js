@@ -148,6 +148,5 @@ async function generate3ColorPallete(options) {
         root.style.setProperty('--secondairyContainerTextColor', `hsl(${hls[position + 4].toString()})`);
         root.style.setProperty('--tertiaryContainerTextColor', `hsl(${hls[position + 9].toString()})`);
 }
-}
 
 export { generate3ColorPallete };
