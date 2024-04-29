@@ -9,9 +9,9 @@ function RGBToHSL(value) {
     let g = value[1];
     let b = value[2];
     // Make r, g, and b fractions of 1
-    r = rgb.r / 255;
-    g = rgb.g / 255;
-    b = rgb.b / 255;
+    r = r / 255;
+    g = g / 255;
+    b = b / 255;
 
     // Find greatest and smallest channel values
     const cmin = Math.min(r, g, b);
