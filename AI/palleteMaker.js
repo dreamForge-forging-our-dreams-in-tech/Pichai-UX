@@ -62,7 +62,7 @@ function generateContainerColor (colors) {
         console.log(hsl)
         let h = hsl[0];
         let s = hsl[1];
-        let l = hsl[2] + 17;
+        let l = Number(hsl[2]) + 17;
 
         newColors.push([h,s,l]);
     }
