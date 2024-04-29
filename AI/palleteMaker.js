@@ -58,7 +58,7 @@ function generateContainerColor (colors) {
     let newColors = [];
 
     for(i of colors) {
-        let hsl = RGBToHSL(i);
+        let hsl = RGBToHSL(i).split(',');
         console.log(hsl)
         let h = hsl[0];
         let s = hsl[1];
