@@ -5,9 +5,9 @@ import { getTextColor } from './textColorFInder.js';
 import { PichaiUX } from '../init.js';
 
 function RGBToHSL(value) {
-    let r = value.split(',')[0];
-    let g = value.split(',')[1];
-    let b = value.split(',')[2];
+    let r = value[0];
+    let g = value[1];
+    let b = value[2];
     // Make r, g, and b fractions of 1
 r /= 255;
 g /= 255;
@@ -57,7 +57,6 @@ function generateContainerColor (colors) {
     let i;
 
     for(i of colors) {
-        console.log(i)
         let hsl = RGBToHSL(i);
         console.log(hsl)
     }
