@@ -45,7 +45,7 @@ function RGBToHSL(value) {
     s = Math.round(s * 100);
     l = Math.round(l * 100);
 
-    console.log( `${h}, ${s}, ${l}`)
+    console.log(`${h}, ${s}, ${l}`)
   return `${h}, ${s}, ${l}`;
 }
 
@@ -75,8 +75,8 @@ function generateContainerColor (colors) {
         let hsl = RGBToHSL(i).split(',');
         console.log(hsl)
         let h = hsl[0];
-        let s = hsl[1];
-        let l = Number(hsl[2]) + 17;
+        let s = hsl[1] + '%';
+        let l = String(Number(hsl[2]) + 17) + '%';
 
         newColors.push([h,s,l]);
     }
