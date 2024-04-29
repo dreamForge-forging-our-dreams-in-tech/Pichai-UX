@@ -1,5 +1,4 @@
 .tabBarHolder {
-    border-width:2px;
     padding:3px;
 
     display:grid;
@@ -8,14 +7,14 @@
     border-radius:800px;
 
     width:max-content;
+
+    background-color:var(--primaryContainer);
 }
 
 .tabBarHolder a {
     background-color:TRANSPARENT;
 
     color:var(--primaryTextColor);
-
-    border-width:2px;
 
     text-decoration:none;
 
