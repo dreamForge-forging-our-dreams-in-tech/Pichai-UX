@@ -55,16 +55,24 @@ function getPallete(options) {
 
 function generateContainerColor (colors) {
     let i;
+    let newColors = [];
 
     for(i of colors) {
         let hsl = RGBToHSL(i);
         console.log(hsl)
+        let h = hsl[0];
+        let s = hsl[1];
+        let l = hsl[2] + 17;
+
+        newColors.push();
     }
 
+    return newColors;
 }
 
 async function generate3ColorPallete(options) {
         let colors = await getPallete(options);
+        console.log(colors)
 
         let position = options.extractionPosition;
 
