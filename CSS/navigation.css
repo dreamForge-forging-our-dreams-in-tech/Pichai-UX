@@ -8,7 +8,7 @@
 
     width:max-content;
 
-    background-color:var(--primaryContainer);
+    background-color:var(--primary);
 }
 
 .tabBarHolder a {
@@ -29,8 +29,8 @@
 }
 
 .tabBarHolder .current {
-    background-color:var(--primary);
-    color:var(--primaryTextColor);
+    background-color:var(--primaryContainer);
+    color:var(--primaryContainerTextColor);
 }
 
 view-pager {
