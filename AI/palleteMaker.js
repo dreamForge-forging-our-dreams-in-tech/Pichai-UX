@@ -64,7 +64,7 @@ function generateContainerColor (colors) {
         let s = hsl[1];
         let l = hsl[2] + 17;
 
-        newColors.push();
+        newColors.push([h,s,l]);
     }
 
     return newColors;
@@ -72,7 +72,6 @@ function generateContainerColor (colors) {
 
 async function generate3ColorPallete(options) {
         let colors = await getPallete(options);
-        console.log(colors)
 
         let position = options.extractionPosition;
 
