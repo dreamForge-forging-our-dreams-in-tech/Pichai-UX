@@ -5,6 +5,10 @@ import { getTextColor } from './textColorFInder.js';
 import { PichaiUX } from '../init.js';
 
 function hslToRgb(h, s, l) {
+    h = h / 100;
+    s = s / 100;
+    l = l / 100;
+
     let r, g, b;
 
     if (s === 0) {
