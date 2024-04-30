@@ -135,9 +135,9 @@ async function generate3ColorPallete(options) {
 
         let textColors = generateContainerTextColor(hls);
 
-        root.style.setProperty('--primaryContainerTextColor', `${hls[position].toString()}`);
-        root.style.setProperty('--secondairyContainerTextColor', `${hls[position + 4].toString()}`);
-        root.style.setProperty('--tertiaryContainerTextColor', `${hls[position + 9].toString()}`);
+        root.style.setProperty('--primaryContainerTextColor', `${textColors[position].toString()}`);
+        root.style.setProperty('--secondairyContainerTextColor', `${textColors[position + 4].toString()}`);
+        root.style.setProperty('--tertiaryContainerTextColor', `${textColors[position + 9].toString()}`);
 }
 
 export { generate3ColorPallete };
