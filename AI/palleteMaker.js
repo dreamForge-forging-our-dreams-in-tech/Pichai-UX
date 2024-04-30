@@ -99,6 +99,7 @@ function generateContainerColor (colors) {
 }
 
 function generateContainerTextColor (colors) {
+    console.clear();
     let i;
     let newColors = [];
 
