@@ -121,6 +121,12 @@ function getTextColor(color) {
 
   let i;
 
+  console.log({
+    r: (r / 255).toFixed(2),
+    g: (g / 255).toFixed(2),
+    b: (b / 255).toFixed(2)
+  });
+
   let result = net.run({
     r: (r / 255).toFixed(2),
     g: (g / 255).toFixed(2),
