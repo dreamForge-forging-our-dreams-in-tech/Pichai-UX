@@ -105,12 +105,9 @@ function generateContainerTextColor (colors) {
     for(i of colors) {
 
         let hsl = hslToHex(parseInt(i[0]), parseInt(i[1]), parseInt(i[2]));
-        console.log(hsl)
         let rgb = hexToRgb(hsl);
 
-        console.log(rgb)
-
-        newColors.push([h,s,l]);
+        newColors.push(rgb);
     }
 
     return newColors;
@@ -138,9 +135,9 @@ async function generate3ColorPallete(options) {
 
         let textColors = generateContainerTextColor(hls);
 
-        root.style.setProperty('--primaryContainerTextColor', `hsl(${hls[position].toString()})`);
-        root.style.setProperty('--secondairyContainerTextColor', `hsl(${hls[position + 4].toString()})`);
-        root.style.setProperty('--tertiaryContainerTextColor', `hsl(${hls[position + 9].toString()})`);
+        root.style.setProperty('--primaryContainerTextColor', `${hls[position].toString()}`);
+        root.style.setProperty('--secondairyContainerTextColor', `${hls[position + 4].toString()}`);
+        root.style.setProperty('--tertiaryContainerTextColor', `${hls[position + 9].toString()}`);
 }
 
 export { generate3ColorPallete };
