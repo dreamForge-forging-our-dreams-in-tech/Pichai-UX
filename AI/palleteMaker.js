@@ -114,8 +114,8 @@ function generateContainerTextColor (colors) {
 }
 
 async function generate3ColorPallete(options) {
-    console.log(options)
         let colors = await getPallete(options);
+        console.log(colors)
 
         let position = options.extractionPosition;
 
