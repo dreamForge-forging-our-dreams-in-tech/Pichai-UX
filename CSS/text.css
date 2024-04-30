@@ -10,13 +10,13 @@ x-title {
 
     border-radius:200px;
 
-    background-color:var(--primary);
+    background-color:var(--secondairy);
 
     line-height: 20px;
 
     padding: 8px;
 
-    color:var(--primaryTextColor);
+    color:var(--secondairyTextColor);
 }
 
 p {
