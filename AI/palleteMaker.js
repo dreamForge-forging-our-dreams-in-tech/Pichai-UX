@@ -103,8 +103,8 @@ function generateContainerTextColor (colors) {
     let newColors = [];
 
     for(i of colors) {
-        console.log(colors[1])
-        let hsl = hslToHex(colors[0], colors[1], colors[2]);
+
+        let hsl = hslToHex(parseInt(i[0]), parseInt(i[1]), parseInt(i[2]));
         console.log(hsl)
         let rgb = hexToRgb(hsl);
 
