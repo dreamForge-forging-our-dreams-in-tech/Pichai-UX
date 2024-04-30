@@ -17,7 +17,7 @@ function hslToHex(h, s, l) {
 
   function hexToRgb(hex) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? `rgb(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)})` : null;
+    return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : null;
   }
 
 function RGBToHSL(value) {
@@ -135,9 +135,9 @@ async function generate3ColorPallete(options) {
 
         let textColors = generateContainerTextColor(hls);
 
-        root.style.setProperty('--primaryContainerTextColor', `${getTextColor(textColors[position].toString())}`);
-        root.style.setProperty('--secondairyContainerTextColor', `${getTextColor(textColors[position + 4].toString())}`);
-        root.style.setProperty('--tertiaryContainerTextColor', `${getTextColor(textColors[position + 9].toString())}`);
+        root.style.setProperty('--primaryContainerTextColor', `rgb(${getTextColor(textColors[position].toString())})`);
+        root.style.setProperty('--secondairyContainerTextColor', `rgb(${getTextColor(textColors[position + 4].toString())})`);
+        root.style.setProperty('--tertiaryContainerTextColor', `rgb(${getTextColor(textColors[position + 9].toString())})`);
 }
 
 export { generate3ColorPallete };
