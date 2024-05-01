@@ -99,15 +99,12 @@ function generateContainerColor (colors) {
 }
 
 function generateContainerTextColor (colors) {
-    console.clear();
     let i;
     let newColors = [];
 
     for(i of colors) {
-
         let hsl = hslToHex(parseInt(i[0]), parseInt(i[1]), parseInt(i[2]));
         let rgb = hexToRgb(hsl);
-        console.log(rgb)
 
         newColors.push(rgb);
     }
