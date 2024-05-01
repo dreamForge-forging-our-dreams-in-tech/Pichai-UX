@@ -21,7 +21,7 @@ class TabBar extends HTMLElement {
             this.classList.add('verticalTabbar');
         }
 
-        if(this.getAttribute('for') != '') {
+        if(!this.getAttribute('for') == '') {
             addForConnection(this, this.getAttribute('for'));
         }
 
@@ -39,7 +39,7 @@ class TabBar extends HTMLElement {
             this.classList.remove('verticalTabbar');
         }
 
-        if(this.getAttribute('for') != '') {
+        if(!this.getAttribute('for') == '') {
             addForConnection(this, this.getAttribute('for'));
         } else {
             removeForConnection(this, this.getAttribute('for'));
