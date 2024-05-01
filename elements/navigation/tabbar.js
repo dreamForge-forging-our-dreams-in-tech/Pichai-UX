@@ -48,10 +48,22 @@ class TabBar extends HTMLElement {
 }
 
 function addForConnection(e, e2) {
-    console.log(typeof e2);
+    console.log(e2);
+
+    let element = document.getElementById(e2);
+
+    element.addEventListener('pageChange', (e) => {
+        const eventData = e; // Access the custom data
+        console.log(eventData);
+      });
 }
 
 function removeForConnection(e, e2) {
+    let element = document.getElementById(e2);
+
+    try {
+
+    } catch(e){}
 
 }
 
