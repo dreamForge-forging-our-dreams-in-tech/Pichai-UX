@@ -22,7 +22,7 @@ class TabBar extends HTMLElement {
         }
 
         if(this.getAttribute('for') != '') {
-            addForConnection();
+            addForConnection(this);
         }
 
         for (i of keys) {
@@ -40,11 +40,19 @@ class TabBar extends HTMLElement {
         }
 
         if(this.getAttribute('for') != '') {
-            addForConnection();
+            addForConnection(this);
         } else {
-            removeForConnection();
+            removeForConnection(this);
         }
       }
+}
+
+function addForConnection(e) {
+
+}
+
+function removeForConenction(e) {
+
 }
 
 customElements.define("tab-bar", TabBar);  
