@@ -57,7 +57,8 @@ class ViewPager extends HTMLElement {
             let pageChange = new Event("pageChange", { detail: {
                   page:  this.children[Number(this.getAttribute('pageIndex'))],
                   pageIndex: this.getAttribute('pageIndex'),
-            }});
+            },
+        });
             this.dispatchEvent(pageChange);
             
         }catch(e){}
