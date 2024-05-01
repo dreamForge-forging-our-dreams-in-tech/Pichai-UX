@@ -57,8 +57,7 @@ function addForConnection(e, e2) {
     let i;
 
     for (i of e.children) {
-        i.addEventListener('clcick', (e) => {
-            alert()
+        i.addEventListener('click', (e) => {
             e.stopPropagation();
             e.preventDefault();
 
