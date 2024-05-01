@@ -63,6 +63,8 @@ function addForConnection(e, e2) {
             e.stopPropagation();
             e.preventDefault();
 
+            console.log(i.getAttribute('index'))
+
             element.pageIndex = i.getAttribute('index');
         });
     }
