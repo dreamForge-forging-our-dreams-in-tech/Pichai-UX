@@ -1,4 +1,3 @@
-
 // Create a class for the element
 class ViewPager extends HTMLElement {
     static observedAttributes = ["pageindex"];
@@ -54,6 +53,12 @@ class ViewPager extends HTMLElement {
             this.children[oldValue].style.display = 'none';
 
             this.children[Number(this.getAttribute('pageIndex'))].style.removeProperty('display');
+
+            let pageChange = new Event("pageChange", {
+                  page:  this.children[Number(this.getAttribute('pageIndex'))],
+                  pageIndex: this.getAttribute('pageIndex'),
+              });
+            elem.dispatchEvent(pageChange);
             
         }catch(e){}
           }

@@ -21,6 +21,10 @@ class TabBar extends HTMLElement {
             this.classList.add('verticalTabbar');
         }
 
+        if(this.getAttribute('for') != '') {
+            addForConnection();
+        }
+
         for (i of keys) {
             if (i.href == window.location.href) {
                 i.classList.add('current');
@@ -33,6 +37,12 @@ class TabBar extends HTMLElement {
             this.classList.add('verticalTabbar');
         } else {
             this.classList.remove('verticalTabbar');
+        }
+
+        if(this.getAttribute('for') != '') {
+            addForConnection();
+        } else {
+            removeForConnection();
         }
       }
 }
