@@ -54,10 +54,10 @@ class ViewPager extends HTMLElement {
 
             this.children[Number(this.getAttribute('pageIndex'))].style.removeProperty('display');
 
-            let pageChange = new Event("pageChange", {
+            let pageChange = new Event("pageChange", { detail: {
                   page:  this.children[Number(this.getAttribute('pageIndex'))],
                   pageIndex: this.getAttribute('pageIndex'),
-              });
+            }});
             this.dispatchEvent(pageChange);
             
         }catch(e){}
