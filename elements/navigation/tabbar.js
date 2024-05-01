@@ -58,6 +58,7 @@ function addForConnection(e, e2) {
 
     for (i of e.children) {
         i.addEventListener('clcick', (e) => {
+            alert()
             e.stopPropagation();
             e.preventDefault();
 
