@@ -63,7 +63,7 @@ function addForConnection(e, e2) {
 
 
             let index;
-            for (index=0; (node=node.previousSibling); i++);
+            for (index=0; (i=i.previousSibling); i++);
             element.pageIndex = index;
         });
     }
