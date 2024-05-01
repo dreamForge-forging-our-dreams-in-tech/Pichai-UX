@@ -59,14 +59,14 @@ function addForConnection(e, e2) {
     let i;
 
     for (i of e.children) {
-        i.addEventListener('click', (e) => {
+        i.onclick = function (e) {
             e.stopPropagation();
             e.preventDefault();
 
             console.log(this.getAttribute('index'))
 
             element.pageIndex = Number(this.getAttribute('index'));
-        });
+        }
     }
 }
 
