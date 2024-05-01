@@ -17,11 +17,11 @@ class TabBar extends HTMLElement {
 
         this.style.gridTemplateColumns = `repeat(` + keys.length + `, 1fr)`;
 
-        if(this.getAttribute('direction') == 'vertical') {
+        if (this.getAttribute('direction') == 'vertical') {
             this.classList.add('verticalTabbar');
         }
 
-        if(!this.getAttribute('for') == '') {
+        if (!this.getAttribute('for') == '') {
             addForConnection(this, this.getAttribute('for'));
         }
 
@@ -33,26 +33,37 @@ class TabBar extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        if(this.getAttribute('direction') == 'vertical') {
+        if (this.getAttribute('direction') == 'vertical') {
             this.classList.add('verticalTabbar');
         } else {
             this.classList.remove('verticalTabbar');
         }
 
-        if(!this.getAttribute('for') == '') {
+        if (!this.getAttribute('for') == '') {
             addForConnection(this, this.getAttribute('for'));
         } else {
             removeForConnection(this, this.getAttribute('for'));
         }
-      }
+    }
 }
 
 function addForConnection(e, e2) {
     let element = document.getElementById(e2);
 
     element.addEventListener('pageChange', (e) => {
-        console.log(e.detail)
-      });
+
+    });
+
+    let i;
+
+    for (i of e.children) {
+        i.addEventListener('clcick', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+
+            element.pageIndex = e.children.indexOf(i);
+        });
+    }
 }
 
 function removeForConnection(e, e2) {
@@ -60,7 +71,7 @@ function removeForConnection(e, e2) {
 
     try {
 
-    } catch(e){}
+    } catch (e) { }
 
 }
 
