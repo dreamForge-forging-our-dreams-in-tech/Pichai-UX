@@ -22,7 +22,7 @@ class TabBar extends HTMLElement {
         }
 
         if(this.getAttribute('for') != '') {
-            addForConnection(this);
+            addForConnection(this, this.getAttribute('for'));
         }
 
         for (i of keys) {
@@ -40,18 +40,18 @@ class TabBar extends HTMLElement {
         }
 
         if(this.getAttribute('for') != '') {
-            addForConnection(this);
+            addForConnection(this, this.getAttribute('for'));
         } else {
-            removeForConnection(this);
+            removeForConnection(this, this.getAttribute('for'));
         }
       }
 }
 
-function addForConnection(e) {
-
+function addForConnection(e, e2) {
+    console.log(typeof e2);
 }
 
-function removeForConenction(e) {
+function removeForConenction(e, e2) {
 
 }
 
