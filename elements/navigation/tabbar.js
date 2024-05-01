@@ -10,10 +10,10 @@ class TabBar extends HTMLElement {
 
     connectedCallback() {
         let i;
+        let index = 0;
+        let keys = this.children;
 
         this.classList.add('tabBarHolder');
-
-        let keys = this.children;
 
         this.style.gridTemplateColumns = `repeat(` + keys.length + `, 1fr)`;
 
@@ -26,9 +26,11 @@ class TabBar extends HTMLElement {
         }
 
         for (i of keys) {
+            i.setAttribute('index', index);
             if (i.href == window.location.href) {
                 i.classList.add('current');
             }
+            index++
         }
     }
 
@@ -61,10 +63,7 @@ function addForConnection(e, e2) {
             e.stopPropagation();
             e.preventDefault();
 
-
-            let index;
-            for (index=0; (i=i.previousSibling); i++);
-            element.pageIndex = index;
+            element.pageIndex = i.getAttribute('index');
         });
     }
 }
