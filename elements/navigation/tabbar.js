@@ -62,7 +62,7 @@ function addForConnection(e, e2) {
             e.stopPropagation();
             e.preventDefault();
 
-            element..setAttribute('pageIndex',Number(this.getAttribute('index')));
+            element.setAttribute('pageIndex',Number(this.getAttribute('index')));
         }
     }
 
