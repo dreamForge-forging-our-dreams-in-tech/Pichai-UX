@@ -51,7 +51,7 @@ function addForConnection(e, e2) {
     console.log(typeof e2);
 }
 
-function removeForConenction(e, e2) {
+function removeForConnection(e, e2) {
 
 }
 
