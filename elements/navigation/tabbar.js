@@ -51,7 +51,7 @@ function addForConnection(e, e2) {
     let element = document.getElementById(e2);
 
     element.addEventListener('pageChange', (e) => {
-        console.log(e.detail.pageIndex)
+        console.log(e.detail)
       });
 }
 
