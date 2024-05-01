@@ -61,7 +61,9 @@ function addForConnection(e, e2) {
             e.stopPropagation();
             e.preventDefault();
 
-            let index = Array.prototype.indexOf.call(e.children, i);
+
+            let index;
+            for (index=0; (node=node.previousSibling); i++);
             element.pageIndex = index;
         });
     }
@@ -69,11 +71,6 @@ function addForConnection(e, e2) {
 
 function removeForConnection(e, e2) {
     let element = document.getElementById(e2);
-
-    try {
-
-    } catch (e) { }
-
 }
 
 customElements.define("tab-bar", TabBar);  
