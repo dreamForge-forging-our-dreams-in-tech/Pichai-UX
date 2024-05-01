@@ -12,6 +12,7 @@ class TabBar extends HTMLElement {
         let i;
         let index = 0;
         let keys = this.children;
+        let forAttr = this.getAttribute('for');
 
         this.classList.add('tabBarHolder');
 
@@ -21,8 +22,8 @@ class TabBar extends HTMLElement {
             this.classList.add('verticalTabbar');
         }
 
-        if (!this.getAttribute('for') == '') {
-            addForConnection(this, this.getAttribute('for'));
+        if (!forAttr == '') {
+            addForConnection(this, forAttr);
         }
 
         for (i of keys) {
@@ -30,6 +31,16 @@ class TabBar extends HTMLElement {
             if (i.href == window.location.href) {
                 i.classList.add('current');
             }
+
+            if (!forAttr == '') {
+                let element = document.getElementById(forAttr);
+                let id = element.children[i.getAttribute('index')].id;
+
+                if (i.href == `#${id}`) {
+                    i.classList.add('current');
+                }
+            }
+
             index++
         }
     }
