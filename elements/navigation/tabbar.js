@@ -51,23 +51,21 @@ class TabBar extends HTMLElement {
 
 function addForConnection(e, e2) {
     let element = document.getElementById(e2);
+    let i;
 
     element.addEventListener('pageChange', (e) => {
 
     });
-
-    let i;
 
     for (i of e.children) {
         i.onclick = function (e) {
             e.stopPropagation();
             e.preventDefault();
 
-            console.log(this.getAttribute('index'))
-
-            element.pageIndex = Number(this.getAttribute('index'));
+            element..setAttribute('pageIndex',Number(this.getAttribute('index')));
         }
     }
+
 }
 
 function removeForConnection(e, e2) {
