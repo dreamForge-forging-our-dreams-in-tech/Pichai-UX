@@ -61,7 +61,8 @@ function addForConnection(e, e2) {
             e.stopPropagation();
             e.preventDefault();
 
-            element.pageIndex = e.children.indexOf(i);
+            let index = Array.prototype.indexOf.call(e.children, i);
+            element.pageIndex = index;
         });
     }
 }
