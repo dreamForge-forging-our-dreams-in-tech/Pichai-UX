@@ -12,21 +12,21 @@ class ViewPager extends HTMLElement {
         let wheelIndex = 0;
         let sensitivity = this.hasAttribute('sensitivity') ? Number(this.getAttribute('sensitivity')) : 4;
 
-        if(!this.hasAttribute('pageIndex')) {
+        if (!this.hasAttribute('pageIndex')) {
             this.setAttribute('pageIndex', 0);
 
         }
-        
-        for(i of this.children) {
-            if(this.children[this.getAttribute('pageIndex')] == i) {} else {
-            i.style.display = 'none';
+
+        for (i of this.children) {
+            if (this.children[this.getAttribute('pageIndex')] == i) { } else {
+                i.style.display = 'none';
             }
         }
 
         this.onwheel = function (e) {
             wheelIndex++;
 
-            if(wheelIndex == sensitivity) {
+            if (wheelIndex == sensitivity) {
                 wheelIndex = 0;
 
                 if (e.deltaY == 100) {
@@ -37,16 +37,16 @@ class ViewPager extends HTMLElement {
 
             }
         }
-        }
+    }
 
-        attributeChangedCallback(name, oldValue, newValue) {
-            try {
+    attributeChangedCallback(name, oldValue, newValue) {
+        try {
 
-            if(Number(this.getAttribute('pageIndex')) >= this.children.length - 1) {
+            if (Number(this.getAttribute('pageIndex')) >= this.children.length - 1) {
                 this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1);
             }
 
-            if(Number(this.getAttribute('pageIndex')) < 0) {
+            if (Number(this.getAttribute('pageIndex')) < 0) {
                 this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0);
             }
 
@@ -56,14 +56,16 @@ class ViewPager extends HTMLElement {
 
             let pageChange = new Event("pageChange", {
                 detail: {
-                    page:  this.children[Number(this.getAttribute('pageIndex'))],
+                    page: this.children[Number(this.getAttribute('pageIndex'))],
                     pageIndex: this.getAttribute('pageIndex'),
                 },
-              });
+            });
+
             this.dispatchEvent(pageChange);
-            
-        }catch(e){}
-          }
+
+        } catch (e) {
+        console.error(e}
     }
+}
 
 customElements.define("view-pager", ViewPager);  
