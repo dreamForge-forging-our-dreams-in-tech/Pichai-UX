@@ -34,11 +34,9 @@ class TabBar extends HTMLElement {
 
             if (!forAttr == '') {
                 let element = document.getElementById(forAttr);
-                let id = element.children[Number(i.getAttribute('index'))].id;
+                let id = element.children[parseInt(i.getAttribute('index'))].id;
 
-                console.log(i.href)
-                console.log(`#${id}`)
-                if (i.href == `#${id}`) {
+                if (i.href == `${window.location.href}#${id}`) {
                     i.classList.add('current');
                 }
             }
