@@ -42,7 +42,7 @@ class ViewPager extends HTMLElement {
     attributeChangedCallback(name, oldValue, newValue) {
         try {
 
-            if (Number(this.getAttribute('pageIndex')) >= this.children.length - 1) {
+            if (Number(this.getAttribute('pageIndex')) > this.children.length - 1) {
                 this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1);
             }
 
