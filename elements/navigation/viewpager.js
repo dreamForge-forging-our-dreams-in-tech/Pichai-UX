@@ -10,7 +10,7 @@ class ViewPager extends HTMLElement {
     connectedCallback() {
         let i;
         let wheelIndex = 0;
-        let sensitivity = this.hasAttribute('sensitivity') ? Number(this.getAttribute('sensitivity')) : 4;
+        let sensitivity = this.hasAttribute('sensitivity') ? Number(this.getAttribute('sensitivity')) : 6;
 
         if (!this.hasAttribute('pageIndex')) {
             this.setAttribute('pageIndex', 0);
