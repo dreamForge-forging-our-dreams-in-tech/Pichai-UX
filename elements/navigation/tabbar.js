@@ -35,6 +35,8 @@ class TabBar extends HTMLElement {
             if (!forAttr == '') {
                 let element = document.getElementById(forAttr);
                 let el = element.children[parseInt(i.getAttribute('index'))];
+                console.log(el)
+                consoole.log(el.checkVisibility())
 
                 if (el.checkVisibility()) {
                     i.classList.add('current');
@@ -81,6 +83,13 @@ function addForConnection(e, e2) {
 
 function removeForConnection(e, e2) {
     let element = document.getElementById(e2);
+    let i;
+
+    element.removeEventListener('pageChange', function () {}, false);
+
+    for (i of e.children) {
+        i.onclick = function () {}
+    }
 }
 
 customElements.define("tab-bar", TabBar);  
