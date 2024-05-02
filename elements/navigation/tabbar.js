@@ -65,7 +65,7 @@ function addForConnection(e, e2) {
     let i;
 
     element.addEventListener('pageChange', (e) => {
-        
+
     });
 
     for (i of e.children) {
@@ -74,6 +74,9 @@ function addForConnection(e, e2) {
             e.preventDefault();
 
             element.setAttribute('pageIndex',Number(this.getAttribute('index')));
+
+            document.getElementsByClassName('current')[0].classList.remove('current');
+            this.classList.add('current');
         }
     }
 
