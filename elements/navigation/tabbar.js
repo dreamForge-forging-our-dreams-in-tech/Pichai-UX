@@ -65,7 +65,7 @@ function addForConnection(e, e2) {
     let i;
 
     element.addEventListener('pageChange', (e) => {
-
+        
     });
 
     for (i of e.children) {

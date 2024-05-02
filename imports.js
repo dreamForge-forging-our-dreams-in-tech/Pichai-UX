@@ -6,8 +6,9 @@ import './elements/text/title.js';
 
 import './elements/buttons/logIn.js';
 import './elements/buttons/profileDisplay.js';
-import './elements/navigation/tabbar.js';
+
 import './elements/navigation/viewpager.js';
+import './elements/navigation/tabbar.js';
 
 import './elements/templates/footer.js';
 import './elements/templates/header.js';
