@@ -75,6 +75,7 @@ function addForConnection(e, e2) {
 
             element.setAttribute('pageIndex',Number(this.getAttribute('index')));
 
+            console.log(document.getElementsByClassName('current')[0])
             document.getElementsByClassName('current')[0].classList.remove('current');
             this.classList.add('current');
         }
