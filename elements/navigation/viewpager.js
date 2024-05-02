@@ -30,9 +30,9 @@ class ViewPager extends HTMLElement {
                 wheelIndex = 0;
 
                 if (e.deltaY == 100) {
-                    this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex') + 1));
+                    this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) + 1);
                 } else {
-                    this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex') - 1));
+                    this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) - 1);
                 }
 
             }
