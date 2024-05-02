@@ -64,8 +64,15 @@ function addForConnection(e, e2) {
     let element = document.getElementById(e2);
     let i;
 
-    element.addEventListener('pageChange', (e) => {
+    element.addEventListener('pageChange', (a) => {
+        let index = a.detail.pageIndex;
 
+        for(i of e.children) {
+            if(parseInt(i.getattribute('index')) == index) {
+                i.parentNode.getElementsByClassName('current')[0].classList.remove('current');
+                i.classList.add('current');
+            }
+        }
     });
 
     for (i of e.children) {
@@ -75,7 +82,6 @@ function addForConnection(e, e2) {
 
             element.setAttribute('pageIndex',Number(this.getAttribute('index')));
 
-            console.log(this.parentNode.getElementsByClassName('current'))
             this.parentNode.getElementsByClassName('current')[0].classList.remove('current');
             this.classList.add('current');
         }
