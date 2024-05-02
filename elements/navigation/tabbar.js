@@ -35,11 +35,8 @@ class TabBar extends HTMLElement {
             if (!forAttr == '') {
                 let element = document.getElementById(forAttr);
                 let el = element.children[parseInt(i.getAttribute('index'))];
-                let display = window.getComputedStyle(el)['display'];
 
-                console.log(display)
-
-                if (!display == 'none') {
+                if (el.checkVisibility({opacityProperty: true, visibilityProperty: true, contentVisibilityAuto: true})) {
                     i.classList.add('current');
                 }
             }
