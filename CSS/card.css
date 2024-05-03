@@ -7,13 +7,13 @@
 }
 
 .card .card {
-    background-color:var(--tertiary);
+    background-color:var(--primaryContainer);
 
-    color:var(--tertiaryTextColor)
+    color:var(--primaryContainerTextColor)
 }
 
 .card .card * {
-    color:var(--tertiaryTextColor)
+    color:var(--primaryContainerTextColor)
 }
 
 
