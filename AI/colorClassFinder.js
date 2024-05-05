@@ -6,6 +6,7 @@ const trainingData = [
   { input: { r: 0.7, g: 0.0, b: 0.0 }, output: { red: 1 } },
   { input: { r: 0.9, g: 0.3, b: 0.3 }, output: { lightred: 1 } },
   { input: { r: 0.2, g: 0.6, b: 0.3 }, output: { green: 1 } },
+  { input: { r: 0, g: 0.2, b: 0 }, output: { green: 1 } },
   { input: { r: 0.2, g: 0.5, b: 0.9 }, output: { blue: 1 } },
   { input: { r: 0, g: 0.5, b: 0.5 }, output: { blue: 1 } },
   { input: { r: 1, g: 1, b: 1 }, output: { white: 1 } },
