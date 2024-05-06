@@ -115,7 +115,7 @@ net.train([{
 ]);
 
 function getTextColor(color) {
-  console.log(color)
+  try {
   let r = color[0];
   let g = color[1];
   let b = color[2];
@@ -133,6 +133,7 @@ function getTextColor(color) {
       return i;
     }
   }
+} catch(e) {}
 }
 
 export { getTextColor };
