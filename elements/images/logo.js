@@ -45,7 +45,7 @@ function generateDynamicIcon(image) {
                 const blue = imageData.data[i + 2];
 
                 // Check if the pixel is not theme color
-                
+
                 let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'black' ? 0 : 255;
 
                 if (
@@ -82,7 +82,7 @@ function generateDynamicIcon(image) {
                     // Check if the pixel is not the theme color (white in this case)
                     if (red === 255 && green === 255 && blue === 255) {
                         // Replace the pixel with a 5x5 square
-                        context.fillStyle = 'white'; // Set your desired color here
+                        context.fillStyle = textColor; // Set your desired color here
                         context.fillRect(x, y, 8, 8); // Draw a 5x5 square
                     }
                 }
