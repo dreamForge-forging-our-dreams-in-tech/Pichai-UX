@@ -37,6 +37,14 @@ class PichaiUX {
             link.href = typeof exports !== 'undefined' ? 'Pichai-UX/CSS/main.css' : 'https://lukeplays33.github.io/Pichai-UX/CSS/main.css';
             link.media = 'all';
 
+            let google = document.createElement('link');
+            google.id = 'google';
+            google.rel = 'stylesheet';
+            google.type = 'text/css';
+            google.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+            google.media = 'all';
+
+            head.appendChild(google);
             head.appendChild(link);
         }
 
