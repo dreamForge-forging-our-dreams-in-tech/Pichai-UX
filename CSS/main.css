@@ -106,3 +106,7 @@ h6 {
 label{
     width:max-content;
 }
+
+ol, ul {
+    margin:0px;
+}
