@@ -46,6 +46,7 @@ function generateDynamicIcon(image) {
 
                 // Check if the pixel is not theme color
 
+                console.log(getTextColor(rgb[0], rgb[1] , rgb[2]))
                 let textColor = getTextColor(rgb[0], rgb[1] , rgb[2]) == 'black' ? 0 : 255;
 
                 if (
