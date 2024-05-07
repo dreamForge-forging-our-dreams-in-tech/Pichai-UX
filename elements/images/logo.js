@@ -1,4 +1,5 @@
 import { findColorClass } from '../../AI/colorClassFinder.js';
+import { getTextColor } from '../../AI/textColorFInder.js';
 
 function generateDynamicIcon(image) {
     return new Promise((resolve) => {
@@ -44,19 +45,22 @@ function generateDynamicIcon(image) {
                 const blue = imageData.data[i + 2];
 
                 // Check if the pixel is not theme color
+
+                let textColor = getTextColor(rgb[0], rgb[1] , rgb[2]) == 'black' ? 0 : 255;
+
                 if (
                     !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
                 ) {
                     // Replace with your desired color (e.g., green)
-                    imageData.data[i] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[0]; // Red channel
-                    imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[1]; // Green channel
-                    imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
+                    imageData.data[i] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[0]; // Red channel
+                    imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[1]; // Green channel
+                    imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[2]; // Blue channel
 
                     colorClass = findColorClass(red, green, blue);
                 } else {
-                    imageData.data[i] = colorClass == findColorClass(red, green, blue) ? 255 : rgb[0];
-                    imageData.data[i + 1] = colorClass == findColorClass(red, green, blue) ? 255 : rgb[1];
-                    imageData.data[i + 2] = colorClass == findColorClass(red, green, blue) ? 255 : rgb[2];
+                    imageData.data[i] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[0];
+                    imageData.data[i + 1] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[1];
+                    imageData.data[i + 2] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[2];
 
                     colorClass = 'themeColor';
                 }
