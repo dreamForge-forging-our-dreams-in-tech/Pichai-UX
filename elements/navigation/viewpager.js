@@ -26,7 +26,7 @@ class ViewPager extends HTMLElement {
 
         this.onwheel = function (e) {
             wheelIndex++;
-            console.log(e.deltaY.length)
+            console.log(parseInt(e.deltaY.length))
 
             if (wheelIndex == sensitivity) {
                 wheelIndex = e.deltaY.length > 1 ? -100 : 0;
