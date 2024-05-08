@@ -11,7 +11,7 @@ class ViewPager extends HTMLElement {
     connectedCallback() {
         let i;
         let wheelIndex = 0;
-        let sensitivity = this.hasAttribute('sensitivity') ? Number(this.getAttribute('sensitivity')) : 6;
+        let sensitivity = this.hasAttribute('sensitivity') ? Number(this.getAttribute('sensitivity')) : 7;
 
         if (!this.hasAttribute('pageIndex')) {
             this.setAttribute('pageIndex', 0);
@@ -35,7 +35,6 @@ class ViewPager extends HTMLElement {
                 } else {
                     this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) - 1);
                 }
-                console.log(wheelIndex)
             }
         }
     }
