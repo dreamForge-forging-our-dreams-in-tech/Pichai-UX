@@ -29,7 +29,7 @@ class ViewPager extends HTMLElement {
             wheelIndex++;
 
             if (wheelIndex == sensitivity) {
-                wheelIndex = 0;
+                wheelIndex = e.deltaY.length > 1 ? -8 : 0;
 
                 if (e.deltaY > 0) {
                     this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) + 1);
