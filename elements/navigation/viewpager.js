@@ -31,7 +31,7 @@ class ViewPager extends HTMLElement {
             if (wheelIndex == sensitivity) {
                 wheelIndex = 0;
 
-                if (e.deltaY == 100) {
+                if (e.deltaY > 0) {
                     this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) + 1);
                 } else {
                     this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) - 1);
