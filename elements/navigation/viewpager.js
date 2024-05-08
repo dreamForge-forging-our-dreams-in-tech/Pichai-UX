@@ -40,7 +40,7 @@ class ViewPager extends HTMLElement {
             wheelIndex++;
 
             if(detectTrackPad(e)) {
-                sensitivity = sensitivity * 13;
+                sensitivity = sensitivity * 26;
             }
 
             if (wheelIndex == sensitivity) {
