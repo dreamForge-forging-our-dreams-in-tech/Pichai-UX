@@ -35,7 +35,7 @@ class ViewPager extends HTMLElement {
                 } else {
                     this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) - 1);
                 }
-                console.log(Number(this.getAttribute('pageIndex')))
+                console.log(wheelIndex)
             }
         }
     }
