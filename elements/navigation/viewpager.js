@@ -1,15 +1,3 @@
-function detectTrackPad(e) {
-    var isTrackpad = false;
-    if (e.wheelDeltaY) {
-      if (e.wheelDeltaY === (e.deltaY * -3)) {
-        isTrackpad = true;
-      }
-    }
-    else if (e.deltaMode === 0) {
-      isTrackpad = true;
-    }
-    console.log(isTrackpad);
-  }
 
 // Create a class for the element
 class ViewPager extends HTMLElement {
@@ -39,11 +27,6 @@ class ViewPager extends HTMLElement {
         this.onwheel = function (e) {
             wheelIndex++;
 
-            if(detectTrackPad(e)) {
-                sensitivity = sensitivity * 4;
-            }
-
-            console.log(sensitivity)
             if (wheelIndex == sensitivity) {
                 wheelIndex = 0;
 
