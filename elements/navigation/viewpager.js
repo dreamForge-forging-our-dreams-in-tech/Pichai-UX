@@ -8,7 +8,7 @@ function detectTrackPad(e) {
     else if (e.deltaMode === 0) {
       isTrackpad = true;
     }
-    console.log(isTrackpad ? "Trackpad detected" : "Mousewheel detected");
+    console.log(isTrackpad);
   }
 
 // Create a class for the element
