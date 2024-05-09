@@ -31,8 +31,6 @@ class ViewPager extends HTMLElement {
             if (wheelIndex == sensitivity) {
                 wheelIndex = String(e.deltaY).length < 3 ? -8 : 0;
 
-                console.log(wheelIndex);
-
                 if (e.deltaY > 0) {
                     this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) + 1);
                 } else {
