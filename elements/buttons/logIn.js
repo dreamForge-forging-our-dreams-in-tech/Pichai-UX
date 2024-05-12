@@ -7,7 +7,7 @@ class logIn extends HTMLElement {
     }
 
     connectedCallback() {
-        this.innerHTML = this.innerHTML == '' ? 'Not logged in' : this.innerHTML;
+        this.innerHTML = this.innerHTML == '' ? window.default_logged_in_text : this.innerHTML;
 
         this.onclick = function () {
             let dialog = window['options'].loginDialog;

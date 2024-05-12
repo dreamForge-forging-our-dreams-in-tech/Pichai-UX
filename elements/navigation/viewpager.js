@@ -11,10 +11,10 @@ class ViewPager extends HTMLElement {
     connectedCallback() {
         let i;
         let wheelIndex = 0;
-        let sensitivity = this.hasAttribute('sensitivity') ? Number(this.getAttribute('sensitivity')) : 5;
+        let sensitivity = this.hasAttribute('sensitivity') ? Number(this.getAttribute('sensitivity')) : window.default_sensitivity;
 
         if (!this.hasAttribute('pageIndex')) {
-            this.setAttribute('pageIndex', 0);
+            this.setAttribute('pageIndex', window.default_index);
 
         }
 
@@ -26,7 +26,6 @@ class ViewPager extends HTMLElement {
 
         this.onwheel = function (e) {
             wheelIndex++;
-            console.log(String(e.deltaY))
 
             if (wheelIndex == sensitivity) {
                 wheelIndex = String(e.deltaY).length < 3 ? -8 : 0;
@@ -44,11 +43,11 @@ class ViewPager extends HTMLElement {
         try {
 
             if (Number(this.getAttribute('pageIndex')) > this.children.length - 1) {
-                this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? 0 : this.children.length - 1);
+                this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? window.default_index : this.children.length - 1);
             }
 
             if (Number(this.getAttribute('pageIndex')) < 0) {
-                this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? this.children.length - 1 : 0);
+                this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? this.children.length - 1 : window.default_index);
             }
 
             this.children[oldValue].style.display = 'none';

@@ -8,16 +8,8 @@ class DisplayProfile extends HTMLElement {
     }
 
     async connectedCallback() {
-        this.innerHTML = 'account_circle';
+        this.innerHTML = window.default_user_icon;
         this.classList.add('material-symbols-outlined');
-    }
-
-    disconnectedCallback() {
-        console.log("Custom element removed from page.");
-    }
-
-    adoptedCallback() {
-        console.log("Custom element moved to new page.");
     }
 
     attributeChangedCallback(name, oldValue, newValue) {

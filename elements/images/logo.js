@@ -107,7 +107,10 @@ class Logo extends HTMLElement {
         const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
 
         // Get the favicon URL
-        const faviconUrl = faviconLink ? faviconLink.href : null;
+        let faviconUrl = faviconLink ? faviconLink.href : null;
+        if(this.hasAttribute('src')) {
+            faviconUrl = this.getAttribute('src');
+        }
 
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
             window.onload = async () => {
@@ -119,29 +122,8 @@ class Logo extends HTMLElement {
         }
     }
 
-    disconnectedCallback() {
-        console.log("Custom element removed from page.");
-    }
-
-    adoptedCallback() {
-        console.log("Custom element moved to new page.");
-    }
-
-    attributeChangedCallback(name, oldValue, newValue) {
-        // Get the favicon link element
-        const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
-
-        // Get the favicon URL
-        const faviconUrl = faviconLink ? faviconLink.href : null;
-
-        if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
-            window.onload = async () => {
-                let newIcon = await generateDynamicIcon(faviconUrl);
-                this.style.backgroundImage = `url(${newIcon})`;
-            }
-        } else {
-            this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
-        }
+    async attributeChangedCallback(name, oldValue, newValue) {
+        this.connectedCallback();
     }
 }
 
