@@ -110,12 +110,12 @@ class Logo extends HTMLElement {
         let faviconUrl = faviconLink ? faviconLink.href : null;
         if(this.hasAttribute('src')) {
             faviconUrl = this.getAttribute('src');
-            alert(faviconUrl)
         }
 
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
             window.onload = async () => {
                 let newIcon = await generateDynamicIcon(faviconUrl);
+                alert(newIcon)
                 this.style.backgroundImage = `url(${newIcon})`;
             }
         } else {
