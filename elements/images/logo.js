@@ -108,10 +108,6 @@ class Logo extends HTMLElement {
 
         // Get the favicon URL
         let faviconUrl = faviconLink ? faviconLink.href : null;
-        if(this.hasAttribute('src')) {
-            alert()
-            faviconUrl = this.getAttribute('src');
-        }
 
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
             window.onload = async () => {
@@ -119,7 +115,7 @@ class Logo extends HTMLElement {
                 this.style.backgroundImage = `url(${newIcon})`;
             }
         } else {
-            this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
+            this.style.backgroundImage = `url("${this.src}")` ?? `url("${faviconUrl}")`;
         }
     }
 
