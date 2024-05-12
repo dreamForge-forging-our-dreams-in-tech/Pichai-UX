@@ -103,13 +103,13 @@ class Logo extends HTMLElement {
     }
 
     async connectedCallback() {
-        alert()
         // Get the favicon link element
         const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
 
         // Get the favicon URL
         let faviconUrl = faviconLink ? faviconLink.href : null;
         if(this.hasAttribute('src')) {
+            alert()
             faviconUrl = this.getAttribute('src');
         }
 
