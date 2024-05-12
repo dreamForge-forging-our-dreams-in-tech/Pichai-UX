@@ -10,7 +10,7 @@ class TabBar extends HTMLElement {
 
     connectedCallback() {
         let i;
-        let index = 0;
+        let index = window.default_index;
         let keys = this.children;
         let forAttr = this.getAttribute('for');
 

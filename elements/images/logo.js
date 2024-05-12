@@ -103,6 +103,7 @@ class Logo extends HTMLElement {
     }
 
     async connectedCallback() {
+        alert()
         // Get the favicon link element
         const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
 
@@ -123,7 +124,6 @@ class Logo extends HTMLElement {
     }
 
     async attributeChangedCallback(name, oldValue, newValue) {
-        alert()
         this.connectedCallback();
     }
 }

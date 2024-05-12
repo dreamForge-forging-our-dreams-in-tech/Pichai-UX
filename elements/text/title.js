@@ -15,14 +15,6 @@ class title extends HTMLElement {
         }
     }
 
-    disconnectedCallback() {
-        console.log("Custom element removed from page.");
-    }
-
-    adoptedCallback() {
-        console.log("Custom element moved to new page.");
-    }
-
     attributeChangedCallback(name, oldValue, newValue) {
         this.innerHTML = document.title;
 
