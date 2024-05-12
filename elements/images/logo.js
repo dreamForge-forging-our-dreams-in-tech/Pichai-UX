@@ -123,6 +123,7 @@ class Logo extends HTMLElement {
     }
 
     async attributeChangedCallback(name, oldValue, newValue) {
+        alert()
         this.connectedCallback();
     }
 }
