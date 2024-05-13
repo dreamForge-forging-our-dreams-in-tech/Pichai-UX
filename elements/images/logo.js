@@ -103,6 +103,7 @@ class Logo extends HTMLElement {
     }
 
     async connectedCallback() {
+        window.onload = async () => {
         // Get the favicon link element
         const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
 
@@ -118,6 +119,7 @@ class Logo extends HTMLElement {
         } else {
             this.style.backgroundImage = `url("${faviconUrl}")`;
         }
+    }
     }
 
     async attributeChangedCallback(name, oldValue, newValue) {
