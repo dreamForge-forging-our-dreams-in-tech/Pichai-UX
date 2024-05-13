@@ -80,4 +80,6 @@ display-profile {
     padding: 8px;
 
     color:var(--secondairyTextColor);
+
+    text-decoration:none;
 }
