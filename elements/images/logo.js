@@ -113,12 +113,12 @@ class Logo extends HTMLElement {
         }
 
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
-            window.onload = async () => {
+           // window.onload = async () => {
                 console.log(faviconUrl)
                 let newIcon = await generateDynamicIcon(faviconUrl);
                 console.log(newIcon)
                 this.style.backgroundImage = `url(${newIcon})`;
-            }
+           // }
         } else {
             this.style.backgroundImage = `url("${faviconUrl}")`;
         }
