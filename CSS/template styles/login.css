@@ -31,7 +31,7 @@
     right:8px;
     top:63px;
     
-    height:calc(100% - 71px);
+    height:calc(100% - 79px);
     width:34px;
 
     padding:8px;
@@ -51,5 +51,5 @@
 
 #drawer i {
     width:42px;
-    height:42px;
+    height:42px !important;
 }
