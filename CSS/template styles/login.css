@@ -28,7 +28,7 @@
 
 #drawer {
     position: fixed;
-    right:43px;
+    right:51px;
     top:8px;
     
     height:calc(100% - 16px);
