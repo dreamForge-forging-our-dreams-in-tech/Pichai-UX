@@ -31,7 +31,7 @@
     right:43px;
     top:8px;
     
-    height:100%;
+    height:calc(100% - 16px);
     width:300px;
 
     overflow:auto;
