@@ -28,8 +28,8 @@
 
 #drawer {
     position: fixed;
-    right:51px;
-    top:8px;
+    right:8px;
+    top:63px;
     
     height:calc(100% - 16px);
     width:300px;
