@@ -9,7 +9,7 @@ class AccountDrawer extends HTMLElement {
     async connectedCallback() {
         this.innerHTML = `<section class="card" id='drawer'>
         <article id='options'>
-        <i class='material-symbols-outlined'>${window.default_seettings_icon}</i>
+        <i class='material-symbols-outlined card'>${window.default_seettings_icon}</i>
         </article>
         </section>`;
 
