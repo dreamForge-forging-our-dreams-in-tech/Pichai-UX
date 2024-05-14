@@ -32,24 +32,17 @@
     top:63px;
     
     height:calc(100% - 71px);
-    width:300px;
+    width:50px;
 
     overflow:auto;
 }
 
 #drawer * {
-    max-width: 268px;
+    max-width: 32px;
 }
 
-#drawer article {
-    margin:8px;
-    padding:8px 8px 0px 8px;
-}
-
-#drawer h2 {
-    margin:0px;
-    width:calc(100% - 16px);
-
-    background-color:var(--primary);
-    color:var(--primaryTextColor);
+#options {
+    display:flex;
+    flex-direction:column;
+    column-gap:8px;
 }

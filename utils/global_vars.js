@@ -6,3 +6,4 @@ window.default_logged_in_text = 'Not logged in';
 
 //icons
 window.default_user_icon = 'account_circle';
+window.default_seettings_icon = 'settings';

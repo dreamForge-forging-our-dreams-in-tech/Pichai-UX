@@ -8,10 +8,8 @@ class AccountDrawer extends HTMLElement {
 
     async connectedCallback() {
         this.innerHTML = `<section class="card" id='drawer'>
-        <article class='card'>
-        <h2>Allow Data Sharing</h2>
-        <p>Do you want to have you data stored accross your devices or just want to have a backup? <br> Setup a local storage system with a local storage, Google Drive or Dropbox to ensure that your data is safe and sound!</p>
-        <button id="auth">I agree</button>
+        <article id='options'>
+        <i class='material-symbols-outlined'>${window.default_seettings_icon}</i>
         </article>
         </section>`;
 
