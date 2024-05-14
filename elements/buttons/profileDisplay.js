@@ -10,6 +10,16 @@ class DisplayProfile extends HTMLElement {
     async connectedCallback() {
         this.innerHTML = window.default_user_icon;
         this.classList.add('material-symbols-outlined');
+
+        this.onclick = function () {
+            let dialog = window['options'].loginDialog;
+
+            if(dialog.parentNode == document.body) {
+                dialog.remove();
+                return;
+            }
+            document.body.appendChild(dialog);
+        }
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
