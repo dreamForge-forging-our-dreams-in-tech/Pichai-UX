@@ -60,7 +60,7 @@ h1 {
 h2 {
     font-size: 1.5em;
 
-    margin-top:8px;
+    margin:8px;
     padding:8px;
 
     background-color:var(--tertiary);
