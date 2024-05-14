@@ -12,10 +12,6 @@ class AccountDrawer extends HTMLElement {
         <i class='material-symbols-outlined card'>${window.default_seettings_icon}</i>
         </article>
         </section>`;
-
-        let auth = document.getElementById('auth');
-        auth.onclick = async function () {
-        }
     }
 }
 
