@@ -52,7 +52,10 @@
 #drawer i {
     min-width: 34px !important;
     height: 30px;
+
     padding-top: 4px;
+
+    margin-bottom:8px;
 
     font-size:25px;
 }
