@@ -50,6 +50,9 @@
 }
 
 #drawer i {
-    width:34px !important;
-    height:34px;
+    min-width: 34px !important;
+    height: 30px;
+    padding-top: 4px;
+
+    font-size:25px;
 }
