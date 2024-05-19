@@ -2,6 +2,8 @@ import { generate3ColorPallete } from "./AI/palleteMaker.js";
 import { generateDynamicIcon } from './elements/images/logo.js';
 import { getTextColor } from './AI/textColorFInder.js';
 
+import { extractRgb } from './utils/extraFunctions.js';
+
 class PichaiUX {
     constructor(options = {
         source: '#008dcd',
@@ -77,12 +79,10 @@ class PichaiUX {
         
         for (i of elements) {
 
-            let rgb = window.getComputedStyle(i)['background-color'];
-            rgb = rgb.replaceAll('a', '').substring(4, rgb.length).replaceAll(')', '');
-            rgb = rgb.split(',');
+            let rgb = extractRgb(i);
 
             if(rgb[3]){
-                console.log(i)
+                rgb = extractRgb(i);
             }
 
             i.style.color = getTextColor(rgb);
