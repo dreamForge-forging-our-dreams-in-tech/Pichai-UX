@@ -3,6 +3,11 @@ function extractRgb (i) {
     rgb = rgb.replaceAll('a', '').substring(4, rgb.length).replaceAll(')', '');
     rgb = rgb.split(',');
 
+    if(rgb[3]){
+        rgb = extractRgb(i.parentNode);
+        console.log(rgb)
+    }
+
     return rgb;
 }
 
