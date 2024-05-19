@@ -4,6 +4,7 @@ function extractRgb (i) {
     rgb = rgb.split(',');
 
     if(rgb[3]){
+        console.log(i.parentNode)
         rgb = extractRgb(i.parentNode);
         console.log(rgb)
     }
