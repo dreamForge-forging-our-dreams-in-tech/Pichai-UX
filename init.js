@@ -83,6 +83,7 @@ class PichaiUX {
 
             if(rgb[3]){
                 rgb = extractRgb(i);
+                console.log(rgb)
             }
 
             i.style.color = getTextColor(rgb);
