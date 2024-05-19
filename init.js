@@ -82,7 +82,7 @@ class PichaiUX {
             let rgb = extractRgb(i);
 
             if(rgb[3]){
-                rgb = extractRgb(i);
+                rgb = extractRgb(i.parentNode);
                 console.log(rgb)
             }
 
