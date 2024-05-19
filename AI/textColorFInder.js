@@ -125,8 +125,8 @@ net.train([{
 {
   input: {
     r: 0.9,
-    g: 0.4,
-    b: 0.5
+    g: 0.8,
+    b: 0.8
   },
   output: {
     black: 1
