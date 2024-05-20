@@ -2,7 +2,7 @@ ol, ul {
     margin:0px;
 }
 
-li{
+li:nth-child(1){
     list-style-image: url('../assets/shapes/star.svg');
     List-style-position: inside;
  }
