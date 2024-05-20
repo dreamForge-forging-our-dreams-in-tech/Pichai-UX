@@ -8,7 +8,7 @@ li{
  }
 
  li:nth-child(2){
-    list-style-image: url('../assets/shapes/cirlce.svg');
+    list-style-image: url('../assets/shapes/circle.svg');
     List-style-position: inside;
  }
 
