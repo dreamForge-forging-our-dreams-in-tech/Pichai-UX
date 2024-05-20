@@ -7,6 +7,31 @@ li{
     List-style-position: inside;
  }
 
+ li:nth-child(2){
+    list-style-image: url('../assets/shapes/cirlce.svg');
+    List-style-position: inside;
+ }
+
+ li:nth-child(3){
+    list-style-image: url('../assets/shapes/pentagon.svg');
+    List-style-position: inside;
+ }
+
+ li:nth-child(4){
+    list-style-image: url('../assets/shapes/square.svg');
+    List-style-position: inside;
+ }
+
+ li:nth-child(5){
+    list-style-image: url('../assets/shapes/pentagon.svg');
+    List-style-position: inside;
+ }
+
+ li:nth-child(6){
+    list-style-image: url('../assets/shapes/triangle.svg');
+    List-style-position: inside;
+ }
+
  li::marker{
     font-size: 1.8em;
     line-height: 0.1;
