@@ -1,0 +1,7 @@
+ol, ul {
+    margin:0px;
+}
+
+li{
+    list-style-image: url('../assets/shapes/scallop.svg');
+ }
