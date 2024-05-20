@@ -5,3 +5,8 @@ ol, ul {
 li{
     list-style-image: url('../assets/shapes/scallop.svg');
  }
+
+ li::marker{
+    font-size: 1.8em;
+    line-height: 0.1;
+ }
