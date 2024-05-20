@@ -3,33 +3,32 @@ ol, ul {
 }
 
 li:nth-child(6n+1){
-    list-style-image: url('../assets/shapes/star.svg');
+    fill:black;
     List-style-position: inside;
+ }
+
+li:nth-child(6n+1){
+    list-style-image: url('../assets/shapes/star.svg');
  }
 
  li:nth-child(6n+2){
     list-style-image: url('../assets/shapes/circle.svg');
-    List-style-position: inside;
  }
 
  li:nth-child(6n+3){
     list-style-image: url('../assets/shapes/pentagon.svg');
-    List-style-position: inside;
  }
 
  li:nth-child(6n+4){
     list-style-image: url('../assets/shapes/square.svg');
-    List-style-position: inside;
  }
 
  li:nth-child(6n+5){
     list-style-image: url('../assets/shapes/pentagon.svg');
-    List-style-position: inside;
  }
 
  li:nth-child(6n+6){
     list-style-image: url('../assets/shapes/triangle.svg');
-    List-style-position: inside;
  }
 
  li::marker{
