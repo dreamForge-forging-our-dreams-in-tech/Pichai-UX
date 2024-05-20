@@ -11,4 +11,4 @@ class Accordion extends HTMLElement {
     }
 }
 
-customElements.define("accordion", Accordion);  
+customElements.define("accordion-dropdown", Accordion);  
