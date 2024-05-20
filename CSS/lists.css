@@ -3,7 +3,7 @@ ol, ul {
 }
 
 li{
-    list-style-image: url('../assets/shapes/scallop.svg');
+    list-style-image: url('../assets/shapes/star.svg');
     List-style-position: inside;
  }
 
