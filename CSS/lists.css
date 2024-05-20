@@ -2,7 +2,7 @@ ol, ul {
     margin:0px;
 }
 
-li:nth-child(6n+1){
+li{
     fill:black;
     List-style-position: inside;
  }
