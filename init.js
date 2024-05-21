@@ -92,7 +92,7 @@ class PichaiUX {
             i.style.color = getTextColor(rgb);
 
             let color = window.getComputedStyle(i)['color'];
-            console.og(color)
+            console.log(color)
 
             if (i.tagName == 'LI' && color == 'black') {
                 console.log('ee')
