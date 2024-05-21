@@ -7,8 +7,6 @@ function extractRgb (i) {
         rgb = extractRgb(i.parentNode);
     }
 
-    console.log(i,rgb)
-
     return rgb;
 }
 
