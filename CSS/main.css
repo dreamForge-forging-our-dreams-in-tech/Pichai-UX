@@ -8,6 +8,7 @@
 @import "./footer.css";
 @import "./template styles/login.css";
 @import "./lists.css";
+@import "./dropdowns.css";
 
 
 body, html {
