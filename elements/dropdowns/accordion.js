@@ -11,10 +11,17 @@ class Accordion extends HTMLElement {
         art.innerHTML = this.innerHTML;
         this.innerHTML = '';
 
+        let arrow = document.createElement('i');
+        arrow.class = 'material-symbols-rounded';
+        arrow.innerHTML = 'arrow_drop_down';
+
         content.appendChild(art);
 
         let title = document.createElement('h5');
         title.innerHTML = this.hasAttribute('titleText') ? this.getAttribute('titleText') : 'Accordion 🪗';
+
+        title.appendChild(arrow);
+
 
         this.appendChild(title);
         this.appendChild(content);
