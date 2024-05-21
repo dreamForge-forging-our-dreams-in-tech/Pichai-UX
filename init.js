@@ -93,6 +93,9 @@ class PichaiUX {
             i.style.color = getTextColor(rgb);
 
             if (i.tagName == 'LI' && i.style.color == 'black') {
+                console.log(i.tagName == 'LI')
+                console.log(i.style.color == 'black')
+                
                 i.classList.add('black');
             }
         }
