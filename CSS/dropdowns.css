@@ -1,3 +1,8 @@
-accordion-dropdown h4 {
-    
+accordion-dropdown h5 {
+    width:max-content;
+
+    border-radius:200px;
+
+    background-color:var(--primary);
+    color:var(--primaryTextColor);
 }
