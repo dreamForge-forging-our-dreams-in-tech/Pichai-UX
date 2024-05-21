@@ -71,7 +71,7 @@ class PichaiUX {
             link.href = await generateDynamicIcon(faviconUrl);
         }
 
-        // optimise text anyways to fix list bullets to have right colors - may need to change later
+        // optimise text at start to fix list bullets to have right colors - may need to change later
         this.optimizeTextColor();
     }
 
@@ -92,7 +92,7 @@ class PichaiUX {
             i.style.color = getTextColor(rgb);
 
             let color = window.getComputedStyle(i)['color'];
-            console.log(i.tagNmae ,color)
+            console.log(i.tagName ,color)
 
             if (i.tagName == 'LI' && color == 'black') {
                 console.log('ee')
