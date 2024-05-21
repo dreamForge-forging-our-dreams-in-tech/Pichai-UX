@@ -94,7 +94,7 @@ class PichaiUX {
             let color = window.getComputedStyle(i)['color'];
             console.log(i.tagName ,color)
 
-            if (i.tagName == 'LI' && color == 'black') {
+            if (i.tagName == 'LI' && color == 'rgb(0, 0, 0)') {
                 console.log('ee')
                 i.classList.add('black');
             }
