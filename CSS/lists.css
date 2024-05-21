@@ -1,6 +1,5 @@
 ol, ul {
     margin:0px;
-
     padding:0px;
 }
 
@@ -17,7 +16,7 @@ li:nth-child(6n+1){
  }
 
  li:nth-child(6n+3){
-    list-style-image: url('../assets/shapes/pentagon.svg');
+    list-style-image: url('../assets/shapes/scallop.svg');
  }
 
  li:nth-child(6n+4){
@@ -31,3 +30,27 @@ li:nth-child(6n+1){
  li:nth-child(6n+6){
     list-style-image: url('../assets/shapes/triangle.svg');
  }
+
+ li .black:nth-child(6n+1){
+   list-style-image: url('../assets/shapes/star_black.svg');
+}
+
+li .black:nth-child(6n+2){
+   list-style-image: url('../assets/shapes/circle_black.svg');
+}
+
+li .black:nth-child(6n+3){
+   list-style-image: url('../assets/shapes/scallop_black.svg');
+}
+
+li .black:nth-child(6n+4){
+   list-style-image: url('../assets/shapes/square_black.svg');
+}
+
+li .black:nth-child(6n+5){
+   list-style-image: url('../assets/shapes/pentagon_black.svg');
+}
+
+li .black:nth-child(6n+6){
+   list-style-image: url('../assets/shapes/triangle_black.svg');
+}
