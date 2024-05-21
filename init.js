@@ -19,6 +19,7 @@ class PichaiUX {
     }
 
     async initialize() {
+        // read bg image and make it ready for UI usage
         let styles = window.getComputedStyle(document.body)
         document.documentElement.style.backgroundImage = styles.backgroundImage;
         document.body.style.backgroundImage = 'initial';
@@ -29,6 +30,7 @@ class PichaiUX {
 
         this.options.source = image || '#008dcd';
 
+        //inject required css
         let cssId = 'PichaiUXCss';
         if (!document.getElementById(cssId)) {
             let head = document.getElementsByTagName('head')[0];
@@ -50,8 +52,10 @@ class PichaiUX {
             head.appendChild(link);
         }
 
+        // generate pallete based on bg image
         await generate3ColorPallete(this.options);
 
+        // make a themed icon
         if (this.options.themedFavIcon) {
             //update favIcon to match themed one.
             const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
@@ -67,6 +71,9 @@ class PichaiUX {
             }
             link.href = await generateDynamicIcon(faviconUrl);
         }
+
+        // optimise text anyways to fix list bullets to have right colors - may need to change later
+        this.optimizeTextColor();
     }
 
     async generateDynamicIcon(icon) {
