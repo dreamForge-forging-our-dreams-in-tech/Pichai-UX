@@ -13,7 +13,7 @@ class Accordion extends HTMLElement {
 
         content.appendChild(art);
 
-        let title = document.createElement('h2');
+        let title = document.createElement('h4');
         title.innerHTML = this.hasAttribute('titleText') ? this.getAttribute('titleText') : 'Accordion 🪗';
 
         this.appendChild(title);
