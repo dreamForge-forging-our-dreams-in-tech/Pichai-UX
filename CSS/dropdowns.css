@@ -5,4 +5,10 @@ accordion-dropdown h5 {
 
     background-color:var(--primary);
     color:var(--primaryTextColor);
+
+    padding:8px;
+}
+
+accordion-dropdown h5::after {
+    content: 'arrow_drop_down';
 }
