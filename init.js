@@ -55,9 +55,8 @@ class PichaiUX {
         // generate pallete based on bg image
         await generate3ColorPallete(this.options);
 
-        // make a themed icon
+        // make a themed icon if set to true by user
         if (this.options.themedFavIcon) {
-            //update favIcon to match themed one.
             const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
 
             // Get the favicon URL
@@ -92,7 +91,9 @@ class PichaiUX {
 
             i.style.color = getTextColor(rgb);
 
-            if (i.tagName == 'LI' && i.style.color == 'black') {
+            let color = window.getComputedStyle(i)['color']
+
+            if (i.tagName == 'LI' && color == 'black') {
                 console.log('ee')
                 i.classList.add('black');
             }
