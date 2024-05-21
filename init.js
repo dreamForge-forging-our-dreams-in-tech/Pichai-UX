@@ -81,6 +81,11 @@ class PichaiUX {
 
             let rgb = extractRgb(i);
 
+            console.log(i.style.color)
+            if(i.tagName == 'li'){
+
+            }
+
             i.style.color = getTextColor(rgb);
         }
     }
