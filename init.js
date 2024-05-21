@@ -81,12 +81,12 @@ class PichaiUX {
 
             let rgb = extractRgb(i);
 
+            i.style.color = getTextColor(rgb);
+
             console.log(i.style.color)
             if(i.tagName == 'li'){
 
             }
-
-            i.style.color = getTextColor(rgb);
         }
     }
 }
