@@ -10,7 +10,7 @@ class PichaiUX {
         darkMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
         overrideColorsOnScroll: true,
         themedFavIcon: true,
-        extractionPosition:0,
+        extractionPosition: 0,
         loginDialog: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when clicking the log in button
         accountMenu: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when the user is logged in and allows settings modifications, saving etc
     }) {
@@ -84,14 +84,16 @@ class PichaiUX {
         console.log(el)
         let elements = el.getElementsByTagName('*');
         let i;
-        
+
         for (i of elements) {
 
-            let rgb = extractRgb(i);
+            try {
+                let rgb = extractRgb(i);
+            } catch (e) { }
 
             i.style.color = getTextColor(rgb);
 
-            if(i.tagName == 'li' && i.style.color == 'black'){
+            if (i.tagName == 'li' && i.style.color == 'black') {
                 i.classList.add('black');
             }
         }
