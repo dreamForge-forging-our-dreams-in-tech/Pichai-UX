@@ -87,9 +87,9 @@ class PichaiUX {
 
             try {
                 let rgb = extractRgb(i);
-            } catch (e) { }
 
-            i.style.color = getTextColor(rgb);
+                i.style.color = getTextColor(rgb);
+            } catch (e) { }
 
             let color = window.getComputedStyle(i)['color'];
 
