@@ -7,10 +7,10 @@ accordion-dropdown h5 {
     color:var(--primaryTextColor);
 
     padding:8px !important;
+
+    display:flex;
+    flex-direction:row;
 }
 
 accordion-dropdown {
-    display:flex;
-    flex-direction:row;
-    width:max-content;
 }
