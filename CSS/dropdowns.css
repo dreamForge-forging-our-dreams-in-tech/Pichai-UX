@@ -1,5 +1,5 @@
 accordion-dropdown h5 {
-    width:100%;
+    width:calc(100% - 12px);
 
     border-radius:200px;
 
@@ -24,7 +24,7 @@ accordion-dropdown h5 i {
     background-color:var(--primaryContainer);
     color:var(--primaryContainerTextColor);
 
-    margin-left:8px;
+    margin-left:auto;
 
     width:max-content;
 }
