@@ -18,8 +18,8 @@ class Accordion extends HTMLElement {
 
         arrow.onclick = function () {
             if(art.style.height == 'max-content') {
-                art.style.height = '0px 8px 0px 8px';
-                art.style.padding = '0px';
+                art.style.height = '0px';
+                art.style.padding = '0px 8px 0px 8px';
 
                 arrow.innerHTML = 'arrow_drop_down';
             } else {
