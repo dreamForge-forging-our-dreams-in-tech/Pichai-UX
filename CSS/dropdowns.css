@@ -1,5 +1,5 @@
 accordion-dropdown h5 {
-    width:calc(100% - 12px);
+    width:calc(100% - 8px);
 
     border-radius:200px;
 
@@ -27,7 +27,7 @@ accordion-dropdown h5 i {
 
     margin-left:auto;
 
-    width:max-content;
+    width:max-content !important;
 }
 
 accordion-dropdown {
@@ -37,6 +37,7 @@ accordion-dropdown {
 
 accordion-dropdown * {
     height:100%;
+    width:100% !important;
 }
 
 accordion-dropdown article {
