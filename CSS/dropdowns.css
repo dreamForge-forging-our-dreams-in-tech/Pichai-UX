@@ -10,6 +10,15 @@ accordion-dropdown h5 {
 
     display:flex;
     flex-direction:row;
+
+    align-items:center;
+}
+
+accordion-dropdown h5 i {
+    border-radius:200px;
+
+    background-color:var(--primaryCntainer);
+    color:var(--primaryContainerTextColor);
 }
 
 accordion-dropdown {
