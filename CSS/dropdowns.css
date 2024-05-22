@@ -6,7 +6,7 @@ accordion-dropdown h5 {
     background-color:var(--primary);
     color:var(--primaryTextColor);
 
-    padding:3px 8px 3px 8px !important;
+    padding:3px 8px 8px 3px !important;
 
     display:flex;
     flex-direction:row;
