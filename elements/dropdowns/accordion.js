@@ -10,18 +10,18 @@ class Accordion extends HTMLElement {
         let art = document.createElement('article');
         art.innerHTML = this.innerHTML;
         this.innerHTML = '';
-        art.style.display = 'none';
+        art.style.height = '0px';
 
         let arrow = document.createElement('i');
         arrow.classList.add('material-symbols-outlined');
         arrow.innerHTML = 'arrow_drop_down';
 
         arrow.onclick = function () {
-            if(art.style.display == 'block') {
-                art.style.display = 'none';
+            if(art.style.height == 'max-content') {
+                art.style.height = '0px';
                 arrow.innerHTML = 'arrow_drop_down';
             } else {
-                art.style.display = 'block';
+                art.style.height = 'max-content';
                 arrow.innerHTML = 'arrow_drop_up';
             }
         }
