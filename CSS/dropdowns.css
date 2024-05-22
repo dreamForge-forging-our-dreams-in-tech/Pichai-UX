@@ -6,7 +6,7 @@ accordion-dropdown h5 {
     background-color:var(--primary);
     color:var(--primaryTextColor);
 
-    padding:8px !important;
+    padding:3px !important;
 
     display:flex;
     flex-direction:row;
@@ -19,6 +19,8 @@ accordion-dropdown h5 i {
 
     background-color:var(--primaryContainer);
     color:var(--primaryContainerTextColor);
+
+    margin-left:8px;
 }
 
 accordion-dropdown {
