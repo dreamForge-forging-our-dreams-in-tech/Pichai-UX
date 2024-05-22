@@ -12,7 +12,7 @@ class Accordion extends HTMLElement {
         this.innerHTML = '';
 
         let arrow = document.createElement('i');
-        arrow.class = 'material-symbols-rounded';
+        arrow.classList.add('material-symbols-outlined');
         arrow.innerHTML = 'arrow_drop_down';
 
         content.appendChild(art);
