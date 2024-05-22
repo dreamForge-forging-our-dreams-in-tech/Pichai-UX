@@ -12,4 +12,5 @@ accordion-dropdown h5 {
 accordion-dropdown {
     display:flex;
     flex-direction:row;
+    width:max-content;
 }
