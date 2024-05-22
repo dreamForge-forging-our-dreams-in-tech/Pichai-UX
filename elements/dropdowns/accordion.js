@@ -7,6 +7,7 @@ class Accordion extends HTMLElement {
 
     connectedCallback() {
         let content = document.createElement('section');
+        
         let art = document.createElement('article');
         art.innerHTML = this.innerHTML;
         art.style.height = this.getAttribute('visible') == 'true' ? 'max-content' : '0px';
