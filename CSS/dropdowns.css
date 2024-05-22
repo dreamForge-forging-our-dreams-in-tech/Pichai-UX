@@ -27,7 +27,7 @@ accordion-dropdown h5 i {
 
     margin-left:auto;
 
-    width:max-content;
+    width:max-content !important;
 }
 
 accordion-dropdown {
@@ -37,7 +37,7 @@ accordion-dropdown {
 
 accordion-dropdown * {
     height:100%;
-    width:100% !important;
+    width:100%;
 }
 
 accordion-dropdown article {
