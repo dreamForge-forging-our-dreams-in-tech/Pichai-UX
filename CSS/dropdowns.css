@@ -34,3 +34,7 @@ accordion-dropdown {
     display:flex;
     flex-direction:column;
 }
+
+accordion-dropdown * {
+    height:100%;
+}
