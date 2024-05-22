@@ -31,3 +31,7 @@ accordion-dropdown {
     display:flex;
     flex-direction:column;
 }
+
+accordion-dropdown * {
+    flex:1;
+}
