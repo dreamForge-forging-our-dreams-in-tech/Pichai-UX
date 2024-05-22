@@ -46,6 +46,10 @@ accordion-dropdown article * {
 accordion-dropdown article {
     border-radius:10px;
 
+    padding:0px 8px 0px 8px;
+
+    height:0px;
+
     background-color:var(--primaryContainer);
     color:var(--primaryContainerTextColor)
 }

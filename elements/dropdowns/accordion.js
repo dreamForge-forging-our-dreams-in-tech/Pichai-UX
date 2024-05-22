@@ -10,7 +10,6 @@ class Accordion extends HTMLElement {
         let art = document.createElement('article');
         art.innerHTML = this.innerHTML;
         this.innerHTML = '';
-        art.style.height = '0px';
 
         let arrow = document.createElement('i');
         arrow.classList.add('material-symbols-outlined');
