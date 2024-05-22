@@ -38,3 +38,12 @@ accordion-dropdown {
 accordion-dropdown * {
     height:100%;
 }
+
+accordion-dropdown article {
+    border-radius:10px;
+
+    padding:8px;
+
+    background-color:var(--primaryContainer);
+    color:var(--primaryContainerTextColor)
+}
