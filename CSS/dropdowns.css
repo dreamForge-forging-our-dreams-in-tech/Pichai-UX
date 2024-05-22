@@ -37,6 +37,9 @@ accordion-dropdown {
 
 accordion-dropdown * {
     height:100%;
+}
+
+accordion-dropdown article * {
     width:100% !important;
 }
 
