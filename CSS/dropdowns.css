@@ -48,8 +48,6 @@ accordion-dropdown article {
 
     padding:0px 8px 0px 8px;
 
-    height:0px;
-
     background-color:var(--primaryContainer);
     color:var(--primaryContainerTextColor)
 }

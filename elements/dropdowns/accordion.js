@@ -9,6 +9,8 @@ class Accordion extends HTMLElement {
         let content = document.createElement('section');
         let art = document.createElement('article');
         art.innerHTML = this.innerHTML;
+        art.style.display = this.getAttribute('visible') == 'true' ? 'max-content' : '0px';
+
         this.innerHTML = '';
 
         let arrow = document.createElement('i');
