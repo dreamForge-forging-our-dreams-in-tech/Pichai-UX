@@ -19,8 +19,10 @@ class Accordion extends HTMLElement {
         arrow.onclick = function () {
             if(art.style.display == 'block') {
                 art.style.display = 'none';
+                arrow.innerHTML = 'arrow_drop_down';
             } else {
                 art.style.display = 'block';
+                arrow.innerHTML = 'arrow_drop_up';
             }
         }
 
@@ -30,8 +32,7 @@ class Accordion extends HTMLElement {
         title.innerHTML = this.hasAttribute('titleText') ? this.getAttribute('titleText') : 'Accordion 🪗';
 
         title.appendChild(arrow);
-
-
+        
         this.appendChild(title);
         this.appendChild(content);
     }

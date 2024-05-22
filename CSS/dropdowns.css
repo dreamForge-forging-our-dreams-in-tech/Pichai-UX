@@ -28,4 +28,6 @@ accordion-dropdown h5 i {
 }
 
 accordion-dropdown {
+    display:flex;
+    flex-direction:column;
 }
