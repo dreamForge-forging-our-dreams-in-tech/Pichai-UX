@@ -19,13 +19,13 @@ class Accordion extends HTMLElement {
         arrow.innerHTML = 'arrow_drop_down';
 
         arrow.onclick = function () {
-            if(art.style.height == 'max-content') {
+            if(art.style.height == '100%') {
                 art.style.height = '0px';
                 art.style.padding = '0px 8px 0px 8px';
 
                 arrow.innerHTML = 'arrow_drop_down';
             } else {
-                art.style.height = 'max-content';
+                art.style.height = '100%';
                 art.style.padding = '8px';
 
                 arrow.innerHTML = 'arrow_drop_up';
