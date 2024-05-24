@@ -10,13 +10,13 @@ class Accordion extends HTMLElement {
         
         let art = document.createElement('article');
         art.innerHTML = this.innerHTML;
-        art.style.height = this.getAttribute('visible') == 'true' ? 'max-content' : '0px';
+        art.style.height = '0px';
 
         this.innerHTML = '';
 
         let arrow = document.createElement('i');
         arrow.classList.add('material-symbols-outlined');
-        arrow.innerHTML = this.getAttribute('visible') == 'true' ? 'arrow_drop_up' : 'arrow_drop_down';
+        arrow.innerHTML = 'arrow_drop_down';
 
         arrow.onclick = function () {
             if(art.style.height == 'max-content') {
@@ -30,6 +30,10 @@ class Accordion extends HTMLElement {
 
                 arrow.innerHTML = 'arrow_drop_up';
             }
+        }
+
+        if(this.getAttribute('visible') == 'true') {
+            arrow.click();
         }
 
         content.appendChild(art);
