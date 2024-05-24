@@ -112,7 +112,9 @@ label{
     width:max-content;
 }
 
-
+.hidden {
+    height:max-content !important;
+}
 
 a {
     text-decoration:none;
