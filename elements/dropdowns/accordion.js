@@ -16,7 +16,7 @@ class Accordion extends HTMLElement {
 
         let arrow = document.createElement('i');
         arrow.classList.add('material-symbols-outlined');
-        arrow.innerHTML = 'arrow_drop_down';
+        arrow.innerHTML = this.getAttribute('visible') == 'true' ? 'arrow_drop_up' : 'arrow_drop_down';
 
         arrow.onclick = function () {
             if(art.style.height == 'max-content') {
