@@ -43,12 +43,6 @@ accordion-dropdown * {
 accordion-dropdown article * {
     width: 100% !important;
     height:100% !Important;
-
-    -webkit-box-sizing: border-box;
-    /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;
-    /* Firefox, other Gecko */
-    box-sizing: border-box;
 }
 
 accordion-dropdown article {
@@ -58,10 +52,4 @@ accordion-dropdown article {
 
     background-color: var(--primaryContainer);
     color: var(--primaryContainerTextColor);
-
-    -webkit-box-sizing: border-box;
-    /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;
-    /* Firefox, other Gecko */
-    box-sizing: border-box;
 }
