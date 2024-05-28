@@ -10,10 +10,6 @@ class Accordion extends HTMLElement {
         
         let art = document.createElement('article');
         art.innerHTML = this.innerHTML;
-        
-        content.classList.add('hidden');
-        this.classList.add('hiddenAccordion');
-
         this.innerHTML = '';
 
         let arrow = document.createElement('i');
@@ -40,7 +36,7 @@ class Accordion extends HTMLElement {
             }
         }
 
-        if(this.getAttribute('visible') == 'true') {
+        if(!this.getAttribute('visible') == 'true') {
             arrow.click();
         }
 
