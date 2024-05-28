@@ -2,6 +2,8 @@ input, textarea {
     text-align:left;
 
     padding:4px;
+
+    width:max-content;
 }
 
 .card input {
