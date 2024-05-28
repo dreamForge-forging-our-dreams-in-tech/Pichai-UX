@@ -12,6 +12,10 @@ class Accordion extends HTMLElement {
         art.innerHTML = this.innerHTML;
         this.innerHTML = '';
 
+        art.style.height = '0px';
+        content.classList.add('hidden');
+        this.classList.add('hiddenAccordion');
+
         let arrow = document.createElement('i');
         arrow.classList.add('material-symbols-outlined');
         arrow.innerHTML = 'arrow_drop_down';
@@ -35,8 +39,6 @@ class Accordion extends HTMLElement {
                 arrow.innerHTML = 'arrow_drop_up';
             }
         }
-
-        arrow.click();
 
         if(this.getAttribute('visible') == 'true') {
             arrow.click();
