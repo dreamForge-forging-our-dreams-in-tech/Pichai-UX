@@ -10,7 +10,7 @@ class Accordion extends HTMLElement {
         
         let art = document.createElement('article');
         art.innerHTML = this.innerHTML;
-        art.classList.add('hidden');
+        art.parentNode.classList.add('hidden');
         this.classList.add('hiddenAccordion');
 
         this.innerHTML = '';
