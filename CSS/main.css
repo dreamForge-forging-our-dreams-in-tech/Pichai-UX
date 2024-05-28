@@ -121,8 +121,7 @@ label {
 }
 
 .hidden * {
-    padding:0px;
-    margin:0px;
+    display:none !important;
 }
 
 a {
