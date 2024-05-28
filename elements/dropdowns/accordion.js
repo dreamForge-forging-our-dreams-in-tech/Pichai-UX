@@ -23,14 +23,14 @@ class Accordion extends HTMLElement {
                 art.style.height = '0px';
                 art.style.padding = '0px 8px 0px 8px';
 
-                this.parentNode.parentNode.classList.add('hidden');
+                this.parentNode.parentNode.children[1].classList.add('hidden');
 
                 arrow.innerHTML = 'arrow_drop_down';
             } else {
                 art.style.height = '100%';
                 art.style.padding = '8px';
 
-                this.parentNode.parentNode.classList.remove('hidden');
+                this.parentNode.parentNode.children[1].classList.remove('hidden');
 
                 arrow.innerHTML = 'arrow_drop_up';
             }
