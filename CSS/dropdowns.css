@@ -51,6 +51,4 @@ accordion-dropdown article {
 
     background-color: var(--primaryContainer);
     color: var(--primaryContainerTextColor);
-
-    width:min-content;
 }
