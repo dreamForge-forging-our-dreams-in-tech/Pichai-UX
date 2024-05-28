@@ -116,6 +116,11 @@ label {
     height:max-content !important;
 }
 
+.hidden * {
+    padding:0px;
+    margin:0px;
+}
+
 a {
     text-decoration:none;
 }
