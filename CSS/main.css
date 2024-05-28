@@ -112,6 +112,10 @@ label {
     width:max-content;
 }
 
+.hiddenAccordion {
+    height:max-content !important;
+}
+
 .hidden {
     height:max-content !important;
 }
