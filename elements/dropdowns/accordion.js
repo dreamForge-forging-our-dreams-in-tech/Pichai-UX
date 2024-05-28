@@ -36,7 +36,9 @@ class Accordion extends HTMLElement {
             }
         }
 
-        if(!this.getAttribute('visible') == 'true') {
+        arrow.click();
+
+        if(this.getAttribute('visible') == 'true') {
             arrow.click();
         }
 
