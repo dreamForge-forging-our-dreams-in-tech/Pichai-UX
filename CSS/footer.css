@@ -1,12 +1,10 @@
 hr {
-
-    --w:200px;
-    --h:40px;
-    --p:10px;
-    --t:8px;
-    --c:purple
-    --p:13px;  /* adjust this to correct the position when changing the other values*/
     
+    --c:red;   /* Color */
+    --t:5px;   /* Thickness */
+    --h:50px;  /* Height (vertical distance between two curve) */
+    --w:120px; /* Width  */
+    --p:13px;  /* adjust this to correct the position when changing the other values*/
     background:
       radial-gradient(farthest-side at 50% calc(100% + var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t))),
       radial-gradient(farthest-side at 50% calc(0%   - var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t)));
