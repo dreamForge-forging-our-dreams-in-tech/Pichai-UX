@@ -2,7 +2,7 @@ header {
     width:100%;
     min-height: 55px;
 
-    border-width:0px 0px 2px 0px;
+    border-width:0px 0px 0px 0px; /*0px 0px 2px 0px;*/
     border-style:solid;;
     border-color:var(--primary);
     border-radius:0px;
