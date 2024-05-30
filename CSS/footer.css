@@ -1,18 +1,9 @@
 hr {
-    
-    --c:red;   /* Color */
-    --t:2px;   /* Thickness */
-    --h:50px;  /* Height (vertical distance between two curve) */
-    --w:120px; /* Width  */
-    --p:13px;  /* adjust this to correct the position when changing the other values*/
-    background:
-      radial-gradient(farthest-side at 50% calc(100% + var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t))),
-      radial-gradient(farthest-side at 50% calc(0%   - var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t)));
-      
-    background-size:var(--w) var(--h);
-    background-position:calc(var(--w)/2) calc(var(--h)/2),0px calc(var(--h)/2);
-    
-    display:inline-block;
-    width:100%;
-    height:150px;
+    .box {
+        --mask:
+          radial-gradient(582.67px at 50% calc(100% + 514px),#0000 calc(99% - 16px),#000 calc(101% - 16px) 99%,#0000 101%) calc(50% - 514px) calc(50% - 136.5px + .5px)/1028px 273px ,
+          radial-gradient(582.67px at 50% -514px,#0000 calc(99% - 16px),#000 calc(101% - 16px) 99%,#0000 101%) 50% calc(50% + 136.5px)/1028px 273px ;
+        -webkit-mask: var(--mask);
+                mask: var(--mask);
+      }
   }
