@@ -5,10 +5,10 @@ input, textarea {
 
     width:max-content;
 
-    background-color:var(--secondairy);
-    color:var(--secondairyTextColor);
+    background-color:var(--tertiary);
+    color:var(--tertiaryTextColor);
 }
 
 input::placeholder {
-    color:var(--secondairyTextColor);
+    color:var(--tertiaryTextColor);
 }
