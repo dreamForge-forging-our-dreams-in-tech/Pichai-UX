@@ -11,7 +11,8 @@ class Header extends HTMLElement {
         <x-title></x-title>
         <log-in></log-in>
         <display-profile></display-profile>
-    </header>`;
+    </header>
+    <hr></hr>`;
     }
 }
 
