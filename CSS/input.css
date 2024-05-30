@@ -12,3 +12,12 @@ input, textarea {
 input::placeholder {
     color:var(--tertiaryTextColor);
 }
+
+.card input {
+    background-color:var(--secondairy);
+    color:var(--secondairyTextColor);
+}
+
+.card input::placeholder {
+    color:var(--secondairyTextColor);
+}
