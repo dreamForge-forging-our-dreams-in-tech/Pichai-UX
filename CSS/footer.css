@@ -2,7 +2,7 @@ hr {
     
     --c:red;   /* Color */
     --t:5px;   /* Thickness */
-    --h:50px;  /* Height (vertical distance between two curve) */
+    --h:10px;  /* Height (vertical distance between two curve) */
     --w:120px; /* Width  */
     --p:13px;  /* adjust this to correct the position when changing the other values*/
     background:
@@ -12,10 +12,7 @@ hr {
     background-size:var(--w) var(--h);
     background-position:calc(var(--w)/2) calc(var(--h)/2),0px calc(var(--h)/2);
     
-    
-    border:1px solid;
-    margin:5px 0;
     display:inline-block;
-    width:300px;
+    width:100%;
     height:150px;
   }
