@@ -4,20 +4,19 @@ input, textarea {
     padding:4px;
 
     width:max-content;
-
-    background-color:var(--secondairy);
-    color:var(--secondairyTextColor);
-}
-
-input::placeholder {
-    color:var(--secondairyTextColor);
-}
-
-.card input {
     background-color:var(--tertiary);
     color:var(--tertiaryTextColor);
 }
 
-.card input::placeholder {
+input::placeholder {
     color:var(--tertiaryTextColor);
+}
+
+.card input {
+    background-color:var(--secondairy);
+    color:var(--secondairyTextColor);
+}
+
+.card input::placeholder {
+    color:var(--secondairyTextColor);
 }
