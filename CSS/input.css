@@ -5,19 +5,19 @@ input, textarea {
 
     width:max-content;
 
-    background-color:var(--tertiary);
-    color:var(--tertiaryTextColor);
-}
-
-input::placeholder {
-    color:var(--tertiaryTextColor);
-}
-
-.card input {
     background-color:var(--secondairy);
     color:var(--secondairyTextColor);
 }
 
-.card input::placeholder {
+input::placeholder {
     color:var(--secondairyTextColor);
+}
+
+.card input {
+    background-color:var(--tertiary);
+    color:var(--tertiaryTextColor);
+}
+
+.card input::placeholder {
+    color:var(--tertiaryTextColor);
 }
