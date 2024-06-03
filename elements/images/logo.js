@@ -66,6 +66,9 @@ function generateDynamicIcon(image) {
                 }
             }
 
+            const context = canvas.getContext('2d');
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
             context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
 
             context.translate(-canvas.width / 5.3, canvas.height / 3.3);
@@ -81,9 +84,6 @@ function generateDynamicIcon(image) {
 
                     // Check if the pixel is not the theme color
                     if (red === textColor && green === textColor && blue === textColor) {
-                        context.fillStyle = `rgb(${rgb.join(',')})`;
-                        context.fillRect(x, y, 1, 1); // Draw a 1x1 square
-
                         // Replace the pixel with a 5x5 square
                         context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
                         context.fillRect(x, y, 6, 6); // Draw a 5x5 square
