@@ -5,7 +5,7 @@ function generateDynamicIcon(image) {
     return new Promise((resolve) => {
         // Assume you have an HTML canvas element with the id "myCanvas"
         const canvas = document.createElement('canvas');
-        const context = canvas.getContext("2d", {willReadFrequently: true});
+        const context = canvas.getContext("2d", { willReadFrequently: true });
 
         // Load your image onto the canvas
         let dynamicImage = new Image();
@@ -66,9 +66,12 @@ function generateDynamicIcon(image) {
                 }
             }
 
+            const context = canvas.getContext('2d');
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
             context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
 
-            context.translate(-canvas.width / 5.3 ,canvas.height / 3.3);
+            context.translate(-canvas.width / 5.3, canvas.height / 3.3);
             context.rotate(-0.55);
             context.putImageData(imageData, 0, 0);
 
@@ -78,7 +81,7 @@ function generateDynamicIcon(image) {
                     const red = imageData.data[index];
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
-            
+
                     // Check if the pixel is not the theme color (white in this case)
                     if (red === textColor && green === textColor && blue === textColor) {
                         // Replace the pixel with a 5x5 square
@@ -108,18 +111,18 @@ class Logo extends HTMLElement {
 
         // Get the favicon URL
         let faviconUrl = faviconLink ? faviconLink.href : null;
-        if(this.hasAttribute('src')) {
+        if (this.hasAttribute('src')) {
             faviconUrl = this.getAttribute('src');
         }
 
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
             let newIcon = await generateDynamicIcon(faviconUrl);
             this.style.backgroundImage = `url(${newIcon})`;
-            
+
             window.onload = async () => {
                 let newIcon = await generateDynamicIcon(faviconUrl);
                 this.style.backgroundImage = `url(${newIcon})`;
-        }
+            }
         } else {
             this.style.backgroundImage = `url("${faviconUrl}")`;
         }
