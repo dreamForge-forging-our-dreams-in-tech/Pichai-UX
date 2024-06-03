@@ -85,7 +85,7 @@ function generateDynamicIcon(image) {
                         context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
                         context.fillRect(x, y, 7, 7); // Draw a 5x5 square
 
-                        console.log(rgb.join(',');)
+                        console.log(rgb.join(','))
                         context.fillStyle = rgb.join(',');
                         context.fillRect(x, y, 1, 1); // Draw a 5x5 square
                     }
