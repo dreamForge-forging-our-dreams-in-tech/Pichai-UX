@@ -82,8 +82,9 @@ function generateDynamicIcon(image) {
                     // Check if the pixel is not the theme color
                     if (red === textColor && green === textColor && blue === textColor) {
                         context.fillStyle = `rgb(${rgb.join(',')})`;
+                        console.log(context.fillStyle)
                         context.fillRect(x, y, 1, 1); // Draw a 5x5 square
-                        
+
                         // Replace the pixel with a 5x5 square
                         context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
                         context.fillRect(x, y, 7, 7); // Draw a 5x5 square
