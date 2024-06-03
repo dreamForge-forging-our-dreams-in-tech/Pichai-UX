@@ -28,7 +28,7 @@ function generateDynamicIcon(image) {
             context.save();
             // Draw the image on the canvas
             context.translate(canvas.width / 2, canvas.height / 2)
-            context.rotate(0.55);
+            context.rotate(0.53);
             context.drawImage(dynamicImage, -dynamicImage.width / 2, -dynamicImage.height / 2);
 
             // Define the tolerance for color matching (adjust as needed)
@@ -69,7 +69,7 @@ function generateDynamicIcon(image) {
             context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
 
             context.translate(-canvas.width / 5.3, canvas.height / 3.3);
-            context.rotate(-0.55);
+            context.rotate(-0.53);
             context.putImageData(imageData, 0, 0);
 
             for (let y = 0; y < canvas.height; y++) {
@@ -83,7 +83,7 @@ function generateDynamicIcon(image) {
                     if (red === textColor && green === textColor && blue === textColor) {
                         // Replace the pixel with a 5x5 square
                         context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
-                        context.fillRect(x, y, 6, 6); // Draw a 5x5 square
+                        //context.fillRect(x, y, 6, 6); // Draw a 5x5 square
                     }
                 }
             }
