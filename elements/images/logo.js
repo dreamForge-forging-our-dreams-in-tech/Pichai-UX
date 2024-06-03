@@ -86,7 +86,7 @@ function generateDynamicIcon(image) {
                         context.fillRect(x, y, 7, 7); // Draw a 5x5 square
 
                         console.log(rgb.join(','))
-                        context.fillStyle = rgb.join(',');
+                        context.fillStyle = `rgb(${rgb.join(',')})`;
                         context.fillRect(x, y, 1, 1); // Draw a 5x5 square
                     }
                 }
