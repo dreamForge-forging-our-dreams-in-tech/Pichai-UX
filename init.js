@@ -102,7 +102,7 @@ class PichaiUX {
     }
 
     getListOfElements () {
-        return getListOfElements;
+        return getListOfElements();
     }
 }
 
