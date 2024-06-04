@@ -68,7 +68,7 @@ function generateDynamicIcon(image) {
 
             context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
 
-            context.translate(-canvas.width / 5.4, canvas.height / 3.4);
+            context.translate(-canvas.width / 5.2, canvas.height / 3.2);
             context.rotate(-0.55);
             context.putImageData(imageData, 0, 0);
 
