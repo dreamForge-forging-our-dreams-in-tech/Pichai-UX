@@ -4,6 +4,8 @@ import { getTextColor } from './AI/textColorFInder.js';
 
 import { extractRgb } from './utils/extraFunctions.js';
 
+import { getListOfElements } from './utils/customeElementsDefine.js';
+
 class PichaiUX {
     constructor(options = {
         source: '#008dcd',
@@ -97,6 +99,10 @@ class PichaiUX {
                 i.classList.add('black');
             }
         }
+    }
+
+    getListOfElements () {
+        return getListOfElements;
     }
 }
 
