@@ -7,7 +7,6 @@ const registry = {};
 
 registry.define = function(name, constructor, options) { // create custom registry
   if (!Object.keys(existingCustomElements).includes(name)) {
-    console.log(constructor);
 
     existingCustomElements[name] = { // add custome element information to an object that can be read
         name: name,
@@ -19,12 +18,12 @@ registry.define = function(name, constructor, options) { // create custom regist
 };
 
 function extractAttributes (constructor) {
-    let con = String(constructor);
+    let con = String(constructor); // turn to string to extract attributes
 
     let attributes = [];
 
     if(con.includes('static observedAttributes')) {
-        console.log(con.substring(con.indexOf('static observedAttributes = '), 100))
+        console.log(con.substring(con.indexOf('static observedAttributes = ['), con.indexOf(']')).split(','))
     }
 
     return attributes;
