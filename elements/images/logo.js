@@ -135,6 +135,9 @@ class Logo extends HTMLElement {
 }
 
 customElements.define("x-icon", Logo);
-console.log(customElements)
+
+window.onload = () => {
+console.log(customElements);
+}
 
 export { generateDynamicIcon };
