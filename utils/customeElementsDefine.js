@@ -1,6 +1,6 @@
 //reqrittes the define function on customElements so we can track all existing elements and their attributes
 
-let existingCustomElements = [];
+let existingCustomElements = {};
 
 let customElementsRegistry = window.customElements;
 const registry = {};
@@ -24,8 +24,7 @@ function extractAttributes (constructor) {
 
     if(con.includes('static observedAttributes')) {
         con = con.substring(con.indexOf('static observedAttributes = ['), con.indexOf(']'));
-        con = con.replaceAll('static observedAttributes = [').split(',');
-        console.log(con)
+        con = con.replaceAll('static observedAttributes = [','').split(',');
 
         return con;
     }
