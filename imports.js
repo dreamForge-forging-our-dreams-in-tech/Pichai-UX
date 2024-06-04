@@ -1,5 +1,7 @@
 import { PichaiUX } from "./init.js";
 
+import './utils/customeElementsDefine.js';
+
 import './utils/global_vars.js';
 
 import './elements/images/logo.js';

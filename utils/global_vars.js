@@ -1,3 +1,4 @@
+
 window.default_sensitivity = 5;
 window.default_index = 0;
 
