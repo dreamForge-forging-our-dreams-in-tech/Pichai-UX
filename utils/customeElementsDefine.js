@@ -19,10 +19,12 @@ registry.define = function(name, constructor, options) { // create custom regist
 };
 
 function extractAttributes (constructor) {
+    let con = String(constructor);
+
     let attributes = [];
 
-    if(String(constructor).includes('static observedAttributes')) {
-        console.log(constructor.substring(constructor.indexOf('static observedAttributes = '), 100))
+    if(con.includes('static observedAttributes')) {
+        console.log(con.substring(con.indexOf('static observedAttributes = '), 100))
     }
 
     return attributes;
