@@ -136,7 +136,7 @@ class Logo extends HTMLElement {
 
 customElements.define("x-icon", Logo);
 
-window.onload = () => {
+window.onload = function () {
 console.log(customElements);
 }
 
