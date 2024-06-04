@@ -24,7 +24,7 @@ function extractAttributes (constructor) {
         con = con.substring(con.indexOf('static observedAttributes = ['), con.indexOf(']'));
         con = con.replaceAll('static observedAttributes = [','').split(',');
 
-        return con ? cpm : {};
+        return con ? con : {};
     }
 }
 
