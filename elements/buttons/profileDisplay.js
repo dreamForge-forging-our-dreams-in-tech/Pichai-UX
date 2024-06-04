@@ -1,3 +1,4 @@
+import { registry } from '../../utils/customeElementsDefine.js';
 // Create a class for the element
 class DisplayProfile extends HTMLElement {
     static observedAttributes = ["src", "dynamic"];
@@ -40,4 +41,4 @@ class DisplayProfile extends HTMLElement {
     }
 }
 
-customElements.define("display-profile", DisplayProfile);
+registry.define("display-profile", DisplayProfile);

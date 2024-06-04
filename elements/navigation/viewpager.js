@@ -1,3 +1,4 @@
+import { registry } from '../../utils/customeElementsDefine.js';
 
 // Create a class for the element
 class ViewPager extends HTMLElement {
@@ -67,4 +68,4 @@ class ViewPager extends HTMLElement {
     }
 }
 
-customElements.define("view-pager", ViewPager);  
+registry.define("view-pager", ViewPager);  

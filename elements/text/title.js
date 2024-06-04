@@ -1,3 +1,5 @@
+import { registry } from '../../utils/customeElementsDefine.js';
+
 // Create a class for the element
 class title extends HTMLElement {
     static observedAttributes = ["title"];
@@ -20,4 +22,4 @@ class title extends HTMLElement {
     }
 }
 
-customElements.define("x-title", title);
+registry.define("x-title", title);

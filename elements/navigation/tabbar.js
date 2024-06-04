@@ -1,3 +1,4 @@
+import { registry } from '../../utils/customeElementsDefine.js';
 
 // Create a class for the element
 class TabBar extends HTMLElement {
@@ -100,4 +101,4 @@ function removeForConnection(e, e2) {
     }
 }
 
-customElements.define("tab-bar", TabBar);  
+registry.define("tab-bar", TabBar);  

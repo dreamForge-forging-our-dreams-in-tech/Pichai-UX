@@ -1,6 +1,8 @@
 import { findColorClass } from '../../AI/colorClassFinder.js';
 import { getTextColor } from '../../AI/textColorFInder.js';
 
+import { registry } from '../../utils/customeElementsDefine.js';
+
 function generateDynamicIcon(image) {
     return new Promise((resolve) => {
         // Assume you have an HTML canvas element with the id "myCanvas"
@@ -134,6 +136,6 @@ class Logo extends HTMLElement {
     }
 }
 
-customElements.define("x-icon", Logo);
+registry.define("x-icon", Logo);
 
 export { generateDynamicIcon };

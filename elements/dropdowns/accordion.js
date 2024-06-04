@@ -1,3 +1,5 @@
+import { registry } from '../../utils/customeElementsDefine.js';
+
 // Create a class for the element
 class Accordion extends HTMLElement {
     constructor() {
@@ -56,4 +58,4 @@ class Accordion extends HTMLElement {
     }
 }
 
-customElements.define("accordion-dropdown", Accordion);  
+registry.define("accordion-dropdown", Accordion);  

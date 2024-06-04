@@ -1,3 +1,5 @@
+import { registry } from '../../utils/customeElementsDefine.js';
+
 // Create a class for the element
 class ColorPicker extends HTMLElement {
     static observedAttributes = ["src", "dynamic"];
@@ -40,4 +42,4 @@ class ColorPicker extends HTMLElement {
     }
 }
 
-customElements.define("color-picker", ColorPicker);
+registry.define("color-picker", ColorPicker);
