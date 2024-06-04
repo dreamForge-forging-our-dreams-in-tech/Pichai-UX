@@ -1,4 +1,5 @@
 import '../../utils/customeElementsDefine.js';
+import { registry } from '../../utils/customeElementsDefine.js';
 
 // Create a class for the element
 class logIn extends HTMLElement {
@@ -22,4 +23,4 @@ class logIn extends HTMLElement {
     }
 }
 
-customElements.define("log-in", logIn);  
+registry.define("log-in", logIn);  

@@ -12,3 +12,5 @@ registry.define = function(name, constructor, options) {
     customElementsRegistry.define(name, constructor, options);
   }
 };
+
+export { registry }
