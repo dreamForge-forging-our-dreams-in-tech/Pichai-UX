@@ -1,3 +1,4 @@
+import './utils/customeElementsDefine.js';
 
 // Create a class for the element
 class logIn extends HTMLElement {
