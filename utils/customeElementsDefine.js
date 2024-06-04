@@ -23,7 +23,11 @@ function extractAttributes (constructor) {
     let attributes = [];
 
     if(con.includes('static observedAttributes')) {
-        console.log(con.substring(con.indexOf('static observedAttributes = '), con.indexOf(']')))
+        con = con.substring(con.indexOf('static observedAttributes = ['), con.indexOf(']'));
+        con = con.replaceAll('static observedAttributes = [').split(',');
+        console.log(con)
+
+        return con;
     }
 
     return attributes;
