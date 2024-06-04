@@ -66,7 +66,6 @@ function generateDynamicIcon(image) {
                 }
             }
 
-            context = canvas.getContext('2d');
             context.clearRect(0, 0, canvas.width, canvas.height);
 
             context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
