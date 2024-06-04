@@ -73,6 +73,7 @@ function generateDynamicIcon(image) {
             context.putImageData(imageData, 0, 0);
 
             context.clearRect(0, 0, canvas.width, canvas.height);
+            context.fillRect(0, 0, canvas.width, canvas.height);
 
             for (let y = 0; y < canvas.height; y++) {
                 for (let x = 0; x < canvas.width; x++) {
