@@ -5,6 +5,7 @@ let existingCustomElements = [];
 let customElementsRegistry = window.customElements;
 const registry = {};
 registry.define = function(name, constructor, options) {
+    console.log(name);
   if (existingCustomElements.includes(name)) {
     console.log(name);
 
