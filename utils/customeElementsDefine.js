@@ -10,11 +10,22 @@ registry.define = function(name, constructor, options) { // create custom regist
     console.log(constructor);
 
     existingCustomElements[name] = { // add custome element information to an object that can be read
-        name: name
+        name: name,
+        attributes: extractAttributes(constructor)
     }
 
     customElementsRegistry.define(name, constructor, options); // define custom element like you would do normally
   }
 };
+
+function extractAttributes (constructor) {
+    let attributes = [];
+
+    if(constructor.includes('static observedAttributes')) {
+        console.log(constructor.substring(constructor.indexOf('static observedAttributes = '), 100))
+    }
+
+    return attributes;
+}
 
 export { registry }
