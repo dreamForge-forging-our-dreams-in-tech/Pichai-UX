@@ -59,6 +59,7 @@ class Accordion extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
+        console.log(name)
         if(name == 'titleText') { // lets you change the title of an accordion
             this.children[0].innerHTML = this.children[0].innerHTML.replace(oldValue, newValue);
         }
