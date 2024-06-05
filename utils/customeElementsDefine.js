@@ -6,7 +6,6 @@ let customElementsRegistry = window.customElements;
 const registry = {};
 
 registry.define = function(name, constructor, options) { // create custom registry
-  console.log(constructor)
   if (!Object.keys(existingCustomElements).includes(name)) {
 
     existingCustomElements[name] = { // add custom element information to an object that can be read
