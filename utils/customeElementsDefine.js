@@ -26,6 +26,8 @@ function extractAttributes (constructor) {
 
         return con;
     }
+
+    return {};
 }
 
 function getListOfElements() {
