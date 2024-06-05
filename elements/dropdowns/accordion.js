@@ -70,17 +70,16 @@ class Accordion extends HTMLElement {
                 art.style.height = '0px';
                 art.style.padding = '0px 8px 0px 8px';
 
-                this.parentNode.parentNode.children[1].classList.add('hidden');
-                this.parentNode.parentNode.classList.add('hiddenAccordion');
+                art.parentNode.children[1].classList.add('hidden');
+                art.parentNode.classList.add('hiddenAccordion');
 
                 arrow.innerHTML = 'arrow_drop_down';
             } else {
-                alert()
                 art.style.height = '100%';
                 art.style.padding = '8px';
 
-                this.parentNode.parentNode.children[1].classList.remove('hidden');
-                this.parentNode.parentNode.classList.remove('hiddenAccordion');
+                art.parentNode.children[1].classList.remove('hidden');
+                art.parentNode.classList.remove('hiddenAccordion');
 
                 arrow.innerHTML = 'arrow_drop_up';
             }
