@@ -64,6 +64,8 @@ class Accordion extends HTMLElement {
 
         } else if (name == 'visible') {
             let art = this.children[1].firstChild;
+            console.log(art, newValue)
+
             if(newValue == 'true') {
                 art.style.height = '0px';
                 art.style.padding = '0px 8px 0px 8px';
