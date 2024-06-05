@@ -65,7 +65,6 @@ class Accordion extends HTMLElement {
         } else if (name == 'visible') {
             let art = this.children[1].firstChild;
             let arrow = this.children[0].children[0];
-            console.log(arrow)
 
             if(newValue == 'false') {
                 art.style.height = '0px';
