@@ -68,7 +68,7 @@ class Accordion extends HTMLElement {
 
             console.log(art, newValue, newValue == 'false')
 
-            if(!newValue == 'false') {
+            if(newValue == 'false') {
                 art.style.height = '0px';
                 art.style.padding = '0px 8px 0px 8px';
 
