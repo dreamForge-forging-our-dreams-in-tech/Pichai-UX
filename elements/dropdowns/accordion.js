@@ -64,6 +64,8 @@ class Accordion extends HTMLElement {
 
         } else if (name == 'visible') {
             let art = this.children[1].firstChild;
+            let arrow = this.children[0].firstChild;
+            
             console.log(art, newValue)
 
             if(!newValue == 'true') {
