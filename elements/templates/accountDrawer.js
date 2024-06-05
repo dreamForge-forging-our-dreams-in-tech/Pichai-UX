@@ -1,4 +1,4 @@
-
+import { registry } from '../../utils/customeElementsDefine.js';
 // Create a class for the element
 class AccountDrawer extends HTMLElement {
     constructor() {
@@ -18,4 +18,4 @@ class AccountDrawer extends HTMLElement {
     }
 }
 
-customElements.define("template-account-drawer", AccountDrawer);
+registry.define("template-account-drawer", AccountDrawer);

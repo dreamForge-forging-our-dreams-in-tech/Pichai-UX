@@ -2,6 +2,7 @@ import { registry } from '../../utils/customeElementsDefine.js';
 
 // Create a class for the element
 class Accordion extends HTMLElement {
+    static observedAttributes = ["visible", "titleText"];
     constructor() {
         // Always call super first in constructor
         super();

@@ -2,7 +2,7 @@ import { registry } from '../../utils/customeElementsDefine.js';
 
 // Create a class for the element
 class TabBar extends HTMLElement {
-    static observedAttributes = ["direction"];
+    static observedAttributes = ["direction", 'index', 'for'];
 
     constructor() {
         // Always call super first in constructor

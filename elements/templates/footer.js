@@ -1,3 +1,4 @@
+import { registry } from '../../utils/customeElementsDefine.js';
 // Create a class for the element
 class Footer extends HTMLElement {
     constructor() {
@@ -16,4 +17,4 @@ class Footer extends HTMLElement {
     }
 }
 
-customElements.define("template-footer", Footer);
+registry.define("template-footer", Footer);
