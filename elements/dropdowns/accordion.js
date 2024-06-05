@@ -66,8 +66,6 @@ class Accordion extends HTMLElement {
             let art = this.children[1].firstChild;
             let arrow = this.children[0].firstChild;
 
-            console.log(art, newValue, newValue == 'false')
-
             if(newValue == 'false') {
                 art.style.height = '0px';
                 art.style.padding = '0px 8px 0px 8px';
@@ -77,6 +75,7 @@ class Accordion extends HTMLElement {
 
                 arrow.innerHTML = 'arrow_drop_down';
             } else {
+                alert()
                 art.style.height = '100%';
                 art.style.padding = '8px';
 
