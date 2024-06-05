@@ -70,7 +70,7 @@ class Accordion extends HTMLElement {
                 art.style.height = '0px';
                 art.style.padding = '0px 8px 0px 8px';
 
-                art.parentNode.children[1].classList.add('hidden');
+                art.parentNode.classList.add('hidden');
                 art.parentNode.parentNode.classList.add('hiddenAccordion');
 
                 arrow.innerHTML = 'arrow_drop_down';
@@ -78,7 +78,7 @@ class Accordion extends HTMLElement {
                 art.style.height = '100%';
                 art.style.padding = '8px';
 
-                art.parentNode.children[1].classList.remove('hidden');
+                art.parentNode.classList.remove('hidden');
                 art.parentNode.parentNode.classList.remove('hiddenAccordion');
 
                 arrow.innerHTML = 'arrow_drop_up';
