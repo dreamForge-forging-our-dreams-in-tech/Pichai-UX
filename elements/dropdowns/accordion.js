@@ -61,7 +61,9 @@ class Accordion extends HTMLElement {
     attributeChangedCallback(name, oldValue, newValue) {
         if(name == 'titletext') { // lets you change the title of an accordion
             this.children[0].textContent = newValue;
+
         } else if (name == 'visible') {
+            let art = this.children[1].firstChild;
             if(newValue == 'true') {
                 art.style.height = '0px';
                 art.style.padding = '0px 8px 0px 8px';
