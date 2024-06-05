@@ -59,9 +59,26 @@ class Accordion extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        console.log(name)
-        if(name == 'titleText') { // lets you change the title of an accordion
+        if(name == 'titletext') { // lets you change the title of an accordion
             this.children[0].textContent = newValue;
+        } else if (name == 'visible') {
+            if(newValue == 'true') {
+                art.style.height = '0px';
+                art.style.padding = '0px 8px 0px 8px';
+
+                this.parentNode.parentNode.children[1].classList.add('hidden');
+                this.parentNode.parentNode.classList.add('hiddenAccordion');
+
+                arrow.innerHTML = 'arrow_drop_down';
+            } else {
+                art.style.height = '100%';
+                art.style.padding = '8px';
+
+                this.parentNode.parentNode.children[1].classList.remove('hidden');
+                this.parentNode.parentNode.classList.remove('hiddenAccordion');
+
+                arrow.innerHTML = 'arrow_drop_up';
+            }
         }
 }
 }
