@@ -38,10 +38,11 @@ function extractAttributeTypes (constructor, attributes) {
 
   let j;
 
-  if(con.includes('doAttirbuteCheck')) { // extract attributes types
-    for(i of getAllIndexes(con, 'doAttirbuteCheck')) {
+  if(con.includes('doAttributeCheck')) { // extract attributes types
+    for(i of getAllIndexes(con, 'doAttributeCheck')) {
       j = con.substring(i, con.length - 1);
-      j.replace('doAttirbuteCheck(','').replace(')','');
+      j = j.replace('doAttributeCheck(','');
+      j = j.substring(0, j.indexOf(')'));
 
       console.log(j);
     }
@@ -52,7 +53,7 @@ function extractAttributeTypes (constructor, attributes) {
   return 'All';
 }
 
-function doAttirbuteCheck(type, value) { //used in the attributeChangedCallback. check if the typeof mathes the type (e.g. boolean, number, string etc). Not needed if all types are allowed
+function doAttributeCheck(type, value) { //used in the attributeChangedCallback. check if the typeof mathes the type (e.g. boolean, number, string etc). Not needed if all types are allowed
   type = type.toLowerCase();
 
   if(typeof value != type) {
@@ -66,4 +67,4 @@ function getListOfElements() {
     return existingCustomElements;
 }
 
-export { registry, getListOfElements, doAttirbuteCheck }
+export { registry, getListOfElements, doAttributeCheck }

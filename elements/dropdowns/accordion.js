@@ -1,4 +1,4 @@
-import { registry, doAttirbuteCheck } from '../../utils/customeElementsDefine.js';
+import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 
 // Create a class for the element
 class Accordion extends HTMLElement {
@@ -59,10 +59,10 @@ class Accordion extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        if(doAttirbuteCheck('string', 'titletext') || doAttirbuteCheck('boolean', 'visible')) {
+        if(doAttributeCheck('string', 'titletext') || doAttributeCheck('boolean', 'visible')) {
             return;
         }
-        
+
         if(name == 'titletext') { // lets you change the title of an accordion
             this.children[0].innerHTML = this.children[0].innerHTML.replace(oldValue, newValue);
 
