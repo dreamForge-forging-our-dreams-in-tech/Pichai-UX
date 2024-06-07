@@ -27,6 +27,7 @@ function extractAttributes (constructor) {
         con = con.replaceAll('static observedAttributes = [','').replace(/['"]+/g, '').split(',');
 
         for(i of con) {
+          console.log(i)
           obj[i] = 'all';
         }
 
