@@ -59,12 +59,12 @@ function doAttributeCheck(type, name, value) { //used in the attributeChangedCal
   let newValue = convertToRightType(value);
 
   if(value == null) {
+    console.log(value)
     return false;
   }
 
   if(typeof newValue != type) {
-    console.log(value)
-    console.error('Using incorrect attribute type \n. Use ' + type + ' instead of ' + typeof newValue + ' for the ' + name + ' attribute.');
+    console.error('Using incorrect attribute type .\n Use ' + type + ' instead of ' + typeof newValue + ' for the ' + name + ' attribute.');
   }
 
   return typeof value != type; //returs true if it doesnt match
