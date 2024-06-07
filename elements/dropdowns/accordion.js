@@ -59,9 +59,8 @@ class Accordion extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        if(doAttributeCheck('string', 'titletext', newValue) || doAttributeCheck('boolean', 'visible', newValue)) {
-            this.setAttribute(name, oldValue);
-        }
+        doAttributeCheck('string', 'titletext', newValue);
+        doAttributeCheck('boolean', 'visible', newValue);
 
         if(name == 'titletext') { // lets you change the title of an accordion
             this.children[0].innerHTML = this.children[0].innerHTML.replace(oldValue, newValue);

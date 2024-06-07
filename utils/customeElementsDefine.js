@@ -63,7 +63,7 @@ function doAttributeCheck(type, name, value) { //used in the attributeChangedCal
   }
 
   if(typeof newValue != type) {
-    console.error('Using incorrect attribute type.\nUse ' + type + ' instead of ' + typeof newValue + ' for the ' + name + ' attribute. \nUsed value: ' + value);
+    console.warn('Using incorrect attribute type.\nUse ' + type + ' instead of ' + typeof newValue + ' for the ' + name + ' attribute. \nUsed value: ' + value);
   }
 
   return typeof value != type; //returs true if it doesnt match
