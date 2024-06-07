@@ -1,7 +1,7 @@
 import { findColorClass } from '../../AI/colorClassFinder.js';
 import { getTextColor } from '../../AI/textColorFInder.js';
 
-import { registry } from '../../utils/customeElementsDefine.js';
+import { registry, doAttirbuteCheck } from '../../utils/customeElementsDefine.js';
 
 function generateDynamicIcon(image) {
     return new Promise((resolve) => {

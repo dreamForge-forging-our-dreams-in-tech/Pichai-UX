@@ -1,5 +1,5 @@
 
-import { registry } from '../../utils/customeElementsDefine.js';
+import { registry, doAttirbuteCheck } from '../../utils/customeElementsDefine.js';
 
 // Create a class for the element
 class logIn extends HTMLElement {
