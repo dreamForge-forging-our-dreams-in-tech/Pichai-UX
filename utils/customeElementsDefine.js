@@ -24,11 +24,9 @@ function extractAttributes (constructor) {
 
     if(con.includes('static observedAttributes')) { // extract battributes
         con = con.substring(con.indexOf('static observedAttributes = ['), con.indexOf(']'));
-        con = con.replaceAll('static observedAttributes = [','').replace(/[ '"]+/g, '').split(',');
+        con = con.replaceAll('static observedAttributes = [','').replace(/[ '"`]+/g, '').split(',');
 
-        console.log(con)
         for(i of con) {
-          console.log(i)
           obj[i] = 'all';
         }
 
@@ -46,10 +44,10 @@ function extractAttributeTypes (constructor, attributes) {
     for(i of getAllIndexes(con, 'doAttributeCheck')) {
       j = con.substring(i, con.length - 1);
       j = j.replace('doAttributeCheck(','');
-      j = j.substring(0, j.indexOf(')')).replace(/['"]+/g, '');
+      j = j.substring(0, j.indexOf(')')).replace(/[ '"`]+/g, '');
       j = j.split(',');
 
-      //attributes[j[1]] = j[0];
+      attributes[j[1]] = j[0];
     }
 
       return attributes;
