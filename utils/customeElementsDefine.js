@@ -58,6 +58,8 @@ function doAttributeCheck(type, name, value) { //used in the attributeChangedCal
   type = type.toLowerCase();
   let newValue = convertToRightType(value);
 
+  console.log(type)
+
   if(typeof newValue != type && value != "null") {
     console.warn('Using incorrect attribute type.\nUse ' + type + ' instead of ' + typeof newValue + ' for the ' + name + ' attribute. \nUsed value: ' + value);
   }
