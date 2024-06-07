@@ -24,7 +24,7 @@ function extractAttributes (constructor) {
 
     if(con.includes('static observedAttributes')) { // extract battributes
         con = con.substring(con.indexOf('static observedAttributes = ['), con.indexOf(']'));
-        con = con.replaceAll('static observedAttributes = [','').replace(/['"]+/g, '').split(',');
+        con = con.replaceAll('static observedAttributes = [','').replace(/[ '"]+/g, '').split(',');
 
         console.log(con)
         for(i of con) {
