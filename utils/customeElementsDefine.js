@@ -20,15 +20,15 @@ registry.define = function(name, constructor, options) { // create custom regist
 
 function extractAttributes (constructor) {
     let con = String(constructor); // turn to string to extract attributes
-    let i;
+    let i, obj = {};
 
     if(con.includes('static observedAttributes')) { // extract battributes
         con = con.substring(con.indexOf('static observedAttributes = ['), con.indexOf(']'));
         con = con.replaceAll('static observedAttributes = [','').replace(/['"]+/g, '').split(',');
 
-        const obj = con.reduce((accumulator, value) => {
-          return {...accumulator, [value]: ''};
-        }, {});
+        for(i of con) {
+          obj[i] = 'all';
+        }
 
         return extractAttributeTypes(constructor, obj);
     }
