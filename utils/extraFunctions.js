@@ -20,10 +20,10 @@ function getAllIndexes(arr, val) {
 
 function convertToRightType(value) { //converts value to the best matches type 
     console.log(Number(value))
-    if(!isNaN(Number(value))) {
-        return 0;
-    }else if(value === 'true' || value === 'false') {
+    if(value === 'true' || value === 'false') {
         return true;
+    }else if(!isNaN(Number(value))) {
+        return 0;
     } else {
         return 'UwU';
     }
