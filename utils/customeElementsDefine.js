@@ -41,9 +41,9 @@ function extractAttributeTypes (constructor) {
   let con = String(constructor); // turn to string to extract attributes
   let i;
 
-  if(con.includes('doAttirbuteCheck')) { // extract battributes
-    for(i of getAllIndexes(constructor, 'doAttirbuteCheck')) {
-      console.log(i);
+  if(con.includes('doAttirbuteCheck')) { // extract attributes types
+    for(i of getAllIndexes(con, 'doAttirbuteCheck')) {
+      console.log(con.substring(i, con.length - 1))
     }
 
       return con;
