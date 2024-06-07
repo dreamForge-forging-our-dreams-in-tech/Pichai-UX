@@ -57,8 +57,10 @@ function extractAttributeTypes (constructor, attributes) {
 function doAttributeCheck(type, value) { //used in the attributeChangedCallback. check if the typeof mathes the type (e.g. boolean, number, string etc). Not needed if all types are allowed
   type = type.toLowerCase();
 
+  console.log(typeof value)
+
   if(typeof value != type) {
-    console.error('Using incorrect attribute type. Use ' + type + ' instead of ' + typeof value);
+    //console.error('Using incorrect attribute type. Use ' + type + ' instead of ' + typeof value);
   }
 
   return typeof value != type; //returs true if it doesnt match
