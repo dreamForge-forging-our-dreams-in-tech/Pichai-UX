@@ -60,7 +60,7 @@ class Accordion extends HTMLElement {
 
     attributeChangedCallback(name, oldValue, newValue) {
         if(doAttributeCheck('string', 'titletext') || doAttributeCheck('boolean', 'visible')) {
-            return;
+            this.setAttribute(name, oldValue);
         }
 
         if(name == 'titletext') { // lets you change the title of an accordion

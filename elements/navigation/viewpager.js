@@ -2,7 +2,7 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 
 // Create a class for the element
 class ViewPager extends HTMLElement {
-    static observedAttributes = ["pageindex"];
+    static observedAttributes = ["pageindex", 'looped', 'sensitivity'];
 
     constructor() {
         // Always call super first in constructor
@@ -41,6 +41,10 @@ class ViewPager extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
+        if(doAttributeCheck('number', 'pageindex') || doAttributeCheck('number', 'sensitivity')|| doAttributeCheck('boolean', 'looped')) {
+            this.setAttribute(name, oldValue);
+        }
+        
         try {
 
             if (Number(this.getAttribute('pageIndex')) > this.children.length - 1) {

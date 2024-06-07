@@ -18,6 +18,10 @@ class title extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
+        if(doAttributeCheck('string', 'title')) {
+            this.setAttribute(name, oldValue);
+        }
+
         this.connectedCallback();
     }
 }
