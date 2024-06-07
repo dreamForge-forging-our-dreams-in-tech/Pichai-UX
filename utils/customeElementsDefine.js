@@ -21,29 +21,29 @@ registry.define = function(name, constructor, options) { // create custom regist
 function extractAttributes (constructor) {
     let con = String(constructor); // turn to string to extract attributes
     let i;
-    let attr = {}
 
     if(con.includes('static observedAttributes')) { // extract battributes
         con = con.substring(con.indexOf('static observedAttributes = ['), con.indexOf(']'));
         con = con.replaceAll('static observedAttributes = [','').replaceAll('"','').split(',');
 
-        for(i of con) {
-          attr[i] = extractAttributeTypes(constructor);
-        }
-
-        return attr;
+        return extractAttributeTypes(constructor, con);
     }
 
     return {};
 }
 
-function extractAttributeTypes (constructor) {
+function extractAttributeTypes (constructor, attributes) {
   let con = String(constructor); // turn to string to extract attributes
   let i;
 
+  let j;
+
   if(con.includes('doAttirbuteCheck')) { // extract attributes types
     for(i of getAllIndexes(con, 'doAttirbuteCheck')) {
-      console.log(con.substring(i, con.length - 1))
+      j = con.substring(i, con.length - 1);
+      j.replace('doAttirbuteCheck(','').replace(')','');
+
+      console.log(j);
     }
 
       return con;
