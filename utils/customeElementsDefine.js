@@ -43,6 +43,7 @@ function extractAttributeTypes (constructor, attributes) {
       j = con.substring(i, con.length - 1);
       j = j.replace('doAttributeCheck(','');
       j = j.substring(0, j.indexOf(')'));
+      j = j.split(',');
 
       console.log(j);
     }
