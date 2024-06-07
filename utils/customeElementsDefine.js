@@ -1,5 +1,5 @@
 //reqrittes the define function on customElements so we can track all existing elements and their attributes
-import { getAllIndexes } from './extraFunctions';
+import { getAllIndexes } from './extraFunctions.js';
 
 let existingCustomElements = {};
 
