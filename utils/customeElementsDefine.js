@@ -48,7 +48,7 @@ function extractAttributeTypes (constructor, attributes) {
       console.log(j);
     }
 
-      return con;
+      return attributes;
   }
 
   return 'All';
