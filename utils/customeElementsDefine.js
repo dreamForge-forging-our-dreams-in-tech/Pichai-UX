@@ -46,7 +46,7 @@ function extractAttributeTypes (constructor, attributes) {
       j = j.split(',');
 
       console.log(j[1])
-      attributes[j[1]] = j[0];
+      attributes[String(j[1])] = j[0];
     }
 
       return attributes;
