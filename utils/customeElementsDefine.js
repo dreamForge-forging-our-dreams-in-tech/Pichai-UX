@@ -54,7 +54,7 @@ function extractAttributeTypes (constructor, attributes) {
   }
 }
 
-function doAttributeCheck(type, value) { //used in the attributeChangedCallback. check if the typeof mathes the type (e.g. boolean, number, string etc). Not needed if all types are allowed
+function doAttributeCheck(value, type) { //used in the attributeChangedCallback. check if the typeof mathes the type (e.g. boolean, number, string etc). Not needed if all types are allowed
   type = type.toLowerCase();
   value = convertToRightType(value);
 
