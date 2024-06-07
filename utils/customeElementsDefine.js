@@ -26,7 +26,11 @@ function extractAttributes (constructor) {
         con = con.substring(con.indexOf('static observedAttributes = ['), con.indexOf(']'));
         con = con.replaceAll('static observedAttributes = [','').replace(/['"]+/g, '').split(',');
 
-        return extractAttributeTypes(constructor, con.reduce((acc,curr)=> (acc[curr]='all',acc),{}));
+        const obj = con.reduce((accumulator, value) => {
+          return {...accumulator, [value]: ''};
+        }, {});
+
+        return extractAttributeTypes(constructor, obj);
     }
 
     return {};
