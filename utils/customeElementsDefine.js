@@ -58,10 +58,8 @@ function doAttributeCheck(value, type) { //used in the attributeChangedCallback.
   type = type.toLowerCase();
   value = convertToRightType(value);
 
-  console.log(typeof value)
-
   if(typeof value != type) {
-    //console.error('Using incorrect attribute type. Use ' + type + ' instead of ' + typeof value);
+    console.error('Using incorrect attribute type. Use ' + type + ' instead of ' + typeof value);
   }
 
   return typeof value != type; //returs true if it doesnt match
