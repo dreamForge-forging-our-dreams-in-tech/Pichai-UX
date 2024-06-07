@@ -38,9 +38,7 @@ function extractAttributes (constructor) {
 
 function extractAttributeTypes (constructor, attributes) {
   let con = String(constructor); // turn to string to extract attributes
-  let i;
-
-  let j;
+  let i, j;
 
   if(con.includes('doAttributeCheck')) { // extract attributes types
     for(i of getAllIndexes(con, 'doAttributeCheck')) {
@@ -49,8 +47,7 @@ function extractAttributeTypes (constructor, attributes) {
       j = j.substring(0, j.indexOf(')')).replace(/['"]+/g, '');
       j = j.split(',');
 
-      console.log(j[1])
-      //attributes[j[1]] = j[0];
+      attributes[j[1]] = j[0];
     }
 
       return attributes;
