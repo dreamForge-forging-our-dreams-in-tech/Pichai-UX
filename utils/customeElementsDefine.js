@@ -1,5 +1,5 @@
 //reqrittes the define function on customElements so we can track all existing elements and their attributes
-import { getAllIndexes } from './extraFunctions.js';
+import { getAllIndexes, convertToRightType } from './extraFunctions.js';
 
 let existingCustomElements = {};
 
@@ -56,6 +56,7 @@ function extractAttributeTypes (constructor, attributes) {
 
 function doAttributeCheck(type, value) { //used in the attributeChangedCallback. check if the typeof mathes the type (e.g. boolean, number, string etc). Not needed if all types are allowed
   type = type.toLowerCase();
+  value = convertToRightType(value);
 
   console.log(typeof value)
 

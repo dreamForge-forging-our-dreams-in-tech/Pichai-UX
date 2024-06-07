@@ -18,4 +18,15 @@ function getAllIndexes(arr, val) {
     return indexes;
 }
 
-export { extractRgb, getAllIndexes };
+function convertToRightType(value) { //converts value to the best matches type 
+    if(isNaN(Number(value))) {
+        return 0;
+    }else if(value == 'true' || value == 'false') {
+        return true;
+    } else {
+        return 'UwU';
+    }
+
+}
+
+export { extractRgb, getAllIndexes, convertToRightType };
