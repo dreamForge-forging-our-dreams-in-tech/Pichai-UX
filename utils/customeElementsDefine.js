@@ -51,8 +51,6 @@ function extractAttributeTypes (constructor, attributes) {
 
       return attributes;
   }
-
-  return 'All';
 }
 
 function doAttributeCheck(type, value) { //used in the attributeChangedCallback. check if the typeof mathes the type (e.g. boolean, number, string etc). Not needed if all types are allowed
