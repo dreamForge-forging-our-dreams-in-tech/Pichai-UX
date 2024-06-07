@@ -19,7 +19,6 @@ function getAllIndexes(arr, val) {
 }
 
 function convertToRightType(value) { //converts value to the best matches type 
-    console.log(value)
     if(!isNaN(Number(value))) {
         return 0;
     }else if(value === 'true' || value === 'false') {
