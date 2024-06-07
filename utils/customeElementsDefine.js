@@ -54,7 +54,8 @@ function extractAttributeTypes (constructor, attributes) {
   }
 }
 
-function doAttributeCheck(type, name, value) { //used in the attributeChangedCallback. check if the typeof mathes the type (e.g. boolean, number, string etc). Not needed if all types are allowed
+function doAttributeCheck(type, nam, value) { //used in the attributeChangedCallback. check if the typeof mathes the type (e.g. boolean, number, string etc). Not needed if all types are allowed
+  console.log(this)
   type = type.toLowerCase();
   let newValue = convertToRightType(value);
 
