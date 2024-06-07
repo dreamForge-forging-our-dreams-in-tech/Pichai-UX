@@ -42,7 +42,7 @@ function extractAttributeTypes (constructor) {
   let i;
 
   if(con.includes('doAttirbuteCheck')) { // extract battributes
-    for(i of getAllIndexes()) {
+    for(i of getAllIndexes(constructor, 'doAttirbuteCheck')) {
       console.log(i);
     }
 
