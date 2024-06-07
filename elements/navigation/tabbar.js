@@ -47,7 +47,7 @@ class TabBar extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        if(doAttributeCheck('string', 'direction') || doAttributeCheck('number', 'index')|| doAttributeCheck('for', 'string')) {
+        if(doAttributeCheck('string', 'direction', newValue) || doAttributeCheck('number', 'index', newValue)|| doAttributeCheck('string', 'for', newValue)) {
             this.setAttribute(name, oldValue);
         }
 

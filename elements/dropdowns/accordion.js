@@ -59,7 +59,7 @@ class Accordion extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        if(doAttributeCheck('string', 'titletext') || doAttributeCheck('boolean', 'visible')) {
+        if(doAttributeCheck('string', 'titletext', newValue) || doAttributeCheck('boolean', 'visible', newValue)) {
             this.setAttribute(name, oldValue);
         }
 

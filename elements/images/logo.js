@@ -108,10 +108,6 @@ class Logo extends HTMLElement {
     }
 
     async connectedCallback() {
-        if(doAttributeCheck('string', 'src') || doAttributeCheck('boolean', 'dynamic')) {
-            this.setAttribute(name, oldValue);
-        }
-
         // Get the favicon link element
         const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
 
@@ -136,6 +132,10 @@ class Logo extends HTMLElement {
     }
 
     async attributeChangedCallback(name, oldValue, newValue) {
+        if(doAttributeCheck('string', 'src', newValue) || doAttributeCheck('boolean', 'dynamic', newValue)) {
+            this.setAttribute(name, oldValue);
+        }
+        
         this.connectedCallback();
     }
 }
