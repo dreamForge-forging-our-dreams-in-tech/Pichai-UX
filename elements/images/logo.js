@@ -132,8 +132,8 @@ class Logo extends HTMLElement {
     }
 
     async attributeChangedCallback(name, oldValue, newValue) {
-        doAttributeCheck('string', 'src', newValue);
-        doAttributeCheck('boolean', 'dynamic', newValue);
+        this.doAttributeCheck('string', 'src', newValue);
+        this.doAttributeCheck('boolean', 'dynamic', newValue);
 
         this.connectedCallback();
     }

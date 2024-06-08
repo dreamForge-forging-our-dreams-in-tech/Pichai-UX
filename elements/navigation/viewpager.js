@@ -41,9 +41,9 @@ class ViewPager extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        doAttributeCheck('number', 'pageindex', newValue);
-        doAttributeCheck('number', 'sensitivity', newValue);
-        doAttributeCheck('boolean', 'looped', newValue);
+        this.doAttributeCheck('number', 'pageindex', newValue);
+        this.doAttributeCheck('number', 'sensitivity', newValue);
+        this.doAttributeCheck('boolean', 'looped', newValue);
         
         try {
 
