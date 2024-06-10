@@ -36,8 +36,8 @@ function extractUsage(constructor) {
   let con = String(constructor); // turn to string to extract usage
   let i, j = 'No usage rules apply.';
 
-  if(con.includes('@usage')) { // extract usage
-      j = con.substring(con.indexOf('@usage'), con.indexOf('*/'));
+  if(con.includes('/** @usage')) { // extract usage
+      j = con.substring(con.indexOf('@usage'), con.indexOf('*/')).replace('@usage', '');
       console.log(j)
   }
   
