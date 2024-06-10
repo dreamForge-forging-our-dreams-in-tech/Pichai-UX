@@ -38,6 +38,7 @@ function extractUsage(constructor) {
 
   if(con.includes('@usage')) { // extract usage
       j = con.substring(con.indexOf('@usage'), con.indexOf('*/'));
+      console.log(j)
 
       return j;
   }
