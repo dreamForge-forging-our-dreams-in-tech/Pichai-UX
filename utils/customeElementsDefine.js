@@ -15,7 +15,8 @@ registry.define = function(name, constructor, options) { // create custom regist
         name: name,
         description: extractComments(constructor, '@description'),
         usage: extractComments(constructor, '@usage'),
-        attributes: extractAttributes(constructor)
+        attributes: extractAttributes(constructor),
+        classes: constructor.classList
     }
 
     customElementsRegistry.define(name, constructor, options); // define custom element like you would do normally
