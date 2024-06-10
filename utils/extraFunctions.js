@@ -18,10 +18,10 @@ function getAllIndexes(arr, val) {
     return indexes;
 }
 
-function convertToRightType(value) { //converts value to the best matches type 
+function convertToRightType(value) { //converts value to the best matched type 
     if(value === 'true' || value === 'false') {
         return true;
-    }else if(!isNaN(Number(value))) {
+    } else if(!isNaN(Number(value))) {
         return 0;
     } else {
         return 'UwU';

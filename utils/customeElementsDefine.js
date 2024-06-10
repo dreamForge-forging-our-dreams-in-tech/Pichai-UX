@@ -1,4 +1,4 @@
-//reqrittes the define function on customElements so we can track all existing elements and their attributes
+//rewrittes the define function on customElements so we can track all existing elements and their attributes
 import { getAllIndexes, convertToRightType } from './extraFunctions.js';
 
 let existingCustomElements = {};
@@ -11,12 +11,36 @@ registry.define = function(name, constructor, options) { // create custom regist
 
     existingCustomElements[name] = { // add custom element information to an object that can be read
         name: name,
+        description: extractDescription(constructor),
+        usage: extractUsage(constructor),
         attributes: extractAttributes(constructor)
     }
 
     customElementsRegistry.define(name, constructor, options); // define custom element like you would do normally
   }
 };
+
+function extractDescription (con) {
+  let con = String(constructor); // turn to string to extract attributes
+  let i, j, useage;
+
+  if(con.includes('@usage')) { // extract description
+      j = con.substring(con.indexOf('@description'), con.indexOf('*/'));
+
+      return useage;
+  }
+}
+
+function extractUsage(con) {
+  let con = String(constructor); // turn to string to extract attributes
+  let i, j, des;
+
+  if(con.includes('@description')) { // extract description
+      j = con.substring(con.indexOf('@description'), con.indexOf('*/'));
+
+      return des;
+  }
+}
 
 function extractAttributes (constructor) {
     let con = String(constructor); // turn to string to extract attributes

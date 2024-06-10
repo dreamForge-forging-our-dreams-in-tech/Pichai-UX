@@ -1,17 +1,25 @@
-
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 
-// Create a class for the element
+/** @description 
+ * 
+*/
+
+/** @usage 
+ * Allow the user to log-in through the set loginDialog during initlization
+*/
+
+
+
+// Create a class for the <log-in> element
 class logIn extends HTMLElement {
     constructor() {
-        // Always call super first in constructor
         super();
     }
 
     connectedCallback() {
         this.innerHTML = this.innerHTML == '' ? window.default_logged_in_text : this.innerHTML;
 
-        this.onclick = function () {
+        this.onclick = function () { // when clicked the element displays or removes a dialog or element from the loginDIalog option set during initialization
             let dialog = window['options'].loginDialog;
 
             if(dialog.parentNode == document.body) {
