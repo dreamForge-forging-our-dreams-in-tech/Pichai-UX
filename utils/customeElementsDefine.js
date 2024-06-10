@@ -21,24 +21,24 @@ registry.define = function(name, constructor, options) { // create custom regist
 };
 
 function extractDescription (constructor) {
-  let con = String(constructor); // turn to string to extract attributes
-  let i, j, useage;
+  let con = String(constructor); // turn to string to extract description
+  let i, j;
 
   if(con.includes('@usage')) { // extract description
       j = con.substring(con.indexOf('@description'), con.indexOf('*/'));
 
-      return useage;
+      return j;
   }
 }
 
 function extractUsage(constructor) {
-  let con = String(constructor); // turn to string to extract attributes
-  let i, j, des;
+  let con = String(constructor); // turn to string to extract usage
+  let i, j;
 
-  if(con.includes('@description')) { // extract description
+  if(con.includes('@description')) { // extract usage
       j = con.substring(con.indexOf('@description'), con.indexOf('*/'));
 
-      return des;
+      return j;
   }
 }
 
