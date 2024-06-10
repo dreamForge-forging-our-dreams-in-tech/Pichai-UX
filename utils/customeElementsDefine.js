@@ -27,8 +27,8 @@ function extractDescription (constructor) {
   if(con.includes('@description')) { // extract description
       j = con.substring(con.indexOf('@description'), con.indexOf('*/')).replace('@description', '');
       console.log(j)
-
   }
+
   return j;
 }
 
@@ -39,8 +39,8 @@ function extractUsage(constructor) {
   if(con.includes('@usage')) { // extract usage
       j = con.substring(con.indexOf('@usage'), con.indexOf('*/'));
       console.log(j)
-
   }
+  
   return j;
 }
 
