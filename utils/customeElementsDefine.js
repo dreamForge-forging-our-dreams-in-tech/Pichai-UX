@@ -26,6 +26,7 @@ function extractDescription (constructor) {
 
   if(con.includes('@usage')) { // extract description
       j = con.substring(con.indexOf('@description'), con.indexOf('*/'));
+      console.log(j)
 
       return j;
   }
