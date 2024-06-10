@@ -1,5 +1,6 @@
 //rewrittes the define function on customElements so we can track all existing elements and their attributes
 // also has the code for axtraction attributes, descriptions etc
+// wish i knew beter ways for this
 
 import { getAllIndexes, convertToRightType } from './extraFunctions.js';
 
@@ -21,6 +22,8 @@ registry.define = function(name, constructor, options) { // create custom regist
     customElementsRegistry.define(name, constructor, options); // define custom element like you would do normally
   }
 };
+
+/** Comments are used in docs since well the devs use them to know what it's supposed to do and we can use that to automate the docs more because i am lazy too 💀 */
 
 function extractComments (constructor, type) {
   let con = String(constructor); // turn to string to extract description
