@@ -20,7 +20,7 @@ registry.define = function(name, constructor, options) { // create custom regist
   }
 };
 
-function extractDescription (con) {
+function extractDescription (constructor) {
   let con = String(constructor); // turn to string to extract attributes
   let i, j, useage;
 
@@ -31,7 +31,7 @@ function extractDescription (con) {
   }
 }
 
-function extractUsage(con) {
+function extractUsage(constructor) {
   let con = String(constructor); // turn to string to extract attributes
   let i, j, des;
 
