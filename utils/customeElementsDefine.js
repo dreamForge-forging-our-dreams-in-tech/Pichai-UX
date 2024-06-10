@@ -25,7 +25,8 @@ function extractDescription (constructor) {
   let i, j = 'No description written.';
 
   if(con.includes('@description')) { // extract description
-      j = con.substring(con.indexOf('@description'), con.indexOf('*/')).replace('@description', '');
+      j = con.substring(con.indexOf('@description'), con.length - 1);
+      j = j.substring(j.indexOf('@description'), j.indexOf('*/')).replace('@description', '');
       console.log(j)
   }
 
@@ -37,7 +38,8 @@ function extractUsage(constructor) {
   let i, j = 'No usage rules apply.';
 
   if(con.includes('@usage')) { // extract usage
-      j = con.substring(con.indexOf('@usage'), con.indexOf('*/ ')).replace('@usage', ''); // con.indexOf('*/ ') DO NOT REMOVE THE SPACE, space avoids conflicts with earlier appearing "*/"
+    j = con.substring(con.indexOf('@usage'), con.length - 1);
+    j = j.substring(j.indexOf('@usage'), j.indexOf('*/')).replace('@usage', '');
       console.log(j)
   }
   
