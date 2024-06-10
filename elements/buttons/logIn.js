@@ -7,7 +7,7 @@ class logIn extends HTMLElement {
     */
 
     /** @usage 
-     * Allow the user to quickly log-in through the set loginDialog during initlization.
+     * Used when you want to let the user login and are to lazy to do the logic yourself 💀
     */
 
     constructor() {
