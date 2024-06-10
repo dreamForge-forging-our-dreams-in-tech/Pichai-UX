@@ -24,7 +24,7 @@ function extractDescription (constructor) {
   let con = String(constructor); // turn to string to extract description
   let i, j;
 
-  if(con.includes('@usage')) { // extract description
+  if(con.includes('@description')) { // extract description
       j = con.substring(con.indexOf('@description'), con.indexOf('*/'));
       console.log(j)
 
@@ -36,8 +36,8 @@ function extractUsage(constructor) {
   let con = String(constructor); // turn to string to extract usage
   let i, j;
 
-  if(con.includes('@description')) { // extract usage
-      j = con.substring(con.indexOf('@description'), con.indexOf('*/'));
+  if(con.includes('@usage')) { // extract usage
+      j = con.substring(con.indexOf('@usage'), con.indexOf('*/'));
 
       return j;
   }
