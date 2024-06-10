@@ -37,7 +37,7 @@ function extractUsage(constructor) {
   let i, j = 'No usage rules apply.';
 
   if(con.includes('@usage')) { // extract usage
-      j = con.substring(con.indexOf('@usage'), con.indexOf('*/ ')).replace('@usage', '');
+      j = con.substring(con.indexOf('@usage'), con.indexOf('*/ ')).replace('@usage', ''); // con.indexOf('*/ ') DO NOT REMOVE THE SPACE, space avoids conflicts with earlier appearing "*/"
       console.log(j)
   }
   
