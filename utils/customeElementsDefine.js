@@ -22,7 +22,7 @@ registry.define = function(name, constructor, options) { // create custom regist
 
 function extractDescription (constructor) {
   let con = String(constructor); // turn to string to extract description
-  let i, j;
+  let i, j = 'No description written.';
 
   if(con.includes('@description')) { // extract description
       j = con.substring(con.indexOf('@description'), con.indexOf('*/'));
@@ -34,7 +34,7 @@ function extractDescription (constructor) {
 
 function extractUsage(constructor) {
   let con = String(constructor); // turn to string to extract usage
-  let i, j;
+  let i, j = 'No usage rules apply.';
 
   if(con.includes('@usage')) { // extract usage
       j = con.substring(con.indexOf('@usage'), con.indexOf('*/'));
