@@ -25,7 +25,7 @@ function extractDescription (constructor) {
   let i, j = 'No description written.';
 
   if(con.includes('@description')) { // extract description
-      j = con.substring(con.indexOf('@description'), con.indexOf('*/')).replace('@descirption', '');
+      j = con.substring(con.indexOf('@description'), con.indexOf('*/')).replace('@description', '');
       console.log(j)
 
   }
