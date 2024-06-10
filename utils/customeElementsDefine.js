@@ -28,8 +28,8 @@ function extractDescription (constructor) {
       j = con.substring(con.indexOf('@description'), con.indexOf('*/'));
       console.log(j)
 
-      return j;
   }
+  return j;
 }
 
 function extractUsage(constructor) {
@@ -40,8 +40,8 @@ function extractUsage(constructor) {
       j = con.substring(con.indexOf('@usage'), con.indexOf('*/'));
       console.log(j)
 
-      return j;
   }
+  return j;
 }
 
 function extractAttributes (constructor) {
