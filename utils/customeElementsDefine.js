@@ -16,7 +16,6 @@ registry.define = function(name, constructor, options) { // create custom regist
         description: extractComments(constructor, '@description'),
         usage: extractComments(constructor, '@usage'),
         attributes: extractAttributes(constructor),
-        classes: constructor.classList
     }
 
     customElementsRegistry.define(name, constructor, options); // define custom element like you would do normally
@@ -25,7 +24,7 @@ registry.define = function(name, constructor, options) { // create custom regist
 
 function extractComments (constructor, type) {
   let con = String(constructor); // turn to string to extract description
-  let i, j = 'No description written.';
+  let i, j = '';
 
   if(con.includes(type)) { // extract description
       j = con.substring(con.indexOf(type), con.length - 1);
