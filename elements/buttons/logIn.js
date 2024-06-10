@@ -1,11 +1,11 @@
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 
 /** @description 
- * 
+ * A button that allows for easy and quick loging in.
 */
 
 /** @usage 
- * Allow the user to log-in through the set loginDialog during initlization
+ * Allow the user to log-in through the set loginDialog during initlization.
 */
 
 
