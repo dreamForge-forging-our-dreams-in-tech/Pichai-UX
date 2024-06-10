@@ -1,4 +1,6 @@
 //rewrittes the define function on customElements so we can track all existing elements and their attributes
+// also has the code for axtraction attributes, descriptions etc
+
 import { getAllIndexes, convertToRightType } from './extraFunctions.js';
 
 let existingCustomElements = {};
@@ -11,8 +13,8 @@ registry.define = function(name, constructor, options) { // create custom regist
 
     existingCustomElements[name] = { // add custom element information to an object that can be read
         name: name,
-        description: extractDescription(constructor),
-        usage: extractUsage(constructor),
+        description: extractComments(constructor, '@description'),
+        usage: extractComments(constructor, '@usage'),
         attributes: extractAttributes(constructor)
     }
 
@@ -20,29 +22,16 @@ registry.define = function(name, constructor, options) { // create custom regist
   }
 };
 
-function extractDescription (constructor) {
+function extractComments (constructor, type) {
   let con = String(constructor); // turn to string to extract description
   let i, j = 'No description written.';
 
-  if(con.includes('@description')) { // extract description
-      j = con.substring(con.indexOf('@description'), con.length - 1);
-      j = j.substring(j.indexOf('@description'), j.indexOf('*/')).replace('@description', '');
+  if(con.includes(type)) { // extract description
+      j = con.substring(con.indexOf(type), con.length - 1);
+      j = j.substring(j.indexOf(type), j.indexOf('*/')).replace(type, '');
       console.log(j)
   }
 
-  return j;
-}
-
-function extractUsage(constructor) {
-  let con = String(constructor); // turn to string to extract usage
-  let i, j = 'No usage rules apply.';
-
-  if(con.includes('@usage')) { // extract usage
-    j = con.substring(con.indexOf('@usage'), con.length - 1);
-    j = j.substring(j.indexOf('@usage'), j.indexOf('*/')).replace('@usage', '');
-      console.log(j)
-  }
-  
   return j;
 }
 
