@@ -10,7 +10,7 @@ class ColorPicker extends HTMLElement {
      * When the user needs to select a color
     */
 
-    static observedAttributes = ["src", "dynamic"];
+    static observedAttributes = ["previousvalue", "value", "outputtype", "showpreviousvalues", "presets", "savetopresets"];
 
     constructor() {
         // Always call super first in constructor
@@ -18,18 +18,22 @@ class ColorPicker extends HTMLElement {
     }
 
     async connectedCallback() {
-        this.innerHTML = window.default_user_icon;
-        this.classList.add('material-symbols-outlined');
+        if(this.getAttribute('showpreviousvalues')) { // create the previous color section of the color picker
+            let previousHolder = createElement('article');
+            previousHolder.class = 'previousColor';
 
-        this.onclick = function () {
-            let dialog = window['options'].loginDialog;
+            let current = document.createElement('paragraph');
+            current.class = 'displayColor';
+            current.style.backgroundColor = value;
 
-            if(dialog.parentNode == document.body) {
-                dialog.remove();
-                return;
-            }
-            document.body.appendChild(dialog);
+            let previous = document.createElement('paragraph');
+            previous.class = 'displayColor';
+            previous.style.backgroundColor = previousvalue;
+
+            previousHolder.append(current, previous);
+            this.append(previousHolder);
         }
+        
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
