@@ -18,7 +18,7 @@ class ColorPicker extends HTMLElement {
     }
 
     async connectedCallback() {
-        if(this.getAttribute('showpreviousvalues')) { // create the previous color section of the color picker
+        if(this.getAttribute('showpreviousvalues') == 'false' || this.hasAttribute('showpreviousvalues')) {} else { // create the previous color section of the color picker
             let previousHolder = createElement('article');
             previousHolder.class = 'previousColor';
 
@@ -31,7 +31,7 @@ class ColorPicker extends HTMLElement {
             previous.style.backgroundColor = previousvalue;
 
             previousHolder.append(current, previous);
-            this.append(previousHolder);
+            this.appendChild(previousHolder);
         }
         
     }
