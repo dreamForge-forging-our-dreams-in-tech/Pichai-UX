@@ -24,11 +24,11 @@ class ColorPicker extends HTMLElement {
 
             let current = document.createElement('paragraph');
             current.class = 'displayColor';
-            current.style.backgroundColor = value;
+            current.style.backgroundColor = this.getAttribute('value') ?? '#008dcd';
 
             let previous = document.createElement('paragraph');
             previous.class = 'displayColor';
-            previous.style.backgroundColor = previousvalue;
+            previous.style.backgroundColor =  this.getAttribute('previousvalue') ?? this.getAttribute('value');
 
             previousHolder.append(current, previous);
             this.appendChild(previousHolder);
