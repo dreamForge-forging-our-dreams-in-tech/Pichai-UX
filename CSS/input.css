@@ -28,6 +28,15 @@ color-picker {
     'previous hsl presetsExpanded'
     'previous hsl presetsExpanded'
     'presets presets presetsExpanded';
+
+    height:180px;
+
+    min-width:350px;
+ }
+
+ color-picker * {
+    width:100%;
+    height:100%;
  }
  
  .previousColor {
