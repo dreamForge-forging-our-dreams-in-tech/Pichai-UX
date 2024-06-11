@@ -32,7 +32,6 @@ function extractComments (constructor, type) {
   if(con.includes(type)) { // extract description
       j = con.substring(con.indexOf(type), con.length - 1);
       j = j.substring(j.indexOf(type), j.indexOf('*/')).replace(type, '');
-      console.log(j)
   }
 
   return j;

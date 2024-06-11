@@ -20,3 +20,27 @@ input::placeholder {
 .card input::placeholder {
     color:var(--secondairyTextColor);
 }
+
+color-picker {
+    display:grid;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: 
+    'previous hsl presetsExpanded'
+    'previous hsl presetsExpanded'
+    'presets presets presetsExpanded';
+ }
+ 
+ .previousColor {
+    display:flex;
+    flex-direction:column;
+    row-gap: 8px;
+ 
+    padding:8px;
+ 
+    grid-area: previous;
+ }
+ 
+ .displayColor {
+    width:100%;
+    height:50%;
+ }
