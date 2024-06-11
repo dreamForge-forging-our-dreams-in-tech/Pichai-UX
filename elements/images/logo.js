@@ -100,6 +100,16 @@ function generateDynamicIcon(image) {
 
 // Create a class for the element
 class Logo extends HTMLElement {
+            /** @description 
+    * The x-icon element uses AI to generate dynamic icons so your icon works together with the theme.
+    * Aditionally you can use custom icons or disable the dynamic icons future.
+    */
+
+    /** @usage 
+     * displaying the favIcon
+     * creating themed logo's or icons
+    */
+
     static observedAttributes = ["src", "dynamic"];
 
     constructor() {

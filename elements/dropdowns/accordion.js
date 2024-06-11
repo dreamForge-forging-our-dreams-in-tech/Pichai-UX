@@ -2,6 +2,15 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 
 // Create a class for the element
 class Accordion extends HTMLElement {
+        /** @description 
+    * The accordion element allows you to hide or show content.
+    */
+
+    /** @usage 
+     * Hide less important information
+     * Clean up space or make more room
+    */
+
     static observedAttributes = ["visible", "titletext"];
     constructor() {
         // Always call super first in constructor

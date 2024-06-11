@@ -2,6 +2,14 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 
 // Create a class for the element
 class ViewPager extends HTMLElement {
+            /** @description 
+    * The viewpager element dispalys only the current displayed page, through scrolling or connections with the tabbar element you can navigate between pages.
+    */
+
+    /** @usage 
+     * Navigating between pages
+    */
+
     static observedAttributes = ["pageindex", 'looped', 'sensitivity'];
 
     constructor() {

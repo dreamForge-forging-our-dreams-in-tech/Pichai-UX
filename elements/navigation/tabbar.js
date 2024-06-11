@@ -2,6 +2,14 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 
 // Create a class for the element
 class TabBar extends HTMLElement {
+            /** @description 
+    * The tabbar element allows you to navigate between pages or viewpager pages
+    */
+
+    /** @usage 
+     * Navigating between pages
+    */
+
     static observedAttributes = ["direction", 'index', 'for'];
 
     constructor() {

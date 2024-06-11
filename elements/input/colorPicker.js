@@ -2,6 +2,14 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 
 // Create a class for the element
 class ColorPicker extends HTMLElement {
+            /** @description 
+    * The color picker element allows you to easily select colors.
+    */
+
+    /** @usage 
+     * When the user needs to select a color
+    */
+
     static observedAttributes = ["src", "dynamic"];
 
     constructor() {

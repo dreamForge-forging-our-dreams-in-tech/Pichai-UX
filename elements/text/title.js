@@ -2,6 +2,14 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 
 // Create a class for the element
 class title extends HTMLElement {
+            /** @description 
+    * The x-title element dispalys the currents page title or custom set text.
+    */
+
+    /** @usage 
+     * Displaying site title
+    */
+
     static observedAttributes = ["title"];
 
     constructor() {
