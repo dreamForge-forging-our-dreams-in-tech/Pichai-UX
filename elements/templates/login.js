@@ -1,3 +1,4 @@
+import { registry } from '../../utils/customeElementsDefine.js';
 
 // Create a class for the element
 class Login extends HTMLElement {
@@ -15,4 +16,4 @@ class Login extends HTMLElement {
     }
 }
 
-customElements.define("template-login", Login);
+registry.define("template-login", Login);

@@ -1,5 +1,4 @@
 .tabBarHolder {
-    border-width:2px;
     padding:3px;
 
     display:grid;
@@ -7,15 +6,15 @@
 
     border-radius:800px;
 
-    width:min-content;
+    width:max-content;
+
+    background-color:var(--primary);
 }
 
 .tabBarHolder a {
     background-color:TRANSPARENT;
 
     color:var(--primaryTextColor);
-
-    border-width:2px;
 
     text-decoration:none;
 
@@ -25,9 +24,29 @@
     padding: 8px;
 
     width:150px;
+
+    border-radius:200px;
 }
 
 .tabBarHolder .current {
-    background-color:var(--primary);
-    color:var(--primaryTextColor);
+    background-color:var(--primaryContainer);
+    color:var(--primaryContainerTextColor);
 }
+
+view-pager {
+    width: 100%;
+    height: 100%;
+}
+
+view-pager:first-child {
+    display: block;
+  }
+
+  .verticalTabbar {
+    writing-mode: vertical-rl;
+  }
+
+  .verticalTabbar a {
+    max-width:12px;
+    height:max-content;
+  }

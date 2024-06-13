@@ -1,10 +1,13 @@
 import { findColorClass } from '../../AI/colorClassFinder.js';
+import { getTextColor } from '../../AI/textColorFInder.js';
+
+import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 
 function generateDynamicIcon(image) {
     return new Promise((resolve) => {
         // Assume you have an HTML canvas element with the id "myCanvas"
         const canvas = document.createElement('canvas');
-        const context = canvas.getContext("2d", {willReadFrequently: true});
+        const context = canvas.getContext("2d", { willReadFrequently: true });
 
         // Load your image onto the canvas
         let dynamicImage = new Image();
@@ -27,7 +30,7 @@ function generateDynamicIcon(image) {
             context.save();
             // Draw the image on the canvas
             context.translate(canvas.width / 2, canvas.height / 2)
-            context.rotate(0.5);
+            context.rotate(0.55);
             context.drawImage(dynamicImage, -dynamicImage.width / 2, -dynamicImage.height / 2);
 
             // Define the tolerance for color matching (adjust as needed)
@@ -35,8 +38,10 @@ function generateDynamicIcon(image) {
 
             // Get the entire image data as an array of pixel data
             let imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+            let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'black' ? 0 : 255;
 
             let colorClass;
+
             // Iterate through each pixel
             for (let i = 0; i < imageData.data.length; i += 4) {
                 const red = imageData.data[i];
@@ -44,19 +49,20 @@ function generateDynamicIcon(image) {
                 const blue = imageData.data[i + 2];
 
                 // Check if the pixel is not theme color
+
                 if (
                     !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
                 ) {
                     // Replace with your desired color (e.g., green)
-                    imageData.data[i] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[0]; // Red channel
-                    imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[1]; // Green channel
-                    imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? 255 : rgb[2]; // Blue channel
+                    imageData.data[i] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[0]; // Red channel
+                    imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[1]; // Green channel
+                    imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[2]; // Blue channel
 
                     colorClass = findColorClass(red, green, blue);
                 } else {
-                    imageData.data[i] = colorClass == findColorClass(red, green, blue) ? 255 : rgb[0];
-                    imageData.data[i + 1] = colorClass == findColorClass(red, green, blue) ? 255 : rgb[1];
-                    imageData.data[i + 2] = colorClass == findColorClass(red, green, blue) ? 255 : rgb[2];
+                    imageData.data[i] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[0];
+                    imageData.data[i + 1] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[1];
+                    imageData.data[i + 2] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[2];
 
                     colorClass = 'themeColor';
                 }
@@ -64,9 +70,12 @@ function generateDynamicIcon(image) {
 
             context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
 
-            context.translate(-canvas.width / 5.3 ,canvas.height / 3.3);
-            context.rotate(-0.5);
+            context.translate(-canvas.width / 5.0, canvas.height / 3.0);
+            context.rotate(-0.55);
             context.putImageData(imageData, 0, 0);
+
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.fillRect(0, 0, canvas.width, canvas.height);
 
             for (let y = 0; y < canvas.height; y++) {
                 for (let x = 0; x < canvas.width; x++) {
@@ -74,12 +83,12 @@ function generateDynamicIcon(image) {
                     const red = imageData.data[index];
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
-            
-                    // Check if the pixel is not the theme color (white in this case)
-                    if (red === 255 && green === 255 && blue === 255) {
+
+                    // Check if the pixel is not the theme color
+                    if (red === textColor && green === textColor && blue === textColor) {
                         // Replace the pixel with a 5x5 square
-                        context.fillStyle = 'white'; // Set your desired color here
-                        context.fillRect(x, y, 8, 8); // Draw a 5x5 square
+                        context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
+                        context.fillRect(x, y, 6, 6); // Draw a 5x5 square
                     }
                 }
             }
@@ -91,6 +100,16 @@ function generateDynamicIcon(image) {
 
 // Create a class for the element
 class Logo extends HTMLElement {
+            /** @description 
+    * The x-icon element uses AI to generate dynamic icons so your icon works together with the theme.
+    * Aditionally you can use custom icons or disable the dynamic icons future.
+    */
+
+    /** @usage 
+     * displaying the favIcon
+     * creating themed logo's or icons
+    */
+
     static observedAttributes = ["src", "dynamic"];
 
     constructor() {
@@ -103,44 +122,33 @@ class Logo extends HTMLElement {
         const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
 
         // Get the favicon URL
-        const faviconUrl = faviconLink ? faviconLink.href : null;
+        let faviconUrl = faviconLink ? faviconLink.href : null;
+        if (this.hasAttribute('src')) {
+            faviconUrl = this.getAttribute('src');
+        }
 
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
+            let newIcon = await generateDynamicIcon(faviconUrl);
+            this.style.backgroundImage = `url(${newIcon})`;
+
             window.onload = async () => {
                 let newIcon = await generateDynamicIcon(faviconUrl);
                 this.style.backgroundImage = `url(${newIcon})`;
             }
         } else {
-            this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
+            this.style.backgroundImage = `url("${faviconUrl}")`;
         }
+
     }
 
-    disconnectedCallback() {
-        console.log("Custom element removed from page.");
-    }
+    async attributeChangedCallback(name, oldValue, newValue) {
+        doAttributeCheck('string', 'src', this.getAttribute('src'));
+        doAttributeCheck('boolean', 'dynamic', this.getAttribute('dynamic'));
 
-    adoptedCallback() {
-        console.log("Custom element moved to new page.");
-    }
-
-    attributeChangedCallback(name, oldValue, newValue) {
-        // Get the favicon link element
-        const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
-
-        // Get the favicon URL
-        const faviconUrl = faviconLink ? faviconLink.href : null;
-
-        if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
-            window.onload = async () => {
-                let newIcon = await generateDynamicIcon(faviconUrl);
-                this.style.backgroundImage = `url(${newIcon})`;
-            }
-        } else {
-            this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
-        }
+        this.connectedCallback();
     }
 }
 
-customElements.define("x-icon", Logo);
+registry.define("x-icon", Logo);
 
 export { generateDynamicIcon };

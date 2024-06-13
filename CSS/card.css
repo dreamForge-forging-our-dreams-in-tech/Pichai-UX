@@ -1,16 +1,19 @@
 .card {
     background-color:var(--primary);
 
+    color:var(--primaryTextColor);
     
     overflow:auto;
 }
 
 .card .card {
-    background-color:var(--tertiary);
+    background-color:var(--primaryContainer);
+
+    color:var(--primaryContainerTextColor)
 }
 
 .card .card * {
-    color:var(--tertiaryTextColor)
+    color:var(--primaryContainerTextColor)
 }
 
 

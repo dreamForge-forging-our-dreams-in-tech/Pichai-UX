@@ -1,5 +1,15 @@
+import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
+
 // Create a class for the element
 class title extends HTMLElement {
+            /** @description 
+    * The x-title element dispalys the currents page title or custom set text.
+    */
+
+    /** @usage 
+     * Displaying site title
+    */
+
     static observedAttributes = ["title"];
 
     constructor() {
@@ -15,21 +25,11 @@ class title extends HTMLElement {
         }
     }
 
-    disconnectedCallback() {
-        console.log("Custom element removed from page.");
-    }
-
-    adoptedCallback() {
-        console.log("Custom element moved to new page.");
-    }
-
     attributeChangedCallback(name, oldValue, newValue) {
-        this.innerHTML = document.title;
+        doAttributeCheck('string', 'title', this.getAttribute('title'));
 
-        if(!this.hasAttribute('title') || this.getAttribute('title') === '') {} else {
-            this.innerHTML = this.getAttribute('title')
-        }
+        this.connectedCallback();
     }
 }
 
-customElements.define("x-title", title);
+registry.define("x-title", title);

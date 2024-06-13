@@ -1,6 +1,13 @@
+import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 // Create a class for the element
 class DisplayProfile extends HTMLElement {
-    static observedAttributes = ["src", "dynamic"];
+    /** @description 
+* A button that allows for easy and quick loging in.
+*/
+
+    /** @usage 
+     * Used when you want to let the user login and are to lazy to do the logic yourself 💀
+    */
 
     constructor() {
         // Always call super first in constructor
@@ -8,34 +15,19 @@ class DisplayProfile extends HTMLElement {
     }
 
     async connectedCallback() {
-        this.innerHTML = 'account_circle';
+        this.innerHTML = window.default_user_icon;
         this.classList.add('material-symbols-outlined');
-    }
 
-    disconnectedCallback() {
-        console.log("Custom element removed from page.");
-    }
+        this.onclick = function () {
+            let dialog = window['options'].loginDialog;
 
-    adoptedCallback() {
-        console.log("Custom element moved to new page.");
-    }
-
-    attributeChangedCallback(name, oldValue, newValue) {
-                // Get the favicon link element
-                const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
-
-                // Get the favicon URL
-                const faviconUrl = faviconLink ? faviconLink.href : null;
-        
-                if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
-                    window.onload = async () => {
-                        let newIcon = await generateDynamicIcon(faviconUrl);
-                        this.style.backgroundImage = `url(${newIcon})`;
-                    }
-                } else {
-                    this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
-                }
+            if (dialog.parentNode == document.body) {
+                dialog.remove();
+                return;
+            }
+            document.body.appendChild(dialog);
+        }
     }
 }
 
-customElements.define("display-profile", DisplayProfile);
+registry.define("display-profile", DisplayProfile);

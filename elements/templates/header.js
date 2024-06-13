@@ -1,3 +1,4 @@
+import { registry } from '../../utils/customeElementsDefine.js';
 // Create a class for the element
 class Header extends HTMLElement {
     constructor() {
@@ -15,4 +16,4 @@ class Header extends HTMLElement {
     }
 }
 
-customElements.define("template-header", Header);
+registry.define("template-header", Header);

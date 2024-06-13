@@ -27,13 +27,35 @@
 }
 
 #drawer {
-    height:100%;
-    width:300px;
+    position: fixed;
+    right:8px;
+    top:63px;
+    
+    height:calc(100% - 88px);
+    width:34px;
+
+    padding:8px;
 
     overflow:auto;
 }
 
-#drawer article {
-    margin:8px;
-    padding:8px 8px 0px 8px;
+#drawer * {
+    max-width: 32px;
+}
+
+#options {
+    display:flex;
+    flex-direction:column;
+    column-gap:8px;
+}
+
+#drawer i {
+    min-width: 34px !important;
+    height: 30px;
+
+    padding-top: 4px;
+
+    margin-bottom:8px;
+
+    font-size:25px;
 }

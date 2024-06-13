@@ -1,5 +1,10 @@
 import { generate3ColorPallete } from "./AI/palleteMaker.js";
 import { generateDynamicIcon } from './elements/images/logo.js';
+import { getTextColor } from './AI/textColorFInder.js';
+
+import { extractRgb } from './utils/extraFunctions.js';
+
+import { getListOfElements } from './utils/customeElementsDefine.js';
 
 class PichaiUX {
     constructor(options = {
@@ -7,6 +12,7 @@ class PichaiUX {
         darkMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
         overrideColorsOnScroll: true,
         themedFavIcon: true,
+        extractionPosition: 0,
         loginDialog: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when clicking the log in button
         accountMenu: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when the user is logged in and allows settings modifications, saving etc
     }) {
@@ -15,6 +21,7 @@ class PichaiUX {
     }
 
     async initialize() {
+        // read bg image and make it ready for UI usage
         let styles = window.getComputedStyle(document.body)
         document.documentElement.style.backgroundImage = styles.backgroundImage;
         document.body.style.backgroundImage = 'initial';
@@ -25,6 +32,7 @@ class PichaiUX {
 
         this.options.source = image || '#008dcd';
 
+        //inject required css
         let cssId = 'PichaiUXCss';
         if (!document.getElementById(cssId)) {
             let head = document.getElementsByTagName('head')[0];
@@ -35,13 +43,22 @@ class PichaiUX {
             link.href = typeof exports !== 'undefined' ? 'Pichai-UX/CSS/main.css' : 'https://lukeplays33.github.io/Pichai-UX/CSS/main.css';
             link.media = 'all';
 
+            let google = document.createElement('link');
+            google.id = 'google';
+            google.rel = 'stylesheet';
+            google.type = 'text/css';
+            google.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+            google.media = 'all';
+
+            head.appendChild(google);
             head.appendChild(link);
         }
 
+        // generate pallete based on bg image
         await generate3ColorPallete(this.options);
 
+        // make a themed icon if set to true by user
         if (this.options.themedFavIcon) {
-            //update favIcon to match themed one.
             const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
 
             // Get the favicon URL
@@ -55,10 +72,37 @@ class PichaiUX {
             }
             link.href = await generateDynamicIcon(faviconUrl);
         }
+
+        // optimise text at start to fix list bullets to have right colors - may need to change later
+        this.optimizeTextColor();
     }
 
     async generateDynamicIcon(icon) {
         return await generateDynamicIcon(icon);
+    }
+
+    optimizeTextColor(el = document) { // loop  through selected elements and find/set the best matched text color
+        let elements = el.getElementsByTagName('*');
+        let i;
+
+        for (i of elements) {
+
+            try {
+                let rgb = extractRgb(i);
+
+                i.style.color = getTextColor(rgb);
+            } catch (e) { }
+
+            let color = window.getComputedStyle(i)['color'];
+
+            if (i.tagName == 'LI' && color == 'rgb(0, 0, 0)') {
+                i.classList.add('black');
+            }
+        }
+    }
+
+    getListOfElements () {
+        return getListOfElements();
     }
 }
 

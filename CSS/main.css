@@ -7,7 +7,8 @@
 @import "./input.css";
 @import "./footer.css";
 @import "./template styles/login.css";
-
+@import "./lists.css";
+@import "./dropdowns.css";
 
 
 body, html {
@@ -19,10 +20,12 @@ body, html {
 
     margin:0px;
 
-    background-color:rgba(0,0,0,0.35);
+    overscroll-behavior:none;
 }
 
 * {
+    overscroll-behavior:none;
+    
     font-family: sans-serif;
     font-size:17px;
 
@@ -31,11 +34,18 @@ body, html {
     background-position:center;
 
     border-style:solid;
-    border-radius:20px;
+    border-radius:10px;
     border-color:var(--primary);
     border-width:0px;
 
     text-align:center;
+
+    width:max-content;
+    height:max-content;
+}
+
+li {
+    display:list-item;
 }
 
 h1 {
@@ -51,7 +61,7 @@ h1 {
 h2 {
     font-size: 1.5em;
 
-    margin-top:8px;
+    margin:8px;
     padding:8px;
 
     background-color:var(--tertiary);
@@ -98,6 +108,22 @@ h6 {
     color:var(--tertiaryTextColor);
 }
 
-label{
+label {
     width:max-content;
+}
+
+.hiddenAccordion {
+    height:max-content !important;
+}
+
+.hidden {
+    height:max-content !important;
+}
+
+.hidden * {
+    display:none !important;
+}
+
+a {
+    text-decoration:none;
 }

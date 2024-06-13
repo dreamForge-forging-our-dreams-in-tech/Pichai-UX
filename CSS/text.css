@@ -1,5 +1,5 @@
 x-title {
-    width:min-content;
+    width:max-content;
     height:19px;
 
     margin-top:auto;
@@ -10,11 +10,16 @@ x-title {
 
     border-radius:200px;
 
-    background-color:var(--primary);
+    background-color:var(--secondairy);
 
     line-height: 20px;
 
     padding: 8px;
 
-    color:var(--primaryTextColor);
+    color:var(--secondairyTextColor);
+}
+
+p {
+        margin:0px;
+        padding:0px;
 }
