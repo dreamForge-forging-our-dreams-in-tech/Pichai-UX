@@ -88,6 +88,8 @@ color-picker {
     color:var(--onPrimaryContainer);
 
     margin:0px;
+
+    line-height: 16px !important;
  }
 
  .presetsExpanded {
