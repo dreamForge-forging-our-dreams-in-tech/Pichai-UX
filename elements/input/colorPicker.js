@@ -74,7 +74,6 @@ async function createPresets (el) {
         item.style.backgroundColor = i;
 
         item.addEventListener('click', function () {
-            console.log(el.parentNode.getAttribute('value'))
             el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value'));
             el.parentNode.setAttribute('value', this.style.backgroundColor);
 
