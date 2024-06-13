@@ -21,6 +21,7 @@ hr {
 
 footer > x-icon {
   margin: 8px;
+  margin-right:0px;
 }
 
 footer > x-title {
