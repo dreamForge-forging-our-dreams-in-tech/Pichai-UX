@@ -50,10 +50,12 @@ color-picker {
 
     background-color:var(--primary);
 
-    width:60%;
+    width:50%;
  }
  
  .displayColor {
     width:100%;
     height:50%;
+
+    padding-top:8px;
  }
