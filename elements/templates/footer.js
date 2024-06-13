@@ -11,7 +11,7 @@ class Footer extends HTMLElement {
         <x-title></x-title>
         <icon-discord></icon-discord>
         <icon-youtube></icon-youtube>
-        <icon-X></icon-X>
+        <x-icon></x-icon>
     </footer>`;
     }
 }
