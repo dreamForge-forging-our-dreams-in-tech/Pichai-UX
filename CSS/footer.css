@@ -18,3 +18,11 @@ hr {
     display: flex;
     flex-direction: row;
 }
+
+footer > x-icon {
+  margin: 8px;
+}
+
+footer > x-title {
+  margin-right: auto;
+} 
