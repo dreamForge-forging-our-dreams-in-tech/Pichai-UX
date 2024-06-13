@@ -73,6 +73,7 @@ async function createPresets (el) {
     for(i of standardColors) {
         let item = document.createElement('button');
         item.classList.add('colorPresetItem');
+        console.log(i)
         item.style.backgroundColor = i;
 
         item.addEventListener('click', function () {
