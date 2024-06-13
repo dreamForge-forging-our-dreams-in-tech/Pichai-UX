@@ -24,7 +24,7 @@ input::placeholder {
 color-picker {
     display:grid;
     grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto 46px;
     grid-template-areas: 
     'previous hsl hsl presetsExpanded'
     'previous hsl hsl presetsExpanded'
@@ -99,5 +99,5 @@ color-picker {
     background-color:var(--primary);
 
     width:calc(100% - 16px);
-    height: 100%;
+    height: calc(100% - 16px);
  }
