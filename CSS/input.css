@@ -73,6 +73,8 @@ color-picker {
  
     grid-area: presets;
 
+    width:calc(100% - 16px);
+
     background-color:var(--primary);
  }
 
@@ -97,5 +99,6 @@ color-picker {
     background-color:var(--primary);
 
     width:100%;
+    min-width:200px;
     height: 100%;
  }
