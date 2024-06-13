@@ -98,6 +98,6 @@ color-picker {
 
     background-color:var(--primary);
 
-    width:100%;
+    width:calc(100% - 16px);
     height: 100%;
  }
