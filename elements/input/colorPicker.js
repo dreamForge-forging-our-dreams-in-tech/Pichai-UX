@@ -73,7 +73,7 @@ async function createPresets (el) {
     for(i of standardColors) {
         let item = document.createElement('button');
         item.classList.add('colorPresetItem');
-        item.style.backgroundColor = i;
+        item.style.backgroundColor = String(i);
 
         item.addEventListener('click', function () {
             el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value'));
