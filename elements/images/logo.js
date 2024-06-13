@@ -11,6 +11,8 @@ function generateDynamicIcon(image) {
 
         // Load your image onto the canvas
         let dynamicImage = new Image();
+        dynamicImage.crossOrigin = 'anonymous';
+
         dynamicImage.src = image; //idk substring 6 breaks cod for smr
 
         dynamicImage.onload = function () {
@@ -152,3 +154,4 @@ class Logo extends HTMLElement {
 registry.define("x-icon", Logo);
 
 export { generateDynamicIcon };
+
