@@ -99,6 +99,6 @@ color-picker {
     background-color:var(--primary);
 
     width:100%;
-    min-width:200px;
+    min-width:150px;
     height: 100%;
  }
