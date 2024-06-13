@@ -96,14 +96,14 @@ async function createPresets(el) {
     let arrow = document.createElement('button');
     arrow.classList.add('colorPresetItem');
     arrow.classList.add('material-symbols-outlined');
-    arrow.innerHTML = 'arrow_forward';
+    arrow.innerHTML = 'chevron_right';
 
     arrow.addEventListener('click', function () {
-        if (this.innerHTML == 'arrow_forward') {
-            arrow.innerHTML = 'arrow_backward';
+        if (this.innerHTML == 'chevron_right') {
+            arrow.innerHTML = 'chevron_left';
             el.style.display = 'none';
         } else {
-            arrow.innerHTML = 'arrow_forward';
+            arrow.innerHTML = 'chevron_right';
             el.style.display = 'flex';
         }
     });
