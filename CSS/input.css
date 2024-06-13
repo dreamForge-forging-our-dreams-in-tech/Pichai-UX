@@ -32,7 +32,7 @@ color-picker {
 
     grid-gap:8px;
 
-    height300px;
+    height:300px;
  }
 
  .color-picker * {
