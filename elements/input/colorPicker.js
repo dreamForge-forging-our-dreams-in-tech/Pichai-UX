@@ -5,9 +5,9 @@ const change = new Event("change"); // new change event for the color picker
 
 // Create a class for the element
 class ColorPicker extends HTMLElement {
-            /** @description 
-    * The color picker element allows you to easily select colors.
-    */
+    /** @description 
+* The color picker element allows you to easily select colors.
+*/
 
     /** @usage 
      * When the user needs to select a color
@@ -23,7 +23,7 @@ class ColorPicker extends HTMLElement {
     async connectedCallback() {
         let i;
 
-        if(this.getAttribute('showpreviousvalues') == 'true' || this.hasAttribute('showpreviousvalues')) {} else { // create the previous color section of the color picker
+        if (this.getAttribute('showpreviousvalues') == 'true' || this.hasAttribute('showpreviousvalues')) { } else { // create the previous color section of the color picker
             let previousHolder = document.createElement('article');
             previousHolder.classList.add('previousColor');
 
@@ -34,14 +34,14 @@ class ColorPicker extends HTMLElement {
 
             let previous = document.createElement('paragraph');
             previous.classList.add('displayColor');
-            previous.style.backgroundColor =  this.getAttribute('previousvalue') ?? this.getAttribute('value');
+            previous.style.backgroundColor = this.getAttribute('previousvalue') ?? this.getAttribute('value');
             previous.innerHTML = 'Previous';
 
             previousHolder.append(current, previous);
             this.appendChild(previousHolder);
         }
 
-        if(this.getAttribute('presets') == 'true' || this.hasAttribute('presets')) {} else { // create the previous color section of the color picker
+        if (this.getAttribute('presets') == 'true' || this.hasAttribute('presets')) { } else { // create the previous color section of the color picker
             let presetsHolder = document.createElement('article');
             presetsHolder.classList.add('presets');
 
@@ -50,13 +50,13 @@ class ColorPicker extends HTMLElement {
             this.appendChild(presetsHolder);
         }
 
-        if(this.getAttribute('savetopresets') == 'true' || this.hasAttribute('savetopresets')) {} else { // create the previous color section of the color picker
+        if (this.getAttribute('savetopresets') == 'true' || this.hasAttribute('savetopresets')) { } else { // create the previous color section of the color picker
             let presetsHolder = document.createElement('article');
             presetsHolder.classList.add('presetsExpanded');
 
             this.appendChild(presetsHolder);
         }
-        
+
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
@@ -68,16 +68,16 @@ class ColorPicker extends HTMLElement {
     }
 }
 
-async function createPresets (el) {
+async function createPresets(el) {
     let standardColors = ['#FF0000', '#Ffa500', '#FFFF00', '#00ff00', '#ADD8E6', '#0000ff', '#A020F0', '#Ffc0cb', '#000000', '#ffffff'];
     let i;
 
     let saved = await localforage.getItem('presetColors');
-    if(saved != null) {
+    if (saved != null) {
         standardColors = standardColors.concat(saved);
     }
 
-    for(i of standardColors) {
+    for (i of standardColors) {
         let item = document.createElement('button');
         item.classList.add('colorPresetItem');
         item.style.backgroundColor = i;
@@ -91,6 +91,24 @@ async function createPresets (el) {
 
         el.appendChild(item);
     }
+
+    //create an arrow for expansion
+    let arrow = document.createElement('button');
+    arrow.classList.add('colorPresetItem');
+    arrow.classList.add('material-symbols-outlined');
+    arrow.innerHTML = 'chevron_right';
+
+    arrow.addEventListener('click', function () {
+        if (this.innerHTML == 'chevron_right') {
+            arrow.innerHTML = 'chevron_left';
+            el.style.display = 'none';
+        } else {
+            arrow.innerHTML = 'chevron_right';
+            el.style.display = 'flex';
+        }
+    });
+
+    el.appendChild(arrow);
 
 }
 
