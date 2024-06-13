@@ -10,9 +10,9 @@ class Footer extends HTMLElement {
         this.innerHTML = `<footer>
         <x-icon></x-icon>
         <x-title></x-title>
-        <x-icon src='../../assets\shapes\pictures/youtube.png'></x-icon>
-        <x-icon src='../../assets\shapes\pictures/youtube.png'></x-icon>
-        <x-icon src='../../assets\shapes\pictures/youtube.png'></x-icon>
+        <x-icon src='../assets\shapes\pictures/youtube.png'></x-icon>
+        <x-icon src='../../assets\shapes/pictures/youtube.png'></x-icon>
+        <x-icon src='../assets\shapes\pictures\youtube.png'></x-icon>
     </footer>`;
     }
 }
