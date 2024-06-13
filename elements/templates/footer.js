@@ -10,7 +10,7 @@ class Footer extends HTMLElement {
     async connectedCallback() {
         this.innerHTML = `<footer>
         <x-icon></x-icon>
-        <x-title titel='Sketch'></x-title>
+        <x-title title='Sketch'></x-title>
         <x-icon src='https://raw.githubusercontent.com/lukeplays33/Pichai-UX/main/assets/shapes/pictures/twitter.png'></x-icon>
         <x-icon src='https://raw.githubusercontent.com/lukeplays33/Pichai-UX/main/assets/shapes/pictures/discord.png'></x-icon>
         <x-icon src='https://raw.githubusercontent.com/lukeplays33/Pichai-UX/main/assets/shapes/pictures/youtube.png'></x-icon>
