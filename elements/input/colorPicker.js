@@ -20,14 +20,14 @@ class ColorPicker extends HTMLElement {
     async connectedCallback() {
         if(this.getAttribute('showpreviousvalues') == 'false' || this.hasAttribute('showpreviousvalues')) {} else { // create the previous color section of the color picker
             let previousHolder = document.createElement('article');
-            previousHolder.class = 'previousColor';
+            previousHolder.classList.add('previousColor');
 
             let current = document.createElement('paragraph');
-            current.class = 'displayColor';
+            current.classList.add('displayColor');
             current.style.backgroundColor = this.getAttribute('value') ?? '#008dcd';
 
             let previous = document.createElement('paragraph');
-            previous.class = 'displayColor';
+            previous.classList.add('displayColor');
             previous.style.backgroundColor =  this.getAttribute('previousvalue') ?? this.getAttribute('value');
 
             previousHolder.append(current, previous);
