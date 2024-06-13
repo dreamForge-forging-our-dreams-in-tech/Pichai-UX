@@ -31,8 +31,10 @@ color-picker {
     'presets presets presets presetsExpanded';
 
     height:250px;
+ }
 
-    min-width:350px;
+ .color-picker * {
+    height:100%;
  }
  
  .previousColor {
@@ -46,7 +48,8 @@ color-picker {
 
     background-color:var(--primary);
 
-    width:50%;
+    width:calc(100% - 16px);
+    height: calc(100% - 24px);
  }
  
  .displayColor {
