@@ -23,11 +23,11 @@ input::placeholder {
 
 color-picker {
     display:grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     grid-template-areas: 
-    'previous hsl presetsExpanded'
-    'previous hsl presetsExpanded'
-    'presets presets presetsExpanded';
+    'previous hsl hsl presetsExpanded'
+    'previous hsl hsl presetsExpanded'
+    'presets presets presets presetsExpanded';
 
     height:250px;
 
@@ -58,4 +58,16 @@ color-picker {
     height:50%;
 
     padding-top:7px;
+ }
+
+ .presets {
+    display:flex;
+    flex-direction:column;
+    row-gap: 8px;
+ 
+    padding:8px;
+ 
+    grid-area: presets;
+
+    background-color:var(--primary);
  }
