@@ -1,6 +1,8 @@
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 import '../../utils/localFOrage.js';
 
+const change = new Event("change"); // new change event for the color picker
+
 // Create a class for the element
 class ColorPicker extends HTMLElement {
             /** @description 
@@ -77,7 +79,7 @@ async function createPresets (el) {
             el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value'));
             el.parentNode.setAttribute('value', this.style.backgroundColor);
 
-            el.parentNode.dispatchEvent('change');
+            el.parentNode.dispatchEvent(change);
         });
 
         el.appendChild(item);
