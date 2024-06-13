@@ -89,6 +89,12 @@ async function createPresets (el) {
             el.parentNode.dispatchEvent(change);
         });
 
+        //create an arrow for expansion
+        let arrow = document.createElement('button');
+        arrow.classList.add('colorPresetItem');
+        arrow.classList.add('material-symbols-outlined');
+        arrow.innerHTML = 'arrow_forward';
+
         el.appendChild(item);
     }
 

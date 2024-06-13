@@ -84,6 +84,9 @@ color-picker {
 
     border-radius:300px;
 
+    background-color:var(--primaryContainer);
+    color:var(--onPrimaryContainer);
+
     margin:0px;
  }
 
