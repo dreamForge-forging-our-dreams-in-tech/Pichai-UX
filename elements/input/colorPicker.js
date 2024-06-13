@@ -1,4 +1,5 @@
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
+import '../../utils/localFOrage.js';
 
 // Create a class for the element
 class ColorPicker extends HTMLElement {
@@ -18,7 +19,9 @@ class ColorPicker extends HTMLElement {
     }
 
     async connectedCallback() {
-        if(this.getAttribute('showpreviousvalues') == 'false' || this.hasAttribute('showpreviousvalues')) {} else { // create the previous color section of the color picker
+        let i;
+
+        if(this.getAttribute('showpreviousvalues') == 'true' || this.hasAttribute('showpreviousvalues')) {} else { // create the previous color section of the color picker
             let previousHolder = document.createElement('article');
             previousHolder.classList.add('previousColor');
 
@@ -35,25 +38,51 @@ class ColorPicker extends HTMLElement {
             previousHolder.append(current, previous);
             this.appendChild(previousHolder);
         }
+
+        if(this.getAttribute('presets') == 'true' || this.hasAttribute('presets')) {} else { // create the previous color section of the color picker
+            let presetsHolder = document.createElement('article');
+            presetsHolder.classList.add('presets');
+
+            createPresets(presetsHolder);
+
+            this.appendChild(presetsHolder);
+        }
         
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-                // Get the favicon link element
-                const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
+        doAttributeCheck('boolean', 'presets', this.getAttribute('presets'));
+        doAttributeCheck('boolean', 'showpreviousvalues', this.getAttribute('showpreviousvalues'));
 
-                // Get the favicon URL
-                const faviconUrl = faviconLink ? faviconLink.href : null;
-        
-                if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
-                    window.onload = async () => {
-                        let newIcon = await generateDynamicIcon(faviconUrl);
-                        this.style.backgroundImage = `url(${newIcon})`;
-                    }
-                } else {
-                    this.style.backgroundImage = this.src ?? `url("${faviconUrl}")`;
-                }
+        this.connectedCallback();
+
     }
+}
+
+async function createPresets (el) {
+    let standardColors = ['red', 'orange', 'yellow', 'green', 'lightblue', 'blue', 'purple', 'pink', 'black', 'white'];
+    let i;
+
+    let saved = await localforage.getItem('presetColors');
+    if(saved != null) {
+        standardColors = standardColors.concat(saved);
+    }
+
+    for(i of standardColors) {
+        let item = document.createElement('button');
+        item.classList.add('colorPresetItem');
+        item.style.backgroundColor = i;
+
+        item.addEventListener('click', function () {
+            el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value'));
+            el.parentNode.setAttribute('value', this.style.backgroundColor);
+
+            el.parentNode.dispatchEvent('change');
+        });
+
+        el.appendChild(item);
+    }
+
 }
 
 registry.define("color-picker", ColorPicker);
