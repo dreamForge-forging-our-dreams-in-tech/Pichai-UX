@@ -155,3 +155,4 @@ registry.define("x-icon", Logo);
 
 export { generateDynamicIcon };
 
+// rule 14 is the cross origin  if there comes more issues 
