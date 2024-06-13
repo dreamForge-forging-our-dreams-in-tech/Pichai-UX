@@ -30,6 +30,8 @@ color-picker {
     'previous hsl hsl presetsExpanded'
     'presets presets presets presetsExpanded';
 
+    grid-gap:8px;
+
     height:250px;
  }
 
@@ -49,7 +51,7 @@ color-picker {
     background-color:var(--primary);
 
     width:calc(100% - 16px);
-    height: calc(100% - 24px);
+    height: calc(100% - 16px);
  }
  
  .displayColor {
