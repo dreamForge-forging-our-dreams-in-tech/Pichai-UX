@@ -95,6 +95,16 @@ async function createPresets (el) {
         arrow.classList.add('material-symbols-outlined');
         arrow.innerHTML = 'arrow_forward';
 
+        arrow.addEventListener('click', function () {
+            if(this.innerHTML == 'arrow_forward') {
+                arrow.innerHTML = 'arrow_backward';
+                el.style.display = 'none';
+            } else {
+                arrow.innerHTML = 'arrow_forward';
+                el.style.display = 'flex';
+            }
+        });
+
         el.appendChild(arrow);
     }
 
