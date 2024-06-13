@@ -62,7 +62,7 @@ class ColorPicker extends HTMLElement {
 }
 
 async function createPresets (el) {
-    let standardColors = ['red', 'orange', 'yellow', 'green', 'lightblue', 'blue', 'purple', 'pink', 'black', 'white'];
+    let standardColors = ['#FF0000', '#Ffa500', '#FFFF00', '#00ff00', '#ADD8E6', '#0000ff', '#A020F0', '#Ffc0cb', '#000000', '#ffffff'];
     let i;
 
     let saved = await localforage.getItem('presetColors');
