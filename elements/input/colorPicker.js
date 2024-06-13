@@ -87,9 +87,9 @@ async function createPresets(el) {
             el.parentNode.setAttribute('value', this.style.backgroundColor);
 
             el.parentNode.dispatchEvent(change);
-
-            el.appendChild(item);
         });
+
+        el.appendChild(item);
     }
 
     //create an arrow for expansion
