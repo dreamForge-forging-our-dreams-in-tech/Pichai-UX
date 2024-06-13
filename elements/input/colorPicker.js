@@ -1,6 +1,8 @@
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 import '../../utils/localFOrage.js';
 
+const change = new Event("change"); // new change event for the color picker
+
 // Create a class for the element
 class ColorPicker extends HTMLElement {
             /** @description 
@@ -60,7 +62,7 @@ class ColorPicker extends HTMLElement {
 }
 
 async function createPresets (el) {
-    let standardColors = ['red', 'orange', 'yellow', 'green', 'lightblue', 'blue', 'purple', 'pink', 'black', 'white'];
+    let standardColors = ['#FF0000', '#Ffa500', '#FFFF00', '#00ff00', '#ADD8E6', '#0000ff', '#A020F0', '#Ffc0cb', '#000000', '#ffffff'];
     let i;
 
     let saved = await localforage.getItem('presetColors');
@@ -77,7 +79,7 @@ async function createPresets (el) {
             el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value'));
             el.parentNode.setAttribute('value', this.style.backgroundColor);
 
-            el.parentNode.dispatchEvent('change');
+            el.parentNode.dispatchEvent(change);
         });
 
         el.appendChild(item);
