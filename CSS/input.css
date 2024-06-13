@@ -99,5 +99,5 @@ color-picker {
     background-color:var(--primary);
 
     width:calc(100% - 16px);
-    height: 100%;
+    height: calc(100% - 16px);
  }
