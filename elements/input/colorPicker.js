@@ -54,6 +54,8 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('boolean', 'presets', this.getAttribute('presets'));
         doAttributeCheck('boolean', 'showpreviousvalues', this.getAttribute('showpreviousvalues'));
 
+        this.connectedCallback();
+
     }
 }
 
@@ -70,6 +72,11 @@ async function createPresets (el) {
         let item = document.createElement('button');
         item.classList.add('colorPresetItem');
         item.style.backgroundColor = i;
+
+        item.addEventListener('click', function () {
+            el.setAttribute('previousvalue', el.getAttribute('value'));
+            el.setAttribute('value', this.style.backgroundColor);
+        });
 
         el.appendChild(item);
     }
