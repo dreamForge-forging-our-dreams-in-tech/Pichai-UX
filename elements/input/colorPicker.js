@@ -49,6 +49,13 @@ class ColorPicker extends HTMLElement {
 
             this.appendChild(presetsHolder);
         }
+
+        if(this.getAttribute('savetopresets') == 'true' || this.hasAttribute('savetopresets')) {} else { // create the previous color section of the color picker
+            let presetsHolder = document.createElement('article');
+            presetsHolder.classList.add('presetsExpanded');
+
+            this.appendChild(presetsHolder);
+        }
         
     }
 
@@ -76,7 +83,7 @@ async function createPresets (el) {
         item.style.backgroundColor = i;
 
         item.addEventListener('click', function () {
-            el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value'));
+            el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value')); // make this update depending on set outputtype
             el.parentNode.setAttribute('value', this.style.backgroundColor);
 
             el.parentNode.dispatchEvent(change);
