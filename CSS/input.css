@@ -83,3 +83,15 @@ color-picker {
 
     margin:0px;
  }
+
+ .presetsExpanded {
+    grid-area: presetsExpanded;
+
+    display:flex;
+    flex-direction:row;
+    column-gap: 8px;
+ 
+    padding:8px;
+
+    background-color:var(--primary);
+ }
