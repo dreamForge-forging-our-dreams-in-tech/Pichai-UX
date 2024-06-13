@@ -43,7 +43,7 @@ class ColorPicker extends HTMLElement {
             let presetsHolder = document.createElement('article');
             presetsHolder.classList.add('presets');
 
-            createPresets(this);
+            createPresets(presetsHolder);
 
             this.appendChild(presetsHolder);
         }
@@ -62,7 +62,17 @@ async function createPresets (el) {
     let i;
 
     let saved = await localforage.getItem('presetColors');
-    console.log(saved)
+    if(saved != null) {
+        standardColors = standardColors.concat(saved);
+    }
+
+    for(i of standardColors) {
+        let item = document.createElement('button');
+        item.classList.add('colorPresetItem');
+        item.style.backgroundColor = i;
+
+        el.appendChild(item);
+    }
 
 }
 
