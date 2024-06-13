@@ -47,6 +47,8 @@ color-picker {
     padding:8px;
  
     grid-area: previous;
+
+    background-color:var(--primary)
  }
  
  .displayColor {
