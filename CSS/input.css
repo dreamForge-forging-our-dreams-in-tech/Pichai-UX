@@ -94,4 +94,7 @@ color-picker {
     padding:8px;
 
     background-color:var(--primary);
+
+    width:100px;
+    height: 100%;
  }
