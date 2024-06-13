@@ -62,12 +62,19 @@ color-picker {
 
  .presets {
     display:flex;
-    flex-direction:column;
-    row-gap: 8px;
+    flex-direction:row;
+    column-gap: 8px;
  
     padding:8px;
  
     grid-area: presets;
 
     background-color:var(--primary);
+ }
+
+ .colorPresetItem {
+    width:50px;
+    height:50px;
+
+    border-radius:300px;
  }
