@@ -79,7 +79,7 @@ async function createPresets(el) {
 
     let saved = await localforage.getItem('presetColors');
     if (saved != null) {
-        standardColors = saved.concat(standardColors);
+        standardColors = standardColors.concat(saved);
     } else {
         saved = [];
     }
