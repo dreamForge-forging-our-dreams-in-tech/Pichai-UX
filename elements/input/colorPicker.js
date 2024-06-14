@@ -78,11 +78,11 @@ class ColorPicker extends HTMLElement {
             this.getElementsByClassName('previousColor').remove();
         }
 
-        if (this.getAttribute('presets') != 'true' || !this.hasAttribute('presets')) {
+        if (this.getAttribute('presets') == 'true' || !this.hasAttribute('presets')) {
             document.getElementsByClassName('presets')[0].remove();
         }
 
-        if (this.getAttribute('savetopresets' || !this.hasAttribute('savetopresets')) != 'true') {
+        if (this.getAttribute('savetopresets') == 'true' || !this.hasAttribute('savetopresets')) != 'true') {
             document.getElementsByClassName('presetsExpanded')[0].remove();
         }
 
