@@ -148,7 +148,7 @@ function createPresetItem(el, color) {
         el.parentNode.dispatchEvent(change);
     });
 
-    el.appendChild(item);
+    el.prepend(item);
 }
 
 registry.define("color-picker", ColorPicker);
