@@ -66,7 +66,7 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('boolean', 'showpreviousvalues', this.getAttribute('showpreviousvalues'));
 
         this.innerHTML = '';
-        //this.connectedCallback();
+        this.connectedCallback();
 
     }
 }
