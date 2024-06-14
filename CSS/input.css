@@ -76,6 +76,8 @@ color-picker {
     width:calc(100% - 16px);
 
     background-color:var(--primary);
+
+    overflow:hidden;
  }
 
  .colorPresetItem {
@@ -113,4 +115,5 @@ color-picker {
     height: calc(100% - 16px);
 
     overflow:hidden;
+    overflow-y:auto;
  }
