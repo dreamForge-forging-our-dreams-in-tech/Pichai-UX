@@ -97,6 +97,7 @@ color-picker {
 
     display:grid;
     grid-template-columns: auto auto auto auto auto;
+    grid-auto-rows: max-content;
  
     padding:8px;
 
