@@ -69,18 +69,20 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('string', 'previousvalue', this.getAttribute('previousvalue'));
         doAttributeCheck('string', 'outputtype', this.getAttribute('outputtype'));
 
-        if (this.getAttribute('showpreviousvalues') == 'false' || !this.hasAttribute('showpreviousvalues')) { } else {
+        if (this.getAttribute('showpreviousvalues') == 'false' || !this.hasAttribute('showpreviousvalues')) {
+            this.getElementsByClassName('previousColor').remove();
+        } else {
             let prev = this.getElementsByClassName('previousColor');
 
             prev[0].style.backgroundColor = this.getAttribute('value') ?? '#008dcd';
             prev[1].style.backgroundColor = this.getAttribute('previousvalue') ?? this.getAttribute('value');
         }
 
-        if (this.getAttribute('presets') == 'false' || !this.hasAttribute('presets')) { } else {
+        if (this.getAttribute('presets') == 'false' || !this.hasAttribute('presets')) {
             document.getElementsByClassName('presets')[0].remove();
         }
 
-        if (this.getAttribute('savetopresets') == 'false' || !this.hasAttribute('savetopresets')) { } else {
+        if (this.getAttribute('savetopresets') == 'false' || !this.hasAttribute('savetopresets')) {
             document.getElementsByClassName('presetsExpanded')[0].remove();
         }
         
