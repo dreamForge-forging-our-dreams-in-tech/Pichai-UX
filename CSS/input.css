@@ -62,8 +62,6 @@ color-picker {
     padding-top:7px;
 
     font-size:14px;
-
-    flex-shrink:0;
  }
 
  .presets {
