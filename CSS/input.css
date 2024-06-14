@@ -92,6 +92,10 @@ color-picker {
     line-height: 16px !important;
  }
 
+ .colorPresetItem:last-child {
+   position:absolute;
+ }
+
  .presetsExpanded {
     grid-area: presetsExpanded;
 
@@ -107,4 +111,6 @@ color-picker {
 
     width:calc(100% - 16px);
     height: calc(100% - 16px);
+
+    overflow:hidden;
  }

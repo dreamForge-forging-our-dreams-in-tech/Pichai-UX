@@ -94,7 +94,6 @@ async function createPresets(el) {
     let i;
 
     let saved = await localforage.getItem('presetColors');
-    console.log(saved)
     if (saved != null) {
         standardColors = saved.concat(standardColors);
     } else {
@@ -113,7 +112,7 @@ async function createPresets(el) {
     arrow.addEventListener('click', function () {
         let expanded = el.parentNode.getElementsByClassName('presetsExpanded')[0];
 
-        if (this.parentNode == expanded) { //save current colors
+        if (this.parentNode == expanded) { //save current color
             saved.push(el.parentNode.getAttribute('value'));
             createPresetItem(el, el.parentNode.getAttribute('value'));
 
