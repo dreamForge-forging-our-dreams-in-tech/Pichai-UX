@@ -113,8 +113,10 @@ async function createPresets(el) {
         let expanded = el.parentNode.getElementsByClassName('presetsExpanded')[0];
 
         if (this.parentNode == expanded) { //save current color
+            let pre = el.parentNode.getElementsByClassName('presets')[0];
             saved.push(el.parentNode.getAttribute('value'));
             createPresetItem(el, el.parentNode.getAttribute('value'));
+            createPresetItem(pre, el.parentNode.getAttribute('value'));
 
             localforage.setItem('presetColors', saved).then(function (value) {
             }).catch(function(err) {
