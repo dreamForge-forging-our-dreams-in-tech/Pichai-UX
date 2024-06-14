@@ -24,39 +24,15 @@ class ColorPicker extends HTMLElement {
         let i;
 
         if (this.getAttribute('showpreviousvalues') == 'true' || !this.hasAttribute('showpreviousvalues')) { // create the previous color section of the color picker
-            let previousHolder = document.createElement('article');
-            previousHolder.classList.add('previousColor');
-
-            let current = document.createElement('paragraph');
-            current.classList.add('displayColor');
-            current.style.backgroundColor = this.getAttribute('value') ?? '#008dcd';
-            current.innerHTML = `Current`;
-
-            let previous = document.createElement('paragraph');
-            previous.classList.add('displayColor');
-            previous.style.backgroundColor = this.getAttribute('previousvalue') ?? this.getAttribute('value');
-            previous.innerHTML = 'Previous';
-
-            previousHolder.append(current, previous);
-            this.appendChild(previousHolder);
+            createPreviousView(this);
         }
 
         if (this.getAttribute('presets') == 'true' || !this.hasAttribute('presets')) { // create the previous color section of the color picker
-            let presetsHolder = document.createElement('article');
-            presetsHolder.classList.add('presets');
-
-            createPresets(presetsHolder);
-
-            this.appendChild(presetsHolder);
+            createPresetsView(this);
         }
 
         if (this.getAttribute('savetopresets') == 'true' || !this.hasAttribute('savetopresets')) { // create the previous color section of the color picker
-            let presetsHolder = document.createElement('article');
-            presetsHolder.classList.add('presetsExpanded');
-
-            createPresets(presetsHolder);
-
-            this.appendChild(presetsHolder);
+            createPresetsExpansionView(this);
         }
 
     }
@@ -72,6 +48,10 @@ class ColorPicker extends HTMLElement {
         if (this.getAttribute('showpreviousvalues') == 'true' || !this.hasAttribute('showpreviousvalues')) {
             let prev = this.getElementsByClassName('displayColor');
 
+            if(prev) {
+                createPreviousView(this);
+            }
+
             prev[0].style.backgroundColor = this.getAttribute('value') ?? '#008dcd';
             prev[1].style.backgroundColor = this.getAttribute('previousvalue') ?? this.getAttribute('value');
         } else {
@@ -80,10 +60,14 @@ class ColorPicker extends HTMLElement {
 
         if (this.getAttribute('presets') == 'false') {
             document.getElementsByClassName('presets')[0].remove();
+        } else {
+            createPresetsView(this);
         }
 
         if (this.getAttribute('savetopresets') == 'false') {
             document.getElementsByClassName('presetsExpanded')[0].remove();
+        } else {
+            createPresetsExpansionView(this);
         }
 
     }
@@ -152,6 +136,42 @@ function createPresetItem(el, color) {
     });
 
     el.prepend(item);
+}
+
+function createPreviousView(el) {
+    let previousHolder = document.createElement('article');
+    previousHolder.classList.add('previousColor');
+
+    let current = document.createElement('paragraph');
+    current.classList.add('displayColor');
+    current.style.backgroundColor = el.getAttribute('value') ?? '#008dcd';
+    current.innerHTML = `Current`;
+
+    let previous = document.createElement('paragraph');
+    previous.classList.add('displayColor');
+    previous.style.backgroundColor = el.getAttribute('previousvalue') ?? el.getAttribute('value');
+    previous.innerHTML = 'Previous';
+
+    previousHolder.append(current, previous);
+    el.appendChild(previousHolder);
+}
+
+function createPresetsView(el) {
+    let presetsHolder = document.createElement('article');
+    presetsHolder.classList.add('presets');
+
+    createPresets(presetsHolder);
+
+    el.appendChild(presetsHolder);
+}
+
+function createPresetsExpansionView(el) {
+    let presetsHolder = document.createElement('article');
+    presetsHolder.classList.add('presetsExpanded');
+
+    createPresets(presetsHolder);
+
+    el.appendChild(presetsHolder);
 }
 
 registry.define("color-picker", ColorPicker);
