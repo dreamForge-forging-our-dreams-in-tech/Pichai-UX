@@ -23,7 +23,7 @@ class ColorPicker extends HTMLElement {
     async connectedCallback() {
         let i;
 
-        if (this.getAttribute('showpreviousvalues') == 'false' || !this.hasAttribute('showpreviousvalues')) { } else { // create the previous color section of the color picker
+        if (this.getAttribute('showpreviousvalues') == 'false' || this.hasAttribute('showpreviousvalues')) { } else { // create the previous color section of the color picker
             let previousHolder = document.createElement('article');
             previousHolder.classList.add('previousColor');
 
@@ -41,7 +41,7 @@ class ColorPicker extends HTMLElement {
             this.appendChild(previousHolder);
         }
 
-        if (this.getAttribute('presets') == 'false' || !this.hasAttribute('presets')) { } else { // create the previous color section of the color picker
+        if (this.getAttribute('presets') == 'false' || this.hasAttribute('presets')) { } else { // create the previous color section of the color picker
             let presetsHolder = document.createElement('article');
             presetsHolder.classList.add('presets');
 
@@ -50,7 +50,7 @@ class ColorPicker extends HTMLElement {
             this.appendChild(presetsHolder);
         }
 
-        if (this.getAttribute('savetopresets') == 'false' || !this.hasAttribute('savetopresets')) { } else { // create the previous color section of the color picker
+        if (this.getAttribute('savetopresets') == 'false' || this.hasAttribute('savetopresets')) { } else { // create the previous color section of the color picker
             let presetsHolder = document.createElement('article');
             presetsHolder.classList.add('presetsExpanded');
 
@@ -69,7 +69,7 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('string', 'previousvalue', this.getAttribute('previousvalue'));
         doAttributeCheck('string', 'outputtype', this.getAttribute('outputtype'));
 
-        if (this.getAttribute('showpreviousvalues') == 'false' || !this.hasAttribute('showpreviousvalues')) {
+        if (this.getAttribute('showpreviousvalues') == 'false' || this.hasAttribute('showpreviousvalues')) {
             this.getElementsByClassName('previousColor').remove();
         } else {
             let prev = this.getElementsByClassName('previousColor');
@@ -78,11 +78,11 @@ class ColorPicker extends HTMLElement {
             prev[1].style.backgroundColor = this.getAttribute('previousvalue') ?? this.getAttribute('value');
         }
 
-        if (this.getAttribute('presets') == 'false' || !this.hasAttribute('presets')) {
+        if (this.getAttribute('presets') == 'false' || this.hasAttribute('presets')) {
             document.getElementsByClassName('presets')[0].remove();
         }
 
-        if (this.getAttribute('savetopresets') == 'false' || !this.hasAttribute('savetopresets')) {
+        if (this.getAttribute('savetopresets') == 'false' || this.hasAttribute('savetopresets')) {
             document.getElementsByClassName('presetsExpanded')[0].remove();
         }
         
