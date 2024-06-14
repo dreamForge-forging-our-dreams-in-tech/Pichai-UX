@@ -93,8 +93,6 @@ async function createPresets(el) {
     let standardColors = ['#FF0000', '#Ffa500', '#FFFF00', '#00ff00', '#ADD8E6', '#0000ff', '#A020F0', '#Ffc0cb', '#000000', '#ffffff'];
     let i;
 
-    let expanded = el.parentNode.getElementsByClassName('presetsExpanded')[0];
-
     let saved = await localforage.getItem('presetColors');
     console.log(saved)
     if (saved != null) {
@@ -110,11 +108,10 @@ async function createPresets(el) {
     //create an arrow for expansion
     let arrow = document.createElement('button');
     arrow.classList.add('colorPresetItem');
-
-    el.appendChild(arrow); // append it from here so below check is easier
-    arrow.innerHTML = arrow.parentNode == expanded ? '+' : '-';
+    arrow.innerHTML = '+';
 
     arrow.addEventListener('click', function () {
+        let expanded = el.parentNode.getElementsByClassName('presetsExpanded')[0];
 
         if (this.parentNode == expanded) { //save current colors
             saved.push(el.parentNode.getAttribute('value'));
@@ -135,6 +132,8 @@ async function createPresets(el) {
             }
         }
     });
+
+    el.appendChild(arrow);
 
 }
 
