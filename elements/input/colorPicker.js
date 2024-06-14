@@ -23,7 +23,7 @@ class ColorPicker extends HTMLElement {
     async connectedCallback() {
         let i;
 
-        if (this.getAttribute('showpreviousvalues') == 'true') { // create the previous color section of the color picker
+        if (this.getAttribute('showpreviousvalues') == 'true' || !this.hasAttribute('showpreviousvalues')) { // create the previous color section of the color picker
             let previousHolder = document.createElement('article');
             previousHolder.classList.add('previousColor');
 
@@ -41,7 +41,7 @@ class ColorPicker extends HTMLElement {
             this.appendChild(previousHolder);
         }
 
-        if (this.getAttribute('presets') == 'true') { // create the previous color section of the color picker
+        if (this.getAttribute('presets') == 'true' || !this.hasAttribute('presets')) { // create the previous color section of the color picker
             let presetsHolder = document.createElement('article');
             presetsHolder.classList.add('presets');
 
@@ -50,7 +50,7 @@ class ColorPicker extends HTMLElement {
             this.appendChild(presetsHolder);
         }
 
-        if (this.getAttribute('savetopresets') == 'true') { // create the previous color section of the color picker
+        if (this.getAttribute('savetopresets') == 'true' || !this.hasAttribute('savetopresets')) { // create the previous color section of the color picker
             let presetsHolder = document.createElement('article');
             presetsHolder.classList.add('presetsExpanded');
 
@@ -69,7 +69,7 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('string', 'previousvalue', this.getAttribute('previousvalue'));
         doAttributeCheck('string', 'outputtype', this.getAttribute('outputtype'));
 
-        if (this.getAttribute('showpreviousvalues') == 'true') {
+        if (this.getAttribute('showpreviousvalues') == 'true' || !this.hasAttribute('showpreviousvalues')) {
             let prev = this.getElementsByClassName('displayColor');
 
             prev[0].style.backgroundColor = this.getAttribute('value') ?? '#008dcd';
@@ -78,11 +78,11 @@ class ColorPicker extends HTMLElement {
             this.getElementsByClassName('previousColor').remove();
         }
 
-        if (this.getAttribute('presets') != 'true') {
+        if (this.getAttribute('presets') != 'true' || !this.hasAttribute('presets')) {
             document.getElementsByClassName('presets')[0].remove();
         }
 
-        if (this.getAttribute('savetopresets') != 'true') {
+        if (this.getAttribute('savetopresets' || !this.hasAttribute('savetopresets')) != 'true') {
             document.getElementsByClassName('presetsExpanded')[0].remove();
         }
         
