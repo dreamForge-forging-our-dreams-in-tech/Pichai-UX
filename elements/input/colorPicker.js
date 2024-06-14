@@ -100,7 +100,7 @@ async function createPresets(el) {
                 arrow.innerHTML = '+';
     
                 arrow.addEventListener('click', function () {
-                    let expanded = el.parentNode.getElementsByClassList('presetsExpanded')[0];
+                    let expanded = el.parentNode.getElementsByClassName('presetsExpanded')[0];
 
                     if (this.innerHTML == '+') {
                         arrow.innerHTML = '-';
