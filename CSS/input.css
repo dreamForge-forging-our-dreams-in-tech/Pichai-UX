@@ -96,6 +96,7 @@ color-picker {
 
  .colorPresetItem:last-child {
    position:absolute;
+   right:8px;
  }
 
  .presetsExpanded {
