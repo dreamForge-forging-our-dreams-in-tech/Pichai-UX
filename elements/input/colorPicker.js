@@ -62,6 +62,8 @@ class ColorPicker extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
+        let i;
+        
         doAttributeCheck('boolean', 'presets', this.getAttribute('presets'));
         doAttributeCheck('boolean', 'showpreviousvalues', this.getAttribute('showpreviousvalues'));
         doAttributeCheck('boolean', 'savetopresets', this.getAttribute('savetopresets'));
