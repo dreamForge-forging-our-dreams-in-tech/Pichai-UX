@@ -108,7 +108,7 @@ async function createPresets(el) {
                         expanded.style.display = 'none';
                     } else {
                         arrow.innerHTML = '+';
-                        expanded.style.display = 'flex';
+                        expanded.style.display = 'grid';
                     }
                 });
     
