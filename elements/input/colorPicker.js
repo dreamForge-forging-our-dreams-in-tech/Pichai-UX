@@ -47,24 +47,6 @@ class ColorPicker extends HTMLElement {
 
             createPresets(presetsHolder);
 
-            //create an arrow for expansion
-            let arrow = document.createElement('button');
-            arrow.classList.add('colorPresetItem');
-            arrow.classList.add('material-symbols-outlined');
-            arrow.innerHTML = 'chevron_right';
-
-            arrow.addEventListener('click', function () {
-                if (this.innerHTML == 'chevron_right') {
-                    arrow.innerHTML = 'chevron_left';
-                    el.style.display = 'none';
-                } else {
-                    arrow.innerHTML = 'chevron_right';
-                    el.style.display = 'flex';
-                }
-            });
-
-            presetsHolder.appendChild(arrow);
-
             this.appendChild(presetsHolder);
         }
 
@@ -111,6 +93,23 @@ async function createPresets(el) {
 
         el.appendChild(item);
     }
+
+                //create an arrow for expansion
+                let arrow = document.createElement('button');
+                arrow.classList.add('colorPresetItem');
+                arrow.innerHTML = '+';
+    
+                arrow.addEventListener('click', function () {
+                    if (this.innerHTML == '+') {
+                        arrow.innerHTML = '-';
+                        el.style.display = 'none';
+                    } else {
+                        arrow.innerHTML = '+';
+                        el.style.display = 'flex';
+                    }
+                });
+    
+                el.appendChild(arrow);
 
 }
 
