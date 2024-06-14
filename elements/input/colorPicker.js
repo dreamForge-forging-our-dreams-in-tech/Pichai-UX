@@ -45,7 +45,7 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('string', 'previousvalue', this.getAttribute('previousvalue'));
         doAttributeCheck('string', 'outputtype', this.getAttribute('outputtype'));
 
-        if (this.getAttribute('showpreviousvalues') == 'true' || !this.hasAttribute('showpreviousvalues')) {
+        if (name === 'showpreviousvalues' && newValue === 'true') {
             let prev = this.getElementsByClassName('displayColor');
 
             if(!prev) {
@@ -58,13 +58,13 @@ class ColorPicker extends HTMLElement {
             this.getElementsByClassName('previousColor').remove();
         }
 
-        if (this.getAttribute('presets') == 'false') {
+        if (name === 'presets' && newValue === 'false') {
             document.getElementsByClassName('presets')[0].remove();
         } else {
             createPresetsView(this);
         }
 
-        if (this.getAttribute('savetopresets') == 'false') {
+        if (name === 'savetopresets' && newValue === 'false') {
             document.getElementsByClassName('presetsExpanded')[0].remove();
         } else {
             createPresetsExpansionView(this);
