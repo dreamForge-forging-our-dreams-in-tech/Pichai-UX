@@ -42,8 +42,6 @@ body, html {
 
     width:max-content;
     height:max-content;
-
-    flex-shrink: 0;
 }
 
 li {

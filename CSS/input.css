@@ -94,6 +94,8 @@ color-picker {
     margin:0px;
 
     line-height: 16px !important;
+
+    flex-shrink: 0;
  }
 
  .presets .colorPresetItem:last-child {
