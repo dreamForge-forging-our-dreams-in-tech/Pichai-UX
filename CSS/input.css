@@ -96,7 +96,7 @@ color-picker {
     line-height: 16px !important;
  }
 
- .colorPresetItem:last-child {
+ .presets .colorPresetItem:last-child {
    position:absolute;
    right:8px;
  }
