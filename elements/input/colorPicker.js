@@ -110,7 +110,9 @@ async function createPresets(el) {
     //create an arrow for expansion
     let arrow = document.createElement('button');
     arrow.classList.add('colorPresetItem');
-    arrow.innerHTML = el.parentNode == expanded ? '+' : '-';
+
+    el.appendChild(arrow); // append it from here so below check is easier
+    arrow.innerHTML = arrow.parentNode == expanded ? '+' : '-';
 
     arrow.addEventListener('click', function () {
 
@@ -133,8 +135,6 @@ async function createPresets(el) {
             }
         }
     });
-
-    el.appendChild(arrow);
 
 }
 
