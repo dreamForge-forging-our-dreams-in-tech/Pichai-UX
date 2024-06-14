@@ -114,6 +114,7 @@ async function createPresets(el) {
 
         if (this.parentNode == expanded) { //save current color
             let pre = el.parentNode.getElementsByClassName('presets')[0];
+            
             saved.push(el.parentNode.getAttribute('value'));
             createPresetItem(el, el.parentNode.getAttribute('value'));
             createPresetItem(pre, el.parentNode.getAttribute('value'));
