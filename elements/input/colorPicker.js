@@ -101,6 +101,7 @@ async function createPresets(el) {
     
                 arrow.addEventListener('click', function () {
                     let expanded = el.parentNode.getElementsByClassName('presetsExpanded')[0];
+                    console.log(expanded)
 
                     if (this.innerHTML == '+') {
                         arrow.innerHTML = '-';
