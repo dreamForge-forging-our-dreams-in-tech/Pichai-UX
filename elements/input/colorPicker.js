@@ -96,6 +96,8 @@ async function createPresets(el) {
     let saved = await localforage.getItem('presetColors');
     if (saved != null) {
         standardColors = saved.concat(standardColors);
+    } else {
+        saved = [];
     }
 
     for (i of standardColors) {
@@ -116,18 +118,21 @@ async function createPresets(el) {
                 //create an arrow for expansion
                 let arrow = document.createElement('button');
                 arrow.classList.add('colorPresetItem');
-                arrow.innerHTML = '+';
+                arrow.innerHTML = '-';
     
                 arrow.addEventListener('click', function () {
                     let expanded = el.parentNode.getElementsByClassName('presetsExpanded')[0];
-                    console.log(expanded)
 
-                    if (this.innerHTML == '-') {
-                        arrow.innerHTML = '+';
-                        expanded.style.display = 'none';
+                    if(this.parentNode == expanded) { //save current colors
+                        saved.push(el.parentNode.getAttribute('value'));
                     } else {
-                        arrow.innerHTML = '-';
-                        expanded.style.display = 'grid';
+                        if (this.innerHTML == '-') {
+                            arrow.innerHTML = '+';
+                            expanded.style.display = 'none';
+                        } else {
+                            arrow.innerHTML = '-';
+                            expanded.style.display = 'grid';
+                        }
                     }
                 });
     
