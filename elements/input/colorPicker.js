@@ -62,12 +62,10 @@ class ColorPicker extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        this.innerHTML = '';
-        
         doAttributeCheck('boolean', 'presets', this.getAttribute('presets'));
         doAttributeCheck('boolean', 'showpreviousvalues', this.getAttribute('showpreviousvalues'));
 
-        this.connectedCallback();
+        //this.connectedCallback();
 
     }
 }
