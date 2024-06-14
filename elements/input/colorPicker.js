@@ -101,7 +101,7 @@ async function createPresets(el) {
     }
 
     for (i of standardColors) {
-        createPresetItem(el);
+        createPresetItem(el, i);
     }
 
     //create an arrow for expansion
@@ -114,6 +114,7 @@ async function createPresets(el) {
 
         if (this.parentNode == expanded) { //save current colors
             saved.push(el.parentNode.getAttribute('value'));
+            createPresetItem(el, el.parentNode.getAttribute('value'));
         } else {
             if (this.innerHTML == '-') {
                 arrow.innerHTML = '+';
@@ -129,10 +130,10 @@ async function createPresets(el) {
 
 }
 
-function createPresetItem(el) {
+function createPresetItem(el, color) {
     let item = document.createElement('button');
     item.classList.add('colorPresetItem');
-    item.style.backgroundColor = i;
+    item.style.backgroundColor = color;
 
     item.addEventListener('click', function () {
         el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value')); // make this update depending on set outputtype
