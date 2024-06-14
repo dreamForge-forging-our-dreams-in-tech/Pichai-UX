@@ -48,7 +48,7 @@ class ColorPicker extends HTMLElement {
         if (this.getAttribute('showpreviousvalues') == 'true' || !this.hasAttribute('showpreviousvalues')) {
             let prev = this.getElementsByClassName('displayColor');
 
-            if(prev) {
+            if(!prev) {
                 createPreviousView(this);
             }
 
