@@ -62,18 +62,12 @@ class ColorPicker extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        let i;
-        
         doAttributeCheck('boolean', 'presets', this.getAttribute('presets'));
         doAttributeCheck('boolean', 'showpreviousvalues', this.getAttribute('showpreviousvalues'));
         doAttributeCheck('boolean', 'savetopresets', this.getAttribute('savetopresets'));
         doAttributeCheck('string', 'value', this.getAttribute('value'));
         doAttributeCheck('string', 'previousvalue', this.getAttribute('previousvalue'));
         doAttributeCheck('string', 'outputtype', this.getAttribute('outputtype'));
-
-        for(i of this.children) { //im lazy, clears children and calls connectedCallback again
-            i.remove();
-        }
 
         this.connectedCallback();
         
@@ -110,7 +104,7 @@ async function createPresets(el) {
                 arrow.innerHTML = '+';
     
                 arrow.addEventListener('click', function () {
-                    let expanded = el.parentNode.getElementsByClassName('presetsExpanded')[0];
+                    let expanded = el.parentNode.getElementsByClassName('presetsExpanded').reverse()[0];
                     console.log(expanded)
 
                     if (this.innerHTML == '+') {
