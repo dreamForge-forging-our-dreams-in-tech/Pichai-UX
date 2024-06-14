@@ -76,7 +76,7 @@ async function createPresets(el) {
 
     let saved = await localforage.getItem('presetColors');
     if (saved != null) {
-        standardColors = standardColors.concat(saved);
+        standardColors = saved.concat(standardColors);
     }
 
     for (i of standardColors) {
@@ -100,12 +100,14 @@ async function createPresets(el) {
                 arrow.innerHTML = '+';
     
                 arrow.addEventListener('click', function () {
+                    let expanded = el.parentNode.getElementsByClassList('presetsExpanded')[0];
+
                     if (this.innerHTML == '+') {
                         arrow.innerHTML = '-';
-                        el.style.display = 'none';
+                        expanded.style.display = 'none';
                     } else {
                         arrow.innerHTML = '+';
-                        el.style.display = 'flex';
+                        expanded.style.display = 'flex';
                     }
                 });
     
