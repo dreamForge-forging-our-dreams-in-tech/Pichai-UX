@@ -94,6 +94,9 @@ color-picker {
 
  .presetsExpanded {
     grid-area: presetsExpanded;
+
+    display:grid;
+    grid-template-columns: auto auto auto auto auto;
  
     padding:8px;
 
