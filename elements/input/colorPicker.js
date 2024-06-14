@@ -23,7 +23,7 @@ class ColorPicker extends HTMLElement {
     async connectedCallback() {
         let i;
 
-        if (this.getAttribute('showpreviousvalues') == 'true' || this.hasAttribute('showpreviousvalues')) { } else { // create the previous color section of the color picker
+        if (this.getAttribute('showpreviousvalues') == 'false' || !this.hasAttribute('showpreviousvalues')) { } else { // create the previous color section of the color picker
             let previousHolder = document.createElement('article');
             previousHolder.classList.add('previousColor');
 
@@ -41,7 +41,7 @@ class ColorPicker extends HTMLElement {
             this.appendChild(previousHolder);
         }
 
-        if (this.getAttribute('presets') == 'true' || this.hasAttribute('presets')) { } else { // create the previous color section of the color picker
+        if (this.getAttribute('presets') == 'false' || !this.hasAttribute('presets')) { } else { // create the previous color section of the color picker
             let presetsHolder = document.createElement('article');
             presetsHolder.classList.add('presets');
 
@@ -50,7 +50,7 @@ class ColorPicker extends HTMLElement {
             this.appendChild(presetsHolder);
         }
 
-        if (this.getAttribute('savetopresets') == 'true' || this.hasAttribute('savetopresets')) { } else { // create the previous color section of the color picker
+        if (this.getAttribute('savetopresets') == 'false' || !this.hasAttribute('savetopresets')) { } else { // create the previous color section of the color picker
             let presetsHolder = document.createElement('article');
             presetsHolder.classList.add('presetsExpanded');
 
@@ -69,7 +69,20 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('string', 'previousvalue', this.getAttribute('previousvalue'));
         doAttributeCheck('string', 'outputtype', this.getAttribute('outputtype'));
 
-        this.connectedCallback();
+        if (this.getAttribute('showpreviousvalues') == 'false' || !this.hasAttribute('showpreviousvalues')) { } else {
+            let prev = this.getElementsByClassName('previousColor');
+
+            prev[0].style.backgroundColor = this.getAttribute('value') ?? '#008dcd';
+            prev[1].style.backgroundColor = this.getAttribute('previousvalue') ?? this.getAttribute('value');
+        }
+
+        if (this.getAttribute('presets') == 'false' || !this.hasAttribute('presets')) { } else {
+            document.getElementsByClassName('presets')[0].remove();
+        }
+
+        if (this.getAttribute('savetopresets') == 'false' || !this.hasAttribute('savetopresets')) { } else {
+            document.getElementsByClassName('presetsExpanded')[0].remove();
+        }
         
     }
 }
@@ -104,7 +117,7 @@ async function createPresets(el) {
                 arrow.innerHTML = '+';
     
                 arrow.addEventListener('click', function () {
-                    let expanded = el.parentNode.getElementsByClassName('presetsExpanded').reverse()[0];
+                    let expanded = el.parentNode.getElementsByClassName('presetsExpanded')[0];
                     console.log(expanded)
 
                     if (this.innerHTML == '+') {
