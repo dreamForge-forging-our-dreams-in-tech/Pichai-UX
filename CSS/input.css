@@ -78,6 +78,8 @@ color-picker {
     background-color:var(--primary);
 
     overflow:hidden;
+
+    position:relative;
  }
 
  .colorPresetItem {
