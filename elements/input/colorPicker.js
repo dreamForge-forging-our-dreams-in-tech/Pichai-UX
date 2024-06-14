@@ -85,7 +85,7 @@ class ColorPicker extends HTMLElement {
         if (this.getAttribute('savetopresets' || !this.hasAttribute('savetopresets')) != 'true') {
             document.getElementsByClassName('presetsExpanded')[0].remove();
         }
-        
+
     }
 }
 
@@ -101,43 +101,47 @@ async function createPresets(el) {
     }
 
     for (i of standardColors) {
-        let item = document.createElement('button');
-        item.classList.add('colorPresetItem');
-        item.style.backgroundColor = i;
-
-        item.addEventListener('click', function () {
-            el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value')); // make this update depending on set outputtype
-            el.parentNode.setAttribute('value', this.style.backgroundColor);
-
-            el.parentNode.dispatchEvent(change);
-        });
-
-        el.appendChild(item);
+        createPresetItem(el);
     }
 
-                //create an arrow for expansion
-                let arrow = document.createElement('button');
-                arrow.classList.add('colorPresetItem');
+    //create an arrow for expansion
+    let arrow = document.createElement('button');
+    arrow.classList.add('colorPresetItem');
+    arrow.innerHTML = '-';
+
+    arrow.addEventListener('click', function () {
+        let expanded = el.parentNode.getElementsByClassName('presetsExpanded')[0];
+
+        if (this.parentNode == expanded) { //save current colors
+            saved.push(el.parentNode.getAttribute('value'));
+        } else {
+            if (this.innerHTML == '-') {
+                arrow.innerHTML = '+';
+                expanded.style.display = 'none';
+            } else {
                 arrow.innerHTML = '-';
-    
-                arrow.addEventListener('click', function () {
-                    let expanded = el.parentNode.getElementsByClassName('presetsExpanded')[0];
+                expanded.style.display = 'grid';
+            }
+        }
+    });
 
-                    if(this.parentNode == expanded) { //save current colors
-                        saved.push(el.parentNode.getAttribute('value'));
-                    } else {
-                        if (this.innerHTML == '-') {
-                            arrow.innerHTML = '+';
-                            expanded.style.display = 'none';
-                        } else {
-                            arrow.innerHTML = '-';
-                            expanded.style.display = 'grid';
-                        }
-                    }
-                });
-    
-                el.appendChild(arrow);
+    el.appendChild(arrow);
 
+}
+
+function createPresetItem(el) {
+    let item = document.createElement('button');
+    item.classList.add('colorPresetItem');
+    item.style.backgroundColor = i;
+
+    item.addEventListener('click', function () {
+        el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value')); // make this update depending on set outputtype
+        el.parentNode.setAttribute('value', this.style.backgroundColor);
+
+        el.parentNode.dispatchEvent(change);
+    });
+
+    el.appendChild(item);
 }
 
 registry.define("color-picker", ColorPicker);
