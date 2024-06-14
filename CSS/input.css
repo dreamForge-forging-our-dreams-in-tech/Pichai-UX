@@ -94,10 +94,6 @@ color-picker {
 
  .presetsExpanded {
     grid-area: presetsExpanded;
-
-    display:flex;
-    flex-direction:row;
-    column-gap: 8px;
  
     padding:8px;
 
