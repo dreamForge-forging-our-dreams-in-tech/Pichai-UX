@@ -82,7 +82,7 @@ class ColorPicker extends HTMLElement {
             document.getElementsByClassName('presets')[0].remove();
         }
 
-        if (this.getAttribute('savetopresets') == 'true' || !this.hasAttribute('savetopresets')) != 'true') {
+        if (this.getAttribute('savetopresets') == 'true' || !this.hasAttribute('savetopresets')) {
             document.getElementsByClassName('presetsExpanded')[0].remove();
         }
 
