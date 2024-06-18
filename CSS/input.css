@@ -99,10 +99,6 @@ color-picker {
  }
 
  color-picker h4 {
-   margin-top:0px;
-   margin-left:0px;
-   margin-right:0px;
-
    width:calc(100% - 16px);
 }
  
@@ -198,7 +194,7 @@ color-picker {
    display:flex;
    flex-direction: column;
    
-   padding:8px;
+   padding:0px 8px 0px 8px;
 
    background-color:var(--primary);
  }
