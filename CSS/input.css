@@ -12,9 +12,66 @@ input::placeholder {
     color:var(--tertiaryTextColor);
 }
 
-input[type=range] {
-   width:calc(100% - 16px);
-   height:30px;
+/* range */
+input[type='range'] {
+	-webkit-appearance: none;
+	/* Override default CSS styles */
+	appearance: none;
+	width: 100%;
+	/* Full-width */
+	height: 35px;
+	/* Specified height */
+	outline: none;
+	/* Remove outline */
+	opacity: 0.85;
+	/* Set transparency (for mouse-over effects on hover) */
+	-webkit-transition: .2s;
+	/* 0.2 seconds transition on hover */
+	transition: opacity .2s;
+
+	border-radius: 300px;
+
+	overflow: hidden;
+
+	background-color: var(--primary);
+	;
+
+	padding: 0px;
+
+}
+
+/* Mouse-over effects */
+input[type='range']:hover {
+	opacity: 1;
+	/* Fully shown on mouse-over */
+
+	padding: 0px;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	/* Override default look */
+	appearance: none;
+	width: 35px;
+	/* Set a specific slider handle width */
+	height: 35px;
+	/* Slider handle height */
+	background: var(--primaryContainer);
+	/* Green background */
+	cursor: pointer;
+	/* Cursor on hover */
+
+	border-top-right-radius: 300px;
+	border-bottom-right-radius: 300px;
+
+
+	border-image-source: linear-gradient(90deg, var(--primaryContainer) 50%, TRANSPARENT 0);
+	border-image-slice: 1;
+	border-image-width: 0 100vw;
+	border-image-outset: 0 100vw;
+
+	padding: 0px;
 }
 
 .card input {
