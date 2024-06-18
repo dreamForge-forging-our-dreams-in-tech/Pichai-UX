@@ -12,6 +12,10 @@ input::placeholder {
     color:var(--tertiaryTextColor);
 }
 
+input[type=range] {
+   width:100%;
+}
+
 .card input {
     background-color:var(--secondairy);
     color:var(--secondairyTextColor);
@@ -39,6 +43,10 @@ color-picker {
  .color-picker * {
     height:100%;
  }
+
+ .color-picker h4 {
+   margin-top:0px;
+}
  
  .previousColor {
     display:flex;

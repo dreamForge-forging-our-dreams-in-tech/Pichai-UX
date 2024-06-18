@@ -203,7 +203,7 @@ function createColorPicker (el) {
 }
 
 function createHeader(text, el) {
-    let header = document.createElement('h5');
+    let header = document.createElement('h4');
     header.innerHTML = text;
 
     el.append(header);
