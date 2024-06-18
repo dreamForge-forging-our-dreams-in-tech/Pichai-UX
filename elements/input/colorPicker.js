@@ -196,9 +196,6 @@ function createColorPicker (el) {
     createHeader('Lightness', picker);
     createSlider('l', picker);
 
-    createHeader('Alpha', picker);
-    createSlider('a', picker);
-
     el.append(picker);
 }
 
