@@ -23,7 +23,7 @@ input::placeholder {
 
 color-picker {
     display:grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 100px auto auto 200px;
     grid-template-rows: auto auto 46px;
     grid-template-areas: 
     'previous hsl hsl presetsExpanded'
