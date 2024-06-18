@@ -189,7 +189,7 @@ color-picker {
  }
 
  .picker {
-   height:calc(100% - 16px);
+   height:calc(100% - 8px);
    width:calc(100% - 16px);
 
    grid-area: hsl;
