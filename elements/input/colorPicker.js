@@ -187,8 +187,35 @@ function createColorPicker (el) {
     let picker = document.createElement('article');
     picker.classList.add('picker');
 
-    el.append(picker);
+    createHeader('Hue', picker);
+    createSlider('h', picker);
 
+    createHeader('Saturation', picker);
+    createSlider('s', picker);
+
+    createHeader('Lightness', picker);
+    createSlider('l', picker);
+
+    createHeader('Alpha', picker);
+    createSlider('a', picker);
+
+    el.append(picker);
+}
+
+function createHeader(text, el) {
+    let header = document.createElement('h3');
+    header.innerHTML = text;
+
+    el.append(header);
+}
+
+function createSlider(value, el) {
+    let slider = document.createElement('input');
+    slider.type = 'range';
+    slider.min = 0;
+    slider.max = value === 'h' ? 360 : 100;
+
+    el.append(slider);
 }
 
 registry.define("color-picker", ColorPicker);
