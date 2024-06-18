@@ -13,7 +13,8 @@ input::placeholder {
 }
 
 input[type=range] {
-   width:100%;
+   width:calc(100% - 16px);
+   height:30px;
 }
 
 .card input {
@@ -40,16 +41,12 @@ color-picker {
     min-width:300px;
  }
 
- color-picker * {
-    height:100%;
- }
-
  color-picker h4 {
    margin-top:0px;
    margin-left:0px;
    margin-right:0px;
 
-   width:100%;
+   width:calc(100% - 16px);
 }
  
  .previousColor {
