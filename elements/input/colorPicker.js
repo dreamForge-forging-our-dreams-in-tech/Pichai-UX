@@ -35,6 +35,7 @@ class ColorPicker extends HTMLElement {
             createPresetsExpansionView(this);
         }
 
+        createColorPicker(this);
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
@@ -46,7 +47,7 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('string', 'outputtype', this.getAttribute('outputtype'));
 
         if (name === 'showpreviousvalues' && newValue === 'true') {
-            let prev = this.getElementsByClassName('displayColor');
+            let prev = this.getElementsByClassName('displayColor')[0];
 
             if(!prev) {
                 createPreviousView(this);
@@ -61,13 +62,21 @@ class ColorPicker extends HTMLElement {
         if (name === 'presets' && newValue === 'false') {
             document.getElementsByClassName('presets')[0].remove();
         } else {
+            let presets = this.getElementsByClassName('presets')[0];
+
+            if(!presets) {
             createPresetsView(this);
+            }
         }
 
         if (name === 'savetopresets' && newValue === 'false') {
             document.getElementsByClassName('presetsExpanded')[0].remove();
         } else {
+            let expanded = this.getElementsByClassName('presetsExpanded')[0];
+
+            if(!expanded) {
             createPresetsExpansionView(this);
+            }
         }
 
     }
@@ -172,6 +181,14 @@ function createPresetsExpansionView(el) {
     createPresets(presetsHolder);
 
     el.appendChild(presetsHolder);
+}
+
+function createColorPicker (el) {
+    let picker = document.createElement('article');
+    picker.classList.add('picker');
+
+    el.append(picker);
+
 }
 
 registry.define("color-picker", ColorPicker);
