@@ -211,6 +211,16 @@ function createSlider(value, el) {
     slider.type = 'range';
     slider.min = 0;
     slider.max = value === 'h' ? 360 : 100;
+    slider.id = value;
+
+    slider.addEventListener('change', function () {
+        let h = document.getElementById('h').value;
+        let s = document.getElementById('s').value;
+        let l = document.getElementById('l').value;
+
+        el.parentNode.setAttribute('previousvalue',  el.parentNode.getAttribute('value'));
+        el.parentNode.setAttribute('value', `hsl(${h}deg ${s}% ${l}%)`);
+    });
 
     el.append(slider);
 }
