@@ -40,11 +40,11 @@ color-picker {
     min-width:300px;
  }
 
- .color-picker * {
+ color-picker * {
     height:100%;
  }
 
- .color-picker h4 {
+ color-picker h4 {
    margin-top:0px;
 }
  
