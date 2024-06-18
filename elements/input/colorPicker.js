@@ -49,7 +49,7 @@ class ColorPicker extends HTMLElement {
         if (name === 'showpreviousvalues' && newValue === 'false') {
             this.getElementsByClassName('previousColor')[0].remove();
         } else {
-            let prev = this.getElementsByClassName('displayColor')[0];
+            let prev = this.getElementsByClassName('displayColor');
             console.log(prev)
 
             if(!prev) {
