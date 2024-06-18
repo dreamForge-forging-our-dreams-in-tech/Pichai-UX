@@ -46,7 +46,9 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('string', 'previousvalue', this.getAttribute('previousvalue'));
         doAttributeCheck('string', 'outputtype', this.getAttribute('outputtype'));
 
-        if (name === 'showpreviousvalues' && newValue === 'true') {
+        if (name === 'showpreviousvalues' && newValue === 'false') {
+            this.getElementsByClassName('previousColor')[0].remove();
+        } else {
             let prev = this.getElementsByClassName('displayColor')[0];
 
             if(!prev) {
@@ -55,8 +57,6 @@ class ColorPicker extends HTMLElement {
 
             prev[0].style.backgroundColor = this.getAttribute('value') ?? '#008dcd';
             prev[1].style.backgroundColor = this.getAttribute('previousvalue') ?? this.getAttribute('value');
-        } else {
-            this.getElementsByClassName('previousColor')[0].remove();
         }
 
         if (name === 'presets' && newValue === 'false') {
