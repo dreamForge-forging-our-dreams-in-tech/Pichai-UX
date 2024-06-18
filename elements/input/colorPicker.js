@@ -215,7 +215,6 @@ function createSlider(value, el) {
     slider.id = value;
 
     slider.addEventListener('input', function () {
-        console.log('ee')
         let h = document.getElementById('h').value;
         let s = document.getElementById('s').value;
         let l = document.getElementById('l').value;
