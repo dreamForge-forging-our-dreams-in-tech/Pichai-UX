@@ -171,7 +171,7 @@ function createPreviousView(el) {
     previous.innerHTML = 'Previous';
 
     previous.addEventListener('click', function () {
-        updateColors(el.parentNode, this.style.backgroundColor);
+        updateColors(el, this.style.backgroundColor);
     })
 
     previousHolder.append(current, previous);
@@ -261,7 +261,7 @@ function updateColors (el, color) {
         document.getElementById('a').value = isNaN(parseInt(rgb[3])) ? 1 : parseInt(rgb[3]);
     }
 
-    //el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value')); // make this update depending on set outputtype
+    console.log(el)
     el.parentNode.setAttribute('value', color);
 }
 registry.define("color-picker", ColorPicker);
