@@ -47,6 +47,25 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('string', 'outputtype', this.getAttribute('outputtype'));
         doAttributeCheck('boolean', 'alpha', this.getAttribute('alpha'));
 
+        if(name === 'value') {
+            let r = document.getElementById('r');
+            let g = document.getElementById('g');
+            let b = document.getElementById('b');
+    
+            let color = this.style.backgroundColor;
+    
+            let rgb = color.substring(4, color.length - 1);
+            rgb = rgb.split(',');
+    
+            r.value = parseInt(rgb[0]);
+            g.value = parseInt(rgb[1]);
+            b.value = parseInt(rgb[2]);
+    
+            if(document.getElementById('a')) {
+                document.getElementById('a').value = parseInt(rgb[3]);
+            }
+        }
+
         if(name === 'alpha' && newValue == 'true') {
             createHeader('Alpha', picker);
             createSlider('a', picker);
