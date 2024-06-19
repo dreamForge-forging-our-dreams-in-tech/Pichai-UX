@@ -184,6 +184,10 @@ function createPreviousView(el) {
     previous.style.backgroundColor = el.getAttribute('previousvalue') ?? el.getAttribute('value');
     previous.innerHTML = 'Previous';
 
+    previous.addEventListener('click', function () {
+        el.setAttribute('value', this.style.backgroundColor);
+    })
+
     previousHolder.append(current, previous);
     el.appendChild(previousHolder);
 }
