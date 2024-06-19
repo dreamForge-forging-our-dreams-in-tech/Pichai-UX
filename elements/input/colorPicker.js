@@ -150,7 +150,7 @@ function createPresetItem(el, color) {
 
         let color = this.style.backgroundColor;
 
-        let rgb = color.substring(4, color.length);
+        let rgb = color.substring(4, color.length - 1);
         rgb = rgb.split(',');
 
         r.value = parseInt(rgb[0]);
