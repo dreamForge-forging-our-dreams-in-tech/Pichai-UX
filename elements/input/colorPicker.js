@@ -237,8 +237,8 @@ function createHeader(text, el) {
 function createSlider(value, el) {
     let slider = document.createElement('input');
     slider.type = 'range';
-    slider.min = 0;
-    slider.steps = 0.1;
+    slider.min = '0';
+    slider.steps = '0.1';
     slider.max = value === 'a' ? 1 : 255;
     slider.id = value;
 
