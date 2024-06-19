@@ -146,7 +146,8 @@ function createPresetItem(el, color) {
 
         let rgb = color.substring(3, color.length);
         rgb = rgb.split(',');
-        console.log(rgb)
+
+        console.log(r)
 
         r.value = rgb[0];
         g.value = rgb[1];
