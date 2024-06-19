@@ -163,22 +163,7 @@ function createPresetItem(el, color) {
     item.style.backgroundColor = color;
 
     item.addEventListener('click', function () {
-        let r = document.getElementById('r');
-        let g = document.getElementById('g');
-        let b = document.getElementById('b');
-
         let color = this.style.backgroundColor;
-
-        let rgb = color.substring(4, color.length - 1);
-        rgb = rgb.split(',');
-
-        r.value = parseInt(rgb[0]);
-        g.value = parseInt(rgb[1]);
-        b.value = parseInt(rgb[2]);
-
-        if(document.getElementById('a')) {
-            document.getElementById('a').value = parseInt(rgb[3]);
-        }
 
         el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value')); // make this update depending on set outputtype
         el.parentNode.setAttribute('value', color);
