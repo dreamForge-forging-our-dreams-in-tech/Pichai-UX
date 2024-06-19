@@ -261,6 +261,6 @@ function updateColors (el, color) {
         document.getElementById('a').value = isNaN(parseInt(rgb[3])) ? 1 : parseInt(rgb[3]);
     }
 
-    el.parentNode.setAttribute('value', `rgba(${r}, ${g}, ${b}, ${a})`);
+    el.parentNode.setAttribute('value', `rgba(${r.value}, ${g.value}, ${b.value}, ${a.value})`);
 }
 registry.define("color-picker", ColorPicker);
