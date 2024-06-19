@@ -139,9 +139,9 @@ function createPresetItem(el, color) {
     item.style.backgroundColor = color;
 
     item.addEventListener('click', function () {
-        let r = document.getElementById('r').value;
-        let g = document.getElementById('g').value;
-        let b = document.getElementById('b').value;
+        let r = document.getElementById('r');
+        let g = document.getElementById('g');
+        let b = document.getElementById('b');
 
         let color = this.style.backgroundColor;
 
