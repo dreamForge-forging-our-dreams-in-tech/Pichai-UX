@@ -84,7 +84,7 @@ class ColorPicker extends HTMLElement {
 }
 
 async function createPresets(el) {
-    let standardColors = ['#FF0000', '#Ffa500', '#FFFF00', '#00ff00', '#ADD8E6', '#0000ff', '#A020F0', '#Ffc0cb', '#000000', '#ffffff'];
+    let standardColors = ['hsl(0, 95%, 60.8%)', 'hsl(35.7, 95%, 60.8%)', 'hsl(61.6, 95%, 60.8%)', 'hsl(126.3, 95%, 60.8%)', 'hsl(180.9, 95%, 60.8%)', 'hsl(243.8, 95%, 60.8%)', 'hsl(272.5, 95%, 60.8%)', 'hsl(304.4, 95%, 60.8%)', 'hsl(0, 0%, 60.8%)', 'hsl(0, 0%, 100%)', 'hsl(0, 0%, 0%)'];
     let i;
 
     let saved = await localforage.getItem('presetColors');
@@ -110,8 +110,8 @@ async function createPresets(el) {
             let pre = el.parentNode.getElementsByClassName('presets')[0];
             
             saved.push(el.parentNode.getAttribute('value'));
-            createPresetItem(el, el.parentNode.getAttribute('value'));
-            createPresetItem(pre, el.parentNode.getAttribute('value'));
+            createPresetItem(el, el.parentNode.getAttribute('value')); // adds the saved preset item to the expanded presets tab
+            createPresetItem(pre, el.parentNode.getAttribute('value'));// adds the saved preset item to the presets tab
 
             localforage.setItem('presetColors', saved).then(function (value) {
             }).catch(function(err) {
