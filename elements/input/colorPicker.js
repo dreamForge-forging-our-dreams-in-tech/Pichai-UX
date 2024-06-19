@@ -158,7 +158,7 @@ function createPresetItem(el, color) {
         b.value = parseInt(rgb[2]);
 
         if(document.getElementById('a')) {
-            document.getElementById('a').value = rgb[3];
+            document.getElementById('a').value = parseInt(rgb[3]);
         }
 
         el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value')); // make this update depending on set outputtype
@@ -238,7 +238,8 @@ function createSlider(value, el) {
     let slider = document.createElement('input');
     slider.type = 'range';
     slider.min = 0;
-    slider.max = 255;
+    slider.steps = 0.1;
+    slider.max = value === 'a' ? 1 : 255;
     slider.id = value;
 
     slider.addEventListener('input', function () {
