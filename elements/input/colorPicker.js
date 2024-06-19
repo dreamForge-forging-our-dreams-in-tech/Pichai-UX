@@ -171,7 +171,7 @@ function createPreviousView(el) {
     previous.innerHTML = 'Previous';
 
     previous.addEventListener('click', function () {
-        updateColors(el, this.style.backgroundColor);
+        updateColors(el.parentNode, this.style.backgroundColor);
     })
 
     previousHolder.append(current, previous);
