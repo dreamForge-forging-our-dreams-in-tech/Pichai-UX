@@ -249,7 +249,7 @@ function createSlider(value, el) {
         let a = document.getElementById('a') ? document.getElementById('a').value : 1;
 
         el.parentNode.setAttribute('previousvalue',  el.parentNode.getAttribute('value'));
-        el.parentNode.setAttribute('value', `rgba(${r}, ${g}, ${b})`);
+        el.parentNode.setAttribute('value', `rgba(${r}, ${g}, ${b}, ${a})`);
     });
 
     el.append(slider);
