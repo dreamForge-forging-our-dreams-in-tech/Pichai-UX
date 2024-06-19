@@ -52,7 +52,7 @@ class ColorPicker extends HTMLElement {
             let g = document.getElementById('g');
             let b = document.getElementById('b');
     
-            let color = this.style.backgroundColor;
+            let color = newValue;
     
             let rgb = color.substring(4, color.length - 1);
             rgb = rgb.split(',');
@@ -64,6 +64,10 @@ class ColorPicker extends HTMLElement {
             if(document.getElementById('a')) {
                 document.getElementById('a').value = parseInt(rgb[3]);
             }
+
+            this.setAttribute('previousvalue', oldValue);
+            this.setAttribute('value', `rgba(${r}, ${g}, ${b}, ${a})`);
+
         }
 
         if(name === 'alpha' && newValue == 'true') {
