@@ -157,6 +157,10 @@ function createPresetItem(el, color) {
         g.value = parseInt(rgb[1]);
         b.value = parseInt(rgb[2]);
 
+        if(document.getElementById('a')) {
+            document.getElementById('a').value = rgb[3];
+        }
+
         el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value')); // make this update depending on set outputtype
         el.parentNode.setAttribute('value', color);
 
@@ -241,8 +245,7 @@ function createSlider(value, el) {
         let r = document.getElementById('r').value;
         let g = document.getElementById('g').value;
         let b = document.getElementById('b').value;
-        let a = document.getElementById('a').value;
-        console.log(a);
+        let a = document.getElementById('a') ? document.getElementById('a').value : 1;
 
         el.parentNode.setAttribute('previousvalue',  el.parentNode.getAttribute('value'));
         el.parentNode.setAttribute('value', `rgba(${r}, ${g}, ${b})`);
