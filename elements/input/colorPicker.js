@@ -148,7 +148,7 @@ function createPresetItem(el, color) {
     item.style.backgroundColor = color;
 
     item.addEventListener('click', function () {
-        updateColors(el);
+        updateColors(el, this.style.backgroundColor);
 
         el.parentNode.dispatchEvent(change);
     });
@@ -171,7 +171,7 @@ function createPreviousView(el) {
     previous.innerHTML = 'Previous';
 
     previous.addEventListener('click', function () {
-        updateColors(el);
+        updateColors(el, this.style.backgroundColor);
     })
 
     previousHolder.append(current, previous);
@@ -245,12 +245,10 @@ function createSlider(value, el) {
     el.append(slider);
 }
 
-function updateColors (el) {
+function updateColors (el, color) {
     let r = document.getElementById('r');
     let g = document.getElementById('g');
     let b = document.getElementById('b');
-
-    let color = this.style.backgroundColor;
 
     let rgb = color.substring(4, color.length - 1);
     rgb = rgb.split(',');
