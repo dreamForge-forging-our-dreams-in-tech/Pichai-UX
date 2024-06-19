@@ -147,11 +147,9 @@ function createPresetItem(el, color) {
         let rgb = color.substring(3, color.length);
         rgb = rgb.split(',');
 
-        console.log(r)
-
-        r.value = rgb[0];
-        g.value = rgb[1];
-        b.value = rgb[2];
+        r.value = parseInt(rgb[0]);
+        g.value = parseInt(rgb[1]);
+        b.value = parseInt(rgb[2]);
 
         el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value')); // make this update depending on set outputtype
         el.parentNode.setAttribute('value', color);
