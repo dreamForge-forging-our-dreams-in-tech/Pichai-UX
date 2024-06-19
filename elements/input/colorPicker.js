@@ -139,8 +139,21 @@ function createPresetItem(el, color) {
     item.style.backgroundColor = color;
 
     item.addEventListener('click', function () {
+        let r = document.getElementById('r').value;
+        let g = document.getElementById('g').value;
+        let b = document.getElementById('b').value;
+
+        let color = this.style.backgroundColor;
+
+        let rgb = color.substring(3, color.length);
+        rgb = rgb.split(',');
+
+        r.value = rgb[0];
+        g.value = rgb[1];
+        b.value = rgb[2];
+
         el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value')); // make this update depending on set outputtype
-        el.parentNode.setAttribute('value', this.style.backgroundColor);
+        el.parentNode.setAttribute('value', color);
 
         el.parentNode.dispatchEvent(change);
     });
@@ -188,14 +201,14 @@ function createColorPicker (el) {
     let picker = document.createElement('article');
     picker.classList.add('picker');
 
-    createHeader('Hue', picker);
-    createSlider('h', picker);
+    createHeader('Red', picker);
+    createSlider('r', picker);
 
-    createHeader('Saturation', picker);
-    createSlider('s', picker);
+    createHeader('Green', picker);
+    createSlider('g', picker);
 
-    createHeader('Lightness', picker);
-    createSlider('l', picker);
+    createHeader('Blue', picker);
+    createSlider('b', picker);
 
     el.append(picker);
 }
@@ -211,16 +224,16 @@ function createSlider(value, el) {
     let slider = document.createElement('input');
     slider.type = 'range';
     slider.min = 0;
-    slider.max = value === 'h' ? 360 : 100;
+    slider.max = 255;
     slider.id = value;
 
     slider.addEventListener('input', function () {
-        let h = document.getElementById('h').value;
-        let s = document.getElementById('s').value;
-        let l = document.getElementById('l').value;
+        let r = document.getElementById('r').value;
+        let g = document.getElementById('g').value;
+        let b = document.getElementById('b').value;
 
         el.parentNode.setAttribute('previousvalue',  el.parentNode.getAttribute('value'));
-        el.parentNode.setAttribute('value', `hsl(${h}deg ${s}% ${l}%)`);
+        el.parentNode.setAttribute('value', `rgb(${r}, ${g}, ${b})`);
     });
 
     el.append(slider);
