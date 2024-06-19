@@ -48,26 +48,7 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('boolean', 'alpha', this.getAttribute('alpha'));
 
         if(name === 'value') {
-            let r = document.getElementById('r');
-            let g = document.getElementById('g');
-            let b = document.getElementById('b');
-    
-            let color = newValue;
-    
-            let rgb = color.substring(4, color.length - 1);
-            rgb = rgb.split(',');
-    
-            r.value = parseInt(rgb[0]);
-            g.value = parseInt(rgb[1]);
-            b.value = parseInt(rgb[2]);
-    
-            if(document.getElementById('a')) {
-                document.getElementById('a').value = parseInt(rgb[3]);
-            }
-
-            this.setAttribute('previousvalue', oldValue);
-            this.setAttribute('value', `rgba(${r}, ${g}, ${b}, ${a})`);
-
+            this.setAttribute('oldvalue', newValue);
         }
 
         if(name === 'alpha' && newValue == 'true') {
@@ -167,10 +148,7 @@ function createPresetItem(el, color) {
     item.style.backgroundColor = color;
 
     item.addEventListener('click', function () {
-        let color = this.style.backgroundColor;
-
-        el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value')); // make this update depending on set outputtype
-        el.parentNode.setAttribute('value', color);
+        updateColors(el);
 
         el.parentNode.dispatchEvent(change);
     });
@@ -193,7 +171,7 @@ function createPreviousView(el) {
     previous.innerHTML = 'Previous';
 
     previous.addEventListener('click', function () {
-        el.setAttribute('value', this.style.backgroundColor);
+        updateColors(el);
     })
 
     previousHolder.append(current, previous);
@@ -260,11 +238,32 @@ function createSlider(value, el) {
         let b = document.getElementById('b').value;
         let a = document.getElementById('a') ? document.getElementById('a').value : 1;
 
-        el.parentNode.setAttribute('previousvalue',  el.parentNode.getAttribute('value'));
+        //el.parentNode.setAttribute('previousvalue',  el.parentNode.getAttribute('value'));
         el.parentNode.setAttribute('value', `rgba(${r}, ${g}, ${b}, ${a})`);
     });
 
     el.append(slider);
 }
 
+function updateColors (el) {
+    let r = document.getElementById('r');
+    let g = document.getElementById('g');
+    let b = document.getElementById('b');
+
+    let color = this.style.backgroundColor;
+
+    let rgb = color.substring(4, color.length - 1);
+    rgb = rgb.split(',');
+
+    r.value = parseInt(rgb[0]);
+    g.value = parseInt(rgb[1]);
+    b.value = parseInt(rgb[2]);
+
+    if(document.getElementById('a')) {
+        document.getElementById('a').value = parseInt(rgb[3]);
+    }
+
+    //el.parentNode.setAttribute('previousvalue', el.parentNode.getAttribute('value')); // make this update depending on set outputtype
+    el.parentNode.setAttribute('value', color);
+}
 registry.define("color-picker", ColorPicker);
