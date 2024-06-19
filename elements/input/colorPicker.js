@@ -13,7 +13,7 @@ class ColorPicker extends HTMLElement {
      * When the user needs to select a color
     */
 
-    static observedAttributes = ["previousvalue", "value", "outputtype", "showpreviousvalues", "presets", "savetopresets"];
+    static observedAttributes = ["alpha", "previousvalue", "value", "outputtype", "showpreviousvalues", "presets", "savetopresets"];
 
     constructor() {
         // Always call super first in constructor
@@ -45,6 +45,12 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('string', 'value', this.getAttribute('value'));
         doAttributeCheck('string', 'previousvalue', this.getAttribute('previousvalue'));
         doAttributeCheck('string', 'outputtype', this.getAttribute('outputtype'));
+        doAttributeCheck('boolean', 'alpha', this.getAttribute('alpha'));
+
+        if(name === 'alpha' && newValue == 'true') {
+            createHeader('Alpha', picker);
+            createSlider('a', picker);
+        }
 
         if (name === 'showpreviousvalues' && newValue === 'false') {
             this.getElementsByClassName('previousColor')[0].remove();
@@ -146,7 +152,6 @@ function createPresetItem(el, color) {
 
         let rgb = color.substring(4, color.length);
         rgb = rgb.split(',');
-        console.log(rgb[0]);
 
         r.value = parseInt(rgb[0]);
         g.value = parseInt(rgb[1]);
@@ -210,6 +215,11 @@ function createColorPicker (el) {
     createHeader('Blue', picker);
     createSlider('b', picker);
 
+    if(el.getAttribute('alpha') == 'true') {
+        createHeader('Alpha', picker);
+        createSlider('a', picker);
+    }
+
     el.append(picker);
 }
 
@@ -231,9 +241,11 @@ function createSlider(value, el) {
         let r = document.getElementById('r').value;
         let g = document.getElementById('g').value;
         let b = document.getElementById('b').value;
+        let a = document.getElementById('a').value;
+        console.log(a);
 
         el.parentNode.setAttribute('previousvalue',  el.parentNode.getAttribute('value'));
-        el.parentNode.setAttribute('value', `rgb(${r}, ${g}, ${b})`);
+        el.parentNode.setAttribute('value', `rgba(${r}, ${g}, ${b})`);
     });
 
     el.append(slider);

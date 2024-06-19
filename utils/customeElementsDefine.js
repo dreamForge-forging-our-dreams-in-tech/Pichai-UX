@@ -17,6 +17,7 @@ registry.define = function(name, constructor, options) { // create custom regist
         description: extractComments(constructor, '@description'),
         usage: extractComments(constructor, '@usage'),
         attributes: extractAttributes(constructor),
+        events: extractEvents(constructor)
     }
 
     customElementsRegistry.define(name, constructor, options); // define custom element like you would do normally
@@ -82,6 +83,10 @@ function doAttributeCheck(type, name, value) { //used in the attributeChangedCal
   }
 
   return typeof value != type; //returs true if it doesnt match
+}
+
+function extractEvents(con) {
+  return {};
 }
 
 function getListOfElements() {
