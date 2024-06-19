@@ -48,7 +48,7 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('boolean', 'alpha', this.getAttribute('alpha'));
 
         if(name === 'value') {
-            this.setAttribute('oldvalue', oldValue);
+            this.setAttribute('previousvalue', oldValue);
         }
 
         if(name === 'alpha' && newValue == 'true') {
