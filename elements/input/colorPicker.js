@@ -54,7 +54,7 @@ class ColorPicker extends HTMLElement {
         if(name === 'previousvalue') {
             let prev = this.getElementsByClassName('displayColor');
 
-            prev[1].style.backgroundColor = this.getAttribute('previousvalue');
+            prev[1].style.backgroundColor = newValue;
         }
 
         if(name === 'alpha' && newValue == 'true') {
