@@ -48,6 +48,7 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('boolean', 'alpha', this.getAttribute('alpha'));
 
         let prev = this.getElementsByClassName('displayColor');
+        console.log(prev)
 
         if(name === 'value') {
             prev[0].style.backgroundColor = newValue;
@@ -67,8 +68,6 @@ class ColorPicker extends HTMLElement {
         if (name === 'showpreviousvalues' && newValue === 'false') {
             this.getElementsByClassName('previousColor')[0].remove();
         } else {
-            let prev = this.getElementsByClassName('displayColor');
-
             if(!prev) {
                 createPreviousView(this);
             }
