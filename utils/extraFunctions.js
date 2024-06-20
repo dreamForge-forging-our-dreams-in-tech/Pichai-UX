@@ -1,7 +1,5 @@
 import { getTextColor } from './AI/textColorFInder.js';
 
-import { extractRgb } from './utils/extraFunctions.js';
-
 function extractRgb (i) {
     let rgb = window.getComputedStyle(i)['background-color'];
     rgb = rgb.replaceAll('a', '').substring(4, rgb.length).replaceAll(')', '');
