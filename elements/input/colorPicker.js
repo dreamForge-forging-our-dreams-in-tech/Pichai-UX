@@ -254,6 +254,7 @@ function updateColors (el, color) {
     let r = document.getElementById('r');
     let g = document.getElementById('g');
     let b = document.getElementById('b');
+    let a = document.getElementById('a');
 
     let rgb = color.substring(4, color.length - 1);
     rgb = rgb.split(',');
@@ -262,8 +263,8 @@ function updateColors (el, color) {
     g.value = parseInt(rgb[1]);
     b.value = parseInt(rgb[2]);
 
-    if(document.getElementById('a')) {
-        document.getElementById('a').value = isNaN(parseInt(rgb[3])) ? 1 : parseInt(rgb[3]);
+    if(a) {
+        a.value = isNaN(parseInt(rgb[3])) ? 1 : parseInt(rgb[3]);
     }
 
     el.parentNode.setAttribute('value', `rgba(${r.value}, ${g.value}, ${b.value}, ${a.value})`);
