@@ -35,12 +35,12 @@ function optimizeTextColor(el) {
     let elements = [];
 
     try {
-    elements = el.getElementsByTagName('*') ?? [];
+    elements = el.getElementsByTagName('*');
     } catch(e) {}
 
     console.log(elements);
 
-    elements.push(el);
+    elements = elements.concat(el);
     let i;
 
     for (i of elements) {
