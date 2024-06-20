@@ -38,7 +38,7 @@ function optimizeTextColor(el) {
     elements = el.getElementsByTagName('*');
     } catch(e) {}
 
-    console.log(elements);
+    console.log(el);
 
     elements = elements.concat(el);
     let i;
