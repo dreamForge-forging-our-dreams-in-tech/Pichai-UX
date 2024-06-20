@@ -51,6 +51,13 @@ class ColorPicker extends HTMLElement {
             this.setAttribute('previousvalue', oldValue);
         }
 
+        if(name === 'previousvalue') {
+            let prev = this.getElementsByClassName('displayColor');
+
+            prev[0].style.backgroundColor = this.getAttribute('value') ?? '#008dcd';
+            prev[1].style.backgroundColor = this.getAttribute('previousvalue') ?? this.getAttribute('value');
+        }
+
         if(name === 'alpha' && newValue == 'true') {
             createHeader('Alpha', picker);
             createSlider('a', picker);
@@ -60,7 +67,6 @@ class ColorPicker extends HTMLElement {
             this.getElementsByClassName('previousColor')[0].remove();
         } else {
             let prev = this.getElementsByClassName('displayColor');
-            console.log(prev);
 
             if(!prev) {
                 createPreviousView(this);
