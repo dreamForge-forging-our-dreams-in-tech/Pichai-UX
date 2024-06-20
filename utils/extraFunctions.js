@@ -1,4 +1,4 @@
-import { getTextColor } from '../../AI/textColorFInder.js';
+import { getTextColor } from '../AI/textColorFInder.js';
 
 function extractRgb (i) {
     let rgb = window.getComputedStyle(i)['background-color'];
