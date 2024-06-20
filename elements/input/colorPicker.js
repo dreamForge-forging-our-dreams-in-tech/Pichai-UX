@@ -257,6 +257,7 @@ function updateColors (el, color) {
 
     let rgb = color.substring(4, color.length - 1);
     rgb = rgb.split(',');
+    console.log(rgb)
 
     r.value = parseInt(rgb[0]);
     g.value = parseInt(rgb[1]);
@@ -265,8 +266,6 @@ function updateColors (el, color) {
     if(document.getElementById('a')) {
         document.getElementById('a').value = isNaN(parseInt(rgb[3])) ? 1 : parseInt(rgb[3]);
     }
-
-    console.log(document.getElementById('a').value)
 
     el.setAttribute('value', `rgba(${r.value}, ${g.value}, ${b.value}, ${a.value})`);
 }
