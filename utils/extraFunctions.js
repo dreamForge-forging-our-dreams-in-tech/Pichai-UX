@@ -33,11 +33,13 @@ function convertToRightType(value) { //converts value to the best matched type
 
 function optimizeTextColor(el) {
     let elements = [];
+
     try {
     elements = el.getElementsByTagName('*') ?? [];
     } catch(e) {}
-    
+
     elements.push(el);
+    console.log(elements);
     let i;
 
     for (i of elements) {
