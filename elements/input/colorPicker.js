@@ -51,6 +51,7 @@ class ColorPicker extends HTMLElement {
         console.log(prev[0])
 
         if(name === 'value') {
+            console.log(prev[0])
             prev[0].style.backgroundColor = newValue;
 
             this.setAttribute('previousvalue', oldValue);
