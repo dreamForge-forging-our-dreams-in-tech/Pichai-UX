@@ -32,7 +32,7 @@ function convertToRightType(value) { //converts value to the best matched type
 }
 
 function optimizeTextColor(el) {
-    let elements = el.getElementsByTagName('*');
+    let elements = el.getElementsByTagName('*') ?? [];
     elements.push(el);
     let i;
 
