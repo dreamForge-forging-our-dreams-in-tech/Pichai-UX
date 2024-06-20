@@ -109,7 +109,7 @@ async function createPresets(el) {
     }
 
     for (i of standardColors) {
-        createPresetItem(el, i);
+        createPresetItem(el.parentNode, i);
     }
 
     //create an arrow for expansion
