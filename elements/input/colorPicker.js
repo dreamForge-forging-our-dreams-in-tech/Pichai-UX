@@ -72,8 +72,8 @@ class ColorPicker extends HTMLElement {
                 createPreviousView(this);
             }
 
-            //prev[0].style.backgroundColor = this.getAttribute('value') ?? '#008dcd';
-            //prev[1].style.backgroundColor = this.getAttribute('previousvalue') ?? this.getAttribute('value');
+            prev[0].style.backgroundColor = this.getAttribute('value') ?? '#008dcd';
+            prev[1].style.backgroundColor = this.getAttribute('previousvalue') ?? this.getAttribute('value');
         }
 
         if (name === 'presets' && newValue === 'false') {
