@@ -264,8 +264,9 @@ function updateColors (el, color) {
 
     if(document.getElementById('a')) {
         document.getElementById('a').value = isNaN(parseInt(rgb[3])) ? 1 : parseInt(rgb[3]);
-        console.log(document.getElementById('a').value)
     }
+
+    console.log(a.value)
 
     el.setAttribute('value', `rgba(${r.value}, ${g.value}, ${b.value}, ${a.value})`);
 }
