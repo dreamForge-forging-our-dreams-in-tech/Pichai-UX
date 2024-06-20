@@ -1,6 +1,6 @@
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 import '../../utils/localFOrage.js';
-import { optimizeTextColor } from './utils/extraFunctions.js';
+import { optimizeTextColor } from '../../utils/extraFunctions.js';
 
 const change = new Event("change"); // new change event for the color picker
 
