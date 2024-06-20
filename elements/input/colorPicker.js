@@ -60,6 +60,7 @@ class ColorPicker extends HTMLElement {
             this.getElementsByClassName('previousColor')[0].remove();
         } else {
             let prev = this.getElementsByClassName('displayColor');
+            console.log(prev);
 
             if(!prev) {
                 createPreviousView(this);
