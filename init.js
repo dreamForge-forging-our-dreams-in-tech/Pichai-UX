@@ -1,10 +1,9 @@
 import { generate3ColorPallete } from "./AI/palleteMaker.js";
 import { generateDynamicIcon } from './elements/images/logo.js';
-import { getTextColor } from './AI/textColorFInder.js';
-
-import { extractRgb } from './utils/extraFunctions.js';
 
 import { getListOfElements } from './utils/customeElementsDefine.js';
+
+import { optimizeTextColor } from './utils/extraFunctions.js';
 
 class PichaiUX {
     constructor(options = {
@@ -82,23 +81,7 @@ class PichaiUX {
     }
 
     optimizeTextColor(el = document) { // loop  through selected elements and find/set the best matched text color
-        let elements = el.getElementsByTagName('*');
-        let i;
-
-        for (i of elements) {
-
-            try {
-                let rgb = extractRgb(i);
-
-                i.style.color = getTextColor(rgb);
-            } catch (e) { }
-
-            let color = window.getComputedStyle(i)['color'];
-
-            if (i.tagName == 'LI' && color == 'rgb(0, 0, 0)') {
-                i.classList.add('black');
-            }
-        }
+        optimizeTextColor(el);
     }
 
     getListOfElements () {

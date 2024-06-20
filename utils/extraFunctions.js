@@ -1,3 +1,7 @@
+import { getTextColor } from './AI/textColorFInder.js';
+
+import { extractRgb } from './utils/extraFunctions.js';
+
 function extractRgb (i) {
     let rgb = window.getComputedStyle(i)['background-color'];
     rgb = rgb.replaceAll('a', '').substring(4, rgb.length).replaceAll(')', '');
@@ -29,4 +33,25 @@ function convertToRightType(value) { //converts value to the best matched type
 
 }
 
-export { extractRgb, getAllIndexes, convertToRightType };
+function optimizeTextColor(el) {
+    let elements = el.getElementsByTagName('*');
+    elements.push(el);
+    let i;
+
+    for (i of elements) {
+
+        try {
+            let rgb = extractRgb(i);
+
+            i.style.color = getTextColor(rgb);
+        } catch (e) { }
+
+        let color = window.getComputedStyle(i)['color'];
+
+        if (i.tagName == 'LI' && color == 'rgb(0, 0, 0)') {
+            i.classList.add('black');
+        }
+    }
+}
+
+export { extractRgb, getAllIndexes, convertToRightType, optimizeTextColor };
