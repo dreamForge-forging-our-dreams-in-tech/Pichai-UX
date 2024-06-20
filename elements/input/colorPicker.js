@@ -109,7 +109,7 @@ async function createPresets(el) {
     }
 
     for (i of standardColors) {
-        createPresetItem(el.parentNode, i);
+        createPresetItem(el, i);
     }
 
     //create an arrow for expansion
@@ -153,7 +153,7 @@ function createPresetItem(el, color) {
     item.style.backgroundColor = color;
 
     item.addEventListener('click', function () {
-        updateColors(el, this.style.backgroundColor);
+        updateColors(el.parentNode, this.style.backgroundColor);
 
         el.parentNode.dispatchEvent(change);
     });
