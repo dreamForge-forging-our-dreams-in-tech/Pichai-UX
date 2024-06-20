@@ -67,7 +67,7 @@ class ColorPicker extends HTMLElement {
 
         if (name === 'showpreviousvalues' && newValue === 'false') {
             this.getElementsByClassName('previousColor')[0].remove();
-        } else {
+        } else if(name === 'showpreviousvalues' && newValue === 'true')  {
             if(!prev) {
                 createPreviousView(this);
             }
@@ -78,7 +78,7 @@ class ColorPicker extends HTMLElement {
 
         if (name === 'presets' && newValue === 'false') {
             document.getElementsByClassName('presets')[0].remove();
-        } else {
+        } else if(name === 'presets' && newValue === 'true') {
             let presets = this.getElementsByClassName('presets')[0];
 
             if(!presets) {
@@ -88,7 +88,7 @@ class ColorPicker extends HTMLElement {
 
         if (name === 'savetopresets' && newValue === 'false') {
             document.getElementsByClassName('presetsExpanded')[0].remove();
-        } else {
+        } else if(name === 'savetopresets' && newValue === 'true') {
             let expanded = this.getElementsByClassName('presetsExpanded')[0];
 
             if(!expanded) {
