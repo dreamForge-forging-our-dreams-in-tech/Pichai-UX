@@ -47,8 +47,7 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('string', 'outputtype', this.getAttribute('outputtype'));
         doAttributeCheck('boolean', 'alpha', this.getAttribute('alpha'));
 
-        let prev = this.querySelector('.displayColor');
-        console.log(prev[0])
+        let prev = this.getElementsByClassName('displayColor');
 
         if(name === 'value') {
             console.log(prev[0])
