@@ -1,19 +1,22 @@
-function rgbaToHex(rgba) {
-    const parts = rgba.replace(/\s/g, '').match(/^rgba?\((\d+),(\d+),(\d+),?([^,\s)]+)?/i);
-    const alpha = (parts && parts[4] || '').trim();
-    const hex = parts
-        ? (parseInt(parts[1], 10) | 1 << 8).toString(16).slice(1) +
-          (parseInt(parts[2], 10) | 1 << 8).toString(16).slice(1) +
-          (parseInt(parts[3], 10) | 1 << 8).toString(16).slice(1)
-        : rgba;
-
-    if (alpha !== '') {
-        const adjustedAlpha = Math.round(parseFloat(alpha) * 255).toString(16).substring(0, 2);
-        hex = hex + adjustedAlpha;
+function rgbaToHex(orig) {
+    var a, isPercent,
+      rgb = orig.replace(/\s/g, '').match(/^rgba?\((\d+),(\d+),(\d+),?([^,\s)]+)?/i),
+      alpha = (rgb && rgb[4] || "").trim(),
+      hex = rgb ?
+      (rgb[1] | 1 << 8).toString(16).slice(1) +
+      (rgb[2] | 1 << 8).toString(16).slice(1) +
+      (rgb[3] | 1 << 8).toString(16).slice(1) : orig;
+  
+    if (alpha !== "") {
+      a = alpha;
+    } else {
+      a = 1;
     }
-
-    console.log(hex.substring(0, hex.length - 2))
-        return hex.substring(0, hex.length - 2);
-}
+    // multiply before convert to HEX
+    a = ((a * 255) | 1 << 8).toString(16).slice(1)
+    hex = hex;
+  
+    return hex;
+  }
 
   export { rgbaToHex };
