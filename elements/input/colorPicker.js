@@ -24,9 +24,7 @@ class ColorPicker extends HTMLElement {
     async connectedCallback() {
         let i;
 
-        if (this.getAttribute('showpreviousvalues') == 'true' || !this.hasAttribute('showpreviousvalues')) { // create the previous color section of the color picker
-            createPreviousView(this);
-        }
+        createPreviousView(this);
 
         if (this.getAttribute('presets') == 'true' || !this.hasAttribute('presets')) { // create the previous color section of the color picker
             createPresetsView(this);
@@ -51,18 +49,18 @@ class ColorPicker extends HTMLElement {
         let prev = this.getElementsByClassName('displayColor');
         optimizeTextColor(prev[0].parentNode);
 
-        if(name === 'value') {
+        if (name === 'value') {
             prev[0].style.backgroundColor = newValue;
             updateColors(this, prev[0].style.backgroundColor); // so we dont need to use conversion functions for colors and can just make the code les mumbo jumbo
 
             this.setAttribute('previousvalue', oldValue);
         }
 
-        if(name === 'previousvalue') {
+        if (name === 'previousvalue') {
             prev[1].style.backgroundColor = newValue;
         }
 
-        if(name === 'alpha' && newValue == 'true') {
+        if (name === 'alpha' && newValue == 'true') {
             createHeader('Alpha', picker);
             createSlider('a', picker);
         }
@@ -70,29 +68,29 @@ class ColorPicker extends HTMLElement {
         if (name === 'showpreviousvalues' && newValue === 'false') {
             this.getElementsByClassName('previousColor')[0].remove();
 
-        } else if(name === 'showpreviousvalues' && newValue === 'true')  {
-            if(!prev) {
+        } else if (name === 'showpreviousvalues' && newValue === 'true') {
+            if (!prev) {
                 createPreviousView(this);
             }
         }
 
         if (name === 'presets' && newValue === 'false') {
             document.getElementsByClassName('presets')[0].remove();
-        } else if(name === 'presets' && newValue === 'true') {
+        } else if (name === 'presets' && newValue === 'true') {
             let presets = this.getElementsByClassName('presets')[0];
 
-            if(!presets) {
-            createPresetsView(this);
+            if (!presets) {
+                createPresetsView(this);
             }
         }
 
         if (name === 'savetopresets' && newValue === 'false') {
             document.getElementsByClassName('presetsExpanded')[0].remove();
-        } else if(name === 'savetopresets' && newValue === 'true') {
+        } else if (name === 'savetopresets' && newValue === 'true') {
             let expanded = this.getElementsByClassName('presetsExpanded')[0];
 
-            if(!expanded) {
-            createPresetsExpansionView(this);
+            if (!expanded) {
+                createPresetsExpansionView(this);
             }
         }
 
@@ -124,13 +122,13 @@ async function createPresets(el) {
 
         if (this.parentNode == expanded) { //save current color
             let pre = el.parentNode.getElementsByClassName('presets')[0];
-            
+
             saved.push(el.parentNode.getAttribute('value'));
             createPresetItem(el, el.parentNode.getAttribute('value')); // adds the saved preset item to the expanded presets tab
             createPresetItem(pre, el.parentNode.getAttribute('value'));// adds the saved preset item to the presets tab
 
             localforage.setItem('presetColors', saved).then(function (value) {
-            }).catch(function(err) {
+            }).catch(function (err) {
                 console.error(err);
             });
 
@@ -171,17 +169,23 @@ function createPreviousView(el) {
     current.classList.add('displayColor');
     current.style.backgroundColor = el.getAttribute('value') ?? '#008dcd';
     current.innerHTML = `Current`;
+    previousHolder.append(current);
 
-    let previous = document.createElement('paragraph');
-    previous.classList.add('displayColor');
-    previous.style.backgroundColor = el.getAttribute('previousvalue') ?? el.getAttribute('value');
-    previous.innerHTML = 'Previous';
+    if (this.getAttribute('showpreviousvalues') == 'true' || !this.hasAttribute('showpreviousvalues')) { // create the previous color section of the color picker
 
-    previous.addEventListener('click', function () {
-        updateColors(el, this.style.backgroundColor);
-    })
+        let previous = document.createElement('paragraph');
+        previous.classList.add('displayColor');
+        previous.style.backgroundColor = el.getAttribute('previousvalue') ?? el.getAttribute('value');
+        previous.innerHTML = 'Previous';
 
-    previousHolder.append(current, previous);
+        previous.addEventListener('click', function () {
+            updateColors(el, this.style.backgroundColor);
+        });
+
+        previousHolder.append(previous);
+    }
+
+    previousHolder.append(current);
     el.appendChild(previousHolder);
 }
 
@@ -203,7 +207,7 @@ function createPresetsExpansionView(el) {
     el.appendChild(presetsHolder);
 }
 
-function createColorPicker (el) {
+function createColorPicker(el) {
     let picker = document.createElement('article');
     picker.classList.add('picker');
 
@@ -216,7 +220,7 @@ function createColorPicker (el) {
     createHeader('Blue', picker);
     createSlider('b', picker);
 
-    if(el.getAttribute('alpha') == 'true') {
+    if (el.getAttribute('alpha') == 'true') {
         createHeader('Alpha', picker);
         createSlider('a', picker);
     }
@@ -252,7 +256,7 @@ function createSlider(value, el) {
     el.append(slider);
 }
 
-function updateColors (el, color) {
+function updateColors(el, color) {
     let r = document.getElementById('r');
     let g = document.getElementById('g');
     let b = document.getElementById('b');
@@ -265,7 +269,7 @@ function updateColors (el, color) {
     g.value = parseInt(rgb[1]);
     b.value = parseInt(rgb[2]);
 
-    if(document.getElementById('a')) {
+    if (document.getElementById('a')) {
         a = isNaN(parseInt(rgb[3])) ? 1 : parseInt(rgb[3]);
         document.getElementById('a').value = a;
     } else {
