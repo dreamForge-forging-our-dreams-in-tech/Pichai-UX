@@ -292,7 +292,8 @@ function updateToOutputType(el) {
     if (type == 'rgb' || type == null) {
 
     } else if (type == 'hex') {
-        el.setAttribute('value', rgbaToHex(val));
+        let arr = val.replace('rgba(','').replace(')','').split(',');
+        el.setAttribute('value', arr);
     }
 }
 
