@@ -7,13 +7,6 @@ function rgbaToHex(orig) {
       (rgb[2] | 1 << 8).toString(16).slice(1) +
       (rgb[3] | 1 << 8).toString(16).slice(1) : orig;
   
-    if (alpha !== "") {
-      a = alpha;
-    } else {
-      a = 1;
-    }
-    // multiply before convert to HEX
-    a = ((a * 255) | 1 << 8).toString(16).slice(1)
     hex = hex;
   
     return hex;
