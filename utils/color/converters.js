@@ -12,6 +12,7 @@ function rgbaToHex(rgba) {
         console.log(hex)
         return hex + adjustedAlpha;
     } else {
+        console.log(hex)
         return hex;
     }
 }
