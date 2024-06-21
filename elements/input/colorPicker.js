@@ -185,7 +185,6 @@ function createPreviousView(el) {
         previousHolder.append(previous);
     }
 
-    previousHolder.append(current);
     el.appendChild(previousHolder);
 }
 
