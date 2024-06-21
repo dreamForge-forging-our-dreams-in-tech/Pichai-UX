@@ -171,7 +171,7 @@ function createPreviousView(el) {
     current.innerHTML = `Current`;
     previousHolder.append(current);
 
-    if (this.getAttribute('showpreviousvalues') == 'true' || !this.hasAttribute('showpreviousvalues')) { // create the previous color section of the color picker
+    if (el.getAttribute('showpreviousvalues') == 'true' || !el.hasAttribute('showpreviousvalues')) { // create the previous color section of the color picker
 
         let previous = document.createElement('paragraph');
         previous.classList.add('displayColor');
