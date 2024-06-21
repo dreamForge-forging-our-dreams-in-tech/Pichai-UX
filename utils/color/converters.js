@@ -12,7 +12,7 @@ function rgbaToHex(rgba) {
         hex = hex + adjustedAlpha;
     }
 
-    console.log(hex.substring(0, hex.length - 2);)
+    console.log(hex.substring(0, hex.length - 2))
         return hex.substring(0, hex.length - 2);
 }
 
