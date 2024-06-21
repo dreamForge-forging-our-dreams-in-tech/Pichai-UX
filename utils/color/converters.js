@@ -1,20 +1,19 @@
-function rgbaToHex(rgba) {
-    const parts = rgba.replace(/\s/g, '').match(/^rgba?\((\d+),(\d+),(\d+),?([^,\s)]+)?/i);
-    const alpha = (parts && parts[4] || '').trim();
-    const hex = parts
-        ? (parseInt(parts[1], 10) | 1 << 8).toString(16).slice(1) +
-          (parseInt(parts[2], 10) | 1 << 8).toString(16).slice(1) +
-          (parseInt(parts[3], 10) | 1 << 8).toString(16).slice(1)
-        : rgba;
-
-    if (alpha !== '') {
-        const adjustedAlpha = Math.round(parseFloat(alpha) * 255).toString(16).substring(0, 2);
-        console.log(hex)
-        return hex + adjustedAlpha;
-    } else {
-        console.log(hex)
-        return hex;
-    }
-}
+function rgbaToHex(r,g,b,a) {
+    r = r.toString(16);
+    g = g.toString(16);
+    b = b.toString(16);
+    a = Math.round(a * 255).toString(16);
+  
+    if (r.length == 1)
+      r = "0" + r;
+    if (g.length == 1)
+      g = "0" + g;
+    if (b.length == 1)
+      b = "0" + b;
+    if (a.length == 1)
+      a = "0" + a;
+  
+    return "#" + r + g + b
+  }
 
   export { rgbaToHex };
