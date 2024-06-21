@@ -60,6 +60,7 @@ class ColorPicker extends HTMLElement {
             updateColors(this, prev[0].style.backgroundColor); // use backgroundColor so we dont need to use conversion functions for colors and can just make the code les mumbo jumbo
             this.setAttribute('previousvalue', oldValue);
 
+            this.dispatchEvent(change);
             updateToOutputType(this);
         }
 
@@ -161,8 +162,6 @@ function createPresetItem(el, color) {
 
     item.addEventListener('click', function () {
         el.parentNode.setAttribute('value', this.style.backgroundColor);
-
-        el.parentNode.dispatchEvent(change);
     });
 
     el.prepend(item);
