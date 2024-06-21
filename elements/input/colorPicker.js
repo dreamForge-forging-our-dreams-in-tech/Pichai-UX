@@ -49,11 +49,17 @@ class ColorPicker extends HTMLElement {
         let prev = this.getElementsByClassName('displayColor');
         optimizeTextColor(prev[0].parentNode);
 
+        if (name === 'outputtype') {
+            updateToOutputType(this.getAttribute('outputtype'));
+        }
+
         if (name === 'value') {
             prev[0].style.backgroundColor = newValue;
 
             updateColors(this, prev[0].style.backgroundColor); // use backgroundColor so we dont need to use conversion functions for colors and can just make the code les mumbo jumbo
             this.setAttribute('previousvalue', oldValue);
+
+            updateToOutputType(this.getAttribute('outputtype'));
         }
 
         if (name === 'previousvalue') {
@@ -274,6 +280,10 @@ function updateColors(el, color) {
     } else {
         a = 1;
     }
+}
+
+function updateToOutputType (type) {
+    console.log(type)
 }
 
 registry.define("color-picker", ColorPicker);
