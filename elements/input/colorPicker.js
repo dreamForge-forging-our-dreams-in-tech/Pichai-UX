@@ -2,7 +2,7 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 import '../../utils/localFOrage.js';
 import { optimizeTextColor } from '../../utils/extraFunctions.js';
 
-import {rgbaToHex } from '../../utils/color/converters.js';
+import { rgbaToHex } from '../../utils/color/converters.js';
 const change = new Event("change"); // new change event for the color picker
 
 // Create a class for the element
@@ -61,7 +61,10 @@ class ColorPicker extends HTMLElement {
             this.setAttribute('previousvalue', oldValue);
 
             this.dispatchEvent(change);
-            updateToOutputType(this);
+
+            if (!newValue.includes(rgb)) {
+                updateToOutputType(this);
+            }
         }
 
         if (name === 'previousvalue') {
@@ -282,13 +285,13 @@ function updateColors(el, color) {
     }
 }
 
-function updateToOutputType (el) {
+function updateToOutputType(el) {
     let type = el.getAttribute('outputtype');
     let val = el.getAttribute('value');
 
-    if(type == 'rgb' || type == null) {
+    if (type == 'rgb' || type == null) {
 
-    } else if(type == 'hex') {
+    } else if (type == 'hex') {
         el.setAttribute('value', rgbaToHex(val));
     }
 }
