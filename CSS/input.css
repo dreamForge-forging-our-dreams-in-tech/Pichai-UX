@@ -85,7 +85,7 @@ input[type='range']::-webkit-slider-thumb {
 
 color-picker {
     display:grid;
-    grid-template-columns: 100px auto auto 200px;
+    grid-template-columns: min-content 1fr 1fr min-content;
     grid-template-rows: auto auto 46px;
     grid-template-areas: 
     'previous hsl hsl presetsExpanded'
