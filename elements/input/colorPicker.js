@@ -2,6 +2,7 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 import '../../utils/localFOrage.js';
 import { optimizeTextColor } from '../../utils/extraFunctions.js';
 
+import {rgbaToHex } from '../../utils/color/converters.js';
 const change = new Event("change"); // new change event for the color picker
 
 // Create a class for the element
@@ -50,7 +51,7 @@ class ColorPicker extends HTMLElement {
         optimizeTextColor(prev[0].parentNode);
 
         if (name === 'outputtype') {
-            updateToOutputType(this.getAttribute('outputtype'));
+            updateToOutputType(this);
         }
 
         if (name === 'value') {
@@ -59,7 +60,7 @@ class ColorPicker extends HTMLElement {
             updateColors(this, prev[0].style.backgroundColor); // use backgroundColor so we dont need to use conversion functions for colors and can just make the code les mumbo jumbo
             this.setAttribute('previousvalue', oldValue);
 
-            updateToOutputType(this.getAttribute('outputtype'));
+            updateToOutputType(this);
         }
 
         if (name === 'previousvalue') {
@@ -282,8 +283,15 @@ function updateColors(el, color) {
     }
 }
 
-function updateToOutputType (type) {
-    console.log(type)
+function updateToOutputType (el) {
+    let type = el.getAttribute('outputtype');
+    let val = el.getAttribute('value');
+
+    if(type == 'rgb' || type == null) {
+
+    } else if(type == 'hex') {
+        el.setAttribute('value', rgbaToHex(val));
+    }
 }
 
 registry.define("color-picker", ColorPicker);
