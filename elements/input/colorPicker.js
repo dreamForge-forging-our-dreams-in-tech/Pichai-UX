@@ -153,7 +153,7 @@ function createPresetItem(el, color) {
     item.style.backgroundColor = color;
 
     item.addEventListener('click', function () {
-        updateColors(el.parentNode, this.style.backgroundColor);
+        el.parentNode.setAttribute('value', this.style.backgroundColor);
 
         el.parentNode.dispatchEvent(change);
     });
@@ -179,7 +179,7 @@ function createPreviousView(el) {
         previous.innerHTML = 'Previous';
 
         previous.addEventListener('click', function () {
-            updateColors(el, this.style.backgroundColor);
+            el.setAttribute('value', this.style.backgroundColor);
         });
 
         previousHolder.append(previous);
@@ -275,7 +275,6 @@ function updateColors(el, color) {
     } else {
         a = 1;
     }
-
-    el.setAttribute('value', `rgba(${r.value}, ${g.value}, ${b.value}, ${a})`);
 }
+
 registry.define("color-picker", ColorPicker);
