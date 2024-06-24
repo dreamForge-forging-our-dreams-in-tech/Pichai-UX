@@ -6,7 +6,7 @@ function rgbaToHex(orig) {
       (rgb[2] | 1 << 8).toString(16).slice(1) +
       (rgb[3] | 1 << 8).toString(16).slice(1) : orig;
 
-    return `#${hex};
+    return `#${hex}`;
   }
 
   export { rgbaToHex };
