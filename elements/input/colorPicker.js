@@ -2,7 +2,7 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 import '../../utils/localFOrage.js';
 import { optimizeTextColor } from '../../utils/extraFunctions.js';
 
-import { rgbaToHex } from '../../utils/color/converters.js';
+import { rgbaToHex, RGBToHSL } from '../../utils/color/converters.js';
 const change = new Event("change"); // new change event for the color picker
 
 // Create a class for the element
@@ -306,6 +306,8 @@ function updateToOutputType(el) {
 
     } else if (type == 'hex') {
         el.setAttribute('value', rgbaToHex(val));
+    } else if(type == 'hsl') {
+        el.setAttribute('value', RGBToHSL(val));
     }
 }
 
