@@ -267,7 +267,7 @@ function createSlider(value, el) {
         let b = document.getElementById('b').value;
         let a = document.getElementById('a') ? document.getElementById('a').value : 1;
 
-        let prev = this.getElementsByClassName('displayColor');
+        let prev = el.parentNode.getElementsByClassName('displayColor');
 
         //el.parentNode.setAttribute('previousvalue',  el.parentNode.getAttribute('value'));
         prev[0].style.backgroundColor = `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${Math.round(a)})`;
