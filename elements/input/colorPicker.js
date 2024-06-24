@@ -60,7 +60,7 @@ class ColorPicker extends HTMLElement {
             updateColors(this, prev[0].style.backgroundColor); // use backgroundColor so we dont need to use conversion functions for colors and can just make the code les mumbo jumbo
             this.setAttribute('previousvalue', oldValue);
 
-            //this.dispatchEvent(change);
+            this.dispatchEvent(change);
 
             if (!newValue.includes(rgb)) {
                 updateToOutputType(this);
@@ -251,7 +251,7 @@ function createSlider(value, el) {
     slider.max = value === 'a' ? 1 : 255;
     slider.id = value;
 
-    slider.addEventListener('input', function () {
+    slider.addEventListener('change', function () {
         let r = document.getElementById('r').value;
         let g = document.getElementById('g').value;
         let b = document.getElementById('b').value;
