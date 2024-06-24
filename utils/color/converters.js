@@ -49,7 +49,7 @@ function rgbaToHex(orig) {
   s = Math.round(s * 100);
   l = Math.round(l * 100);
 
-  return `${h}, ${s}, ${l}`;
+  return `hsl(${h}deg, ${s}% ${l}%)`;
 }
 
   export { rgbaToHex, RGBToHSL };
