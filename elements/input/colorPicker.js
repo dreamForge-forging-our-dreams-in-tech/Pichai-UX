@@ -251,7 +251,7 @@ function createSlider(value, el) {
     slider.max = value === 'a' ? 1 : 255;
     slider.id = value;
 
-    slider.addEventListener('change', function () {
+    slider.addEventListener('input', function () {
         let r = document.getElementById('r').value;
         let g = document.getElementById('g').value;
         let b = document.getElementById('b').value;
@@ -259,6 +259,19 @@ function createSlider(value, el) {
 
         //el.parentNode.setAttribute('previousvalue',  el.parentNode.getAttribute('value'));
         el.parentNode.setAttribute('value', `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${Math.round(a)})`);
+    });
+
+    slider.addEventListener('change', function () {
+        let r = document.getElementById('r').value;
+        let g = document.getElementById('g').value;
+        let b = document.getElementById('b').value;
+        let a = document.getElementById('a') ? document.getElementById('a').value : 1;
+
+        let prev = this.getElementsByClassName('displayColor');
+
+        //el.parentNode.setAttribute('previousvalue',  el.parentNode.getAttribute('value'));
+        prev[0].style.backgroundColor = `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${Math.round(a)})`;
+        prev[1].style.backgroundColor =  el.parentNode.getAttribute('value');
     });
 
     el.append(slider);
