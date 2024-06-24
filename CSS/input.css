@@ -53,6 +53,8 @@ input[type='range']::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	/* Override default look */
 	appearance: none;
+
+   content:'eee';
 	width: 35px;
 	/* Set a specific slider handle width */
 	height: 35px;
