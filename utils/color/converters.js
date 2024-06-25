@@ -10,7 +10,8 @@ function rgbaToHex(orig) {
   }
 
   function RGBToHSL(val) {
-    let rgb = val.replace(/\s/g, '').match(/^rgba?\((\d+),(\d+),(\d+),?([^,\s)]+)?/i).split(',');
+    let rgb = val.replace(/\s/g, '').match(/^rgba?\((\d+),(\d+),(\d+),?([^,\s)]+)?/i);
+    alert(rgb)
     let r = rgb[0], g = rgb[1], b = rgb[2];
   // Make r, g, and b fractions of 1
   r = r / 255;
