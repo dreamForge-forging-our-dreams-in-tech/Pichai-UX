@@ -2,7 +2,7 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 import '../../utils/localFOrage.js';
 import { optimizeTextColor } from '../../utils/extraFunctions.js';
 
-import { rgbaToHex, rgbToCmyk, RGBToHSL, rgbToCmyk } from '../../utils/color/converters.js';
+import { rgbaToHex, rgbToCmyk, RGBToHSL } from '../../utils/color/converters.js';
 const change = new Event("change"); // new change event for the color picker
 
 // Create a class for the element
