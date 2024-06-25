@@ -304,9 +304,9 @@ function updateToOutputType(el) {
 
     if (type == 'rgb' || type == null) {
 
-    } else if (type == 'hex') {
+    } else if (type == 'hex'  && !val.includes('#')) {
         el.setAttribute('value', rgbaToHex(val));
-    } else if(type == 'hsl') {
+    } else if(type == 'hsl' && !val.includes('hsl')) {
         el.setAttribute('value', RGBToHSL(val));
     }
 }
