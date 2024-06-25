@@ -55,7 +55,7 @@ function rgbaToHex(orig) {
 function rgbToCmyk(val) {
   let rgb = val.replace('rgba(', '').replace(')','').split(',')
   let r = rgb[0], g = rgb[1], b = rgb[2];
-  
+
   let c = 1 - r / 255;
   let m = 1 - g / 255;
   let y = 1 - b / 255;
@@ -71,6 +71,6 @@ function rgbToCmyk(val) {
   y = Math.round(y * 100);
   k = Math.round(k * 100);
 
-  return `${c}, ${m}, ${y}, ${k}`;
+  return `cmyk(${c}, ${m}, ${y}, ${k})`;
 }
   export { rgbaToHex, RGBToHSL, rgbToCmyk };
