@@ -11,7 +11,6 @@ function rgbaToHex(orig) {
 
   function RGBToHSL(val) {
     let rgb = val.replace('rgba(', '').replace(')','').split(',')
-    console.log(rgb)
     let r = rgb[0], g = rgb[1], b = rgb[2];
   // Make r, g, and b fractions of 1
   r = r / 255;
@@ -53,4 +52,25 @@ function rgbaToHex(orig) {
   return `hsl(${h}deg, ${s}% ${l}%)`;
 }
 
-  export { rgbaToHex, RGBToHSL };
+function rgbToCmyk(val) {
+  let rgb = val.replace('rgba(', '').replace(')','').split(',')
+  let r = rgb[0], g = rgb[1], b = rgb[2];
+  
+  let c = 1 - r / 255;
+  let m = 1 - g / 255;
+  let y = 1 - b / 255;
+  let k = Math.min(c, Math.min(m, y));
+
+  c = (c - k) / (1 - k);
+  m = (m - k) / (1 - k);
+  y = (y - k) / (1 - k);
+
+  // Optionally, round the values to percentages
+  c = Math.round(c * 100);
+  m = Math.round(m * 100);
+  y = Math.round(y * 100);
+  k = Math.round(k * 100);
+
+  return `${c}, ${m}, ${y}, ${k}`;
+}
+  export { rgbaToHex, RGBToHSL, rgbToCmyk };

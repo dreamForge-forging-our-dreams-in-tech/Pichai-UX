@@ -2,7 +2,7 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 import '../../utils/localFOrage.js';
 import { optimizeTextColor } from '../../utils/extraFunctions.js';
 
-import { rgbaToHex, RGBToHSL } from '../../utils/color/converters.js';
+import { rgbaToHex, rgbToCmyk, RGBToHSL, rgbToCmyk } from '../../utils/color/converters.js';
 const change = new Event("change"); // new change event for the color picker
 
 // Create a class for the element
@@ -308,7 +308,9 @@ function updateToOutputType(el) {
         el.setAttribute('value', rgbaToHex(val));
     } else if(type == 'hsl' && !val.includes('hsl')) {
         el.setAttribute('value', RGBToHSL(val));
-    }
+    } else if(type == 'cmyk' && !val.includes('cmyk')) {
+        el.setAttribute('value', rgbToCmyk(val));
+    } els
 }
 
 registry.define("color-picker", ColorPicker);
