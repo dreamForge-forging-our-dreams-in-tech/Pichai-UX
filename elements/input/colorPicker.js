@@ -59,7 +59,7 @@ class ColorPicker extends HTMLElement {
 
             updateColors(this, prev[0].style.backgroundColor); // use backgroundColor so we dont need to use conversion functions for colors and can just make the code les mumbo jumbo
 
-            console.log(oldValue, newValue)
+            //onsole.log(oldValue, newValue)
             if (oldValue != newValue) {
                 updateToOutputType(this);
 
