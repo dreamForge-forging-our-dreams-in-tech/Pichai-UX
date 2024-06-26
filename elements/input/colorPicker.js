@@ -63,6 +63,7 @@ class ColorPicker extends HTMLElement {
 
             if (oldValue != newValue && count == 1) {
                 count = 0;
+                console.log('test')
                 updateToOutputType(this);
 
                 this.setAttribute('previousvalue', oldValue);
