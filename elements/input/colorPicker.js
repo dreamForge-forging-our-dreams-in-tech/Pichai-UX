@@ -310,7 +310,7 @@ function updateToOutputType(el) {
         el.setAttribute('value', RGBToHSL(val));
     } else if(type == 'cmyk' && !val.includes('cmyk')) {
         el.setAttribute('value', rgbToCmyk(val));
-    } els
+    }
 }
 
 registry.define("color-picker", ColorPicker);
