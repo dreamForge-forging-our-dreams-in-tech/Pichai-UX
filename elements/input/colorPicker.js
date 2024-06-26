@@ -74,6 +74,9 @@ class ColorPicker extends HTMLElement {
         if (name === 'alpha' && newValue == 'true') {
             createHeader('Alpha', picker);
             createSlider('a', picker);
+        } else if(name === 'alpha' && newValue == 'false') {
+            document.getElementById('a').remove();
+            document.getElementById('Alpha').remove();
         }
 
         if (name === 'showpreviousvalues' && newValue === 'false') {
@@ -239,6 +242,7 @@ function createColorPicker(el) {
 function createHeader(text, el) {
     let header = document.createElement('h4');
     header.innerHTML = text;
+    header.id = text;
 
     el.append(header);
 }
