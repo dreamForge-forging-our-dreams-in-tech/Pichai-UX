@@ -62,8 +62,6 @@ class ColorPicker extends HTMLElement {
             prev[0].style.backgroundColor = newValue;
 
             updateColors(this, prev[0].style.backgroundColor); // use backgroundColor so we dont need to use conversion functions for colors and can just make the code les mumbo jumbo
-            count++;
-            console.log(count)
 
             if (oldValue != newValue && count == 1) {
                 count = 0;
@@ -73,6 +71,9 @@ class ColorPicker extends HTMLElement {
                 this.setAttribute('previousvalue', oldValue);
                 this.dispatchEvent(change);
             }
+
+            count++;
+            console.log(count)
         }
 
         if (name === 'previousvalue') {
