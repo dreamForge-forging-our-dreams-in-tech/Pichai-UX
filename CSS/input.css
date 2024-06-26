@@ -1,204 +1,205 @@
-input, textarea {
-    text-align:left;
+input,
+textarea {
+   text-align: left;
 
-    padding:4px;
+   padding: 4px;
 
-    width:max-content;
-    background-color:var(--tertiary);
-    color:var(--tertiaryTextColor);
+   width: max-content;
+   background-color: var(--tertiary);
+   color: var(--tertiaryTextColor);
 }
 
 input::placeholder {
-    color:var(--tertiaryTextColor);
+   color: var(--tertiaryTextColor);
 }
 
 /* range */
 input[type='range'] {
-	-webkit-appearance: none;
-	/* Override default CSS styles */
-	appearance: none;
-	width: 100%;
-	/* Full-width */
-	height: 35px;
-	/* Specified height */
-	outline: none;
-	/* Remove outline */
-	opacity: 0.85;
-	/* Set transparency (for mouse-over effects on hover) */
-	-webkit-transition: .2s;
-	/* 0.2 seconds transition on hover */
-	transition: opacity .2s;
+   -webkit-appearance: none;
+   /* Override default CSS styles */
+   appearance: none;
+   width: 100%;
+   /* Full-width */
+   height: 35px;
+   /* Specified height */
+   outline: none;
+   /* Remove outline */
+   opacity: 0.85;
+   /* Set transparency (for mouse-over effects on hover) */
+   -webkit-transition: .2s;
+   /* 0.2 seconds transition on hover */
+   transition: opacity .2s;
 
-	border-radius: 300px;
+   border-radius: 300px;
 
-	overflow: hidden;
+   overflow: hidden;
 
-	background-color: var(--primary);
-	;
+   background-color: var(--primary);
+   ;
 
-	padding: 0px;
+   padding: 0px;
 
 }
 
 /* Mouse-over effects */
 input[type='range']:hover {
-	opacity: 1;
-	/* Fully shown on mouse-over */
+   opacity: 1;
+   /* Fully shown on mouse-over */
 
-	padding: 0px;
+   padding: 0px;
 }
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 input[type='range']::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	/* Override default look */
-	appearance: none;
+   -webkit-appearance: none;
+   /* Override default look */
+   appearance: none;
 
-	width: 35px;
-	/* Set a specific slider handle width */
-	height: 35px;
-	/* Slider handle height */
-	background: var(--primaryContainer);
-	/* Green background */
-	cursor: pointer;
-	/* Cursor on hover */
+   width: 35px;
+   /* Set a specific slider handle width */
+   height: 35px;
+   /* Slider handle height */
+   background: var(--primaryContainer);
+   /* Green background */
+   cursor: pointer;
+   /* Cursor on hover */
 
-	border-top-right-radius: 300px;
-	border-bottom-right-radius: 300px;
+   border-top-right-radius: 300px;
+   border-bottom-right-radius: 300px;
 
 
-	border-image-source: linear-gradient(90deg, var(--primaryContainer) 50%, TRANSPARENT 0);
-	border-image-slice: 1;
-	border-image-width: 0 100vw;
-	border-image-outset: 0 100vw;
+   border-image-source: linear-gradient(90deg, var(--primaryContainer) 50%, TRANSPARENT 0);
+   border-image-slice: 1;
+   border-image-width: 0 100vw;
+   border-image-outset: 0 100vw;
 
-	padding: 0px;
+   padding: 0px;
 }
 
 .card input {
-    background-color:var(--secondairy);
-    color:var(--secondairyTextColor);
+   background-color: var(--secondairy);
+   color: var(--secondairyTextColor);
 }
 
 .card input::placeholder {
-    color:var(--secondairyTextColor);
+   color: var(--secondairyTextColor);
 }
 
 color-picker {
-    display:grid;
-    grid-template-columns: min-content 1fr 1fr min-content;
-    grid-template-rows: auto auto 46px;
-    grid-template-areas: 
-    'previous hsl hsl presetsExpanded'
-    'previous hsl hsl presetsExpanded'
-    'presets presets presets presetsExpanded';
+   display: grid;
+   grid-template-columns: min-content 1fr 1fr min-content;
+   grid-template-rows: auto auto 46px;
+   grid-template-areas:
+      'previous hsl hsl presetsExpanded'
+      'previous hsl hsl presetsExpanded'
+      'presets presets presets presetsExpanded';
 
-    grid-gap:8px;
+   grid-gap: 8px;
 
-    min-height:300px;
-    min-width:300px;
- }
-
- color-picker h4 {
-   margin-left:0px;
-   margin-right:0px;
-
-   width:calc(100% - 16px);
+   min-height: 300px;
+   min-width: 300px;
 }
- 
- .previousColor {
-    display:flex;
-    flex-direction:column;
-    row-gap: 8px;
- 
-    padding:8px;
- 
-    grid-area: previous;
 
-    background-color:var(--primary);
+color-picker h4 {
+   margin-left: 0px;
+   margin-right: 0px;
 
-    width:calc(100% - 16px);
-    height: calc(100% - 16px);
- }
- 
- .displayColor {
-    width:100%;
-    height:50%;
+   width: calc(100% - 16px);
+}
 
-    padding-top:7px;
+.previousColor {
+   display: flex;
+   flex-direction: column;
+   row-gap: 8px;
 
-    font-size:14px;
- }
+   padding: 8px;
 
- .presets {
-    display:flex;
-    flex-direction:row;
-    column-gap: 8px;
- 
-    padding:8px;
- 
-    grid-area: presets;
+   grid-area: previous;
 
-    width:calc(100% - 16px);
+   background-color: var(--primary);
 
-    background-color:var(--primary);
+   width: calc(100% - 16px);
+   height: calc(100% - 16px);
+}
 
-    overflow:hidden;
+.displayColor {
+   width: 100%;
+   height: 50%;
 
-    position:relative;
- }
+   padding-top: 7px;
 
- .colorPresetItem {
-    width:30px;
-    height:30px;
+   font-size: 14px;
+}
 
-    border-radius:300px;
+.presets {
+   display: flex;
+   flex-direction: row;
+   column-gap: 8px;
 
-    background-color:var(--primaryContainer);
-    color:var(--onPrimaryContainer);
+   padding: 8px;
 
-    margin:0px;
+   grid-area: presets;
 
-    line-height: 16px !important;
+   width: calc(100% - 16px);
 
-    flex-shrink: 0;
- }
+   background-color: var(--primary);
 
- .presets .colorPresetItem:last-child {
-   position:absolute;
-   right:8px;
- }
+   overflow: hidden;
 
- .presetsExpanded {
-    grid-area: presetsExpanded;
+   position: relative;
+}
 
-    display:none;
-    grid-template-columns: auto auto auto auto auto;
-    grid-auto-rows: max-content;
-    grid-gap:8px;
-    align-items:center;
- 
-    padding:8px;
+.colorPresetItem {
+   width: 30px;
+   height: 30px;
 
-    background-color:var(--primary);
+   border-radius: 300px;
 
-    width:calc(100% - 16px);
-    height: calc(100% - 16px);
+   background-color: var(--primaryContainer);
+   color: var(--onPrimaryContainer);
 
-    overflow:hidden;
-    overflow-y:auto;
- }
+   margin: 0px;
 
- .picker {
-   height:calc(100% - 8px);
-   width:calc(100% - 16px);
+   line-height: 16px !important;
+
+   flex-shrink: 0;
+}
+
+#expandButton {
+   position: absolute;
+   right: 8px;
+}
+
+.presetsExpanded {
+   grid-area: presetsExpanded;
+
+   display: none;
+   grid-template-columns: auto auto auto auto auto;
+   grid-auto-rows: max-content;
+   grid-gap: 8px;
+   align-items: center;
+
+   padding: 8px;
+
+   background-color: var(--primary);
+
+   width: calc(100% - 16px);
+   height: calc(100% - 16px);
+
+   overflow: hidden;
+   overflow-y: auto;
+}
+
+.picker {
+   height: calc(100% - 8px);
+   width: calc(100% - 16px);
 
    grid-area: hsl;
 
-   display:flex;
+   display: flex;
    flex-direction: column;
-   
-   padding:0px 8px 8px 8px;
 
-   background-color:var(--primary);
- }
+   padding: 0px 8px 8px 8px;
+
+   background-color: var(--primary);
+}
