@@ -58,11 +58,11 @@ class ColorPicker extends HTMLElement {
             prev[0].style.backgroundColor = newValue;
 
             updateColors(this, prev[0].style.backgroundColor); // use backgroundColor so we dont need to use conversion functions for colors and can just make the code les mumbo jumbo
-            this.setAttribute('previousvalue', oldValue);
 
             this.dispatchEvent(change);
 
-            if (!newValue.includes(rgb)) {
+            if (oldValue != newValue) {
+                this.setAttribute('previousvalue', oldValue);
                 updateToOutputType(this);
             }
         }
@@ -305,7 +305,6 @@ function updateToOutputType(el) {
     if (type == 'rgb' || type == null) {
 
     } else if (type == 'hex'  && !val.includes('#')) {
-        console.log(val)
         el.setAttribute('value', rgbaToHex(val));
     } else if(type == 'hsl' && !val.includes('hsl')) {
         el.setAttribute('value', RGBToHSL(val));
