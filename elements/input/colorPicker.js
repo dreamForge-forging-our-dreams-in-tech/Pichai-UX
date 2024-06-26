@@ -73,6 +73,7 @@ class ColorPicker extends HTMLElement {
 
         if (name === 'alpha' && newValue == 'true') {
             let picker = document.getElementsByClassName('picker')[0];
+            
             createHeader('Alpha', picker);
             createSlider('a', picker);
         } else if(name === 'alpha' && newValue == 'false') {
