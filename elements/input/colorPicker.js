@@ -98,9 +98,9 @@ class ColorPicker extends HTMLElement {
         }
 
         if (name === 'savetopresets' && newValue === 'false') {
-            document.getElementById('expandButton')[0].remove();
+            document.getElementById('expandButton').remove();
         } else if (name === 'savetopresets' && newValue === 'true') {
-            let expanded = this.getElementById('expandButton')[0];
+            let expanded = this.getElementById('expandButton');
 
             if (!expanded) {
                 createPresetsExpansionView(this);
