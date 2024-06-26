@@ -80,12 +80,11 @@ class ColorPicker extends HTMLElement {
         }
 
         if (name === 'showpreviousvalues' && newValue === 'false') {
-            this.getElementsByClassName('previousColor')[0].remove();
+            this.getElementsByClassName('displayColor')[1].remove();
 
         } else if (name === 'showpreviousvalues' && newValue === 'true') {
-            if (!prev) {
+            this.getElementsByClassName('previousColor')[0].remove();
                 createPreviousView(this);
-            }
         }
 
         if (name === 'presets' && newValue === 'false') {
