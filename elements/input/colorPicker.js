@@ -98,9 +98,9 @@ class ColorPicker extends HTMLElement {
         }
 
         if (name === 'savetopresets' && newValue === 'false') {
-            document.getElementsByClassName('presetsExpanded')[0].remove();
+            document.getElementById('expandButton')[0].remove();
         } else if (name === 'savetopresets' && newValue === 'true') {
-            let expanded = this.getElementsByClassName('presetsExpanded')[0];
+            let expanded = this.getElementById('expandButton')[0];
 
             if (!expanded) {
                 createPresetsExpansionView(this);
@@ -129,6 +129,7 @@ async function createPresets(el) {
     let arrow = document.createElement('button');
     arrow.classList.add('colorPresetItem');
     arrow.innerHTML = '+';
+    arrow.id = 'expandButton';
 
     arrow.addEventListener('click', function () {
         let expanded = el.parentNode.getElementsByClassName('presetsExpanded')[0];
