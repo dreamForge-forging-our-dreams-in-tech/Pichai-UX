@@ -6,8 +6,6 @@ import { rgbaToHex, rgbToCmyk, RGBToHSL } from '../../utils/color/converters.js'
 
 const change = new Event("change"); // new change event for the color picker
 
-let count = 0; // counter to avoid event being dispatched multiple times, needs a beter solution
-
 // Create a class for the element
 class ColorPicker extends HTMLElement {
     /** @description 
@@ -63,17 +61,12 @@ class ColorPicker extends HTMLElement {
 
             updateColors(this, prev[0].style.backgroundColor); // use backgroundColor so we dont need to use conversion functions for colors and can just make the code les mumbo jumbo
 
-            if (oldValue != newValue && count == 1) {
-                count = 0;
-                console.log('test')
-                updateToOutputType(this);
+            //if (oldValue != newValue) {
+                //updateToOutputType(this);
 
                 this.setAttribute('previousvalue', oldValue);
                 this.dispatchEvent(change);
-            }
-
-            count++;
-            console.log(count)
+           // }
         }
 
         if (name === 'previousvalue') {
@@ -198,7 +191,8 @@ function createPreviousView(el) {
         previous.innerHTML = 'Previous';
 
         previous.addEventListener('click', function () {
-            el.setAttribute('value', this.style.backgroundColor);
+            updateColors(el, `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${Math.round(a)})`)
+            //el.setAttribute('value', this.style.backgroundColor);
         });
 
         previousHolder.append(previous);
@@ -269,7 +263,8 @@ function createSlider(value, el) {
         let a = document.getElementById('a') ? document.getElementById('a').value : 1;
 
         //el.parentNode.setAttribute('previousvalue',  el.parentNode.getAttribute('value'));
-        el.parentNode.setAttribute('value', `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${Math.round(a)})`);
+        updateToOutputType(el, `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${Math.round(a)})`);
+        //el.parentNode.setAttribute('value', `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${Math.round(a)})`);
     });
 
     slider.addEventListener('input', function () {
@@ -309,12 +304,12 @@ function updateColors(el, color) {
     }
 }
 
-function updateToOutputType(el) {
+function updateToOutputType(el,val) {
     let type = el.getAttribute('outputtype');
-    let val = el.getAttribute('value');
+    //let val = el.getAttribute('value');
 
     if (type == 'rgb' || type == null) {
-
+        el.setAttribute('value', val);
     } else if (type == 'hex'  && !val.includes('#')) {
         el.setAttribute('value', rgbaToHex(val));
     } else if(type == 'hsl' && !val.includes('hsl')) {
