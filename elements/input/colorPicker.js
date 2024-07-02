@@ -312,13 +312,13 @@ function updateToOutputType(el,val) {
     let type = el.getAttribute('outputtype');
     //let val = el.getAttribute('value');
 
-    if (type == 'rgb' || type == null) {
+    if (type == 'rgb' || type == null || type == 'rgba') {
         el.setAttribute('value', val);
-    } else if (type == 'hex'  && !val.includes('#')) {
+    } else if (type == 'hex') {
         el.setAttribute('value', rgbaToHex(val));
-    } else if(type == 'hsl' && !val.includes('hsl')) {
+    } else if(type == 'hsl') {
         el.setAttribute('value', RGBToHSL(val));
-    } else if(type == 'cmyk' && !val.includes('cmyk')) {
+    } else if(type == 'cmyk') {
         el.setAttribute('value', rgbToCmyk(val));
     }
 }
