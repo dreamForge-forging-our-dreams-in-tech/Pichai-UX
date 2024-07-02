@@ -316,6 +316,7 @@ function updateToOutputType(el,val) {
         el.setAttribute('value', val);
     } else if (type == 'hex') {
         el.setAttribute('value', rgbaToHex(val));
+        console.log(rgbaToHex(val))
     } else if(type == 'hsl') {
         el.setAttribute('value', RGBToHSL(val));
     } else if(type == 'cmyk') {
