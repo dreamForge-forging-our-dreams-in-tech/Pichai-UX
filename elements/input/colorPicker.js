@@ -1,3 +1,5 @@
+// updateToOutputType updates colors too, didnt rename yet
+
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 import '../../utils/localFOrage.js';
 import { optimizeTextColor } from '../../utils/extraFunctions.js';
