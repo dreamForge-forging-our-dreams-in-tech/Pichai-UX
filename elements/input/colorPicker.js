@@ -192,7 +192,7 @@ function createPreviousView(el) {
         previous.innerHTML = 'Previous';
 
         previous.addEventListener('click', function () {
-            updateColors(el, this.style.backgroundColor)
+            updateToOutputType(el, this.style.backgroundColor)
             //el.setAttribute('value', this.style.backgroundColor);
         });
 
