@@ -49,10 +49,8 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('boolean', 'alpha', this.getAttribute('alpha'));
 
         let prev = this.getElementsByClassName('displayColor');
-
-        try {
+        console.log(prev)
         optimizeTextColor(prev[0].parentNode);
-        } catch(e) {}
 
         if (name === 'outputtype') {
             updateToOutputType(this);
