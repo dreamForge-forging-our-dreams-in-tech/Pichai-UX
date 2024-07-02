@@ -309,7 +309,6 @@ function updateColors(el, color) {
 }
 
 function updateToOutputType(el,val) {
-    console.log(val)
     let type = el.getAttribute('outputtype');
     //let val = el.getAttribute('value');
 
