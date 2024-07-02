@@ -170,7 +170,8 @@ function createPresetItem(el, color) {
     item.style.backgroundColor = color;
 
     item.addEventListener('click', function () {
-        el.parentNode.setAttribute('value', this.style.backgroundColor);
+        updateToOutputType(el.parentNode, this.style.backgroundColor)
+        //el.parentNode.setAttribute('value', this.style.backgroundColor);
     });
 
     el.prepend(item);
@@ -266,7 +267,7 @@ function createSlider(value, el) {
         let a = document.getElementById('a') ? document.getElementById('a').value : 1;
 
         //el.parentNode.setAttribute('previousvalue',  el.parentNode.getAttribute('value'));
-        updateToOutputType(el, `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${Math.round(a)})`);
+        updateToOutputType(el.parentNode, `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${Math.round(a)})`);
         //el.parentNode.setAttribute('value', `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${Math.round(a)})`);
     });
 
