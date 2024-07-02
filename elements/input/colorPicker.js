@@ -49,7 +49,10 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('boolean', 'alpha', this.getAttribute('alpha'));
 
         let prev = this.getElementsByClassName('displayColor');
+
+        try {
         optimizeTextColor(prev[0].parentNode);
+        } catch(e) {}
 
         if (name === 'outputtype') {
             updateToOutputType(this);
@@ -191,7 +194,7 @@ function createPreviousView(el) {
         previous.innerHTML = 'Previous';
 
         previous.addEventListener('click', function () {
-            updateColors(el, `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${Math.round(a)})`)
+            updateColors(el, this.style.backgroundColor)
             //el.setAttribute('value', this.style.backgroundColor);
         });
 
