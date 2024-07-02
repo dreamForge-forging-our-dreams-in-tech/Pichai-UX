@@ -55,7 +55,7 @@ class ColorPicker extends HTMLElement {
         optimizeTextColor(prev[0].parentNode);
 
         if (name === 'outputtype') {
-            updateToOutputType(this);
+            updateToOutputType(this, this.getAttribute('value'));
         }
 
         if (name === 'value') {
