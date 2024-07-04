@@ -211,8 +211,8 @@ input[type="radio"] {
    margin: 0;
    font: inherit;
    color: var(--primaryTextColor);
-   width: 1.15em;
-   height: 1.15em;
+   width: 5.15em;
+   height: 5.15em;
    border-radius: 100%;
    transform: translateY(-0.075em);
 
