@@ -153,9 +153,13 @@ async function createPresets(el) {
             if (this.innerHTML == '-') {
                 arrow.innerHTML = '+';
                 expanded.style.display = 'none';
+
+                el.style.marginLeft = '0px'; // creates an illusion that grid-gap is hidden even when it's not
             } else {
                 arrow.innerHTML = '-';
                 expanded.style.display = 'grid';
+
+                el.style.marginLeft = '4px'; // creates an illusion that grid-gap is hidden even when it's not
             }
         }
     });
