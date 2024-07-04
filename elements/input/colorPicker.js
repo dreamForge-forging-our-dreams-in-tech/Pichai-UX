@@ -16,6 +16,8 @@ class ColorPicker extends HTMLElement {
 
     /** @usage 
      * When the user needs to select a color
+     * 
+     * **Note: when setting the color picker value make sure it is the same as the outputtype **
     */
 
     static observedAttributes = ["alpha", "previousvalue", "value", "outputtype", "showpreviousvalues", "presets", "savetopresets"];
