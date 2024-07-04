@@ -1,3 +1,7 @@
+:root {
+   --form-control-color: var(--primaryContainer);
+ }
+
 input,
 textarea {
    text-align: left;
@@ -5,12 +9,12 @@ textarea {
    padding: 4px;
 
    width: max-content;
-   background-color: var(--tertiary);
-   color: var(--tertiaryTextColor);
+   background-color: var(--var(--primaryContainer));
+   color: var(--primaryContainerTextColor);
 }
 
 input::placeholder {
-   color: var(--tertiaryTextColor);
+   color: var(--primaryContainerTextColor);
 }
 
 /* range */
