@@ -209,7 +209,7 @@ input[type="radio"] {
    appearance: none;
    background-color: #fff;
    margin: 0;
-   margin-right:8px;
+   margin-right:4px;
    font: inherit;
    color: var(--primaryTextColor);
    width: 20px;
@@ -226,7 +226,7 @@ input[type="radio"] {
    appearance: none;
    background-color: var(--primary);
    margin: 0;
-   margin-right:8px;
+   margin-right:4px;
    font: inherit;
    color: var(--primaryTextColor);
    width: 20px;
