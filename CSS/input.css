@@ -219,17 +219,19 @@ input[type="radio"] {
    display: grid;
    place-content: center;
  }
-
- input[type="radio"]::before {
-   content: "";
+ 
+ input[type="radio"]:checked {
+   -webkit-appearance: none;
+   appearance: none;
+   background-color: var(--primary);
+   margin: 0;
+   font: inherit;
+   color: var(--primaryTextColor);
    width: 1.15em;
    height: 1.15em;
    border-radius: 100%;
-   transform: scale(0);
-   transition: 120ms transform ease-in-out;
-   box-shadow: inset 1em 1em var(--primary);
- }
- 
- input[type="radio"]:checked::before {
-   transform: scale(1);
+   transform: translateY(-0.075em);
+
+   display: grid;
+   place-content: center;
  }
