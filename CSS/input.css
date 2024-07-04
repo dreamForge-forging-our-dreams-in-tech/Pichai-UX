@@ -213,7 +213,7 @@ input[type="radio"] {
    color: var(--primaryTextColor);
    width: 1.15em;
    height: 1.15em;
-   border-radius: 50%;
+   border-radius: 100%;
    transform: translateY(-0.075em);
 
    display: grid;
@@ -222,9 +222,9 @@ input[type="radio"] {
 
  input[type="radio"]::before {
    content: "";
-   width: 0.65em;
-   height: 0.65em;
-   border-radius: 50%;
+   width: 1.15em;
+   height: 1.15em;
+   border-radius: 100%;
    transform: scale(0);
    transition: 120ms transform ease-in-out;
    box-shadow: inset 1em 1em var(--primary);
