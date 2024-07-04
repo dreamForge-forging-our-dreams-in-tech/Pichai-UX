@@ -165,7 +165,7 @@ color-picker h4 {
    flex-shrink: 0;
 }
 
-#expandButton {
+.presets#expandButton {
    position: absolute;
    right: 8px;
 }
