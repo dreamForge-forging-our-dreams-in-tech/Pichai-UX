@@ -209,10 +209,11 @@ input[type="radio"] {
    appearance: none;
    background-color: #fff;
    margin: 0;
+   margin-right:8px;
    font: inherit;
    color: var(--primaryTextColor);
-   width: 5.15em;
-   height: 5.15em;
+   width: 20px;
+   height: 20px;
    border-radius: 100%;
    transform: translateY(-0.075em);
 
