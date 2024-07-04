@@ -1,13 +1,9 @@
 ::-moz-selection { /* Code for Firefox */
     color: var(--secondairyTextColor);
     background: var(--secondairy);
-
-    border-radius:10px;
   }
   
   ::selection {
     color: var(--secondairyTextColor);
     background: var(--secondairy);
-
-    border-radius:10px;
   }
