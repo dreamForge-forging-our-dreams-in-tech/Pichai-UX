@@ -212,8 +212,8 @@ input[type="radio"] {
    margin-right:4px;
    font: inherit;
    color: var(--primaryTextColor);
-   width: 40px !important;
-   height: 40px !important;
+   width: 20px !important;
+   height: 20px !important;
 
    border-radius: 100%;
    border: 0.15em solid #fff;
@@ -232,8 +232,8 @@ input[type="radio"] {
    margin-right:4px;
    font: inherit;
    color: var(--primaryTextColor);
-   width: 40px !important;
-   height: 40px !important;
+   width: 20px !important;
+   height: 20px !important;
    border-radius: 100%;
    border: 0.15em solid var(--primary);
 
