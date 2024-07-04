@@ -218,7 +218,7 @@ input[type="radio"] {
    padding:4px;
 
    border-radius: 100%;
-   transform: translateY(-0.075em);
+   transform: translateY(-0.075em) scale(1);
 
    display: grid;
    place-content: center;
@@ -235,7 +235,7 @@ input[type="radio"] {
    width: 40px;
    height: 40px;
    border-radius: 100%;
-   transform: translateY(-0.075em);
+   transform: translateY(-0.075em) scale(1);
 
    padding:4px;
 
