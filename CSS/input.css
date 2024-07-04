@@ -98,6 +98,8 @@ color-picker {
 
    min-height: 300px;
    min-width: 300px;
+
+   margin-left:4px;
 }
 
 color-picker h4 {
