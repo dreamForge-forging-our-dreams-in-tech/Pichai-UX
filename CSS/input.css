@@ -207,13 +207,13 @@ color-picker h4 {
 input[type="radio"] {
    -webkit-appearance: none;
    appearance: none;
-   background-color: rgba(var(--primaryTextColor), 0.5);
+   background-color: #fff;
    margin: 0;
    font: inherit;
-   color: var(--primaryTextColor);;
+   color: var(--primaryTextColor);
    width: 1.15em;
    height: 1.15em;
-   border: 0.15em solid var(--primaryTextColor);;
+   border: 0.15em solid var(--primaryTextColor);
    border-radius: 50%;
    transform: translateY(-0.075em);
 
