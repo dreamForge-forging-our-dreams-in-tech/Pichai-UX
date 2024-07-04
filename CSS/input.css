@@ -214,6 +214,9 @@ input[type="radio"] {
    color: var(--primaryTextColor);
    width: 40px;
    height: 40px;
+
+   padding:4px;
+
    border-radius: 100%;
    transform: translateY(-0.075em);
 
@@ -233,6 +236,8 @@ input[type="radio"] {
    height: 40px;
    border-radius: 100%;
    transform: translateY(-0.075em);
+
+   padding:4px;
 
    display: grid;
    place-content: center;
