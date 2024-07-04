@@ -9,7 +9,7 @@ textarea {
    padding: 4px;
 
    width: max-content;
-   background-color: var(--var(--primaryContainer));
+   background-color: var(--primaryContainer);
    color: var(--primaryContainerTextColor);
 }
 
