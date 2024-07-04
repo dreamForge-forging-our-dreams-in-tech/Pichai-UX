@@ -212,13 +212,13 @@ input[type="radio"] {
    margin-right:4px;
    font: inherit;
    color: var(--primaryTextColor);
-   width: 40px;
-   height: 40px;
-
-   padding:4px;
+   width: 40px !important;
+   height: 40px !important;
 
    border-radius: 100%;
-   transform: translateY(-0.075em) scale(1);
+   border: 0.15em solid #fff;
+
+   transform: translateY(-0.075em);
 
    display: grid;
    place-content: center;
@@ -232,12 +232,12 @@ input[type="radio"] {
    margin-right:4px;
    font: inherit;
    color: var(--primaryTextColor);
-   width: 40px;
-   height: 40px;
+   width: 40px !important;
+   height: 40px !important;
    border-radius: 100%;
-   transform: translateY(-0.075em) scale(1);
+   border: 0.15em solid var(--primary);
 
-   padding:4px;
+   transform: translateY(-0.075em);
 
    display: grid;
    place-content: center;
