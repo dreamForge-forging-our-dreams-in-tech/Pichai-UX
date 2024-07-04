@@ -1,4 +1,5 @@
 function rgbaToHex(orig) {
+  console.log(orig)
       let rgb = orig.replace(/\s/g, '').match(/^rgba?\((\d+),(\d+),(\d+),?([^,\s)]+)?/i);
 
       let hex = rgb ?
