@@ -9,6 +9,7 @@
 @import "./template styles/login.css";
 @import "./lists.css";
 @import "./dropdowns.css";
+@import "./other.css";
 
 
 body, html {
