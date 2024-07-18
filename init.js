@@ -5,19 +5,27 @@ import { getListOfElements } from './utils/customeElementsDefine.js';
 
 import { optimizeTextColor } from './utils/extraFunctions.js';
 
+let i;
+
 class PichaiUX {
-    constructor(options = {
-        source: '#008dcd',
-        darkMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
-        overrideColorsOnScroll: true,
-        themedFavIcon: true,
-        extractionPosition: 0,
-        homeLink: window.location.href, // the link to where the user is send to when he presses the logo or title in the header.
-        loginDialog: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when clicking the log in button
-        accountMenu: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when the user is logged in and allows settings modifications, saving etc
-    }) {
-        this.options = options;
-        window['options'] = options;
+    constructor(options = {}) {
+        let opt = {
+            source: '#008dcd',
+            darkMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
+            overrideColorsOnScroll: true,
+            themedFavIcon: true,
+            extractionPosition: 0,
+            homeLink: window.location.href, // the link to where the user is send to when he presses the logo or title in the header.
+            loginDialog: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when clicking the log in button
+            accountMenu: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when the user is logged in and allows settings modifications, saving etc
+        };
+
+        for(i in options) {
+            opt[i] = options[i];
+        }
+
+        this.options = opt;
+        window['options'] = opt;
     }
 
     async initialize() {
