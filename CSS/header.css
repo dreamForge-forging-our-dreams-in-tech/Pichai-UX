@@ -11,6 +11,11 @@ header {
     flex-direction:row;
 }
 
+header a {
+    display:flex;
+    flex-direction:row;
+}
+
 x-icon {
     margin-top:auto;
     margin-bottom:auto;
