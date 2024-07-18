@@ -6,7 +6,7 @@ import { getListOfElements } from './utils/customeElementsDefine.js';
 import { optimizeTextColor } from './utils/extraFunctions.js';
 
 let i;
-indow['options'] = {};
+window['options'] = {};
 
 class PichaiUX {
     constructor(options = {}) {
