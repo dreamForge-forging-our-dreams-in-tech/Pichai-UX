@@ -1,28 +1,34 @@
 import { PichaiUX } from "./init.js";
 
-import './utils/customeElementsDefine.js';
+function checkFlag() {
+    if (window['options']) {
+        setTimeout(checkFlag, 100); // Check every 100 milliseconds
+    } else {
+        import './utils/customeElementsDefine.js';
 
-import './utils/global_vars.js';
-
-import './elements/images/logo.js';
-
-import './elements/text/title.js';
-
-import './elements/buttons/logIn.js';
-import './elements/buttons/profileDisplay.js';
-
-import './elements/navigation/viewpager.js';
-import './elements/navigation/tabbar.js';
-
-import './elements/dropdowns/accordion.js';
-
-import './elements/input/colorPicker.js';
-
-import './elements/templates/footer.js';
-import './elements/templates/header.js';
-import './elements/templates/login.js';
-import './elements/templates/accountDrawer.js';
-
-import './utils/localFOrage.js';
+        import './utils/global_vars.js';
+        
+        import './elements/images/logo.js';
+        
+        import './elements/text/title.js';
+        
+        import './elements/buttons/logIn.js';
+        import './elements/buttons/profileDisplay.js';
+        
+        import './elements/navigation/viewpager.js';
+        import './elements/navigation/tabbar.js';
+        
+        import './elements/dropdowns/accordion.js';
+        
+        import './elements/input/colorPicker.js';
+        
+        import './elements/templates/footer.js';
+        import './elements/templates/header.js';
+        import './elements/templates/login.js';
+        import './elements/templates/accountDrawer.js';
+        
+        import './utils/localFOrage.js';
+    }
+}
 
 export { PichaiUX };
