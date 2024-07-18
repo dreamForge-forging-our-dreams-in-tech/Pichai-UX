@@ -18,6 +18,8 @@ header a {
     margin-top:auto;
     margin-bottom:auto;
     margin-left:8px;
+
+    text-decoration:none;
 }
 
 x-icon {
