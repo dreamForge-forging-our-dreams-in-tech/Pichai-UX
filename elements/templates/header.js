@@ -8,8 +8,10 @@ class Header extends HTMLElement {
 
     async connectedCallback() {
         this.innerHTML = `<header>
+        <a href='` + window.options.homeLink + `'>
         <x-icon></x-icon>
         <x-title></x-title>
+        </a>
         <log-in></log-in>
         <display-profile></display-profile>
     </header>`;

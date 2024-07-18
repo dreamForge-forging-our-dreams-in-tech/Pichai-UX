@@ -12,6 +12,7 @@ class PichaiUX {
         overrideColorsOnScroll: true,
         themedFavIcon: true,
         extractionPosition: 0,
+        homeLink: window.location.href, // the link to where the user is send to when he presses the logo or title in the header.
         loginDialog: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when clicking the log in button
         accountMenu: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when the user is logged in and allows settings modifications, saving etc
     }) {
