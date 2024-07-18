@@ -7,20 +7,28 @@ class Header extends HTMLElement {
     }
 
     async connectedCallback() {
-        let int = window.setInterval(() => {
-            if (window['options'].homeLink) {
-                this.innerHTML = `<header>
-                <a href='` + window['options'].homeLink + `'>
-                <x-icon></x-icon>
-                <x-title></x-title>
-                </a>
-                <log-in></log-in>
-                <display-profile></display-profile>
-                </header>`;
-                clearInterval(int);
-            }
-        })
+        this.innerHTML = `<header>
+        ` + addHomeLink() + `
+        <log-in></log-in>
+        <display-profile></display-profile>
+        </header>`;
+
     }
+}
+
+function addHomeLink() {
+    let int = window.setInterval(() => {
+        if (!window['options'].homeLink === '') {
+            clearInterval(int);
+            return `<a href='` + window['options'].homeLink + `'>
+        <x-icon></x-icon>
+        <x-title></x-title>
+        </a>`
+        } else {
+            return `<x-icon></x-icon>
+            <x-title></x-title>`
+        }
+    }, 1);
 }
 
 registry.define("template-header", Header);
