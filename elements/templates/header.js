@@ -18,20 +18,21 @@ class Header extends HTMLElement {
 
 function addHomeLink() {
     return new Promise((resolve) => {
-    let int = window.setInterval(() => {
-        if (!window['options'].homeLink === '') {
-            clearInterval(int);
-            resolve(`<a href='` + window['options'].homeLink + `'>
+        let int = window.setInterval(() => {
+            if (window['options'].homeLink === '') {
+                clearInterval(int);
+                resolve(`<x-icon></x-icon>
+            <x-title></x-title>`);
+
+            } else {
+                clearInterval(int);
+                resolve(`<a href='` + window['options'].homeLink + `'>
         <x-icon></x-icon>
         <x-title></x-title>
         </a>`);
-        } else {
-            clearInterval(int);
-            resolve(`<x-icon></x-icon>
-            <x-title></x-title>`);
-        }
-    }, 1);
-});
+            }
+        }, 1);
+    });
 }
 
 registry.define("template-header", Header);
