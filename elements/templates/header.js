@@ -8,7 +8,7 @@ class Header extends HTMLElement {
 
     async connectedCallback() {
         this.innerHTML = `<header>
-        ` + addHomeLink() + `
+        ` + await addHomeLink() + `
         <log-in></log-in>
         <display-profile></display-profile>
         </header>`;
@@ -17,18 +17,21 @@ class Header extends HTMLElement {
 }
 
 function addHomeLink() {
+    return new Promise((resolve) => {
     let int = window.setInterval(() => {
         if (!window['options'].homeLink === '') {
             clearInterval(int);
-            return `<a href='` + window['options'].homeLink + `'>
+            resolve(`<a href='` + window['options'].homeLink + `'>
         <x-icon></x-icon>
         <x-title></x-title>
-        </a>`
+        </a>`);
         } else {
-            return `<x-icon></x-icon>
-            <x-title></x-title>`
+            clearInterval(int);
+            resolve(`<x-icon></x-icon>
+            <x-title></x-title>`);
         }
     }, 1);
+});
 }
 
 registry.define("template-header", Header);
