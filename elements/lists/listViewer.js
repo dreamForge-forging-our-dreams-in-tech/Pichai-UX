@@ -1,6 +1,6 @@
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 
-const click = new Event("click"); //fires when an item in the listViewer is clicked, returns the text of the clicked item.
+const click = new Event("itemSelected"); //fires when an item in the listViewer is clicked, returns the text of the clicked item.
 
 // Create a class for the <log-in> element
 class ListViewer extends HTMLElement {
