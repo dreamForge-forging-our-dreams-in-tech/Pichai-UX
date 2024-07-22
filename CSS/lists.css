@@ -65,12 +65,13 @@ li.black:nth-child(7n+7){
 
 list-viewer {
    padding:8px !important;
-   
+
    display:block;
 }
 
 list-viewer li {
-   width:100%;
+   width:100% !important;
+   text-align:left;
 }
 
 list-viewer li {
