@@ -63,6 +63,16 @@ li.black:nth-child(7n+7){
    list-style-image: url('../assets/shapes/heart_black.svg');
 }
 
+list-viewer {
+   padding:8px !important;
+   
+   display:block;
+}
+
+list-viewer li {
+   width:100%;
+}
+
 list-viewer li {
    color:var(--primaryContainerTextColor);
    
