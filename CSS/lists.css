@@ -70,7 +70,7 @@ list-viewer {
 }
 
 list-viewer li {
-   width:calc(100% - 16px) !important;
+   width:calc(100% - 32px) !important;
    text-align:left;
 }
 

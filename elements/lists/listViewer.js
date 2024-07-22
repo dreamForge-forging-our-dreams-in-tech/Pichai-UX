@@ -22,6 +22,10 @@ class ListViewer extends HTMLElement {
         for(i of this.children) { // adds a click event to the list items and ensures that the right value is returned
             console.log(i);
         }
+
+        this.addEventListener('click', function (e) {
+            console.log(this.target.innerHTML);
+        });
     }
 }
 
