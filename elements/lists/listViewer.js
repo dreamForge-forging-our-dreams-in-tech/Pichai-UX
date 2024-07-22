@@ -12,14 +12,21 @@ class ListViewer extends HTMLElement {
      * Display items underneath each other.
     */
 
+    static observedAttributes = ["value"]; // add a value attribute to let the developer update the selected item when it for example has the wrong value.
+
     constructor() {
         super();
     }
 
     connectedCallback() {
         this.addEventListener('click', function (e) { // adds a click event to the list items and ensures that the right value is returned
-            console.log(e.target.innerHTML);
+            this.setAttribute('value', e.target.innerHTML);
+            this.dispatchEvent(click); // dispatches the click event only when it's clicked and not when the value is manually changed by the developer.
         });
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        doAttributeCheck('string', 'value', this.getAttribute('value'));
     }
 }
 
