@@ -17,13 +17,7 @@ class ListViewer extends HTMLElement {
     }
 
     connectedCallback() {
-        let i;
-
-        for(i of this.children) { // adds a click event to the list items and ensures that the right value is returned
-            console.log(i);
-        }
-
-        this.addEventListener('click', function (e) {
+        this.addEventListener('click', function (e) { // adds a click event to the list items and ensures that the right value is returned
             console.log(e.target.innerHTML);
         });
     }
