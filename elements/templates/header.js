@@ -17,7 +17,7 @@ class Header extends HTMLElement {
 
     }
 
-    attributeChangedCallback(name, oldValue, newValue) {
+    async attributeChangedCallback(name, oldValue, newValue) {
         doAttributeCheck('boolean', 'logIn', this.getAttribute('logIn'));
 
         this.innerHTML = '';
