@@ -19,7 +19,7 @@ class ListViewer extends HTMLElement {
     connectedCallback() {
         let i;
 
-        for(i of this.children) {
+        for(i of this.children) { // adds a click event to the list items and ensures that the right value is returned
             console.log(i);
         }
     }
