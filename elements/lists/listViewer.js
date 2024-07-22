@@ -17,6 +17,11 @@ class ListViewer extends HTMLElement {
     }
 
     connectedCallback() {
+        let i;
+
+        for(i of this.children) {
+            console.log(i);
+        }
     }
 }
 
