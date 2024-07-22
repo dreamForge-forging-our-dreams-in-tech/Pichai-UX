@@ -15,7 +15,8 @@ class ColorPicker extends HTMLElement {
 */
 
     /** @usage 
-     * When the user needs to select a color
+     * When the user needs to select a color.
+     * When a color input is required.
      * 
      * **Note: when setting the color picker value make sure it is the same as the outputtype **
     */
