@@ -24,7 +24,7 @@ class ListViewer extends HTMLElement {
         }
 
         this.addEventListener('click', function (e) {
-            console.log(this.target.innerHTML);
+            console.log(e.target.innerHTML);
         });
     }
 }
