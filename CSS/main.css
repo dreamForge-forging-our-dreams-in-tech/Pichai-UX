@@ -130,5 +130,6 @@ a {
 }
 
 *:empty:not(:focus):before {
-    content: attr(placeholder)
+    content: attr(placeholder);
+    opacity: 0.8;
   }
