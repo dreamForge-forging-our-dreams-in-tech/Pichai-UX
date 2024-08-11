@@ -128,3 +128,7 @@ label {
 a {
     text-decoration:none;
 }
+
+*:empty:not(:focus):before {
+    content: attr(placeholder)
+  }
