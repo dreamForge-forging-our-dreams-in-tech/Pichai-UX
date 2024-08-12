@@ -134,3 +134,7 @@ a {
 
     font-size:14px;
   }
+
+  *:disabled {
+    opacity:0.6
+  }
