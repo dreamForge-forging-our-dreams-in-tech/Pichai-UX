@@ -12,13 +12,25 @@ class ListViewer extends HTMLElement {
      * Display items underneath each other.
     */
 
-    static observedAttributes = ["value"]; // add a value attribute to let the developer update the selected item when it for example has the wrong value.
+    static observedAttributes = ["value", "actionButton"]; // add a value attribute to let the developer update the selected item when it for example has the wrong value.
+    //actionButton allows the developer to add an item to the end of the list item e.g. an arrow, leave empty to have none
 
     constructor() {
         super();
     }
 
     connectedCallback() {
+        let i;
+
+        if (this.getAttribute('actionButton') == '') { } else {
+            for (i of this.children) {
+                let button = document.createElement('button');
+                button.innerHTML = this.getAttribute('actionButton');
+
+                i.appendChild(button);
+            }
+        }
+
         this.addEventListener('click', function (e) { // adds a click event to the list items and ensures that the right value is returned
             this.setAttribute('value', e.target.innerHTML);
             this.dispatchEvent(click); // dispatches the click event only when it's clicked and not when the value is manually changed by the developer.
