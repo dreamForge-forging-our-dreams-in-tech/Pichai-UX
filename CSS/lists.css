@@ -70,11 +70,6 @@ list-viewer {
 }
 
 list-viewer li {
-   width:calc(100% - 32px) !important;
-   text-align:left;
-}
-
-list-viewer li {
    color:var(--primaryContainerTextColor);
    
    border-radius:10px;
@@ -85,7 +80,10 @@ list-viewer li {
 
    padding:8px;
 
-   width:max-content;
+   margin-bottom:8px;
+
+   width:calc(100% - 32px) !important;
+   text-align:left;
 }
 
 list-viewer li::marker {
