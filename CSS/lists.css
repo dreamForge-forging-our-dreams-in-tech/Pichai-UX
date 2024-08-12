@@ -84,6 +84,18 @@ list-viewer li {
 
    width:calc(100% - 32px) !important;
    text-align:left;
+
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+
+list-viewer li .actionButton {
+   height:100%;
+
+   color:var(--primaryTextColor);
+
+   border-radius:10px;
 }
 
 list-viewer li::marker {
