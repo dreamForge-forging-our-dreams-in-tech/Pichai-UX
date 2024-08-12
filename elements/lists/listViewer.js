@@ -22,7 +22,7 @@ class ListViewer extends HTMLElement {
     connectedCallback() {
         let i;
 
-        if (this.getAttribute('actionButton') == '') { } else {
+        if (this.getAttribute('actionButton') == '' || this.hasAttribute('actionButton')) { } else {
             for (i of this.children) {
                 let button = document.createElement('button');
                 button.innerHTML = this.getAttribute('actionButton');
