@@ -33,8 +33,7 @@ class ListViewer extends HTMLElement {
         }
 
         this.addEventListener('click', function (e) { // adds a click event to the list items and ensures that the right value is returned
-            console.log(e.target.innerHTML)
-            this.setAttribute('value', e.target.innerHTML);
+            this.setAttribute('value', e.target.id);
             this.dispatchEvent(click); // dispatches the click event only when it's clicked and not when the value is manually changed by the developer.
         });
     }
