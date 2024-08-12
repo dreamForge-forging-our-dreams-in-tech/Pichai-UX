@@ -96,6 +96,8 @@ list-viewer li .actionButton {
    color:var(--primaryTextColor);
 
    border-radius:10px;
+
+   pointer-events: none;
 }
 
 list-viewer li::marker {
