@@ -54,7 +54,6 @@ class ColorPicker extends HTMLElement {
         doAttributeCheck('boolean', 'alpha', this.getAttribute('alpha'));
 
         let prev = this.getElementsByClassName('displayColor');
-        console.log(prev)
         optimizeTextColor(prev[0].parentNode);
 
         if (name === 'outputtype') {
@@ -67,12 +66,9 @@ class ColorPicker extends HTMLElement {
 
             updateColors(this, prev[0].style.backgroundColor); // use backgroundColor so we dont need to use conversion functions for colors and can just make the code les mumbo jumbo
 
-            //if (oldValue != newValue) {
-            //    updateToOutputType(this);
-
                 this.setAttribute('previousvalue', oldValue);
                 this.dispatchEvent(change);
-            //}
+                console.log(test)
         }
 
         if (name === 'previousvalue') {
@@ -323,7 +319,6 @@ function updateToOutputType(el,val) {
         el.setAttribute('value', val);
     } else if (type == 'hex') {
         el.setAttribute('value', rgbaToHex(val));
-        console.log(rgbaToHex(val))
     } else if(type == 'hsl') {
         el.setAttribute('value', RGBToHSL(val));
     } else if(type == 'cmyk') {
