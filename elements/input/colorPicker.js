@@ -6,7 +6,7 @@ import { optimizeTextColor } from '../../utils/extraFunctions.js';
 
 import { rgbaToHex, rgbToCmyk, RGBToHSL } from '../../utils/color/converters.js';
 
-const change = new Event("changedColor"); // new change event for the color picker, fires when the color has changed and is done converting to the right output color.
+const change = new Event("changed"); // new change event for the color picker, fires when the color has changed and is done converting to the right output color.
 
 // Create a class for the element
 class ColorPicker extends HTMLElement {
@@ -262,7 +262,7 @@ function createSlider(value, el) {
     slider.max = value === 'a' ? 1 : 255;
     slider.id = value;
 
-    slider.addEventListener('change', function () {
+    slider.addEventListener('focusout', function () {
         let r = document.getElementById('r').value;
         let g = document.getElementById('g').value;
         let b = document.getElementById('b').value;
