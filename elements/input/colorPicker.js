@@ -262,7 +262,7 @@ function createSlider(value, el) {
     slider.max = value === 'a' ? 1 : 255;
     slider.id = value;
 
-    slider.addEventListener('focusout', function () {
+    slider.addEventListener('focusout', function () { //uses focusout to avoid multiple calls of the change event
         let r = document.getElementById('r').value;
         let g = document.getElementById('g').value;
         let b = document.getElementById('b').value;
