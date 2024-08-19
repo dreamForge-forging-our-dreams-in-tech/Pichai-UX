@@ -216,7 +216,7 @@ input[type="checkbox"] {
    width: 15px !important;
    height: 15px !important;
 
-   border-radius: 10px;
+   border-radius: 7px;
    border: 0.15em solid #fff;
 
    transform: translateY(-0.1em);
@@ -233,7 +233,7 @@ input[type="checkbox"] {
    color: var(--primaryTextColor);
    width: 15px !important;
    height: 15px !important;
-   border-radius: 10px;
+   border-radius: 7px;
    border: 0.15em solid var(--primary);
 
    transform: translateY(-0.1em);
