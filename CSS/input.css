@@ -240,12 +240,7 @@ input[type="checkbox"] {
 
    display: grid;
    place-content: center;
- }
 
- input[type="checkbox"]::before {
-   border: 0.15em solid var(--primaryContainer);
- 
-   transform-origin: bottom left;
    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
  }
 
