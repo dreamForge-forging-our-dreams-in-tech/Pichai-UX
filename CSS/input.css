@@ -242,6 +242,13 @@ input[type="checkbox"] {
    place-content: center;
  }
 
+ input[type="checkbox"]::before {
+   /* ...existing styles */
+ 
+   transform-origin: bottom left;
+   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+ }
+
 input[type="radio"] {
    -webkit-appearance: none;
    appearance: none;
