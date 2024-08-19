@@ -206,6 +206,45 @@ color-picker h4 {
    background-color: var(--primary);
 }
 
+input[type="checkbox"] {
+   -webkit-appearance: none;
+   appearance: none;
+   background-color: #fff;
+   margin: 0;
+   margin-right:8px;
+   font: inherit;
+   color: var(--primaryTextColor);
+   width: 15px !important;
+   height: 15px !important;
+
+   border-radius: 3px;
+   border: 0.15em solid #fff;
+
+   transform: translateY(-0.1em);
+
+   display: grid;
+   place-content: center;
+ }
+ 
+ input[type="checkbox"]:checked {
+   -webkit-appearance: none;
+   appearance: none;
+   background-color: var(--primary);
+   margin: 0;
+   margin-right:8px;
+   font: inherit;
+   color: var(--primaryTextColor);
+   width: 15px !important;
+   height: 15px !important;
+   border-radius: 3px;
+   border: 0.15em solid var(--primary);
+
+   transform: translateY(-0.1em);
+
+   display: grid;
+   place-content: center;
+ }
+
 input[type="radio"] {
    -webkit-appearance: none;
    appearance: none;
