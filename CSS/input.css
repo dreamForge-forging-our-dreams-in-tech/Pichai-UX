@@ -226,8 +226,7 @@ input[type="checkbox"] {
  }
  
  input[type="checkbox"]:checked {
-   -webkit-appearance: none;
-   appearance: none;
+
    border: 0.15em solid var(--primary);
    margin: 0;
    font: inherit;
