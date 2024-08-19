@@ -19,6 +19,7 @@ const trainingData = [
   { input: { r: 0.6, g: 0, b: 0.5 }, output: { purple: 1 } },
   { input: { r: 1, g: 0.5, b: 1 }, output: { violet: 1 } },
   { input: { r: 0, g: 0.9, b: 0.8 }, output: { lightblue: 1 } },
+  { input: { r: 0, g: 1.0, b: 1.0 }, output: { lightblue: 1 } },
   { input: { r: 0, g: 0.8, b: 0 }, output: { gold: 1 } },
   { input: { r: 0, g: 1, b: 0 }, output: { lime: 1 } },
   { input: { r: 0.1, g: 0.1, b: 0.1 }, output: { aqua: 1 } },
