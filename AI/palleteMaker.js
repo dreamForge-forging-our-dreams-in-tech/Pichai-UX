@@ -98,6 +98,23 @@ function generateContainerColor (colors) {
     return newColors;
 }
 
+function generateSignColors (hues, color) { // generateaa additional colors with the given hue mixed with the the given main color
+    let i;
+    let newColors = [];
+
+        let hsl = RGBToHSL(color).split(',');
+
+        let s = hsl[1] + '%';
+        let l = String(Number(hsl[2])) + '%';
+
+        for(i of hues) {
+            let h = i;
+            newColors.push([h,s,l]); 
+        }
+
+    return newColors;
+}
+
 function generateContainerTextColor (colors) {
     let i;
     let newColors = [];
@@ -137,6 +154,13 @@ async function generate3ColorPallete(options) {
         root.style.setProperty('--primaryContainerTextColor', `${getTextColor(textColors[position])}`);
         root.style.setProperty('--secondairyContainerTextColor', `${getTextColor(textColors[position + 4])}`);
         root.style.setProperty('--tertiaryContainerTextColor', `${getTextColor(textColors[position + 9])}`);
+
+        let signColors = generateSignColors([0, 61, 238, 131], colors[0]);
+        
+        root.style.setProperty('--error', `hsl(${signColors[0].toString()})`);
+        root.style.setProperty('--warning', `hsl(${signColors[1].toString()})`);
+        root.style.setProperty('--note', `hsl(${signColors[2].toString()})`);
+        root.style.setProperty('--check', `hsl(${signColors[3].toString()})`);
 }
 
 export { generate3ColorPallete };
