@@ -156,11 +156,18 @@ async function generate3ColorPallete(options) {
         root.style.setProperty('--tertiaryContainerTextColor', `${getTextColor(textColors[position + 9])}`);
 
         let signColors = generateSignColors([0, 61, 238, 131], colors[0]);
-        
+
         root.style.setProperty('--error', `hsl(${signColors[0].toString()})`);
         root.style.setProperty('--warning', `hsl(${signColors[1].toString()})`);
         root.style.setProperty('--note', `hsl(${signColors[2].toString()})`);
         root.style.setProperty('--check', `hsl(${signColors[3].toString()})`);
+
+        let signTextColors = generateContainerTextColor(signColors);
+
+        root.style.setProperty('--errorTextColor', `${getTextColor(signTextColors[0])}`);
+        root.style.setProperty('--warningTextColor', `${getTextColor(signTextColors[1])}`);
+        root.style.setProperty('--noteTextColor', `${getTextColor(signTextColors[2])}`);
+        root.style.setProperty('--checkTextColor', `${getTextColor(signTextColors[3])}`);
 }
 
 export { generate3ColorPallete };
