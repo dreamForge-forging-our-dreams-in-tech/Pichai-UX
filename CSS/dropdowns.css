@@ -54,5 +54,5 @@ accordion-dropdown article {
 }
 
 .accordionItems * {
-    width:max-content;
+    width: calc(100% - 8px);
 }
