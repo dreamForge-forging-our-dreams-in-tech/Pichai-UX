@@ -52,3 +52,7 @@ accordion-dropdown article {
     background-color: var(--primaryContainer);
     color: var(--primaryContainerTextColor);
 }
+
+.accordionItems * {
+    width:max-content;
+}

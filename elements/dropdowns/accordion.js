@@ -26,6 +26,7 @@ class Accordion extends HTMLElement {
 
         art.style.height = '0px';
         content.classList.add('hidden');
+        content.classList.add('accordionItems');
         this.classList.add('hiddenAccordion');
 
         let arrow = document.createElement('i');
