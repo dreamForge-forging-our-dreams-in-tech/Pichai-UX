@@ -87,8 +87,7 @@ function generateContainerColor (colors) {
     let newColors = [];
 
     for(i of colors) {
-        console.log(i)
-        let hsl = Array.isArray(i) ? i : RGBToHSL(i).split(',');;
+        let hsl = String(i[2]).includes('%') ? i : RGBToHSL(i).split(',');;
         let h = hsl[0];
         let s = parseInt(hsl[1]) + '%';
         let l = String(parseInt(hsl[2]) + 20) + '%';

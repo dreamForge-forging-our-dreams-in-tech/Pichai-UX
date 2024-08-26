@@ -5,13 +5,12 @@
 }
 
 .sign label {
-    flex:0;
+    text-align:right;
 
     margin-right:8px;
 }
 
 .sign .title {
-    flex:1;
 
     text-align:left;
 }
@@ -23,6 +22,8 @@
 }
 
 .signHolder {
+    width:100%;
+
     flex-direction:row;
     align-items:center;
 
