@@ -39,7 +39,9 @@ class Note extends HTMLElement {
 
         let msg = document.createElement('label');
         msg.classList.add('msg');
-        msg.innerHTML = this.innerHTML;
+        msg.innerHTML = `${this.innerHTML}: `;
+
+        this.innerHTML = '';
 
         note.append(msg);
         this.append(note);
