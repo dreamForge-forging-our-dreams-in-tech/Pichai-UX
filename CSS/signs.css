@@ -1,5 +1,7 @@
 .sign {
     flex-direction:column;
+
+    padding:8px;
 }
 
 .sign label {
@@ -25,6 +27,8 @@
 
     margin-top:0px;
     padding:0px;
+
+    margin-bottom:8px;
 }
 
 .note {
