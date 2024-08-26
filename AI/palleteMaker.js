@@ -90,8 +90,8 @@ function generateContainerColor (colors) {
         console.log(i)
         let hsl = Array.isArray(i) ? i : RGBToHSL(i).split(',');;
         let h = hsl[0];
-        let s = hsl[1] + '%';
-        let l = String(Number(hsl[2]) + 20) + '%';
+        let s = parseInt(hsl[1]) + '%';
+        let l = String(parseInt(hsl[2]) + 20) + '%';
 
         newColors.push([h,s,l]);
     }
