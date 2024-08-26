@@ -3,7 +3,7 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 const click = new Event("itemSelected"); //fires when an item in the listViewer is clicked, returns the text of the clicked item. Uses custom name because click is used by js 
 
 // Create a class for the <note> element
-class Note extends HTMLElement {
+class Warn extends HTMLElement {
     /** @description 
     * The information element displays a message for the user to read, it can give tips or bits of information
     */
@@ -52,4 +52,4 @@ class Note extends HTMLElement {
     }
 }
 
-registry.define("info-note", Note);  
+registry.define("warning-note", Warn);  

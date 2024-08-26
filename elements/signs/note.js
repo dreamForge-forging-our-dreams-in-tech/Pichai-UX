@@ -1,7 +1,5 @@
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 
-const click = new Event("itemSelected"); //fires when an item in the listViewer is clicked, returns the text of the clicked item. Uses custom name because click is used by js 
-
 // Create a class for the <note> element
 class Note extends HTMLElement {
     /** @description 
