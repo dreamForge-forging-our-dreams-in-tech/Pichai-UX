@@ -1,3 +1,16 @@
+@import "../CSS/icons/all.css";
+@import "./header.css";
+@import "./text.css";
+@import "./buttons.css";
+@import "./card.css";
+@import "./navigation.css";
+@import "./input.css";
+@import "./footer.css";
+@import "./template styles/login.css";
+@import "./lists.css";
+@import "./dropdowns.css";
+@import "./other.css";
+
 body,
 html {
     width: 100%;
@@ -125,16 +138,3 @@ a {
 *:disabled {
     opacity: 0.6
 }
-
-@import "../CSS/icons/all.css";
-@import "./header.css";
-@import "./text.css";
-@import "./buttons.css";
-@import "./card.css";
-@import "./navigation.css";
-@import "./input.css";
-@import "./footer.css";
-@import "./template styles/login.css";
-@import "./lists.css";
-@import "./dropdowns.css";
-@import "./other.css";
