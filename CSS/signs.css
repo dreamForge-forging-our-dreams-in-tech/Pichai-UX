@@ -1,34 +1,36 @@
-.note {
-    background-color:var(--note);
+.sign {
     flex-direction:column;
 }
 
-.note label {
+.sign label {
     flex:0;
-
-    color:var(--noteTextColor);
 }
 
-.note .title {
+.sign .title {
     flex:1;
 
     text-align:left;
-
-    background-color:var(--note);
 }
 
-.note .msg {
-    background-color:var(--note);
+.sign .msg {
     font-size:16px;
 
     text-align:left;
 }
 
-.noteHolder {
+.signHolder {
     flex-direction:row;
     align-items:center;
     background-color:TRANSPARENT;
 
     margin-top:0px;
     padding:0px;
+}
+
+.note {
+    background-color:var(--note);
+}
+
+.note label {
+    color:var(--noteTextColor);
 }
