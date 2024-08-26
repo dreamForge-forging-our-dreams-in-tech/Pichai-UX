@@ -21,6 +21,9 @@ import './elements/input/colorPicker.js';
 import './elements/lists/listViewer.js';
 
 import './elements/signs/note.js';
+import './elements/signs/warning.js';
+import './elements/signs/error.js';
+import './elements/signs/check.js';
 
 import './elements/templates/footer.js';
 import './elements/templates/header.js';
