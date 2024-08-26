@@ -1,10 +1,8 @@
-
-
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 
 const click = new Event("itemSelected"); //fires when an item in the listViewer is clicked, returns the text of the clicked item. Uses custom name because click is used by js 
 
-// Create a class for the <log-in> element
+// Create a class for the <note> element
 class Note extends HTMLElement {
     /** @description 
     * THe note element displays a message for the user to read, it can give tips or bits of information
