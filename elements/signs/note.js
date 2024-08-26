@@ -50,4 +50,4 @@ class Note extends HTMLElement {
     }
 }
 
-registry.define("information", Note);  
+registry.define("info-note", Note);  
