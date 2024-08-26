@@ -14,7 +14,7 @@ class Note extends HTMLElement {
      * information or tip sharing
     */
 
-    static observedAttributes = ["titleText", "messageText"];
+    static observedAttributes = ["titleText"];
 
     constructor() {
         super();
@@ -41,7 +41,7 @@ class Note extends HTMLElement {
 
         let msg = document.createElement('label');
         msg.classList.add('msg');
-        msg.innerHTML = this.getAttribute('messageText');
+        msg.innerHTML = this.innerHTML;
 
         note.append(msg);
         this.append(note);
@@ -49,7 +49,6 @@ class Note extends HTMLElement {
 
     attributeChangedCallback(name, oldValue, newValue) {
         doAttributeCheck('string', 'titleText', this.getAttribute('titleText'));
-        doAttributeCheck('string', 'messageText', this.getAttribute('messageText'));
     }
 }
 
