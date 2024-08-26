@@ -1,15 +1,15 @@
 accordion-dropdown h5 {
     width: 100%;
-    height:max-content !important;
+    height:max-content;
 
     border-radius: 200px;
 
     background-color: var(--primary);
     color: var(--primaryTextColor);
 
-    padding: 3px 3px 3px 8px !important;
+    padding: 3px 3px 3px 8px ;
 
-    margin-left: 2.5px !important;
+    margin-left: 2.5px;
 
     display: flex;
     flex-direction: row;
@@ -28,7 +28,7 @@ accordion-dropdown h5 i {
 
     margin-left: auto;
 
-    width: max-content !important;
+    width: max-content;
 }
 
 accordion-dropdown {
@@ -41,7 +41,7 @@ accordion-dropdown * {
 }
 
 accordion-dropdown article * {
-    width: 100% !important;
+    width: 100%;
 }
 
 accordion-dropdown article {
