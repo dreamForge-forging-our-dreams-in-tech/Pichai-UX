@@ -33,7 +33,7 @@ class Note extends HTMLElement {
 
         let title = document.createElement('label');
         title.classList.add('title');
-        title.innerHTML = `${this.getAttribute('titleText')}: `;
+        title.innerHTML = this.getAttribute('titleText');
 
         holder.append(icon, title);
 
