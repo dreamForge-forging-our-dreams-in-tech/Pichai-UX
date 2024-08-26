@@ -20,6 +20,8 @@ import './elements/input/colorPicker.js';
 
 import './elements/lists/listViewer.js';
 
+import './elements/signs/note.js';
+
 import './elements/templates/footer.js';
 import './elements/templates/header.js';
 import './elements/templates/login.js';
