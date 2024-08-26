@@ -5,7 +5,7 @@ const click = new Event("itemSelected"); //fires when an item in the listViewer 
 // Create a class for the <note> element
 class Note extends HTMLElement {
     /** @description 
-    * THe note element displays a message for the user to read, it can give tips or bits of information
+    * The information element displays a message for the user to read, it can give tips or bits of information
     */
 
     /** @usage 
@@ -50,4 +50,4 @@ class Note extends HTMLElement {
     }
 }
 
-registry.define("note", Note);  
+registry.define("information", Note);  

@@ -34,3 +34,27 @@
 .note label {
     color:var(--noteTextColor);
 }
+
+.error {
+    background-color:var(--error);
+}
+
+.error label {
+    color:var(--errorTextColor);
+}
+
+.warning {
+    background-color:var(--warning);
+}
+
+.warning label {
+    color:var(--warningTextColor);
+}
+
+.check {
+    background-color:var(--check);
+}
+
+.check label {
+    color:var(--checkTextColor);
+}
