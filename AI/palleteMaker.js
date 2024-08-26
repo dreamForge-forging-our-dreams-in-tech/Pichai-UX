@@ -87,7 +87,7 @@ function generateContainerColor (colors) {
     let newColors = [];
 
     for(i of colors) {
-        let hsl = RGBToHSL(i).split(',');
+        let hsl = Array.isArray(i) ? i : RGBToHSL(i).split(',');;
         let h = hsl[0];
         let s = hsl[1] + '%';
         let l = String(Number(hsl[2]) + 20) + '%';
@@ -102,7 +102,7 @@ function generateSignColors (hues, color) { // generateaa additional colors with
     let i;
     let newColors = [];
 
-        let hsl = Array.isArray(color) ? color : RGBToHSL(color).split(',');
+        let hsl = RGBToHSL(color).split(',');
 
         let s = hsl[1] + '%';
         let l = String(Number(hsl[2])) + '%';
