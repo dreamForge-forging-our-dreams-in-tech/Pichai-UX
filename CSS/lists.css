@@ -64,7 +64,7 @@ li.black:nth-child(7n+7){
 }
 
 list-viewer {
-   padding:8px !important;
+   padding:8px;
 
    display:block;
 }
@@ -82,7 +82,7 @@ list-viewer li {
 
    margin-bottom:8px;
 
-   width:calc(100% - 32px) !important;
+   width:calc(100% - 32px);
    text-align:left;
 
    display: flex;
