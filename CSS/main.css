@@ -41,7 +41,8 @@ html {
 
     text-align: center;
 
-
+    width: max-content;
+    height: max-content;
 }
 
 li {
