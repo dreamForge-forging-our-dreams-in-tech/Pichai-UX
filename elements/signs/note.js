@@ -1,10 +1,4 @@
-<article class="card row settingsItem note">
-<article class="noteHolder">
-    <label class="material-symbols-outlined">info </label>
-    <label class="title">Text border color</label>
-</article>
-<label class="msg">message text</label>
-</article>
+
 
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 
