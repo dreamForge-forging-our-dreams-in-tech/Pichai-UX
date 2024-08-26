@@ -6,6 +6,8 @@
 
 .sign label {
     flex:0;
+
+    margin-right:8px;
 }
 
 .sign .title {
