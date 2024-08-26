@@ -45,7 +45,7 @@
 }
 
 .note .signHolder label {
-    background-color:var(--noteContainerTextColor);
+    color:var(--noteContainerTextColor);
 }
 
 .error {
