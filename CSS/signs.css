@@ -5,12 +5,15 @@
 }
 
 .sign label {
+    flex:1;
+
     text-align:right;
 
     margin-right:8px;
 }
 
 .sign .title {
+    flex:1;
 
     text-align:left;
 }
@@ -57,6 +60,14 @@
     color:var(--errorTextColor);
 }
 
+.error .signHolder {
+    background-color:var(--errorContainer);
+}
+
+.eroor .signHolder label {
+    color:var(--errorContainerTextColor);
+}
+
 .warning {
     background-color:var(--warning);
 }
@@ -65,10 +76,26 @@
     color:var(--warningTextColor);
 }
 
+.warning .signHolder {
+    background-color:var(--warningContainer);
+}
+
+.warning .signHolder label {
+    color:var(--warningContainerTextColor);
+}
+
 .check {
     background-color:var(--check);
 }
 
 .check label {
     color:var(--checkTextColor);
+}
+
+.check .signHolder {
+    background-color:var(--checkContainer);
+}
+
+.check .signHolder label {
+    color:var(--checkContainerTextColor);
 }
