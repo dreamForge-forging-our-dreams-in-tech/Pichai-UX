@@ -59,8 +59,8 @@ class PichaiUX {
             google.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
             google.media = 'all';
 
-            head.appendChild(google);
-            head.appendChild(link);
+            head.prepend(google);
+            head.prepend(link);
         }
 
         // generate pallete based on bg image
