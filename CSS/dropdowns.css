@@ -7,7 +7,7 @@ accordion-dropdown h5 {
     background-color: var(--primary);
     color: var(--primaryTextColor);
 
-    padding: 3px 3px 3px 8px ;
+
 
     margin-left: 2.5px;
 
@@ -54,5 +54,5 @@ accordion-dropdown article {
 }
 
 .accordionItems * {
-    width: calc(100% - 8px);
+    width: calc(100% - 16px);
 }
