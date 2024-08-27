@@ -1,12 +1,12 @@
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 
-class Warn extends HTMLElement {
+class Error extends HTMLElement {
     /** @description 
-    * The information element displays a message for the user to read, it can give tips or bits of information
+    * The error-note element displays a error message for the user to read.
     */
 
     /** @usage 
-     * information or tip sharing
+     * Displaying a critical error.
     */
 
     static observedAttributes = ["titleText"];
@@ -17,7 +17,7 @@ class Warn extends HTMLElement {
 
     connectedCallback() {
         let note = document.createElement('article');
-        note.classList.add('note', 'sign');
+        note.classList.add('error', 'sign');
 
         let holder = document.createElement('article');
         holder.classList.add('signHolder');
@@ -26,7 +26,7 @@ class Warn extends HTMLElement {
 
         let icon = document.createElement('label');
         icon.classList.add('material-symbols-outlined');
-        icon.innerHTML = 'info';
+        icon.innerHTML = 'error';
 
         let title = document.createElement('label');
         title.classList.add('title');
@@ -49,4 +49,4 @@ class Warn extends HTMLElement {
     }
 }
 
-registry.define("warning-note", Warn);  
+registry.define("error-note", Error);  

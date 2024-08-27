@@ -5,11 +5,11 @@ const click = new Event("itemSelected"); //fires when an item in the listViewer 
 // Create a class for the <note> element
 class Warn extends HTMLElement {
     /** @description 
-    * The information element displays a message for the user to read, it can give tips or bits of information
+    * The warning-note element displays a message for the user to read, the message is often a warning for the user to keep in mind
     */
 
     /** @usage 
-     * information or tip sharing
+     * Displaying an warning
     */
 
     static observedAttributes = ["titleText"];

@@ -3,13 +3,13 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 const click = new Event("itemSelected"); //fires when an item in the listViewer is clicked, returns the text of the clicked item. Uses custom name because click is used by js 
 
 // Create a class for the <note> element
-class Note extends HTMLElement {
+class Check extends HTMLElement {
     /** @description 
-    * The information element displays a message for the user to read, it can give tips or bits of information
+    * The check-note element displays a message for the user to read, the message tells the user something has been completed succesfully
     */
 
     /** @usage 
-     * information or tip sharing
+     * Display status of something.
     */
 
     static observedAttributes = ["titleText"];
@@ -20,7 +20,7 @@ class Note extends HTMLElement {
 
     connectedCallback() {
         let note = document.createElement('article');
-        note.classList.add('note', 'sign');
+        note.classList.add('check', 'sign');
 
         let holder = document.createElement('article');
         holder.classList.add('signHolder');
@@ -29,7 +29,7 @@ class Note extends HTMLElement {
 
         let icon = document.createElement('label');
         icon.classList.add('material-symbols-outlined');
-        icon.innerHTML = 'info';
+        icon.innerHTML = 'check';
 
         let title = document.createElement('label');
         title.classList.add('title');
@@ -52,4 +52,4 @@ class Note extends HTMLElement {
     }
 }
 
-registry.define("info-note", Note);  
+registry.define("check-note", Check);  

@@ -3,11 +3,11 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 // Create a class for the <note> element
 class Note extends HTMLElement {
     /** @description 
-    * The information element displays a message for the user to read, it can give tips or bits of information
+    * The info-note element displays a message for the user to read, it can give tips or bits of information
     */
 
     /** @usage 
-     * information or tip sharing
+     * Information or tip sharing
     */
 
     static observedAttributes = ["titleText"];
