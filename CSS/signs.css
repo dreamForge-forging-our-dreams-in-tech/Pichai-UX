@@ -64,7 +64,7 @@
     background-color:var(--errorContainer);
 }
 
-.eroor .signHolder label {
+.error .signHolder label {
     color:var(--errorContainerTextColor);
 }
 
