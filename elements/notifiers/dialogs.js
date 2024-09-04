@@ -13,9 +13,10 @@
 * You can call the showAsDialog function on all elements, using the setDialogMode attribute of the element allwos you to set how the element reacts and works with this function
 */
 
-function showAsDialog(clone, cancelable = true) {
+function showAsDialog(clone, cancelable = true) { // turns the element into a visible dialog
     let wrapper = document.createElement('article');
     wrapper.classList.add('dialogWrapper');
+    wrapper.id = `${this.id}Dialog`
 
     if (cancelable) {
         wrapper.addEventListener('click', function (e) {
@@ -37,6 +38,10 @@ function showAsDialog(clone, cancelable = true) {
     document.body.append(wrapper);
 }
 
+function hideDialog() { // hides the dialog created by a element.
+    document.getElementById(`${this.id}Dialog`).remove();
+}
+
 function setDialogMode(mode) { // sets the elements mode for a dialog pop-up
     this.dialogMode = mode;
     if (mode == 'clone') {
@@ -48,4 +53,5 @@ function setDialogMode(mode) { // sets the elements mode for a dialog pop-up
 
 // Attach the function to the HTMLElement prototype
 HTMLElement.prototype.showAsDialog = showAsDialog;
+HTMLElement.prototype.hideDialog = hideDialog;
 HTMLElement.prototype.dialogMode = setDialogMode; // can be either way clone to clone the element into a dialog or dialog wich hides the element and shows it in a dialog
