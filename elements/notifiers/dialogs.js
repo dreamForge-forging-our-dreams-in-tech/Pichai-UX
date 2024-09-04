@@ -17,17 +17,19 @@ function showAsDialog(clone, cancelable = true) {
     let wrapper = document.createElement('article');
     wrapper.classList.add('dialogWrapper');
 
-    if(cancelable) {
+    if (cancelable) {
         wrapper.addEventListener('click', function (e) {
-            e.stopPropagation();
-            this.remove();
+            if (e.target.classList.includes('dialogWrapper')) {
+                e.stopPropagation();
+                this.remove();
+            }
         });
     }
 
     let dialogForm = document.createElement('form'); // creates an input who it's value changes when the custom input element does
     dialogForm.classList.add('dialog');
 
-    let children = this.dialogMode == 'dialog' ?this : this.cloneNode(true);
+    let children = this.dialogMode == 'dialog' ? this : this.cloneNode(true);
     dialogForm.append(children);
 
     wrapper.append(dialogForm);
@@ -37,7 +39,7 @@ function showAsDialog(clone, cancelable = true) {
 
 function setDialogMode(mode) { // sets the elements mode for a dialog pop-up
     this.dialogMode = mode;
-    if(mode == 'clone') {
+    if (mode == 'clone') {
         this.style.removeProperty('display');
     } else {
         this.style.display = 'none';
