@@ -13,9 +13,16 @@
 * You can call the showAsDialog function on all elements, using the setDialogMode attribute of the element allwos you to set how the element reacts and works with this function
 */
 
-function showAsDialog(clone) {
+function showAsDialog(clone, cancelable = true) {
     let wrapper = document.createElement('article');
     wrapper.classList.add('dialogWrapper');
+
+    if(cancelable) {
+        wrapper.addEventListener('click', function (e) {
+            e.stopPropagation();
+            this.remove();
+        });
+    }
 
     let dialogForm = document.createElement('form'); // creates an input who it's value changes when the custom input element does
     dialogForm.classList.add('dialog');
