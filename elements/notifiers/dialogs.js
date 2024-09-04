@@ -19,7 +19,7 @@ function showAsDialog(clone, cancelable = true) {
 
     if (cancelable) {
         wrapper.addEventListener('click', function (e) {
-            if (e.target.classList.includes('dialogWrapper')) {
+            if (e.target.classList.contains('dialogWrapper')) {
                 e.stopPropagation();
                 this.remove();
             }
