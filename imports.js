@@ -31,6 +31,7 @@ import './elements/templates/login.js';
 import './elements/templates/accountDrawer.js';
 
 import './utils/localFOrage.js';
+import './utils/elements/supportForms.js';
 
 export { PichaiUX };
 
