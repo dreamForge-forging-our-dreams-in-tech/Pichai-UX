@@ -20,8 +20,10 @@ function showAsDialog(clone, cancelable = true) { // turns the element into a vi
 
     if (cancelable) {
         wrapper.addEventListener('click', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+
             if (e.target.classList.contains('dialogWrapper')) {
-                e.stopPropagation();
                 this.hideDialog();
             }
         });
@@ -29,6 +31,11 @@ function showAsDialog(clone, cancelable = true) { // turns the element into a vi
 
     let dialogForm = document.createElement('form'); // creates an input who it's value changes when the custom input element does
     dialogForm.classList.add('dialog');
+
+    dialogForm.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+    });
 
     let children = this.dialogMode == 'dialog' ? this : this.cloneNode(true);
     dialogForm.append(children);
