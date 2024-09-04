@@ -1,3 +1,8 @@
+.hiddenFormInput {
+   width:0px;
+   height:0px;
+}
+
 input,
 textarea {
    text-align: left;
