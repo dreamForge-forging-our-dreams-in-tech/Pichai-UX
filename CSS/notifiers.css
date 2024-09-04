@@ -16,7 +16,9 @@
 }
 
 .dialog {
+    padding:8px;
+    
     border-radius:15px;
 
-    background-color:var(--secondairy);
+    background-color:var(--tertiary);
 }
