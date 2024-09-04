@@ -16,13 +16,13 @@
 function showAsDialog(clone, cancelable = true) { // turns the element into a visible dialog
     let wrapper = document.createElement('article');
     wrapper.classList.add('dialogWrapper');
-    wrapper.id = `${this.id}Dialog`
+    wrapper.id = `${this.id}Dialog`;
 
     if (cancelable) {
-        wrapper.addEventListener('click', function (e) {
+        wrapper.addEventListener('click', (e) => {
             if (e.target.classList.contains('dialogWrapper')) {
                 e.stopPropagation();
-                this.remove();
+                this.hideDialog();
             }
         });
     }
