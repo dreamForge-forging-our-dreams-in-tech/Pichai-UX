@@ -4,5 +4,3 @@ function supportForm() {
 
 // Attach the function to the HTMLElement prototype
 HTMLElement.prototype.highlight = supportForm;
-
-export { supportForm }

@@ -6,7 +6,7 @@ import { optimizeTextColor } from '../../utils/extraFunctions.js';
 
 import { rgbaToHex, rgbToCmyk, RGBToHSL } from '../../utils/color/converters.js';
 
-import { supportForm } from '../../utils/elements/supportForms.js';
+import '../../utils/elements/supportForms.js';
 
 const change = new Event("change"); // new change event for the color picker, fires when the color has changed and is done converting to the right output color.
 
