@@ -11,6 +11,7 @@
 @import "./dropdowns.css";
 @import "./other.css";
 @import "./signs.css";
+@Import './notifiers.css';
 
 body,
 html {
