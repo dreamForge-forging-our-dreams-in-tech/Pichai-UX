@@ -11,6 +11,9 @@
 
     position:fixed;
     z-index: 9999009999999;
+
+    top:0px;
+    left:0px;
 }
 
 .dialog {

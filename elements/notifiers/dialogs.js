@@ -20,12 +20,16 @@ function showAsDialog(clone) {
     let dialogForm = document.createElement('form'); // creates an input who it's value changes when the custom input element does
     dialogForm.classList.add('dialog');
 
+    let children = this.dialogMode == 'clone' ? this.cloneNode(true) : this;
+    dialogForm.append(children);
+
     wrapper.append(dialogForm);
 
     document.body.append(wrapper);
 }
 
 function setDialogMode(mode) { // sets the elements mode for a dialog pop-up
+    this.dialogMode = mode;
     if(mode == 'clone') {
         this.style.removeProperty('display');
     } else {
