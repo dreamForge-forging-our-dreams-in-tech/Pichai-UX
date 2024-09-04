@@ -30,6 +30,8 @@ import './elements/templates/header.js';
 import './elements/templates/login.js';
 import './elements/templates/accountDrawer.js';
 
+import './elements/notifiers/dialogs.js';
+
 import './utils/localFOrage.js';
 import './utils/elements/supportForms.js';
 
