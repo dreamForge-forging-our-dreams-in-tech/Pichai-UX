@@ -13,10 +13,19 @@
 * You can call the showAsDialog function on all elements, using the setDialogMode attribute of the element allwos you to set how the element reacts and works with this function
 */
 
-function showAsDialog(clone, cancelable = true) { // turns the element into a visible dialog
+function showAsDialog(clone, cancelable = true, titleText = 'dialog') { // turns the element into a visible dialog
     let wrapper = document.createElement('article');
     wrapper.classList.add('dialogWrapper');
     wrapper.id = `${this.id}Dialog`;
+
+    let titleWrapper = document.createElement('article');
+    titleWrapper.classList.add('titleWrapper');
+
+    let title = document.createElement('h3');
+    title.classList.add('dialogTitle');
+    title.innerHTML = titleText;
+
+    tittleWrapper.append(title);
 
     if (cancelable) {
         wrapper.addEventListener('click', (e) => {
@@ -27,6 +36,12 @@ function showAsDialog(clone, cancelable = true) { // turns the element into a vi
                 this.hideDialog();
             }
         });
+
+        let closeButton = document.createElement('button');
+        closeButton.innerHTML = 'X';
+        closeButton.classList.add('closeDialogButton');
+
+        titleWrapper.append(closeButton);
     }
 
     let dialogForm = document.createElement('form'); // creates an input who it's value changes when the custom input element does
@@ -40,7 +55,7 @@ function showAsDialog(clone, cancelable = true) { // turns the element into a vi
     let children = this.dialogMode == 'dialog' ? this : this.cloneNode(true);
     dialogForm.append(children);
 
-    wrapper.append(dialogForm);
+    wrapper.append(titleWrapper, dialogForm); // append all items to the dialog wrapper
 
     document.body.append(wrapper);
 }
