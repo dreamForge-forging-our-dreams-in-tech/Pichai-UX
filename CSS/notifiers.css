@@ -25,18 +25,29 @@
 }
 
 .titleWrapper {
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    display:grid;
+    grid-template-columns: 1fr 1fr 41.6px;
+
+    grid-template-areas: title title close;
 }
 
 .closeDialogButton {
-    width:41.6px;
+    grid-area: close;
+
+    min-width:41.6px;
     height:41.6px;
 
     text-align: center;
 
     background-color:var(--error);
 
-    color:var(--errorTextColor)
+    color:var(--errorTextColor);
+
+    border-radius:10px;
+
+    margin-left:8px;
+}
+
+.dialogTitle {
+    grid-area:title;
 }
