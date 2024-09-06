@@ -59,7 +59,7 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
 
     document.body.append(wrapper);
 
-    let width = parseInt(window.getComputedStyle(dialogForm)['width']) + 16;
+    let width = parseInt(window.getComputedStyle(dialogForm)['width']) + 8; //sets the title width to the same width as the dialog
     titleWrapper.style.width = `${width}px`
 }
 
