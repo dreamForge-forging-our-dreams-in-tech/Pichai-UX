@@ -55,7 +55,7 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
     let children = this.dialogMode == 'dialog' ? this : this.cloneNode(true);
     dialogForm.append(children);
 
-    console.log(window.getComputedStyle(dialogForm)['width']);
+    console.log(window.getComputedStyle(dialogForm));
     titleWrapper.style.width = window.getComputedStyle(dialogForm)['width'];
 
     wrapper.append(titleWrapper, dialogForm); // append all items to the dialog wrapper
