@@ -28,7 +28,7 @@
     display:grid;
     grid-template-columns: 1fr 1fr 41.6px;
 
-    grid-template-areas: title title close;
+    grid-template-areas: 'title title close';
 }
 
 .closeDialogButton {
