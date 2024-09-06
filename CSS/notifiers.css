@@ -50,4 +50,6 @@
 
 .dialogTitle {
     grid-area:title;
+
+    width:calc(100% - 8px);
 }

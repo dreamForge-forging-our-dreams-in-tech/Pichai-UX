@@ -41,6 +41,13 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
         closeButton.innerHTML = 'X';
         closeButton.classList.add('closeDialogButton');
 
+        closeButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+
+            this.hideDialog();
+        });
+
         titleWrapper.append(closeButton);
     }
 
@@ -59,7 +66,7 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
 
     document.body.append(wrapper);
 
-    let width = parseInt(window.getComputedStyle(dialogForm)['width']) + 8; //sets the title width to the same width as the dialog
+    let width = parseInt(window.getComputedStyle(dialogForm)['width']) + 16; //sets the title width to the same width as the dialog
     titleWrapper.style.width = `${width}px`
 }
 
