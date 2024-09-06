@@ -48,7 +48,7 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
             this.hideDialog();
         });
 
-        titleWrapper.append(closeButton);
+        //titleWrapper.append(closeButton);
     }
 
     let dialogForm = document.createElement('form'); // creates an input who it's value changes when the custom input element does

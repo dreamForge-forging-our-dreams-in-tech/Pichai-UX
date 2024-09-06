@@ -24,18 +24,6 @@
     background-color:var(--tertiary);
 }
 
-.titleWrapper {
-    display:grid;
-    grid-template-columns: 1fr 1fr 41.6px;
-    gap:8px;
-
-    border-radius:10px;
-    background-color:var(--tertiary);
-    margin:8px;
-
-    grid-template-areas: 'title title close';
-}
-
 .closeDialogButton {
     grid-area: close;
 
