@@ -45,6 +45,20 @@
     border-radius:100px;
 }
 
+.submitDialogButton {
+    grid-area: close;
+
+    height:41.6px;
+
+    text-align: center;
+
+    background-color:var(--primary);
+
+    color:var(--primaryTextColor);
+
+    border-radius:100px;
+}
+
 .dialogTitle {
     grid-area:title;
 }
