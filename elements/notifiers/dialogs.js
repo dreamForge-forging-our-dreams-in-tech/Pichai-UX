@@ -25,7 +25,7 @@ function showAsDialog(clone, cancelable = true, titleText = 'dialog') { // turns
     title.classList.add('dialogTitle');
     title.innerHTML = titleText;
 
-    tittleWrapper.append(title);
+    titleWrapper.append(title);
 
     if (cancelable) {
         wrapper.addEventListener('click', (e) => {
