@@ -83,7 +83,8 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
     document.body.append(wrapper);
 
     let width = parseInt(window.getComputedStyle(dialogForm)['width']) + 16; //sets the title width to the same width as the dialog
-    titleWrapper.style.width = `${width}px`
+    titleWrapper.style.width = `${width}px`;
+    controlWrapper.style.width = `${width}px`;
 }
 
 function hideDialog() { // hides the dialog created by a element.
