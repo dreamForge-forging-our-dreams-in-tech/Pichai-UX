@@ -5,6 +5,7 @@
     background-color:rgba(0,0,0, 0.3);
 
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -30,8 +31,8 @@
 }
 
 .closeDialogButton {
-    width:50px;
-    height:50px;
+    width:41.6px;
+    height:41.6px;
 
     text-align: center;
 

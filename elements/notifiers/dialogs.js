@@ -13,7 +13,7 @@
 * You can call the showAsDialog function on all elements, using the setDialogMode attribute of the element allwos you to set how the element reacts and works with this function
 */
 
-function showAsDialog(clone, cancelable = true, titleText = 'dialog') { // turns the element into a visible dialog
+function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns the element into a visible dialog
     let wrapper = document.createElement('article');
     wrapper.classList.add('dialogWrapper');
     wrapper.id = `${this.id}Dialog`;
