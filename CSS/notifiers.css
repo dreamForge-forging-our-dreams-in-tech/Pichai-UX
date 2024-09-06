@@ -24,10 +24,16 @@
     background-color:var(--tertiary);
 }
 
+.titleWrapper {
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-end;
+    gap:8px;
+}
+
 .closeDialogButton {
     grid-area: close;
 
-    min-width:41.6px;
     height:41.6px;
 
     text-align: center;

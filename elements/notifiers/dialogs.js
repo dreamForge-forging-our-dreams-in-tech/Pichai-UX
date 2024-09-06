@@ -18,6 +18,22 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
     wrapper.classList.add('dialogWrapper');
     wrapper.id = `${this.id}Dialog`;
 
+    let controlWrapper = document.createElement('article');
+    controlWrapper.classList.add('titleWrapper');
+
+    let submitButton = document.createElement('button');
+    submitButton.innerHTML = 'Submit';
+    submitButton.classList.add('submitDialogButton');
+
+    submitButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+
+        this.hideDialog();
+    });
+
+    controlWrapper.append(submitButton);
+
     let titleWrapper = document.createElement('article');
     titleWrapper.classList.add('titleWrapper');
 
@@ -38,7 +54,7 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
         });
 
         let closeButton = document.createElement('button');
-        closeButton.innerHTML = 'X';
+        closeButton.innerHTML = 'Cancel';
         closeButton.classList.add('closeDialogButton');
 
         closeButton.addEventListener('click', (e) => {
@@ -48,7 +64,7 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
             this.hideDialog();
         });
 
-        //titleWrapper.append(closeButton);
+        controlWrapper.append(closeButton);
     }
 
     let dialogForm = document.createElement('form'); // creates an input who it's value changes when the custom input element does
@@ -62,7 +78,7 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
     let children = this.dialogMode == 'dialog' ? this : this.cloneNode(true);
     dialogForm.append(children);
 
-    wrapper.append(titleWrapper, dialogForm); // append all items to the dialog wrapper
+    wrapper.append(titleWrapper, dialogForm, controlWrapper); // append all items to the dialog wrapper
 
     document.body.append(wrapper);
 
