@@ -95,7 +95,7 @@ function closeDialog() { // hides the dialog created by a element.
     let data = new FormData(document.getElementById(`${this.id}Dialog`).children[1]);
 
     document.getElementById(`${this.id}Dialog`).remove();
-    this.setAttribute('formData', data); // saves the form data as a attribute so dev can aces it after accidentally closing pop-up
+    this.setAttribute('formData', JSON.stringify(data)); // saves the form data as a attribute so dev can aces it after accidentally closing pop-up
 
     return data; // returns the any filled in form data
 }
