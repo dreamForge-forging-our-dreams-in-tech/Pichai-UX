@@ -64,6 +64,7 @@ class ColorPicker extends HTMLElement {
         }
 
         if (name === 'value') {
+            console.log(this)
 
             prev[0].style.backgroundColor = newValue;
 
@@ -294,9 +295,9 @@ function createSlider(value, el) {
 }
 
 function updateColors(el, color) {
-    let r = document.getElementById('r');
-    let g = document.getElementById('g');
-    let b = document.getElementById('b');
+    let r = el.getElementById('r');
+    let g = el.getElementById('g');
+    let b = el.getElementById('b');
     let a;
 
     let rgb = color.substring(4, color.length - 1);
