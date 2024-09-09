@@ -265,7 +265,7 @@ function createSlider(value, el) {
     slider.min = '0';
     slider.step = '0.01';
     slider.max = value === 'a' ? 1 : 255;
-    slider.id = value;
+    slider.className = value;
 
     slider.addEventListener('focusout', function () { //uses focusout to avoid multiple calls of the change event
         let r = document.getElementById('r').value;
@@ -295,10 +295,9 @@ function createSlider(value, el) {
 }
 
 function updateColors(el, color) {
-    console.log(el)
-    let r = el.getElementById('r');
-    let g = el.getElementById('g');
-    let b = el.getElementById('b');
+    let r = el.getElementsByClassName('r')[0];
+    let g = el.getElementsByClassName('g')[0];
+    let b = el.getElementsByClassName('b')[0];
     let a;
 
     let rgb = color.substring(4, color.length - 1);
@@ -308,9 +307,9 @@ function updateColors(el, color) {
     g.value = parseInt(rgb[1]);
     b.value = parseInt(rgb[2]);
 
-    if (document.getElementById('a')) {
+    if (el.getElementsByClassName('a')) {
         a = isNaN(parseInt(rgb[3])) ? 1 : parseInt(rgb[3]);
-        document.getElementById('a').value = a;
+        el.getElementsByClassName('a')[0].value = a;
     } else {
         a = 1;
     }
