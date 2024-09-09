@@ -175,7 +175,6 @@ function createPresetItem(el, color) {
     item.style.backgroundColor = color;
 
     item.addEventListener('click', function () {
-        console.log(el, el.parentNode)
         updateToOutputType(el.parentNode, this.style.backgroundColor);
         //el.parentNode.setAttribute('value', this.style.backgroundColor);
     });
@@ -259,6 +258,7 @@ function createHeader(text, el) {
 }
 
 function createSlider(value, el) {
+    console.log(el. el.parentNode)
     let slider = document.createElement('input');
     slider.type = 'range';
     slider.min = '0';
