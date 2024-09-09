@@ -258,6 +258,7 @@ function createHeader(text, el) {
 }
 
 function createSlider(value, el) {
+    console.log(el)
     let slider = document.createElement('input');
     slider.type = 'range';
     slider.min = '0';
@@ -272,7 +273,7 @@ function createSlider(value, el) {
         let a = document.getElementById('a') ? document.getElementById('a').value : 1;
 
         //el.parentNode.setAttribute('previousvalue',  el.parentNode.getAttribute('value'));
-        updateToOutputType(el, `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${Math.round(a)})`);
+        updateToOutputType(el.parentNode, `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${Math.round(a)})`);
         //el.parentNode.setAttribute('value', `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${Math.round(a)})`);
     });
 
@@ -282,11 +283,11 @@ function createSlider(value, el) {
         let b = document.getElementById('b').value;
         let a = document.getElementById('a') ? document.getElementById('a').value : 1;
 
-        let prev = el.getElementsByClassName('displayColor');
+        let prev = el.parentNode.getElementsByClassName('displayColor');
 
         //el.parentNode.setAttribute('previousvalue',  el.parentNode.getAttribute('value'));
         prev[0].style.backgroundColor = `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${Math.round(a)})`;
-        prev[1].style.backgroundColor =  el.getAttribute('value');
+        prev[1].style.backgroundColor =  el.parentNode.getAttribute('value');
     });
 
     el.append(slider);
