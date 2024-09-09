@@ -64,8 +64,6 @@ class ColorPicker extends HTMLElement {
         }
 
         if (name === 'value') {
-            console.log(this)
-
             prev[0].style.backgroundColor = newValue;
 
             updateColors(this, prev[0].style.backgroundColor); // use backgroundColor so we dont need to use conversion functions for colors and can just make the code les mumbo jumbo
@@ -307,7 +305,7 @@ function updateColors(el, color) {
     g.value = parseInt(rgb[1]);
     b.value = parseInt(rgb[2]);
 
-    if (el.getElementsByClassName('a')) {
+    if (el.getElementsByClassName('a')[0]) {
         a = isNaN(parseInt(rgb[3])) ? 1 : parseInt(rgb[3]);
         el.getElementsByClassName('a')[0].value = a;
     } else {
