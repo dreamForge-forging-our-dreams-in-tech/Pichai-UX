@@ -258,7 +258,9 @@ function createHeader(text, el) {
 }
 
 function createSlider(value, el) {
-    console.log(el. el.parentNode)
+    try {
+    console.log(el. el.parentNode);
+    }catch(e){}
     let slider = document.createElement('input');
     slider.type = 'range';
     slider.min = '0';
