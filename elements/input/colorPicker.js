@@ -64,6 +64,7 @@ class ColorPicker extends HTMLElement {
         }
 
         if (name === 'value') {
+            console.log(prev[0])
             prev[0].style.backgroundColor = newValue;
 
             updateColors(this, prev[0].style.backgroundColor); // use backgroundColor so we dont need to use conversion functions for colors and can just make the code les mumbo jumbo
@@ -257,7 +258,6 @@ function createHeader(text, el) {
 }
 
 function createSlider(value, el) {
-    console.log(el)
     let slider = document.createElement('input');
     slider.type = 'range';
     slider.min = '0';
