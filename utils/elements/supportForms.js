@@ -12,6 +12,8 @@ function supportForm() {
         formInput.value = this.getAttribute('value');
     });
 
+    console.log(!this.getElementsByClassList('hiddenFormInput')[0])
+
     this.append(formInput);
 }
 

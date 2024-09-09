@@ -175,7 +175,7 @@ function createPresetItem(el, color) {
     item.style.backgroundColor = color;
 
     item.addEventListener('click', function () {
-        updateToOutputType(el.parentNode, this.style.backgroundColor)
+        updateToOutputType(el.parentNode, this.style.backgroundColor);
         //el.parentNode.setAttribute('value', this.style.backgroundColor);
     });
 
