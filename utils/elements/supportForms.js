@@ -4,7 +4,7 @@ function supportForm() {
     let formInput = document.createElement('input'); // creates an input who it's value changes when the custom input element does
     formInput.classList.add('hiddenFormInput');
 
-    if(this.hasAttribute('name')) {
+    if (this.hasAttribute('name')) {
         formInput.setAttribute('name', this.hasAttribute('name'));
     }
 
@@ -12,9 +12,9 @@ function supportForm() {
         formInput.value = this.getAttribute('value');
     });
 
-    console.log(!this.getElementsByClassName('hiddenFormInput')[0])
-
-    this.append(formInput);
+    if (this.getElementsByClassName('hiddenFormInput')[0]) { } else {
+        this.append(formInput);
+    }
 }
 
 // Attach the function to the HTMLElement prototype
