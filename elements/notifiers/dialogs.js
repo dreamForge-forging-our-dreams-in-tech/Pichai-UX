@@ -10,8 +10,11 @@
 */
 
 /** @codeUsage 
-* You can call the showAsDialog function on all elements, using the setDialogMode attribute of the element allwos you to set how the element reacts and works with this function
+* You can call the showAsDialog function on all elements, using the setDialogMode attribute of the element allwos you to set how the element reacts and works with this function.
+* Events and Functions can be attached to all elements.
 */
+
+const submit = new Event("submit"); // dialog form submitted event
 
 function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns the element into a visible dialog
     let wrapper = document.createElement('article');
@@ -29,7 +32,8 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
         e.stopPropagation();
         e.preventDefault();
 
-        this.hideDialog();
+        this.closeDialog();
+        this.dispatchEvent(submit);
     });
 
     controlWrapper.append(submitButton);
@@ -49,7 +53,7 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
             e.preventDefault();
 
             if (e.target.classList.contains('dialogWrapper')) {
-                this.hideDialog();
+                this.closeDialog();
             }
         });
 
@@ -61,7 +65,7 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
             e.stopPropagation();
             e.preventDefault();
 
-            this.hideDialog();
+            this.closeDialog();
         });
 
         controlWrapper.append(closeButton);
@@ -87,8 +91,13 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
     controlWrapper.style.width = `${width}px`;
 }
 
-function hideDialog() { // hides the dialog created by a element.
+function closeDialog() { // hides the dialog created by a element.
+    let data = new FormData(document.getElementById(`${this.id}Dialog`).firstChild);
+
     document.getElementById(`${this.id}Dialog`).remove();
+    this.setAttribute('formData', data); // saves the form data as a attribute so dev can aces it after accidentally closing pop-up
+
+    return data; // returns the any filled in form data
 }
 
 function setDialogMode(mode) { // sets the elements mode for a dialog pop-up
@@ -102,5 +111,5 @@ function setDialogMode(mode) { // sets the elements mode for a dialog pop-up
 
 // Attach the function to the HTMLElement prototype
 HTMLElement.prototype.showAsDialog = showAsDialog;
-HTMLElement.prototype.hideDialog = hideDialog;
+HTMLElement.prototype.closeDialog = closeDialog;
 HTMLElement.prototype.dialogMode = setDialogMode; // can be either way clone to clone the element into a dialog or dialog wich hides the element and shows it in a dialog
