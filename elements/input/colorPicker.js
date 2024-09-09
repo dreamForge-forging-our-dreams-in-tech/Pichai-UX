@@ -295,6 +295,7 @@ function createSlider(value, el) {
 }
 
 function updateColors(el, color) {
+    console.log(el)
     let r = el.getElementById('r');
     let g = el.getElementById('g');
     let b = el.getElementById('b');
