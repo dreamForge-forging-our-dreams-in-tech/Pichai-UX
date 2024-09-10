@@ -93,7 +93,7 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
 }
 
 function closeDialog() { // hides the dialog created by a element.
-    let data = new FormData(document.getElementById(`${this.id}Dialog`).children[1]);
+    let data = new FormData(document.getElementById(`${this.id}Dialog`).firstChild.children[1]);
 
     document.getElementById(`${this.id}Dialog`).remove();
     this.setAttribute('formData', html5ToObject(data)); // saves the form data as a attribute so dev can aces it after accidentally closing pop-up
