@@ -7,7 +7,7 @@ function supportForm() {
     if (this.hasAttribute('name')) {
         formInput.setAttribute('name', this.hasAttribute('name'));
     } else {
-        formInput.setAttribute('name', this.hasAttribute('id') + 'name');
+        formInput.setAttribute('name', this.hasAttribute('id') + 'value');
     }
 
     window.setInterval(() => {
