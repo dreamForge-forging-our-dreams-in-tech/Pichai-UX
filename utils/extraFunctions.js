@@ -55,7 +55,7 @@ function optimizeTextColor(el) {
 
 function html5ToObject (data) {
     let object = {};
-    formData.forEach(function (value, key) {
+    data.forEach(function (value, key) {
         object[key] = value;
     });
     return JSON.stringify(object);
