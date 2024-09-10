@@ -93,7 +93,6 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
 }
 
 function closeDialog() { // hides the dialog created by a element.
-    console.log(document.getElementById(`${this.id}Dialog`).firstChild.children[1])
     let data = new FormData(document.getElementById(`${this.id}Dialog`).firstChild.children[1]);
 
     document.getElementById(`${this.id}Dialog`).remove();

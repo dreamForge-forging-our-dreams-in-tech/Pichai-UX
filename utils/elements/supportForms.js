@@ -9,7 +9,7 @@ function supportForm() {
     }
 
     window.setInterval(() => {
-        formInput.value = this.getAttribute('value');
+        formInput.setAttribute('value', this.getAttribute('value'));
     });
 
     if (this.getElementsByClassName('hiddenFormInput')[0]) { } else {
