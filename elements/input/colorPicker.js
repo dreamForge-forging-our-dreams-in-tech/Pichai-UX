@@ -31,8 +31,8 @@ class ColorPicker extends HTMLElement {
     }
 
     async connectedCallback() {
-        let prev = this.getElementsByClassName('displayColor');
-        if (!prev) {
+        let prev = this.getElementsByClassName('displayColor')[0];
+        if (prev) {
             return;
         }
 
