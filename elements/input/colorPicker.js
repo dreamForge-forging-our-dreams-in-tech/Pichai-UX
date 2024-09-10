@@ -32,6 +32,7 @@ class ColorPicker extends HTMLElement {
 
     async connectedCallback() {
         if (!this.hasContent) {
+            this.hasContent = true;
             let i;
 
             createPreviousView(this);
