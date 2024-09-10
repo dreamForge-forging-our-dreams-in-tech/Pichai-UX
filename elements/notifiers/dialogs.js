@@ -1,3 +1,5 @@
+import { html5ToObject } from '../../utils/extraFunctions.js';
+
 // this functions adds the possibility to turn all elements into a dialog
 // it simply creates a clone that will be shown in the dialog
 
@@ -92,10 +94,9 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
 
 function closeDialog() { // hides the dialog created by a element.
     let data = new FormData(document.getElementById(`${this.id}Dialog`).children[1]);
-    console.log(data)
 
     document.getElementById(`${this.id}Dialog`).remove();
-    this.setAttribute('formData', JSON.stringify(data)); // saves the form data as a attribute so dev can aces it after accidentally closing pop-up
+    this.setAttribute('formData', html5ToObject(data)); // saves the form data as a attribute so dev can aces it after accidentally closing pop-up
 
     return data; // returns the any filled in form data
 }

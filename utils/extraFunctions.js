@@ -53,4 +53,12 @@ function optimizeTextColor(el) {
     }
 }
 
-export { extractRgb, getAllIndexes, convertToRightType, optimizeTextColor };
+function html5ToObject (data) {
+    let object = {};
+    formData.forEach(function (value, key) {
+        object[key] = value;
+    });
+    return JSON.stringify(object);
+}
+
+export { extractRgb, getAllIndexes, convertToRightType, optimizeTextColor, html5ToObject };
