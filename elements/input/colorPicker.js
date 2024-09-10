@@ -31,26 +31,25 @@ class ColorPicker extends HTMLElement {
     }
 
     async connectedCallback() {
-        if (!this.hasContent) {
-            this.hasContent = true;
-
-            console.log('ee')
-
-            let i;
-
-            createPreviousView(this);
-
-            if (this.getAttribute('presets') == 'true' || !this.hasAttribute('presets')) { // create the previous color section of the color picker
-                createPresetsView(this);
-            }
-
-            if (this.getAttribute('savetopresets') == 'true' || !this.hasAttribute('savetopresets')) { // create the previous color section of the color picker
-                createPresetsExpansionView(this);
-            }
-
-            createColorPicker(this);
-            this.supportForm();
+        let prev = this.getElementsByClassName('displayColor');
+        if (prev) {
+            return;
         }
+
+        let i;
+
+        createPreviousView(this);
+
+        if (this.getAttribute('presets') == 'true' || !this.hasAttribute('presets')) { // create the previous color section of the color picker
+            createPresetsView(this);
+        }
+
+        if (this.getAttribute('savetopresets') == 'true' || !this.hasAttribute('savetopresets')) { // create the previous color section of the color picker
+            createPresetsExpansionView(this);
+        }
+
+        createColorPicker(this);
+        this.supportForm();
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
