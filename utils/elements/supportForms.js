@@ -5,9 +5,9 @@ function supportForm() {
     formInput.classList.add('hiddenFormInput');
 
     if (this.hasAttribute('name')) {
-        formInput.setAttribute('name', this.hasAttribute('name'));
+        formInput.setAttribute('name', this.getAttribute('name'));
     } else {
-        formInput.setAttribute('name', this.hasAttribute('id') + 'value');
+        formInput.setAttribute('name', this.getAttribute('id') + 'value');
     }
 
     window.setInterval(() => {
