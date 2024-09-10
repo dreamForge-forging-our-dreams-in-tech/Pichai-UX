@@ -31,20 +31,22 @@ class ColorPicker extends HTMLElement {
     }
 
     async connectedCallback() {
-        let i;
+        if (!this.hasContent) {
+            let i;
 
-        createPreviousView(this);
+            createPreviousView(this);
 
-        if (this.getAttribute('presets') == 'true' || !this.hasAttribute('presets')) { // create the previous color section of the color picker
-            createPresetsView(this);
+            if (this.getAttribute('presets') == 'true' || !this.hasAttribute('presets')) { // create the previous color section of the color picker
+                createPresetsView(this);
+            }
+
+            if (this.getAttribute('savetopresets') == 'true' || !this.hasAttribute('savetopresets')) { // create the previous color section of the color picker
+                createPresetsExpansionView(this);
+            }
+
+            createColorPicker(this);
+            this.supportForm();
         }
-
-        if (this.getAttribute('savetopresets') == 'true' || !this.hasAttribute('savetopresets')) { // create the previous color section of the color picker
-            createPresetsExpansionView(this);
-        }
-
-        createColorPicker(this);
-        this.supportForm();
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
@@ -69,8 +71,8 @@ class ColorPicker extends HTMLElement {
 
             updateColors(this, prev[0].style.backgroundColor); // use backgroundColor so we dont need to use conversion functions for colors and can just make the code les mumbo jumbo
 
-                this.setAttribute('previousvalue', oldValue);
-                this.dispatchEvent(change);
+            this.setAttribute('previousvalue', oldValue);
+            this.dispatchEvent(change);
         }
 
         if (name === 'previousvalue') {
@@ -79,10 +81,10 @@ class ColorPicker extends HTMLElement {
 
         if (name === 'alpha' && newValue == 'true') {
             let picker = document.getElementsByClassName('picker')[0];
-            
+
             createHeader('Alpha', picker);
             createSlider('a', picker);
-        } else if(name === 'alpha' && newValue == 'false') {
+        } else if (name === 'alpha' && newValue == 'false') {
             document.getElementById('a').remove();
             document.getElementById('Alpha').remove();
         }
@@ -92,7 +94,7 @@ class ColorPicker extends HTMLElement {
 
         } else if (name === 'showpreviousvalues' && newValue === 'true') {
             this.getElementsByClassName('previousColor')[0].remove();
-                createPreviousView(this);
+            createPreviousView(this);
         }
 
         if (name === 'presets' && newValue === 'false') {
@@ -286,7 +288,7 @@ function createSlider(value, el) {
 
         //el.parentNode.setAttribute('previousvalue',  el.parentNode.getAttribute('value'));
         prev[0].style.backgroundColor = `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${Math.round(a)})`;
-        prev[1].style.backgroundColor =  el.parentNode.getAttribute('value');
+        prev[1].style.backgroundColor = el.parentNode.getAttribute('value');
     });
 
     el.append(slider);
@@ -313,7 +315,7 @@ function updateColors(el, color) {
     }
 }
 
-function updateToOutputType(el,val) {
+function updateToOutputType(el, val) {
     let type = el.getAttribute('outputtype');
     //let val = el.getAttribute('value');
 
@@ -321,9 +323,9 @@ function updateToOutputType(el,val) {
         el.setAttribute('value', val);
     } else if (type == 'hex') {
         el.setAttribute('value', rgbaToHex(val));
-    } else if(type == 'hsl') {
+    } else if (type == 'hsl') {
         el.setAttribute('value', RGBToHSL(val));
-    } else if(type == 'cmyk') {
+    } else if (type == 'cmyk') {
         el.setAttribute('value', rgbToCmyk(val));
     }
 }
