@@ -35,6 +35,8 @@
 
     border-radius:10px;
     background-color:var(--tertiary);
+
+    width:100%;
 }
 
 .titleWrapper * {

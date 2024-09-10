@@ -17,9 +17,12 @@
 const submit = new Event("submit"); // dialog form submitted event
 
 function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns the element into a visible dialog
+    let shadow = document.createElement('article');
+    shadow.classList.add('dialogWrapper');
+    shadow.id = `${this.id}Dialog`;
+
     let wrapper = document.createElement('article');
-    wrapper.classList.add('dialogWrapper');
-    wrapper.id = `${this.id}Dialog`;
+    shadow.append(wrapper);
 
     let controlWrapper = document.createElement('article');
     controlWrapper.classList.add('titleWrapper');
@@ -84,11 +87,7 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
 
     wrapper.append(titleWrapper, dialogForm, controlWrapper); // append all items to the dialog wrapper
 
-    document.body.append(wrapper);
-
-    let width = parseInt(window.getComputedStyle(dialogForm)['width']) + 16; //sets the title width to the same width as the dialog
-    titleWrapper.style.width = `${width}px`;
-    controlWrapper.style.width = `${width}px`;
+    document.body.append(shadow);
 }
 
 function closeDialog() { // hides the dialog created by a element.
