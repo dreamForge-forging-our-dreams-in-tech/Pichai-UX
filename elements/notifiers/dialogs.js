@@ -38,7 +38,6 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
         e.preventDefault();
 
         this.closeDialog();
-        this.dispatchEvent(submit);
     });
 
     controlWrapper.append(submitButton);
@@ -98,6 +97,8 @@ function closeDialog() { // hides the dialog created by a element.
     document.getElementById(`${this.id}Dialog`).remove();
     this.setAttribute('formData', html5ToObject(data)); // saves the form data as a attribute so dev can aces it after accidentally closing pop-up
 
+    this.dispatchEvent(submit);
+    
     return data; // returns the any filled in form data
 }
 
