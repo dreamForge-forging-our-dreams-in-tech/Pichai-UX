@@ -51,7 +51,7 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
     titleWrapper.append(title);
 
     if (cancelable) {
-        wrapper.addEventListener('click', (e) => {
+        shadow.addEventListener('click', (e) => {
             e.stopPropagation();
             e.preventDefault();
 
@@ -92,6 +92,7 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
 
 function closeDialog() { // hides the dialog created by a element.
     let data = new FormData(document.getElementById(`${this.id}Dialog`).children[1]);
+    console.log(data)
 
     document.getElementById(`${this.id}Dialog`).remove();
     this.setAttribute('formData', JSON.stringify(data)); // saves the form data as a attribute so dev can aces it after accidentally closing pop-up
