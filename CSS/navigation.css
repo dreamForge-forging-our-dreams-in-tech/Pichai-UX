@@ -52,7 +52,7 @@ view-pager:first-child {
   }
 
   .drawer {
-    height:calc(100% - 16px);
+    height:calc(100% - 24px);
     margin:8px;
 
     display:flex;
