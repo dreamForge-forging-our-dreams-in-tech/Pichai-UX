@@ -53,7 +53,9 @@ view-pager:first-child {
 
   .drawer {
     height:calc(100% - 16px);
+    margin:8px;
 
+    display:flex;
     flex-direction: column;
   }
 
