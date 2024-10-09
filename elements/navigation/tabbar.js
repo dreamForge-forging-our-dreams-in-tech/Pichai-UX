@@ -10,7 +10,7 @@ class TabBar extends HTMLElement {
      * Navigating between pages
     */
 
-    static observedAttributes = ["direction", 'index', 'for'];
+    static observedAttributes = ["direction", 'index', 'for', 'mode'];
 
     constructor() {
         // Always call super first in constructor
@@ -58,11 +58,18 @@ class TabBar extends HTMLElement {
         doAttributeCheck('string', 'direction', this.getAttribute('direction'));
         doAttributeCheck('number', 'index', this.getAttribute('index'));
         doAttributeCheck('string', 'for', this.getAttribute('for'));
+        doAttributeCheck('string', 'drawer', this.getAttribute('drawer')); // sets whether the tabbar acts as a draawer menu or not
 
         if (this.getAttribute('direction') == 'vertical') {
             this.classList.add('verticalTabbar');
         } else {
             this.classList.remove('verticalTabbar');
+        }
+
+        if (this.getAttribute('mode') == 'drawer') {
+            this.classList.add('drawer');
+        } else {
+            this.classList.remove('drawer');
         }
 
         if (!this.getAttribute('for') == '') {

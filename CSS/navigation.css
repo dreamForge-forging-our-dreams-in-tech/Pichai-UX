@@ -50,3 +50,13 @@ view-pager:first-child {
     max-width:12px;
     height:max-content;
   }
+
+  .drawer {
+    height:calc(100% - 16px);
+
+    flex-direction: column;
+  }
+
+  .drawer, .drawer * {
+    border-radius:17px;
+  }
