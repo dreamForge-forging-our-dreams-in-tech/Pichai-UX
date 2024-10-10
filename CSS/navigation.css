@@ -59,8 +59,12 @@ view-pager:first-child {
     flex-direction: column;
 
     gap:8px;
+
+    overflow-y:auto;
   }
 
   .drawer, .drawer * {
     border-radius:17px;
+
+    min-width:300px;
   }
