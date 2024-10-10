@@ -61,10 +61,14 @@ view-pager:first-child {
     gap:8px;
 
     overflow-y:auto;
+
+    min-width:300px;
   }
 
   .drawer, .drawer * {
     border-radius:17px;
+  }
 
-    min-width:300px;
+  .drawer * {
+    min-width:calc(300px - 16px);
   }
