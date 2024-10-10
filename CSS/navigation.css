@@ -63,6 +63,8 @@ view-pager:first-child {
     overflow-y:auto;
 
     min-width:300px;
+
+    z-index:999;
   }
 
   .drawer, .drawer * {
