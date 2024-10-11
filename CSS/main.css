@@ -131,7 +131,7 @@ a {
     text-decoration: none;
 }
 
-*:empty:not(:focus):before {
+*:empty:not(:focus):before :not(hr) {
     content: attr(placeholder);
 
     font-size: 14px;
