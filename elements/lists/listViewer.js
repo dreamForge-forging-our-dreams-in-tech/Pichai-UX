@@ -1,7 +1,5 @@
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 
-const click = new Event("itemSelected"); //fires when an item in the listViewer is clicked, returns the text of the clicked item. Uses custom name because click is used by js 
-
 // Create a class for the <log-in> element
 class ListViewer extends HTMLElement {
     /** @description 
@@ -36,6 +34,14 @@ class ListViewer extends HTMLElement {
 
         this.addEventListener('click', function (e) { // adds a click event to the list items and ensures that the right value is returned
             this.setAttribute('value', e.target.id);
+
+            let click = new CustomEvent("itemSelected", { //fires when an item in the listViewer is clicked, returns the text of the clicked item. Uses custom name because click is used by js 
+                detail: {
+                    item: e.target.id,
+                    index: this.children[this.children.indexOf(e.target)],
+                },
+            });
+
             this.dispatchEvent(click); // dispatches the click event only when it's clicked and not when the value is manually changed by the developer.
         });
     }
