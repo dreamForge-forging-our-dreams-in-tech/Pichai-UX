@@ -24,11 +24,13 @@ class ListViewer extends HTMLElement {
 
         if (this.getAttribute('actionButton') == '' || !this.hasAttribute('actionButton')) { } else {
             for (i of this.children) {
+                if(i.tagName == 'HR') {} else {
                 let button = document.createElement('button');
                 button.innerHTML = this.getAttribute('actionButton');
                 button.classList.add('actionButton', 'material-symbols-outlined');
 
                 i.appendChild(button);
+                }
             }
         }
 
