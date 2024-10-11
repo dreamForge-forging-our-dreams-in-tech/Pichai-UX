@@ -33,6 +33,7 @@ class PichaiUX {
 
         let comp = window.getComputedStyle(document.body);
         let image = String(comp['backgroundImage']);
+        console.log(image)
         image = image.substring(5, image.length - 2);
 
         this.options.source = image || '#008dcd';
