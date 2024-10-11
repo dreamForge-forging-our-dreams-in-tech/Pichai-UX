@@ -18,15 +18,20 @@ class title extends HTMLElement {
     }
 
     connectedCallback() {
-        this.innerHTML = document.title;
 
-        if(!this.hasAttribute('titleText') || this.getAttribute('titleText') === '') {} else {
+        let interval;
+        if(!this.hasAttribute('titleText') || this.getAttribute('titleText') === '') {
+            interval = window.setInterval(() => {
+                this.innerHTML = document.title;
+            },500);
+        } else {
+            clearInterval(interval);
             this.innerHTML = this.getAttribute('titleText');
         }
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        doAttributeCheck('string', 'title', this.getAttribute('title'));
+        doAttributeCheck('string', 'titleText', this.getAttribute('titleText'));
 
         this.connectedCallback();
     }
