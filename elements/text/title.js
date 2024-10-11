@@ -20,8 +20,8 @@ class title extends HTMLElement {
     connectedCallback() {
         this.innerHTML = document.title;
 
-        if(!this.hasAttribute('title') || this.getAttribute('title') === '') {} else {
-            this.innerHTML = this.getAttribute('title')
+        if(!this.hasAttribute('titleText') || this.getAttribute('titleText') === '') {} else {
+            this.innerHTML = this.getAttribute('titleText');
         }
     }
 
