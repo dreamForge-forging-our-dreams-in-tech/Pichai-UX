@@ -26,7 +26,7 @@ class ListViewer extends HTMLElement {
             for (i of this.children) {
                 let button = document.createElement('button');
                 button.innerHTML = this.getAttribute('actionButton');
-                button.classList.add('actionButton');
+                button.classList.add('actionButton', 'material-symbols-outlined');
 
                 i.appendChild(button);
             }
