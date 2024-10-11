@@ -33,13 +33,10 @@ class PichaiUX {
         // read bg image and make it ready for UI usage
         let styles = window.getComputedStyle(document.body);
 
-        console.log(styles);
-        console.log(document.documentElement);
+        //document.documentElement.style.backgroundImage = styles.backgroundImage;
+        //document.body.style.backgroundImage = 'initial';
 
-        document.documentElement.style.backgroundImage = styles.backgroundImage;
-        document.body.style.backgroundImage = 'initial';
-
-        let comp = window.getComputedStyle(document.documentElement);
+        let comp = window.getComputedStyle(document.body);
         let image = String(comp['backgroundImage']);
         image = image.substring(5, image.length - 2);
 
