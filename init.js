@@ -30,11 +30,6 @@ class PichaiUX {
     }
 
     async initialize() {
-        // read bg image and make it ready for UI usage
-        let styles = window.getComputedStyle(document.body);
-
-        //document.documentElement.style.backgroundImage = styles.backgroundImage;
-        //document.body.style.backgroundImage = 'initial';
 
         let comp = window.getComputedStyle(document.body);
         let image = String(comp['backgroundImage']);
