@@ -1,38 +1,19 @@
-hr {
-	width:100%;
+footer {
+  width: 100%;
+  min-height: 55px;
+  border-width: 2px 0px 0px 0px;
+  border-style: solid;
+  border-color: var(--primary);
+  border-radius: 0px;
+  display: flex;
+  flex-direction: row;
 }
 
-hr::before {
-	content:'Hello there this is some text that i use to create this divider it is very long yes yes, but not visible to user how that come you ask? well the font is no bigger than 0px wich means the user cannot see this font, funny right? well imma make this text even longer why? soo that this divider also works on a bigger screen like your TV but not only that then itll also work on some random screen that are even BIGGER than a normal TV, still not long engoug thats sad yes yes thats why im adding this very long and random bullshit message that also counts as a easteregg ;)';
-
-	text-decoration:wavy line-through;
-	text-decoration-color:var(--primary);
-
-	height:20px !important;
-
-	color:TRANSPARENT;
-
-	overflow:hidden;
-
-	display:block;
-}
-
-  footer {
-    width: 100%;
-    min-height: 55px;
-    border-width: 2px 0px 0px 0px;
-    border-style: solid;
-    border-color: var(--primary);
-    border-radius: 0px;
-    display: flex;
-    flex-direction: row;
-}
-
-footer > x-icon {
+footer>x-icon {
   margin: 8px;
-  margin-right:0px;
+  margin-right: 0px;
 }
 
-footer > x-title {
+footer>x-title {
   margin-right: auto;
-} 
+}

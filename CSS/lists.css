@@ -1,89 +1,90 @@
-ol, ul {
-    margin:0px;
-    padding:0px;
+ol,
+ul {
+   margin: 0px;
+   padding: 0px;
 }
 
-li{
-    List-style-position: inside;
- }
+li {
+   List-style-position: inside;
+}
 
-li:nth-child(7n+1){
-    list-style-image: url('../assets/shapes/star.svg');
- }
+li:nth-child(7n+1) {
+   list-style-image: url('../assets/shapes/star.svg');
+}
 
- li:nth-child(7n+2){
-    list-style-image: url('../assets/shapes/circle.svg');
- }
+li:nth-child(7n+2) {
+   list-style-image: url('../assets/shapes/circle.svg');
+}
 
- li:nth-child(7n+3){
-    list-style-image: url('../assets/shapes/scallop.svg');
- }
+li:nth-child(7n+3) {
+   list-style-image: url('../assets/shapes/scallop.svg');
+}
 
- li:nth-child(7n+4){
-    list-style-image: url('../assets/shapes/square.svg');
- }
+li:nth-child(7n+4) {
+   list-style-image: url('../assets/shapes/square.svg');
+}
 
- li:nth-child(7n+5){
-    list-style-image: url('../assets/shapes/pentagon.svg');
- }
+li:nth-child(7n+5) {
+   list-style-image: url('../assets/shapes/pentagon.svg');
+}
 
- li:nth-child(7n+6){
-    list-style-image: url('../assets/shapes/triangle.svg');
- }
+li:nth-child(7n+6) {
+   list-style-image: url('../assets/shapes/triangle.svg');
+}
 
- li:nth-child(7n+7){
+li:nth-child(7n+7) {
    list-style-image: url('../assets/shapes/heart.svg');
 }
 
- li.black:nth-child(7n+1){
+li.black:nth-child(7n+1) {
    list-style-image: url('../assets/shapes/star_black.svg');
 }
 
-li.black:nth-child(7n+2){
+li.black:nth-child(7n+2) {
    list-style-image: url('../assets/shapes/circle_black.svg');
 }
 
-li.black:nth-child(7n+3){
+li.black:nth-child(7n+3) {
    list-style-image: url('../assets/shapes/scallop_black.svg');
 }
 
-li.black:nth-child(7n+4){
+li.black:nth-child(7n+4) {
    list-style-image: url('../assets/shapes/square_black.svg');
 }
 
-li.black:nth-child(7n+5){
+li.black:nth-child(7n+5) {
    list-style-image: url('../assets/shapes/pentagon_black.svg');
 }
 
-li.black:nth-child(7n+6){
+li.black:nth-child(7n+6) {
    list-style-image: url('../assets/shapes/triangle_black.svg');
 }
 
-li.black:nth-child(7n+7){
+li.black:nth-child(7n+7) {
    list-style-image: url('../assets/shapes/heart_black.svg');
 }
 
 list-viewer {
-   padding:8px;
+   padding: 8px;
 
-   display:block;
+   display: block;
 }
 
 list-viewer li {
-   color:var(--primaryContainerTextColor);
-   
-   border-radius:10px;
+   color: var(--primaryContainerTextColor);
 
-   background-color:var(--primaryContainer);
+   border-radius: 10px;
+
+   background-color: var(--primaryContainer);
 
    list-style-type: none;
 
-   padding:8px;
+   padding: 8px;
 
-   margin-bottom:8px;
+   margin-bottom: 8px;
 
-   width:calc(100% - 32px);
-   text-align:left;
+   width: calc(100% - 32px);
+   text-align: left;
 
    display: flex;
    flex-direction: row;
@@ -91,22 +92,15 @@ list-viewer li {
 }
 
 list-viewer li .actionButton {
-   height:100%;
+   height: 100%;
 
-   color:var(--primaryTextColor);
+   color: var(--primaryTextColor);
 
-   border-radius:10px;
+   border-radius: 10px;
 
    pointer-events: none;
 }
 
 list-viewer li::marker {
-   display:none;
-}
-
-list-viewer hr {
-   margin:0px;
-   margin-top:-8px;
-
-   text-decoration-color:var(--tertiary);
+   display: none;
 }
