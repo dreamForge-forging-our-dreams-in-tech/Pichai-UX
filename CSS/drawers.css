@@ -1,4 +1,4 @@
-.drawer {
+.drawer :not(.drawerToggle) {
     height: calc(100% - 24px);
     margin: 8px;
 
@@ -15,11 +15,11 @@
 }
 
 .drawer,
-.drawer * {
+.drawer * :not(.drawerToggle) {
     border-radius: 17px;
 }
 
-.drawer * {
+.drawer * :not(.drawerToggle) {
     min-width: calc(300px - 16px);
 }
 
