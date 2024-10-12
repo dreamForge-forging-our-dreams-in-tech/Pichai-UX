@@ -1,5 +1,4 @@
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
-import { creeateSimpleDrawer, removeSimpleDrawer } from '../drawers/drawers.js';
 
 // Create a class for the element
 class TabBar extends HTMLElement {
