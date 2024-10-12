@@ -104,7 +104,7 @@ list-viewer li::marker {
    display:none;
 }
 
-list-view hr {
+list-viewer hr {
    margin:0px;
    margin-top:-8px;
 
