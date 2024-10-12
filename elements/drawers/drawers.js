@@ -1,4 +1,4 @@
-function creeateSimpleDrawer(element) { // turns a simple element into a drawer menu
+function createSimpleDrawer(element) { // turns a simple element into a drawer menu
     element.classList.add('drawer');
 
     createDrawerButton(element);
@@ -43,4 +43,4 @@ function createDrawerButton(forElement) { // creates a button on wich the user c
     document.body.appendChild(button);
 }
 
-export { creeateSimpleDrawer, removeSimpleDrawer };
+export { createSimpleDrawer, removeSimpleDrawer };
