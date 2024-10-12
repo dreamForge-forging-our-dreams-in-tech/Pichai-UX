@@ -103,3 +103,9 @@ list-viewer li .actionButton {
 list-viewer li::marker {
    display:none;
 }
+
+list-view hr {
+   margin:0px;
+
+   text-decoration-color:var(--tertiary);
+}
