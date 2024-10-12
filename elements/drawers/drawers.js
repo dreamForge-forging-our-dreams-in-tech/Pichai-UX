@@ -22,6 +22,7 @@ function createDrawerButton(forElement) { // creates a button on wich the user c
     button.classList.add('material-icons');
     button.classList.add('drawerToggle');
     button.elelemnt = forElement;
+    button.innerHTMl = 'close';
 
     button.addEventListener('click', function (e) {
         if (this.elelemnt.style.display == 'none') {
