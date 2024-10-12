@@ -1,16 +1,14 @@
 function creeateSimpleDrawer(element) { // turns a simple element into a drawer menu
-    if (element.classList.contains('drawer')) {
-        element.classList.add('drawer');
+    element.classList.add('drawer');
 
-        createDrawerButton(element);
+    createDrawerButton(element);
 
-        element.addEvetListener('click', function () {
+    element.addEvetListener('click', function () {
 
-            if (this.classList.contains('drawer')) { // doing this way cuz im too lazy to create logic for removing the event
-                this.getElementsByClassName('drawerToggle')[0].click();
-            }
-        });
-    }
+        if (this.classList.contains('drawer')) { // doing this way cuz im too lazy to create logic for removing the event
+            this.getElementsByClassName('drawerToggle')[0].click();
+        }
+    });
 }
 
 function removeSimpleDrawer(element) { // removes the drawer menu effect from an element
