@@ -106,6 +106,7 @@ list-viewer li::marker {
 
 list-view hr {
    margin:0px;
+   margin-top:-8px;
 
    text-decoration-color:var(--tertiary);
 }
