@@ -2,6 +2,7 @@ function creeateSimpleDrawer(element) { // turns a simple element into a drawer 
     element.classList.add('drawer');
 
     createDrawerButton(element);
+    console.log('test')
 
     element.addEvetListener('click', function () {
 
@@ -22,7 +23,7 @@ function createDrawerButton(forElement) { // creates a button on wich the user c
     button.classList.add('material-icons');
     button.classList.add('drawerToggle');
     button.elelemnt = forElement;
-    button.innerHTMl = 'close';
+    button.innerHTML = 'close';
 
     button.addEventListener('click', function (e) {
         if (this.elelemnt.style.display == 'none') {
