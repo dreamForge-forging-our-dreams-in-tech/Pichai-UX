@@ -22,7 +22,7 @@ function createDrawerButton(forElement) { // creates a button on wich the user c
     button.classList.add('material-icons');
     button.classList.add('drawerToggle');
 
-    button.addEvetListener('click', function (e) {
+    button.addEventListener('click', function (e) {
         if (this.parentNode.style.display == 'none') {
             this.parentNode.style.display = 'flex';
         } else {
