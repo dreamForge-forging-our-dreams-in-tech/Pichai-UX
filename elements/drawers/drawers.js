@@ -24,14 +24,14 @@ function createDrawerButton(forElement) { // creates a button on wich the user c
     button.elelemnt = forElement;
 
     button.addEventListener('click', function (e) {
-        if (this.parentNode.style.display == 'none') {
-            this.parentNode.style.display = 'flex';
+        if (this.elelemnt.style.display == 'none') {
+            this.elelemnt.style.display = 'flex';
 
             this.classList.add('closedDrawerToggle');
 
             this.innerHTML = 'close';
         } else {
-            this.parentNode.style.display = 'none';
+            this.elelemnt.style.display = 'none';
 
             this.classList.remove('closedDrawerToggle');
 
@@ -39,7 +39,7 @@ function createDrawerButton(forElement) { // creates a button on wich the user c
         }
     });
 
-    forElement.appendChild(button);
+    document.body.appendChild(button);
 }
 
 export { creeateSimpleDrawer, removeSimpleDrawer };
