@@ -19,7 +19,8 @@ function removeSimpleDrawer(element) { // removes the drawer menu effect from an
 
 function createDrawerButton(forElement) { // creates a button on wich the user can press to show or a hide the drawer menu.
     let button = document.createElement('i');
-    button.classList.add('material-icons', 'drawerToggle');
+    button.classList.add('material-icons');
+    button.classList.add('drawerToggle');
 
     button.addEvetListener('click', function (e) {
         if (this.parentNode.style.display == 'none') {
