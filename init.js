@@ -1,5 +1,5 @@
 import { generate3ColorPallete } from "./AI/palleteMaker.js";
-import { removeSimpleDrawer, creeateSimpleDrawer } from "./elements/drawers/drawers.js";
+import { removeSimpleDrawer, createSimpleDrawer } from "./elements/drawers/drawers.js";
 import { generateDynamicIcon } from './elements/images/logo.js';
 
 import { getListOfElements } from './utils/customeElementsDefine.js';
