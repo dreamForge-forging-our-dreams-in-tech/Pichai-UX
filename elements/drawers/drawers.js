@@ -1,15 +1,16 @@
 function creeateSimpleDrawer(element) { // turns a simple element into a drawer menu
-    element.classList.add('drawer');
+    if (element.classList.contains('drawer')) {
+        element.classList.add('drawer');
 
-    createDrawerButton(element);
-    console.log('test')
+        createDrawerButton(element);
 
-    element.addEvetListener('click', function () {
+        element.addEvetListener('click', function () {
 
-        if (this.classList.contains('drawer')) { // doing this way cuz im too lazy to create logic for removing the event
-            this.getElementsByClassName('drawerToggle')[0].click();
-        }
-    })
+            if (this.classList.contains('drawer')) { // doing this way cuz im too lazy to create logic for removing the event
+                this.getElementsByClassName('drawerToggle')[0].click();
+            }
+        });
+    }
 }
 
 function removeSimpleDrawer(element) { // removes the drawer menu effect from an element
@@ -22,18 +23,18 @@ function createDrawerButton(forElement) { // creates a button on wich the user c
     let button = document.createElement('i');
     button.classList.add('material-icons');
     button.classList.add('drawerToggle');
-    button.elelemnt = forElement;
+    button.element = forElement;
     button.innerHTML = 'close';
 
     button.addEventListener('click', function (e) {
-        if (this.elelemnt.style.display == 'none') {
-            this.elelemnt.style.display = 'flex';
+        if (this.element.style.display == 'none') {
+            this.element.style.display = 'flex';
 
             this.classList.add('closedDrawerToggle');
 
             this.innerHTML = 'close';
         } else {
-            this.elelemnt.style.display = 'none';
+            this.element.style.display = 'none';
 
             this.classList.remove('closedDrawerToggle');
 
