@@ -1,4 +1,4 @@
-tab-bar .drawer {
+.drawer {
     height: calc(100% - 24px);
     margin: 8px;
 
@@ -14,12 +14,12 @@ tab-bar .drawer {
     z-index: 999;
 }
 
-tab-bar .drawer,
+.drawer,
 .drawer * {
     border-radius: 17px;
 }
 
-tab-bar .drawer * {
+.drawer * {
     min-width: calc(300px - 16px);
 }
 
