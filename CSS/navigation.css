@@ -50,27 +50,3 @@ view-pager:first-child {
     max-width:12px;
     height:max-content;
   }
-
-  .drawer {
-    height:calc(100% - 24px);
-    margin:8px;
-
-    display:flex;
-    flex-direction: column;
-
-    gap:8px;
-
-    overflow-y:auto;
-
-    min-width:300px;
-
-    z-index:999;
-  }
-
-  .drawer, .drawer * {
-    border-radius:17px;
-  }
-
-  .drawer * {
-    min-width:calc(300px - 16px);
-  }

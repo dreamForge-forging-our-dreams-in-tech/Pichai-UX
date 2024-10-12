@@ -32,6 +32,8 @@ import './elements/templates/accountDrawer.js';
 
 import './elements/notifiers/dialogs.js';
 
+import './elements/drawers/drawers.js';
+
 import './utils/localFOrage.js';
 import './utils/elements/supportForms.js';
 

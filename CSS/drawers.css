@@ -1,0 +1,40 @@
+tab-bar .drawer {
+    height: calc(100% - 24px);
+    margin: 8px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    overflow-y: auto;
+
+    min-width: 300px;
+
+    z-index: 999;
+}
+
+tab-bar .drawer,
+.drawer * {
+    border-radius: 17px;
+}
+
+tab-bar .drawer * {
+    min-width: calc(300px - 16px);
+}
+
+.drawerToggle {
+    width: 35px;
+    height: 34px;
+
+    line-height: 35px;
+
+    background-color: var(--primary);
+    color: var(--primaryTextColor);
+
+    position: fixed;
+    top: 8px;
+    left: 320px;
+
+    border-radius: 200px;
+  }

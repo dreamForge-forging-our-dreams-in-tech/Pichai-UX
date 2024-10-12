@@ -1,4 +1,5 @@
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
+import { creeateSimpleDrawer, removeSimpleDrawer } from '../drawers/drawers.js';
 
 // Create a class for the element
 class TabBar extends HTMLElement {
@@ -67,9 +68,9 @@ class TabBar extends HTMLElement {
         }
 
         if (this.getAttribute('mode') == 'drawer') {
-            this.classList.add('drawer');
+            creeateSimpleDrawer(this);
         } else {
-            this.classList.remove('drawer');
+            removeSimpleDrawer(this);
         }
 
         if (!this.getAttribute('for') == '') {
