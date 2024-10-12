@@ -28,13 +28,13 @@ function createDrawerButton(forElement) { // creates a button on wich the user c
         if (this.element.style.display == 'none') {
             this.element.style.display = 'flex';
 
-            this.classList.add('closedDrawerToggle');
+            this.classList.remove('closedDrawerToggle');
 
             this.innerHTML = 'close';
         } else {
             this.element.style.display = 'none';
 
-            this.classList.remove('closedDrawerToggle');
+            this.classList.add('closedDrawerToggle');
 
             this.innerHTML = 'menu';
         }
