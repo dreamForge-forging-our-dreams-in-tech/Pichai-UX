@@ -1,12 +1,10 @@
 import { generate3ColorPallete } from "./AI/palleteMaker.js";
-import { removeSimpleDrawer } from "./elements/drawers/drawers.js";
+import { removeSimpleDrawer, creeateSimpleDrawer } from "./elements/drawers/drawers.js";
 import { generateDynamicIcon } from './elements/images/logo.js';
 
 import { getListOfElements } from './utils/customeElementsDefine.js';
 
 import { optimizeTextColor } from './utils/extraFunctions.js';
-
-import { creeateSimpleDrawer, removeSimpleDrawer } from "./elements/drawers/drawers.js";
 
 let i;
 window['options'] = {};
