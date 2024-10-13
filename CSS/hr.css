@@ -20,6 +20,8 @@ hr::before {
 list-viewer hr {
     margin: 0px;
     margin-top: -8px;
+}
 
+list-viewer hr:before {
     text-decoration-color: var(--tertiary);
 }
