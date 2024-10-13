@@ -6,8 +6,7 @@ function createSimpleDrawer(element) { // turns a simple element into a drawer m
 
     for (i of element.children) {
         i.addEventListener('click', function () {
-            console.log(this.parent.toggle)
-            this.parent.toggle.click();
+            this.parentNode.toggle.click();
         });
     }
 }
