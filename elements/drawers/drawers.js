@@ -8,10 +8,6 @@ function createSimpleDrawer(element, mode) { // turns a simple element into a dr
     element.toggle = createDrawerButton(element);
     element.mode = mode == 'auto' ? autoSize : mode;
 
-    if(element.mode == 'mobile') {
-        //element.toggle.click();
-    }
-
     for (i of element.children) {
         i.addEventListener('click', function () {
             if(this.parentNode.mode == 'mobile') {
