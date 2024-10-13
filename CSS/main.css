@@ -13,6 +13,7 @@
 @import "./signs.css";
 @Import './notifiers.css';
 @import './drawers.css';
+@import './hr.css';
 
 body,
 html {
