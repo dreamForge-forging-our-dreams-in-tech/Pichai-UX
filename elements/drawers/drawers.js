@@ -6,9 +6,7 @@ function createSimpleDrawer(element) { // turns a simple element into a drawer m
     element.addEventListener('click', function () {
 
         alert();
-        if (this.classList.contains('drawer')) { // doing this way cuz im too lazy to create logic for removing the event
             this.getElementsByClassName('drawerToggle')[0].click();
-        }
     });
 }
 
