@@ -1,12 +1,22 @@
-function createSimpleDrawer(element) { // turns a simple element into a drawer menu
+function createSimpleDrawer(element, mode) { // turns a simple element into a drawer menu
+    //mode can be desktop, mobile or auto. desktop: drawer is visible from the start, ,obile: drawer is closed from the start and closes when you click on an item, auto: picks any of the first two based on screen size
     let i;
+
+    let autoSize = screen.width < 600 ? 'mobile' : 'desktop';
 
     element.classList.add('drawer');
     element.toggle = createDrawerButton(element);
+    element.mode = mode == 'auto' ? autoSize: mode;
+
+    if(element.mode == 'mobile') {
+        element.toggle.click();
+    }
 
     for (i of element.children) {
         i.addEventListener('click', function () {
-            this.parentNode.toggle.click();
+            if(this.parentNode.mode == 'mobile') {
+                this.parentNode.toggle.click();
+            }
         });
     }
 }
