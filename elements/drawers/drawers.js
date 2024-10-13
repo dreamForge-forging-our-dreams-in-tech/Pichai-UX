@@ -9,7 +9,7 @@ function createSimpleDrawer(element, mode) { // turns a simple element into a dr
     element.mode = mode == 'auto' ? autoSize : mode;
 
     if(element.mode == 'mobile') {
-        alert(element.mode)
+        alert(element.toggle)
         element.toggle.click();
     }
 
