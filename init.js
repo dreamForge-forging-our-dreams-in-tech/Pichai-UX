@@ -95,8 +95,8 @@ class PichaiUX {
         return getListOfElements();
     }
 
-    createSimpleDrawer (e) {
-        createSimpleDrawer(e);
+    createSimpleDrawer (e, mode) {
+        createSimpleDrawer(e, mode);
     }
 
     removeSimpleDrawer (e) {
