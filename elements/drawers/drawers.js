@@ -8,9 +8,8 @@ function createSimpleDrawer(element, mode) { // turns a simple element into a dr
     element.toggle = createDrawerButton(element);
     element.mode = mode == 'auto' ? autoSize : mode;
 
-    element.toggle.click();
-    if(element.mode == 'desktop') {
-        element.toggle.click();
+    if(element.mode == 'mobile') {
+        //element.toggle.click();
     }
 
     for (i of element.children) {
