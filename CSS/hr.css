@@ -23,5 +23,5 @@ list-viewer hr {
 }
 
 list-viewer hr:before {
-    text-decoration-color: var(--tertiary);
+    text-decoration-color: var(--secondairy);
 }
