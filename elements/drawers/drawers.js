@@ -1,13 +1,15 @@
 function createSimpleDrawer(element) { // turns a simple element into a drawer menu
-    element.classList.add('drawer');
+    let i;
 
+    element.classList.add('drawer');
     element.toggle = createDrawerButton(element);
 
-    element.addEventListener('click', function () {
-
-        alert();
-            this.toggle.click();
-    });
+    for (i of element.children) {
+        i.addEventListener('click', function () {
+            alert();
+            this.parent.toggle.click();
+        });
+    }
 }
 
 function removeSimpleDrawer(element) { // removes the drawer menu effect from an element
