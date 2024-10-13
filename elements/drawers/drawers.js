@@ -7,9 +7,9 @@ function createSimpleDrawer(element, mode) { // turns a simple element into a dr
     element.classList.add('drawer');
     element.toggle = createDrawerButton(element);
     element.mode = mode == 'auto' ? autoSize : mode;
-    alert(element.mode)
 
     if(element.mode == 'mobile') {
+        alert(element.mode)
         element.toggle.click();
     }
 
