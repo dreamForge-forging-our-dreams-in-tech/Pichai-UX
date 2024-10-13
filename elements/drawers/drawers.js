@@ -1,12 +1,12 @@
 function createSimpleDrawer(element) { // turns a simple element into a drawer menu
     element.classList.add('drawer');
 
-    createDrawerButton(element);
+    element.toggle = createDrawerButton(element);
 
     element.addEventListener('click', function () {
 
         alert();
-            this.getElementsByClassName('drawerToggle')[0].click();
+            this.toggle.click();
     });
 }
 
@@ -40,6 +40,7 @@ function createDrawerButton(forElement) { // creates a button on wich the user c
     });
 
     document.body.appendChild(button);
+    return button;
 }
 
 export { createSimpleDrawer, removeSimpleDrawer };
