@@ -17,6 +17,13 @@ function enableSetListItems(element,callback) {
         },
         set(newValue) {
             element.innerHTML = '';
+
+            for(i of newValue ) {
+                let a = document.createElement('a');
+                a.innerHTML = i;
+                
+                element.appendChild(a);
+            }
             element.connectedCallback();
         }
     });
