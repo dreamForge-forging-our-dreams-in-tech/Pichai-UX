@@ -89,7 +89,7 @@ function addForConnection(e, e2) {
     });
 
     for (i of e.children) {
-        i.onclick = function (e) {
+        i.addEventListener('click',function (e) {
             e.stopPropagation();
             e.preventDefault();
 
@@ -97,7 +97,7 @@ function addForConnection(e, e2) {
 
             this.parentNode.getElementsByClassName('current')[0].classList.remove('current');
             this.classList.add('current');
-        }
+        });
     }
 
 }
