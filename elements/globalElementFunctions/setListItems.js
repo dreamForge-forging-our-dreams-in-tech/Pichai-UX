@@ -1,11 +1,13 @@
 let i;
 
-function enableSetListItems(element,callback) {
+function enableSetListItems(element) {
     let listItems = [];
 
     // Initialize listItems with the current children
     for (let i of element.children) {
-        if (i.tagName !== 'HR' || i == 'HR') {
+        if (i.tagName == 'HR' || i == 'HR') {
+            listItems.push('HR');
+        } else {
             listItems.push(i.innerHTML); // Adds the items to the listItems array
         }
     }
