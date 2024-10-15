@@ -1,3 +1,5 @@
+let i;
+
 function enableSetListItems(element) {
     element.listItems = [];
 
