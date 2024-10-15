@@ -22,7 +22,7 @@ function enableSetListItems(element) {
 
             for(i of newValue ) {
                 let a = document.createElement(i == 'HR' ? 'hr' : 'li');
-                a.innerHTML = i == 'HR' ? '' : 'li';
+                a.innerHTML = i == 'HR' ? '' : i;
 
                 element.appendChild(a);
             }
