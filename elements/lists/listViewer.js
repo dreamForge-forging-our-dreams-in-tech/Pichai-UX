@@ -20,6 +20,7 @@ class ListViewer extends HTMLElement {
 
     connectedCallback() {
         let i;
+        enableSetListItems(this);
 
         if (this.getAttribute('actionButton') == '' || !this.hasAttribute('actionButton')) { } else {
             for (i of this.children) {
@@ -46,14 +47,10 @@ class ListViewer extends HTMLElement {
 
             this.dispatchEvent(click); // dispatches the click event only when it's clicked and not when the value is manually changed by the developer.
         });
-
-        this.attributeChangedCallback();
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
         doAttributeCheck('string', 'value', this.getAttribute('value'));
-
-        enableSetListItems(this, this.connectedCallback);
     }
 }
 

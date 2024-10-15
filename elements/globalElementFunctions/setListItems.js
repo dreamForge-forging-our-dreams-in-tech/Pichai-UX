@@ -17,7 +17,7 @@ function enableSetListItems(element,callback) {
         },
         set(newValue) {
             element.innerHTML = '';
-            callback();
+            element.connectedCallback();
         }
     });
 
