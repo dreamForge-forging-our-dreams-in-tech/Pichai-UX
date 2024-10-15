@@ -1,6 +1,6 @@
 let i;
 
-function enableSetListItems(element) {
+function enableSetListItems(element,callback) {
     let listItems = [];
 
     // Initialize listItems with the current children
@@ -26,7 +26,7 @@ function enableSetListItems(element) {
 
                 element.appendChild(a);
             }
-            element.connectedCallback();
+            callback(element)
         }
     });
 

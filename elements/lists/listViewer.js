@@ -21,23 +21,9 @@ class ListViewer extends HTMLElement {
     connectedCallback() {
         let i;
 
-        if (this.listItems) { } else {
-            enableSetListItems(this);
-            return;
-        }
+            enableSetListItems(this, createButtons);
 
-        if (this.getAttribute('actionButton') == '' || !this.hasAttribute('actionButton')) { } else {
-            for (i of this.children) {
-                if (i.tagName == 'HR') { } else {
-
-                    let button = document.createElement('button');
-                    button.innerHTML = this.getAttribute('actionButton');
-                    button.classList.add('actionButton', 'material-symbols-outlined');
-
-                    i.appendChild(button);
-                }
-            }
-        }
+            createButtons(this);
 
         this.addEventListener('click', function (e) { // adds a click event to the list items and ensures that the right value is returned
             this.setAttribute('value', e.target.id);
@@ -55,6 +41,21 @@ class ListViewer extends HTMLElement {
 
     attributeChangedCallback(name, oldValue, newValue) {
         doAttributeCheck('string', 'value', this.getAttribute('value'));
+    }
+}
+
+function createButtons (e) {
+    if (e.getAttribute('actionButton') == '' || !e.hasAttribute('actionButton')) { } else {
+        for (i of e.children) {
+            if (i.tagName == 'HR') { } else {
+
+                let button = document.createElement('button');
+                button.innerHTML = e.getAttribute('actionButton');
+                button.classList.add('actionButton', 'material-symbols-outlined');
+
+                i.appendChild(button);
+            }
+        }
     }
 }
 
