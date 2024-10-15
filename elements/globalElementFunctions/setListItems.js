@@ -1,6 +1,6 @@
 let i;
 
-function enableSetListItems(element, callback) {
+function enableSetListItems(element,callback) {
     let listItems = [];
 
     // Initialize listItems with the current children
@@ -16,17 +16,15 @@ function enableSetListItems(element, callback) {
             return listItems;
         },
         set(newValue) {
-            if (element.listItems) {
-                element.innerHTML = '';
+            element.innerHTML = '';
 
-                for (i of newValue) {
-                    let a = document.createElement(i == 'HR' ? 'hr' : 'li');
-                    a.innerHTML = i;
+            for(i of newValue ) {
+                let a = document.createElement(i == 'HR' ? 'hr' : 'li');
+                a.innerHTML = i;
 
-                    element.appendChild(a);
-                }
-                element.connectedCallback();
+                element.appendChild(a);
             }
+            element.connectedCallback();
         }
     });
 
