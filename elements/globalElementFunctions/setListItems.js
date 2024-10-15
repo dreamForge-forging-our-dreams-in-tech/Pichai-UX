@@ -6,7 +6,7 @@ function enableSetListItems(element) {
     for (i of element.children) {
         if (i.tagName == 'HR') { } else {
             let text = String(i.innerHTML)
-            element.listItems.push(text.substring(0, text.indexOf('<'))); //adds the items to the listItems object for setting/getting
+            element.listItems.push(text); //adds the items to the listItems object for setting/getting
         }
     }
 
