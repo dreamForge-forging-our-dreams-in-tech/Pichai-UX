@@ -16,7 +16,7 @@ function enableSetListItems(element, callback) {
             return listItems;
         },
         set(newValue) {
-            if (listItems.length != element.children.length) {
+            if (element.listItems) {
                 element.innerHTML = '';
 
                 for (i of newValue) {
