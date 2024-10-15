@@ -23,6 +23,7 @@ class ListViewer extends HTMLElement {
 
         if (this.listItems) { } else {
             enableSetListItems(this);
+            return;
         }
 
         if (this.getAttribute('actionButton') == '' || !this.hasAttribute('actionButton')) { } else {
