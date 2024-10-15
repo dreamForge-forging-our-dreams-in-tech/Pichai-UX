@@ -10,8 +10,8 @@ function enableSetListItems(element,callback) {
         }
     }
 
-    // Define the listItems property with getter and setter
-    Object.defineProperty(element, 'listItems', {
+    // Define the listItems property with getter and setter\
+    try {     Object.defineProperty(element, 'listItems', {
         get() {
             return listItems;
         },
@@ -19,14 +19,15 @@ function enableSetListItems(element,callback) {
             element.innerHTML = '';
 
             for(i of newValue ) {
-                let a = document.createElement('a');
+                let a = document.createElement('li');
                 a.innerHTML = i;
-                
+
                 element.appendChild(a);
             }
             element.connectedCallback();
         }
     });
+} catch(e) {}
 
     // Set the initial value of listItems
     element.listItems = listItems;
