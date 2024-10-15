@@ -1,23 +1,28 @@
 let i;
 
 function enableSetListItems(element) {
-    element.listItems = [];
+    let listItems = [];
 
+    // Initialize listItems with the current children
+    for (let i of element.children) {
+        if (i.tagName !== 'HR') {
+            listItems.push(i.innerHTML); // Adds the items to the listItems array
+        }
+    }
+
+    // Define the listItems property with getter and setter
     Object.defineProperty(element, 'listItems', {
         get() {
-            return element.listItmes;
+            return listItems;
         },
         set(newValue) {
             console.log('listItems changed to:', newValue);
-            element.listItmes = newValue; // update the property
+            listItems = newValue; // Update the array
         }
     });
 
-    for (i of element.children) {
-        if (i.tagName == 'HR') { } else {
-            element.listItems.push(i.innerHTML); //adds the items to the listItems object for setting/getting
-        }
-    }
+    // Set the initial value of listItems
+    element.listItems = listItems;
 }
 
 export { enableSetListItems }
