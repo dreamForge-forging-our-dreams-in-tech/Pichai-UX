@@ -19,6 +19,7 @@ class ListViewer extends HTMLElement {
 
     connectedCallback() {
         let i;
+        this.listItems = [];
 
         if (this.getAttribute('actionButton') == '' || !this.hasAttribute('actionButton')) { } else {
             for (i of this.children) {
@@ -28,6 +29,8 @@ class ListViewer extends HTMLElement {
                 button.classList.add('actionButton', 'material-symbols-outlined');
 
                 i.appendChild(button);
+
+                this.listItems.push(i.innerHTML);
                 }
             }
         }
