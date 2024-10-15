@@ -1,4 +1,5 @@
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
+import { enableSetListItems } from '../globalElementFunctions/setListItems.js';
 
 // Create a class for the <log-in> element
 class ListViewer extends HTMLElement {
@@ -19,18 +20,17 @@ class ListViewer extends HTMLElement {
 
     connectedCallback() {
         let i;
-        this.listItems = [];
+        enableSetListItems(this);
 
         if (this.getAttribute('actionButton') == '' || !this.hasAttribute('actionButton')) { } else {
             for (i of this.children) {
-                if(i.tagName == 'HR') {} else {
-                let button = document.createElement('button');
-                button.innerHTML = this.getAttribute('actionButton');
-                button.classList.add('actionButton', 'material-symbols-outlined');
+                if (i.tagName == 'HR') { } else {
 
-                i.appendChild(button);
+                    let button = document.createElement('button');
+                    button.innerHTML = this.getAttribute('actionButton');
+                    button.classList.add('actionButton', 'material-symbols-outlined');
 
-                this.listItems.push(i.innerHTML);
+                    i.appendChild(button);
                 }
             }
         }
