@@ -19,11 +19,8 @@ class ListViewer extends HTMLElement {
     }
 
     connectedCallback() {
-        let i;
-
-            enableSetListItems(this, createButtons);
-
-            createButtons(this);
+        enableSetListItems(this, createButtons);
+        createButtons(this);
 
         this.addEventListener('click', function (e) { // adds a click event to the list items and ensures that the right value is returned
             this.setAttribute('value', e.target.id);
@@ -44,7 +41,9 @@ class ListViewer extends HTMLElement {
     }
 }
 
-function createButtons (e) {
+function createButtons(e) {
+    let i;
+    
     if (e.getAttribute('actionButton') == '' || !e.hasAttribute('actionButton')) { } else {
         for (i of e.children) {
             if (i.tagName == 'HR') { } else {
