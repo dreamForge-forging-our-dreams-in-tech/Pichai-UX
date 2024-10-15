@@ -19,7 +19,7 @@ class ListViewer extends HTMLElement {
     }
 
     connectedCallback() {
-        enableSetListItems(this, createButtons);
+        enableSetListItems(this, createButtons); //callback call ensures button creation
 
         this.addEventListener('click', function (e) { // adds a click event to the list items and ensures that the right value is returned
             this.setAttribute('value', e.target.id);
