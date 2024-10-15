@@ -5,7 +5,7 @@ function enableSetListItems(element,callback) {
 
     // Initialize listItems with the current children
     for (let i of element.children) {
-        if (i.tagName !== 'HR') {
+        if (i.tagName !== 'HR' || i == 'HR') {
             listItems.push(i.innerHTML); // Adds the items to the listItems array
         }
     }
@@ -19,7 +19,7 @@ function enableSetListItems(element,callback) {
             element.innerHTML = '';
 
             for(i of newValue ) {
-                let a = document.createElement('li');
+                let a = document.createElement(i == 'HR' ? 'hr' : 'li');
                 a.innerHTML = i;
 
                 element.appendChild(a);
