@@ -22,12 +22,11 @@ class ListViewer extends HTMLElement {
         enableSetListItems(this, createButtons); //callback call ensures button creation
 
         this.addEventListener('click', function (e) { // adds a click event to the list items and ensures that the right value is returned
-            this.setAttribute('value', e.target.id);
+            this.setAttribute('value', e.target);
 
             let click = new CustomEvent("itemSelected", { //fires when an item in the listViewer is clicked, returns the text of the clicked item. Uses custom name because click is used by js 
                 detail: {
-                    item: e.target.id,
-                    index: Array.prototype.indexOf.call(this.children, e.target),
+                    item: e.target,
                 },
             });
 
