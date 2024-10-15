@@ -1,6 +1,6 @@
 let i;
 
-function enableSetListItems(element) {
+function enableSetListItems(element,callback) {
     let listItems = [];
 
     // Initialize listItems with the current children
@@ -16,8 +16,8 @@ function enableSetListItems(element) {
             return listItems;
         },
         set(newValue) {
-            console.log('listItems changed to:', newValue);
-            listItems = newValue; // Update the array
+            element.innerHTML = '';
+            callback();
         }
     });
 

@@ -20,7 +20,7 @@ class ListViewer extends HTMLElement {
 
     connectedCallback() {
         let i;
-        enableSetListItems(this);
+        enableSetListItems(this, this.connectedCallback);
 
         if (this.getAttribute('actionButton') == '' || !this.hasAttribute('actionButton')) { } else {
             for (i of this.children) {
