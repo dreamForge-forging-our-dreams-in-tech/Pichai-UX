@@ -26,7 +26,7 @@ class ListViewer extends HTMLElement {
 
             let click = new CustomEvent("itemSelected", { //fires when an item in the listViewer is clicked, returns the text of the clicked item. Uses custom name because click is used by js 
                 detail: {
-                    item: e.target,
+                    value: e.target,
                 },
             });
 
