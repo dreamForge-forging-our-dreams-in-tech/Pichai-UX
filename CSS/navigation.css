@@ -11,7 +11,7 @@
     background-color:var(--primary);
 }
 
-.tabBarHolder a {
+.tabBarHolder a, .tabBarHolder li {
     background-color:TRANSPARENT;
 
     color:var(--primaryTextColor);
