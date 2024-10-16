@@ -45,10 +45,10 @@ function createButtons(e) {
 
     if (e.getAttribute('actionButton') == '' || !e.hasAttribute('actionButton')) { } else {
         for (i of e.children) {
-            if(i.id) {
+            if(!i.id) {
                 i.id = i.innerHTML;
             }
-            
+
             if (i.tagName == 'HR') { } else {
 
                 let button = document.createElement('button');
