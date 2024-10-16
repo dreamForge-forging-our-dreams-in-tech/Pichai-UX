@@ -3,7 +3,6 @@
 @import "./text.css";
 @import "./buttons.css";
 @import "./card.css";
-@import "./navigation.css";
 @import "./input.css";
 @import "./footer.css";
 @import "./template styles/login.css";
@@ -14,6 +13,7 @@
 @Import './notifiers.css';
 @import './drawers.css';
 @import './hr.css';
+@import "./navigation.css";
 
 body,
 html {
