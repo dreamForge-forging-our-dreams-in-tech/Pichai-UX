@@ -13,8 +13,6 @@
 
 .tabBarHolder a,
 .tabBarHolder li {
-  list-style-image: none;
-
   background-color: TRANSPARENT;
 
   color: var(--primaryTextColor);
