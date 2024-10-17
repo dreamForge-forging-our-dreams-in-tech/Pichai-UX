@@ -65,8 +65,8 @@ li.black:nth-child(7n+7) {
 }
 
 .tabBarHolder li.black, li {
-   list-style-type: none;
-   list-style-image:none;
+   list-style-type: none !important;
+   list-style-image:none !important;
 }
 
 list-viewer {
