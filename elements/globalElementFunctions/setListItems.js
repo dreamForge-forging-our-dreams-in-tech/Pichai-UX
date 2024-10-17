@@ -18,7 +18,7 @@ function enableSetListItems(element, callback) { // allows user to set the conte
             return listItems;
         },
         set(newValue) {
-            if (!element.firstTime) { } else {
+            if (!element.firstTime) { } else { // checks if it is set for the firsttime, if so ignore changes
                 element.innerHTML = '';
 
                 for (i of newValue) {
