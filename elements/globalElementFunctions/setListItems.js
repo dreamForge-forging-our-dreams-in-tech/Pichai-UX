@@ -12,8 +12,6 @@ function enableSetListItems(element, callback) { // allows user to set the conte
         }
     }
 
-    console.log(listItems)
-
     // Define the listItems property with getter and setter
     Object.defineProperty(element, 'listItems', {
         get() {
@@ -21,6 +19,7 @@ function enableSetListItems(element, callback) { // allows user to set the conte
         },
         set(newValue) {
             element.innerHTML = '';
+            console.log(newValue)
 
             for (i of newValue) {
                 let a = document.createElement(i == 'HR' ? 'hr' : 'li');
