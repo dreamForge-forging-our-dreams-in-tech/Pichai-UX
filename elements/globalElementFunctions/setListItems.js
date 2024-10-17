@@ -22,23 +22,23 @@ function enableSetListItems(element, callback) { // allows user to set the conte
                 element.firstTime = true;
             }
 
-            element.innerHTML = '';
+            if (!element.firstTime) { } else { // checks if it is set for the firsttime, if so ignore changes
+                element.innerHTML = '';
 
-            for (i of newValue) {
-                if (!element.firstTime) { } else { // checks if it is set for the firsttime, if so ignore changes
+                for (i of newValue) {
                     let a = document.createElement(i == 'HR' ? 'hr' : 'li');
                     a.innerHTML = i == 'HR' ? '' : i;
                     a.id = i;
 
                     element.appendChild(a);
-
-                    try {
-                        callback(element);
-                    } catch (e) { }
-
-                    element.firstTime = true;
                 }
+
+                element.firstTime = true;
             }
+
+            try {
+                callback(element);
+            } catch (e) { }
         }
     });
 
