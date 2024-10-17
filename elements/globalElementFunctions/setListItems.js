@@ -19,9 +19,9 @@ function enableSetListItems(element, callback) { // allows user to set the conte
         },
         set(newValue) {
             element.innerHTML = '';
-            console.log(newValue)
 
             for (i of newValue) {
+                console.log(i)
                 let a = document.createElement(i == 'HR' ? 'hr' : 'li');
                 a.innerHTML = i == 'HR' ? '' : i;
 
