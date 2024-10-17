@@ -100,7 +100,9 @@ function addForConnection(e, e2) {
 
             element.setAttribute('pageIndex',Number(this.getAttribute('index')));
 
-            this.parentNode.getElementsByClassName('current')[0].classList.remove('current');
+            try {
+                i.parentNode.getElementsByClassName('current')[0].classList.remove('current');
+            } catch(e) {}
             this.classList.add('current');
         });
     }
