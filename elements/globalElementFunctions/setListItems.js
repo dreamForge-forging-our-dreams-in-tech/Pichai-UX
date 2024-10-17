@@ -1,6 +1,6 @@
 let i;
 
-function enableSetListItems(element,callback) { // allows user to set the contents of a listview with js code, after finishing a callback is fired - required
+function enableSetListItems(element, callback) { // allows user to set the contents of a listview with js code, after finishing a callback is fired - required
     let listItems = [];
 
     // Initialize listItems with the current children
@@ -20,13 +20,15 @@ function enableSetListItems(element,callback) { // allows user to set the conten
         set(newValue) {
             element.innerHTML = '';
 
-            for(i of newValue ) {
+            for (i of newValue) {
                 let a = document.createElement(i == 'HR' ? 'hr' : 'li');
                 a.innerHTML = i == 'HR' ? '' : i;
 
                 element.appendChild(a);
             }
-            callback(element)
+            try {
+                callback(element);
+            } catch (e) { }
         }
     });
 

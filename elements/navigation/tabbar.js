@@ -1,4 +1,5 @@
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
+import { enableSetListItems } from '../globalElementFunctions/setListItems.js';
 
 // Create a class for the element
 class TabBar extends HTMLElement {
@@ -22,6 +23,8 @@ class TabBar extends HTMLElement {
         let index = window.default_index;
         let keys = this.children;
         let forAttr = this.getAttribute('for');
+
+        enableSetListItems(this)
 
         this.classList.add('tabBarHolder');
 
