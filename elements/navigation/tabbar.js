@@ -24,7 +24,7 @@ class TabBar extends HTMLElement {
         let keys = this.children;
         let forAttr = this.getAttribute('for');
 
-        enableSetListItems(this, runction () {});
+        enableSetListItems(this, function () {});
 
         this.classList.add('tabBarHolder');
 
