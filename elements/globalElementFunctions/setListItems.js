@@ -3,8 +3,6 @@ let i;
 function enableSetListItems(element, callback) { // allows user to set the contents of a listview with js code, after finishing a callback is fired - required
     let listItems = [];
 
-    console.log(element)
-
     // Initialize listItems with the current children
     for (let i of element.children) {
         if (i.tagName == 'HR' || i == 'HR') {
@@ -13,6 +11,8 @@ function enableSetListItems(element, callback) { // allows user to set the conte
             listItems.push(i.innerHTML); // Adds the items to the listItems array
         }
     }
+
+    console.log(listItems)
 
     // Define the listItems property with getter and setter
     Object.defineProperty(element, 'listItems', {
