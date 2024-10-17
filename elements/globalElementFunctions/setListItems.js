@@ -18,6 +18,12 @@ function enableSetListItems(element, callback) { // allows user to set the conte
             return listItems;
         },
         set(newValue) {
+            if(newValue) {
+                element.classList.add('Hidden');
+            } else {
+                element.classList.remove('Hidden');
+            }
+            
             if (element.children.length == 0) {
                 element.firstTime = true;
             }

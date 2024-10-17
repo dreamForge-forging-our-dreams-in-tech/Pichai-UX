@@ -142,3 +142,7 @@ a {
 *:disabled {
     opacity: 0.6
 }
+
+.Hidden { /* class to hide a element */
+    display:none;
+}
