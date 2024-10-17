@@ -85,7 +85,9 @@ function addForConnection(e, e2) {
 
         for(i of e.children) {
             if(parseInt(i.getAttribute('index')) == index) {
-                i.parentNode.getElementsByClassName('current')[0].classList.remove('current');
+                try {
+                    i.parentNode.getElementsByClassName('current')[0].classList.remove('current');
+                } catch(e) {}
                 i.classList.add('current');
             }
         }

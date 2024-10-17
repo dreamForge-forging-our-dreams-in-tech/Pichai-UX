@@ -26,7 +26,6 @@ function enableSetListItems(element, callback) { // allows user to set the conte
                 a.id = i;
 
                 element.appendChild(a);
-                console.log(a)
             }
             try {
                 callback(element);
