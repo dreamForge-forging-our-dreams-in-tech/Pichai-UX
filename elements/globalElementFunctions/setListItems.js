@@ -23,6 +23,7 @@ function enableSetListItems(element, callback) { // allows user to set the conte
             for (i of newValue) {
                 let a = document.createElement(i == 'HR' ? 'hr' : 'li');
                 a.innerHTML = i == 'HR' ? '' : i;
+                a.id = i;
 
                 element.appendChild(a);
                 console.log(a)
