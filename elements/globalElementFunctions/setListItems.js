@@ -18,18 +18,23 @@ function enableSetListItems(element, callback) { // allows user to set the conte
             return listItems;
         },
         set(newValue) {
-            element.innerHTML = '';
+            if (!element.firstTime) { } else {
+                element.innerHTML = '';
 
-            for (i of newValue) {
-                let a = document.createElement(i == 'HR' ? 'hr' : 'li');
-                a.innerHTML = i == 'HR' ? '' : i;
-                a.id = i;
+                for (i of newValue) {
+                    let a = document.createElement(i == 'HR' ? 'hr' : 'li');
+                    a.innerHTML = i == 'HR' ? '' : i;
+                    a.id = i;
 
-                element.appendChild(a);
+                    element.appendChild(a);
+                }
+
+                try {
+                    callback(element);
+                } catch (e) { }
+
+                element.firstTime = true;
             }
-            try {
-                callback(element);
-            } catch (e) { }
         }
     });
 
