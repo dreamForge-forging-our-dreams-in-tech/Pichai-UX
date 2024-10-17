@@ -24,7 +24,13 @@ class TabBar extends HTMLElement {
         let keys = this.children;
         let forAttr = this.getAttribute('for');
 
-        enableSetListItems(this);
+        enableSetListItems(this, function () {
+            if (!this.getAttribute('for') == '') {
+                addForConnection(this, this.getAttribute('for'));
+            } else {
+                removeForConnection(this, this.getAttribute('for'));
+            }
+        });
 
         this.classList.add('tabBarHolder');
 
@@ -116,7 +122,7 @@ function removeForConnection(e, e2) {
     element.removeEventListener('pageChange', function () {}, false);
 
     for (i of e.children) {
-        i.onclick = function () {}
+        i.removeEventListener('click', function () {}, false);
     }
 }
 
