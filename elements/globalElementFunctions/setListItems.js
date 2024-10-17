@@ -18,10 +18,10 @@ function enableSetListItems(element, callback) { // allows user to set the conte
             return listItems;
         },
         set(newValue) {
-            if(element.children.length == 0) {
+            if (element.children.length == 0) {
                 element.firstTime = true;
             }
-            
+
             if (!element.firstTime) { } else { // checks if it is set for the firsttime, if so ignore changes
                 element.innerHTML = '';
 
@@ -32,13 +32,12 @@ function enableSetListItems(element, callback) { // allows user to set the conte
 
                     element.appendChild(a);
                 }
-
-                try {
-                    callback(element);
-                } catch (e) { }
-
                 element.firstTime = true;
             }
+
+            try {
+                callback(element);
+            } catch (e) { }
         }
     });
 
