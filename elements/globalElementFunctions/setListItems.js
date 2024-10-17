@@ -21,11 +21,11 @@ function enableSetListItems(element, callback) { // allows user to set the conte
             element.innerHTML = '';
 
             for (i of newValue) {
-                console.log(i)
                 let a = document.createElement(i == 'HR' ? 'hr' : 'li');
                 a.innerHTML = i == 'HR' ? '' : i;
 
                 element.appendChild(a);
+                console.log(a)
             }
             try {
                 callback(element);
