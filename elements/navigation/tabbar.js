@@ -24,12 +24,12 @@ class TabBar extends HTMLElement {
         let keys = this.children;
         let forAttr = this.getAttribute('for');
 
-        enableSetListItems(this, function () {
-            if (!this.getAttribute('for') == '') {
+        enableSetListItems(this, function (e) {
+            if (!e.getAttribute('for') == '') {
                 alert()
-                addForConnection(this, this.getAttribute('for'));
+                addForConnection(e, e.getAttribute('for'));
             } else {
-                removeForConnection(this, this.getAttribute('for'));
+                removeForConnection(e, e.getAttribute('for'));
             }
         });
 
