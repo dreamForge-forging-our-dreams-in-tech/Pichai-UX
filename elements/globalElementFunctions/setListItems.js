@@ -3,7 +3,6 @@ let i;
 function enableSetListItems(element, callback) { // allows user to set the contents of a listview with js code, after finishing a callback is fired - required
     let listItems = [];
 
-    alert(element.tagName)
     let createTag = element.tagName == 'TAB-BAR' ? 'a' : 'li';
 
     // Initialize listItems with the current children
