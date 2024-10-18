@@ -3,6 +3,9 @@ let i;
 function enableSetListItems(element, callback) { // allows user to set the contents of a listview with js code, after finishing a callback is fired - required
     let listItems = [];
 
+    alert(element.tagName)
+    let createTag = element.tagName == 'TAB-BAR' ? 'a' : 'li';
+
     // Initialize listItems with the current children
     for (let i of element.children) {
         if (i.tagName == 'HR' || i == 'HR') {
@@ -31,7 +34,7 @@ function enableSetListItems(element, callback) { // allows user to set the conte
                 }
 
                 for (i of newValue) {
-                    let a = document.createElement(i == 'HR' ? 'hr' : 'li');
+                    let a = document.createElement(i == 'HR' ? 'hr' : createTag);
                     a.innerHTML = i == 'HR' ? '' : i;
                     a.id = i;
 
