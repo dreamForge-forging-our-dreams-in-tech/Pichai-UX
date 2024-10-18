@@ -26,6 +26,7 @@ class TabBar extends HTMLElement {
 
         enableSetListItems(this, function () {
             if (!this.getAttribute('for') == '') {
+                alert()
                 addForConnection(this, this.getAttribute('for'));
             } else {
                 removeForConnection(this, this.getAttribute('for'));
