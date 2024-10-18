@@ -88,6 +88,7 @@ function addForConnection(e, e2) {
 
     element.addEventListener('pageChange', (a) => {
         let index = a.detail.pageIndex;
+        alert(index)
 
         for(i of e.children) {
             if(parseInt(i.getAttribute('index')) == index) {
