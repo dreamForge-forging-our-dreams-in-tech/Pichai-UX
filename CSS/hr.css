@@ -15,6 +15,24 @@ hr::after {
     overflow: hidden;
 
     display: block;
+
+    margin-top: 3px;
+}
+
+hr::before {
+    /* allows us to create hr titles*/
+    content: attr(titleText);
+    /* displays a text above the hr*/
+    height: 20px !important;
+    color: black;
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    background-color: var(--primary);
+    color: var(--primaryTextColor);
+    border-radius: 10px;
+    padding: 4px;
+
 }
 
 list-viewer hr {
