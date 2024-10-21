@@ -22,7 +22,7 @@ hr::after {
     margin-top: 5px;
 }
 
-hr::before {
+p[titleText]:not([titleText=""])::before {
     /* allows us to create hr titles*/
     content: attr(titleText);
     /* displays a text above the hr*/
@@ -35,10 +35,6 @@ hr::before {
     color: var(--primaryTextColor);
     border-radius: 10px;
     padding: 4px;
-}
-
-hr[titleText='']::before {
-    display:none;
 }
 
 list-viewer hr {
