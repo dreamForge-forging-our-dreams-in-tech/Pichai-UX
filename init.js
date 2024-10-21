@@ -53,7 +53,7 @@ class PichaiUX {
             google.id = 'google';
             google.rel = 'stylesheet';
             google.type = 'text/css';
-            google.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined';
+            google.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
             google.media = 'all';
 
             head.prepend(google);
