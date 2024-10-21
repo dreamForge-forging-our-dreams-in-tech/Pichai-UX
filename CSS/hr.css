@@ -1,5 +1,8 @@
 hr {
     width: 100%;
+
+    margin: 8px;
+    margin-bottom: 12px;
 }
 
 hr::after {
