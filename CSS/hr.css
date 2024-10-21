@@ -22,7 +22,7 @@ hr::after {
     margin-top: 5px;
 }
 
-p[titleText]:not([titleText=""])::before {
+hr[titleText]:not([titleText=""])::before {
     /* allows us to create hr titles*/
     content: attr(titleText);
     /* displays a text above the hr*/
