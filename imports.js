@@ -36,6 +36,9 @@ import './elements/notifiers/dialogs.js';
 import './utils/localFOrage.js';
 import './utils/elements/supportForms.js';
 
+//import functions  for users to use
+import './functions/filePicker.js';
+
 export { PichaiUX };
 
 //DO NOT REMOVE CODE BELOW THIS COMMENT
