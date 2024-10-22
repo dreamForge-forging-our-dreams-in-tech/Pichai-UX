@@ -16,7 +16,7 @@ hr::after {
 
     display: block;
 
-    margin-top: 1.5px;
+    margin-top: 2px;
 }
 
 hr[titleText]:not([titleText=""])::before {
@@ -30,7 +30,7 @@ hr[titleText]:not([titleText=""])::before {
     color: var(--primaryTextColor);
     border-radius: 10px;
     padding: 4px;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 list-viewer hr {
