@@ -17,9 +17,9 @@ class customSettings extends HTMLElement {
                 <li>Icon packs</li>
             </list-viewer>`;
 
-            this.firstChild.document.getElementById('settingsListView').addEventListener('itemSelected', function (e) {
+            this.firstChild.addEventListener('itemSelected', function (e) {
                 if(e.detail.index == 0) {
-                    pickFiles(function () {
+                    pickFiles(function (file) {
                         
                     });
                 }
