@@ -1,8 +1,5 @@
 hr {
     width: 100%;
-
-    margin: 8px;
-    margin-bottom: 12px;
 }
 
 hr::after {
@@ -18,15 +15,11 @@ hr::after {
     overflow: hidden;
 
     display: block;
-
-    margin-top: 5px;
 }
 
 hr[titleText]:not([titleText=""])::before {
     /* allows us to create hr titles*/
     content: attr(titleText);
-    /* displays a text above the hr*/
-    height: 20px !important;
     color: black;
     overflow: hidden;
     display: block;
@@ -35,6 +28,7 @@ hr[titleText]:not([titleText=""])::before {
     color: var(--primaryTextColor);
     border-radius: 10px;
     padding: 4px;
+    font-size: 12px;
 }
 
 list-viewer hr {
