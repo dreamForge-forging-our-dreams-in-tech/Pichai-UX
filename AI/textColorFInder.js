@@ -161,11 +161,22 @@ net.train([{
   output: {
     black: 1
   }
-},{
+},
+{
   input: {
     r: 0.64,
     g: 0.42,
     b: 0.21
+  },
+  output: {
+    black: 1
+  }
+},
+{
+  input: {
+    r: 0.93,
+    g: 0.62,
+    b: 0.96
   },
   output: {
     black: 1
