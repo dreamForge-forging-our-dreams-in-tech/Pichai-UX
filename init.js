@@ -38,6 +38,10 @@ class PichaiUX {
         let image = String(comp['backgroundImage']);
         image = image.substring(5, image.length - 2);
 
+        if(window.localStorage.getItem(`${window.storageName}bgImageChange`)) {
+            image = window.localStorage.getItem(`${window.storageName}bgImageChange`);
+        }
+
         this.options.source = image || '#008dcd';
 
         //inject required css
