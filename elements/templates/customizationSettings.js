@@ -9,7 +9,7 @@ class customSettings extends HTMLElement {
     }
 
     async connectedCallback() {
-        let checked = window.localStorage.getItem(`${window.storageName}transperncy`) == '0.9' ? 'checked' : '';
+        let checked = window.localStorage.getItem(`${window.storageName}transperncy`) == '1' ? '' : 'checked';
 
         this.innerHTML = `<list-viewer actionButton="edit">
                 <li id='wallpaper'>Wallpaper</li>
@@ -33,7 +33,7 @@ class customSettings extends HTMLElement {
                 li.children[0].checked = !li.children[0].checked;
 
                 if (li.children[0].checked) {
-                    window.localStorage.setItem(`${window.storageName}transperncy`, 0.9);
+                    window.localStorage.setItem(`${window.storageName}transperncy`, 0.8);
                 } else {
                     window.localStorage.setItem(`${window.storageName}transperncy`, 1.0);
                 }
