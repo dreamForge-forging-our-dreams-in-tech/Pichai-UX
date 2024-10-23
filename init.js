@@ -22,7 +22,7 @@ class PichaiUX {
             accountMenu: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when the user is logged in and allows settings modifications, saving etc
         };
 
-        for(i in options) {
+        for (i in options) {
             opt[i] = options[i];
         }
 
@@ -89,28 +89,32 @@ class PichaiUX {
         optimizeTextColor(el);
     }
 
-    getListOfElements () {
+    getListOfElements() {
         return getListOfElements();
     }
 
-    createSimpleDrawer (e, mode) {
+    createSimpleDrawer(e, mode) {
         createSimpleDrawer(e, mode);
     }
 
-    removeSimpleDrawer (e) {
+    removeSimpleDrawer(e) {
         removeSimpleDrawer(e);
     }
 
-    async updateStyling () { // allowsw the user to force an update to pichai if it isn't odne automatically
+    async updateStyling() { // allowsw the user to force an update to pichai if it isn't odne automatically
         await generate3ColorPallete(this.options);
         optimizeTextColor(document);
     }
 }
 
-function checkCustomizationChanges (options) {
-    let interval = window.setInterval( async () => {
-        window.document.body.style.backgroundImage = `url('${window.localStorage.getItem('bgImageChange')}')`
-        options.source = window.localStorage.getItem('bgImageChange');
+function checkCustomizationChanges(options) {
+    let interval = window.setInterval(async () => {
+        let bgItem = `url('${window.localStorage.getItem('bgImageChange')}')`;
+        
+        if (bgItem != window.document.body.style.backgroundImage) {
+            window.document.body.style.backgroundImage = bgItem
+            options.source = window.localStorage.getItem('bgImageChange');
+        }
 
         await generate3ColorPallete(options);
         optimizeTextColor(document);
