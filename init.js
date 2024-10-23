@@ -62,7 +62,8 @@ class PichaiUX {
         }
 
         // generate pallete based on bg image
-        await generate3ColorPallete(this.options);
+        //await generate3ColorPallete(this.options);
+        this.updateStyling();
 
         // make a themed icon if set to true by user
         if (this.options.themedFavIcon) {
@@ -81,7 +82,7 @@ class PichaiUX {
         }
 
         // optimise text at start to fix list bullets to have right colors - may need to change later
-        this.optimizeTextColor();
+        //this.optimizeTextColor();
     }
 
     async generateDynamicIcon(icon) {
@@ -102,6 +103,11 @@ class PichaiUX {
 
     removeSimpleDrawer (e) {
         removeSimpleDrawer(e);
+    }
+
+    async updateStyling () { // allowsw the user to force an update to pichai if it isn't odne automatically
+        await generate3ColorPallete(this.options);
+        this.optimizeTextColor();
     }
 }
 
