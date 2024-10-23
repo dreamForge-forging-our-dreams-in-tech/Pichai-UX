@@ -29,7 +29,7 @@ class Warn extends HTMLElement {
 
         let icon = document.createElement('label');
         icon.classList.add('material-symbols-outlined');
-        icon.innerHTML = 'warning';
+        icon.innerHTML = window.default_warning_icon;
 
         let title = document.createElement('label');
         title.classList.add('title');

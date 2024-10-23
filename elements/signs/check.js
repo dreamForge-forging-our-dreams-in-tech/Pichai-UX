@@ -29,7 +29,7 @@ class Check extends HTMLElement {
 
         let icon = document.createElement('label');
         icon.classList.add('material-symbols-outlined');
-        icon.innerHTML = 'check';
+        icon.innerHTML = window.default_check_icon;
 
         let title = document.createElement('label');
         title.classList.add('title');

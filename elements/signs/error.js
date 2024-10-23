@@ -26,7 +26,7 @@ class Error extends HTMLElement {
 
         let icon = document.createElement('label');
         icon.classList.add('material-symbols-outlined');
-        icon.innerHTML = 'error';
+        icon.innerHTML = window.default_error_icon;
 
         let title = document.createElement('label');
         title.classList.add('title');

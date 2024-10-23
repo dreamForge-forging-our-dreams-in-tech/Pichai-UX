@@ -11,7 +11,7 @@ class customSettings extends HTMLElement {
     async connectedCallback() {
         let checked = window.localStorage.getItem(`${window.storageName}transperncy`) == '1' ? '' : 'checked';
 
-        this.innerHTML = `<list-viewer actionButton="edit">
+        this.innerHTML = `<list-viewer actionButton="${window.default_edit_icon}">
                 <li id='wallpaper'>Wallpaper</li>
                 <li>Color Order</li>
                 <li>Transparency Mode <input id='Pichai - transperencyMode' type='checkbox' class='actionButton' ${checked}></input></li>

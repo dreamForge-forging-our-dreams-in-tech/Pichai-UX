@@ -27,7 +27,7 @@ class Note extends HTMLElement {
 
         let icon = document.createElement('label');
         icon.classList.add('material-symbols-outlined');
-        icon.innerHTML = 'info';
+        icon.innerHTML = window.default_note_icon;
 
         let title = document.createElement('label');
         title.classList.add('title');
