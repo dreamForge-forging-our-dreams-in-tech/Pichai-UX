@@ -15,7 +15,7 @@ function pickFiles (callback) {
             reader.onload = readerEvent => {
 
                 try {
-                    cancelIdleCallback(readerEvent.target.result);
+                    callback(readerEvent.target.result);
                 } catch(e) {}
             }
 
