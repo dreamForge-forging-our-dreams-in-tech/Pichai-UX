@@ -126,15 +126,16 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
 
         for (i in localStorage) {
             if (String(i).includes(window.storageName)) {
-                alert(i)
                 updateStyles(i, window.localStorage.getItem(i));
             }
         }
     }
 
-    await generate3ColorPallete(options);
-    optimizeTextColor(document);
-    createThemedFavIcon(options);
+    window.setTimeout(async () => {
+        await generate3ColorPallete(options);
+        optimizeTextColor(document);
+        createThemedFavIcon(options);
+    },1000);
 }
 
 async function createThemedFavIcon(options) {
