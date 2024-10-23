@@ -23,6 +23,8 @@ class customSettings extends HTMLElement {
                     window.localStorage.setItem('bgImageChange', file);
                 });
             }
+
+            window.sessionStorage.setItem('updatedStyles', true);
         });
     }
 }
