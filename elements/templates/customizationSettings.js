@@ -21,8 +21,6 @@ class customSettings extends HTMLElement {
 
         this.firstChild.addEventListener('itemSelected', function (e) {
             if (e.detail.index == 0) {
-
-            } else if (e.detail.index == 2) {
                 pickFiles(function (file) {
                     window.localStorage.setItem('Pichai - bgImageChange', file);
 
