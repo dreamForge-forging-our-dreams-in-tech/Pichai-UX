@@ -66,7 +66,7 @@ class PichaiUX {
         this.updateStyling();
 
         // make a themed icon if set to true by user
-        //createThemedFavIcon(this.options);
+        createThemedFavIcon(this.options);
     }
 
     async generateDynamicIcon(icon) {
