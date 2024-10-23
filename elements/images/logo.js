@@ -20,7 +20,7 @@ function generateDynamicIcon(image) {
 
             let rgb = getComputedStyle(root).getPropertyValue('--primary');
 
-            rgb = rgb.substring(4, rgb.length - 1);
+            rgb = rgb.substring(5, rgb.length - 1);
             rgb = rgb.split(',');
 
             canvas.width = dynamicImage.width;
