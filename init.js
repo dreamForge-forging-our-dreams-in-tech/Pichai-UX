@@ -31,6 +31,7 @@ class PichaiUX {
     }
 
     async initialize() {
+        checkCustomizationChanges(); //starts listening to any adjustments to customization from the user
 
         let comp = window.getComputedStyle(document.body);
         let image = String(comp['backgroundImage']);
@@ -102,6 +103,17 @@ class PichaiUX {
     removeSimpleDrawer (e) {
         removeSimpleDrawer(e);
     }
+}
+
+function checkCustomizationChanges () {
+    window.addEventListener('storage', async function (e) {
+        if(e.key == 'bgImageChange') {
+            this.options.source = e.newValue;
+
+            await generate3ColorPallete(this.options);
+            this.optimizeTextColor();
+        }
+    });
 }
 
 export { PichaiUX }
