@@ -20,7 +20,9 @@ class customSettings extends HTMLElement {
                 <li>Reset data</li>
             </list-viewer>`;
 
-        document.getElementById('Pichai - transperencyMode').addEventListener('click', function () {
+        document.getElementById('Pichai - transperencyMode').addEventListener('click', function (e) {
+            e.stopPropagation();
+            
             window.localStorage.setItem('Pichai - transparencyMode', this.checked);
         });
 
