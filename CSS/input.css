@@ -305,7 +305,6 @@ input[type="file"]::file-selector-button {
    -webkit-appearance: none;
    appearance: none;
    background-color: var(--secondairyContainer);
-   margin: 0;
    font: inherit;
    color: var(--secondairyContainerTextColor);
    width: 30px !important;
@@ -323,7 +322,6 @@ input[type="file"]::file-selector-button {
  li input[type="checkbox"]:checked {
 
    border: 0.15em solid var(--secondairy);
-   margin: 0;
    font: inherit;
    color: var(--secondairyTextColor);
    background-color:var(--secondairy);
