@@ -26,10 +26,6 @@ html {
     margin: 0px;
 
     overscroll-behavior: none;
-
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
 * {
@@ -47,6 +43,10 @@ html {
 
     width: max-content;
     height: max-content;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .transparencyMode * :not(body) {
