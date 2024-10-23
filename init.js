@@ -31,7 +31,7 @@ class PichaiUX {
     }
 
     async initialize() {
-        checkCustomizationChanges(); //starts listening to any adjustments to customization from the user
+        checkCustomizationChanges(this.options); //starts listening to any adjustments to customization from the user
 
         let comp = window.getComputedStyle(document.body);
         let image = String(comp['backgroundImage']);
@@ -107,14 +107,14 @@ class PichaiUX {
     }
 }
 
-function checkCustomizationChanges () {
+function checkCustomizationChanges (options) {
     let interval = window.setInterval( async () => {
         window.document.body.style.backgroundImage = `url('${window.localStorage.getItem('bgImageChange')}')`
-        this.options.source = window.localStorage.getItem('bgImageChange');
+        options.source = window.localStorage.getItem('bgImageChange');
 
-        await generate3ColorPallete(this.options);
+        await generate3ColorPallete(options);
         optimizeTextColor(document);
     }, 500);
 }
 
-export { PichaiUX }
+export { PichaiUX };
