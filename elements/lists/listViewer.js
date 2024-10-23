@@ -49,7 +49,7 @@ function createButtons(e) {
                 i.id = i.innerHTML;
             }
 
-            if (i.tagName == 'HR' || i.getElementsByClassName('actionButton').length == 1) { } else {
+            if (i.tagName == 'HR' || i.getElementsByClassName('actionButton').length == 1) { } else { // allows users  to create custom action buttons elements other than a button
 
                 let button = document.createElement('button');
                 button.innerHTML = e.getAttribute('actionButton');
