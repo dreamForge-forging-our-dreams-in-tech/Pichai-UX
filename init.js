@@ -31,6 +31,8 @@ class PichaiUX {
     }
 
     async initialize() {
+        window.sessionStorage.setItem('updatedStyles', true);
+        
         checkCustomizationChanges(this.options); //starts listening to any adjustments to customization from the user
 
         let comp = window.getComputedStyle(document.body);
@@ -111,14 +113,14 @@ function checkCustomizationChanges(options) {
     let interval = window.setInterval(async () => {
         let bgItem = `url('${window.localStorage.getItem('bgImageChange')}')`;
 
-        if (!window.sessionStorage.getItem('updatedStyles')) {
+        if (window.sessionStorage.getItem('updatedStyles')) {
             window.document.body.style.backgroundImage = bgItem
             options.source = window.localStorage.getItem('bgImageChange');
 
             await generate3ColorPallete(options);
             optimizeTextColor(document);
 
-            window.sessionStorage.setItem('updatedStyles', true);
+            window.sessionStorage.setItem('updatedStyles', false);
         }
     }, 500);
 }
