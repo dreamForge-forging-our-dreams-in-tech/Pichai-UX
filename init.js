@@ -107,7 +107,7 @@ class PichaiUX {
 }
 
 function checkCustomizationChanges(options) {
-    window.addEventListener('storage', async function () {
+    window.addEventListener('storage', async function (e) {
         updateStyles(e.key, e.newValue);
     });
 }
@@ -117,6 +117,11 @@ async function updateStyles(key = 'all', value) {
     if (key == 'bgImageChange') {
         window.document.body.style.backgroundImage = `url('${value}')`;
         options.source = value;
+    } else if (key == 'all') {
+        
+        for (i in localStorage) {
+            updateStyles(i, window.localStorage.getItem(i));
+        }
     }
 
     await generate3ColorPallete(options);
