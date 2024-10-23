@@ -12,7 +12,7 @@ class customSettings extends HTMLElement {
 
     async connectedCallback() {
         this.innerHTML = `<list-viewer id="settingsListView" actionButton="edit">
-                <li>Wallpaper</li>
+                <li id='wallpaper' >Wallpaper</li>
                 <li>Color Order</li>
                 <li>Font</li>
                 <li>Border style</li>
@@ -21,7 +21,7 @@ class customSettings extends HTMLElement {
 
         this.firstChild.addEventListener('itemSelected', function (e) {
             let pichai = new PichaiUX();
-            
+
             if (e.detail.index == 0) {
                 pickFiles(function (file) {
                     window.sessionStorage.setItem('bgImageChange', file);
