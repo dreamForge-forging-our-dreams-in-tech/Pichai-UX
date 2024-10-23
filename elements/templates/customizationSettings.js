@@ -12,6 +12,7 @@ class customSettings extends HTMLElement {
         this.innerHTML = `<list-viewer actionButton="edit">
                 <li id='wallpaper' >Wallpaper</li>
                 <li>Color Order</li>
+                <li>Transparency Mode <button class='actionButton'></button></li>
                 <li>Font</li>
                 <li>Border style</li>
                 <li>Icon packs</li>
