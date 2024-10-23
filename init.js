@@ -108,15 +108,13 @@ class PichaiUX {
 }
 
 function checkCustomizationChanges () {
-    window.addEventListener('storage', async function (e) {
-        if(e.key == 'bgImageChange') {
-            window.document.body.style.backgroundImage = `url('${e.newValue}')`
-            this.options.source = e.newValue;
+    let interval = window.setInterval( async () => {
+        window.document.body.style.backgroundImage = `url('${window.localStorage.getItem('bgImageChange')}')`
+        this.options.source = window.localStorage.getItem('bgImageChange');
 
-            await generate3ColorPallete(this.options);
-            optimizeTextColor(document);
-        }
-    });
+        await generate3ColorPallete(this.options);
+        optimizeTextColor(document);
+    }, 500);
 }
 
 export { PichaiUX }

@@ -1,8 +1,6 @@
 import { registry } from '../../utils/customeElementsDefine.js';
 import { pickFiles } from '../../functions/filePicker.js';
 
-import { PichaiUX } from '../../init.js';
-
 // Create a class for the element
 class customSettings extends HTMLElement {
     constructor() {
@@ -20,17 +18,11 @@ class customSettings extends HTMLElement {
             </list-viewer>`;
 
         this.firstChild.addEventListener('itemSelected', function (e) {
-            let pichai = new PichaiUX();
-            let options = {};
-
             if (e.detail.index == 0) {
                 pickFiles(function (file) {
                     window.localStorage.setItem('bgImageChange', file);
-                    options.source = file;
                 });
             }
-
-            pichai.initialize(options);
         });
     }
 }
