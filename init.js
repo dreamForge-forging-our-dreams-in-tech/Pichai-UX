@@ -120,12 +120,12 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         window.document.body.style.backgroundImage = `url('${value}')`;
         options.source = value;
     } else if (key == `${window.storageName}transperncy`) {
-        
+
         options.transparency = value;
     } else if (key == 'all') {
 
         for (i in localStorage) {
-            if (String(i).includes('Pichai - ')) {
+            if (String(i).includes(window.storageName)) {
                 updateStyles(i, window.localStorage.getItem(i));
             }
         }

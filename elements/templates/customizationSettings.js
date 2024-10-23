@@ -10,7 +10,7 @@ class customSettings extends HTMLElement {
 
     async connectedCallback() {
         let checked = window.localStorage.getItem(`${window.storageName}transperncy`) == '0.9' ? 'checked' : '';
-        
+
         this.innerHTML = `<list-viewer actionButton="edit">
                 <li id='wallpaper'>Wallpaper</li>
                 <li>Color Order</li>
@@ -26,8 +26,6 @@ class customSettings extends HTMLElement {
             if (e.detail.index == 0) {
                 pickFiles(function (file) {
                     window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
-
-                    window.location.reload();
                 });
             } else if (e.detail.index == 2) {
                 let li = document.getElementById(e.detail.value);
@@ -40,6 +38,8 @@ class customSettings extends HTMLElement {
                     window.localStorage.setItem(`${window.storageName}transperncy`, 1.0);
                 }
             }
+
+            window.location.reload();
         });
     }
 }
