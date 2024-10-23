@@ -65,20 +65,7 @@ class PichaiUX {
         this.updateStyling();
 
         // make a themed icon if set to true by user
-        if (this.options.themedFavIcon) {
-            const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
-
-            // Get the favicon URL
-            const faviconUrl = faviconLink ? faviconLink.href : null;
-
-            var link = document.querySelector("link[rel~='icon']");
-            if (!link) {
-                link = document.createElement('link');
-                link.rel = 'icon';
-                document.head.appendChild(link);
-            }
-            link.href = await generateDynamicIcon(faviconUrl);
-        }
+        createThemedFavIcon(this.options);
     }
 
     async generateDynamicIcon(icon) {
@@ -140,6 +127,24 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
 
     await generate3ColorPallete(options);
     optimizeTextColor(document);
+    createThemedFavIcon(options);
+}
+
+async function createThemedFavIcon (options) {
+    if (options.themedFavIcon) {
+        const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
+
+        // Get the favicon URL
+        const faviconUrl = faviconLink ? faviconLink.href : null;
+
+        var link = document.querySelector("link[rel~='icon']");
+        if (!link) {
+            link = document.createElement('link');
+            link.rel = 'icon';
+            document.head.appendChild(link);
+        }
+        link.href = await generateDynamicIcon(faviconUrl);
+    }
 }
 
 export { PichaiUX };
