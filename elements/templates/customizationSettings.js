@@ -35,6 +35,7 @@ class customSettings extends HTMLElement {
                 });
             } else if (e.detail.index == 2) {
                 let li = document.getElementById(e.detail.item);
+                console.log(li)
 
                 li.firstChild.checked = !li.firstChild.checked;
             }
