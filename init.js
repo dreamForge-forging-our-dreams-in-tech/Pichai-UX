@@ -70,7 +70,7 @@ class PichaiUX {
         this.updateStyling();
 
         // make a themed icon if set to true by user
-        //createThemedFavIcon(this.options);
+        createThemedFavIcon(this.options);
     }
 
     async generateDynamicIcon(icon) {
@@ -137,7 +137,7 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
 
     await generate3ColorPallete(options);
     optimizeTextColor(document);
-    createThemedFavIcon(options);
+    //createThemedFavIcon(options);
 }
 
 async function createThemedFavIcon(options) {
