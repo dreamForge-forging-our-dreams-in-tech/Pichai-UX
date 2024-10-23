@@ -65,7 +65,7 @@ class PichaiUX {
         this.updateStyling();
 
         // make a themed icon if set to true by user
-        createThemedFavIcon(this.options);
+        //createThemedFavIcon(this.options);
     }
 
     async generateDynamicIcon(icon) {
@@ -92,7 +92,7 @@ class PichaiUX {
         updateStyles();
     }
 
-    getStorageKeys () { // returns an array with storage items stored by Pichai
+    pichaiStorageKeys() { // returns an array with storage items stored by Pichai
         let storage = [];
 
         for (i in localStorage) {
@@ -113,7 +113,9 @@ function checkCustomizationChanges(options) {
 
 async function updateStyles(key = 'all', value) { //update any set styles from storage
     let i;
+
     if (key == 'Pichai - bgImageChange') {
+
         window.document.body.style.backgroundImage = `url('${value}')`;
         options.source = value;
     } else if (key == 'all') {
@@ -130,7 +132,7 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
     createThemedFavIcon(options);
 }
 
-async function createThemedFavIcon (options) {
+async function createThemedFavIcon(options) {
     if (options.themedFavIcon) {
         const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
 
