@@ -131,13 +131,14 @@ function generateContainerTextColor (colors) {
 
 async function generate3ColorPallete(options) {
         let colors = await getPallete(options);
+        let alpha = options.transparency;
 
         let position = options.extractionPosition;
 
         const root = document.documentElement;
-        root.style.setProperty('--primary', `rgb(${colors[position].toString()})`);
-        root.style.setProperty('--secondairy', `rgb(${colors[position + 4].toString()})`);
-        root.style.setProperty('--tertiary', `rgb(${colors[position + 9].toString()})`);
+        root.style.setProperty('--primary', `rgba(${colors[position].toString()}, ${alpha})`);
+        root.style.setProperty('--secondairy', `rgba(${colors[position + 4].toString()}, ${alpha})`);
+        root.style.setProperty('--tertiary', `rgba(${colors[position + 9].toString()}, ${alpha})`);
 
         root.style.setProperty('--primaryTextColor', getTextColor(colors[0]));
         root.style.setProperty('--secondairyTextColor', getTextColor(colors[4]));
@@ -145,9 +146,9 @@ async function generate3ColorPallete(options) {
 
         let hls = generateContainerColor(colors);
 
-        root.style.setProperty('--primaryContainer', `hsl(${hls[position].toString()})`);
-        root.style.setProperty('--secondairyContainer', `hsl(${hls[position + 4].toString()})`);
-        root.style.setProperty('--tertiaryContainer', `hsl(${hls[position + 9].toString()})`);
+        root.style.setProperty('--primaryContainer', `hsla(${hls[position].toString()}, ${alpha})`);
+        root.style.setProperty('--secondairyContainer', `hsla(${hls[position + 4].toString()}, ${alpha})`);
+        root.style.setProperty('--tertiaryContainer', `hsla(${hls[position + 9].toString()}, ${alpha})`);
 
         let textColors = generateContainerTextColor(hls);
 
@@ -157,10 +158,10 @@ async function generate3ColorPallete(options) {
 
         let signColors = generateSignColors([0, 61, 238, 131], colors[0]);
 
-        root.style.setProperty('--error', `hsl(${signColors[0].toString()})`);
-        root.style.setProperty('--warning', `hsl(${signColors[1].toString()})`);
-        root.style.setProperty('--note', `hsl(${signColors[2].toString()})`);
-        root.style.setProperty('--check', `hsl(${signColors[3].toString()})`);
+        root.style.setProperty('--error', `hsla(${signColors[0].toString()}, ${alpha})`);
+        root.style.setProperty('--warning', `hsla(${signColors[1].toString()}, ${alpha})`);
+        root.style.setProperty('--note', `hsla(${signColors[2].toString()}, ${alpha})`);
+        root.style.setProperty('--check', `hsla(${signColors[3].toString()}, ${alpha})`);
 
         let signTextColors = generateContainerTextColor(signColors);
 
