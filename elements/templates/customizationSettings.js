@@ -20,7 +20,7 @@ class customSettings extends HTMLElement {
         this.firstChild.addEventListener('itemSelected', function (e) {
             if (e.detail.index == 0) {
                 pickFiles(function (file) {
-                    window.localStorage.setItem('bgImageChange', file);
+                    window.localStorage.setItem('Pichai - bgImageChange', file);
 
                     window.location.reload();
                 });

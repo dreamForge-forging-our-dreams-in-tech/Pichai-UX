@@ -114,13 +114,15 @@ function checkCustomizationChanges(options) {
 
 async function updateStyles(key = 'all', value) {
     let i;
-    if (key == 'bgImageChange') {
+    if (key == 'Pichai - bgImageChange') {
         window.document.body.style.backgroundImage = `url('${value}')`;
         options.source = value;
     } else if (key == 'all') {
-        
+
         for (i in localStorage) {
-            updateStyles(i, window.localStorage.getItem(i));
+            if (String(i).includes('Pichai - ')) {
+                updateStyles(i, window.localStorage.getItem(i));
+            }
         }
     }
 
