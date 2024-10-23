@@ -218,7 +218,6 @@ input[type="checkbox"] {
    -webkit-appearance: none;
    appearance: none;
    background-color: var(--primaryContainer);
-   margin: 0;
    font: inherit;
    color: var(--primaryContainerTextColor);
    width: 15px;
@@ -236,7 +235,6 @@ input[type="checkbox"] {
  input[type="checkbox"]:checked {
 
    border: 0.15em solid var(--primary);
-   margin: 0;
    font: inherit;
    color: var(--primaryTextColor);
    background-color:var(--primary);
