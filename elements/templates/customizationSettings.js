@@ -25,7 +25,7 @@ class customSettings extends HTMLElement {
 
             if (e.detail.index == 0) {
                 pickFiles(function (file) {
-                    window.sessionStorage.setItem('bgImageChange', file);
+                    window.localStorage.setItem('bgImageChange', file);
                     options.source = file;
                 });
             }
