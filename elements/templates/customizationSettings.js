@@ -18,6 +18,7 @@ class customSettings extends HTMLElement {
             </list-viewer>`;
 
             this.firstChild.addEventListener('itemSelected', function (e) {
+                alert(e.detail.index)
                 if(e.detail.index == 0) {
                     pickFiles(function (file) {
                         alert()
