@@ -102,7 +102,19 @@ class PichaiUX {
     }
 
     async updateStyling() { // allowsw the user to force an update to pichai if it isn't odne automatically
-        updateStyles()
+        updateStyles();
+    }
+
+    getStorageKeys () { // returns an array with storage items stored by Pichai
+        let storage = [];
+
+        for (i in localStorage) {
+            if (String(i).includes('Pichai - ')) {
+                storage.push(i);
+            }
+        }
+
+        return storage;
     }
 }
 
@@ -112,7 +124,7 @@ function checkCustomizationChanges(options) {
     });
 }
 
-async function updateStyles(key = 'all', value) {
+async function updateStyles(key = 'all', value) { //update any set styles from storage
     let i;
     if (key == 'Pichai - bgImageChange') {
         window.document.body.style.backgroundImage = `url('${value}')`;
