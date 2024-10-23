@@ -12,3 +12,6 @@ window.default_download_icon = 'download';
 window.default_upload_icon = 'upload';
 window.default_folder_icon = 'folder';
 window.default_link_icon = 'link';
+
+//storageName 
+window.storageName = 'Pichai-UX ';

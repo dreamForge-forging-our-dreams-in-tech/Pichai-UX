@@ -115,10 +115,13 @@ function checkCustomizationChanges(options) {
 async function updateStyles(key = 'all', value) { //update any set styles from storage
     let i;
 
-    if (key == 'Pichai - bgImageChange') {
+    if (key == `${window.storageName}bgImageChange`) {
 
         window.document.body.style.backgroundImage = `url('${value}')`;
         options.source = value;
+    } else if (key == `${window.storageName}transperncy`) {
+        
+        options.transparency = value;
     } else if (key == 'all') {
 
         for (i in localStorage) {

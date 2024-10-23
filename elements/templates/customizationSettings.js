@@ -20,16 +20,10 @@ class customSettings extends HTMLElement {
                 <li>Reset data</li>
             </list-viewer>`;
 
-        document.getElementById('Pichai - transperencyMode').addEventListener('click', function (e) {
-            e.stopPropagation();
-
-            window.localStorage.setItem('Pichai - transparencyMode', this.checked);
-        });
-
         this.firstChild.addEventListener('itemSelected', function (e) {
             if (e.detail.index == 0) {
                 pickFiles(function (file) {
-                    window.localStorage.setItem('Pichai - bgImageChange', file);
+                    window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
 
                     window.location.reload();
                 });
@@ -37,6 +31,12 @@ class customSettings extends HTMLElement {
                 let li = document.getElementById(e.detail.value);
 
                 li.children[0].checked = !li.children[0].checked;
+
+                if (li.children[0].checked) {
+                    window.localStorage.setItem(`${window.storageName}transperncy`, 0.9);
+                } else {
+                    window.localStorage.setItem(`${window.storageName}transperncy`, 1.0);
+                }
             }
         });
     }
