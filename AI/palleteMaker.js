@@ -172,10 +172,10 @@ async function generate3ColorPallete(options) {
 
         let signContainerColors = generateContainerColor(signColors);
 
-        root.style.setProperty('--errorContainer', `hsl(${signContainerColors[0].toString()})`);
-        root.style.setProperty('--warningContainer', `hsl(${signContainerColors[1].toString()})`);
-        root.style.setProperty('--noteContainer', `hsl(${signContainerColors[2].toString()})`);
-        root.style.setProperty('--checkContainer', `hsl(${signContainerColors[3].toString()})`);
+        root.style.setProperty('--errorContainer', `hsla(${signContainerColors[0].toString()}, ${alpha})`);
+        root.style.setProperty('--warningContainer', `hsla(${signContainerColors[1].toString()}, ${alpha})`);
+        root.style.setProperty('--noteContainer', `hsla(${signContainerColors[2].toString()}, ${alpha})`);
+        root.style.setProperty('--checkContainer', `hsla(${signContainerColors[3].toString()}, ${alpha})`);
 
         let signContainerTextColors = generateContainerTextColor(signContainerColors);
 
