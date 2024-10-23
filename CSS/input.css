@@ -255,7 +255,6 @@ input[type="radio"] {
    -webkit-appearance: none;
    appearance: none;
    background-color: #fff;
-   margin: 0;
    font: inherit;
    color: var(--primaryTextColor);
    width: 15px;
@@ -274,7 +273,6 @@ input[type="radio"] {
    -webkit-appearance: none;
    appearance: none;
    background-color: var(--primary);
-   margin: 0;
    font: inherit;
    color: var(--primaryTextColor);
    width: 15px;
