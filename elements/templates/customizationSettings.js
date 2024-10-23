@@ -21,10 +21,10 @@ class customSettings extends HTMLElement {
             if (e.detail.index == 0) {
                 pickFiles(function (file) {
                     window.localStorage.setItem('bgImageChange', file);
+
+                    window.location.reload();
                 });
             }
-
-            window.sessionStorage.setItem('updatedStyles', 'true');
         });
     }
 }

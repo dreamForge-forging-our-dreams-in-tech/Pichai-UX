@@ -31,8 +31,6 @@ class PichaiUX {
     }
 
     async initialize() {
-        window.sessionStorage.setItem('updatedStyles', 'true');
-
         checkCustomizationChanges(this.options); //starts listening to any adjustments to customization from the user
 
         let comp = window.getComputedStyle(document.body);
@@ -104,25 +102,30 @@ class PichaiUX {
     }
 
     async updateStyling() { // allowsw the user to force an update to pichai if it isn't odne automatically
-        await generate3ColorPallete(this.options);
-        optimizeTextColor(document);
+        updateStyles()
     }
 }
 
 function checkCustomizationChanges(options) {
-    let interval = window.setInterval(async () => {
-        let bgItem = `url('${window.localStorage.getItem('bgImageChange')}')`;
+    window.addEventListener('storage', async function () {
+        updateStyles(e.key, e.newValue);
+    });
+}
 
-        if (window.sessionStorage.getItem('updatedStyles') == 'true') {
-            window.document.body.style.backgroundImage = bgItem
-            options.source = window.localStorage.getItem('bgImageChange');
-
-            window.sessionStorage.setItem('updatedStyles', 'false');
+async function updateStyles(key = 'all', value) {
+    let i;
+    if (key == 'bgImageChange') {
+        window.document.body.style.backgroundImage = `url('${value}')`;
+        options.source = value;
+    } else if (key == 'all') {
+        
+        for (i in localStorage) {
+            updateStyles(i, window.localStorage.getItem(i));
         }
+    }
 
-        await generate3ColorPallete(options);
-        optimizeTextColor(document);
-    }, 500);
+    await generate3ColorPallete(options);
+    optimizeTextColor(document);
 }
 
 export { PichaiUX };
