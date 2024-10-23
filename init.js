@@ -114,7 +114,7 @@ function checkCustomizationChanges () {
             this.options.source = e.newValue;
 
             await generate3ColorPallete(this.options);
-            this.optimizeTextColor();
+            optimizeTextColor(document);
         }
     });
 }
