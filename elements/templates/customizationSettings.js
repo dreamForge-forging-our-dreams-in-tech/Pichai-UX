@@ -12,7 +12,7 @@ class customSettings extends HTMLElement {
         this.innerHTML = `<list-viewer actionButton="edit">
                 <li id='wallpaper' >Wallpaper</li>
                 <li>Color Order</li>
-                <li>Transparency Mode <input type='checkbox' class='actionButton'></input></li>
+                <li>Transparency Mode <input id='Pichai - transperencyMode' type='checkbox' class='actionButton'></input></li>
                 <li>Font</li>
                 <li>Border style</li>
                 <li>Icon packs</li>
@@ -20,14 +20,15 @@ class customSettings extends HTMLElement {
                 <li>Reset data</li>
             </list-viewer>`;
 
+        document.getElementById('Pichai - transperencyMode').addEventListener('click', function () {
+            window.localStorage.setItem('Pichai - transparencyMode', this.checked);
+        });
+
         this.firstChild.addEventListener('itemSelected', function (e) {
             if (e.detail.index == 0) {
                 pickFiles(function (file) {
                     window.localStorage.setItem('Pichai - bgImageChange', file);
                 });
-            } else if(e.detail.index == 2) {
-                console.log(e.detail.element.firstChild.checked, e.detail.element)
-                window.localStorage.setItem('Pichai - transparencyMode', e.detail.element.firstChild.checked);
             }
 
             window.location.reload();

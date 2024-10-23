@@ -28,7 +28,6 @@ class ListViewer extends HTMLElement {
                 detail: {
                     value : e.target.id,
                     index: Array.prototype.indexOf.call(this.children, e.target),
-                    element: this.getElementById(e.target.id) //accesto clicked li
                 },
             });
 
