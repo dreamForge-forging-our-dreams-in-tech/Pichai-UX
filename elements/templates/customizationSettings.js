@@ -10,6 +10,8 @@ class customSettings extends HTMLElement {
 
     async connectedCallback() {
         this.innerHTML = `<list-viewer id="settingsListView" actionButton="edit">
+        <li> Reset</li>
+        <hr>
                 <li id='wallpaper' >Wallpaper</li>
                 <li>Color Order</li>
                 <li>Font</li>
@@ -18,7 +20,9 @@ class customSettings extends HTMLElement {
             </list-viewer>`;
 
         this.firstChild.addEventListener('itemSelected', function (e) {
-            if (e.detail.index == 0) {
+            if(e.detail.index == 0) {
+
+            } else if (e.detail.index == 2) {
                 pickFiles(function (file) {
                     window.localStorage.setItem('Pichai - bgImageChange', file);
 
