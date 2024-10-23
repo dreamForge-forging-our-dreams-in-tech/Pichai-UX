@@ -27,6 +27,8 @@ class customSettings extends HTMLElement {
                 pickFiles(function (file) {
                     window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
                 });
+
+                window.location.reload();
             } else if (e.detail.index == 2) {
                 let li = document.getElementById(e.detail.value);
 
@@ -37,9 +39,9 @@ class customSettings extends HTMLElement {
                 } else {
                     window.localStorage.setItem(`${window.storageName}transperncy`, 1.0);
                 }
-            }
 
-            window.location.reload();
+                window.location.reload();
+            }
         });
     }
 }
