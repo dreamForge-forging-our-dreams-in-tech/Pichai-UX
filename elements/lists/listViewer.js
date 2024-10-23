@@ -49,7 +49,7 @@ function createButtons(e) {
                 i.id = i.innerHTML;
             }
 
-            if (i.tagName == 'HR') { } else {
+            if (i.tagName == 'HR' || i.getElementsByClassName('actionButton').length == 1) { } else {
 
                 let button = document.createElement('button');
                 button.innerHTML = e.getAttribute('actionButton');

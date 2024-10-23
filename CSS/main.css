@@ -49,6 +49,10 @@ html {
     height: max-content;
 }
 
+.transparencyMode * :not(body) {
+    opacity:0.9
+}
+
 li {
     display: list-item;
 }
