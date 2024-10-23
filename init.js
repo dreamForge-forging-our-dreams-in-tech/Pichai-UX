@@ -63,7 +63,7 @@ class PichaiUX {
         }
 
         // generate pallete based on bg image and set proper text colors
-        //this.updateStyling();
+        this.updateStyling();
 
         // make a themed icon if set to true by user
         //createThemedFavIcon(this.options);
