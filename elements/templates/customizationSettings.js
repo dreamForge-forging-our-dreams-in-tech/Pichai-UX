@@ -12,7 +12,7 @@ class customSettings extends HTMLElement {
         this.innerHTML = `<list-viewer actionButton="edit">
                 <li id='wallpaper' >Wallpaper</li>
                 <li>Color Order</li>
-                <li>Transparency Mode <button class='actionButton'></button></li>
+                <li>Transparency Mode <input type='checkbox' class='actionButton'></input></li>
                 <li>Font</li>
                 <li>Border style</li>
                 <li>Icon packs</li>
@@ -24,10 +24,13 @@ class customSettings extends HTMLElement {
             if (e.detail.index == 0) {
                 pickFiles(function (file) {
                     window.localStorage.setItem('Pichai - bgImageChange', file);
-
-                    window.location.reload();
                 });
+            } else if(e.detail.index == 2) {
+                console.log(e.detail.element.firstChild.checked, e.detail.element)
+                window.localStorage.setItem('Pichai - transparencyMode', e.detail.element.firstChild.checked);
             }
+
+            window.location.reload();
         });
     }
 }
