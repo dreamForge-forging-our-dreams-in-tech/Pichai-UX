@@ -21,14 +21,16 @@ class customSettings extends HTMLElement {
 
         this.firstChild.addEventListener('itemSelected', function (e) {
             let pichai = new PichaiUX();
+            let options = {};
 
             if (e.detail.index == 0) {
                 pickFiles(function (file) {
                     window.sessionStorage.setItem('bgImageChange', file);
+                    options.source = file;
                 });
             }
 
-            pichai.initialize();
+            pichai.initialize(options);
         });
     }
 }
