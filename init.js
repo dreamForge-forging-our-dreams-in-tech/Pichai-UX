@@ -108,7 +108,7 @@ class PichaiUX {
 function checkCustomizationChanges () {
     window.addEventListener('storage', async function (e) {
         if(e.key == 'bgImageChange') {
-            window.document.documentElement.style.backgroundImage = `url('${e.newValue}')`
+            window.document.body.style.backgroundImage = `url('${e.newValue}')`
             this.options.source = e.newValue;
 
             await generate3ColorPallete(this.options);
