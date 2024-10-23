@@ -16,7 +16,7 @@ class customSettings extends HTMLElement {
                 <li>Border style</li>
                 <li>Icon packs</li>
                 <hr>
-                <li> Reset</li>
+                <li>Reset data</li>
             </list-viewer>`;
 
         this.firstChild.addEventListener('itemSelected', function (e) {
