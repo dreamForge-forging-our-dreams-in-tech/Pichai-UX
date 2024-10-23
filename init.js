@@ -61,8 +61,7 @@ class PichaiUX {
             head.prepend(link);
         }
 
-        // generate pallete based on bg image
-        //await generate3ColorPallete(this.options);
+        // generate pallete based on bg image and set proper text colors
         this.updateStyling();
 
         // make a themed icon if set to true by user
@@ -80,9 +79,6 @@ class PichaiUX {
             }
             link.href = await generateDynamicIcon(faviconUrl);
         }
-
-        // optimise text at start to fix list bullets to have right colors - may need to change later
-        //this.optimizeTextColor();
     }
 
     async generateDynamicIcon(icon) {
