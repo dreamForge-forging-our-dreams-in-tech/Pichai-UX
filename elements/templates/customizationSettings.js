@@ -24,7 +24,7 @@ class customSettings extends HTMLElement {
                 });
             }
 
-            window.sessionStorage.setItem('updatedStyles', true);
+            window.sessionStorage.setItem('updatedStyles', false);
         });
     }
 }

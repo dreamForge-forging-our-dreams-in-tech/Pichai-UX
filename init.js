@@ -111,14 +111,14 @@ function checkCustomizationChanges(options) {
     let interval = window.setInterval(async () => {
         let bgItem = `url('${window.localStorage.getItem('bgImageChange')}')`;
 
-        if (window.sessionStorage.getItem('updatedStyles')) {
+        if (!window.sessionStorage.getItem('updatedStyles')) {
             window.document.body.style.backgroundImage = bgItem
             options.source = window.localStorage.getItem('bgImageChange');
 
             await generate3ColorPallete(options);
             optimizeTextColor(document);
 
-            window.sessionStorage.setItem('updatedStyles', false);
+            window.sessionStorage.setItem('updatedStyles', true);
         }
     }, 500);
 }
