@@ -117,11 +117,6 @@ async function updateStyles(key = 'all', value) {
     if (key == 'bgImageChange') {
         window.document.body.style.backgroundImage = `url('${value}')`;
         options.source = value;
-    } else if (key == 'all') {
-        
-        for (i in localStorage) {
-            updateStyles(i, window.localStorage.getItem(i));
-        }
     }
 
     await generate3ColorPallete(options);
