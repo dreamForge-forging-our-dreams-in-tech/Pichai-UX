@@ -20,6 +20,7 @@ class customSettings extends HTMLElement {
             this.firstChild.addEventListener('itemSelected', function (e) {
                 if(e.detail.index == 0) {
                     pickFiles(function (file) {
+                        alert()
                         window.sessionStorage.setItem('bgImageChange', file);
                     });
                 }
