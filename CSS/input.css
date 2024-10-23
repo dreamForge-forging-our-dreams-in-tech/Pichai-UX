@@ -317,7 +317,6 @@ input[type="file"]::file-selector-button {
  
  li input[type="checkbox"]:checked {
 
-   border: 0.15em solid var(--secondairy);
    font: inherit;
    color: var(--secondairyTextColor);
    background-color:var(--secondairy);
