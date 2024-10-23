@@ -9,7 +9,7 @@ class customSettings extends HTMLElement {
     }
 
     async connectedCallback() {
-        this.innerHTML = `<list-viewer id="settingsListView" actionButton="open_in_new">
+        this.innerHTML = `<list-viewer id="settingsListView" actionButton="edit">
                 <li>Wallpaper</li>
                 <li>Color Order</li>
                 <li>Font</li>
