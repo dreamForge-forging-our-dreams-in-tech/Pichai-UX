@@ -22,7 +22,7 @@ class customSettings extends HTMLElement {
 
         document.getElementById('Pichai - transperencyMode').addEventListener('click', function (e) {
             e.stopPropagation();
-            
+
             window.localStorage.setItem('Pichai - transparencyMode', this.checked);
         });
 
@@ -30,10 +30,10 @@ class customSettings extends HTMLElement {
             if (e.detail.index == 0) {
                 pickFiles(function (file) {
                     window.localStorage.setItem('Pichai - bgImageChange', file);
+
+                    window.location.reload();
                 });
             }
-
-            window.location.reload();
         });
     }
 }
