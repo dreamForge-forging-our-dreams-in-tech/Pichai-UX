@@ -33,6 +33,10 @@ class customSettings extends HTMLElement {
 
                     window.location.reload();
                 });
+            } else if (e.detail.index == 2) {
+                let li = document.getElementById(e.detail.item);
+
+                li.firstChild.checked = !li.firstChild.checked;
             }
         });
     }
