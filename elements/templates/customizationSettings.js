@@ -10,13 +10,13 @@ class customSettings extends HTMLElement {
 
     async connectedCallback() {
         this.innerHTML = `<list-viewer actionButton="edit">
-        <li> Reset</li>
-        <hr>
                 <li id='wallpaper' >Wallpaper</li>
                 <li>Color Order</li>
                 <li>Font</li>
                 <li>Border style</li>
                 <li>Icon packs</li>
+                <hr>
+                <li> Reset</li>
             </list-viewer>`;
 
         this.firstChild.addEventListener('itemSelected', function (e) {
