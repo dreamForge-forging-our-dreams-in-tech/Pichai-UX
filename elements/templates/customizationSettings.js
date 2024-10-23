@@ -26,9 +26,9 @@ class customSettings extends HTMLElement {
             if (e.detail.index == 0) {
                 pickFiles(function (file) {
                     window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
-                });
 
-                window.location.reload();
+                    window.location.reload();
+                });
             } else if (e.detail.index == 2) {
                 let li = document.getElementById(e.detail.value);
 
