@@ -103,7 +103,7 @@ class PichaiUX {
 
     async updateStyling () { // allowsw the user to force an update to pichai if it isn't odne automatically
         await generate3ColorPallete(this.options);
-        this.optimizeTextColor();
+        optimizeTextColor();
     }
 }
 
