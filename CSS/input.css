@@ -308,8 +308,8 @@ input[type="file"]::file-selector-button {
    margin: 0;
    font: inherit;
    color: var(--secondairyContainerTextColor);
-   width: 30px;
-   height: 30px;
+   width: 30px !important;
+   height: 30px !important;
 
    border-radius: 7px;
    border: 0.15em solid #fff;
@@ -327,8 +327,8 @@ input[type="file"]::file-selector-button {
    font: inherit;
    color: var(--secondairyTextColor);
    background-color:var(--secondairy);
-   width: 15px;
-   height: 15px;
+   width: 30px !important;
+   height: 30px !important;
    border-radius: 7px;
    border: 0.15em solid var(--secondairy);
 
