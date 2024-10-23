@@ -299,3 +299,41 @@ input[type="file"]::file-selector-button {
 
    border-width:0px;
  }
+
+
+ li input[type="checkbox"] {
+   -webkit-appearance: none;
+   appearance: none;
+   background-color: var(--secondairyContainer);
+   margin: 0;
+   font: inherit;
+   color: var(--secondairyContainerTextColor);
+   width: 15px;
+   height: 15px;
+
+   border-radius: 7px;
+   border: 0.15em solid #fff;
+
+   transform: translateY(-0.1em);
+
+   display: grid;
+   place-content: center;
+ }
+ 
+ li input[type="checkbox"]:checked {
+
+   border: 0.15em solid var(--secondairy);
+   margin: 0;
+   font: inherit;
+   color: var(--secondairyTextColor);
+   background-color:var(--secondairy);
+   width: 15px;
+   height: 15px;
+   border-radius: 7px;
+   border: 0.15em solid var(--secondairy);
+
+   transform: translateY(-0.1em);
+
+   display: grid;
+   place-content: center;
+ }
