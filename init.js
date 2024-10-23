@@ -32,6 +32,8 @@ class PichaiUX {
     }
 
     async initialize() {
+        checkCustomizationChanges(this.options); //starts listening to any adjustments to customization from the user
+
         let comp = window.getComputedStyle(document.body);
         let image = String(comp['backgroundImage']);
         image = image.substring(5, image.length - 2);
@@ -62,7 +64,9 @@ class PichaiUX {
 
         // generate pallete based on bg image and set proper text colors
         this.updateStyling();
-        checkCustomizationChanges(this.options); //starts listening to any adjustments to customization from the user
+
+        // make a themed icon if set to true by user
+        //createThemedFavIcon(this.options);
     }
 
     async generateDynamicIcon(icon) {
@@ -127,9 +131,11 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         }
     }
 
-    await generate3ColorPallete(options);
-    optimizeTextColor(document);
-    createThemedFavIcon(options);
+    window.setTimeout(async () => {
+        await generate3ColorPallete(options);
+        optimizeTextColor(document);
+        createThemedFavIcon(options);
+    }, 500);
 }
 
 async function createThemedFavIcon(options) {
