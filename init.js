@@ -117,11 +117,11 @@ function checkCustomizationChanges(options) {
             window.document.body.style.backgroundImage = bgItem
             options.source = window.localStorage.getItem('bgImageChange');
 
-            await generate3ColorPallete(options);
-            optimizeTextColor(document);
-
             window.sessionStorage.setItem('updatedStyles', 'false');
         }
+
+        await generate3ColorPallete(options);
+        optimizeTextColor(document);
     }, 500);
 }
 
