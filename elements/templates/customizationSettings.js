@@ -36,6 +36,7 @@ class customSettings extends HTMLElement {
             } else if (e.detail.index == 2) {
                 let li = document.getElementById(e.detail.value);
 
+                console.log(li.firstChild)
                 li.firstChild.checked = true
             }
         });
