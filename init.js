@@ -97,7 +97,7 @@ class PichaiUX {
         let storage = [];
 
         for (i in localStorage) {
-            if (String(i).includes('Pichai - ')) {
+            if (String(i).includes(window.storageName)) {
                 storage.push(i);
             }
         }
