@@ -132,6 +132,7 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
     }
 
     await generate3ColorPallete(options);
+    alert()
     optimizeTextColor(document);
     createThemedFavIcon(options);
 }
