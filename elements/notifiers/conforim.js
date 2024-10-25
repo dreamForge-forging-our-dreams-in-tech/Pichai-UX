@@ -59,7 +59,7 @@ function showConfirmDialog(titleText = 'Dialog', messageText = 'Message', cancel
         message.classList.add('dialogTitle');
         message.innerHTML = messageText;
 
-        messageWrapper.append(title);
+        messageWrapper.append(message);
 
         if (cancelable) {
             shadow.addEventListener('click', (e) => {

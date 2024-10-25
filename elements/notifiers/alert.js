@@ -46,8 +46,6 @@ function showAlertDialog(titleText = 'Dialog', messageText = 'Message', cancelab
 
         controlWrapper.append(submitButton);
 
-
-
         let messageWrapper = document.createElement('article');
         messageWrapper.classList.add('titleWrapper');
 
@@ -55,7 +53,7 @@ function showAlertDialog(titleText = 'Dialog', messageText = 'Message', cancelab
         message.classList.add('dialogTitle');
         message.innerHTML = messageText;
 
-        messageWrapper.append(title);
+        messageWrapper.append(message);
 
         if (cancelable) {
             shadow.addEventListener('click', (e) => {
