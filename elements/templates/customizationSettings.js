@@ -1,7 +1,7 @@
 import { registry } from '../../utils/customeElementsDefine.js';
 import { pickFiles } from '../../functions/filePicker.js';
 
-import '../notifiers/dialogs.js';
+import '../notifiers/conforim.js';
 
 // Create a class for the element
 class customSettings extends HTMLElement {
@@ -44,11 +44,7 @@ class customSettings extends HTMLElement {
 
                 window.location.reload();
             } else if (e.detail.index == 7) {
-                let messageDialog = document.createElement('template-message-dialog');
-                document.body.appendChild(messageDialog);
-
-                messageDialog.setDialogMode('dialog');
-                messageDialog.showAsDialog();
+                showConfirmDialog('Are you sure?', 'Are you sure you want to clear all data?');
             }
         });
     }
