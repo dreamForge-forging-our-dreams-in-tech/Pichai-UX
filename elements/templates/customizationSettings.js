@@ -24,7 +24,7 @@ class customSettings extends HTMLElement {
                 <li>Reset data</li>
             </list-viewer>`;
 
-        this.firstChild.addEventListener('itemSelected', function (e) {
+        this.firstChild.addEventListener('itemSelected', async function (e) {
             if (e.detail.index == 0) {
                 pickFiles(function (file) {
                     window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
@@ -44,7 +44,9 @@ class customSettings extends HTMLElement {
 
                 window.location.reload();
             } else if (e.detail.index == 7) {
-                showConfirmDialog('Are you sure?', 'Are you sure you want to clear all data?');
+                if(await showConfirmDialog('Are you sure?', 'Are you sure you want to clear all data?')) {
+                    alert()
+                }
             }
         });
     }
