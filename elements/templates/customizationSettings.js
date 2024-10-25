@@ -12,6 +12,8 @@ class customSettings extends HTMLElement {
     }
 
     async connectedCallback() {
+        let i;
+        
         let checked = window.localStorage.getItem(`${window.storageName}transperncy`) == '1' ? '' : 'checked';
 
         this.innerHTML = `<list-viewer actionButton="${window.default_edit_icon}">
