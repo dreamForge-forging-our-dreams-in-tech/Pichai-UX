@@ -2,6 +2,7 @@ import { registry } from '../../utils/customeElementsDefine.js';
 import { pickFiles } from '../../functions/filePicker.js';
 
 import { showConfirmDialog } from '../notifiers/conforim.js';
+import { showAlertDialog } from '../notifiers/alert.js';
 
 // Create a class for the element
 class customSettings extends HTMLElement {
@@ -44,9 +45,14 @@ class customSettings extends HTMLElement {
 
                 window.location.reload();
             } else if (e.detail.index == 7) {
-                if(await showConfirmDialog('Are you sure?', 'Are you sure you want to clear all data?')) {
-                    window.localStorage.clear();
-                    window.location.reload();
+                if (await showConfirmDialog('Are you sure?', 'Are you sure you want to clear all data?')) {
+                    for (i in localStorage) {
+                        if (String(i).includes(window.storageName)) {
+                            window.localStorage.remove(i);
+                        }
+                    }
+
+                    await showAlertDialog('Data cleared', 'Please refresh your window to finalize reset.');
                 }
             }
         });

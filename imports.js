@@ -33,6 +33,7 @@ import './elements/templates/customizationSettings.js';
 
 import './elements/notifiers/dialogs.js';
 import './elements/notifiers/conforim.js';
+import './elements/notifiers/alert.js';
 
 import './utils/localFOrage.js';
 import './utils/elements/supportForms.js';
