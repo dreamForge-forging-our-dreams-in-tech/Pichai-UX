@@ -1,4 +1,5 @@
 import { html5ToObject } from '../../utils/extraFunctions.js';
+import { createDialogMessage, createDialogTitle } from './notifierUtils/text.js';
 
 // this functions adds the possibility to turn all elements into a dialog
 // it simply creates a clone that will be shown in the dialog
@@ -42,15 +43,6 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
 
     controlWrapper.append(submitButton);
 
-    let titleWrapper = document.createElement('article');
-    titleWrapper.classList.add('titleWrapper');
-
-    let title = document.createElement('h3');
-    title.classList.add('dialogTitle');
-    title.innerHTML = titleText;
-
-    titleWrapper.append(title);
-
     if (cancelable) {
         shadow.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -86,7 +78,7 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
     let children = this.dialogMode == 'dialog' ? this : this.cloneNode(true); // decides fi the element should be appended or cloned
     dialogForm.append(children);
 
-    wrapper.append(titleWrapper, dialogForm, controlWrapper); // append all items to the dialog wrapper
+    wrapper.append(createDialogTitle(titleText), dialogForm, controlWrapper); // append all items to the dialog wrapper
 
     document.body.append(shadow);
 }
