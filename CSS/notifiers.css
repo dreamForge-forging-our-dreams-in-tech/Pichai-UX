@@ -83,3 +83,7 @@
 .dialogTitle {
     grid-area:title;
 }
+
+.dialogMessage {
+    font-size:18px;
+}

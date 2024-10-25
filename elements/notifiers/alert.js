@@ -1,7 +1,7 @@
 import { html5ToObject } from '../../utils/extraFunctions.js';
 
 import './notifierUtils/text.js';
-import { createDialogTitle } from './notifierUtils/text.js';
+import { createDialogMessage, createDialogTitle } from './notifierUtils/text.js';
 
 // this functions adds the possibility to turn all elements into a dialog
 // it simply creates a clone that will be shown in the dialog
@@ -33,7 +33,7 @@ function showAlertDialog(titleText = 'Dialog', messageText = 'Message', cancelab
 
         let submitButton = document.createElement('button');
         submitButton.innerHTML = 'Understood';
-        submitButton.classList.add('submitDialogButton');
+        submitButton.classList.add('closeDialogButton');
 
         submitButton.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -45,15 +45,6 @@ function showAlertDialog(titleText = 'Dialog', messageText = 'Message', cancelab
         });
 
         controlWrapper.append(submitButton);
-
-        let messageWrapper = document.createElement('article');
-        messageWrapper.classList.add('titleWrapper');
-
-        let message = document.createElement('h3');
-        message.classList.add('dialogTitle');
-        message.innerHTML = messageText;
-
-        messageWrapper.append(message);
 
         if (cancelable) {
             shadow.addEventListener('click', (e) => {
@@ -68,7 +59,7 @@ function showAlertDialog(titleText = 'Dialog', messageText = 'Message', cancelab
             });
         }
 
-        wrapper.append(createDialogTitle(titleText), messageWrapper, controlWrapper); // append all items to the dialog wrapper
+        wrapper.append(createDialogTitle(titleText), createDialogMessage(messageText), controlWrapper); // append all items to the dialog wrapper
 
         document.body.append(shadow);
 
