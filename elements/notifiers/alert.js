@@ -1,7 +1,7 @@
 import { html5ToObject } from '../../utils/extraFunctions.js';
 
-import './notifierUtils/titleMaker.js';
-import { createDialogTitle } from './notifierUtils/titleMaker.js';
+import './notifierUtils/text.js';
+import { createDialogTitle } from './notifierUtils/text.js';
 
 // this functions adds the possibility to turn all elements into a dialog
 // it simply creates a clone that will be shown in the dialog

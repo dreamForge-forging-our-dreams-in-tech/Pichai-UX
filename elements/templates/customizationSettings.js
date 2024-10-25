@@ -13,7 +13,7 @@ class customSettings extends HTMLElement {
 
     async connectedCallback() {
         let i;
-        
+
         let checked = window.localStorage.getItem(`${window.storageName}transperncy`) == '1' ? '' : 'checked';
 
         this.innerHTML = `<list-viewer actionButton="${window.default_edit_icon}">
@@ -50,7 +50,7 @@ class customSettings extends HTMLElement {
                 if (await showConfirmDialog('Are you sure?', 'Are you sure you want to clear all data?')) {
                     for (i in localStorage) {
                         if (String(i).includes(window.storageName)) {
-                            window.localStorage.remove(i);
+                            window.localStorage.removeItem(i);
                         }
                     }
 
