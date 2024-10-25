@@ -1,7 +1,7 @@
 import { registry } from '../../utils/customeElementsDefine.js';
 import { pickFiles } from '../../functions/filePicker.js';
 
-import '../notifiers/conforim.js';
+import { showConfirmDialog } from '../notifiers/conforim.js';
 
 // Create a class for the element
 class customSettings extends HTMLElement {
