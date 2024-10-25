@@ -110,3 +110,5 @@ function closeDialog() { // hides the dialog created by a element.
     
     return data; // returns the any filled in form data
 }
+
+export { showConfirmDialog };

@@ -32,6 +32,7 @@ import './elements/templates/accountDrawer.js';
 import './elements/templates/customizationSettings.js';
 
 import './elements/notifiers/dialogs.js';
+import './elements/notifiers/conforim.js';
 
 import './utils/localFOrage.js';
 import './utils/elements/supportForms.js';
