@@ -150,3 +150,8 @@ a {
 .Hidden { /* class to hide a element */
     display:none;
 }
+
+.row {
+    display:flex;
+    flex-direction:row;
+}

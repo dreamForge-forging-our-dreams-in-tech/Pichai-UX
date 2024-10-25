@@ -41,6 +41,10 @@ class customSettings extends HTMLElement {
                 }
 
                 window.location.reload();
+            } else if (e.detail.index == 7) {
+                let messageDialog = document.createElement('template-message-dialog');
+                messageDialog.setDialogMode('dialog');
+                messageDialog.showAsDialog();
             }
         });
     }

@@ -83,7 +83,7 @@ function showAsDialog(clone, cancelable = true, titleText = 'Dialog') { // turns
         e.preventDefault();
     });
 
-    let children = this.dialogMode == 'dialog' ? this : this.cloneNode(true);
+    let children = this.dialogMode == 'dialog' ? this : this.cloneNode(true); // decides fi the element should be appended or cloned
     dialogForm.append(children);
 
     wrapper.append(titleWrapper, dialogForm, controlWrapper); // append all items to the dialog wrapper
