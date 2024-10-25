@@ -21,7 +21,7 @@ const submit = new Event("submit"); // dialog form submitted event
 function showConfirmDialog(titleText = 'Dialog', messageText ='Message', cancelable = true) { // creates a confirm dialog
     let shadow = document.createElement('article');
     shadow.classList.add('dialogWrapper');
-    shadow.id = `${this.id}Dialog`;
+    shadow.id = `confirmDialog`;
 
     let wrapper = document.createElement('article');
     shadow.append(wrapper);
@@ -84,26 +84,13 @@ function showConfirmDialog(titleText = 'Dialog', messageText ='Message', cancela
         controlWrapper.append(closeButton);
     }
 
-    let dialogForm = document.createElement('form'); // creates an input who it's value changes when the custom input element does
-    dialogForm.classList.add('dialog');
-
-    dialogForm.addEventListener('click', (e) => {
-        e.stopPropagation();
-        e.preventDefault();
-    });
-
-    let children = this.dialogMode == 'dialog' ? this : this.cloneNode(true); // decides fi the element should be appended or cloned
-    dialogForm.append(children);
-
-    wrapper.append(titleWrapper, messageWrapper, dialogForm, controlWrapper); // append all items to the dialog wrapper
+    wrapper.append(titleWrapper, messageWrapper, controlWrapper); // append all items to the dialog wrapper
 
     document.body.append(shadow);
 }
 
 function closeDialog() { // hides the dialog created by a element.
-    let data = new FormData(document.getElementById(`${this.id}Dialog`).firstChild.children[1]);
-
-    document.getElementById(`${this.id}Dialog`).remove();
+    document.getElementById(`confirmDialog`).remove();
     this.setAttribute('formData', html5ToObject(data)); // saves the form data as a attribute so dev can aces it after accidentally closing pop-up
 
     this.dispatchEvent(submit);
