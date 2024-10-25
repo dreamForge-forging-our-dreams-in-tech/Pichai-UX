@@ -71,7 +71,7 @@ function showConfirmDialog(titleText = 'Dialog', messageText = 'Message', cancel
             controlWrapper.append(closeButton);
         }
 
-        wrapper.append(createDialogTitle(titleText), createDialogMessage(messageTitle), controlWrapper); // append all items to the dialog wrapper
+        wrapper.append(createDialogTitle(titleText), createDialogMessage(messageText), controlWrapper); // append all items to the dialog wrapper
 
         document.body.append(shadow);
 
