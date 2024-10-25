@@ -29,7 +29,7 @@ function showConfirmDialog(titleText = 'Dialog', messageText = 'Message', cancel
         controlWrapper.classList.add('titleWrapper');
 
         let submitButton = document.createElement('button');
-        submitButton.innerHTML = 'Submit';
+        submitButton.innerHTML = 'Confirm';
         submitButton.classList.add('submitDialogButton');
 
         submitButton.addEventListener('click', (e) => {

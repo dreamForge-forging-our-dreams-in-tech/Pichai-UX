@@ -45,7 +45,8 @@ class customSettings extends HTMLElement {
                 window.location.reload();
             } else if (e.detail.index == 7) {
                 if(await showConfirmDialog('Are you sure?', 'Are you sure you want to clear all data?')) {
-                    alert()
+                    window.localStorage.clear();
+                    window.location.reload();
                 }
             }
         });
