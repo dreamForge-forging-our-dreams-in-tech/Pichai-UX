@@ -87,3 +87,7 @@
 .dialogMessage {
     font-size:16px;
 }
+
+.singleControlWrapper {
+    padding-right:8px;
+}

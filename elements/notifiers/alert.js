@@ -23,13 +23,13 @@ function showAlertDialog(titleText = 'Dialog', messageText = 'Message', cancelab
     return new Promise((resolve) => {
         let shadow = document.createElement('article');
         shadow.classList.add('dialogWrapper');
-        shadow.id = `confirmDialog`;
+        shadow.id = `alertDialog`;
 
         let wrapper = document.createElement('article');
         shadow.append(wrapper);
 
         let controlWrapper = document.createElement('article');
-        controlWrapper.classList.add('titleWrapper');
+        controlWrapper.classList.add('titleWrapper', 'singleControlWrapper');
 
         let submitButton = document.createElement('button');
         submitButton.innerHTML = 'Understood';
@@ -39,7 +39,7 @@ function showAlertDialog(titleText = 'Dialog', messageText = 'Message', cancelab
             e.stopPropagation();
             e.preventDefault();
 
-            document.getElementById(`confirmDialog`).remove();
+            document.getElementById(`alertDialog`).remove();
 
             resolve('closed');
         });
@@ -52,7 +52,7 @@ function showAlertDialog(titleText = 'Dialog', messageText = 'Message', cancelab
                 e.preventDefault();
 
                 if (e.target.classList.contains('dialogWrapper')) {
-                    document.getElementById(`confirmDialog`).remove();
+                    document.getElementById(`alertDialog`).remove();
 
                     resolve('closed');
                 }
