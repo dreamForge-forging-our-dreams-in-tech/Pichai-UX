@@ -20,6 +20,7 @@ class customSettings extends HTMLElement {
         this.innerHTML = `<list-viewer actionButton="${window.default_edit_icon}">
         <hr titleText="Appearance">
                 <li id='wallpaper'>Wallpaper</li>
+                <li>Theme Colors</li>
                 <li>Color Order</li>
                 <li>Transparency Mode <input id='Pichai - transperencyMode' type='checkbox' class='actionButton' ${checked}></input></li>
                 <li>Border style</li>
