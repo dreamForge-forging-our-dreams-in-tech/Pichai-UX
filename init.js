@@ -38,7 +38,7 @@ class PichaiUX {
         let image = String(comp['backgroundImage']);
         image = image.substring(5, image.length - 2);
 
-        if(window.localStorage.getItem(`${window.storageName}bgImageChange`)) {
+        if (window.localStorage.getItem(`${window.storageName}bgImageChange`)) {
             image = window.localStorage.getItem(`${window.storageName}bgImageChange`);
         }
 
@@ -48,22 +48,10 @@ class PichaiUX {
         let cssId = 'PichaiUXCss';
         if (!document.getElementById(cssId)) {
             let head = document.getElementsByTagName('head')[0];
-            let link = document.createElement('link');
-            link.id = cssId;
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = typeof exports !== 'undefined' ? 'Pichai-UX/CSS/main.css' : 'https://lukeplays33.github.io/Pichai-UX/CSS/main.css';
-            link.media = 'all';
 
-            let google = document.createElement('link');
-            google.id = 'google';
-            google.rel = 'stylesheet';
-            google.type = 'text/css';
-            google.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
-            google.media = 'all';
+            addCSSSheets(typeof exports !== 'undefined' ? 'Pichai-UX/CSS/main.css' : 'https://lukeplays33.github.io/Pichai-UX/CSS/main.css', cssId, head);
+            addCSSSheets('https://fonts.googleapis.com/icon?family=Material+Icons', 'google', head);
 
-            head.prepend(google);
-            head.prepend(link);
         }
 
         // generate pallete based on bg image and set proper text colors
@@ -156,6 +144,17 @@ async function createThemedFavIcon(options) {
         }
         link.href = await generateDynamicIcon(faviconUrl);
     }
+}
+
+function addCSSSheets(url,id, head) {
+    let link = document.createElement('link');
+    link.id = id;
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = url;
+    link.media = 'all';
+
+    head.prepend(link);
 }
 
 export { PichaiUX };
