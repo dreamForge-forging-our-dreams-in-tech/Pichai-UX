@@ -81,9 +81,9 @@ class customSettings extends HTMLElement {
                 li.children[0].checked = !li.children[0].checked;
 
                 if (li.children[0].checked) {
-                    window.localStorage.setItem(`${window.storageName}rtl`, true);
+                    window.localStorage.setItem(`${window.storageName}rtl`, 'true');
                 } else {
-                    window.localStorage.setItem(`${window.storageName}rtl`, false);
+                    window.localStorage.setItem(`${window.storageName}rtl`, 'false');
                 }
 
                 window.location.reload();
