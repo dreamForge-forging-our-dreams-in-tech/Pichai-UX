@@ -22,6 +22,7 @@ class customSettings extends HTMLElement {
                 <li>Color Order</li>
                 <li>Transparency Mode <input id='Pichai - transperencyMode' type='checkbox' class='actionButton' ${checked}></input></li>
                 <li>Font</li>
+                <li>Writting Direction</li>
                 <li>Border style</li>
                 <li>Icon packs</li>
                 <hr>

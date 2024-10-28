@@ -51,7 +51,22 @@ class PichaiUX {
 
             addCSSSheets(typeof exports !== 'undefined' ? 'Pichai-UX/CSS/main.css' : 'https://lukeplays33.github.io/Pichai-UX/CSS/main.css', cssId, head);
             addCSSSheets('https://fonts.googleapis.com/icon?family=Material+Icons', 'google', head);
+            let link = document.createElement('link');
+            link.id = cssId;
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = typeof exports !== 'undefined' ? 'Pichai-UX/CSS/main.css' : 'https://lukeplays33.github.io/Pichai-UX/CSS/main.css';
+            link.media = 'all';
 
+            let google = document.createElement('link');
+            google.id = 'google';
+            google.rel = 'stylesheet';
+            google.type = 'text/css';
+            google.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+            google.media = 'all';
+
+            head.prepend(google);
+            head.prepend(link);
         }
 
         // generate pallete based on bg image and set proper text colors
