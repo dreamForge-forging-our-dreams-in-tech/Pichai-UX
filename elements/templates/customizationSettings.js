@@ -31,6 +31,7 @@ class customSettings extends HTMLElement {
                 <hr titleText="Icons">
                 <li>Icon packs</li>
                 <li>Icon shape</li>
+                <li>Themed Icons</li>
                 <hr>
                 <li>Reset data</li>
             </list-viewer>`;
