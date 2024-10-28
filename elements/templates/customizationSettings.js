@@ -15,6 +15,7 @@ class customSettings extends HTMLElement {
         let i;
 
         let value = window.localStorage.getItem(`${window.storageName}transperncy`) == 'null' ? '1' : window.localStorage.getItem(`${window.storageName}transperncy`);
+        alert(value)
         let checked =  value == '1' ? '' : 'checked';
 
         this.innerHTML = `<list-viewer actionButton="${window.default_edit_icon}">
