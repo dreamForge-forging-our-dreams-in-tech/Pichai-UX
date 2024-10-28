@@ -61,12 +61,7 @@ class PichaiUX {
         // make a themed icon if set to true by user
         createThemedFavIcon(this.options);
 
-        //create rtl layout
-        if(this.options.rtl) {
-            document.body.classList.add('rtlLayout');
-        } else {
-            document.body.classList.remove('rtlLayout');
-        }
+        setRTLMode(this.options);
     }
 
     async generateDynamicIcon(icon) {
@@ -106,6 +101,15 @@ class PichaiUX {
     }
 }
 
+function setRTLMode (options) {
+            //create rtl layout
+            if(options.rtl) {
+                document.body.classList.add('rtlLayout');
+            } else {
+                document.body.classList.remove('rtlLayout');
+            }
+}
+
 function checkCustomizationChanges(options) {
     window.addEventListener('storage', async function (e) {
         updateStyles(e.key, e.newValue);
@@ -123,6 +127,8 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         options.transparency = value;
     } else if (key == `${window.storageName}rtl`) {
         options.rtl = value;
+
+        setRTLMode(options);
     } else if (key == 'all') {
 
         for (i in localStorage) {
