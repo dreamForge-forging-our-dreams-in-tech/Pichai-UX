@@ -41,6 +41,8 @@ class customSettings extends HTMLElement {
                 <li>Themed Icons</li>
 
                 <hr titleText="Data">
+                <li id='download'>Download Theme</li>
+                <li id='upload'>Upload Theme</li>
                 <li id='reset'>Reset data</li>
             </list-viewer>`;
 
@@ -75,7 +77,7 @@ class customSettings extends HTMLElement {
                 }
             } else if (e.detail.value == 'Fonts') {
 
-            }  else if (e.detail.value == 'rtl') {
+            } else if (e.detail.value == 'rtl') {
                 let li = document.getElementById(e.detail.value);
 
                 li.children[0].checked = !li.children[0].checked;
@@ -87,6 +89,17 @@ class customSettings extends HTMLElement {
                 }
 
                 window.location.reload();
+            } else if (e.detail.value == 'download') {
+                let li = document.getElementById(e.detail.value);
+
+                li.children[0].checked = !li.children[0].checked;
+
+                if (li.children[0].checked) {
+                    window.localStorage.setItem(`${window.storageName}rtl`, 'true');
+                } else {
+                    window.localStorage.setItem(`${window.storageName}rtl`, 'false');
+                }
+
             }
         });
     }
