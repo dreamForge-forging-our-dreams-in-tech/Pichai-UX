@@ -38,6 +38,6 @@ list-viewer hr {
     margin-top: -8px;
 }
 
-list-viewer hr[titleText]:not([titleText=""])::before {
+list-viewer hr[titleText]:not([titleText=""]) {
     margin: 8px;
 }
