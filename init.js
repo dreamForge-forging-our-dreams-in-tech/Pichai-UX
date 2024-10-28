@@ -103,7 +103,7 @@ class PichaiUX {
 
 function setRTLMode (options) {
             //create rtl layout
-            if(options.rtl) {
+            if(options.rtl || options.rtl == 'true') {
                 document.body.classList.add('rtlLayout');
             } else {
                 document.body.classList.remove('rtlLayout');
