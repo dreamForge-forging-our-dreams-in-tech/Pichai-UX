@@ -38,6 +38,7 @@ class customSettings extends HTMLElement {
             </list-viewer>`;
 
         this.firstChild.addEventListener('itemSelected', async function (e) {
+            alert(e.detail.item)
             if (e.detail.index == 0) {
                 pickFiles(function (file) {
                     window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
