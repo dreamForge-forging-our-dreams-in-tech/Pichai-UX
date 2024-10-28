@@ -155,3 +155,7 @@ a {
     display:flex;
     flex-direction:row;
 }
+
+.rtlLayout * {
+    direction: rtl;
+}

@@ -18,6 +18,7 @@ class PichaiUX {
             themedFavIcon: true,
             extractionPosition: 0,
             transparency: 1.0,
+            rtl:false,
             homeLink: window.location.href, // the link to where the user is send to when he presses the logo or title in the header.
             loginDialog: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when clicking the log in button
             accountMenu: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when the user is logged in and allows settings modifications, saving etc
@@ -59,6 +60,13 @@ class PichaiUX {
 
         // make a themed icon if set to true by user
         createThemedFavIcon(this.options);
+
+        //create rtl layout
+        if(this.options.rtl) {
+            document.body.classList.add('rtlLayout');
+        } else {
+            document.body.classList.remove('rtlLayout');
+        }
     }
 
     async generateDynamicIcon(icon) {
@@ -113,6 +121,8 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         options.source = value;
     } else if (key == `${window.storageName}transperncy`) {
         options.transparency = value;
+    } else if (key == `${window.storageName}rtl`) {
+        options.rtl = value;
     } else if (key == 'all') {
 
         for (i in localStorage) {

@@ -17,6 +17,9 @@ class customSettings extends HTMLElement {
         let value = window.localStorage.getItem(`${window.storageName}transperncy`) == null ? '1' : window.localStorage.getItem(`${window.storageName}transperncy`);
         let checked = value == '1' ? '' : 'checked';
 
+        let rtlValue = window.localStorage.getItem(`${window.storageName}rtl`) == null ? '1' : window.localStorage.getItem(`${window.storageName}rtl`);
+        let rtlChecked = rtlValue == '1' ? '' : 'checked';
+
         this.innerHTML = `<list-viewer actionButton="${window.default_edit_icon}">
         <hr titleText="Appearance">
                 <li id='wallpaper'>Wallpaper</li>
@@ -30,7 +33,7 @@ class customSettings extends HTMLElement {
 
                 <hr titleText="Text and Fonts">
                 <li>Font</li>
-                <li>Writting Direction</li>
+                <li id='rtl' >RTL Mode <input id='Pichai - transperencyMode' type='checkbox' class='actionButton' ${rtlChecked}></input></li>
 
                 <hr titleText="Icons">
                 <li>Icon packs</li>
@@ -70,8 +73,20 @@ class customSettings extends HTMLElement {
 
                     await showAlertDialog('Data cleared', 'Please refresh your window to finalize reset.');
                 }
-            }else if (e.detail.value == 'Fonts') {
+            } else if (e.detail.value == 'Fonts') {
 
+            }  else if (e.detail.value == 'rtl') {
+                let li = document.getElementById(e.detail.value);
+
+                li.children[0].checked = !li.children[0].checked;
+
+                if (li.children[0].checked) {
+                    window.localStorage.setItem(`${window.storageName}rtl`, true);
+                } else {
+                    window.localStorage.setItem(`${window.storageName}rtl`, false);
+                }
+
+                window.location.reload();
             }
         });
     }
