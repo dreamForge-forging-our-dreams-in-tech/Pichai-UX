@@ -18,13 +18,19 @@ class customSettings extends HTMLElement {
         let checked =  value == '1' ? '' : 'checked';
 
         this.innerHTML = `<list-viewer actionButton="${window.default_edit_icon}">
+        <hr titleText="Appearance">
                 <li id='wallpaper'>Wallpaper</li>
                 <li>Color Order</li>
                 <li>Transparency Mode <input id='Pichai - transperencyMode' type='checkbox' class='actionButton' ${checked}></input></li>
+                <li>Border style</li>
+
+                <hr titleText="Text and Fonts">
                 <li>Font</li>
                 <li>Writting Direction</li>
-                <li>Border style</li>
+
+                <hr titleText="Icons">
                 <li>Icon packs</li>
+                <li>Icon shape</li>
                 <hr>
                 <li>Reset data</li>
             </list-viewer>`;
