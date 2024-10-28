@@ -103,8 +103,7 @@ class PichaiUX {
 
 function setRTLMode (options) {
             //create rtl layout
-            alert(typeof options.rtl)
-            if(options.rtl || options.rtl == 'true') {
+            if(options.rtl) {
                 document.body.classList.add('rtlLayout');
             } else {
                 document.body.classList.remove('rtlLayout');
@@ -127,7 +126,7 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
     } else if (key == `${window.storageName}transperncy`) {
         options.transparency = value;
     } else if (key == `${window.storageName}rtl`) {
-        options.rtl = value;
+        options.rtl = value == 'true';
 
         setRTLMode(options);
     } else if (key == 'all') {
