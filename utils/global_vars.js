@@ -18,5 +18,5 @@ window.default_error_icon = 'error';
 window.default_note_icon = 'info';
 window.default_warning_icon = 'warning';
 
-//storageName 
+//storageName
 window.storageName = 'Pichai-UX ';
