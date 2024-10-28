@@ -22,7 +22,7 @@ class customSettings extends HTMLElement {
                 <li id='wallpaper'>Wallpaper</li>
                 <li>Theme Colors</li>
                 <li>Color Order</li>
-                <li>Transparency Mode <input id='Pichai - transperencyMode' type='checkbox' class='actionButton' ${checked}></input></li>
+                <li id='' >Transparency Mode <input id='Pichai - transperencyMode' type='checkbox' class='actionButton' ${checked}></input></li>
                 <li>Border style</li>
 
                 <hr titleText="Text and Fonts">
@@ -34,18 +34,17 @@ class customSettings extends HTMLElement {
                 <li>Icon shape</li>
                 <li>Themed Icons</li>
                 <hr>
-                <li>Reset data</li>
+                <li id='reset'>Reset data</li>
             </list-viewer>`;
 
         this.firstChild.addEventListener('itemSelected', async function (e) {
-            alert(e.detail.value)
-            if (e.detail.index == 0) {
+            if (e.detail.value == 'wallpaper') {
                 pickFiles(function (file) {
                     window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
 
                     window.location.reload();
                 });
-            } else if (e.detail.index == 2) {
+            } else if (e.detail.value == 'trans') {
                 let li = document.getElementById(e.detail.value);
 
                 li.children[0].checked = !li.children[0].checked;
@@ -57,7 +56,7 @@ class customSettings extends HTMLElement {
                 }
 
                 window.location.reload();
-            } else if (e.detail.index == 7) {
+            } else if (e.detail.value == 'reset') {
                 if (await showConfirmDialog('Are you sure?', 'Are you sure you want to clear all data?')) {
                     for (i in localStorage) {
                         if (String(i).includes(window.storageName)) {
