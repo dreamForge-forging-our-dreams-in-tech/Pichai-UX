@@ -14,7 +14,7 @@ class customSettings extends HTMLElement {
     async connectedCallback() {
         let i;
 
-        let value = window.localStorage.getItem(`${window.storageName}transperncy`) == 'null' ? '1' : window.localStorage.getItem(`${window.storageName}transperncy`);
+        let value = window.localStorage.getItem(`${window.storageName}transperncy`) == null ? '1' : window.localStorage.getItem(`${window.storageName}transperncy`);
         alert(value)
         let checked =  value == '1' ? '' : 'checked';
 
