@@ -42,9 +42,3 @@ list-viewer hr[titleText]:not([titleText=""]) {
     margin: 8px;
     margin-left:0px;
 }
-
-list-viewer hr[titleText]:not([titleText=""]) :first-child {
-    margin: 8px;
-    margin-left:0px;
-    margin-top:0px;
-}
