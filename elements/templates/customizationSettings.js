@@ -42,7 +42,7 @@ class customSettings extends HTMLElement {
                 if (li.children[0].checked) {
                     window.localStorage.setItem(`${window.storageName}transperncy`, 0.75);
                 } else {
-                    window.localStorage.removeItem(`${window.storageName}transperncy`);
+                    window.localStorage.setItem(`${window.storageName}transperncy`, null);
                 }
 
                 window.location.reload();
