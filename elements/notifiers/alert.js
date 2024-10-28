@@ -19,7 +19,7 @@ import { createDialogMessage, createDialogTitle } from './notifierUtils/text.js'
 * Events and Functions can be attached to all elements.
 */
 
-function showAlertDialog(titleText = 'Dialog', messageText = 'Message', cancelable = true) { // creates a confirm dialog
+function showAlertDialog(titleText = 'Dialog', messageText = 'Message') { // creates a confirm dialog
     return new Promise((resolve) => {
         let shadow = document.createElement('article');
         shadow.classList.add('dialogWrapper');
@@ -45,19 +45,6 @@ function showAlertDialog(titleText = 'Dialog', messageText = 'Message', cancelab
         });
 
         controlWrapper.append(submitButton);
-
-        if (cancelable) {
-            shadow.addEventListener('click', (e) => {
-                e.stopPropagation();
-                e.preventDefault();
-
-                if (e.target.classList.contains('dialogWrapper')) {
-                    document.getElementById(`alertDialog`).remove();
-
-                    resolve('closed');
-                }
-            });
-        }
 
         wrapper.append(createDialogTitle(titleText), createDialogMessage(messageText), controlWrapper); // append all items to the dialog wrapper
 

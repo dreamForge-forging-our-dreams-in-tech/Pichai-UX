@@ -23,7 +23,10 @@ class customSettings extends HTMLElement {
                 <li>Theme Colors</li>
                 <li>Color Order</li>
                 <li id='trans' >Transparency Mode <input id='Pichai - transperencyMode' type='checkbox' class='actionButton' ${checked}></input></li>
+
+                <hr titleText="Borders">
                 <li>Border style</li>
+                <li>Border Radius</li>
 
                 <hr titleText="Text and Fonts">
                 <li>Font</li>
@@ -33,7 +36,8 @@ class customSettings extends HTMLElement {
                 <li>Icon packs</li>
                 <li>Icon shape</li>
                 <li>Themed Icons</li>
-                <hr>
+
+                <hr titleText="Data">
                 <li id='reset'>Reset data</li>
             </list-viewer>`;
 
@@ -66,9 +70,11 @@ class customSettings extends HTMLElement {
 
                     await showAlertDialog('Data cleared', 'Please refresh your window to finalize reset.');
                 }
+            }else if (e.detail.value == 'Fonts') {
+
             }
         });
     }
 }
 
-registry.define("template-customization-settings", customSettings);
+registry.define("template-settings", customSettings);

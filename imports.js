@@ -29,7 +29,7 @@ import './elements/templates/footer.js';
 import './elements/templates/header.js';
 import './elements/templates/login.js';
 import './elements/templates/accountDrawer.js';
-import './elements/templates/customizationSettings.js';
+import './elements/templates/settings.js';
 
 import './elements/notifiers/dialogs.js';
 import './elements/notifiers/conforim.js';
