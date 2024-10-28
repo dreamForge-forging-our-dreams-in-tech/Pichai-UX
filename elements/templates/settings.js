@@ -17,8 +17,8 @@ class customSettings extends HTMLElement {
         let value = window.localStorage.getItem(`${window.storageName}transperncy`) == null ? '1' : window.localStorage.getItem(`${window.storageName}transperncy`);
         let checked = value == '1' ? '' : 'checked';
 
-        let rtlValue = window.localStorage.getItem(`${window.storageName}rtl`) == null ? '1' : window.localStorage.getItem(`${window.storageName}rtl`);
-        let rtlChecked = rtlValue == '1' ? '' : 'checked';
+        let rtlValue = window.localStorage.getItem(`${window.storageName}rtl`) == null ? 'false' : window.localStorage.getItem(`${window.storageName}rtl`);
+        let rtlChecked = rtlValue == 'false' ? '' : 'checked';
 
         this.innerHTML = `<list-viewer actionButton="${window.default_edit_icon}">
         <hr titleText="Appearance">
