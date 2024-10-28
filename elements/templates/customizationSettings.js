@@ -22,7 +22,7 @@ class customSettings extends HTMLElement {
                 <li id='wallpaper'>Wallpaper</li>
                 <li>Theme Colors</li>
                 <li>Color Order</li>
-                <li id='' >Transparency Mode <input id='Pichai - transperencyMode' type='checkbox' class='actionButton' ${checked}></input></li>
+                <li id='trans' >Transparency Mode <input id='Pichai - transperencyMode' type='checkbox' class='actionButton' ${checked}></input></li>
                 <li>Border style</li>
 
                 <hr titleText="Text and Fonts">
