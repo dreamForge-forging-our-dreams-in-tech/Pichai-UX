@@ -37,3 +37,17 @@ list-viewer hr {
     margin: 0px;
     margin-top: -8px;
 }
+
+list-viewer hr[titleText]:not([titleText=""])::before {
+    /* allows us to create hr titles*/
+    content: attr(titleText);
+    color: black;
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    background-color: var(--primary);
+    color: var(--primaryTextColor);
+    border-radius: 10px;
+    padding: 4px;
+    font-size: 13px;
+}
