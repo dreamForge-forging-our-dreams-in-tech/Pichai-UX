@@ -51,6 +51,7 @@ class PichaiUX {
 
             addCSSSheets(typeof exports !== 'undefined' ? 'Pichai-UX/CSS/main.css' : 'https://lukeplays33.github.io/Pichai-UX/CSS/main.css', cssId, head);
             addCSSSheets('https://fonts.googleapis.com/icon?family=Material+Icons', 'google', head);
+            addCSSSheets('https://pagecdn.io/lib/easyfonts/fonts.css', 'fonts', head);
 
             head.prepend(google);
             head.prepend(link);
