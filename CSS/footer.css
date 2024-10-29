@@ -14,6 +14,6 @@ footer>x-icon {
   margin-right: 0px;
 }
 
-footer>x-title {
+footer>x-title, footer a {
   margin-right: auto;
 }
