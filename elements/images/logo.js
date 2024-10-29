@@ -47,15 +47,6 @@ function generateDynamicIcon(image) {
             // Iterate through each pixel
             let i = 0;
             let interval = window.setInterval(() => {
-                console.log(i);
-                
-                i++;
-                if(i >= imageData.data.length) {
-                    clearInterval(interval);
-                }
-            },1);
-
-            for (let i = 0; i < imageData.data.length; i += 4) {
                 const red = imageData.data[i];
                 const green = imageData.data[i + 1];
                 const blue = imageData.data[i + 2];
@@ -78,7 +69,12 @@ function generateDynamicIcon(image) {
 
                     colorClass = 'themeColor';
                 }
-            }
+
+                i++;
+                if(i >= imageData.data.length) {
+                    clearInterval(interval);
+                }
+            },1);
 
             context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
 
