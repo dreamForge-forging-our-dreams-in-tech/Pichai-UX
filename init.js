@@ -33,7 +33,7 @@ class PichaiUX {
     }
 
     async initialize() {
-        checkCustomizationChanges(this.options); //starts listening to any adjustments to customization from the user
+        ///checkCustomizationChanges(this.options); //starts listening to any adjustments to customization from the user
 
         let comp = window.getComputedStyle(document.body);
         let image = String(comp['backgroundImage']);

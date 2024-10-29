@@ -51,7 +51,7 @@ class customSettings extends HTMLElement {
                 pickFiles(function (file) {
                     window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
 
-                    window.location.reload();
+                    window.parent.location.reload();
                 });
             } else if (e.detail.value == 'trans') {
                 let li = document.getElementById(e.detail.value);
@@ -64,7 +64,7 @@ class customSettings extends HTMLElement {
                     window.localStorage.setItem(`${window.storageName}transperncy`, 1);
                 }
 
-                window.location.reload();
+                window.parent.location.reload();
             } else if (e.detail.value == 'reset') {
                 if (await showConfirmDialog('Are you sure?', 'Are you sure you want to clear all data?')) {
                     for (i in localStorage) {
@@ -88,7 +88,7 @@ class customSettings extends HTMLElement {
                     window.localStorage.setItem(`${window.storageName}rtl`, 'false');
                 }
 
-                window.location.reload();
+                window.parent.location.reload();
             } else if (e.detail.value == 'download') {
                 let li = document.getElementById(e.detail.value);
 
