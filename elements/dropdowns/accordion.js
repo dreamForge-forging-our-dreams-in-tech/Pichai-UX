@@ -53,7 +53,7 @@ class Accordion extends HTMLElement {
             }
         }
 
-        if(this.getAttribute('open') == 'true') {
+        if(this.getAttribute('open') == 'false') {
             arrow.click();
         }
 
