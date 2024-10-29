@@ -20,6 +20,13 @@ footer>x-title {
   margin-bottom: auto;
 }
 
+footer a {
+  margin-right: 8px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
 footer :last-child {
   margin-right: 8px;
 }
