@@ -66,14 +66,14 @@ class customSettings extends HTMLElement {
 
                 window.parent.location.reload();
             } else if (e.detail.value == 'reset') {
-                if (await showConfirmDialog('Are you sure?', 'Are you sure you want to clear all data?')) {
+                if (await parent.showConfirmDialog('Are you sure?', 'Are you sure you want to clear all data?')) {
                     for (i in localStorage) {
                         if (String(i).includes(window.storageName)) {
                             window.localStorage.removeItem(i);
                         }
                     }
 
-                    await showAlertDialog('Data cleared', 'Please refresh your window to finalize reset.');
+                    await parent.showAlertDialog('Data cleared', 'Please refresh your window to finalize reset.');
                 }
             } else if (e.detail.value == 'Fonts') {
 
