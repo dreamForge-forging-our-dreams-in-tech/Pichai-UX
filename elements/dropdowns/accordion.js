@@ -53,9 +53,14 @@ class Accordion extends HTMLElement {
             }
         }
 
-        alert(this.getAttribute('open'))
-        if(this.getAttribute('open') == 'false') {
-            arrow.click();
+        if(this.getAttribute('open') == 'true') {
+            art.style.height = '100%';
+            art.style.padding = '8px';
+
+            this.parentNode.parentNode.children[1].classList.remove('hidden');
+            this.parentNode.parentNode.classList.remove('hiddenAccordion');
+
+            arrow.innerHTML = 'arrow_drop_up';
         }
 
         content.appendChild(art);
