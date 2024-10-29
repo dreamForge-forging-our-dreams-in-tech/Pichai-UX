@@ -161,3 +161,11 @@ a {
 .rtlLayout * {
     direction: rtl;
 }
+
+.comapnyInfoA {
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    text-decoration:none;
+}

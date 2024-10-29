@@ -39,7 +39,7 @@ function addHomeLink() {
 
             } else {
                 clearInterval(int);
-                resolve(`<a href='` + window['options'].homeLink + `'>
+                resolve(`<a class='comapnyInfoA' href='` + window['options'].homeLink + `'>
         <x-icon></x-icon>
         <x-title></x-title>
         </a>`);
