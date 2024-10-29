@@ -11,7 +11,7 @@ class Accordion extends HTMLElement {
      * Clean up space or make more room
     */
 
-    static observedAttributes = ["visible", "titletext"];
+    static observedAttributes = ["open", "titletext"]; // open attribute tells the init function that the contents are open when the page is loaded
     constructor() {
         // Always call super first in constructor
         super();
@@ -53,7 +53,7 @@ class Accordion extends HTMLElement {
             }
         }
 
-        if(this.getAttribute('visible') == 'true') {
+        if(this.getAttribute('open') == 'true') {
             arrow.click();
         }
 
@@ -70,12 +70,12 @@ class Accordion extends HTMLElement {
 
     attributeChangedCallback(name, oldValue, newValue) {
         doAttributeCheck('string', 'titletext', this.getAttribute('titletext'));
-        doAttributeCheck('boolean', 'visible', this.getAttribute('visible'));
+        doAttributeCheck('boolean', 'open', this.getAttribute('open'));
 
         if(name == 'titletext') { // lets you change the title of an accordion
             this.children[0].innerHTML = this.children[0].innerHTML.replace(oldValue, newValue);
 
-        } else if (name == 'visible') {
+        } else if (name == 'open') {
             let art = this.children[1].firstChild;
             let arrow = this.children[0].children[0];
 
