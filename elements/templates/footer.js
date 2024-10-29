@@ -13,7 +13,7 @@ class Footer extends HTMLElement {
         <x-title title='Sketch'></x-title>
     <a href="https://x.com/Sketch68862592?t=PpUXmuphCIXxY0wCdO33Ng&s=08">
       <x-icon
-        src='https://raw.githubusercontent.com/lukeplays33/Pichai-UX/main/assets/shapes/pictures/twitter.png'></x-icon>
+        src='https://raw.githubusercontent.com/lukeplays33/Pichai-UX/main/assets/shapes/pictures/x.webp'></x-icon>
     </a>
 
     <a href="https://discord.gg/2tJvuH73Kq">
