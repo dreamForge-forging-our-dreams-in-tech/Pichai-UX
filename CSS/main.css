@@ -163,9 +163,13 @@ a {
 }
 
 .comapnyInfoA {
+    display:flex;
+    flex-direction:row;
+
+    margin-top:auto;
+    margin-bottom:auto;
     margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-left:8px;
 
     text-decoration:none;
 }

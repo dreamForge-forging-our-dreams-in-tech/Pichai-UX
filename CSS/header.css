@@ -11,16 +11,7 @@ header {
     flex-direction:row;
 }
 
-header a {
-    display:flex;
-    flex-direction:row;
 
-    margin-top:auto;
-    margin-bottom:auto;
-    margin-left:8px;
-
-    text-decoration:none;
-}
 
 x-icon {
     margin-top:auto;
