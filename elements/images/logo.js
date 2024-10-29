@@ -45,6 +45,16 @@ function generateDynamicIcon(image) {
             let colorClass;
 
             // Iterate through each pixel
+            let i = 0;
+            let interval = window.setInterval(() => {
+                console.log(i);
+                
+                i++;
+                if(i >= imageData.data.length) {
+                    clearInterval(interval);
+                }
+            },1);
+
             for (let i = 0; i < imageData.data.length; i += 4) {
                 const red = imageData.data[i];
                 const green = imageData.data[i + 1];
