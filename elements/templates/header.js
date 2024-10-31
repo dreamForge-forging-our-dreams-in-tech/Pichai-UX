@@ -50,6 +50,7 @@ function addHomeLink() {
 
 function addQuickSettings(e) { // allows the developer to remove the logIn from the template
     return new Promise((resolve) => {
+        alert(e.getAttribute('settings'))
             if (!e.getAttribute('settings') == 'false') {
                 resolve(`template-settings`);
 
