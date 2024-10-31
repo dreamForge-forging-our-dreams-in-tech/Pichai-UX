@@ -31,4 +31,4 @@ class QS extends HTMLElement {
     }
 }
 
-registry.define("template-quickTiles", QS);
+registry.define("template-QS", QS);
