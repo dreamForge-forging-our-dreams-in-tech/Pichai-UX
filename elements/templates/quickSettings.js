@@ -20,7 +20,7 @@ class QS extends HTMLElement {
         this.classList.add('material-symbols-outlined');
 
         this.onclick = function () {
-            let dialog = window['options'].loginDialog;
+            let dialog = window['options'].settingsDialog;
 
             if (dialog.parentNode == document.body) {
                 dialog.remove();
