@@ -1,8 +1,8 @@
-import { registry } from '../../utils/customeElementsDefine.js';
-import { pickFiles } from '../../functions/filePicker.js';
+import { registry } from '../../../utils/customeElementsDefine.js';
+import { pickFiles } from '../../../functions/filePicker.js';
 
-import { showConfirmDialog } from '../notifiers/conforim.js';
-import { showAlertDialog } from '../notifiers/alert.js';
+import { showConfirmDialog } from '../../notifiers/conforim.js';
+import { showAlertDialog } from '../../notifiers/alert.js';
 
 // Create a class for the element
 class customSettings extends HTMLElement {
@@ -105,4 +105,4 @@ class customSettings extends HTMLElement {
     }
 }
 
-registry.define("template-settings", customSettings);
+registry.define("template-customization", customSettings);
