@@ -31,4 +31,4 @@ class QS extends HTMLElement {
     }
 }
 
-registry.define("template-QS", QS);
+registry.define("template-settingTiles", QS);
