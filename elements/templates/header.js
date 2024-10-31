@@ -2,7 +2,7 @@ import { registry } from '../../utils/customeElementsDefine.js';
 // Create a class for the element
 class Header extends HTMLElement {
 
-    static observedAttributes = ["logIn"]; // true or false
+    static observedAttributes = ["settings"]; // true or false
     constructor() {
         // Always call super first in constructor
         super();
@@ -11,19 +11,19 @@ class Header extends HTMLElement {
     async connectedCallback() {
         this.innerHTML = `<header>
         ` + await addHomeLink() + `
-        ` + await addLogIn(this) + `
+        ` + await addQuickSettings(this) + `
         
         </header>`;
 
     }
 
     async attributeChangedCallback(name, oldValue, newValue) {
-        doAttributeCheck('boolean', 'logIn', this.getAttribute('logIn'));
+        doAttributeCheck('boolean', 'settings', this.getAttribute('settings'));
 
         this.innerHTML = '';
         this.innerHTML = `<header>
         ` + await addHomeLink() + `
-        ` + await addLogIn(this) + `
+        ` + await addQuickSettings(this) + `
         
         </header>`;
     }
@@ -48,9 +48,9 @@ function addHomeLink() {
     });
 }
 
-function addLogIn(e) { // allows the developer to remove the logIn from the template
+function addQuickSettings(e) { // allows the developer to remove the logIn from the template
     return new Promise((resolve) => {
-            if (e.getAttribute('logIn') == 'true') {
+            if (e.getAttribute('settings') == 'false') {
                 resolve(`<log-in></log-in>
         <display-profile></display-profile>`);
 
