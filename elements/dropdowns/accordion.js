@@ -33,7 +33,9 @@ class Accordion extends HTMLElement {
         arrow.classList.add('material-symbols-outlined');
         arrow.innerHTML = 'arrow_drop_down';
 
-        arrow.onclick = function () {
+        arrow.onclick = function (e) {
+            e.stopPropagation();
+
             if(art.style.height == '100%') {
                 art.style.height = '0px';
                 art.style.padding = '0px 8px 0px 8px';
@@ -67,6 +69,10 @@ class Accordion extends HTMLElement {
 
         let title = document.createElement('h5');
         title.innerHTML = this.hasAttribute('titleText') ? this.getAttribute('titleText') : 'Accordion 🪗';
+
+        title.addEventListener('click', function () {
+            this.children[0].click();
+        });
 
         title.appendChild(arrow);
         
