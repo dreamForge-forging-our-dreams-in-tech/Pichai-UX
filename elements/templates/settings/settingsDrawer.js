@@ -1,4 +1,4 @@
-import { registry } from '../../utils/customeElementsDefine.js';
+import { registry } from '../../../utils/customeElementsDefine.js';
 // Create a class for the element
 class SettingsDrawer extends HTMLElement {
     constructor() {
