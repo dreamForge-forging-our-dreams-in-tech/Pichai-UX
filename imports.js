@@ -29,6 +29,7 @@ import './elements/templates/footer.js';
 import './elements/templates/header.js';
 import './elements/templates/login.js';
 import './elements/templates/accountDrawer.js';
+import './elements/templates/settings/settingsDrawer.js';
 import './elements/templates/settings/customizationSettings.js';
 import './elements/templates/quickSettings.js';
 
