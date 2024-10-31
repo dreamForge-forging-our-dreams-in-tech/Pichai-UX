@@ -55,7 +55,7 @@ display-profile, template-settings {
 
     background-color:var(--primary);
 
-    line-height:36px;
+    line-height: 35px !important;
     text-align:center;
 }
 
