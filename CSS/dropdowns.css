@@ -55,7 +55,3 @@ accordion-dropdown article {
 .accordionItems * {
     width: calc(100% - 8px);
 }
-
-.hiddenAccordion h5 {
-    margin-bottom:0px;
-}
