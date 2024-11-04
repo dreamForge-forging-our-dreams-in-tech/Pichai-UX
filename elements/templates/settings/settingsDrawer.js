@@ -8,7 +8,7 @@ class SettingsDrawer extends HTMLElement {
 
     async connectedCallback() {
         this.innerHTML = `<section class="card" id='quickSettingsPanel'>
-        <list-viewer actionButton='${window.default_edit_icon}'>
+        <list-viewer >
         <li>Global</li>
         <li>Customization</li>
         <li>Privacy</li>
