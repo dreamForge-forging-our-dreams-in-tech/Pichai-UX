@@ -7,13 +7,7 @@ class SettingsDrawer extends HTMLElement {
     }
 
     async connectedCallback() {
-        this.innerHTML = `<section class="card" id='drawer'>
-        <article id='options'>
-        <i class='material-symbols-outlined card' title='Upload a back-up of your data'>${window.default_upload_icon}</i>
-        <i class='material-symbols-outlined card' title='Create a back-up of your data'>${window.default_download_icon}</i>
-        <i class='material-symbols-outlined card' title='Link devices to have acces to data'>${window.default_link_icon}</i>
-        <i class='material-symbols-outlined card' title='Settings'>${window.default_settings_icon}</i>
-        </article>
+        this.innerHTML = `<section class="card" id='quickSettingsPanel'>
         </section>`;
     }
 }
