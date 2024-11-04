@@ -1,0 +1,11 @@
+#quickSettingsPanel {
+    min-width:300px;
+    min-height:300px;
+
+    position: fixed;
+
+    top:58px;
+    right:8px;
+
+    background-color:var(--secondairy);
+}
