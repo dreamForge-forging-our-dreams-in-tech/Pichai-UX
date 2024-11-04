@@ -6,8 +6,6 @@
 @import "./navigation.css";
 @import "./input.css";
 @import "./footer.css";
-@import "./template styles/login.css";
-@import "./template styles/settings.css";
 @import "./lists.css";
 @import "./dropdowns.css";
 @import "./other.css";
@@ -15,6 +13,9 @@
 @Import './notifiers.css';
 @import './drawers.css';
 @import './hr.css';
+
+@import "./template styles/login.css";
+@import "./template styles/settings.css";
 
 body,
 html {
