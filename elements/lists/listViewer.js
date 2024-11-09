@@ -47,6 +47,7 @@ function addAttributeFunctions(e) {
     let i, sortable;
 
     let li = document.createElement('li');
+    e.appendCHild(li);
 
     for(i of e.children) {
         li.appendChild(i);
