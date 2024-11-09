@@ -55,7 +55,7 @@ function addAttributeFunctions(e) {
                     detail: {
                         oldIndex: evt.oldIndex,
                         newIndex: evt.newIndex,
-                        item: evt.evt.item,
+                        item: evt.item,
                     },
                 });
     
