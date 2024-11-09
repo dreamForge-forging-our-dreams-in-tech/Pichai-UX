@@ -1,6 +1,8 @@
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 import { enableSetListItems } from '../globalElementFunctions/setListItems.js';
 
+import Sortable from '../../utils/libraries/sortable.js';
+
 // Create a class for the <log-in> element
 class ListViewer extends HTMLElement {
     /** @description 
@@ -11,15 +13,16 @@ class ListViewer extends HTMLElement {
      * Display items underneath each other.
     */
 
-    static observedAttributes = ["value", "actionButton"]; // add a value attribute to let the developer update the selected item when it for example has the wrong value.
+    static observedAttributes = ["value", "actionButton", 'sortable']; // add a value attribute to let the developer update the selected item when it for example has the wrong value.
     //actionButton allows the developer to add an item to the end of the list item e.g. an arrow, leave empty to have none
+    // the sortable attribute enables list viewer sorting (no saving included)
 
     constructor() {
         super();
     }
 
     connectedCallback() {
-        enableSetListItems(this, createButtons); //callback call ensures button creation
+        enableSetListItems(this, addAttributeFunctions); //callback call ensures button creation
 
         this.addEventListener('click', function (e) { // adds a click event to the list items and ensures that the right value is returned
             this.setAttribute('value', e.target.id);
@@ -40,8 +43,12 @@ class ListViewer extends HTMLElement {
     }
 }
 
-function createButtons(e) {
-    let i;
+function addAttributeFunctions(e) {
+    let i, sortable;
+
+    if (e.getAttribute('sortable') == '' || !e.hasAttribute('sortable')) { } else {
+        sortable = Sortable.create(e);
+    }
 
     if (e.getAttribute('actionButton') == '' || !e.hasAttribute('actionButton')) { } else {
         for (i of e.children) {
