@@ -59,7 +59,7 @@ function addAttributeFunctions(e) {
                     },
                 });
     
-                this.dispatchEvent(sorted); // dispatches the click event only when it's clicked and not when the value is manually changed by the developer.
+                e.dispatchEvent(sorted); // dispatches the click event only when it's clicked and not when the value is manually changed by the developer.
             }
         });
     }
