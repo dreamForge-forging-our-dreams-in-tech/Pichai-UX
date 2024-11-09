@@ -29,7 +29,7 @@ class ListViewer extends HTMLElement {
 
             let click = new CustomEvent("itemSelected", { //fires when an item in the listViewer is clicked, returns the text of the clicked item. Uses custom name because click is used by js 
                 detail: {
-                    value: e.target.id,
+                    value : e.target.id,
                     index: Array.prototype.indexOf.call(this.children, e.target),
                 },
             });
@@ -46,26 +46,13 @@ class ListViewer extends HTMLElement {
 function addAttributeFunctions(e) {
     let i, sortable;
 
-    let ul = document.createElement('ul');
-    e.appendChild(ul);
-
-    for(i of e.children) {
-        ul.appendChild(i);
-    }
-
     if (e.getAttribute('sortable') == '' || !e.hasAttribute('sortable')) { } else {
-        sortable = new Sortable(ul, {
-            animation: 150,  // Smooth dragging
-            ghostClass: 'sortable-ghost',  // Class applied to the item when it's being dragged
-            onEnd: function (evt) {
-                console.log('Item moved:', evt.oldIndex, 'to', evt.newIndex);
-            }
-        });
+        sortable = Sortable.create(e);
     }
 
     if (e.getAttribute('actionButton') == '' || !e.hasAttribute('actionButton')) { } else {
-        for (i of ul.children) {
-            if (!i.id) {
+        for (i of e.children) {
+            if(!i.id) {
                 i.id = i.innerHTML;
             }
 
