@@ -23,5 +23,6 @@
 #quickSettingsPanel list-viewer li {
     margin-bottom:0px;
 
-    text-align:center;
+    align-items: center;
+    justify-content: center;
 }
