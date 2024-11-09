@@ -46,15 +46,15 @@ class ListViewer extends HTMLElement {
 function addAttributeFunctions(e) {
     let i, sortable;
 
-    let li = document.createElement('li');
-    e.appendCHild(li);
+    let ul = document.createElement('ul');
+    e.appendCHild(ul);
 
     for(i of e.children) {
-        li.appendChild(i);
+        ul.appendChild(i);
     }
 
     if (e.getAttribute('sortable') == '' || !e.hasAttribute('sortable')) { } else {
-        sortable = new Sortable(li, {
+        sortable = new Sortable(ul, {
             animation: 150,  // Smooth dragging
             ghostClass: 'sortable-ghost',  // Class applied to the item when it's being dragged
             onEnd: function (evt) {
@@ -64,7 +64,7 @@ function addAttributeFunctions(e) {
     }
 
     if (e.getAttribute('actionButton') == '' || !e.hasAttribute('actionButton')) { } else {
-        for (i of li.children) {
+        for (i of ul.children) {
             if (!i.id) {
                 i.id = i.innerHTML;
             }
