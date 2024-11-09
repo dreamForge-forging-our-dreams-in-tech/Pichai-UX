@@ -8,13 +8,17 @@ class SettingsDrawer extends HTMLElement {
 
     async connectedCallback() {
         this.innerHTML = `<section class="card" id='quickSettingsPanel'>
-        <list-viewer sortable='true'>
+        <list-viewer sortable='true' id='settingsListViewer>
         <li>Global</li>
         <li>Customization</li>
         <li>Privacy</li>
         <li>Account</li>
         </list-viewer>
         </section>`;
+
+        this.children[0].addEventListener('itemSorted', function (e) {
+            alert(e.detail.newIndex)
+        });
     }
 }
 
