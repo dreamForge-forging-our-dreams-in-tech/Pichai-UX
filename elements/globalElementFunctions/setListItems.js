@@ -47,6 +47,7 @@ function enableSetListItems(element, callback) { // allows user to set the conte
             try {
                 callback(element);
             } catch (e) {
+                alert(e)
                 console.error(e)
             }
         }
