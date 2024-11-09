@@ -1,7 +1,7 @@
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 import { enableSetListItems } from '../globalElementFunctions/setListItems.js';
 
-import Sortable from '../../utils/libraries/sortable.js';
+import '../../utils/libraries/sortable.js';
 
 // Create a class for the <log-in> element
 class ListViewer extends HTMLElement {
