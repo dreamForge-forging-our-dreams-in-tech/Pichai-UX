@@ -1,6 +1,8 @@
-tr {
-    margin-bottom:8px;
+table {
+    border-spacing: 8px;
+}
 
+tr {
     table-layout: fixed
 }
 
@@ -19,7 +21,3 @@ accordion-dropdown tr:nth-child(2) {
 td {
     text-align:left;
 }
-
-th, td {
-    padding: 8px;
-  }
