@@ -11,3 +11,7 @@ accordion-dropdown td {
 td {
     text-align:left;
 }
+
+th, td {
+    padding: 8px;
+  }
