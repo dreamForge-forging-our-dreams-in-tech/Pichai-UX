@@ -1,3 +1,9 @@
 tr {
     margin-bottom:8px;
+
+    table-layout: fixed
+}
+
+accordion-dropdown td {
+    background-color: var(--secondairy);
 }
