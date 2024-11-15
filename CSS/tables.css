@@ -7,3 +7,7 @@ tr {
 accordion-dropdown td {
     background-color: var(--secondairy);
 }
+
+td {
+    text-align:left;
+}
