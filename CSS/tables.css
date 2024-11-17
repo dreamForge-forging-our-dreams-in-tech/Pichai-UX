@@ -12,4 +12,6 @@ table, td, th {
 
 table {
     border-collapse: collapse;
+
+    table-layout: fixed;
   }
