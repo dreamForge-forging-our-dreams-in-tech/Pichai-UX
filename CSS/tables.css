@@ -2,18 +2,6 @@ tr {
     table-layout: fixed
 }
 
-accordion-dropdown tr:nth-child(1) {
-    background-color: var(--secondairy);
-
-    color:var(--secondairyTextColor)
-}
-
-accordion-dropdown tr:nth-child(2) {
-    background-color: var(--tertiary);
-
-    color:var(--tertiaryTextColor)
-}
-
 td {
     text-align:left;
 }
