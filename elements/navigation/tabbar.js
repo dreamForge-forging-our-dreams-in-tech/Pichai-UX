@@ -104,12 +104,12 @@ function addForConnection(e, e2) {
             e.stopPropagation();
             e.preventDefault();
 
+            element.setAttribute('pageIndex',Number(this.getAttribute('index')));
+
             try {
                 i.parentNode.getElementsByClassName('current')[0].classList.remove('current');
             } catch(e) {}
             this.classList.add('current');
-
-            element.setAttribute('pageIndex',Number(this.getAttribute('index')));
         });
     }
 
