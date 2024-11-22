@@ -73,10 +73,7 @@ class ViewPager extends HTMLElement {
                     pageIndex: this.getAttribute('pageIndex'),
                 },
             });
-
-            if (this.getAttribute('pageIndex') == -1 || this.getAttribute('pageIndex') == this.children.length + 1) { } else {
-                this.dispatchEvent(pageChange);
-            }
+            this.dispatchEvent(pageChange);
 
         } catch (e) { }
     }
