@@ -2,9 +2,9 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 
 // Create a class for the element
 class ViewPager extends HTMLElement {
-            /** @description 
-    * The viewpager element dispalys only the current displayed page, through scrolling or connections with the tabbar element you can navigate between pages.
-    */
+    /** @description 
+* The viewpager element dispalys only the current displayed page, through scrolling or connections with the tabbar element you can navigate between pages.
+*/
 
     /** @usage 
      * Navigating between pages
@@ -52,7 +52,7 @@ class ViewPager extends HTMLElement {
         doAttributeCheck('number', 'pageindex', this.getAttribute('pageindex'));
         doAttributeCheck('number', 'sensitivity', this.getAttribute('sensitivity'));
         doAttributeCheck('boolean', 'looped', this.getAttribute('looped'));
-        
+
         try {
 
             if (Number(this.getAttribute('pageIndex')) > this.children.length - 1) {
@@ -74,9 +74,11 @@ class ViewPager extends HTMLElement {
                 },
             });
 
-            this.dispatchEvent(pageChange);
+            if (this.getAttribute('pageIndex') == 0 || this.getAttribute('pageIndex') == this.children.length - 1) { } else {
+                this.dispatchEvent(pageChange);
+            }
 
-        } catch (e) {}
+        } catch (e) { }
     }
 }
 
