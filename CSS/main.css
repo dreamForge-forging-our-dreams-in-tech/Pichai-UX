@@ -18,6 +18,10 @@
 @import "./template styles/login.css";
 @import "./template styles/settings.css";
 
+:root{
+    --font: cursive; /*variable that changes based on user selected font */
+}
+
 body,
 html {
     width: 100%;
@@ -34,7 +38,7 @@ html {
 * {
     overscroll-behavior: none;
 
-    font-family: sans-serif;
+    font-family: var(--font);
     font-size: 17px;
 
     border-style: solid;
