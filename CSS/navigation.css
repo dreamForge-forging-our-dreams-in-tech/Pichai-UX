@@ -9,6 +9,8 @@
   width: max-content;
 
   background-color: var(--primary);
+
+  overflow-x:auto;
 }
 
 .tabBarHolder a,
@@ -45,6 +47,8 @@ view-pager:first-child {
 
 .verticalTabbar {
   writing-mode: vertical-rl;
+
+  overflow-y:auto;
 }
 
 .verticalTabbar a {
