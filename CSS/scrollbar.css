@@ -15,14 +15,14 @@
 
   /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: var(--tertiaryContainer);
+    background: var(--secondairyContainer);
 
     border-radius:200px;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--tertiary);
+    background: var(--secondairy);
 
     border-radius:200px;
   }
