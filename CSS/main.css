@@ -14,6 +14,7 @@
 @import './drawers.css';
 @import './hr.css';
 @import './tables.css';
+@import './scrollbar.css';
 
 @import "./template styles/login.css";
 @import "./template styles/settings.css";
