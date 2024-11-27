@@ -27,3 +27,16 @@
 
     border-radius:200px;
   }
+
+  .tabBarHolder ::-webkit-scrollbar-thumb {
+    background: var(--primaryContainer);
+
+    border-radius:200px;
+  }
+  
+  /* Handle on hover */
+  .tabBarHolder ::-webkit-scrollbar-thumb:hover {
+    background: var(--secondairy);
+
+    border-radius:200px;
+  }
