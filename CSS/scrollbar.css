@@ -8,7 +8,7 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--primary);
+    background: TRANSPARENT;
 
     border-radius:200px;
   }
