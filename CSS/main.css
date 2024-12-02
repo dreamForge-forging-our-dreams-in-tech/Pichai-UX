@@ -20,6 +20,7 @@
 @import "./template styles/settings.css";
 
 :root{
+    --borderRadius:10px;
     --font: sans-serif; /*variable that changes based on user selected font */
 }
 
@@ -43,7 +44,7 @@ html {
     font-size: 17px;
 
     border-style: solid;
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     border-color: var(--primary);
     border-width: 0px;
 
