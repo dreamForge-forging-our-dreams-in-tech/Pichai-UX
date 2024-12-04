@@ -182,6 +182,16 @@ net.train([{
     black: 1
   }
 },
+{
+  input: {
+    r: 0.78,
+    g: 0.28,
+    b: 0.29
+  },
+  output: {
+    white: 1
+  }
+},
 ]);
 
 function getTextColor(color) {
