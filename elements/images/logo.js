@@ -74,7 +74,7 @@ function generateDynamicIcon(image) {
                 if(i >= imageData.data.length) {
                     clearInterval(interval);
                 }
-            },1);
+            },100);
 
             context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
 
