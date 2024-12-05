@@ -3,7 +3,7 @@ import { getTextColor } from '../../AI/textColorFInder.js';
 
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 
-function generateDynamicIcon(image) {
+function generateDynamicIcon(image, radius) {
     return new Promise((resolve) => {
         // Assume you have an HTML canvas element with the id "myCanvas"
         const canvas = document.createElement('canvas');
@@ -32,7 +32,11 @@ function generateDynamicIcon(image) {
             context.save();
             // Draw the image on the canvas
             context.translate(canvas.width / 2, canvas.height / 2)
-            context.rotate(0.55);
+
+            if(!radius == 0) {
+                context.rotate(0.55);
+            }
+            
             context.drawImage(dynamicImage, -dynamicImage.width / 2, -dynamicImage.height / 2);
 
             // Define the tolerance for color matching (adjust as needed)
@@ -131,7 +135,7 @@ class Logo extends HTMLElement {
 
         this.style.backgroundImage = `url("${faviconUrl}")`; // display standard iamage till dynamic finished loading or an error occured
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
-            let newIcon = await generateDynamicIcon(faviconUrl);
+            let newIcon = await generateDynamicIcon(faviconUrl, this.getAttribute('rounded'));// telss the generator it needs to be rounded value in numbers
             this.style.backgroundImage = `url(${newIcon})`;
 
             window.onload = async () => {
