@@ -102,9 +102,9 @@ function generateDynamicIcon(image) {
                         }
                     }
                 }
-            }, 1000);
 
-            resolve(canvas.toDataURL());
+                resolve(canvas.toDataURL());
+            }, 1000);
         };
     });
 }
