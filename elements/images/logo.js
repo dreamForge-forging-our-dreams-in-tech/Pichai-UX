@@ -117,6 +117,7 @@ function generateDynamicIcon(image) {
                         y = 0 
 
                         times++ 
+                        console.log('ee')
 
                         if(times > canvas.width) {
                             resolve(canvas.toDataURL());
