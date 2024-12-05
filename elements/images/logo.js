@@ -73,10 +73,8 @@ function generateDynamicIcon(image) {
                 i++;
                 if(i >= imageData.data.length) {
                     clearInterval(interval);
-                }
-            },1);
 
-            context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
+                    context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
 
             context.translate(-canvas.width / 5.0, canvas.height / 3.0);
             context.rotate(-0.55);
@@ -102,6 +100,8 @@ function generateDynamicIcon(image) {
             }
 
             resolve(canvas.toDataURL());
+                }
+            },1);
         };
     });
 }
