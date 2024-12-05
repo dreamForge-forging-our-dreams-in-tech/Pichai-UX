@@ -109,7 +109,7 @@ function generateDynamicIcon(image) {
                         if (x >= canvas.width) {
                             clearInterval(intervalX);
 
-                            resolve(canvas.toDataURL());
+                            //resolve(canvas.toDataURL());
                         }
     
                     }, 1);
