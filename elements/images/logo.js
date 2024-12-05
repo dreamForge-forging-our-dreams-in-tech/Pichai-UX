@@ -103,7 +103,7 @@ function generateDynamicIcon(image) {
                 }
 
                 resolve(canvas.toDataURL());
-            }, 100000);
+            }, 200000);
         };
     });
 }
