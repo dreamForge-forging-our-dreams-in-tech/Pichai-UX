@@ -85,8 +85,10 @@ function generateDynamicIcon(image) {
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.fillRect(0, 0, canvas.width, canvas.height);
 
-            for (let y = 0; y < canvas.height; y++) {
-                for (let x = 0; x < canvas.width; x++) {
+            let x, y;
+
+            let intervalY = window.setInterval(() => {
+                let intervalX = window.setInterval(() => {
                     const index = (y * canvas.width + x) * 4;
                     const red = imageData.data[index];
                     const green = imageData.data[index + 1];
@@ -96,11 +98,26 @@ function generateDynamicIcon(image) {
                     if (red === textColor && green === textColor && blue === textColor) {
                         // Replace the pixel with a 5x5 square
 
-                        window.setTimeout(() => {
-                            context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
-                            context.fillRect(x, y, 2, 2); //draw the new icon atop of the theme
-                        },10);
+                        context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
+                        context.fillRect(x, y, 2, 2); //draw the new icon atop of the theme
                     }
+
+                    x++
+                    if (x >= canvas.width) {
+                        clearInterval(interval);
+                    }
+
+                }, 2);
+
+                y++
+                if (y >= canvas.height) {
+                    clearInterval(interval);
+                }
+
+            }, 2);
+            for (let y = 0; y < canvas.height; y++) {
+                for (let x = 0; x < canvas.width; x++) {
+
                 }
             }
 
