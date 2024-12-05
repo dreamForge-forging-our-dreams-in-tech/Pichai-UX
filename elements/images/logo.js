@@ -120,7 +120,7 @@ function generateDynamicIcon(image) {
                     }
     
                 }, 2);
-            },100000);
+            },10);
         };
     });
 }
