@@ -106,7 +106,7 @@ function generateDynamicIcon(image) {
                         }
     
                         x++
-                        if (x >= canvas.width) {
+                        if (x <= canvas.width) {
                             clearInterval(intervalX);
 
                             //resolve(canvas.toDataURL());
@@ -115,7 +115,7 @@ function generateDynamicIcon(image) {
                     }, 1);
     
                     y++
-                    if (y >= canvas.height) {
+                    if (y <= canvas.height) {
                         clearInterval(intervalY);
                     }
     
