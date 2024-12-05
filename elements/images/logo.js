@@ -45,8 +45,7 @@ function generateDynamicIcon(image) {
             let colorClass;
 
             // Iterate through each pixel
-            let i = 0; // hahaha this increased loading speed up to 95%
-            let interval = window.setInterval(() => {
+            for (let i = 0; i < imageData.data.length; i += 4) {
                 const red = imageData.data[i];
                 const green = imageData.data[i + 1];
                 const blue = imageData.data[i + 2];
@@ -69,12 +68,7 @@ function generateDynamicIcon(image) {
 
                     colorClass = 'themeColor';
                 }
-
-                i++;
-                if (i >= imageData.data.length) {
-                    clearInterval(interval);
-                }
-            }, 1);
+            }
 
             context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
 
