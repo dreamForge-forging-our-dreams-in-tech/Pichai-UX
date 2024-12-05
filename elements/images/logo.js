@@ -87,36 +87,38 @@ function generateDynamicIcon(image) {
 
             let x, y;
 
-            let intervalY = window.setInterval(() => {
-                let intervalX = window.setInterval(() => {
-                    const index = (y * canvas.width + x) * 4;
-                    const red = imageData.data[index];
-                    const green = imageData.data[index + 1];
-                    const blue = imageData.data[index + 2];
-
-                    // Check if the pixel is not the theme color
-                    if (red === textColor && green === textColor && blue === textColor) {
-                        // Replace the pixel with a 5x5 square
-
-                        context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
-                        context.fillRect(x, y, 2, 2); //draw the new icon atop of the theme
+            window.setTimeout(() => {
+                let intervalY = window.setInterval(() => {
+                    let intervalX = window.setInterval(() => {
+                        const index = (y * canvas.width + x) * 4;
+                        const red = imageData.data[index];
+                        const green = imageData.data[index + 1];
+                        const blue = imageData.data[index + 2];
+    
+                        // Check if the pixel is not the theme color
+                        if (red === textColor && green === textColor && blue === textColor) {
+                            // Replace the pixel with a 5x5 square
+    
+                            context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
+                            context.fillRect(x, y, 2, 2); //draw the new icon atop of the theme
+                        }
+    
+                        x++
+                        if (x >= canvas.width) {
+                            clearInterval(intervalX);
+                        }
+    
+                    }, 1);
+    
+                    y++
+                    if (y >= canvas.height) {
+                        clearInterval(intervalY);
                     }
-
-                    x++
-                    if (x >= canvas.width) {
-                        clearInterval(interval);
-                    }
-
-                }, 1);
-
-                y++
-                if (y >= canvas.height) {
-                    clearInterval(interval);
-                }
-
-            }, 2);
-            
-            resolve(canvas.toDataURL());
+    
+                }, 2);
+    
+                resolve(canvas.toDataURL());
+            },1000);
         };
     });
 }
