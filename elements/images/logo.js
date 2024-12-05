@@ -71,35 +71,38 @@ function generateDynamicIcon(image) {
                 }
 
                 i++;
-                if(i >= imageData.data.length) {
+                if (i >= imageData.data.length) {
                     clearInterval(interval);
                 }
-            },1);
+            }, 1);
 
-            context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
+            let interval2 = window.setInterval(() => {
 
-            context.translate(-canvas.width / 5.0, canvas.height / 3.0);
-            context.rotate(-0.55);
-            context.putImageData(imageData, 0, 0);
+                context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
 
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            context.fillRect(0, 0, canvas.width, canvas.height);
+                context.translate(-canvas.width / 5.0, canvas.height / 3.0);
+                context.rotate(-0.55);
+                context.putImageData(imageData, 0, 0);
 
-            for (let y = 0; y < canvas.height; y++) {
-                for (let x = 0; x < canvas.width; x++) {
-                    const index = (y * canvas.width + x) * 4;
-                    const red = imageData.data[index];
-                    const green = imageData.data[index + 1];
-                    const blue = imageData.data[index + 2];
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.fillRect(0, 0, canvas.width, canvas.height);
 
-                    // Check if the pixel is not the theme color
-                    if (red === textColor && green === textColor && blue === textColor) {
-                        // Replace the pixel with a 5x5 square
-                        context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
-                        context.fillRect(x, y, 2, 2); //draw the new icon atop of the theme
+                for (let y = 0; y < canvas.height; y++) {
+                    for (let x = 0; x < canvas.width; x++) {
+                        const index = (y * canvas.width + x) * 4;
+                        const red = imageData.data[index];
+                        const green = imageData.data[index + 1];
+                        const blue = imageData.data[index + 2];
+
+                        // Check if the pixel is not the theme color
+                        if (red === textColor && green === textColor && blue === textColor) {
+                            // Replace the pixel with a 5x5 square
+                            context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
+                            context.fillRect(x, y, 2, 2); //draw the new icon atop of the theme
+                        }
                     }
                 }
-            }
+            }, 1000);
 
             resolve(canvas.toDataURL());
         };
@@ -108,10 +111,10 @@ function generateDynamicIcon(image) {
 
 // Create a class for the element
 class Logo extends HTMLElement {
-            /** @description 
-    * The x-icon element uses AI to generate dynamic icons so your icon works together with the theme.
-    * Aditionally you can use custom icons or disable the dynamic icons future.
-    */
+    /** @description 
+* The x-icon element uses AI to generate dynamic icons so your icon works together with the theme.
+* Aditionally you can use custom icons or disable the dynamic icons future.
+*/
 
     /** @usage 
      * displaying the favIcon
