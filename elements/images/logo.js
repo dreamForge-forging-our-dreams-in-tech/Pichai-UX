@@ -73,6 +73,8 @@ function generateDynamicIcon(image) {
                 i++;
                 if (i >= imageData.data.length) {
                     clearInterval(interval);
+
+                    resolve(canvas.toDataURL());
                 }
             }, 1);
 
