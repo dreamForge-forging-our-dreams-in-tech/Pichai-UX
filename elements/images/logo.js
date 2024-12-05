@@ -152,6 +152,7 @@ class Logo extends HTMLElement {
             faviconUrl = this.getAttribute('src');
         }
 
+        this.style.backgroundImage = `url("${faviconUrl}")`; // display standard iamage till dynamic finished loading or an error occured
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
             let newIcon = await generateDynamicIcon(faviconUrl);
             this.style.backgroundImage = `url(${newIcon})`;
@@ -160,10 +161,8 @@ class Logo extends HTMLElement {
                 let newIcon = await generateDynamicIcon(faviconUrl);
                 this.style.backgroundImage = `url(${newIcon})`;
             }
-        } else {
-            this.style.backgroundImage = `url("${faviconUrl}")`;
         }
-
+        
     }
 
     async attributeChangedCallback(name, oldValue, newValue) {
