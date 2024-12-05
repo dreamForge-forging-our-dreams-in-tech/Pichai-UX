@@ -91,7 +91,7 @@ function generateDynamicIcon(image) {
                 let intervalY = window.setInterval(() => {
                     let intervalX = window.setInterval(() => {
                         console.log(x,y);
-                        
+
                         const index = (y * canvas.width + x) * 4;
                         const red = imageData.data[index];
                         const green = imageData.data[index + 1];
@@ -120,7 +120,7 @@ function generateDynamicIcon(image) {
                 }, 2);
     
                 resolve(canvas.toDataURL());
-            },100000);
+            },1000);
         };
     });
 }
