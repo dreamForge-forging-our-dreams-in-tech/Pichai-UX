@@ -90,6 +90,8 @@ function generateDynamicIcon(image) {
             window.setTimeout(() => {
                 let intervalY = window.setInterval(() => {
                     let intervalX = window.setInterval(() => {
+                        console.log(x,y);
+                        
                         const index = (y * canvas.width + x) * 4;
                         const red = imageData.data[index];
                         const green = imageData.data[index + 1];
@@ -162,7 +164,7 @@ class Logo extends HTMLElement {
                 this.style.backgroundImage = `url(${newIcon})`;
             }
         }
-        
+
     }
 
     async attributeChangedCallback(name, oldValue, newValue) {
