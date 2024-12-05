@@ -90,7 +90,6 @@ function generateDynamicIcon(image) {
             window.setTimeout(() => {
                 let intervalY = window.setInterval(() => {
                     let intervalX = window.setInterval(() => {
-                        console.log(x,y);
 
                         const index = (y * canvas.width + x) * 4;
                         const red = imageData.data[index];
@@ -100,6 +99,7 @@ function generateDynamicIcon(image) {
                         // Check if the pixel is not the theme color
                         if (red === textColor && green === textColor && blue === textColor) {
                             // Replace the pixel with a 5x5 square
+                            console.log(x,y);
     
                             context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
                             context.fillRect(x, y, 2, 2); //draw the new icon atop of the theme
