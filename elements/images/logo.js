@@ -81,40 +81,38 @@ function generateDynamicIcon(image) {
 
             let x = 0, y = 0;
 
-            window.setTimeout(() => {
-                let intervalY = window.setInterval(() => {
-                    let intervalX = window.setInterval(() => {
+            let intervalY = window.setInterval(() => {
+                let intervalX = window.setInterval(() => {
 
-                        const index = (y * canvas.width + x) * 4;
-                        const red = imageData.data[index];
-                        const green = imageData.data[index + 1];
-                        const blue = imageData.data[index + 2];
-    
-                        // Check if the pixel is not the theme color
-                        if (red === textColor && green === textColor && blue === textColor) {
-                            // Replace the pixel with a 5x5 square
-                            console.log(x,y);
-    
-                            context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
-                            context.fillRect(x, y, 2, 2); //draw the new icon atop of the theme
-                        }
-    
-                        x++
-                        if (x >= canvas.width) {
-                            clearInterval(intervalX);
+                    const index = (y * canvas.width + x) * 4;
+                    const red = imageData.data[index];
+                    const green = imageData.data[index + 1];
+                    const blue = imageData.data[index + 2];
 
-                            resolve(canvas.toDataURL());
-                        }
-    
-                    }, 1);
-    
-                    y++
-                    if (y >= canvas.height) {
-                        clearInterval(intervalY);
+                    // Check if the pixel is not the theme color
+                    if (red === textColor && green === textColor && blue === textColor) {
+                        // Replace the pixel with a 5x5 square
+                        console.log(x, y);
+
+                        context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
+                        context.fillRect(x, y, 2, 2); //draw the new icon atop of the theme
                     }
-    
-                }, 2);
-            },100000);
+
+                    x++
+                    if (x >= canvas.width) {
+                        clearInterval(intervalX);
+
+                        resolve(canvas.toDataURL());
+                    }
+
+                }, 1);
+
+                y++
+                if (y >= canvas.height) {
+                    clearInterval(intervalY);
+                }
+
+            }, 2);
         };
     });
 }
