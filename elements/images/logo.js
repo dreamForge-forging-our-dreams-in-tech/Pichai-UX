@@ -118,7 +118,7 @@ function generateDynamicIcon(image) {
                 }, 2);
     
                 resolve(canvas.toDataURL());
-            },1000);
+            },10000);
         };
     });
 }
