@@ -93,7 +93,7 @@ function generateDynamicIcon(image) {
                     const blue = imageData.data[index + 2];
 
                     // Check if the pixel is not the theme color
-                    if !(red === rgb[0]  && green === rgb[1]  && blue === rgb[2] ) {
+                    if (red === textColor && green === textColor && blue === textColor) {
                         // Replace the pixel with a 5x5 square
                         context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
                         context.fillRect(x, y, 2, 2); //draw the new icon atop of the theme
