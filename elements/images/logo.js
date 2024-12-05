@@ -85,7 +85,7 @@ function generateDynamicIcon(image) {
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.fillRect(0, 0, canvas.width, canvas.height);
 
-            let x, y;
+            let x = 0, y = 0;
 
             window.setTimeout(() => {
                 let intervalY = window.setInterval(() => {
