@@ -26,7 +26,7 @@ function generateDynamicIcon(image) {
             canvas.width = dynamicImage.width;
             canvas.height = dynamicImage.height;
 
-            context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // so it works with the transparency mode
+            context.fillStyle = `black`; // so it works with the transparency mode
             context.fillRect(0, 0, canvas.width, canvas.height);
 
             context.save();
