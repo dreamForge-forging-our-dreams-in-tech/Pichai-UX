@@ -107,14 +107,15 @@ function generateDynamicIcon(image) {
                         clearInterval(interval);
                     }
 
-                }, 2);
+                }, 1);
 
                 y++
                 if (y >= canvas.height) {
                     clearInterval(interval);
                 }
 
-            }, 2);
+            }, 1000);
+
             for (let y = 0; y < canvas.height; y++) {
                 for (let x = 0; x < canvas.width; x++) {
 
