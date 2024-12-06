@@ -146,9 +146,7 @@ class Logo extends HTMLElement {
         this.style.backgroundImage = `url("${faviconUrl}")`; // display standard iamage till dynamic finished loading or an error occured
 
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
-            if (document.readyState === "complete") {
-                setDynamicIcon(this, faviconUrl, radius);
-            }
+            setDynamicIcon(this, faviconUrl, radius);
 
             window.onload = async () => { // so favIcon can change or other elements can change before css vars loaded properly
                 setDynamicIcon(this, faviconUrl, radius);
