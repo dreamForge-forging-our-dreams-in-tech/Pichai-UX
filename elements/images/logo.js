@@ -109,6 +109,13 @@ function generateDynamicIcon(image, radius = 360) {
     });
 }
 
+async function setDynamicIcon (img,faviconUrl) {
+    let newIcon = await generateDynamicIcon(faviconUrl, parseInt(radius));
+    img.style.backgroundImage = `url(${newIcon})`;
+    
+    dynamicGeneratedIcons[faviconUrl] = `url(${newIcon})`;
+}
+
 // Create a class for the element
 class Logo extends HTMLElement {
     /** @description 
@@ -149,16 +156,10 @@ class Logo extends HTMLElement {
         }
 
         if ((!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') && !dynamicGeneratedIcons.hasOwnProperty(faviconUrl)) {
-            let newIcon = await generateDynamicIcon(faviconUrl, parseInt(radius));
-            this.style.backgroundImage = `url(${newIcon})`;
-            
-            dynamicGeneratedIcons[faviconUrl] = `url(${newIcon})`;
+            setDynamicIcon(this, faviconUrl);
 
-            window.onload = async () => {
-                let newIcon = await generateDynamicIcon(faviconUrl, parseInt(radius));
-                this.style.backgroundImage = `url(${newIcon})`;
-
-                dynamicGeneratedIcons[faviconUrl] = `url(${newIcon})`;
+            window.onload = async () => { // so favIcon can change or other elements can change before css vars loaded properly
+                setDynamicIcon(this, faviconUrl);
             }
         }
 
