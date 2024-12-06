@@ -113,7 +113,7 @@ async function setDynamicIcon (img,faviconUrl,radius) {
     let newIcon = await generateDynamicIcon(faviconUrl, parseInt(radius));
     img.style.backgroundImage = `url(${newIcon})`;
     
-    dynamicGeneratedIcons[faviconUrl] = `url(${newIcon})`;
+    dynamicGeneratedIcons[String(faviconUrl)] = `url(${newIcon})`;
 }
 
 // Create a class for the element
@@ -148,7 +148,7 @@ class Logo extends HTMLElement {
         }
 
         this.style.backgroundImage = `url("${faviconUrl}")`; // display standard iamage till dynamic finished loading or an error occured
-        console.log(dynamicGeneratedIcons[faviconUrl], dynamicGeneratedIcons)
+        console.log(dynamicGeneratedIcons[String(faviconUrl)], dynamicGeneratedIcons)
         if(dynamicGeneratedIcons.hasOwnProperty(faviconUrl)) {
             this.style.backgroundImage = `url("${dynamicGeneratedIcons[faviconUrl]}")`;
             console.log(this)
