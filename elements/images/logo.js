@@ -46,10 +46,7 @@ function generateDynamicIcon(image, radius = 360) {
 
             //context.translate(-canvas.width / 5.0, canvas.height / 3.0);
             //context.rotate(-0.55);
-            //context.putImageData(imageData, 0, 0);
 
-            //context.clearRect(0, 0, canvas.width, canvas.height);
-            //context.fillRect(0, 0, canvas.width, canvas.height);
 
             for (let y = 0; y < canvas.height; y++) {
                 for (let x = 0; x < canvas.width; x++) {
@@ -61,7 +58,7 @@ function generateDynamicIcon(image, radius = 360) {
                     const green = imageData.data[1];
                     const blue = imageData.data[2];
 
-                    console.log(red,green, blue)
+                    console.log(red, green, blue)
                     console.log(rgb)
                     // Check if the pixel is not theme color
                     if ( //textcolor
@@ -80,7 +77,7 @@ function generateDynamicIcon(image, radius = 360) {
 
                         colorClass = 'themeColor';
 
-                        
+
                         // Check if the pixel is not the theme color
                         if (red === textColor && green === textColor && blue === textColor) {
                             // Replace the pixel with a 5x5 square
@@ -89,8 +86,12 @@ function generateDynamicIcon(image, radius = 360) {
                         }
                     }
 
+                    context.putImageData(imageData, 0, 0);
                 }
             }
+
+            //context.clearRect(0, 0, canvas.width, canvas.height);
+            //context.fillRect(0, 0, canvas.width, canvas.height);
 
             context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
             context.lineWidth = 46; // Set border width
