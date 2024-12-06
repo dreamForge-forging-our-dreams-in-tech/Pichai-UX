@@ -3,7 +3,7 @@ import { getTextColor } from '../../AI/textColorFInder.js';
 
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 
-function generateDynamicIcon(image) {
+function generateDynamicIcon(image, radius = 360) {
     return new Promise((resolve) => {
         // Assume you have an HTML canvas element with the id "myCanvas"
         const canvas = document.createElement('canvas');
@@ -95,6 +95,11 @@ function generateDynamicIcon(image) {
                 }
             }
 
+            ctx.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+            ctx.beginPath();
+            context.roundRect(0, 0, canvas.width, canvas.height, radius);
+            ctx.stroke();
+
             resolve(canvas.toDataURL());
         };
     });
@@ -139,7 +144,7 @@ class Logo extends HTMLElement {
                 this.style.backgroundImage = `url(${newIcon})`;
             }
         }
-        
+
     }
 
     async attributeChangedCallback(name, oldValue, newValue) {
