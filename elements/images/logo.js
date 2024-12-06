@@ -109,7 +109,7 @@ function generateDynamicIcon(image, radius = 360) {
     });
 }
 
-async function setDynamicIcon (img,faviconUrl) {
+async function setDynamicIcon (img,faviconUrl,radius) {
     let newIcon = await generateDynamicIcon(faviconUrl, parseInt(radius));
     img.style.backgroundImage = `url(${newIcon})`;
     
@@ -156,10 +156,10 @@ class Logo extends HTMLElement {
         }
 
         if ((!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') && !dynamicGeneratedIcons.hasOwnProperty(faviconUrl)) {
-            setDynamicIcon(this, faviconUrl);
+            setDynamicIcon(this, faviconUrl, radius);
 
             window.onload = async () => { // so favIcon can change or other elements can change before css vars loaded properly
-                setDynamicIcon(this, faviconUrl);
+                setDynamicIcon(this, faviconUrl , radius);
             }
         }
 
