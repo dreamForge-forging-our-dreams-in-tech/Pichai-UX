@@ -61,12 +61,14 @@ function generateDynamicIcon(image, radius = 360) {
                     imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[2]; // Blue channel
 
                     colorClass = findColorClass(red, green, blue);
+                    console.log(colorClass)
                 } else {
                     imageData.data[i] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[0];
                     imageData.data[i + 1] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[1];
                     imageData.data[i + 2] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[2];
 
                     colorClass = 'themeColor';
+                    console.log(colorClass)
                 }
             }
 
