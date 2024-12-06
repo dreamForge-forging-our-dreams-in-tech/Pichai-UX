@@ -33,7 +33,7 @@ function generateDynamicIcon(image, radius = 360) {
             // Draw the image on the canvas
             //context.translate(canvas.width / 2, canvas.height / 2)
             //context.rotate(0.55);
-            //context.drawImage(dynamicImage, -dynamicImage.width / 2, -dynamicImage.height / 2);
+            context.drawImage(dynamicImage, -dynamicImage.width / 2, -dynamicImage.height / 2);
 
             // Define the tolerance for color matching (adjust as needed)
             const colorTolerance = 240; // You can experiment with this value
@@ -46,7 +46,7 @@ function generateDynamicIcon(image, radius = 360) {
 
             //context.translate(-canvas.width / 5.0, canvas.height / 3.0);
             //context.rotate(-0.55);
-            context.putImageData(imageData, 0, 0);
+            //context.putImageData(imageData, 0, 0);
 
             //context.clearRect(0, 0, canvas.width, canvas.height);
             //context.fillRect(0, 0, canvas.width, canvas.height);
