@@ -66,15 +66,15 @@ function generateDynamicIcon(image, radius = 360) {
                         !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
                     ) {
                         // Replace with your desired color (e.g., green)
-                        imageData.data[0] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[0]; // Red channel
-                        imageData.data[1] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[1]; // Green channel
-                        imageData.data[2] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[2]; // Blue channel
+                        //imageData.data[0] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[0]; // Red channel
+                        //imageData.data[1] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[1]; // Green channel
+                        //imageData.data[2] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[2]; // Blue channel
 
                         colorClass = findColorClass(red, green, blue);
                     } else {
-                        imageData.data[0] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[0];
-                        imageData.data[1] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[1];
-                        imageData.data[2] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[2];
+                        //imageData.data[0] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[0];
+                        //imageData.data[1] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[1];
+                        //imageData.data[2] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[2];
 
                         colorClass = 'themeColor';
 
