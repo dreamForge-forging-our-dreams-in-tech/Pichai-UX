@@ -157,6 +157,7 @@ class Logo extends HTMLElement {
                 this.style.backgroundImage = `url(${newIcon})`;
 
                 dynamicGeneratedIcons[faviconUrl] = `url(${newIcon})`;
+                console.log(dynamicGeneratedIcons)
             }
         }
 
