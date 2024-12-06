@@ -70,13 +70,6 @@ function generateDynamicIcon(image, radius = 360) {
                         imageData.data[index + 1] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[1]; // Green channel
                         imageData.data[index + 2] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[2]; // Blue channel
 
-                        // Check if the pixel is not the theme color
-                        if (red === textColor && green === textColor && blue === textColor) {
-                            // Replace the pixel with a 5x5 square
-                            context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
-                            context.fillRect(x, y, 4, 4); // Draw a 5x5 square
-                        }
-
                         colorClass = findColorClass(red, green, blue);
                     } else {
                         imageData.data[index] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[0];
@@ -84,6 +77,13 @@ function generateDynamicIcon(image, radius = 360) {
                         imageData.data[index + 2] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[2];
 
                         colorClass = 'themeColor';
+
+                                                // Check if the pixel is not the theme color
+                                                if (red === textColor && green === textColor && blue === textColor) {
+                                                    // Replace the pixel with a 5x5 square
+                                                    context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
+                                                    context.fillRect(x, y, 4, 4); // Draw a 5x5 square
+                                                }
                     }
 
                 }
