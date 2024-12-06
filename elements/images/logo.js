@@ -90,8 +90,8 @@ function generateDynamicIcon(image, radius = 360) {
                 }
             }
 
-            //context.clearRect(0, 0, canvas.width, canvas.height);
-            //context.fillRect(0, 0, canvas.width, canvas.height);
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.fillRect(0, 0, canvas.width, canvas.height);
 
             context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
             context.lineWidth = 46; // Set border width
