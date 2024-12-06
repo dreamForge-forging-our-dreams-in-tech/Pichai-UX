@@ -149,11 +149,11 @@ class Logo extends HTMLElement {
         }
 
         if ((!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') && !dynamicGeneratedIcons.hasOwnProperty(faviconUrl)) {
-            let newIcon = await generateDynamicIcon(faviconUrl, parseInt(radius));
-            this.style.backgroundImage = `url(${newIcon})`;
+            //let newIcon = await generateDynamicIcon(faviconUrl, parseInt(radius));
+            //this.style.backgroundImage = `url(${newIcon})`;
 
             window.onload = async () => {
-                let newIcon = await generateDynamicIcon(faviconUrl);
+                let newIcon = await generateDynamicIcon(faviconUrl, parseInt(radius));
                 this.style.backgroundImage = `url(${newIcon})`;
 
                 dynamicGeneratedIcons[faviconUrl] = `url(${newIcon})`;
