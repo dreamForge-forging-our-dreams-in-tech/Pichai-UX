@@ -141,6 +141,7 @@ class Logo extends HTMLElement {
         }
 
         this.style.backgroundImage = `url("${faviconUrl}")`; // display standard iamage till dynamic finished loading or an error occured
+        console.log(dynamicGeneratedIcons)
         if(dynamicGeneratedIcons.hasOwnProperty(faviconUrl)) {
             this.style.backgroundImage = `url("${dynamicGeneratedIcons[faviconUrl]}")`;
             console.log(this)
