@@ -102,6 +102,13 @@ function generateDynamicIcon(image, radius = 360) {
             context.roundRect(0, 0, canvas.width, canvas.height, radius);
             context.stroke();
 
+            context.strokeStyle = `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, 0.0)`;
+            context.lineWidth = 10; // Set border width
+
+            context.beginPath();
+            context.roundRect(-10, -10, canvas.width, canvas.height, radius);
+            context.stroke();
+
             resolve(canvas.toDataURL());
         };
     });
