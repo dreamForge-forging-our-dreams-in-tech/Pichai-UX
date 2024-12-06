@@ -62,6 +62,7 @@ function generateDynamicIcon(image, radius = 360) {
                     const blue = imageData.data[2];
 
                     console.log(red,green, blue)
+                    console.log(rgb)
                     // Check if the pixel is not theme color
                     if ( //textcolor
                         !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
