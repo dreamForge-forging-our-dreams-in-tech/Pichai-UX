@@ -148,7 +148,7 @@ class Logo extends HTMLElement {
             return;
         }
 
-        if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
+        if ((!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') && !dynamicGeneratedIcons.hasOwnProperty(faviconUrl)) {
             let newIcon = await generateDynamicIcon(faviconUrl, parseInt(radius));
             this.style.backgroundImage = `url(${newIcon})`;
 
@@ -157,7 +157,6 @@ class Logo extends HTMLElement {
                 this.style.backgroundImage = `url(${newIcon})`;
 
                 dynamicGeneratedIcons[faviconUrl] = `url(${newIcon})`;
-                console.log(dynamicGeneratedIcons)
             }
         }
 
