@@ -46,7 +46,7 @@ function generateDynamicIcon(image, radius = 360) {
 
             //context.translate(-canvas.width / 5.0, canvas.height / 3.0);
             //context.rotate(-0.55);
-            //context.putImageData(imageData, 0, 0);
+            context.putImageData(imageData, 0, 0);
 
             //context.clearRect(0, 0, canvas.width, canvas.height);
             //context.fillRect(0, 0, canvas.width, canvas.height);
