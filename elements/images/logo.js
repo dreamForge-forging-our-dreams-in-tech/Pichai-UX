@@ -96,10 +96,10 @@ function generateDynamicIcon(image, radius = 360) {
             }
 
             context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
-            context.lineWidth = -100; // Set border width
+            context.lineWidth = 10; // Set border width
 
             context.beginPath();
-            context.roundRect(0, 0, canvas.width, canvas.height, radius);
+            context.roundRect(0, 0, canvas.width + 10, canvas.height + 10, radius);
             context.stroke();
 
             resolve(canvas.toDataURL());
