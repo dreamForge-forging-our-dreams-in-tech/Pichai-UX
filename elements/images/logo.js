@@ -95,10 +95,12 @@ function generateDynamicIcon(image, radius = 360) {
                 }
             }
 
-            ctx.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
-            ctx.beginPath();
+            context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+            context.lineWidth = 10; // Set border width
+
+            context.beginPath();
             context.roundRect(0, 0, canvas.width, canvas.height, radius);
-            ctx.stroke();
+            context.stroke();
 
             resolve(canvas.toDataURL());
         };
