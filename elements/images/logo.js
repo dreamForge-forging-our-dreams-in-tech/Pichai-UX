@@ -96,7 +96,7 @@ function generateDynamicIcon(image, radius = 360) {
             }
 
             context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
-            context.lineWidth = 7; // Set border width
+            context.lineWidth = 10; // Set border width
 
             context.beginPath();
             context.roundRect(0, 0, canvas.width, canvas.height, radius);
@@ -127,6 +127,8 @@ class Logo extends HTMLElement {
     }
 
     async connectedCallback() {
+
+        let radius = window.getComputedStyle(this)['border-radius']
         // Get the favicon link element
         const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
 
@@ -138,7 +140,7 @@ class Logo extends HTMLElement {
 
         this.style.backgroundImage = `url("${faviconUrl}")`; // display standard iamage till dynamic finished loading or an error occured
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
-            let newIcon = await generateDynamicIcon(faviconUrl);
+            let newIcon = await generateDynamicIcon(faviconUrl, parseInt(radius));
             this.style.backgroundImage = `url(${newIcon})`;
 
             window.onload = async () => {
