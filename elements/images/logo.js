@@ -61,8 +61,9 @@ function generateDynamicIcon(image, radius = 360) {
                     const green = imageData.data[1];
                     const blue = imageData.data[2];
 
+                    console.log(red,green, blue)
                     // Check if the pixel is not theme color
-                    if ( // draws the icon items in the textColor
+                    if ( //textcolor
                         !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
                     ) {
                         // Replace with your desired color (e.g., green)
