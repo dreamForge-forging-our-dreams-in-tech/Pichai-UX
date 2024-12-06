@@ -3,6 +3,8 @@ import { getTextColor } from '../../AI/textColorFInder.js';
 
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 
+let dynamicFavIcon = null;
+
 function generateDynamicIcon(image, radius = 360) {
     return new Promise((resolve) => {
         // Assume you have an HTML canvas element with the id "myCanvas"
@@ -96,7 +98,7 @@ function generateDynamicIcon(image, radius = 360) {
             }
 
             context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
-            context.lineWidth = 47; // Set border width
+            context.lineWidth = 46; // Set border width
 
             context.beginPath();
             context.roundRect(-15, -15, canvas.width + 35, canvas.height + 35, radius);
@@ -139,6 +141,11 @@ class Logo extends HTMLElement {
         }
 
         this.style.backgroundImage = `url("${faviconUrl}")`; // display standard iamage till dynamic finished loading or an error occured
+        if(!dynamicFavIcon == null) {
+            this.style.backgroundImage = `url("${dynamicFavIcon}")`;
+            return;
+        }
+
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
             let newIcon = await generateDynamicIcon(faviconUrl, parseInt(radius));
             this.style.backgroundImage = `url(${newIcon})`;
@@ -146,6 +153,8 @@ class Logo extends HTMLElement {
             window.onload = async () => {
                 let newIcon = await generateDynamicIcon(faviconUrl);
                 this.style.backgroundImage = `url(${newIcon})`;
+
+                dynamicFavIcon = `url(${newIcon})`;
             }
         }
 
