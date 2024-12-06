@@ -3,7 +3,7 @@ import { getTextColor } from '../../AI/textColorFInder.js';
 
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 
-let dynamicFavIcon = null;
+let dynamicGeneratedIcons = {};
 
 function generateDynamicIcon(image, radius = 360) {
     return new Promise((resolve) => {
@@ -141,8 +141,9 @@ class Logo extends HTMLElement {
         }
 
         this.style.backgroundImage = `url("${faviconUrl}")`; // display standard iamage till dynamic finished loading or an error occured
-        if(!dynamicFavIcon == null) {
-            this.style.backgroundImage = `url("${dynamicFavIcon}")`;
+        if(dynamicGeneratedIcons.hasOwnProperty(faviconUrl)) {
+            this.style.backgroundImage = `url("${dynamicGeneratedIcons[faviconUrl]}")`;
+            console.log(this)
             return;
         }
 
@@ -154,7 +155,7 @@ class Logo extends HTMLElement {
                 let newIcon = await generateDynamicIcon(faviconUrl);
                 this.style.backgroundImage = `url(${newIcon})`;
 
-                dynamicFavIcon = `url(${newIcon})`;
+                dynamicGeneratedIcons[faviconUrl] = `url(${newIcon})`;
             }
         }
 
