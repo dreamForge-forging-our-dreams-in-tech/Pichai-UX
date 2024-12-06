@@ -29,70 +29,71 @@ function generateDynamicIcon(image, radius = 360) {
             context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // so it works with the transparency mode
             context.fillRect(0, 0, canvas.width, canvas.height);
 
-            //context.save();
+            context.save();
             // Draw the image on the canvas
             context.translate(canvas.width / 2, canvas.height / 2)
-            //context.rotate(0.55);
+            context.rotate(0.55);
             context.drawImage(dynamicImage, -dynamicImage.width / 2, -dynamicImage.height / 2);
 
             // Define the tolerance for color matching (adjust as needed)
             const colorTolerance = 240; // You can experiment with this value
 
+            // Get the entire image data as an array of pixel data
+            let imageData = context.getImageData(0, 0, canvas.width, canvas.height);
             let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'black' ? 0 : 255;
 
             let colorClass;
 
-            //context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
+            // Iterate through each pixel
+            for (let i = 0; i < imageData.data.length; i += 4) {
+                const red = imageData.data[i];
+                const green = imageData.data[i + 1];
+                const blue = imageData.data[i + 2];
 
-            //
-            //context.rotate(-0.55);
+                // Check if the pixel is not theme color
 
+                if (
+                    !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
+                ) {
+                    // Replace with your desired color (e.g., green)
+                    imageData.data[i] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[0]; // Red channel
+                    imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[1]; // Green channel
+                    imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[2]; // Blue channel
 
-            for (let y = 0; y < canvas.height; y++) {
-                for (let x = 0; x < canvas.width; x++) {
-                    // Get the color data on the x/y axis
-                    let imageData = context.getImageData(x, y, 1, 1);
+                    colorClass = findColorClass(red, green, blue);
+                } else {
+                    imageData.data[i] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[0];
+                    imageData.data[i + 1] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[1];
+                    imageData.data[i + 2] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[2];
 
-                    const index = (y * canvas.width + x) * 4;
-                    const red = imageData.data[0];
-                    const green = imageData.data[1];
-                    const blue = imageData.data[2];
-
-                    console.log(red, green, blue)
-                    console.log(rgb)
-                    // Check if the pixel is not theme color
-                    if ( //textcolor
-                        !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
-                    ) {
-                        // Replace with your desired color (e.g., green)
-                        //imageData.data[0] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[0]; // Red channel
-                        //imageData.data[1] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[1]; // Green channel
-                        //imageData.data[2] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[2]; // Blue channel
-
-                        colorClass = findColorClass(red, green, blue);
-                    } else {
-                        //imageData.data[0] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[0];
-                        //imageData.data[1] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[1];
-                        //imageData.data[2] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[2];
-
-                        colorClass = 'themeColor';
-
-
-                        // Check if the pixel is not the theme color
-                        if (red === textColor && green === textColor && blue === textColor) {
-                            // Replace the pixel with a 5x5 square
-                            //context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
-                            //context.fillRect(x, y, 1, 1); // Draw a 5x5 square
-                        }
-                    }
-
-                    context.putImageData(imageData, 0, 0);
+                    colorClass = 'themeColor';
                 }
             }
 
+            context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
+
             context.translate(-canvas.width / 5.0, canvas.height / 3.0);
+            context.rotate(-0.55);
+            context.putImageData(imageData, 0, 0);
+
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.fillRect(0, 0, canvas.width, canvas.height);
+
+            for (let y = 0; y < canvas.height; y++) {
+                for (let x = 0; x < canvas.width; x++) {
+                    const index = (y * canvas.width + x) * 4;
+                    const red = imageData.data[index];
+                    const green = imageData.data[index + 1];
+                    const blue = imageData.data[index + 2];
+
+                    // Check if the pixel is not the theme color
+                    if (red === textColor && green === textColor && blue === textColor) {
+                        // Replace the pixel with a 5x5 square
+                        context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
+                        context.fillRect(x, y, 4, 4); // Draw a 5x5 square
+                    }
+                }
+            }
 
             context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
             context.lineWidth = 46; // Set border width
