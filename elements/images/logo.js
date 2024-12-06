@@ -99,7 +99,7 @@ function generateDynamicIcon(image, radius = 360) {
             context.lineWidth = 30; // Set border width
 
             context.beginPath();
-            context.roundRect(-10, -10, canvas.width + 20, canvas.height + 20, radius);
+            context.roundRect(-13, -13, canvas.width + 20, canvas.height + 20, radius);
             context.stroke();
 
             resolve(canvas.toDataURL());
