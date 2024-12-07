@@ -5,7 +5,7 @@ function varExists(name) {
 
         setInterval(() => {
 
-            console.log(String(rs.getPropertyValue(name)) == 'undefined')
+            console.log(String(rs.getPropertyValue(name)))
             if (String(rs.getPropertyValue(name)) == 'undefined') {
                 resolve(String(rs.getPropertyValue(name)) == 'undefined');
             }
