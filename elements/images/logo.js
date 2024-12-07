@@ -42,7 +42,7 @@ function generateDynamicIcon(image, radius = 360) {
 
             context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
 
-            context.translate(0, 0);
+            context.translate(-5, -5);
 
             
             for (let y = 0; y < canvas.height; y++) {
