@@ -3,6 +3,8 @@ import { getTextColor } from '../../AI/textColorFInder.js';
 
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
 
+import { varExists } from '../../utils/cssVars.js';
+
 function generateDynamicIcon(image, radius = 360) {
     return new Promise((resolve) => {
         // Assume you have an HTML canvas element with the id "myCanvas"
@@ -80,7 +82,6 @@ function generateDynamicIcon(image, radius = 360) {
 }
 
 async function setDynamicIcon(img, faviconUrl, radius) {
-    console.log(img)
     let newIcon = await generateDynamicIcon(faviconUrl, parseInt(radius));
     img.style.backgroundImage = `url(${newIcon})`;
 }
