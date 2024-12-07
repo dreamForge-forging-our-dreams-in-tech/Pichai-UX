@@ -66,9 +66,6 @@ function generateDynamicIcon(image, radius = 360) {
                 }
             }
 
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            context.fillRect(0, 0, canvas.width, canvas.height);
-
             // Define the tolerance for color matching (adjust as needed)
             const colorTolerance = 240; // You can experiment with this value
 
