@@ -42,6 +42,7 @@ function generateDynamicIcon(image, radius = 360) {
 
             for (let y = 0; y < canvas.height; y++) {
                 for (let x = 0; x < canvas.width; x++) {
+                    console.log(x,y)
                     const index = (y * canvas.width + x) * 4;
                     const red = imageData.data[index];
                     const green = imageData.data[index + 1];
