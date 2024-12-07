@@ -35,6 +35,23 @@ function generateDynamicIcon(image, radius = 360) {
             context.rotate(0.55);
             context.drawImage(dynamicImage, -dynamicImage.width / 2, -dynamicImage.height / 2);
 
+            for (let y = 0; y < canvas.height; y++) {
+                for (let x = 0; x < canvas.width; x++) {
+                    const index = (y * canvas.width + x) * 4;
+                    const red = imageData.data[index];
+                    const green = imageData.data[index + 1];
+                    const blue = imageData.data[index + 2];
+
+                    // Check if the pixel is not the theme color
+                    if (red === textColor && green === textColor && blue === textColor) {
+                        // Replace the pixel with a 5x5 square
+                        context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
+                        context.fillRect(x, y, 4, 4); // Draw a 5x5 square
+                    }
+                }
+            }
+
+
             // Define the tolerance for color matching (adjust as needed)
             const colorTolerance = 240; // You can experiment with this value
 
