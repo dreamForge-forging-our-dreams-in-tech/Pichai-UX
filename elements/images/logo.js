@@ -50,9 +50,7 @@ function generateDynamicIcon(image, radius = 360) {
                     context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
                     context.fillRect(x, y, 4, 4); // Draw a 5x5 square
 
-                    if (
-                        (red == rgb[0] || green == rgb[1] || blue == rgb[2])
-                    ) {
+                    if (red === textColor && green === textColor && blue === textColor) {
                         // Replace the pixel with a 5x5 square
                         context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
                         context.fillRect(x, y, 4, 4); // Draw a 5x5 square
@@ -66,9 +64,6 @@ function generateDynamicIcon(image, radius = 360) {
                     // Check if the pixel is not the theme color
                 }
             }
-
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            context.fillRect(0, 0, canvas.width, canvas.height);
 
             // Define the tolerance for color matching (adjust as needed)
             const colorTolerance = 240; // You can experiment with this value
