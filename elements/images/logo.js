@@ -67,6 +67,9 @@ function generateDynamicIcon(image, radius = 360) {
                 }
             }
 
+            // Define the tolerance for color matching (adjust as needed)
+            const colorTolerance = 240; // You can experiment with this value
+
             context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
             context.lineWidth = 46; // Set border width
 
