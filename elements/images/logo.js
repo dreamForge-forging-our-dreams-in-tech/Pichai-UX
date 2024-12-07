@@ -122,10 +122,6 @@ class Logo extends HTMLElement {
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
             await varExists('--primary');
             setDynamicIcon(this, faviconUrl, radius);
-
-            window.onload = async () => { // so favIcon can change or other elements can change before css vars loaded properly
-                setDynamicIcon(this, faviconUrl, radius);
-            }
         }
 
     }
