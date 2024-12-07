@@ -54,17 +54,12 @@ function generateDynamicIcon(image, radius = 360) {
                     context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
                     context.fillRect(x, y, 4, 4); // Draw a 5x5 square
 
-                    if (
-                        (colorClass != findColorClass(red, green, blue))
-                    ) {
+                    if (colorClass != findColorClass(red, green, blue)) {
                         // Replace the pixel with a 5x5 square
                         context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
                         context.fillRect(x, y, 6, 6); // Draw a 5x5 square
 
                         colorClass = findColorClass(red, green, blue);
-                    } else {
-                        
-                        //colorClass = 'themeColor';
                     }
                 }
             }
