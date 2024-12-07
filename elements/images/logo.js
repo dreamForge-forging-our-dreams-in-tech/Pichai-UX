@@ -31,7 +31,8 @@ function generateDynamicIcon(image, radius = 360) {
 
             context.save();
             // Draw the image on the canvas
-            context.translate(canvas.width / 2, canvas.height / 2)
+            context.translate(canvas.width / 2, canvas.height / 2);
+            context.rotate(0.55);
             context.drawImage(dynamicImage, -dynamicImage.width / 2, -dynamicImage.height / 2);
 
             // Get the entire image data as an array of pixel data
@@ -41,7 +42,7 @@ function generateDynamicIcon(image, radius = 360) {
             let colorClass;
 
             context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
-
+            context.rotate(-0.55);
             context.translate(-3, -3);
 
             
