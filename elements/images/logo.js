@@ -31,7 +31,7 @@ function generateDynamicIcon(image, radius = 360) {
 
             context.save();
             // Draw the image on the canvas
-            //context.translate(canvas.width / 2, canvas.height / 2)
+            context.translate(canvas.width / 2, canvas.height / 2)
             context.drawImage(dynamicImage, -dynamicImage.width / 2, -dynamicImage.height / 2);
 
             // Get the entire image data as an array of pixel data
@@ -48,7 +48,7 @@ function generateDynamicIcon(image, radius = 360) {
                     const blue = imageData.data[index + 2];
 
                     if (
-                        !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
+                        (red == rgb[0] || green == rgb[1] || blue == rgb[2])
                     ) {
                         if (red === textColor && green === textColor && blue === textColor) {
                             // Replace the pixel with a 5x5 square
