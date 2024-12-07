@@ -47,7 +47,8 @@ function generateDynamicIcon(image, radius = 360) {
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
 
-                    console.log(index)
+                    context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
+                    context.fillRect(x, y, 4, 4); // Draw a 5x5 square
 
                     if (
                         (colorClass != findColorClass(red, green, blue))
@@ -58,9 +59,6 @@ function generateDynamicIcon(image, radius = 360) {
 
                         colorClass = findColorClass(red, green, blue);
                     } else {
-                        context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
-                        context.fillRect(x, y, 4, 4); // Draw a 5x5 square
-                        
                         colorClass = 'themeColor';
                     }
 
