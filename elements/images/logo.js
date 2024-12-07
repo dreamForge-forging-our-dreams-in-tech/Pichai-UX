@@ -47,6 +47,8 @@ function generateDynamicIcon(image, radius = 360) {
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
 
+                    console.log(index)
+
                     if (
                         (colorClass != findColorClass(red, green, blue))
                     ) {
