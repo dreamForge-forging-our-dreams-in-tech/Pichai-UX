@@ -70,6 +70,11 @@ function generateDynamicIcon(image, radius = 360) {
                 }
             }
 
+            context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
+
+            context.translate(-canvas.width / 5.0, canvas.height / 3.0);
+            context.rotate(-0.55);
+
             // Define the tolerance for color matching (adjust as needed)
             const colorTolerance = 240; // You can experiment with this value
 
