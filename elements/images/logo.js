@@ -71,10 +71,10 @@ function generateDynamicIcon(image, radius = 360) {
             const colorTolerance = 240; // You can experiment with this value
 
             context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
-            context.lineWidth = 46; // Set border width
+            context.lineWidth = 8; // Set border width
 
             context.beginPath();
-            context.roundRect(-15, -15, canvas.width + 35, canvas.height + 35, radius);
+            context.roundRect(0, 0, canvas.width, canvas.height, radius);
             context.stroke();
 
             resolve(canvas.toDataURL());
