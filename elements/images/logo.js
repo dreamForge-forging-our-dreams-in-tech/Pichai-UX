@@ -48,7 +48,7 @@ function generateDynamicIcon(image, radius = 360) {
                     const blue = imageData.data[index + 2];
 
                     if (
-                        (red == rgb[0] || green == rgb[1] || blue == rgb[2])
+                        (colorClass != findColorClass(red, green, blue))
                     ) {
                         // Replace the pixel with a 5x5 square
                         context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
