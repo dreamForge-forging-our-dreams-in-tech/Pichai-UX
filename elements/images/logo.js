@@ -67,10 +67,6 @@ function generateDynamicIcon(image, radius = 360) {
                 }
             }
 
-            context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
-            context.translate(-canvas.width / 5.0, canvas.height / 3.0);
-
-
             context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
             context.lineWidth = 46; // Set border width
 
