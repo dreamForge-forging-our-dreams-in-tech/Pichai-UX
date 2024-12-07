@@ -55,7 +55,7 @@ function generateDynamicIcon(image, radius = 360) {
                     context.fillRect(x, y, 4, 4); // Draw a 5x5 square
 
                     if (
-                        (colorClass == 'themeColor')
+                        (!colorClass == 'themeColor')
                     ) {
                         // Replace the pixel with a 5x5 square
                         context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
