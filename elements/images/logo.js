@@ -40,6 +40,11 @@ function generateDynamicIcon(image, radius = 360) {
 
             let colorClass;
 
+            context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
+
+            context.translate(-canvas.width / 5.0, canvas.height / 3.0);
+
+            
             for (let y = 0; y < canvas.height; y++) {
                 for (let x = 0; x < canvas.width; x++) {
                     const index = (y * canvas.width + x) * 4;
