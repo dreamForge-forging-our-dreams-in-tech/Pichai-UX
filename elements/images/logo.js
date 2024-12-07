@@ -35,6 +35,12 @@ function generateDynamicIcon(image, radius = 360) {
             context.rotate(0.55);
             context.drawImage(dynamicImage, -dynamicImage.width / 2, -dynamicImage.height / 2);
 
+            // Get the entire image data as an array of pixel data
+            let imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+            let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'black' ? 0 : 255;
+
+            let colorClass;
+
             for (let y = 0; y < canvas.height; y++) {
                 for (let x = 0; x < canvas.width; x++) {
                     const index = (y * canvas.width + x) * 4;
@@ -50,10 +56,10 @@ function generateDynamicIcon(image, radius = 360) {
                             context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
                             context.fillRect(x, y, 4, 4); // Draw a 5x5 square
                         }
-                        
+
                         colorClass = findColorClass(red, green, blue);
                     } else {
-    
+
                         colorClass = 'themeColor';
                     }
 
@@ -64,12 +70,6 @@ function generateDynamicIcon(image, radius = 360) {
 
             // Define the tolerance for color matching (adjust as needed)
             const colorTolerance = 240; // You can experiment with this value
-
-            // Get the entire image data as an array of pixel data
-            let imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-            let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'black' ? 0 : 255;
-
-            let colorClass;
 
             //context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
             //context.lineWidth = 46; // Set border width
