@@ -32,7 +32,6 @@ function generateDynamicIcon(image, radius = 360) {
             context.save();
             // Draw the image on the canvas
             context.translate(canvas.width / 2, canvas.height / 2)
-            context.rotate(0.55);
             context.drawImage(dynamicImage, -dynamicImage.width / 2, -dynamicImage.height / 2);
 
             // Get the entire image data as an array of pixel data
@@ -51,9 +50,11 @@ function generateDynamicIcon(image, radius = 360) {
                     if (
                         !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
                     ) {
-                        // Replace the pixel with a 5x5 square
-                        context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
-                        context.fillRect(x, y, 4, 4); // Draw a 5x5 square
+                        if (red === textColor && green === textColor && blue === textColor) {
+                            // Replace the pixel with a 5x5 square
+                            context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
+                            context.fillRect(x, y, 4, 4); // Draw a 5x5 square
+                        }
 
                         colorClass = findColorClass(red, green, blue);
                     } else {
@@ -67,11 +68,6 @@ function generateDynamicIcon(image, radius = 360) {
                     // Check if the pixel is not the theme color
                 }
             }
-
-            context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
-
-            context.translate(-canvas.width / 5.0, canvas.height / 3.0);
-            context.rotate(-0.55);
 
             // Define the tolerance for color matching (adjust as needed)
             const colorTolerance = 240; // You can experiment with this value
