@@ -5,7 +5,8 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 
 import { varExists } from '../../utils/cssVars.js';
 
-function generateDynamicIcon(image, radius = 360) {
+async function generateDynamicIcon(image, radius = 360) {
+    await varExists('--primary')
     return new Promise((resolve) => {
         // Assume you have an HTML canvas element with the id "myCanvas"
         const canvas = document.createElement('canvas');

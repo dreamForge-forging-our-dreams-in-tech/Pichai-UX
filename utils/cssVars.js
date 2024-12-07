@@ -5,8 +5,8 @@ function varExists(name) {
 
         setInterval(() => {
 
-            if (String(rs.getPropertyValue('--primary')) == 'undefined') {
-                resolve(String(rs.getPropertyValue('--primary')) == 'undefined');
+            if (String(rs.getPropertyValue(name)) == 'undefined') {
+                resolve(String(rs.getPropertyValue(name)) == 'undefined');
             }
         }, 2000);
     });
