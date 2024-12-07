@@ -42,12 +42,22 @@ function generateDynamicIcon(image, radius = 360) {
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
 
-                    // Check if the pixel is not the theme color
-                    if (red === textColor && green === textColor && blue === textColor) {
-                        // Replace the pixel with a 5x5 square
-                        context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
-                        context.fillRect(x, y, 4, 4); // Draw a 5x5 square
+                    if (
+                        !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
+                    ) {
+                        if (red === textColor && green === textColor && blue === textColor) {
+                            // Replace the pixel with a 5x5 square
+                            context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
+                            context.fillRect(x, y, 4, 4); // Draw a 5x5 square
+                        }
+                        
+                        colorClass = findColorClass(red, green, blue);
+                    } else {
+    
+                        colorClass = 'themeColor';
                     }
+
+                    // Check if the pixel is not the theme color
                 }
             }
 
