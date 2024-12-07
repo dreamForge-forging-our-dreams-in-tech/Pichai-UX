@@ -57,7 +57,7 @@ function generateDynamicIcon(image, radius = 360) {
                     if (colorClass != findColorClass(red, green, blue)) {
                         // Replace the pixel with a 5x5 square
                         context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
-                        context.fillRect(x, y, 6, 6); // Draw a 5x5 square
+                        context.fillRect(x, y, 10, 10); // Draw a 5x5 square
 
                         colorClass = findColorClass(red, green, blue);
                     }
