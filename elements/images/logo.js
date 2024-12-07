@@ -44,63 +44,12 @@ function generateDynamicIcon(image, radius = 360) {
 
             let colorClass;
 
-            // Iterate through each pixel
-            for (let i = 0; i < imageData.data.length; i += 4) {
-                const red = imageData.data[i];
-                const green = imageData.data[i + 1];
-                const blue = imageData.data[i + 2];
+            //context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+            //context.lineWidth = 46; // Set border width
 
-                // Check if the pixel is not theme color
-
-                if (
-                    !(red == rgb[0] || green == rgb[1] || blue == rgb[2])
-                ) {
-                    // Replace with your desired color (e.g., green)
-                    imageData.data[i] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[0]; // Red channel
-                    imageData.data[i + 1] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[1]; // Green channel
-                    imageData.data[i + 2] = colorClass != findColorClass(red, green, blue) ? textColor : rgb[2]; // Blue channel
-
-                    colorClass = findColorClass(red, green, blue);
-                } else {
-                    imageData.data[i] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[0];
-                    imageData.data[i + 1] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[1];
-                    imageData.data[i + 2] = colorClass == findColorClass(red, green, blue) ? textColor : rgb[2];
-
-                    colorClass = 'themeColor';
-                }
-            }
-
-            context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
-
-            context.translate(-canvas.width / 5.0, canvas.height / 3.0);
-            context.rotate(-0.55);
-            context.putImageData(imageData, 0, 0);
-
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            context.fillRect(0, 0, canvas.width, canvas.height);
-
-            for (let y = 0; y < canvas.height; y++) {
-                for (let x = 0; x < canvas.width; x++) {
-                    const index = (y * canvas.width + x) * 4;
-                    const red = imageData.data[index];
-                    const green = imageData.data[index + 1];
-                    const blue = imageData.data[index + 2];
-
-                    // Check if the pixel is not the theme color
-                    if (red === textColor && green === textColor && blue === textColor) {
-                        // Replace the pixel with a 5x5 square
-                        context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
-                        context.fillRect(x, y, 4, 4); // Draw a 5x5 square
-                    }
-                }
-            }
-
-            context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
-            context.lineWidth = 46; // Set border width
-
-            context.beginPath();
-            context.roundRect(-15, -15, canvas.width + 35, canvas.height + 35, radius);
-            context.stroke();
+            //context.beginPath();
+            //context.roundRect(-15, -15, canvas.width + 35, canvas.height + 35, radius);
+            //context.stroke();
 
             resolve(canvas.toDataURL());
         };
