@@ -40,11 +40,6 @@ function generateDynamicIcon(image, radius = 360) {
 
             let colorClass;
 
-            context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
-
-            context.translate(-canvas.width / 5.0, canvas.height / 3.0);
-
-            
             for (let y = 0; y < canvas.height; y++) {
                 for (let x = 0; x < canvas.width; x++) {
                     const index = (y * canvas.width + x) * 4;
@@ -72,8 +67,9 @@ function generateDynamicIcon(image, radius = 360) {
                 }
             }
 
-            // Define the tolerance for color matching (adjust as needed)
-            const colorTolerance = 240; // You can experiment with this value
+            context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
+            context.translate(-canvas.width / 5.0, canvas.height / 3.0);
+
 
             context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
             context.lineWidth = 46; // Set border width
