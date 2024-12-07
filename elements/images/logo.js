@@ -6,7 +6,6 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 import { varExists } from '../../utils/cssVars.js';
 
 async function generateDynamicIcon(image, radius = 360) {
-    await varExists('--primary')
     return new Promise((resolve) => {
         // Assume you have an HTML canvas element with the id "myCanvas"
         const canvas = document.createElement('canvas');
@@ -121,6 +120,7 @@ class Logo extends HTMLElement {
         this.style.backgroundImage = `url("${faviconUrl}")`; // display standard iamage till dynamic finished loading or an error occured
 
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
+            await varExists('--primary');
             setDynamicIcon(this, faviconUrl, radius);
 
             window.onload = async () => { // so favIcon can change or other elements can change before css vars loaded properly
