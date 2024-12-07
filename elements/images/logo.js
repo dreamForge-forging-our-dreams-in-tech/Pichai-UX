@@ -59,9 +59,6 @@ function generateDynamicIcon(image, radius = 360) {
                         context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
                         context.fillRect(x, y, 6, 6); // Draw a 5x5 square
 
-                        x+=3;
-                        y+=3;
-
                         colorClass = findColorClass(red, green, blue);
                     }
                 }
