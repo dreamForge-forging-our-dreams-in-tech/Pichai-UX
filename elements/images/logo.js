@@ -42,7 +42,7 @@ function generateDynamicIcon(image, radius = 360) {
 
             context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
 
-            context.translate(-canvas.width / 5.0, canvas.height / 3.0);
+            context.translate(0, 0);
 
             
             for (let y = 0; y < canvas.height; y++) {
@@ -56,7 +56,7 @@ function generateDynamicIcon(image, radius = 360) {
                     context.fillRect(x, y, 4, 4); // Draw a 5x5 square
 
                     if (
-                        (colorClass == findColorClass(red, green, blue))
+                        (colorClass != findColorClass(red, green, blue))
                     ) {
                         // Replace the pixel with a 5x5 square
                         context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
