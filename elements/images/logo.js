@@ -51,7 +51,7 @@ function generateDynamicIcon(image, radius = 360) {
                     context.fillRect(x, y, 4, 4); // Draw a 5x5 square
 
                     if (
-                        (colorClass == findColorClass(red, green, blue))
+                        (!colorClass == findColorClass(red, green, blue))
                     ) {
                         // Replace the pixel with a 5x5 square
                         context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
@@ -70,12 +70,12 @@ function generateDynamicIcon(image, radius = 360) {
             // Define the tolerance for color matching (adjust as needed)
             const colorTolerance = 240; // You can experiment with this value
 
-            context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
-            context.lineWidth = 8; // Set border width
+            //context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+            //context.lineWidth = 46; // Set border width
 
-            context.beginPath();
-            context.roundRect(0, 0, canvas.width, canvas.height, radius);
-            context.stroke();
+            //context.beginPath();
+            //context.roundRect(-15, -15, canvas.width + 35, canvas.height + 35, radius);
+            //context.stroke();
 
             resolve(canvas.toDataURL());
         };
