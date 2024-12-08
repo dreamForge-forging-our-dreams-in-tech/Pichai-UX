@@ -45,9 +45,9 @@ async function generateDynamicIcon(image, radius = 360) {
             context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
             context.translate(-3, -3);
 
-            let x, y, skip;
+            let x,y;
 
-
+            
             for (y = 0; y < canvas.height; y++) {
                 for (x = 0; x < canvas.width; x++) {
                     const index = (y * canvas.width + x) * 4;
@@ -55,21 +55,15 @@ async function generateDynamicIcon(image, radius = 360) {
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
 
-                    if (skip != 0) {
-                        skip--;
-                    } else {
-                        context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
-                        context.fillRect(x, y, 1, 1); // Draw a 5x5 square
+                    context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
+                    context.fillRect(x, y, 1, 1); // Draw a 5x5 square
 
-                        if (colorClass != findColorClass(red, green, blue)) {
-                            // Replace the pixel with a 5x5 square
-                            context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
-                            context.fillRect(x, y, 6, 6); // Draw a 5x5 square
+                    if (colorClass != findColorClass(red, green, blue)) {
+                        // Replace the pixel with a 5x5 square
+                        context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
+                        context.fillRect(x, y, 6, 6); // Draw a 5x5 square
 
-                            skip = 6;
-
-                            colorClass = findColorClass(red, green, blue);
-                        }
+                        colorClass = findColorClass(red, green, blue);
                     }
                 }
             }
