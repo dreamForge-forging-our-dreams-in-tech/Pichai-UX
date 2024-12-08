@@ -45,8 +45,7 @@ async function generateDynamicIcon(image, radius = 360) {
             context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
             context.translate(-3, -3);
 
-            let XList = [], YList = [];
-            let x, y, i;
+            let x, y, skip;
 
 
             for (y = 0; y < canvas.height; y++) {
@@ -56,22 +55,26 @@ async function generateDynamicIcon(image, radius = 360) {
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
 
-                    context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
-                    context.fillRect(x, y, 1, 1); // Draw a 5x5 square
+                    if (skip != 0) {
+                        skip--;
 
-                    if (colorClass != findColorClass(red, green, blue)) {
-                        XList.push(x);
-                        YList.push(y);
+                        context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
+                        context.fillRect(x, y, 6, 6); // Draw a 5x5 square
+                    } else {
+                        context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
+                        context.fillRect(x, y, 1, 1); // Draw a 5x5 square
 
-                        colorClass = findColorClass(red, green, blue);
+                        if (colorClass != findColorClass(red, green, blue)) {
+                            // Replace the pixel with a 5x5 square
+                            context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
+                            context.fillRect(x, y, 6, 6); // Draw a 5x5 square
+
+                            skip = 6;
+
+                            colorClass = findColorClass(red, green, blue);
+                        }
                     }
                 }
-            }
-
-            for (i = 0; i < x.length; i++) {
-                // Replace the pixel with a 5x5 square
-                context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
-                context.fillRect(XList[i], YList[i], 6, 6); // Draw a 5x5 square
             }
 
             // Define the tolerance for color matching (adjust as needed)
