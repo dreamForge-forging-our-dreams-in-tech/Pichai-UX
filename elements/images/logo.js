@@ -45,9 +45,12 @@ async function generateDynamicIcon(image, radius = 360) {
             context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
             context.translate(-3, -3);
 
-            
-            for (let y = 0; y < canvas.height; y++) {
-                for (let x = 0; x < canvas.width; x++) {
+            let XList = [], YList = [];
+            let x, y, i;
+
+
+            for (y = 0; y < canvas.height; y++) {
+                for (x = 0; x < canvas.width; x++) {
                     const index = (y * canvas.width + x) * 4;
                     const red = imageData.data[index];
                     const green = imageData.data[index + 1];
@@ -57,13 +60,18 @@ async function generateDynamicIcon(image, radius = 360) {
                     context.fillRect(x, y, 1, 1); // Draw a 5x5 square
 
                     if (colorClass != findColorClass(red, green, blue)) {
-                        // Replace the pixel with a 5x5 square
-                        context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
-                        context.fillRect(x, y, 6, 6); // Draw a 5x5 square
+                        XList.push(x);
+                        YList.push(y);
 
                         colorClass = findColorClass(red, green, blue);
                     }
                 }
+            }
+
+            for (i = 0; i < x.length; i++) {
+                // Replace the pixel with a 5x5 square
+                context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
+                context.fillRect(XList[i], YList[i], 6, 6); // Draw a 5x5 square
             }
 
             // Define the tolerance for color matching (adjust as needed)
