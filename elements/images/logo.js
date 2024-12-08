@@ -27,7 +27,7 @@ async function generateDynamicIcon(image, radius = 360) {
         const context = canvas.getContext("2d", { willReadFrequently: true });
 
         const canvas2 = document.createElement('canvas');
-        const context2 = canvas.getContext("2d", { willReadFrequently: true });
+        const context2 = canvas2.getContext("2d", { willReadFrequently: true });
 
 
         // Load your image onto the canvas
@@ -43,9 +43,6 @@ async function generateDynamicIcon(image, radius = 360) {
 
             rgb = rgb.substring(5, rgb.length - 1);
             rgb = rgb.split(',');
-
-            //context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // so it works with the transparency mode
-            //context.fillRect(0, 0, canvas.width, canvas.height);
 
             setTranslate(canvas, dynamicImage, context);
             setTranslate(canvas2, dynamicImage, context2);
