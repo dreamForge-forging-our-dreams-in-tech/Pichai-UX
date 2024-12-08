@@ -57,9 +57,6 @@ async function generateDynamicIcon(image, radius = 360) {
 
                     if (skip != 0) {
                         skip--;
-
-                        context.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
-                        context.fillRect(x, y, 6, 6); // Draw a 5x5 square
                     } else {
                         context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
                         context.fillRect(x, y, 1, 1); // Draw a 5x5 square
