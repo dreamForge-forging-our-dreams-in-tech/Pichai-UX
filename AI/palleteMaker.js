@@ -69,8 +69,6 @@ function getPallete(options) {
         if (String(options.source).includes('#')) {
 
         } else {
-            console.log(options)
-            console.log(options.source)
             const colorThief = new ColorThief();
             const img = new Image();
 
