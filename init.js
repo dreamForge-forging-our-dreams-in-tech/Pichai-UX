@@ -27,7 +27,7 @@ class PichaiUX {
             accountMenu: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when the user is logged in and allows settings modifications, saving etc
         };
 
-        for (i in options) {
+        for (i in Object.keys(options)) {
             opt[i] = options[i];
         }
 
