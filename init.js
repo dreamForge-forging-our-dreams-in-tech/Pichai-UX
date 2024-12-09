@@ -6,6 +6,8 @@ import { getListOfElements } from './utils/customeElementsDefine.js';
 
 import { optimizeTextColor } from './utils/extraFunctions.js';
 
+import { varExists } from "./utils/cssVars.js";
+
 let i;
 window['options'] = {};
 
@@ -87,6 +89,10 @@ class PichaiUX {
 
     async updateStyling() { // allowsw the user to force an update to pichai if it isn't odne automatically
         updateStyles();
+    }
+
+    async varExists (name) {
+        return await varExists(name);
     }
 
     pichaiStorageKeys() { // returns an array with storage items stored by Pichai
