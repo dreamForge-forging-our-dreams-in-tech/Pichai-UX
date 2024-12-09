@@ -138,9 +138,9 @@ async function generate3ColorPallete(options) {
         console.log(colors[position + 4])
 
         const root = document.documentElement;
-        root.style.setProperty('--primary', `rgba(${colors[position].toString()}, ${alpha})`);
-        root.style.setProperty('--secondairy', `rgba(${colors[position + 4].toString()}, ${alpha})`);
-        root.style.setProperty('--tertiary', `rgba(${colors[position + 9].toString()}, ${alpha})`);
+        root.style.setProperty('--primary', `rgba(${colors[position].join(',')}, ${alpha})`);
+        root.style.setProperty('--secondairy', `rgba(${colors[position + 4].join(',')}, ${alpha})`);
+        root.style.setProperty('--tertiary', `rgba(${colors[position + 9].join(',')}, ${alpha})`);
 
         root.style.setProperty('--primaryTextColor', getTextColor(colors[0]));
         root.style.setProperty('--secondairyTextColor', getTextColor(colors[4]));
@@ -148,9 +148,9 @@ async function generate3ColorPallete(options) {
 
         let hls = generateContainerColor(colors);
 
-        root.style.setProperty('--primaryContainer', `hsla(${hls[position].toString()}, ${alpha})`);
-        root.style.setProperty('--secondairyContainer', `hsla(${hls[position + 4].toString()}, ${alpha})`);
-        root.style.setProperty('--tertiaryContainer', `hsla(${hls[position + 9].toString()}, ${alpha})`);
+        root.style.setProperty('--primaryContainer', `hsla(${hls[position].join(',')}, ${alpha})`);
+        root.style.setProperty('--secondairyContainer', `hsla(${hls[position + 4].join(',')}, ${alpha})`);
+        root.style.setProperty('--tertiaryContainer', `hsla(${hls[position + 9].join(',')}, ${alpha})`);
 
         let textColors = generateContainerTextColor(hls);
 
@@ -160,10 +160,10 @@ async function generate3ColorPallete(options) {
 
         let signColors = generateSignColors([0, 61, 238, 131], colors[0]);
 
-        root.style.setProperty('--error', `hsla(${signColors[0].toString()}, ${alpha})`);
-        root.style.setProperty('--warning', `hsla(${signColors[1].toString()}, ${alpha})`);
-        root.style.setProperty('--note', `hsla(${signColors[2].toString()}, ${alpha})`);
-        root.style.setProperty('--check', `hsla(${signColors[3].toString()}, ${alpha})`);
+        root.style.setProperty('--error', `hsla(${signColors[0].join(',')}, ${alpha})`);
+        root.style.setProperty('--warning', `hsla(${signColors[1].join(',')}, ${alpha})`);
+        root.style.setProperty('--note', `hsla(${signColors[2].join(',')}, ${alpha})`);
+        root.style.setProperty('--check', `hsla(${signColors[3].join(',')}, ${alpha})`);
 
         let signTextColors = generateContainerTextColor(signColors);
 
@@ -174,10 +174,10 @@ async function generate3ColorPallete(options) {
 
         let signContainerColors = generateContainerColor(signColors);
 
-        root.style.setProperty('--errorContainer', `hsla(${signContainerColors[0].toString()}, ${alpha})`);
-        root.style.setProperty('--warningContainer', `hsla(${signContainerColors[1].toString()}, ${alpha})`);
-        root.style.setProperty('--noteContainer', `hsla(${signContainerColors[2].toString()}, ${alpha})`);
-        root.style.setProperty('--checkContainer', `hsla(${signContainerColors[3].toString()}, ${alpha})`);
+        root.style.setProperty('--errorContainer', `hsla(${signContainerColors[0].join(',')}, ${alpha})`);
+        root.style.setProperty('--warningContainer', `hsla(${signContainerColors[1].join(',')}, ${alpha})`);
+        root.style.setProperty('--noteContainer', `hsla(${signContainerColors[2].join(',')}, ${alpha})`);
+        root.style.setProperty('--checkContainer', `hsla(${signContainerColors[3].join(',')}, ${alpha})`);
 
         let signContainerTextColors = generateContainerTextColor(signContainerColors);
 
