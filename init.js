@@ -12,7 +12,7 @@ let i;
 window['options'] = {};
 
 class PichaiUX {
-    constructor(options = {}) {
+    constructor(options) {
         let opt = {
             source: '#008dcd',
             darkMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
