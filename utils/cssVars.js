@@ -7,7 +7,7 @@ function varExists(name) {
             if (String(rs.getPropertyValue(name)) != 'undefined') {
                 resolve(String(rs.getPropertyValue(name)) != 'undefined');
             }
-        }, 1);
+        }, 100);
     });
 }
 
