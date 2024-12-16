@@ -4,9 +4,8 @@ function varExists(name) {
         let rs = getComputedStyle(r);
 
         setInterval(() => {
-            console.log(String(rs.getPropertyValue(name)) == '');
-            if (String(rs.getPropertyValue(name)) != 'undefined') {
-                resolve(String(rs.getPropertyValue(name)) != 'undefined');
+            if (String(rs.getPropertyValue(name)) != '') {
+                resolve(String(rs.getPropertyValue(name)) != '');
             }
         }, 1);
     });
