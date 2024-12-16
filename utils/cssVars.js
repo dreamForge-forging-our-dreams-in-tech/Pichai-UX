@@ -4,6 +4,7 @@ function varExists(name) {
         let rs = getComputedStyle(r);
 
         setInterval(() => {
+            console.log(tring(rs.getPropertyValue(name)))
             if (String(rs.getPropertyValue(name)) != 'undefined') {
                 resolve(String(rs.getPropertyValue(name)) != 'undefined');
             }
