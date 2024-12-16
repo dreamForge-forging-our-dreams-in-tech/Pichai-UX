@@ -135,7 +135,7 @@ class Logo extends HTMLElement {
         this.style.backgroundImage = `url("${faviconUrl}")`; // display standard iamage till dynamic finished loading or an error occured
 
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
-            await varExists('--primary');
+            //await varExists('--primary');
             setDynamicIcon(this, faviconUrl, radius);
         }
 
