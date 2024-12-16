@@ -19,6 +19,8 @@ function deTranslate(canvas, dynamicImage, context) {
 }
 
 async function generateDynamicIcon(image, radius = 360) {
+    await varExists('--primary');
+
     return new Promise((resolve) => {
         // Assume you have an HTML canvas element with the id "myCanvas"
         const canvas = document.createElement('canvas');
@@ -72,7 +74,7 @@ async function generateDynamicIcon(image, radius = 360) {
                     if (colorClass != findColorClass(red, green, blue)) {
                         // Replace the pixel with a 5x5 square
                         context2.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
-                        context2.fillRect(x, y, 4, 4); // Draw a 5x5 square
+                        context2.fillRect(x, y, 8, 8); // Draw a 5x5 square
 
                         colorClass = findColorClass(red, green, blue);
                     }
@@ -94,7 +96,6 @@ async function generateDynamicIcon(image, radius = 360) {
 }
 
 async function setDynamicIcon(img, faviconUrl, radius) {
-    console.log(faviconUrl)
     let newIcon = await generateDynamicIcon(faviconUrl, parseInt(radius));
     img.style.backgroundImage = `url(${newIcon})`;
 }
