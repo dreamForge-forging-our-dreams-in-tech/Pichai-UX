@@ -59,8 +59,8 @@ async function generateDynamicIcon(image, radius = 360) {
             deTranslate(canvas, dynamicImage, context);
             deTranslate(canvas2, dynamicImage, context2);
 
-            let x,y;
-            
+            let x, y;
+
             for (y = 0; y < canvas.height; y++) {
                 for (x = 0; x < canvas.width; x++) {
                     const index = (y * canvas.width + x) * 4;
@@ -82,7 +82,7 @@ async function generateDynamicIcon(image, radius = 360) {
             }
 
             //console.log(canvas2.toDataURL())
-            context.drawImage(canvas2, 0, 0); 
+            context.drawImage(canvas2, 0, 0);
 
             context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
             context.lineWidth = 46; // Set border width
