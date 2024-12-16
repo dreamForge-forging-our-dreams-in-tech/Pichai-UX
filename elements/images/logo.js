@@ -69,7 +69,7 @@ async function generateDynamicIcon(image, radius = 360) {
                     const blue = imageData.data[index + 2];
 
                     context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
-                    //context.fillRect(x, y, 1, 1); // Draw a 5x5 square
+                    context.fillRect(x, y, 1, 1); // Draw a 5x5 square
 
                     if (colorClass != findColorClass(red, green, blue)) {
                         // Replace the pixel with a 5x5 square
