@@ -19,6 +19,7 @@ function deTranslate(canvas, dynamicImage, context) {
 }
 
 async function generateDynamicIcon(image, radius = 360) {
+    console.log(image.src)
     return new Promise((resolve) => {
         // Assume you have an HTML canvas element with the id "myCanvas"
         const canvas = document.createElement('canvas');
