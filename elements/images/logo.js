@@ -94,7 +94,7 @@ async function generateDynamicIcon(image, radius = 360) {
 }
 
 async function setDynamicIcon(img, faviconUrl, radius) {
-    console.log(img)
+    console.log(faviconUrl)
     let newIcon = await generateDynamicIcon(faviconUrl, parseInt(radius));
     img.style.backgroundImage = `url(${newIcon})`;
 }
