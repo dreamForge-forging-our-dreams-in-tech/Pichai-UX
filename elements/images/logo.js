@@ -19,7 +19,6 @@ function deTranslate(canvas, dynamicImage, context) {
 }
 
 async function generateDynamicIcon(image, radius = 360) {
-    console.log(image.src)
     return new Promise((resolve) => {
         // Assume you have an HTML canvas element with the id "myCanvas"
         const canvas = document.createElement('canvas');
@@ -95,6 +94,7 @@ async function generateDynamicIcon(image, radius = 360) {
 }
 
 async function setDynamicIcon(img, faviconUrl, radius) {
+    console.log(img)
     let newIcon = await generateDynamicIcon(faviconUrl, parseInt(radius));
     img.style.backgroundImage = `url(${newIcon})`;
 }
