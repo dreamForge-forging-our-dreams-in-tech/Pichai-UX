@@ -18,6 +18,19 @@ function deTranslate(canvas, dynamicImage, context) {
     context.translate(-3, -3);
 }
 
+function drawCircle(width, transparent) {
+    if (transparent) {
+        context.globalCompositeOperation = 'destination-out';
+    }
+    context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+    context.lineWidth = width; // Set border width
+
+    context.beginPath();
+    context.roundRect(-15, -15, canvas.width + 35, canvas.height + 35, radius);
+    context.stroke();
+
+}
+
 async function generateDynamicIcon(image, radius = 360) {
     await varExists('--primary');
 
@@ -84,13 +97,8 @@ async function generateDynamicIcon(image, radius = 360) {
             //console.log(canvas2.toDataURL())
             context.drawImage(canvas2, 0, 0);
 
-            context.globalCompositeOperation = 'destination-out';
-            context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
-            context.lineWidth = 46; // Set border width
-
-            context.beginPath();
-            context.roundRect(-15, -15, canvas.width + 35, canvas.height + 35, radius);
-            context.stroke();
+            drawCircle(5, false);
+            drawCircle(46, true);
 
             resolve(canvas.toDataURL());
         };
