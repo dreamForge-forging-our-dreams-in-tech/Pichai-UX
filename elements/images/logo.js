@@ -15,7 +15,7 @@ function setTranslate(canvas, dynamicImage, context) {
     context.translate(canvas.width / 2, canvas.height / 2);
 }
 
-function deTranslate(context) {
+function deTranslate(canvas, dynamicImage, context) {
     context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
     context.translate(-3, -3);
 }
@@ -26,6 +26,7 @@ function drawCircle(width, transparent, canvas, radius) {
     if (transparent) {
         context.globalCompositeOperation = 'destination-out';
     }
+
     context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
     context.lineWidth = width; // Set border width
 
