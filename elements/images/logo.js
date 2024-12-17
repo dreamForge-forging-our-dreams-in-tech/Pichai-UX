@@ -5,6 +5,8 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 
 import { varExists } from '../../utils/cssVars.js';
 
+let rgb;
+
 function setTranslate(canvas, dynamicImage, context) {
     canvas.width = dynamicImage.width;
     canvas.height = dynamicImage.height;
@@ -52,7 +54,7 @@ async function generateDynamicIcon(image, radius = 360) {
         dynamicImage.onload = function () {
             const root = document.documentElement;
 
-            let rgb = getComputedStyle(root).getPropertyValue('--primary');
+            rgb = getComputedStyle(root).getPropertyValue('--primary');
 
             rgb = rgb.substring(5, rgb.length - 1);
             rgb = rgb.split(',');
