@@ -32,7 +32,7 @@ function drawCircle(transparent, canvas, radius) {
     context.beginPath();
 
     if (transparent) {
-        context.roundRect(-20, -22, canvas.width + 50, canvas.height + 50, radius);
+        context.roundRect(-20, -20, canvas.width + 48, canvas.height + 48, radius);
     } else {
         context.roundRect(-15, -15, canvas.width + 35, canvas.height + 35, radius);
     }
