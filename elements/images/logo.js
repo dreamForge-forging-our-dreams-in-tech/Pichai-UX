@@ -96,9 +96,7 @@ async function generateDynamicIcon(image, radius = 360) {
                 }
             }
 
-            context.globalCompositeOperation = 'destination-out';
-            context.fillRect(0, 0, canvas.width, canvas.height);
-            
+            context.clearRect(0, 0, canvas.width + 5, canvas.height + 5);
             drawCircle(canvas, radius); //draws a circle following the user set radius after the canvas has cleared itself
 
             context.drawImage(canvas2, 0, 0);
