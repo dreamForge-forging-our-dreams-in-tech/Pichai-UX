@@ -12,7 +12,7 @@ function setTranslate(canvas, dynamicImage, context) {
     canvas.height = dynamicImage.height;
 
     context.save();
-    context.translate((canvas.width / 2) - (1 / 2), (canvas.height / 2) - (1 / 2));
+    context.translate(canvas.width / 2, canvas.height / 2);
 }
 
 function deTranslate(canvas, dynamicImage, context) {
@@ -60,7 +60,7 @@ async function generateDynamicIcon(image, radius = 360) {
             rgb = rgb.split(',');
 
             setTranslate(canvas, dynamicImage, context);
-            context.drawImage(canvas.width / 2) - (1 / 2), (canvas.height / 2) - (1 / 2);
+            context.drawImage(dynamicImage, dynamicImage.width / 2, dynamicImage.height / 2);
 
             setTranslate(canvas2, dynamicImage, context2);
 
