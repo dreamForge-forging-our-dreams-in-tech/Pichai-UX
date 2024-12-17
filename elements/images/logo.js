@@ -21,22 +21,15 @@ function deTranslate(canvas, dynamicImage, context) {
     context.translate(-3, -3);
 }
 
-function drawCircle(transparent, canvas, radius) {
+function drawCircle(canvas, radius) {
     let context = canvas.getContext("2d", { willReadFrequently: true });
 
-    context.globalCompositeOperation = transparent ? 'destination-out' : 'source-over';
-
     context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
-    context.lineWidth = 46; // Set border width
+    context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
 
     context.beginPath();
-
-    if (transparent) {
-        context.roundRect(-20, -20, canvas.width + 46, canvas.height + 46, radius);
-    } else {
-        context.roundRect(-15, -15, canvas.width + 35, canvas.height + 35, radius);
-    }
-    context.stroke();
+    context.roundRect(0, 0, canvas.width, canvas.height, radius);
+    context.fill();
 
 }
 
@@ -90,8 +83,8 @@ async function generateDynamicIcon(image, radius = 360) {
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
 
-                    context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
-                    context.fillRect(x, y, 1, 1); // Draw a 5x5 square
+                    //context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
+                    //context.fillRect(x, y, 1, 1); // Draw a 5x5 square
 
                     if (colorClass != findColorClass(red, green, blue)) {
                         // Replace the pixel with a 5x5 square
@@ -106,8 +99,7 @@ async function generateDynamicIcon(image, radius = 360) {
             //console.log(canvas2.toDataURL())
             context.drawImage(canvas2, 0, 0);
 
-            drawCircle(false, canvas, radius);
-            drawCircle(true, canvas, radius);
+            drawCircle(canvas, radius);
 
             resolve(canvas.toDataURL());
         };
