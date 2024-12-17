@@ -35,8 +35,8 @@ function drawCircle(width, transparent, canvas, radius) {
 
     context.beginPath();
 
-    if (width == 10) {
-        context.roundRect(0, 0, canvas.width, canvas.height, radius);
+    if (width == 5) {
+        context.roundRect(0, 0, canvas.width - 10, canvas.height - 10, radius);
     } else {
         context.roundRect(-15, -15, canvas.width + 35, canvas.height + 35, radius);
     }
@@ -111,7 +111,7 @@ async function generateDynamicIcon(image, radius = 360) {
             context.drawImage(canvas2, 0, 0);
 
             drawCircle(46, true, canvas, radius);
-            drawCircle(10, false, canvas, radius);
+            drawCircle(5, false, canvas, radius);
 
             resolve(canvas.toDataURL());
         };
