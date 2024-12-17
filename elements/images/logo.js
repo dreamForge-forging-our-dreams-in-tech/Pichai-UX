@@ -28,7 +28,7 @@ function drawCircle(canvas, radius) {
     context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
 
     context.beginPath();
-    context.roundRect(5, 5, canvas.width, canvas.height, radius);
+    context.roundRect(3, 3, canvas.width, canvas.height, radius);
     context.fill();
 
 }
