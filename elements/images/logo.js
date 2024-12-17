@@ -18,7 +18,7 @@ function deTranslate(canvas, dynamicImage, context) {
     context.translate(-3, -3);
 }
 
-function drawCircle(width, transparent) {
+function drawCircle(width, transparent, context) {
     if (transparent) {
         context.globalCompositeOperation = 'destination-out';
     }
@@ -97,8 +97,8 @@ async function generateDynamicIcon(image, radius = 360) {
             //console.log(canvas2.toDataURL())
             context.drawImage(canvas2, 0, 0);
 
-            drawCircle(46, true);
-            drawCircle(5, false);
+            drawCircle(46, true, context);
+            drawCircle(5, false, context);
 
             resolve(canvas.toDataURL());
         };
