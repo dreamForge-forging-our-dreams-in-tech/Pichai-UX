@@ -97,8 +97,8 @@ async function generateDynamicIcon(image, radius = 360) {
             //console.log(canvas2.toDataURL())
             context.drawImage(canvas2, 0, 0);
 
-            drawCircle(5, false);
             drawCircle(46, true);
+            drawCircle(5, false);
 
             resolve(canvas.toDataURL());
         };
