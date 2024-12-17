@@ -60,7 +60,7 @@ async function generateDynamicIcon(image, radius = 360) {
             rgb = rgb.split(',');
 
             setTranslate(canvas, dynamicImage, context);
-            context.drawImage(dynamicImage, dynamicImage.width / 2, dynamicImage.height / 2);
+            context.drawImage(dynamicImage, -dynamicImage.width / 2, -dynamicImage.height / 2);
 
             setTranslate(canvas2, dynamicImage, context2);
 
