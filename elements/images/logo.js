@@ -21,7 +21,7 @@ function deTranslate(canvas, dynamicImage, context) {
     context.translate(-3, -3);
 }
 
-function drawCircle(width, transparent, canvas, radius) {
+function drawCircle(transparent, canvas, radius) {
     let context = canvas.getContext("2d", { willReadFrequently: true });
 
     if (transparent) {
@@ -31,14 +31,14 @@ function drawCircle(width, transparent, canvas, radius) {
     }
 
     context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
-    context.lineWidth = width; // Set border width
+    context.lineWidth = 46; // Set border width
 
     context.beginPath();
 
-    if (width == 5) {
-        context.roundRect(0 + 15, 0, canvas.width, canvas.height, radius);
-    } else {
+    if (transparent) {
         context.roundRect(-15, -15, canvas.width + 35, canvas.height + 35, radius);
+    } else {
+        context.roundRect(-17, -17, canvas.width + 37, canvas.height + 37, radius);
     }
     context.stroke();
 
@@ -110,8 +110,8 @@ async function generateDynamicIcon(image, radius = 360) {
             //console.log(canvas2.toDataURL())
             context.drawImage(canvas2, 0, 0);
 
-            drawCircle(46, true, canvas, radius);
-            drawCircle(5, false, canvas, radius);
+            drawCircle(true, canvas, radius);
+            drawCircle(false, canvas, radius);
 
             resolve(canvas.toDataURL());
         };
