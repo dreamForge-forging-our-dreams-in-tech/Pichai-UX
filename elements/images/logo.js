@@ -20,7 +20,7 @@ function deTranslate(context) {
     context.translate(-3, -3);
 }
 
-function drawCircle(width, transparent, canvas) {
+function drawCircle(width, transparent, canvas, radius) {
     let context = canvas.getContext("2d", { willReadFrequently: true });
 
     if (transparent) {
@@ -101,8 +101,8 @@ async function generateDynamicIcon(image, radius = 360) {
             //console.log(canvas2.toDataURL())
             context.drawImage(canvas2, 0, 0);
 
-            drawCircle(46, true, canvas);
-            drawCircle(5, false, canvas);
+            drawCircle(46, true, canvas, radius);
+            drawCircle(5, false, canvas, radius);
 
             resolve(canvas.toDataURL());
         };
