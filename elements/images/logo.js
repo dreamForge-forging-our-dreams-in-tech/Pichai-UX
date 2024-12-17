@@ -84,6 +84,7 @@ async function generateDynamicIcon(image, radius = 360) {
             //console.log(canvas2.toDataURL())
             context.drawImage(canvas2, 0, 0);
 
+            ctx.globalCompositeOperation = 'destination-out';
             context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
             context.lineWidth = 46; // Set border width
 
