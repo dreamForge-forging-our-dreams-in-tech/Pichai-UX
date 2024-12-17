@@ -34,7 +34,7 @@ function drawCircle(transparent, canvas, radius) {
     if (!transparent) {
         context.roundRect(-15, -15, canvas.width + 35, canvas.height + 35, radius);
     } else {
-        context.roundRect(-17, -17, canvas.width + 37, canvas.height + 37, radius);
+        context.roundRect(-15, -15, canvas.width + 40, canvas.height + 40, radius);
     }
     context.stroke();
 
