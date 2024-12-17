@@ -26,6 +26,8 @@ function drawCircle(width, transparent, canvas, radius) {
 
     if (transparent) {
         context.globalCompositeOperation = 'destination-out';
+    } else {
+        context.globalCompositeOperation = 'source-over';
     }
 
     context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
