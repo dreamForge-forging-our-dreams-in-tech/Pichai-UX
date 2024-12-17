@@ -28,7 +28,7 @@ function drawCircle(canvas, radius) {
     context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
 
     context.beginPath();
-    context.roundRect(0, 0, canvas.width, canvas.height, radius);
+    context.roundRect(5, 5, canvas.width, canvas.height, radius);
     context.fill();
 
 }
@@ -37,7 +37,7 @@ async function generateDynamicIcon(image, radius = 360) {
     await varExists('--primary');
 
     return new Promise((resolve) => {
-        // Assume you have an HTML canvas element with the id "myCanvas"
+        //create 2 canvases 1 for reading and 1 for rendering the icon properly
         const canvas = document.createElement('canvas');
         const context = canvas.getContext("2d", { willReadFrequently: true });
 
@@ -49,7 +49,7 @@ async function generateDynamicIcon(image, radius = 360) {
         let dynamicImage = new Image();
         dynamicImage.crossOrigin = 'anonymous';
 
-        dynamicImage.src = image; //idk substring 6 breaks cod for smr
+        dynamicImage.src = image;
 
         dynamicImage.onload = function () {
             const root = document.documentElement;
@@ -132,7 +132,7 @@ class Logo extends HTMLElement {
 
     async connectedCallback() {
 
-        let radius = window.getComputedStyle(this)['border-radius']
+        let radius = window.getComputedStyle(this)['border-radius'];
         // Get the favicon link element
         const faviconLink = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
 
