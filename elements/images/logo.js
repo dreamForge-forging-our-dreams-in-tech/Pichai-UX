@@ -15,12 +15,14 @@ function setTranslate(canvas, dynamicImage, context) {
     context.translate(canvas.width / 2, canvas.height / 2);
 }
 
-function deTranslate(canvas, dynamicImage, context) {
+function deTranslate(context) {
     context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
     context.translate(-3, -3);
 }
 
-function drawCircle(width, transparent, context) {
+function drawCircle(width, transparent, canvas) {
+    let context = canvas.getContext("2d", { willReadFrequently: true });
+
     if (transparent) {
         context.globalCompositeOperation = 'destination-out';
     }
@@ -99,8 +101,8 @@ async function generateDynamicIcon(image, radius = 360) {
             //console.log(canvas2.toDataURL())
             context.drawImage(canvas2, 0, 0);
 
-            drawCircle(46, true, context);
-            drawCircle(5, false, context);
+            drawCircle(46, true, canvas);
+            drawCircle(5, false, canvas);
 
             resolve(canvas.toDataURL());
         };
