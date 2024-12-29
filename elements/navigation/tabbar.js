@@ -94,8 +94,14 @@ function addForConnection(e, e2) {
                 try {
                     i.parentNode.getElementsByClassName('current')[0].classList.remove('current');
                 } catch(e) {}
-                let x = i.classList.contains('verticalTabbar') ? 0 : i.offsetLeft;
-                let y = i.classList.contains('verticalTabbar') ? i.offsetTop : 0;
+                
+                if(!i.classList.contains('verticalTabbar')) {
+                    let x = i.offsetLeft;
+                    let y = 0;
+                } else {
+                    let x = 0;
+                    let y = i.offsetTop;
+                }
 
                 console.log(x,y)
 
