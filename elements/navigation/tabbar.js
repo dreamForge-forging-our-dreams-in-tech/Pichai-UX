@@ -95,21 +95,14 @@ function addForConnection(e, e2) {
                     i.parentNode.getElementsByClassName('current')[0].classList.remove('current');
                 } catch(e) {}
 
-                let x,y;
                 if(i.classList.contains('verticalTabbar')) {
-                    x = 0;
-                    y = i.offsetTop;
-
-                    console.log(x,y)
+                    console.log('with');
                 } else {
-                    x = i.offsetLeft;
-                    y = 0;
-                    
-                    console.log(x,y)
+                    console.log('without');
                 }
 
                 i.classList.add('current');
-                i.parentNode.scrollTo(x,y);
+                //i.parentNode.scrollTo(x,y);
             }
         }
     });
