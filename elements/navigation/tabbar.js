@@ -95,6 +95,7 @@ function addForConnection(e, e2) {
                     i.parentNode.getElementsByClassName('current')[0].classList.remove('current');
                 } catch(e) {}
 
+                console.log(i)
                 if(!i.classList.contains('verticalTabbar')) {
                     console.log('with');
                 } else {
