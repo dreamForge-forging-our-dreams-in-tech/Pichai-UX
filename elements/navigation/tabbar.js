@@ -99,12 +99,14 @@ function addForConnection(e, e2) {
                 if(!i.classList.contains('verticalTabbar')) {
                     x = i.offsetLeft;
                     y = 0;
+
+                    console.log(x,y)
                 } else {
                     x = 0;
                     y = i.offsetTop;
-                }
 
-                console.log(x,y)
+                    console.log(x,y)
+                }
 
                 i.classList.add('current');
                 i.parentNode.scrollTo(x,y);
