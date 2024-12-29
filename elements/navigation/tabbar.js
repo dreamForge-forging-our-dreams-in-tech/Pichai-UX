@@ -96,15 +96,15 @@ function addForConnection(e, e2) {
                 } catch(e) {}
 
                 let x,y;
-                if(!i.classList.contains('verticalTabbar')) {
-                    x = i.offsetLeft;
-                    y = 0;
-
-                    console.log(x,y)
-                } else {
+                if(i.classList.contains('verticalTabbar')) {
                     x = 0;
                     y = i.offsetTop;
 
+                    console.log(x,y)
+                } else {
+                    x = i.offsetLeft;
+                    y = 0;
+                    
                     console.log(x,y)
                 }
 
