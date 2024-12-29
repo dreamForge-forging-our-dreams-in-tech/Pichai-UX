@@ -49,6 +49,8 @@ view-pager:first-child {
   writing-mode: vertical-rl;
 
   overflow-y:auto;
+
+  max-height:calc(100% - 16px);
 }
 
 .verticalTabbar a {
