@@ -94,13 +94,14 @@ function addForConnection(e, e2) {
                 try {
                     i.parentNode.getElementsByClassName('current')[0].classList.remove('current');
                 } catch(e) {}
-                
+
+                let x,y;
                 if(!i.classList.contains('verticalTabbar')) {
-                    let x = i.offsetLeft;
-                    let y = 0;
+                    x = i.offsetLeft;
+                    y = 0;
                 } else {
-                    let x = 0;
-                    let y = i.offsetTop;
+                    x = 0;
+                    y = i.offsetTop;
                 }
 
                 console.log(x,y)
