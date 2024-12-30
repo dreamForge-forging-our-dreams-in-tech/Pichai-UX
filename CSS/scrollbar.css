@@ -9,9 +9,6 @@
     background: TRANSPARENT;
 
     border-radius:200px;
-
-    margin-top:20px;
-    margin-left:20px;
   }
 
   /* Handle */
@@ -39,4 +36,8 @@
     background: var(--secondairy);
 
     border-radius:200px;
+  }
+
+  .tabBarHolder::-webkit-scrollbar-track {
+    margin:10px;
   }
