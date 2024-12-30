@@ -26,18 +26,18 @@
   }
 
   .tabBarHolder::-webkit-scrollbar-thumb {
-    background: var(--tertiary);
+    background: var(--primaryContainer);
 
     border-radius:200px;
   }
   
   /* Handle on hover */
   .tabBarHolder::-webkit-scrollbar-thumb:hover {
-    background: var(--tertiary);
+    background: var(--secondairy);
 
     border-radius:200px;
   }
 
   .tabBarHolder::-webkit-scrollbar-track {
-    margin:15px;
+    margin:17px;
   }
