@@ -95,15 +95,8 @@ function addForConnection(e, e2) {
                     i.parentNode.getElementsByClassName('current')[0].classList.remove('current');
                 } catch(e) {}
 
-                console.log(i)
-                if(!i.classList.contains('verticalTabbar')) {
-                    console.log('with');
-                } else {
-                    console.log('without');
-                }
-
                 i.classList.add('current');
-                //i.parentNode.scrollTo(x,y);
+                i.scrollIntoView();
             }
         }
     });
