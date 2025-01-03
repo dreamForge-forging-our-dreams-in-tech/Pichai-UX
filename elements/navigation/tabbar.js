@@ -106,10 +106,10 @@ function addForConnection(e, e2) {
             e.stopPropagation();
             e.preventDefault();
 
-            console.log(this.classList.contains('current'))
+            console.log(!this.classList.contains('current'))
             if (!this.classList.contains('current')) {
                 console.log('click')
-                
+
                 element.setAttribute('pageIndex', Number(this.getAttribute('index')));
 
                 try {
