@@ -3,9 +3,9 @@ import { enableSetListItems } from '../globalElementFunctions/setListItems.js';
 
 // Create a class for the element
 class TabBar extends HTMLElement {
-            /** @description 
-    * The tabbar element allows you to navigate between pages or viewpager pages
-    */
+    /** @description 
+* The tabbar element allows you to navigate between pages or viewpager pages
+*/
 
     /** @usage 
      * Navigating between pages
@@ -54,7 +54,7 @@ class TabBar extends HTMLElement {
                 let element = document.getElementById(forAttr);
                 let el = element.children[parseInt(i.getAttribute('index'))];
 
-                if (el.checkVisibility({opacityProperty: true, visibilityProperty: true, contentVisibilityAuto: true})) {
+                if (el.checkVisibility({ opacityProperty: true, visibilityProperty: true, contentVisibilityAuto: true })) {
                     i.classList.add('current');
                 }
             }
@@ -89,11 +89,11 @@ function addForConnection(e, e2) {
     element.addEventListener('pageChange', (a) => {
         let index = a.detail.pageIndex;
 
-        for(i of e.children) {
-            if(parseInt(i.getAttribute('index')) == index) {
+        for (i of e.children) {
+            if (parseInt(i.getAttribute('index')) == index) {
                 try {
                     i.parentNode.getElementsByClassName('current')[0].classList.remove('current');
-                } catch(e) {}
+                } catch (e) { }
 
                 i.classList.add('current');
                 i.scrollIntoView();
@@ -102,16 +102,18 @@ function addForConnection(e, e2) {
     });
 
     for (i of e.children) {
-        i.addEventListener('click',function (e) {
+        i.addEventListener('click', function (e) {
             e.stopPropagation();
             e.preventDefault();
 
-            element.setAttribute('pageIndex',Number(this.getAttribute('index')));
+            if (!this.classList.contains('current')) {
+                element.setAttribute('pageIndex', Number(this.getAttribute('index')));
 
-            try {
-                i.parentNode.getElementsByClassName('current')[0].classList.remove('current');
-            } catch(e) {}
-            this.classList.add('current');
+                try {
+                    i.parentNode.getElementsByClassName('current')[0].classList.remove('current');
+                } catch (e) { }
+                this.classList.add('current');
+            }
         });
     }
 
@@ -121,10 +123,10 @@ function removeForConnection(e, e2) {
     let element = document.getElementById(e2);
     let i;
 
-    element.removeEventListener('pageChange', function () {}, false);
+    element.removeEventListener('pageChange', function () { }, false);
 
     for (i of e.children) {
-        i.removeEventListener('click', function () {}, false);
+        i.removeEventListener('click', function () { }, false);
     }
 }
 
