@@ -105,6 +105,10 @@ function addForConnection(e, e2) {
         i.addEventListener('click', function (e) {
             e.stopPropagation();
             e.preventDefault();
+            
+            if (this.classList.contains('current')) {
+                e.stopImmediatePropagation(); // to prevent other listeners to fire if already selected
+            }
 
             if (!this.classList.contains('current')) {
                 element.setAttribute('pageIndex', Number(this.getAttribute('index')));
@@ -113,8 +117,6 @@ function addForConnection(e, e2) {
                     i.parentNode.getElementsByClassName('current')[0].classList.remove('current');
                 } catch (e) { }
                 this.classList.add('current');
-            } else {
-                e.stopImmediatePropagation(); // to prevent other listeners to fire if already selected
             }
         });
     }
