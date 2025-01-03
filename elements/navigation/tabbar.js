@@ -107,6 +107,7 @@ function addForConnection(e, e2) {
             e.preventDefault();
 
             if (!this.classList.contains('current')) {
+                e.stopImmediatePropagation(); // to prevent other listeners to fire if already selected
                 element.setAttribute('pageIndex', Number(this.getAttribute('index')));
 
                 try {
