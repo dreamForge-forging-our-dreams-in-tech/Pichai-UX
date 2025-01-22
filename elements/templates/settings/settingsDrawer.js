@@ -1,8 +1,30 @@
 import { registry } from '../../../utils/customeElementsDefine.js';
 import { pickFiles } from '../../../functions/filePicker.js';
 
-function setItems(panel) { // listItems doesnt work somehow
-    panel.innerHTML = '';
+function detectCustomization(e) {
+    if (e.detail.value == 'Wallpaper') {
+        pickFiles(function (file) {
+            window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
+
+            window.parent.location.reload();
+        });
+    } else if (e.detail.value == 'Color Order') {
+        window.localStorage.setItem(`${window.storageName}extractionPosition`, Number(window.prompt('Enter the position of the color extraction (0-10)')));
+
+        window.parent.location.reload();
+    } else if (e.detail.value == 'Transparency') {
+        let li = document.getElementById(e.detail.value);
+
+        li.children[0].checked = !li.children[0].checked;
+
+        if (li.children[0].checked) {
+            window.localStorage.setItem(`${window.storageName}transperncy`, 0.75);
+        } else {
+            window.localStorage.setItem(`${window.storageName}transperncy`, 1);
+        }
+
+        window.parent.location.reload();
+    }
 
 }
 // Create a class for the element
@@ -35,20 +57,10 @@ class SettingsDrawer extends HTMLElement {
         panel.addEventListener('itemSelected', async function (e) {
             if (e.detail.value == 'Customization') {
                 panel.firstTime = true;
-                panel.listItems = ['Wallpaper', 'Color Order'];
+                panel.listItems = ['Wallpaper', 'Color Order', 'Transparency'];
             }
 
-            if (e.detail.value == 'Wallpaper') {
-                pickFiles(function (file) {
-                    window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
-
-                    window.parent.location.reload();
-                });
-            } else if (e.detail.value == 'Color Order') {
-                window.localStorage.setItem(`${window.storageName}extractionPosition`, Number(window.prompt('Enter the position of the color extraction (0-10)')));
-
-                window.parent.location.reload();
-            }
+            detectCustomization(e);
         });
     }
 }
