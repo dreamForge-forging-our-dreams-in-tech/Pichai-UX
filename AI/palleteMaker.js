@@ -132,10 +132,10 @@ function generateContainerTextColor (colors) {
 async function generate3ColorPallete(options) {
         let colors = await getPallete(options);
         colors = colors.concat(await getPallete(options));
-        console.log(colors[position + 4])
 
         let alpha = options.transparency;
         let position = options.extractionPosition;
+        console.log(colors[position + 4])
 
         const root = document.documentElement;
         root.style.setProperty('--primary', `rgba(${colors[position].join(',')}, ${alpha})`);
