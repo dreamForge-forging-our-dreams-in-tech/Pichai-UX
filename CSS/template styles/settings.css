@@ -12,7 +12,7 @@
     padding:8px;
 }
 
-#quickSettingsPanel list-viewer {
+template-customization list-viewer, #quickSettingsPanel list-viewer {
     display:grid;
 
     grid-template-columns:1fr 1fr;
@@ -20,7 +20,7 @@
     gap:8px;
 }
 
-#quickSettingsPanel list-viewer li {
+template-customization list-viewer li, #quickSettingsPanel list-viewer li {
     margin-bottom:0px;
 
     align-items: center;
