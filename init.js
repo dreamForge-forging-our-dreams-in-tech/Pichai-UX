@@ -130,6 +130,8 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
 
         window.document.body.style.backgroundImage = `url('${value}')`;
         options.source = value;
+    } else if (key == `${window.storageName}extractionPosition`) {
+        options.extractionPosition = value;
     } else if (key == `${window.storageName}transperncy`) {
         options.transparency = value;
     } else if (key == `${window.storageName}rtl`) {

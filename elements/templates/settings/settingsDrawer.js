@@ -35,15 +35,19 @@ class SettingsDrawer extends HTMLElement {
         panel.addEventListener('itemSelected', async function (e) {
             if (e.detail.value == 'Customization') {
                 panel.firstTime = true;
-                panel.listItems = ['Wallpaper'];
+                panel.listItems = ['Wallpaper', 'Color Order'];
             }
 
             if (e.detail.value == 'Wallpaper') {
                 pickFiles(function (file) {
                     window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
 
-                    window.parent.location.reload();
+                    //window.parent.location.reload();
                 });
+            } else if (e.detail.value == 'Color Order') {
+                window.localStorage.setItem(`${window.storageName}extractionPosition`, Number(window.prompt('Enter the position of the color extraction (0-10)')));
+
+                //window.parent.location.reload();
             }
         });
     }
