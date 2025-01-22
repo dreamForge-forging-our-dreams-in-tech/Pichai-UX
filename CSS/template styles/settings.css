@@ -26,3 +26,7 @@
     align-items: center;
     justify-content: center;
 }
+
+template-customization {
+    z-index: 10;
+}

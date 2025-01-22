@@ -27,7 +27,15 @@ class SettingsDrawer extends HTMLElement {
         let panel = document.getElementById('QSP');
 
         panel.addEventListener('itemSelected', function (e) {
-            alert(e.detail.value)
+            if(e.detail.value == 'Customization') {
+                let dialog = document.createElement('template-customization');
+
+            if (dialog.parentNode == document.body) {
+                dialog.remove();
+                return;
+            }
+            document.body.appendChild(dialog);
+            }
         });
     }
 }
