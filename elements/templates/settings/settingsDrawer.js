@@ -27,6 +27,7 @@ class SettingsDrawer extends HTMLElement {
         let panel = document.getElementById('QSP');
 
         panel.addEventListener('itemSelected', function (e) {
+            console.log(e)
             alert(e.detail.value)
         });
     }
