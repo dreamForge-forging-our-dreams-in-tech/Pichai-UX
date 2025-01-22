@@ -20,7 +20,7 @@ class customSettings extends HTMLElement {
         </list-viewer>
         </section>`;
 
-        this.firstChild.addEventListener('itemSelected', async function (e) {
+        this.firstChild.firstChild.addEventListener('itemSelected', async function (e) {
             if (e.detail.value == 'Wallpaper') {
                 pickFiles(function (file) {
                     window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
