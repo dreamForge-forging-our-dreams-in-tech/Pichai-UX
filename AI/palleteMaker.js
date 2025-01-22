@@ -131,7 +131,7 @@ function generateContainerTextColor (colors) {
 
 async function generate3ColorPallete(options) {
         let colors = await getPallete(options);
-        colors = colors.concat(await getPallete(options));
+        colors = colors.concat(colors);
 
         let alpha = options.transparency;
         let position = options.extractionPosition;
