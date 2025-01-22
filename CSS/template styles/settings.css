@@ -1,4 +1,4 @@
-#quickSettingsPanel, template-customization {
+#quickSettingsPanel, template-customization section {
     min-width:250px;
     min-height:300px;
 
@@ -12,7 +12,7 @@
     padding:8px;
 }
 
-template-customization list-viewer, #quickSettingsPanel list-viewer {
+template-customization section list-viewer, #quickSettingsPanel list-viewer {
     display:grid;
 
     grid-template-columns:1fr 1fr;
@@ -20,13 +20,13 @@ template-customization list-viewer, #quickSettingsPanel list-viewer {
     gap:8px;
 }
 
-template-customization list-viewer li, #quickSettingsPanel list-viewer li {
+template-customization section list-viewer li, #quickSettingsPanel list-viewer li {
     margin-bottom:0px;
 
     align-items: center;
     justify-content: center;
 }
 
-template-customization {
+template-customization section {
     z-index: 10;
 }
