@@ -28,13 +28,15 @@ class SettingsDrawer extends HTMLElement {
 
         panel.addEventListener('itemSelected', function (e) {
             if(e.detail.value == 'Customization') {
-                let dialog = document.createElement('template-customization');
-
-            if (dialog.parentNode == document.body) {
-                dialog.remove();
-                return;
+                panel.listItems = ['Wallpaper'];
             }
-            document.body.appendChild(dialog);
+
+            if (e.detail.value == 'Wallpaper') {
+                pickFiles(function (file) {
+                    window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
+
+                    window.parent.location.reload();
+                });
             }
         });
     }
