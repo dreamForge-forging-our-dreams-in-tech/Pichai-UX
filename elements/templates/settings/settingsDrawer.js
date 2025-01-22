@@ -8,24 +8,27 @@ class SettingsDrawer extends HTMLElement {
 
     async connectedCallback() {
         this.innerHTML = `<section class="card" id='quickSettingsPanel'>
-        <list-viewer sortable='true'>
-        <li>Global</li>
+        <list-viewer sortable='true' id='QSP'>
         <li>Customization</li>
-        <li>Privacy</li>
-        <li id='account' >Account</li>
-        <li>Data</li>
         </list-viewer>
         </section>`;
+
+        /*       <li>Privacy</li>
+        <li id='account' >Account</li>
+        <li>Data</li>
+                <li>Global</li>
+        
+        */
 
         this.children[0].addEventListener('itemSorted', function (e) {
             alert(e.detail.newIndex)
         });
 
-        let account = document.getElementById('account');
+        let panel = document.getElementById('QSP');
 
-        if(!navigator.onLine) {
-            account.setAttribute('disabled', true);
-        }
+        panel.addEventListener('itemSelected', function (e) {
+            alert(e.detail.value)
+        });
     }
 }
 
