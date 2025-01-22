@@ -135,6 +135,7 @@ async function generate3ColorPallete(options) {
         let alpha = options.transparency;
 
         let position = options.extractionPosition;
+        alert(position)
 
         const root = document.documentElement;
         root.style.setProperty('--primary', `rgba(${colors[position].join(',')}, ${alpha})`);
