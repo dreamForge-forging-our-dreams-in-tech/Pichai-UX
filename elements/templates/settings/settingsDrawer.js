@@ -9,7 +9,7 @@ class SettingsDrawer extends HTMLElement {
     async connectedCallback() {
         this.innerHTML = `<section class="card" id='quickSettingsPanel'>
         <list-viewer sortable='true' id='QSP'>
-        <li>Customization</li>
+        <li id='Customization' >Customization</li>
         </list-viewer>
         </section>`;
 
@@ -27,7 +27,6 @@ class SettingsDrawer extends HTMLElement {
         let panel = document.getElementById('QSP');
 
         panel.addEventListener('itemSelected', function (e) {
-            console.log(e)
             alert(e.detail.value)
         });
     }
