@@ -20,6 +20,7 @@ class customSettings extends HTMLElement {
         </list-viewer>
         </section>`;
 
+        console.log(this.firstChild.firstChild)
         this.firstChild.firstChild.addEventListener('itemSelected', async function (e) {
             alert(e.detail.value)
             if (e.detail.value == 'Wallpaper') {
