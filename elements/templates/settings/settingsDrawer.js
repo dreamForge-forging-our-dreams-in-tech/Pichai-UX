@@ -1,4 +1,5 @@
 import { registry } from '../../../utils/customeElementsDefine.js';
+import { pickFiles } from '../../../functions/filePicker.js';
 
 function setItems(panel) { // listItems doesnt work somehow
     panel.innerHTML = '';
