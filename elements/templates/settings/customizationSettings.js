@@ -14,13 +14,14 @@ class customSettings extends HTMLElement {
     async connectedCallback() {
         let i;
 
-        this.innerHTML = `<section class='card'>
-        <list-viewer sortable='true' id='QSP'>
+        this.innerHTML = `<section class='card' id='QSP'>
+        <list-viewer sortable='true'>
         <li id='Wallpaper' >Wallpaper</li>
         </list-viewer>
         </section>`;
 
         this.firstChild.firstChild.addEventListener('itemSelected', async function (e) {
+            alert(e.detail.value)
             if (e.detail.value == 'Wallpaper') {
                 pickFiles(function (file) {
                     window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
