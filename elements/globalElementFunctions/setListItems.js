@@ -20,6 +20,7 @@ function enableSetListItems(element, callback) { // allows user to set the conte
             return listItems;
         },
         set(newValue) {
+            alert()
             if (element.children.length == 0) {
                 element.firstTime = true;
             }

@@ -26,7 +26,7 @@ class SettingsDrawer extends HTMLElement {
 
         let panel = document.getElementById('QSP');
 
-        panel.addEventListener('itemSelected', function (e) {
+        panel.addEventListener('itemSelected', async function (e) {
             if (e.detail.value == 'Customization') {
                 panel.listItems = ['Wallpaper'];
             }
