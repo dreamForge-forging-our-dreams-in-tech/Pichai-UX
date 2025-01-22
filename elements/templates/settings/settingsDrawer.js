@@ -27,17 +27,8 @@ class SettingsDrawer extends HTMLElement {
         let panel = document.getElementById('QSP');
 
         panel.addEventListener('itemSelected', function (e) {
-            if(e.detail.value == 'Customization') {
-                alert()
+            if (e.detail.value == 'Customization') {
                 panel.listItems = ['Wallpaper'];
-            }
-
-            if (e.detail.value == 'Wallpaper') {
-                pickFiles(function (file) {
-                    window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
-
-                    window.parent.location.reload();
-                });
             }
         });
     }
