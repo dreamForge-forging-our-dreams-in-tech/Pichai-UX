@@ -53,7 +53,7 @@ class PichaiUX {
         if (!document.getElementById(cssId)) {
             let head = document.getElementsByTagName('head')[0];
 
-            addCSSSheets(typeof exports !== 'undefined' ? 'Pichai-UX/CSS/main.css' : 'https://lukeplays33.github.io/Pichai-UX/CSS/main.css', cssId, head);
+            addCSSSheets(typeof exports !== 'undefined' ? 'Pichai-UX/CSS/main.css' : 'https://dreamforge-forging-our-dreams-in-tech.github.io/Pichai-UX/CSS/main.css', cssId, head);
             addCSSSheets('https://fonts.googleapis.com/icon?family=Material+Icons', 'google', head);
             addCSSSheets('https://pagecdn.io/lib/easyfonts/fonts.css', 'fonts', head);
         }
