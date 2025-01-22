@@ -1,4 +1,9 @@
 import { registry } from '../../../utils/customeElementsDefine.js';
+
+function setItems(panel) { // listItems doesnt work somehow
+    panel.innerHTML = '';
+
+}
 // Create a class for the element
 class SettingsDrawer extends HTMLElement {
     constructor() {
