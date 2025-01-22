@@ -28,7 +28,16 @@ class SettingsDrawer extends HTMLElement {
 
         panel.addEventListener('itemSelected', async function (e) {
             if (e.detail.value == 'Customization') {
+                panel.firstTime = false;
                 panel.listItems = ['Wallpaper'];
+            }
+
+            if (e.detail.value == 'Wallpaper') {
+                pickFiles(function (file) {
+                    window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
+
+                    window.parent.location.reload();
+                });
             }
         });
     }
