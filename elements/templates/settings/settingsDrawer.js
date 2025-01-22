@@ -28,7 +28,7 @@ class SettingsDrawer extends HTMLElement {
 
         panel.addEventListener('itemSelected', async function (e) {
             if (e.detail.value == 'Customization') {
-                panel.firstTime = false;
+                panel.firstTime = true;
                 panel.listItems = ['Wallpaper'];
             }
 
