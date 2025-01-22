@@ -13,15 +13,7 @@ function detectCustomization(e) {
 
         window.parent.location.reload();
     } else if (e.detail.value == 'Transparency') {
-        let li = document.getElementById(e.detail.value);
-
-        li.children[0].checked = !li.children[0].checked;
-
-        if (li.children[0].checked) {
-            window.localStorage.setItem(`${window.storageName}transperncy`, 0.75);
-        } else {
-            window.localStorage.setItem(`${window.storageName}transperncy`, 1);
-        }
+            window.localStorage.setItem(`${window.storageName}transperncy`, Number(window.prompt('Enter the position of the color extraction (0-10)')));
 
         window.parent.location.reload();
     }
