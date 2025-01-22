@@ -26,7 +26,6 @@ function enableSetListItems(element, callback) { // allows user to set the conte
 
             if (!element.firstTime) {} else { // checks if it is set for the firsttime, if so ignore changes
                 element.innerHTML = '';
-                alert()
                 if (!newValue) {
                     element.classList.add('Hidden');
                 } else {
