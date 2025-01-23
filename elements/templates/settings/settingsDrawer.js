@@ -13,7 +13,7 @@ function detectCustomization(e) {
 
         window.parent.location.reload();
     } else if (e.detail.value == 'Transparency') {
-            window.localStorage.setItem(`${window.storageName}transperncy`, Number(window.prompt('Enter the transparency of the elements to make the iamge more visible (0-1)')));
+            window.localStorage.setItem(`${window.storageName}transperncy`, Number(window.prompt('Enter the transparency of the elements to make the image more visible (0-1)')));
 
         window.parent.location.reload();
     }
@@ -49,7 +49,7 @@ class SettingsDrawer extends HTMLElement {
         panel.addEventListener('itemSelected', async function (e) {
             if (e.detail.value == 'Customization') {
                 panel.firstTime = true;
-                panel.listItems = ['Wallpaper', 'Color Order', 'Transparency', 'HR'];
+                panel.listItems = ['Wallpaper', 'Color Order', 'Transparency'];
             }
 
             detectCustomization(e);
