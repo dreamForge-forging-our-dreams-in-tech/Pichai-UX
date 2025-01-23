@@ -13,7 +13,7 @@ function detectCustomization(e) {
 
         window.parent.location.reload();
     } else if (e.detail.value == 'Transparency') {
-            window.localStorage.setItem(`${window.storageName}transperncy`, Number(window.prompt('Enter the position of the color extraction (0-10)')));
+            window.localStorage.setItem(`${window.storageName}transperncy`, Number(window.prompt('Enter the transparency of the elements to make the iamge more visible (0-1)')));
 
         window.parent.location.reload();
     }
