@@ -9,11 +9,11 @@ function detectCustomization(e) {
             window.parent.location.reload();
         });
     } else if (e.detail.value == 'Color Order') {
-        window.localStorage.setItem(`${window.storageName}extractionPosition`, Number(window.prompt('Enter the position of the color extraction (0-10)')));
+        window.localStorage.setItem(`${window.storageName}extractionPosition`, Number(window.prompt('Enter the position of the color extraction (0-10)', 0)));
 
         window.parent.location.reload();
     } else if (e.detail.value == 'Transparency') {
-            window.localStorage.setItem(`${window.storageName}transperncy`, Number(window.prompt('Enter the transparency of the elements to make the image more visible (0-1)')));
+        window.localStorage.setItem(`${window.storageName}transperncy`, Number(window.prompt('Enter the transparency of the elements to make the image more visible (0-1)', 1)));
 
         window.parent.location.reload();
     }
