@@ -9,7 +9,7 @@ class Footer extends HTMLElement {
 
     async connectedCallback() {
         this.innerHTML = `<footer>
-        <x-icon></x-icon>
+        <x-icon class='WebsiteLogo'></x-icon>
         <x-title title='Sketch'></x-title>
     <a href="https://x.com/Sketch68862592?t=PpUXmuphCIXxY0wCdO33Ng&s=08">
       <x-icon

@@ -34,13 +34,13 @@ function addHomeLink() {
         let int = window.setInterval(() => {
             if (window['options'].homeLink === '') {
                 clearInterval(int);
-                resolve(`<x-icon></x-icon>
+                resolve(`<x-icon class='WebsiteLogo'></x-icon>
             <x-title></x-title>`);
 
             } else {
                 clearInterval(int);
                 resolve(`<a class='comapnyInfoA' href='` + window['options'].homeLink + `'>
-        <x-icon></x-icon>
+        <x-icon class='WebsiteLogo'></x-icon>
         <x-title></x-title>
         </a>`);
             }
