@@ -27,12 +27,15 @@ class ListViewer extends HTMLElement {
         const observer = new MutationObserver((mutationsList) => {
             mutationsList.forEach((mutation) => {
               if (mutation.type === 'childList') {
-                console.log('Child nodes changed!');
+                //console.log('Child nodes changed!');
                 if (mutation.addedNodes.length > 0) {
                   console.log('Added nodes:', mutation.addedNodes);
+                  for(i of mutation.addedNodes) {
+                    addAttributeFunctions(i);
+                  }
                 }
                 if (mutation.removedNodes.length > 0) {
-                  console.log('Removed nodes:', mutation.removedNodes);
+                  //console.log('Removed nodes:', mutation.removedNodes);
                 }
               }
             });
