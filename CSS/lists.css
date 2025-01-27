@@ -99,7 +99,7 @@ list-viewer li {
 list-viewer li .actionButton {
    height: 100%;
 
-   color: var(--primaryTextColor);
+   color: var(--secondairyTextColor);
 
    border-radius: 10px;
 
