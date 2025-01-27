@@ -28,21 +28,26 @@ class ListViewer extends HTMLElement {
 
         const observer = new MutationObserver((mutationsList) => {
             mutationsList.forEach((mutation) => {
-                if (mutation.type === 'childList') {
-                    if (mutation.addedNodes.length > 0) {
-                        for (i of mutation.addedNodes) {
-                            //addAttributeFunctions(i, listViewer);
+              if (mutation.type === 'childList') {
+                if (mutation.addedNodes.length > 0) {
+                    for(i of mutation.addedNodes) {
+                        if (i.tagName == 'HR' || i.getElementsByClassName('actionButton').length == 1) { } else { // allows users  to create custom action buttons elements other than a button
+                            let button = document.createElement('button');
+                            button.innerHTML = listViewer.getAttribute('actionButton');
+                            button.classList.add('actionButton', 'material-symbols-outlined');
+                            i.appendChild(button);
                         }
                     }
                 }
+              }
             });
-        });
-
-        // Set up the observer with the desired options
-        observer.observe(this, {
+          });
+          
+          // Set up the observer with the desired options
+          observer.observe(this, {
             childList: true, // Listen for changes to child elements
             subtree: false   // Set to true if you want to observe child elements of child elements
-        });
+          });
 
         this.addEventListener('click', function (e) { // adds a click event to the list items and ensures that the right value is returned
             this.setAttribute('value', e.target.id);
@@ -78,7 +83,7 @@ function addAttributeFunctions(e) {
                         item: evt.item.id,
                     },
                 });
-
+    
                 evt.to.dispatchEvent(sorted); // dispatches the click event only when it's clicked and not when the value is manually changed by the developer.
             }
         });
@@ -90,19 +95,15 @@ function addAttributeFunctions(e) {
                 i.id = i.innerHTML;
             }
 
-            addActionButton(i, e)
+            if (i.tagName == 'HR' || i.getElementsByClassName('actionButton').length == 1) { } else { // allows users  to create custom action buttons elements other than a button
+
+                let button = document.createElement('button');
+                button.innerHTML = e.getAttribute('actionButton');
+                button.classList.add('actionButton', 'material-symbols-outlined');
+
+                i.appendChild(button);
+            }
         }
-    }
-}
-
-function addActionButton(i,e) {
-    if (i.tagName == 'HR' || i.getElementsByClassName('actionButton').length == 1) { } else { // allows users  to create custom action buttons elements other than a button
-
-        let button = document.createElement('button');
-        button.innerHTML = e.getAttribute('actionButton');
-        button.classList.add('actionButton', 'material-symbols-outlined');
-
-        i.appendChild(button);
     }
 }
 
