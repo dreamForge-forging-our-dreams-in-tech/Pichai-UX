@@ -24,6 +24,10 @@ class ListViewer extends HTMLElement {
     connectedCallback() {
         enableSetListItems(this, addAttributeFunctions); //callback call ensures button creation
 
+        this.addEventListener('DOMNodeInserted', function () {
+            console.log('test')
+        });
+
         this.addEventListener('click', function (e) { // adds a click event to the list items and ensures that the right value is returned
             this.setAttribute('value', e.target.id);
 
