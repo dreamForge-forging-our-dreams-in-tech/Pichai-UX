@@ -22,20 +22,17 @@ class ListViewer extends HTMLElement {
     }
 
     connectedCallback() {
+        let i;
         enableSetListItems(this, addAttributeFunctions); //callback call ensures button creation
 
         const observer = new MutationObserver((mutationsList) => {
             mutationsList.forEach((mutation) => {
               if (mutation.type === 'childList') {
-                //console.log('Child nodes changed!');
                 if (mutation.addedNodes.length > 0) {
                   console.log('Added nodes:', mutation.addedNodes);
                   for(i of mutation.addedNodes) {
                     addAttributeFunctions(i);
                   }
-                }
-                if (mutation.removedNodes.length > 0) {
-                  //console.log('Removed nodes:', mutation.removedNodes);
                 }
               }
             });
