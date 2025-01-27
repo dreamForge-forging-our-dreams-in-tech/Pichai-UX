@@ -102,7 +102,7 @@ function addActionButton(i,e) {
         button.innerHTML = e.getAttribute('actionButton');
         button.classList.add('actionButton', 'material-symbols-outlined');
 
-        e.appendChild(button);
+        i.appendChild(button);
     }
 }
 
