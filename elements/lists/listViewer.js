@@ -24,9 +24,25 @@ class ListViewer extends HTMLElement {
     connectedCallback() {
         enableSetListItems(this, addAttributeFunctions); //callback call ensures button creation
 
-        this.addEventListener('DOMNodeInserted', function () {
-            console.log('test')
-        });
+        const observer = new MutationObserver((mutationsList) => {
+            mutationsList.forEach((mutation) => {
+              if (mutation.type === 'childList') {
+                console.log('Child nodes changed!');
+                if (mutation.addedNodes.length > 0) {
+                  console.log('Added nodes:', mutation.addedNodes);
+                }
+                if (mutation.removedNodes.length > 0) {
+                  console.log('Removed nodes:', mutation.removedNodes);
+                }
+              }
+            });
+          });
+          
+          // Set up the observer with the desired options
+          observer.observe(this, {
+            childList: true, // Listen for changes to child elements
+            subtree: false   // Set to true if you want to observe child elements of child elements
+          });
 
         this.addEventListener('click', function (e) { // adds a click event to the list items and ensures that the right value is returned
             this.setAttribute('value', e.target.id);
