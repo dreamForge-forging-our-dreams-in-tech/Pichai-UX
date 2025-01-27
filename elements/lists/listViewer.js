@@ -31,7 +31,7 @@ class ListViewer extends HTMLElement {
                 if (mutation.type === 'childList') {
                     if (mutation.addedNodes.length > 0) {
                         for (i of mutation.addedNodes) {
-                            addAttributeFunctions(i);
+                            addAttributeFunctions(i, listViewer);
                         }
                     }
                 }
@@ -90,19 +90,19 @@ function addAttributeFunctions(e) {
                 i.id = i.innerHTML;
             }
 
-            addActionButton(i)
+            addActionButton(i, e)
         }
     }
 }
 
-function addActionButton(i) {
+function addActionButton(i,e) {
     if (i.tagName == 'HR' || i.getElementsByClassName('actionButton').length == 1) { } else { // allows users  to create custom action buttons elements other than a button
 
         let button = document.createElement('button');
         button.innerHTML = e.getAttribute('actionButton');
         button.classList.add('actionButton', 'material-symbols-outlined');
 
-        i.appendChild(button);
+        e.appendChild(button);
     }
 }
 
