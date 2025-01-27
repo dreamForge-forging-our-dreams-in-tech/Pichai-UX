@@ -31,7 +31,7 @@ class ListViewer extends HTMLElement {
                 if (mutation.type === 'childList') {
                     if (mutation.addedNodes.length > 0) {
                         for (i of mutation.addedNodes) {
-                            addAttributeFunctions(i, listViewer);
+                            //addAttributeFunctions(i, listViewer);
                         }
                     }
                 }
