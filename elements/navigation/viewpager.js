@@ -34,6 +34,7 @@ class ViewPager extends HTMLElement {
         }
 
         this.onwheel = function (e) {
+            console.log(this.scrollTop != 0)
             if ((this.scrollHeight > this.clientHeight) && (this.scrollTop != 0)) { } else {
                 e.preventDefault();
 
@@ -70,6 +71,7 @@ class ViewPager extends HTMLElement {
             this.children[oldValue].style.display = 'none';
 
             this.children[Number(this.getAttribute('pageIndex'))].style.removeProperty('display');
+            this.children[Number(this.getAttribute('pageIndex'))].scrollTo(0,1);
 
             let pageChange = new CustomEvent("pageChange", {
                 detail: {
