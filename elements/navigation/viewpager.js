@@ -34,17 +34,24 @@ class ViewPager extends HTMLElement {
         }
 
         this.onwheel = function (e) {
-            e.preventDefault();
+            let currentPage = this.children[Number(this.getAttribute('pageIndex'))];
+            console.log(currentPage)
 
-            wheelIndex++;
 
-            if (wheelIndex == sensitivity) {
-                wheelIndex = String(e.deltaY).length < 3 ? -8 : 0;
+            console.log(currentPage.scrollTop)
+            if ((currentPage.scrollHeight > currentPage.clientHeight)) { } else {
+                e.preventDefault();
 
-                if (e.deltaY > 0) {
-                    this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) + 1);
-                } else {
-                    this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) - 1);
+                wheelIndex++;
+
+                if (wheelIndex == sensitivity) {
+                    wheelIndex = String(e.deltaY).length < 3 ? -8 : 0;
+
+                    if (e.deltaY > 0) {
+                        this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) + 1);
+                    } else {
+                        this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) - 1);
+                    }
                 }
             }
         }
@@ -68,6 +75,7 @@ class ViewPager extends HTMLElement {
             this.children[oldValue].style.display = 'none';
 
             this.children[Number(this.getAttribute('pageIndex'))].style.removeProperty('display');
+            this.children[Number(this.getAttribute('pageIndex'))].scrollTo(0,10);
 
             let pageChange = new CustomEvent("pageChange", {
                 detail: {
