@@ -70,7 +70,6 @@ class ViewPager extends HTMLElement {
             this.children[oldValue].style.display = 'none';
 
             this.children[Number(this.getAttribute('pageIndex'))].style.removeProperty('display');
-            this.children[Number(this.getAttribute('pageIndex'))].scrollTop = 1;
 
             let pageChange = new CustomEvent("pageChange", {
                 detail: {
