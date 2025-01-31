@@ -34,6 +34,7 @@ class ViewPager extends HTMLElement {
         }
 
         this.onwheel = function (e) {
+            console.log(el.scrollTop != 0)
             if ((this.scrollHeight > this.clientHeight) && (el.scrollTop != 0)) { } else {
                 e.preventDefault();
 
