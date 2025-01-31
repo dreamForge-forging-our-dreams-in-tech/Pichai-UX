@@ -39,6 +39,7 @@ class ViewPager extends HTMLElement {
             console.log(this)
 
 
+            console.log(this.scrollTop)
             console.log(currentPage.scrollTop)
             if ((this.scrollHeight > this.clientHeight)) { } else {
                 e.preventDefault();
