@@ -34,17 +34,19 @@ class ViewPager extends HTMLElement {
         }
 
         this.onwheel = function (e) {
-            e.preventDefault();
-            
-            wheelIndex++;
+            if (this.scrollHeight > this.clientHeight) { } else {
+                e.preventDefault();
 
-            if (wheelIndex == sensitivity) {
-                wheelIndex = String(e.deltaY).length < 3 ? -8 : 0;
+                wheelIndex++;
 
-                if (e.deltaY > 0) {
-                    this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) + 1);
-                } else {
-                    this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) - 1);
+                if (wheelIndex == sensitivity) {
+                    wheelIndex = String(e.deltaY).length < 3 ? -8 : 0;
+
+                    if (e.deltaY > 0) {
+                        this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) + 1);
+                    } else {
+                        this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) - 1);
+                    }
                 }
             }
         }
