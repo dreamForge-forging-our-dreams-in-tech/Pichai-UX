@@ -38,8 +38,8 @@ class ViewPager extends HTMLElement {
             console.log(currentPage)
             console.log(this)
 
-            this.onscroll = function () {
-                console.log('scrolling')
+            window.onscroll = function (e) {
+                console.log(e.target, e.target.scrollTop)
             }
 
             console.log(this.scrollTop)
