@@ -10,7 +10,7 @@ class Footer extends HTMLElement {
     async connectedCallback() {
         this.innerHTML = `<footer>
         <x-icon class='WebsiteLogo'></x-icon>
-        <x-title title='Sketch'></x-title>
+        <x-title title='dreamForge'></x-title>
     <a href="https://bsky.app/profile/inkydreamer.bsky.social">
       <x-icon
         src='https://raw.githubusercontent.com/dreamForge-forging-our-dreams-in-tech/Pichai-UX/refs/heads/main/assets/shapes/pictures/twitter.png'></x-icon>
