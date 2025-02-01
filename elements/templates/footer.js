@@ -13,17 +13,17 @@ class Footer extends HTMLElement {
         <x-title title='Sketch'></x-title>
     <a href="https://bsky.app/profile/inkydreamer.bsky.social">
       <x-icon
-        src='https://raw.githubusercontent.com/lukeplays33/Pichai-UX/main/assets/shapes/pictures/tiwtter.png'></x-icon>
+        src='https://raw.githubusercontent.com/dreamForge-forging-our-dreams-in-tech/Pichai-UX/refs/heads/main/assets/shapes/pictures/twitter.png'></x-icon>
     </a>
 
     <a href="https://discord.gg/2tJvuH73Kq">
       <x-icon
-        src='https://raw.githubusercontent.com/lukeplays33/Pichai-UX/main/assets/shapes/pictures/discord.png'></x-icon>
+        src='https://raw.githubusercontent.com/dreamForge-forging-our-dreams-in-tech/Pichai-UX/refs/heads/main/assets/shapes/pictures/discord.png'></x-icon>
     </a>
 
     <a href="https://www.youtube.com/@sketch8168">
       <x-icon
-        src='https://raw.githubusercontent.com/lukeplays33/Pichai-UX/main/assets/shapes/pictures/youtube.png'></x-icon>
+        src='https://raw.githubusercontent.com/dreamForge-forging-our-dreams-in-tech/Pichai-UX/refs/heads/main/assets/shapes/pictures/youtube.png'></x-icon>
     </a>
     </footer>`;
     }
