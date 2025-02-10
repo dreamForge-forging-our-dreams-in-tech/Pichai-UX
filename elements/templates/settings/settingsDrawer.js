@@ -1,5 +1,6 @@
 import { registry } from '../../../utils/customeElementsDefine.js';
 import { pickFiles } from '../../../functions/filePicker.js';
+
 import { updateStyles } from '../../../init.js';
 
 function detectCustomization(e) {
