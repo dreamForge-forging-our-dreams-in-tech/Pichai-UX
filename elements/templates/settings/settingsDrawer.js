@@ -7,7 +7,7 @@ function detectCustomization(e) {
         pickFiles(function (file) {
             window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
 
-            //window.parent.location.reload();
+            updateStyles();
         });
     } else if (e.detail.value == 'Color Order') {
         window.localStorage.setItem(`${window.storageName}extractionPosition`, Number(window.prompt('Enter the position of the color extraction (0-10)', 0)));
