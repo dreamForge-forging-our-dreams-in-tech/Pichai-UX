@@ -15,42 +15,44 @@ function enableSetListItems(element, callback) { // allows user to set the conte
     }
 
     // Define the listItems property with getter and setter
-    Object.defineProperty(element, 'listItems', {
-        get() {
-            return listItems;
-        },
-        set(newValue) {
-            if (element.children.length == 0) {
-                element.firstTime = true;
-            }
-
-            if (!element.firstTime) {} else { // checks if it is set for the firsttime, if so ignore changes
-                element.innerHTML = '';
-                if (!newValue) {
-                    element.classList.add('Hidden');
-                } else {
-                    element.classList.remove('Hidden');
+    try {
+        Object.defineProperty(element, 'listItems', {
+            get() {
+                return listItems;
+            },
+            set(newValue) {
+                if (element.children.length == 0) {
+                    element.firstTime = true;
                 }
 
-                for (i of newValue) {
-                    let a = document.createElement(i == 'HR' ? 'hr' : createTag);
-                    a.innerHTML = i == 'HR' ? '' : i;
-                    a.id = i;
-                    a.setAttribute('index', newValue.indexOf(i));
+                if (!element.firstTime) { } else { // checks if it is set for the firsttime, if so ignore changes
+                    element.innerHTML = '';
+                    if (!newValue) {
+                        element.classList.add('Hidden');
+                    } else {
+                        element.classList.remove('Hidden');
+                    }
 
-                    element.appendChild(a);
+                    for (i of newValue) {
+                        let a = document.createElement(i == 'HR' ? 'hr' : createTag);
+                        a.innerHTML = i == 'HR' ? '' : i;
+                        a.id = i;
+                        a.setAttribute('index', newValue.indexOf(i));
+
+                        element.appendChild(a);
+                    }
+
+                    element.firstTime = true;
                 }
 
-                element.firstTime = true;
+                try {
+                    callback(element);
+                } catch (e) {
+                    console.error(e)
+                }
             }
-
-            try {
-                callback(element);
-            } catch (e) {
-                console.error(e)
-            }
-        }
-    });
+        });
+    } catch (e) { }
 
     // Set the initial value of listItems
     element.listItems = listItems;
