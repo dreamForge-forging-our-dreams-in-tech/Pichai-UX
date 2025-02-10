@@ -119,6 +119,7 @@ function setRTLMode (options) {
 
 function checkCustomizationChanges(options) {
     window.addEventListener('storage', async function (e) {
+        alert()
         updateStyles(e.key, e.newValue);
     });
 }
