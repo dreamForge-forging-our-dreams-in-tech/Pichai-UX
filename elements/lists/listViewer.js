@@ -31,8 +31,7 @@ class ListViewer extends HTMLElement {
               if (mutation.type === 'childList') {
                 if (mutation.addedNodes.length > 0) {
                     for(i of mutation.addedNodes) {
-                        console.log(listViewer.getAttribute('actionButton'));
-                        if ((i.tagName != 'LI' || i.getElementsByClassName('actionButton').length == 1)) { } else { // allows users  to create custom action buttons elements other than a button
+                        if (i.tagName != 'LI' || i.getElementsByClassName('actionButton').length == 1) { } else { // allows users  to create custom action buttons elements other than a button
                             let button = document.createElement('button');
                             button.innerHTML = listViewer.getAttribute('actionButton');
                             button.classList.add('actionButton', 'material-symbols-outlined');
