@@ -9,11 +9,6 @@ template-settings-drawer {
     min-width:250px;
     min-height:300px;
 
-    position: fixed;
-
-    top:58px;
-    right:8px;
-
     background-color:var(--secondairy);
 
     padding:8px;
