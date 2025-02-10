@@ -16,6 +16,8 @@ function enableSetListItems(element, callback) { // allows user to set the conte
 
     // Define the listItems property with getter and setter
     Object.defineProperty(element, 'listItems', {
+        configurable:true,
+        
         get() {
             return listItems;
         },
