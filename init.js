@@ -117,15 +117,6 @@ function setRTLMode (options) {
             }
 }
 
-function checkCustomizationChanges(options) {
-    window.addEventListener('storage', async function (e) {
-        alert()
-        updateStyles(e.key, e.newValue);
-    });
-}
-
-checkCustomizationChanges()
-
 async function updateStyles(key = 'all', value) { //update any set styles from storage
     let i;
 
@@ -183,4 +174,4 @@ function addCSSSheets(url,id, head) {
     head.prepend(link);
 }
 
-export { PichaiUX };
+export { PichaiUX, updateStyles};
