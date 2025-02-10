@@ -28,7 +28,7 @@ class TabBar extends HTMLElement {
             if (!e.getAttribute('for') == '') {
                 addForConnection(e, e.getAttribute('for'));
             } else {
-                removeForConnection(e, e.getAttribute('for'));
+                //removeForConnection(e, e.getAttribute('for'));
             }
         });
 
