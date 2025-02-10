@@ -37,6 +37,7 @@ class ListViewer extends HTMLElement {
                             button.classList.add('actionButton', 'material-symbols-outlined');
                             i.appendChild(button);
                         }
+                    }
                 }
               }
             });
