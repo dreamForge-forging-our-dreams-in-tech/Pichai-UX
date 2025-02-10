@@ -26,6 +26,7 @@ class QS extends HTMLElement {
                 dialog.remove();
                 return;
             }
+            alert()
             document.body.appendChild(dialog);
         }
     }
