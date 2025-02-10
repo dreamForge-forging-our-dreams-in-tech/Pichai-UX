@@ -123,6 +123,8 @@ function checkCustomizationChanges(options) {
     });
 }
 
+checkCustomizationChanges()
+
 async function updateStyles(key = 'all', value) { //update any set styles from storage
     let i;
 
