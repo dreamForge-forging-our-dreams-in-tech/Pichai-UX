@@ -180,4 +180,4 @@ function addCSSSheets(url,id, head) {
     head.prepend(link);
 }
 
-export { PichaiUX };
+export { PichaiUX, updateStyles };
