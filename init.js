@@ -20,7 +20,6 @@ class PichaiUX {
             themedFavIcon: true,
             extractionPosition: 0,
             transparency: 1.0,
-            aaa: 1,
             rtl:false,
             homeLink: window.location.href, // the link to where the user is send to when he presses the logo or title in the header.
             settingsDialog: document.createElement('template-settings-drawer'), // allows user to connect custom settings popup to QS
