@@ -1,13 +1,11 @@
-template-settings-drawer {
+#quickSettingsPanel{
+    min-width:250px;
+    min-height:300px;
+
     position: fixed;
 
     top:58px;
     right:8px;
-}
-
-#quickSettingsPanel{
-    min-width:250px;
-    min-height:300px;
 
     background-color:var(--secondairy);
 
