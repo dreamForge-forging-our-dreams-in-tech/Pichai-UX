@@ -133,8 +133,6 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         options.rtl = value == 'true';
 
         setRTLMode(options);
-    } else if (key == `${window.storageName}contrast`) {
-        options.contrast = value;
     } else if (key == 'all') {
 
         for (i in localStorage) {
