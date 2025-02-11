@@ -137,8 +137,8 @@ async function generate3ColorPallete(options) {
 
         let alpha = options.transparency;
         let position = Number(options.extractionPosition);
-        console.log(options)
-       // root.style.setProperty('--contrast', options.colorContrast);
+
+       root.style.setProperty('--contrast', options.colorContrast);
 
         root.style.setProperty('--primary', `rgba(${colors[position].join(',')}, ${alpha})`);
         root.style.setProperty('--secondairy', `rgba(${colors[position + 4].join(',')}, ${alpha})`);
