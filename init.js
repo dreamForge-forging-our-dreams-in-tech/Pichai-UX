@@ -120,7 +120,7 @@ function setRTLMode(options) {
 
 async function updateStyles(key = 'all', value) { //update any set styles from storage
     let i;
-
+    console.log(key)
     if (key == `${window.storageName}bgImageChange`) {
 
         window.document.body.style.backgroundImage = `url('${value}')`;
