@@ -20,7 +20,7 @@ class PichaiUX {
             themedFavIcon: true,
             extractionPosition: 0,
             transparency: 1.0,
-            colorContrast: 1,
+            contrast: 1,
             rtl:false,
             homeLink: window.location.href, // the link to where the user is send to when he presses the logo or title in the header.
             settingsDialog: document.createElement('template-settings-drawer'), // allows user to connect custom settings popup to QS
@@ -133,6 +133,8 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         options.rtl = value == 'true';
 
         setRTLMode(options);
+    } else if (key == `${window.storageName}contrast`) {
+        options.contrast = value;
     } else if (key == 'all') {
 
         for (i in localStorage) {
