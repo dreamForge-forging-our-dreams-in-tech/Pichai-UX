@@ -20,6 +20,7 @@ class PichaiUX {
             themedFavIcon: true,
             extractionPosition: 0,
             transparency: 1.0,
+            contrast: 1,
             rtl:false,
             homeLink: window.location.href, // the link to where the user is send to when he presses the logo or title in the header.
             settingsDialog: document.createElement('template-settings-drawer'), // allows user to connect custom settings popup to QS
@@ -115,12 +116,6 @@ function setRTLMode (options) {
             } else {
                 document.body.classList.remove('rtlLayout');
             }
-}
-
-function checkCustomizationChanges(options) {
-    window.addEventListener('storage', async function (e) {
-        updateStyles(e.key, e.newValue);
-    });
 }
 
 async function updateStyles(key = 'all', value) { //update any set styles from storage
