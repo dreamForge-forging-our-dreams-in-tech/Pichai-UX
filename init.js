@@ -20,8 +20,7 @@ class PichaiUX {
             themedFavIcon: true,
             extractionPosition: 0,
             transparency: 1.0,
-            rtl: false,
-            contrast: 1,
+            rtl:false,
             homeLink: window.location.href, // the link to where the user is send to when he presses the logo or title in the header.
             settingsDialog: document.createElement('template-settings-drawer'), // allows user to connect custom settings popup to QS
             loginDialog: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when clicking the log in button
@@ -92,7 +91,7 @@ class PichaiUX {
         updateStyles();
     }
 
-    async varExists(name) {
+    async varExists (name) {
         return await varExists(name);
     }
 
@@ -109,13 +108,19 @@ class PichaiUX {
     }
 }
 
-function setRTLMode(options) {
-    //create rtl layout
-    if (options.rtl) {
-        document.body.classList.add('rtlLayout');
-    } else {
-        document.body.classList.remove('rtlLayout');
-    }
+function setRTLMode (options) {
+            //create rtl layout
+            if(options.rtl) {
+                document.body.classList.add('rtlLayout');
+            } else {
+                document.body.classList.remove('rtlLayout');
+            }
+}
+
+function checkCustomizationChanges(options) {
+    window.addEventListener('storage', async function (e) {
+        updateStyles(e.key, e.newValue);
+    });
 }
 
 async function updateStyles(key = 'all', value) { //update any set styles from storage
@@ -133,9 +138,6 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         options.rtl = value == 'true';
 
         setRTLMode(options);
-    } else if (key == `${window.storageName}contrast`) {
-        options.contrast = value;
-
     } else if (key == 'all') {
 
         for (i in localStorage) {
@@ -167,7 +169,7 @@ async function createThemedFavIcon(options) {
     }
 }
 
-function addCSSSheets(url, id, head) {
+function addCSSSheets(url,id, head) {
     let link = document.createElement('link');
     link.id = id;
     link.rel = 'stylesheet';
@@ -178,4 +180,4 @@ function addCSSSheets(url, id, head) {
     head.prepend(link);
 }
 
-export { PichaiUX, updateStyles };
+export { PichaiUX };
