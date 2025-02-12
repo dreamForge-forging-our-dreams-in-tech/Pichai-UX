@@ -22,7 +22,6 @@
 :root{
     --borderRadius:10px;
     --font: sans-serif; /*variable that changes based on user selected font */
-    --contrast: 1; /*variable that changes based on user selected contrast */
 }
 
 body,
@@ -39,7 +38,6 @@ html {
 }
 
 * {
-    filter: contrast(var(--contrast));
     overscroll-behavior: none;
 
     font-family: var(--font);
