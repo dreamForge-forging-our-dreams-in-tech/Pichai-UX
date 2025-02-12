@@ -186,8 +186,8 @@ async function generate3ColorPallete(options) {
     root.style.setProperty('--noteContainerTextColor', `${getTextColor(signContainerTextColors[2])}`);
     root.style.setProperty('--checkContainerTextColor', `${getTextColor(signContainerTextColors[3])}`);
 
-
-    console.log(options.contrast)
+    let contrast = options.contrast;
+    console.log(contrast)
     root.style.setProperty('--contrast', Number(options.contrast));
 }
 
