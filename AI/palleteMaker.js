@@ -130,6 +130,8 @@ function generateContainerTextColor(colors) {
 }
 
 async function generate3ColorPallete(options) {
+    let i;
+
     let colors = await getPallete(options);
     colors = colors.concat(colors);
 
@@ -186,7 +188,9 @@ async function generate3ColorPallete(options) {
     root.style.setProperty('--noteContainerTextColor', `${getTextColor(signContainerTextColors[2])}`);
     root.style.setProperty('--checkContainerTextColor', `${getTextColor(signContainerTextColors[3])}`);
 
-    document.querySelectorAll('*').style.filter = `contrast(${options.contrast})`;
+    for(i of document.getElementsByTagName('*')) {
+    i.style.filter = `contrast(${options.contrast})`;
+    }
 }
 
 export { generate3ColorPallete };
