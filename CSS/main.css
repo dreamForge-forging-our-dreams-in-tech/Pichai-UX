@@ -39,7 +39,7 @@ html {
 }
 
 * {
-
+    
     overscroll-behavior: none;
 
     font-family: var(--font);
