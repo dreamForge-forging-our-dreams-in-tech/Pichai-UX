@@ -188,7 +188,7 @@ async function generate3ColorPallete(options) {
 
     let contrast = options.contrast;
     console.log(contrast)
-    root.style.setProperty('--contrast', Number(options.contrast));
+    root.style.setProperty('--contrast', contrast);
 }
 
 export { generate3ColorPallete };
