@@ -138,6 +138,7 @@ async function generate3ColorPallete(options) {
         let alpha = options.transparency;
         let position = Number(options.extractionPosition);
 
+        console.log(options)
         console.log(options.contrast)
        root.style.setProperty('--contrast', options.contrastStyle);
 
