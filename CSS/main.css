@@ -23,11 +23,13 @@
     --borderRadius:10px;
     --font: sans-serif; /*variable that changes based on user selected font */
     --contrast: 1; /*variable that changes based on user selected contrast */
+    --wallpaperBlur: 0px;
 }
 
 body,
 html {
     filter: contrast(var(--contrast));
+    backdrop-filter: blur(var(--wallpaperBlur));
     
     width: 100%;
     height: 100%;

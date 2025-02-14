@@ -18,11 +18,15 @@ function detectCustomization(e) {
     } else if (e.detail.value == 'Transparency') {
         window.localStorage.setItem(`${window.storageName}transperncy`, Number(window.prompt('Enter the transparency of the elements to make the image more visible (0-1)', 1)));
 
-    }  else if (e.detail.value == 'Contrast') {
+    } else if (e.detail.value == 'Contrast') {
         window.localStorage.setItem(`${window.storageName}contrast`, Number(window.prompt('Enter the contrast of the elements.', 1)));
 
-    }   else if (e.detail.value == 'Filters') {
-        panel.listItems = ['Contrast', 'Transparency']
+    } else if (e.detail.value == 'Wallpaper Blur') {
+        window.localStorage.setItem(`${window.storageName}blur`, Number(window.prompt('Enter the blur for the wallpaper', 1)));
+
+
+    } else if (e.detail.value == 'Filters') {
+        panel.listItems = ['Contrast', 'Transparency', 'Wallpaper Blur']
 
     }
 
