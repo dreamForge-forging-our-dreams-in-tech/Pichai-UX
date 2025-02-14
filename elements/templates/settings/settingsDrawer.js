@@ -22,7 +22,7 @@ function detectCustomization(e) {
         window.localStorage.setItem(`${window.storageName}contrast`, Number(window.prompt('Enter the contrast of the elements.', 1)));
 
     }   else if (e.detail.value == 'Filters') {
-        panel.listItems = ['Contrast']
+        panel.listItems = ['Contrast', 'Transparency']
 
     }
 
@@ -59,7 +59,7 @@ class SettingsDrawer extends HTMLElement {
         panel.addEventListener('itemSelected', async function (e) {
             if (e.detail.value == 'Customization') {
                 panel.firstTime = true;
-                panel.listItems = ['Wallpaper', 'Color Order', 'Transparency', 'Filters'];
+                panel.listItems = ['Wallpaper', 'Color Order', 'Filters'];
             }
 
             detectCustomization(e);
