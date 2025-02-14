@@ -3,6 +3,8 @@ import { pickFiles } from '../../../functions/filePicker.js';
 
 import { updateStyles } from '../../../init.js';
 
+let panel;
+
 function detectCustomization(e) {
     if (e.detail.value == 'Wallpaper') {
         pickFiles(function (file) {
@@ -18,6 +20,9 @@ function detectCustomization(e) {
 
     }  else if (e.detail.value == 'Contrast') {
         window.localStorage.setItem(`${window.storageName}contrast`, Number(window.prompt('Enter the contrast of the elements.', 1)));
+
+    }   else if (e.detail.value == 'Filters') {
+        panel.listItems = ['Contrast']
 
     }
 
@@ -49,12 +54,12 @@ class SettingsDrawer extends HTMLElement {
             alert(e.detail.newIndex)
         });
 
-        let panel = document.getElementById('QSP');
+        panel = document.getElementById('QSP');
 
         panel.addEventListener('itemSelected', async function (e) {
             if (e.detail.value == 'Customization') {
                 panel.firstTime = true;
-                panel.listItems = ['Wallpaper', 'Color Order', 'Transparency', 'Contrast'];
+                panel.listItems = ['Wallpaper', 'Color Order', 'Transparency', 'Filters'];
             }
 
             detectCustomization(e);
