@@ -23,6 +23,7 @@ class PichaiUX {
             rtl:false,
             contrast:1,
             wallpaperBlur: 0,
+            inversion:0,
             homeLink: window.location.href, // the link to where the user is send to when he presses the logo or title in the header.
             settingsDialog: document.createElement('template-settings-drawer'), // allows user to connect custom settings popup to QS
             loginDialog: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when clicking the log in button
@@ -145,6 +146,9 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
 
     }  else if (key == `${window.storageName}blur`) {
         options.wallpaperBlur = value;
+
+    }  else if (key == `${window.storageName}inversion`) {
+        options.inversion = value;
 
     } else if (key == 'all') {
 

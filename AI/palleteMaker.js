@@ -140,6 +140,7 @@ async function generate3ColorPallete(options) {
 
        root.style.setProperty('--contrast', options.contrast);
        root.style.setProperty('--wallpaperBlur', options.wallpaperBlur + 'px');
+       root.style.setProperty('--inversion', options.inversion);
 
         root.style.setProperty('--primary', `rgba(${colors[position].join(',')}, ${alpha})`);
         root.style.setProperty('--secondairy', `rgba(${colors[position + 4].join(',')}, ${alpha})`);

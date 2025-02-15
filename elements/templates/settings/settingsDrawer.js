@@ -25,8 +25,11 @@ function detectCustomization(e) {
         window.localStorage.setItem(`${window.storageName}blur`, Number(window.prompt('Enter the blur for the wallpaper', 1)));
 
 
+    }  else if (e.detail.value == 'Inversion') {
+        window.localStorage.setItem(`${window.storageName}inversion`, Number(window.prompt('Enter the blur for the wallpaper', 1)));
+        
     } else if (e.detail.value == 'Filters') {
-        panel.listItems = ['Contrast', 'Transparency', 'Wallpaper Blur']
+        panel.listItems = ['Contrast', 'Transparency', 'Wallpaper Blur', 'Inversion']
 
     }
 
