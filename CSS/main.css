@@ -29,12 +29,11 @@
 
 body {
     filter: contrast(var(--contrast)) invert(var(--inversion));
+    backdrop-filter: blur(var(--wallpaperBlur));
 }
 
 body,
 html {
-    backdrop-filter: blur(var(--wallpaperBlur));
-    
     width: 100%;
     height: 100%;
 
