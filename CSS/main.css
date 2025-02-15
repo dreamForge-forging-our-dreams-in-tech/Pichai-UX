@@ -27,9 +27,12 @@
     --inversion: 0;
 }
 
+body {
+    filter: contrast(var(--contrast)) invert(var(--inversion));
+}
+
 body,
 html {
-    filter: contrast(var(--contrast)) invert(var(--inversion));
     backdrop-filter: blur(var(--wallpaperBlur));
     
     width: 100%;
