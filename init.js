@@ -129,7 +129,7 @@ function checkCustomizationChanges(options) {
 async function updateStyles(key = 'all', value) { //update any set styles from storage
     let i;
 
-    if((window.localStorage.getItem(key) == '' || window.localStorage.getItem(key) == null) && !(key == 'all')) {
+    if((window.localStorage.getItem(key) == '' || window.localStorage.getItem(key) == null) && (!key == 'all')) {
         alert(key)
     } else if (key == `${window.storageName}bgImageChange`) {
 
