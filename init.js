@@ -129,6 +129,10 @@ function checkCustomizationChanges(options) {
 async function updateStyles(key = 'all', value) { //update any set styles from storage
     let i;
 
+    if(window.localStorage.getItem(key) == '' || window.localStorage.getItem(key) == null) {
+        alert()
+    }
+
     if (key == `${window.storageName}bgImageChange`) {
 
         window.document.body.style.backgroundImage = `url('${value}')`;
