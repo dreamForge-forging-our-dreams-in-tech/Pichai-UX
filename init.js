@@ -20,10 +20,10 @@ class PichaiUX {
             themedFavIcon: true,
             extractionPosition: 0,
             transparency: 1.0,
-            rtl:false,
-            contrast:1,
+            rtl: false,
+            contrast: 1,
             wallpaperBlur: 0,
-            inversion:0,
+            inversion: 0,
             homeLink: window.location.href, // the link to where the user is send to when he presses the logo or title in the header.
             settingsDialog: document.createElement('template-settings-drawer'), // allows user to connect custom settings popup to QS
             loginDialog: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when clicking the log in button
@@ -94,7 +94,7 @@ class PichaiUX {
         updateStyles();
     }
 
-    async varExists (name) {
+    async varExists(name) {
         return await varExists(name);
     }
 
@@ -111,13 +111,13 @@ class PichaiUX {
     }
 }
 
-function setRTLMode (options) {
-            //create rtl layout
-            if(options.rtl) {
-                document.body.classList.add('rtlLayout');
-            } else {
-                document.body.classList.remove('rtlLayout');
-            }
+function setRTLMode(options) {
+    //create rtl layout
+    if (options.rtl) {
+        document.body.classList.add('rtlLayout');
+    } else {
+        document.body.classList.remove('rtlLayout');
+    }
 }
 
 function checkCustomizationChanges(options) {
@@ -129,9 +129,7 @@ function checkCustomizationChanges(options) {
 async function updateStyles(key = 'all', value) { //update any set styles from storage
     let i;
 
-    if((window.localStorage.getItem(key) == '' || window.localStorage.getItem(key) == null) || (!key == 'all')) {
-        alert(key)
-    } else if (key == `${window.storageName}bgImageChange`) {
+    if (key == `${window.storageName}bgImageChange`) {
 
         window.document.body.style.backgroundImage = `url('${value}')`;
         options.source = value;
@@ -146,17 +144,21 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
     } else if (key == `${window.storageName}contrast`) {
         options.contrast = value;
 
-    }  else if (key == `${window.storageName}blur`) {
+    } else if (key == `${window.storageName}blur`) {
         options.wallpaperBlur = value;
 
-    }  else if (key == `${window.storageName}inversion`) {
+    } else if (key == `${window.storageName}inversion`) {
         options.inversion = value;
 
     } else if (key == 'all') {
 
         for (i in localStorage) {
             if (String(i).includes(window.storageName)) {
-                updateStyles(i, window.localStorage.getItem(i));
+                if ((window.localStorage.getItem(i) == '' || window.localStorage.getItem(i) == null)) {
+                    alert(key)
+                } else {
+                    updateStyles(i, window.localStorage.getItem(i));
+                }
             }
         }
     }
@@ -183,7 +185,7 @@ async function createThemedFavIcon(options) {
     }
 }
 
-function addCSSSheets(url,id, head) {
+function addCSSSheets(url, id, head) {
     let link = document.createElement('link');
     link.id = id;
     link.rel = 'stylesheet';
