@@ -130,7 +130,7 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
     let i;
 
     if(window.localStorage.getItem(key) == '' || window.localStorage.getItem(key) == null) {
-        alert()
+        return;
     }
 
     if (key == `${window.storageName}bgImageChange`) {
