@@ -6,12 +6,15 @@ import { updateStyles } from '../../../init.js';
 let panel;
 
 function detectCustomization(e) {
-    if (e.detail.value == 'Wallpaper') {
-        pickFiles(function (file) {
-            window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
+    if (e.detail.value == 'Filters') {
+        panel.listItems = ['Contrast', 'Transparency', 'Inversion'];
 
-            updateStyles();
-        });
+    }  else if (e.detail.value == 'Colors') {
+        panel.listItems = ['Color Order'];
+
+    } else if (e.detail.value == 'Wallpaper') {
+        panel.listItems = ['Change Wallpaper', 'Wallpaper Blur', 'Wallpaper Brightness'];
+
     } else if (e.detail.value == 'Color Order') {
         window.localStorage.setItem(`${window.storageName}extractionPosition`, Number(window.prompt('Enter the position of the color extraction (0-10)', 0)));
 
@@ -25,12 +28,19 @@ function detectCustomization(e) {
         window.localStorage.setItem(`${window.storageName}blur`, Number(window.prompt('Enter the blur for the wallpaper', 1)));
 
 
+    }  else if (e.detail.value == 'Wallpaper Brightness') {
+        window.localStorage.setItem(`${window.storageName}brightness`, Number(window.prompt('Enter the brightness for the wallpaper. \n Note when using inversion this the behaviour of this property changes too.', 1)));
+
     }  else if (e.detail.value == 'Inversion') {
         window.localStorage.setItem(`${window.storageName}inversion`, Number(window.prompt('Enter the blur for the wallpaper', 1)));
         
-    } else if (e.detail.value == 'Filters') {
-        panel.listItems = ['Contrast', 'Transparency', 'Wallpaper Blur', 'Inversion']
+    } else if (e.detail.value == 'Change Wallpaper') {
+        pickFiles(function (file) {
+            window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
 
+            updateStyles();
+        });
+        
     }
 
     updateStyles();
@@ -66,7 +76,7 @@ class SettingsDrawer extends HTMLElement {
         panel.addEventListener('itemSelected', async function (e) {
             if (e.detail.value == 'Customization') {
                 panel.firstTime = true;
-                panel.listItems = ['Wallpaper', 'Color Order', 'Filters'];
+                panel.listItems = ['Wallpaper', 'Colors', 'Filters'];
             }
 
             detectCustomization(e);
