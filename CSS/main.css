@@ -25,11 +25,12 @@
     --contrast: 1; /*variable that changes based on user selected contrast */
     --wallpaperBlur: 0px;
     --inversion: 0;
+    --wallpaperBrightness:1;
 }
 
 body {
     filter: contrast(var(--contrast)) invert(var(--inversion));
-    backdrop-filter: blur(var(--wallpaperBlur));
+    backdrop-filter: blur(var(--wallpaperBlur)) brightness(var(--wallpaperBrightness));
 }
 
 body,
