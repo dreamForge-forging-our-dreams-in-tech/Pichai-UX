@@ -26,11 +26,12 @@
     --wallpaperBlur: 0px;
     --inversion: 0;
     --wallpaperBrightness:1;
+    --hueRotation: 0deg;
 }
 
 body {
-    filter: contrast(var(--contrast)) invert(var(--inversion));
-    backdrop-filter: blur(var(--wallpaperBlur)) brightness(var(--wallpaperBrightness)) invert(var(--inversion));
+    filter: contrast(var(--contrast)) invert(var(--inversion)) hue-rotation(var(--hueRotation));
+    backdrop-filter: blur(var(--wallpaperBlur)) brightness(var(--wallpaperBrightness)) invert(var(--inversion)) hue-rotation(var(--hueRotation));
 }
 
 body,
