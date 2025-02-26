@@ -30,8 +30,8 @@
 }
 
 body {
-    filter: contrast(var(--contrast)) invert(var(--inversion)) hue-rotation(var(--hueRotation));
-    backdrop-filter: blur(var(--wallpaperBlur)) brightness(var(--wallpaperBrightness)) hue-rotation(var(--hueRotation));
+    filter: contrast(var(--contrast)) invert(var(--inversion)) hue-rotata(var(--hueRotation));
+    backdrop-filter: blur(var(--wallpaperBlur)) brightness(var(--wallpaperBrightness)) hue-rotata(var(--hueRotation));
 }
 
 body,
