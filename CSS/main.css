@@ -30,7 +30,7 @@
 
 body {
     filter: contrast(var(--contrast)) invert(var(--inversion));
-    backdrop-filter: blur(var(--wallpaperBlur)) brightness(var(--wallpaperBrightness));
+    backdrop-filter: blur(var(--wallpaperBlur)) brightness(var(--wallpaperBrightness)) invert(var(--inversion));
 }
 
 body,
