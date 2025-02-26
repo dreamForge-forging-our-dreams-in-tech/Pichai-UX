@@ -25,7 +25,7 @@
     --contrast: 1; /*variable that changes based on user selected contrast */
     --wallpaperBlur: 0px;
     --inversion: 0;
-    --wallpaperBrightness:0;
+    --wallpaperBrightness:1;
 }
 
 body {
