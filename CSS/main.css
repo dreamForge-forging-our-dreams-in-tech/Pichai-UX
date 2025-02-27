@@ -196,3 +196,19 @@ a {
 *:disabled {
     opacity:0.7;
 }
+
+/* Apply scrolling animation to the text */ 
+.scrolling-text { 
+    animation: scrollText 10s linear infinite; /* Adjust duration and animation type as needed */ 
+    white-space: nowrap; /* Prevent text from wrapping */ 
+  } 
+   
+  /* Define the scrolling animation */ 
+  @keyframes scrollText { 
+    0% { 
+      transform: translateX(100%); /* Start offscreen to the right */ 
+    } 
+    100% { 
+      transform: translateX(-100%); /* Scroll completely offscreen to the left */ 
+    } 
+  } 

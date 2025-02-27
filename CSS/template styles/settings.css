@@ -20,6 +20,11 @@
     gap:8px;
 
     width:calc(100% - 16px);
+
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    overflow: hidden; /* Hide overflowing content */ 
 }
 
 #quickSettingsPanel list-viewer li {
@@ -27,4 +32,7 @@
 
     align-items: center;
     justify-content: center;
+
+    animation: scrollText 10s linear infinite; /* Adjust duration and animation type as needed */ 
+    white-space: nowrap; /* Prevent text from wrapping */ 
 }
