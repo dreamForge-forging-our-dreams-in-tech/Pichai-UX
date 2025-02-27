@@ -28,9 +28,16 @@
     --wallpaperBrightness:1;
     --hueRotation: 0deg;
     --wallpaperInversion: 0;
+    --wallpaperSize: cover;
+    --wallpaperPosition: center;
+    --wallpaperRepeat: no-repeat;
 }
 
 body {
+    background-size: var(--wallpaperSize);
+    background-position: var(--wallpaperPosition);
+    background-repeat: var(--wallpaperRepeat);
+    
     filter: contrast(var(--contrast)) invert(var(--inversion)) hue-rotate(var(--hueRotation));
     backdrop-filter: blur(var(--wallpaperBlur)) brightness(var(--wallpaperBrightness)) invert(var(--wallpaperInversion)) hue-rotate(calc( -1 * var(--hueRotation)));
 }
