@@ -23,7 +23,7 @@ function detectCustomization(e) {
         panel.listItems = ['Color Order', 'Hue-Rotation'];
 
     } else if (e.detail.value == 'Wallpaper') {
-        panel.listItems = ['Change Wallpaper', 'Wallpaper Blur', 'Wallpaper Brightness', 'Wallpaper Inversion', 'wallpaper Size', 'wallpaper Position', 'wallpaper Repeat'];
+        panel.listItems = ['Change Wallpaper', 'Wallpaper Blur', 'Wallpaper Brightness', 'Wallpaper Inversion', 'Wallpaper Size', 'Wallpaper Position', 'Wallpaper Repeat'];
 
     } else if (e.detail.value == 'Color Order') {
         window.localStorage.setItem(`${window.storageName}extractionPosition`, Number(window.prompt('Enter the position of the color extraction (0-10)', 0)));
@@ -58,13 +58,13 @@ function detectCustomization(e) {
             updateStyles();
         });
 
-    } else if (e.detail.value == 'wallpaper Size') {
+    } else if (e.detail.value == 'Wallpaper Size') {
         window.localStorage.setItem(`${window.storageName}bgSize`, window.prompt('Enter the size of the wallpaper. \nPossible values are: \ncover, contain, auto or custom percentage ending with %.', 'cover'));
         updateStyles();
-    } else if (e.detail.value == 'wallpaper Position') {
+    } else if (e.detail.value == 'Wallpaper Position') {
         window.localStorage.setItem(`${window.storageName}bgPosition`, window.prompt('Enter the position of the wallpaper. \nPossible values are: \nbottom, top, left, right and center.', 'center'));
         updateStyles();
-    } else if (e.detail.value == 'wallpaper Repeat') {
+    } else if (e.detail.value == 'Wallpaper Repeat') {
         window.localStorage.setItem(`${window.storageName}bgRepeat`, window.prompt('Enter the repeat of the wallpaper. \nPossible values are: \nno-repeat, repeat-x, repeat-y, repeat, round and space.', 'no-repeat'));
     }
 
