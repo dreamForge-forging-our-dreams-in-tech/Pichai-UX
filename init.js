@@ -166,7 +166,7 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         options.hueRotation = value;
 
     }  else if (key == `${window.storageName}bgSize`) {
-        options.wallpaerSize = value;
+        options.wallpaperSize = value;
 
     } else if (key == `${window.storageName}bgPosition`) {
         options.wallpaperPosition = value;
