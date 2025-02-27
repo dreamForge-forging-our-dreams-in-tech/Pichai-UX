@@ -39,7 +39,7 @@ function detectCustomization(e) {
     }  else if (e.detail.value == 'Inversion') {
         let value = Number(window.prompt('Enter the color inversion for the website (0 - 1)', 1))
         window.localStorage.setItem(`${window.storageName}inversion`, value);
-        window.localStorage.setItem(`${window.storageName}wInversion`, value); // sets the wallpaper inversion too since this is a global filter, wInversion only exists for dark mode
+        window.localStorage.setItem(`${window.storageName}wInversion`, 0); // sets the wallpaper inversion too since this is a global filter, wInversion only exists for dark mode
         
     } else if (e.detail.value == 'Change Wallpaper') {
         pickFiles(function (file) {
