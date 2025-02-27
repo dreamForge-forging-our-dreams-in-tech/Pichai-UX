@@ -6,13 +6,13 @@ import { updateStyles } from '../../../init.js';
 let panel;
 function detectStorage(e) {
     if (e.detail.value == 'Clear Storage') {
-        if (confirm('Are you sure you want to clear all storaged items and restart all over? \nAll your local settings will be cleared!')) {
+        if (confirm('Are you sure you want to clear all stored items and restart all over? \nAll your local settings will be cleared!')) {
             window.localStorage.clear();
             window.location.reload();
         }
     } else if (e.detail.value == 'Storage Key') {
         let key = window.prompt('Enter the storage key you want to use for storing settings. \nA storage key will only apply to this site(' + window.location.href + ') and is used to let users have more control over how they can customize each site. \nIf you want it to follow the global storage key you can leave the text box empty.', '');
-        
+
     }
 }
 
