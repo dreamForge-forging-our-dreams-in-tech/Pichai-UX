@@ -30,6 +30,10 @@
     align-items: center;
     justify-content: center;
 
+    overflow: hidden; /* Hide overflowing content */ 
+}
+
+#quickSettingsPanel list-viewer li * {
     /* animation properties */
     -moz-transform: translateX(100%);
     -webkit-transform: translateX(100%);
