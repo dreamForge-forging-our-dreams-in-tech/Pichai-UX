@@ -4,6 +4,14 @@ import { pickFiles } from '../../../functions/filePicker.js';
 import { updateStyles } from '../../../init.js';
 
 let panel;
+function detectStorage(e) {
+    if(e.detail.value == 'Clear Storage') {
+        if(confirm('Are you sure you want to clear all storaged items and restart all over? \nAll your local settings will be cleared!')) {
+            window.localStorage.clear();
+            window.location.reload();
+        }
+    }
+}
 
 function detectCustomization(e) {
     if (e.detail.value == 'Filters') {
@@ -91,6 +99,7 @@ class SettingsDrawer extends HTMLElement {
             }
 
             detectCustomization(e);
+            detectStorage(e);
         });
     }
 }
