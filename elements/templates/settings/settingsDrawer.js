@@ -13,7 +13,7 @@ function detectCustomization(e) {
         panel.listItems = ['Color Order', 'Hue-Rotation'];
 
     } else if (e.detail.value == 'Wallpaper') {
-        panel.listItems = ['Change Wallpaper', 'Wallpaper Blur', 'Wallpaper Brightness'];
+        panel.listItems = ['Change Wallpaper', 'Wallpaper Blur', 'Wallpaper Brightness', 'Wallpaper Inversion'];
 
     } else if (e.detail.value == 'Color Order') {
         window.localStorage.setItem(`${window.storageName}extractionPosition`, Number(window.prompt('Enter the position of the color extraction (0-10)', 0)));

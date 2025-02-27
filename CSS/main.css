@@ -31,7 +31,7 @@
 
 body {
     filter: contrast(var(--contrast)) invert(var(--inversion)) hue-rotate(var(--hueRotation));
-    backdrop-filter: blur(var(--wallpaperBlur)) brightness(var(--wallpaperBrightness)) hue-rotate(var(--hueRotation));
+    backdrop-filter: blur(var(--wallpaperBlur)) brightness(var(--wallpaperBrightness)) hue-rotate(calc( -1 * var(--hueRotation)));
 }
 
 body,
