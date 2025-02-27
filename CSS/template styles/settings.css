@@ -20,8 +20,6 @@
     gap:8px;
 
     width:calc(100% - 16px);
-
-    overflow: hidden; /* Hide overflowing content */ 
 }
 
 #quickSettingsPanel list-viewer li {
@@ -29,17 +27,4 @@
 
     align-items: center;
     justify-content: center;
-
-    overflow: hidden; /* Hide overflowing content */ 
-}
-
-#quickSettingsPanel list-viewer li * {
-    /* animation properties */
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-    
-    -moz-animation: my-animation 15s linear infinite;
-    -webkit-animation: my-animation 15s linear infinite;
-    animation: my-animation 15s linear infinite;
 }

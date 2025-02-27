@@ -33,8 +33,11 @@ function detectCustomization(e) {
     }  else if (e.detail.value == 'Hue-Rotation') {
         window.localStorage.setItem(`${window.storageName}rotation`, Number(window.prompt('Enter the hue-rotation \nHue-Rotation allows you so set custom colors for your elements, colors wich are not taken from the wallpaper.', 1)));
 
+    }  else if (e.detail.value == 'Wallpaper Inversion') {
+        window.localStorage.setItem(`${window.storageName}wInversion`, Number(window.prompt('Enter the color inversion for the wallpaper (0-1)', 1)));
+        
     }  else if (e.detail.value == 'Inversion') {
-        window.localStorage.setItem(`${window.storageName}inversion`, Number(window.prompt('Enter the blur for the wallpaper', 1)));
+        window.localStorage.setItem(`${window.storageName}inversion`, Number(window.prompt('Enter the color inversion for the website (0 - 1)', 1)));
         
     } else if (e.detail.value == 'Change Wallpaper') {
         pickFiles(function (file) {
@@ -59,6 +62,7 @@ class SettingsDrawer extends HTMLElement {
         this.innerHTML = `<section class="card" id='quickSettingsPanel'>
         <list-viewer sortable='true' id='QSP'>
         <li id='Customization' >Customization</li>
+        <li id='Storage' >Storage</li>
         </list-viewer>
         </section>`;
 
@@ -79,6 +83,9 @@ class SettingsDrawer extends HTMLElement {
             if (e.detail.value == 'Customization') {
                 panel.firstTime = true;
                 panel.listItems = ['Wallpaper', 'Colors', 'Filters'];
+            } else if(e.detail.value == 'Storage') {
+                panel.firstTime = true;
+                panel.listItems = ['Clear Storage', 'Storage Key'];
             }
 
             detectCustomization(e);
