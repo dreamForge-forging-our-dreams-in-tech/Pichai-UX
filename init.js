@@ -27,7 +27,7 @@ class PichaiUX {
             wallpaperInversion:0,
             hueRotation:0,
             inversion: 0,
-            wallpaerSize: 'cover',
+            wallpaperSize: 'cover',
             wallpaperPosition: 'center',
             wallpaperRepeat: 'no-repeat',
             homeLink: window.location.href, // the link to where the user is send to when he presses the logo or title in the header.
