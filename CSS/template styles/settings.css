@@ -21,9 +21,6 @@
 
     width:calc(100% - 16px);
 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
     overflow: hidden; /* Hide overflowing content */ 
 }
 
@@ -33,6 +30,12 @@
     align-items: center;
     justify-content: center;
 
-    animation: scrollText 10s linear infinite; /* Adjust duration and animation type as needed */ 
-    white-space: nowrap; /* Prevent text from wrapping */ 
+    /* animation properties */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    
+    -moz-animation: my-animation 15s linear infinite;
+    -webkit-animation: my-animation 15s linear infinite;
+    animation: my-animation 15s linear infinite;
 }

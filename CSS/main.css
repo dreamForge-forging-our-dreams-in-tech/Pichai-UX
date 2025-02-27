@@ -198,17 +198,38 @@ a {
 }
 
 /* Apply scrolling animation to the text */ 
-.scrolling-text { 
-    animation: scrollText 10s linear infinite; /* Adjust duration and animation type as needed */ 
-    white-space: nowrap; /* Prevent text from wrapping */ 
-  } 
+.scrolling-text {
+    /* animation properties */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    
+    -moz-animation: my-animation 15s linear infinite;
+    -webkit-animation: my-animation 15s linear infinite;
+    animation: my-animation 15s linear infinite;
+}
    
-  /* Define the scrolling animation */ 
-  @keyframes scrollText { 
-    0% { 
-      transform: translateX(100%); /* Start offscreen to the right */ 
-    } 
-    100% { 
-      transform: translateX(-100%); /* Scroll completely offscreen to the left */ 
-    } 
-  } 
+/* for Firefox */
+@-moz-keyframes my-animation {
+    from { -moz-transform: translateX(100%); }
+    to { -moz-transform: translateX(-100%); }
+  }
+  
+  /* for Chrome */
+  @-webkit-keyframes my-animation {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(-100%); }
+  }
+  
+  @keyframes my-animation {
+    from {
+      -moz-transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+    to {
+      -moz-transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+}
