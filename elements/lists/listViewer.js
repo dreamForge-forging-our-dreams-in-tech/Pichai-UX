@@ -72,6 +72,8 @@ class ListViewer extends HTMLElement {
 function addAttributeFunctions(e) {
     let i, sortable;
 
+    sortable = Sortable.create(e);
+
     if (e.getAttribute('sortable') == '' || e.getAttribute('sortable') == 'false' || !e.hasAttribute('sortable')) {
         try {
             sortable.destroy();
