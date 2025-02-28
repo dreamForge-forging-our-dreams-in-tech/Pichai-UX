@@ -49,6 +49,7 @@ class PichaiUX {
         ///checkCustomizationChanges(this.options); //starts listening to any adjustments to customization from the user
         let siteName = window.location.pathname.split('/')[1];
         window.storageName = window.localStorage.getItem(`Pichai-UX ${siteName}storageKey`) || this.options.storageName;
+        window.storageName = window.storageName + ' ';
 
         let comp = window.getComputedStyle(document.body);
         let image = String(comp['backgroundImage']);
