@@ -30,6 +30,7 @@ class PichaiUX {
             wallpaperSize: 'cover',
             wallpaperPosition: 'center',
             wallpaperRepeat: 'no-repeat',
+            storageName: 'Pichai-UX ',
             homeLink: window.location.href, // the link to where the user is send to when he presses the logo or title in the header.
             settingsDialog: document.createElement('template-settings-drawer'), // allows user to connect custom settings popup to QS
             loginDialog: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when clicking the log in button
@@ -46,6 +47,8 @@ class PichaiUX {
 
     async initialize() {
         ///checkCustomizationChanges(this.options); //starts listening to any adjustments to customization from the user
+        let siteName = window.location.pathname.split('/')[1];
+        window.storageName = key ? key + ' ' : 'Pichai-UX ';
 
         let comp = window.getComputedStyle(document.body);
         let image = String(comp['backgroundImage']);
@@ -56,6 +59,7 @@ class PichaiUX {
         }
 
         this.options.source = image || '#008dcd';
+        window.storageName = window.localStorage.getItem(`Pichai-UX ${siteName}storageKey`) || this.options.storageName;
 
         //inject required css
         let cssId = 'PichaiUXCss';
