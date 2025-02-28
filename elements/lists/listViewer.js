@@ -76,7 +76,7 @@ function addAttributeFunctions(e) {
         try {
             sortable.destroy();
         } catch(e) {
-            
+            console.log(e)
         }
     } else {
         sortable = new Sortable(e, {
