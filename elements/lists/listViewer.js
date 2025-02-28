@@ -65,13 +65,20 @@ class ListViewer extends HTMLElement {
 
     attributeChangedCallback(name, oldValue, newValue) {
         doAttributeCheck('string', 'value', this.getAttribute('value'));
+        addAttributeFunctions(this);
     }
 }
 
 function addAttributeFunctions(e) {
     let i, sortable;
 
-    if (e.getAttribute('sortable') == '' || !e.hasAttribute('sortable')) { } else {
+    if (e.getAttribute('sortable') == '' || e.getAttribute('sortable') == 'false' || !e.hasAttribute('sortable')) {
+        try {
+            sortable.destroy();
+        } catch(e) {
+            
+        }
+    } else {
         sortable = new Sortable(e, {
             delay: 200, // time in milliseconds
             delayOnTouchOnly: true,
