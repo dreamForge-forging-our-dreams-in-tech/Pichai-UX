@@ -82,6 +82,7 @@ function addAttributeFunctions(e) {
             console.log(e)
         }
     } else {
+        alert(e.getAttribute('multiDrag'))
         sortable = new Sortable(e, {
             multiDrag: e.getAttribute('multiDrag'),
             delay: 400, // time in milliseconds
