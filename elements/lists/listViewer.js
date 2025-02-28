@@ -82,9 +82,8 @@ function addAttributeFunctions(e) {
             console.log(e)
         }
     } else {
-        alert(e.getAttribute('multiDrag'))
         sortable = new Sortable(e, {
-            multiDrag: e.getAttribute('multiDrag'),
+            multiDrag: true, //e.getAttribute('multiDrag'),
             delay: 400, // time in milliseconds
             delayOnTouchOnly: true,
             animation: 150,  // Smooth dragging
