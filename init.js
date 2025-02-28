@@ -137,6 +137,7 @@ function checkCustomizationChanges(options) {
 
 async function updateStyles(key = 'all', value) { //update any set styles from storage
     let i;
+    console.log(window.storageName)
 
     if (key == `${window.storageName}bgImageChange`) {
 
