@@ -13,7 +13,7 @@ function detectStorage(e) {
     } else if (e.detail.value == 'Storage Key') {
         let key = window.prompt('Enter the storage key you want to use for storing settings. \nA storage key will only apply to this site(' + window.location.href + ') and is used to let users have more control over how they can customize each site. \nIf you want it to follow the global storage key you can leave the text box empty.', '');
         let siteName = window.location.href.split('/')[2].split('.')[0];
-        conasole.log(siteName)
+        console.log(siteName)
     }
 }
 
