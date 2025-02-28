@@ -13,9 +13,10 @@ class ListViewer extends HTMLElement {
      * Display items underneath each other.
     */
 
-    static observedAttributes = ["value", "actionButton", 'sortable']; // add a value attribute to let the developer update the selected item when it for example has the wrong value.
+    static observedAttributes = ["value", "actionButton", 'sortable', 'multiDrag']; // add a value attribute to let the developer update the selected item when it for example has the wrong value.
     //actionButton allows the developer to add an item to the end of the list item e.g. an arrow, leave empty to have none
     // the sortable attribute enables list viewer sorting (no saving included)
+    // multiDrag attribute allows multi dragging.
 
     constructor() {
         super();
@@ -82,7 +83,8 @@ function addAttributeFunctions(e) {
         }
     } else {
         sortable = new Sortable(e, {
-            delay: 200, // time in milliseconds
+            multiDrag: e.getAttribute('multiDrag'),
+            delay: 400, // time in milliseconds
             delayOnTouchOnly: true,
             animation: 150,  // Smooth dragging
             ghostClass: 'sortable-ghost',  // Class applied to the item when it's being dragged
