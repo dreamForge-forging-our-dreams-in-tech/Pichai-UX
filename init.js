@@ -137,11 +137,9 @@ function checkCustomizationChanges(options) {
 
 async function updateStyles(key = 'all', value) { //update any set styles from storage
     let i;
-    console.log(window.storageName)
-    console.log(value)
 
     if (key == `${window.storageName}bgImageChange`) {
-
+        console.log(value)
         window.document.body.style.backgroundImage = `url('${value}')`;
         options.source = value;
     } else if (key == `${window.storageName}extractionPosition`) {
