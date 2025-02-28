@@ -6,7 +6,7 @@ import { updateStyles } from '../../../init.js';
 let panel;
 function detectStorage(e) {
     if (e.detail.value == 'Clear Storage') {
-        if (confirm('Are you sure you want to clear all stored items and restart all over? \nAll your local settings will be cleared!')) {
+        if (confirm('Are you sure you want to clear all stored items and restart all over? \nAll your local settings will be cleared, storage keys will be lost and personal account settings stored locally wll be lost too.')) {
             window.localStorage.clear();
             window.location.reload();
         }
