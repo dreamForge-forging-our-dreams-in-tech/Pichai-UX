@@ -48,7 +48,7 @@ class PichaiUX {
     async initialize() {
         ///checkCustomizationChanges(this.options); //starts listening to any adjustments to customization from the user
         let siteName = window.location.pathname.split('/')[1];
-        window.storageName = key ? key + ' ' : 'Pichai-UX ';
+        window.storageName = window.localStorage.getItem(`Pichai-UX ${siteName}storageKey`) || this.options.storageName;
 
         let comp = window.getComputedStyle(document.body);
         let image = String(comp['backgroundImage']);
@@ -59,7 +59,6 @@ class PichaiUX {
         }
 
         this.options.source = image || '#008dcd';
-        window.storageName = window.localStorage.getItem(`Pichai-UX ${siteName}storageKey`) || this.options.storageName;
 
         //inject required css
         let cssId = 'PichaiUXCss';
