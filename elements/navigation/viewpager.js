@@ -34,8 +34,6 @@ class ViewPager extends HTMLElement {
         }
 
         this.onwheel = function (e) {
-            let currentPage = this.children[Number(this.getAttribute('pageIndex'))];
-
             e.preventDefault();
 
             wheelIndex++;
