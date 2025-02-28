@@ -73,7 +73,8 @@ function addAttributeFunctions(e) {
 
     if (e.getAttribute('sortable') == '' || !e.hasAttribute('sortable')) { } else {
         sortable = new Sortable(e, {
-            delayOnTouchOnly: true, // Only apply on touch devices
+            delay: 200, // time in milliseconds
+            delayOnTouchOnly: true,
             animation: 150,  // Smooth dragging
             ghostClass: 'sortable-ghost',  // Class applied to the item when it's being dragged
             onEnd: function (evt) {
