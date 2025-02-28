@@ -46,7 +46,8 @@ class PichaiUX {
     }
 
     async initialize() {
-        ///checkCustomizationChanges(this.options); //starts listening to any adjustments to customization from the user
+        checkCustomizationChanges(this.options); //starts listening to any adjustments to customization from the user
+        
         let siteName = window.location.pathname.split('/')[1];
         window.storageName = window.localStorage.getItem(`Pichai-UX ${siteName}storageKey`) || this.options.storageName;
         window.storageName = window.storageName + ' ';
