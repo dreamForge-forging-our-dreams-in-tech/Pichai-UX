@@ -16,7 +16,7 @@ function detectStorage(e) {
         let siteName = window.location.pathname.split('/')[1];
         window.storageName = key ? key + ' ' : 'Pichai-UX ';
 
-        window.localStorage.setItem(`Pichai-UX ${siteName}storageKey`, key);
+        window.localStorage.setItem(`Pichai-UX ${siteName}storageKey`, key + '');
     }
 }
 
