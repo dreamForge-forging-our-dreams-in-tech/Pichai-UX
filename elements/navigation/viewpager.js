@@ -34,6 +34,7 @@ class ViewPager extends HTMLElement {
         }
 
         this.onwheel = function (e) {
+            e.stopPropagation();
             e.preventDefault();
 
             wheelIndex++;
