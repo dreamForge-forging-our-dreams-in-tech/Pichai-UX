@@ -28,14 +28,14 @@ class ViewPager extends HTMLElement {
         }
 
         for (i of this.children) {
-            if (this.children[newValue] == i) { } else {
+            if (this.children[this.getAttribute('pageIndex')] == i) { } else {
                 i.style.display = 'none';
             }
         }
 
         this.onwheel = function (e) {
             e.preventDefault();
-            //e.stopPropagation(); // Stop the propagation of the wheel event
+            e.stopPropagation(); // Stop the propagation of the wheel event
 
             wheelIndex++;
 
@@ -43,9 +43,9 @@ class ViewPager extends HTMLElement {
                 wheelIndex = String(e.deltaY).length < 3 ? -8 : 0;
 
                 if (e.deltaY > 0) {
-                    this.setAttribute('pageIndex', Number(newValue) + 1);
+                    this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) + 1);
                 } else {
-                    this.setAttribute('pageIndex', Number(newValue) - 1);
+                    this.setAttribute('pageIndex', Number(this.getAttribute('pageIndex')) - 1);
                 }
             }
 
@@ -59,22 +59,22 @@ class ViewPager extends HTMLElement {
 
         try {
 
-            if (Number(newValue) > this.children.length - 1) {
+            if (Number(this.getAttribute('pageIndex')) > this.children.length - 1) {
                 this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? window.default_index : this.children.length - 1);
             }
 
-            if (Number(newValue) < 0) {
+            if (Number(this.getAttribute('pageIndex')) < 0) {
                 this.setAttribute('pageIndex', this.getAttribute('looped') == 'true' ? this.children.length - 1 : window.default_index);
             }
 
             this.children[oldValue].style.display = 'none';
 
-            this.children[Number(newValue)].style.removeProperty('display');
+            this.children[Number(this.getAttribute('pageIndex'))].style.removeProperty('display');
 
             let pageChange = new CustomEvent("pageChange", {
                 detail: {
-                    page: this.children[Number(newValue)],
-                    pageIndex: newValue,
+                    page: this.children[Number(this.getAttribute('pageIndex'))],
+                    pageIndex: this.getAttribute('pageIndex'),
                 },
             });
             this.dispatchEvent(pageChange);
