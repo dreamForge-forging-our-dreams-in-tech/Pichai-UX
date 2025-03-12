@@ -56,6 +56,8 @@ class ViewPager extends HTMLElement {
         doAttributeCheck('number', 'sensitivity', this.getAttribute('sensitivity'));
         doAttributeCheck('boolean', 'looped', this.getAttribute('looped'));
 
+        console.log(newValue, this.getAttribute('pageIndex'));
+
         try {
 
             if (Number(this.getAttribute('pageIndex')) > this.children.length - 1) {
