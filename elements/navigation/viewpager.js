@@ -35,6 +35,7 @@ class ViewPager extends HTMLElement {
 
         this.onwheel = function (e) {
             e.preventDefault();
+            e.stopPropagation(); // Stop the propagation of the wheel event
 
             wheelIndex++;
 
@@ -84,4 +85,4 @@ class ViewPager extends HTMLElement {
     }
 }
 
-registry.define("view-pager", ViewPager);  
+registry.define("view-pager", ViewPager);
