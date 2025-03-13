@@ -22,32 +22,33 @@ class ListViewer extends HTMLElement {
     }
 
     connectedCallback() {
+        let startTime, endTime
         let i;
         let listViewer = this;
         enableSetListItems(this, addAttributeFunctions); //callback call ensures button creation
 
         const observer = new MutationObserver((mutationsList) => {
             mutationsList.forEach((mutation) => {
-              if (mutation.type === 'childList') {
-                if (mutation.addedNodes.length > 0) {
-                    for(i of mutation.addedNodes) {
-                        if ((listViewer.getAttribute('actionButton') == '' || !listViewer.hasAttribute('actionButton')) || (i.tagName != 'LI' || i.getElementsByClassName('actionButton').length == 1)) { } else { // allows users  to create custom action buttons elements other than a button
-                            let button = document.createElement('button');
-                            button.innerHTML = listViewer.getAttribute('actionButton');
-                            button.classList.add('actionButton', 'material-symbols-outlined');
-                            i.appendChild(button);
+                if (mutation.type === 'childList') {
+                    if (mutation.addedNodes.length > 0) {
+                        for (i of mutation.addedNodes) {
+                            if ((listViewer.getAttribute('actionButton') == '' || !listViewer.hasAttribute('actionButton')) || (i.tagName != 'LI' || i.getElementsByClassName('actionButton').length == 1)) { } else { // allows users  to create custom action buttons elements other than a button
+                                let button = document.createElement('button');
+                                button.innerHTML = listViewer.getAttribute('actionButton');
+                                button.classList.add('actionButton', 'material-symbols-outlined');
+                                i.appendChild(button);
+                            }
                         }
                     }
                 }
-              }
             });
-          });
-          
-          // Set up the observer with the desired options
-          observer.observe(this, {
+        });
+
+        // Set up the observer with the desired options
+        observer.observe(this, {
             childList: true, // Listen for changes to child elements
             subtree: false   // Set to true if you want to observe child elements of child elements
-          });
+        });
 
         this.addEventListener('click', function (e) { // adds a click event to the list items and ensures that the right value is returned
             this.setAttribute('value', e.target.id);
@@ -60,6 +61,10 @@ class ListViewer extends HTMLElement {
             });
 
             this.dispatchEvent(click); // dispatches the click event only when it's clicked and not when the value is manually changed by the developer.
+        });
+
+        this.addEventListener('touchstart', function () {
+            startTime = performance.now();
         });
     }
 
@@ -77,7 +82,7 @@ function addAttributeFunctions(e) {
     if (e.getAttribute('sortable') == '' || e.getAttribute('sortable') == 'false' || !e.hasAttribute('sortable')) {
         try {
             sortable.destroy();
-        } catch(e) {
+        } catch (e) {
             console.log(e)
         }
     } else {
@@ -87,6 +92,15 @@ function addAttributeFunctions(e) {
             animation: 150,  // Smooth dragging
             ghostClass: 'sortable-ghost',  // Class applied to the item when it's being dragged
             onEnd: function (evt) {
+                endTime = performance.now();
+
+                let difference = endTime - startTime;
+
+                if (difference < 10) {
+                    e.click();
+                    return;
+                }
+
                 let sorted = new CustomEvent("itemSorted", { //fires when an item in the listViewer is sorted, returns the new and old index and item
                     detail: {
                         oldIndex: evt.oldIndex,
@@ -94,7 +108,7 @@ function addAttributeFunctions(e) {
                         item: evt.item.id,
                     },
                 });
-    
+
                 evt.to.dispatchEvent(sorted); // dispatches the click event only when it's clicked and not when the value is manually changed by the developer.
             }
         });
