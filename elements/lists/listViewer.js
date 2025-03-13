@@ -97,7 +97,7 @@ function addAttributeFunctions(e) {
         }
     } else {
         sortable = new Sortable(e, {
-            delay: 200, // time in milliseconds
+            //delay: 200, // time in milliseconds
             //delayOnTouchOnly: true,
             animation: 150,  // Smooth dragging
             ghostClass: 'sortable-ghost',  // Class applied to the item when it's being dragged
