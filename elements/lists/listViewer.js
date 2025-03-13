@@ -67,7 +67,7 @@ class ListViewer extends HTMLElement {
             startTime = performance.now();
         });
 
-        this.addEventListener('touchEnd', function (e) {
+        this.addEventListener('touchend', function (e) {
             endTime = performance.now();
 
             let difference = endTime - startTime;
