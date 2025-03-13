@@ -96,6 +96,7 @@ function addAttributeFunctions(e) {
 
                 let difference = endTime - startTime;
 
+                console.log(difference)
                 if (difference < 10) {
                     e.click();
                     return;
