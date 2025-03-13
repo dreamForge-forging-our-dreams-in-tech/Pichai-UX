@@ -22,6 +22,7 @@ class ListViewer extends HTMLElement {
     }
 
     connectedCallback() {
+        let startTime, endTime;
         let i;
         let listViewer = this;
         enableSetListItems(this, addAttributeFunctions); //callback call ensures button creation
@@ -61,6 +62,20 @@ class ListViewer extends HTMLElement {
 
             this.dispatchEvent(click); // dispatches the click event only when it's clicked and not when the value is manually changed by the developer.
         });
+
+        this.addEventListener('touchstart', function () {
+            startTime = performance.now();
+        });
+
+        this.addEventListener('touchend', function (e) {
+            endTime = performance.now();
+
+            let difference = endTime - startTime;
+
+            if(difference < 10) {
+                this.click();
+            }
+        });
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
@@ -83,7 +98,7 @@ function addAttributeFunctions(e) {
     } else {
         sortable = new Sortable(e, {
             delay: 200, // time in milliseconds
-            delayOnTouchOnly: true,
+            //delayOnTouchOnly: true,
             animation: 150,  // Smooth dragging
             ghostClass: 'sortable-ghost',  // Class applied to the item when it's being dragged
             onEnd: function (evt) {
