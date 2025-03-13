@@ -63,9 +63,9 @@ class ListViewer extends HTMLElement {
             this.dispatchEvent(click); // dispatches the click event only when it's clicked and not when the value is manually changed by the developer.
         });
 
-        this.addEventListener('touchstart', function () {
-            startTime = performance.now();
-        });
+       // this.addEventListener('touchstart', function () {
+        //    startTime = performance.now();
+        //});
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
