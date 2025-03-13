@@ -84,11 +84,12 @@ class Accordion extends HTMLElement {
         doAttributeCheck('string', 'titletext', this.getAttribute('titletext'));
         doAttributeCheck('boolean', 'open', this.getAttribute('open'));
 
-        if (name == 'titletext') { // lets you change the title of an accordion
-            this.children[0].innerHTML = this.children[0].innerHTML.replace(oldValue, newValue);
+        try {
+            if (name == 'titletext') { // lets you change the title of an accordion
+                this.children[0].innerHTML = this.children[0].innerHTML.replace(oldValue, newValue);
 
-        } else if (name == 'open') {
-            try {
+            } else if (name == 'open') {
+
                 let art = this.children[1].firstChild;
                 let arrow = this.children[0].children[0];
 
@@ -109,8 +110,8 @@ class Accordion extends HTMLElement {
 
                     arrow.innerHTML = 'arrow_drop_up';
                 }
-            } catch (e) { }
-        }
+            }
+        } catch (e) { }
     }
 }
 
