@@ -105,12 +105,14 @@ class SettingsDrawer extends HTMLElement {
         panel = document.getElementById('QSP');
 
         panel.addEventListener('itemSelected', async function (e) {
+            panel.firstTime = true;
+
             if (e.detail.value == 'Customization') {
-                panel.firstTime = true;
                 panel.listItems = ['Wallpaper', 'Colors', 'Filters'];
+
             } else if (e.detail.value == 'Storage') {
-                panel.firstTime = true;
                 panel.listItems = ['Clear Storage', 'Storage Key'];
+                
             }
 
             detectCustomization(e);
