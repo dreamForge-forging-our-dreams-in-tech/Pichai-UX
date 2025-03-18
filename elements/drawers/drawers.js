@@ -42,7 +42,7 @@ function createDrawerButton(forElement) { // creates a button on wich the user c
         if (this.element.style.display == 'none') {
             //this.element.style.display = 'flex';
 
-            this.element.classList.add('closeDrawerAnimation');
+            this.element.classList.remove('closeDrawerAnimation');
 
             this.classList.remove('closedDrawerToggle');
 
@@ -50,7 +50,7 @@ function createDrawerButton(forElement) { // creates a button on wich the user c
         } else {
             //this.element.style.display = 'none';
 
-            this.element.classList.remove('closeDrawerAnimation');
+            this.element.classList.add('closeDrawerAnimation');
 
             this.classList.add('closedDrawerToggle');
 
