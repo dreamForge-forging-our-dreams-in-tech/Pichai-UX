@@ -44,13 +44,3 @@
 
     border-radius: 10px !important;
   }
-
-  @keyframes closeDrawer {
-    from {width:300px; display:flex;}
-    to {width:0px; display:none;}
-  }
-
-  .closeDrawerAnimation {
-    animation-name: closeDrawer;
-    animation-duration: 4s;
-  }
