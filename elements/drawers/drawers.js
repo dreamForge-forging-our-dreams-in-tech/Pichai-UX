@@ -39,7 +39,7 @@ function createDrawerButton(forElement) { // creates a button on wich the user c
     button.innerHTML = 'close';
 
     button.addEventListener('click', function (e) {
-        if (this.element.style.display == 'none') {
+        if (this.element.classList.contains('closeDrawerAnimation')) {
             //this.element.style.display = 'flex';
 
             this.element.classList.remove('closeDrawerAnimation');
