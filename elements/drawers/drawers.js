@@ -40,7 +40,7 @@ function createDrawerButton(forElement) { // creates a button on wich the user c
 
     button.addEventListener('click', function (e) {
         this.element.onanimationend = function () {
-            this.element.style.display = this.element.style.display == 'none' ? 'flex' : 'none';
+            this.element.style.opacity = (parseInt(this.element.style.opacity) * -1)
         }
 
         if (this.classList.contains('closedDrawerToggle')) {
