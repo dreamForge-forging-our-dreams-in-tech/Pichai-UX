@@ -50,7 +50,7 @@ function createDrawerButton(forElement) { // creates a button on wich the user c
         } else {
             //this.element.style.display = 'none';
 
-            this.element.style.animation = 'closeDrawer 2s';
+            this.element.style.animation = 'closeDrawer 1s forward';
 
             this.classList.add('closedDrawerToggle');
 
