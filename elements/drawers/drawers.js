@@ -39,10 +39,9 @@ function createDrawerButton(forElement) { // creates a button on wich the user c
     button.innerHTML = 'close';
 
     button.addEventListener('click', function (e) {
-        if (this.element.classList.contains('closeDrawerAnimation')) {
+        if (this.classList.contains('closedDrawerToggle')) {
             //this.element.style.display = 'flex';
 
-            this.element.style.removeProperty('animation');
             this.element.style.animation = 'openDrawer 1s';
 
             this.classList.remove('closedDrawerToggle');
@@ -51,7 +50,6 @@ function createDrawerButton(forElement) { // creates a button on wich the user c
         } else {
             //this.element.style.display = 'none';
 
-            this.element.style.removeProperty('animation');
             this.element.style.animation = 'closeDrawer 1s';
 
             this.classList.add('closedDrawerToggle');
