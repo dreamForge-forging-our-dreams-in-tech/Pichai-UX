@@ -49,3 +49,8 @@
     from {min-width:300px; display:flex;}
     to {min-width:0px; max-width:0px; display:none;}
   }
+
+  @keyframes openDrawer {
+    from {min-width:0px; display:none;}
+    to {min-width:300px; max-width:300px; display:flex;}
+  }
