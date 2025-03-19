@@ -12,13 +12,13 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
         element.toggle.click(); // open or closes the drawer menu depending on it's state
     }
 
-    if (!open) { // closes the drawer menu if the user doesnt want it to be open on launch
+    if(!open) { // closes the drawer menu if the user doesnt want it to be open on launch
         element.toggle.click();
     }
 
     for (i of element.children) { // click event somehow handles mobile mode aswel
         i.addEventListener('click', function () {
-            if (this.parentNode.platform == 'mobile') {
+            if(this.parentNode.platform == 'mobile') {
                 this.parentNode.toggle.click();
             }
         });
@@ -42,19 +42,15 @@ function createDrawerButton(forElement) { // creates a button on wich the user c
         if (this.element.classList.contains('closeDrawerAnimation')) {
             //this.element.style.display = 'flex';
 
-            this.element.animate([
-                { width: "300px" },
-                { width: "0px" },
-            ], {
-                duration: 2000,
-                iterations: 1,
-            });
+            this.element.classList.remove('closeDrawerAnimation');
 
             this.classList.remove('closedDrawerToggle');
 
             this.innerHTML = 'close';
         } else {
             //this.element.style.display = 'none';
+
+            this.element.classList.add('closeDrawerAnimation');
 
             this.classList.add('closedDrawerToggle');
 
