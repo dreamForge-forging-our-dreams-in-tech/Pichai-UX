@@ -47,10 +47,5 @@
 
   @keyframes closeDrawer {
     from {min-width:300px; display:flex;}
-    to {min-width:0px; max-width:0px display:none;}
-  }
-
-  .closeDrawerAnimation {
-    animation-name: closeDrawer;
-    animation-duration: 4s;
+    to {min-width:0px; max-width:0px; display:none;}
   }
