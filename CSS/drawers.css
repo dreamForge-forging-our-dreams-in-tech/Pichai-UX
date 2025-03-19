@@ -46,8 +46,8 @@
   }
 
   @keyframes closeDrawer {
-    from {width:300px; display:flex;}
-    to {width:0px; display:none;}
+    from {min-width:300px; display:flex;}
+    to {min-width:0px; max-width:0px display:none;}
   }
 
   .closeDrawerAnimation {
