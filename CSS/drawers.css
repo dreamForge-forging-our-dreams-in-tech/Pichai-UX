@@ -52,5 +52,5 @@
 
   @keyframes openDrawer {
     from {min-width:0px; display:none;}
-    to {min-width:300px; max-width:300px; display:flex;}
+    to {min-width:300px; max-width:min-content; display:flex;}
   }
