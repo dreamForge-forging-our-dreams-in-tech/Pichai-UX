@@ -4,6 +4,8 @@ tr {
 
 td {
     text-align:left;
+
+    padding:4px;
 }
 
 table, td, th {
