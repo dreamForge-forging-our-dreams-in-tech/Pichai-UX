@@ -90,7 +90,7 @@ class SettingsDrawer extends HTMLElement {
         <li id='Storage' >Storage</li>
         </list-viewer>
         
-        <div class='row'>
+        <div class='row settingsDisclaimers'>
          <a href='https://dreamforge-forging-our-dreams-in-tech.github.io/The-Magic-Garden/pages/privacyPolicy.html'>Privacy Policy</a>
         <a href='https://studio.buymeacoffee.com/dashboard'>Donate to dreamForge</a>
         </div>
