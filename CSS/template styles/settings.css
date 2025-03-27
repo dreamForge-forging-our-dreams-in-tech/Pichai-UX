@@ -36,13 +36,17 @@
 
     color:var(--secondairyTextColor);
 
-    margin-top:auto;
-
     width:100%;
 
     justify-content:center;
 
     background-color:var(--secondairy);
+
+    margin-top:3px;
+
+    border-top-left-radius:0px;
+    border-top-right-radius:0px;
+
 }
 
 .settingsDisclaimers a {
