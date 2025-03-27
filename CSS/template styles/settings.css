@@ -36,4 +36,10 @@
     color:var(--secondairyTextColor);
 
     margin-top:auto;
+
+    width:100%;
+}
+
+.settingsDisclaimers a {
+    color:var(--secondairyTextColor);
 }
