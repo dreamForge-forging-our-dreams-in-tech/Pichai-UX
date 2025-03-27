@@ -89,6 +89,11 @@ class SettingsDrawer extends HTMLElement {
         <li id='Customization' >Customization</li>
         <li id='Storage' >Storage</li>
         </list-viewer>
+        
+        <div class='row'>
+         <a href='https://dreamforge-forging-our-dreams-in-tech.github.io/The-Magic-Garden/pages/privacyPolicy.html'>Privacy Policy</a>
+        <a href='https://studio.buymeacoffee.com/dashboard'>Donate to dreamForge</a>
+        </div>
         </section>`;
 
         /*       <li>Privacy</li>
@@ -112,7 +117,7 @@ class SettingsDrawer extends HTMLElement {
 
             } else if (e.detail.value == 'Storage') {
                 panel.listItems = ['Clear Storage', 'Storage Key'];
-                
+
             }
 
             detectCustomization(e);
