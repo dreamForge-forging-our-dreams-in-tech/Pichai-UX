@@ -24,6 +24,9 @@
     background-color:var(--secondairy);
 
     width: calc(100% - 16px);
+
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:0px;
 }
 
 #quickSettingsPanel list-viewer li {
