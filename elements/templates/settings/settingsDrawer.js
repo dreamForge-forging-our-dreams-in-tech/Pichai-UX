@@ -92,7 +92,8 @@ class SettingsDrawer extends HTMLElement {
         
         <div class='row settingsDisclaimers'>
          <a href='https://dreamforge-forging-our-dreams-in-tech.github.io/The-Magic-Garden/pages/privacyPolicy.html'>Privacy Policy</a>
-        <a href='https://studio.buymeacoffee.com/dashboard'>Donate to dreamForge</a>
+         |
+        <a href='https://studio.buymeacoffee.com/dashboard'>Donate</a>
         </div>
         </section>`;
 

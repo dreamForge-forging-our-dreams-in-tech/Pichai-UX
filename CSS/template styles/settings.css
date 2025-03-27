@@ -10,6 +10,9 @@
     background-color:var(--secondairy);
 
     padding:8px;
+
+    display: flex;
+    flex-direction: column;
 }
 
 #quickSettingsPanel list-viewer {
