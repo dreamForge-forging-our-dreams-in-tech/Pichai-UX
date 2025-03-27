@@ -22,6 +22,8 @@
     padding:8px;
 
     background-color:var(--secondairy);
+
+    width: calc(100% - 16px);
 }
 
 #quickSettingsPanel list-viewer li {
