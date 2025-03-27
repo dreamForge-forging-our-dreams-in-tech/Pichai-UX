@@ -7,8 +7,6 @@
     top:58px;
     right:8px;
 
-    background-color:var(--secondairy);
-
     padding:8px;
 
     display: flex;
@@ -21,6 +19,8 @@
     grid-template-columns:1fr 1fr;
 
     gap:8px;
+
+    background-color:var(--secondairy);
 }
 
 #quickSettingsPanel list-viewer li {
@@ -38,6 +38,10 @@
     margin-top:auto;
 
     width:100%;
+
+    justify-content:center;
+
+    background-color:var(--secondairy);
 }
 
 .settingsDisclaimers a {
