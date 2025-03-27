@@ -1,16 +1,15 @@
 #quickSettingsPanel{
     min-width:280px;
-    min-height:300px;
 
     position: fixed;
 
     top:58px;
     right:8px;
 
-    padding:8px;
-
     display: flex;
     flex-direction: column;
+
+    background-color:TRANSPARENT;
 }
 
 #quickSettingsPanel list-viewer {
@@ -19,6 +18,8 @@
     grid-template-columns:1fr 1fr;
 
     gap:8px;
+
+    padding:8px;
 
     background-color:var(--secondairy);
 }
