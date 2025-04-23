@@ -72,11 +72,12 @@ function getPallete(options) {
             resolve(options.source);
 
         } else { // for color generation from an image
+            document.body.style.backgroundImage = `url(${options.source})`;
+            
             const colorThief = new ColorThief();
             const img = new Image();
 
             img.addEventListener('load', () => {
-                document.body.style.backgroundImage = `url(${options.source})`;
                 resolve(colorThief.getPalette(img));
             });
 
