@@ -76,6 +76,7 @@ function getPallete(options) {
             const img = new Image();
 
             img.addEventListener('load', () => {
+                console.log(window.self !== window.top)
                 document.body.style.backgroundImage = `url(${options.source})`;
                 resolve(colorThief.getPalette(img));
             });
