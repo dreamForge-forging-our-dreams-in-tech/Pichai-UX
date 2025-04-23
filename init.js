@@ -63,7 +63,6 @@ class PichaiUX {
             image = window.localStorage.getItem(`${window.storageName}bgImageChange`);
         }
 
-        console.log(this.options.source);
         if(this.options.source == 'auto') {
             this.options.source = image || '#008dcd';
         } 
