@@ -136,7 +136,6 @@ function generateContainerTextColor(colors) {
 
 async function generate3ColorPallete(options) {
     let colors = await getPallete(options);
-    console.log(colors)
     colors = colors.concat(colors);
 
     const root = document.documentElement;
