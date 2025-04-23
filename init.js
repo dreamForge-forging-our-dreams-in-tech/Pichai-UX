@@ -14,7 +14,7 @@ window['options'] = {};
 class PichaiUX {
     constructor(options = {}) {
         let opt = {
-            source: '#008dcd',
+            source: '#008dcd', // allows the developer to supply a image, an array of 10 rgb colors splitted into a array or a single rgb array splitted e.g. [100, 255, 30]
             darkMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
             overrideColorsOnScroll: true,
             themedFavIcon: true,
