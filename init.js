@@ -41,6 +41,7 @@ class PichaiUX {
         };
 
         for (i of Object.keys(options)) {
+            console.log(i, options[i, opt[i]])
             opt[i] = options[i];
         }
 
