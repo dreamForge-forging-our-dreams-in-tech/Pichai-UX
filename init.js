@@ -63,6 +63,7 @@ class PichaiUX {
             image = window.localStorage.getItem(`${window.storageName}bgImageChange`);
         }
 
+        console.log(this.options.source);
         this.options.source = image || '#008dcd';
 
         //inject required css
