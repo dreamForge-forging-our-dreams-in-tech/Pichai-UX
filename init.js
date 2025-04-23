@@ -31,7 +31,10 @@ class PichaiUX {
             wallpaperPosition: 'center',
             wallpaperRepeat: 'no-repeat',
             storageName: 'Pichai-UX ',
+            iconsPack: 'https://fonts.googleapis.com/icon?family=Material+Icons', //allows developers or users to supply custom icons based on the google icons library. however we cannot yet test this so it should be based on google icons library with custom icons for now
+
             homeLink: window.location.href, // the link to where the user is send to when he presses the logo or title in the header.
+
             settingsDialog: document.createElement('template-settings-drawer'), // allows user to connect custom settings popup to QS
             loginDialog: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when clicking the log in button
             accountMenu: document.createElement('template-account-drawer'),  //todo: write docs about this, determines wich elements is shown when the user is logged in and allows settings modifications, saving etc
@@ -69,7 +72,7 @@ class PichaiUX {
 
             addCSSSheets(typeof exports !== 'undefined' ? 'Pichai-UX/CSS/main.css' : 'https://dreamforge-forging-our-dreams-in-tech.github.io/Pichai-UX/CSS/main.css', cssId, head);
             addCSSSheets('https://fonts.googleapis.com/icon?family=Material+Icons', 'google', head);
-            addCSSSheets('https://pagecdn.io/lib/easyfonts/fonts.css', 'fonts', head);
+            addCSSSheets(this.options.iconsPack, 'fonts', head);
         }
 
         // generate pallete based on bg image and set proper text colors
