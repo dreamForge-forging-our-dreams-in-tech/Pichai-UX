@@ -66,14 +66,17 @@ function RGBToHSL(value) {
 
 function getPallete(options) {
     return new Promise((resolve) => {
-        if (String(options.source).includes('#')) {
+        if (options.source.length == 1) { // for generation from a single supplied color
 
-        } else {
+        } else if (options.source.length == 10) {// for generation for a array with 10 supplied rgb colors
+            resolve(options.source);
+
+        } else { // for color generation from an image
             const colorThief = new ColorThief();
             const img = new Image();
 
             img.addEventListener('load', () => {
-                resolve(colorThief.getPalette(img));
+                
             });
 
             img.crossOrigin = 'Anonymous';
