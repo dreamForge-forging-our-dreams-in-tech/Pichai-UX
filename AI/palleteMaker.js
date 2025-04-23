@@ -76,7 +76,8 @@ function getPallete(options) {
             const img = new Image();
 
             img.addEventListener('load', () => {
-                
+                document.body.style.backgroundImage = `url(${options.source})`;
+                resolve(colorThief.getPalette(img));
             });
 
             img.crossOrigin = 'Anonymous';
