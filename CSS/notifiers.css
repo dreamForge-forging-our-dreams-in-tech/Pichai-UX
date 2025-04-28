@@ -41,6 +41,12 @@
     color:var(--tertiaryTextColor);
 }
 
+.toastMessage .titleWrapper {
+    margin:0px;
+
+    background-color:TRANSPARENT;
+}
+
 .titleWrapper {
     display:flex;
     flex-direction:row-reverse;
