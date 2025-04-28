@@ -49,6 +49,12 @@
     background-color:TRANSPARENT;
 }
 
+.toastIcon {
+    border-radius:200px;
+    background-color: var(--tertiaryContainer);
+    color:var(--tertiaryContainerTextColor)
+}
+
 .titleWrapper {
     display:flex;
     flex-direction:row-reverse;
