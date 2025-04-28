@@ -9,7 +9,7 @@ function showToastMessage(icon = '', messageText = 'Message', duration = 10000) 
         let wrapper = document.createElement('article');
         wrapper.classList.add('toastMessage');
 
-        let toastIcon = document.createElement('icon');
+        let toastIcon = document.createElement('i');
         toastIcon.classList.add('material-icons');
 
 
