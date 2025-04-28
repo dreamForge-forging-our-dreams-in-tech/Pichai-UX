@@ -33,6 +33,10 @@
 
     right:8px;
     top:8px;
+
+    display:flex;
+    flex-direction:row;
+    gap:8px;
 }
 
 .toastMessage .dialogMessage {
