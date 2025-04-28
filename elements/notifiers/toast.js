@@ -20,6 +20,8 @@ function showToastMessage(icon = '', messageText = 'Message', duration = 15000) 
         window.setTimeout(function () { // removes the toast message after set amount of time
             wrapper.remove();
         }, duration);
+
+        return wrapper; // returns the wrapper of the toast message to let user manually manipulate a toast message e.g. remove it manually.
 }
 
 export { showToastMessage };
