@@ -2,6 +2,8 @@ import { generate3ColorPallete } from "./AI/palleteMaker.js";
 import { removeSimpleDrawer, createSimpleDrawer } from "./elements/drawers/drawers.js";
 import { generateDynamicIcon } from './elements/images/logo.js';
 
+import './elements/notifiers/toast.js';
+
 import { getListOfElements } from './utils/customeElementsDefine.js';
 
 import { optimizeTextColor } from './utils/extraFunctions.js';
