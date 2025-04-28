@@ -146,7 +146,6 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
     let i;
 
     if (key == `${window.storageName}bgImageChange`) {
-        console.log(value)
         window.document.body.style.backgroundImage = `url('${value}')`;
         options.source = value;
     } else if (key == `${window.storageName}extractionPosition`) {
