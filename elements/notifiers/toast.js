@@ -1,7 +1,7 @@
 import { html5ToObject } from '../../utils/extraFunctions.js';
 
 import './notifierUtils/text.js';
-import { createDialogMessage, createDialogTitle } from './notifierUtils/text.js';
+import { createDialogMessage } from './notifierUtils/text.js';
 
 // This function is used to create a toast or a snackbar message
 
