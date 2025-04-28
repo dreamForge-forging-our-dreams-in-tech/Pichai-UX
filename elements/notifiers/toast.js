@@ -9,7 +9,11 @@ function showToastMessage(icon = '', messageText = 'Message', duration = 10000) 
         let wrapper = document.createElement('article');
         wrapper.classList.add('toastMessage');
 
-        wrapper.append(createDialogMessage(messageText)); // append all items to the dialog wrapper
+        let icon = document.createElement('icon');
+        icon.classList.add('material-icons');
+
+
+        wrapper.append(icon, createDialogMessage(messageText)); // append all items to the dialog wrapper
 
         document.body.append(wrapper);
 }
