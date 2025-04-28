@@ -193,7 +193,7 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
                 } else {
                     updateStyles(i, window.localStorage.getItem(i));
 
-                    showToastMessage('', 'Applying Changes');
+                    showToastMessage('autorenew', 'Applying Changes');
                 }
             }
         }

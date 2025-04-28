@@ -9,14 +9,17 @@ function showToastMessage(icon = '', messageText = 'Message', duration = 10000) 
         let wrapper = document.createElement('article');
         wrapper.classList.add('toastMessage');
 
-        let toastIcon = document.createElement('i');
+        let toastIcon = document.createElement('i'); // displays a icon in the toast message
         toastIcon.classList.add('material-icons', 'toastIcon');
         toastIcon.innerHTML = icon;
 
-
-        wrapper.append(toastIcon, createDialogMessage(messageText)); // append all items to the dialog wrapper
+        wrapper.append(toastIcon, createDialogMessage(messageText)); // appends the icon and adds the toast text.
 
         document.body.append(wrapper);
+
+        window.setTimeout(function () { // removes the toast message after set amount of time
+            wrapper.remove();
+        }, duration);
 }
 
 export { showToastMessage };
