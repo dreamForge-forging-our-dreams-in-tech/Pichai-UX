@@ -3,7 +3,7 @@ import { pickFiles } from '../../../functions/filePicker.js';
 
 import { updateStyles } from '../../../init.js';
 
-import { showToastMessage } from './elements/notifiers/toast.js';
+import { showToastMessage } from '../../notifiers/toast.js';
 
 function showToast() {
     showToastMessage('autorenew', 'Applying Changes');
@@ -82,12 +82,11 @@ function detectCustomization(e) {
         window.localStorage.setItem(`${window.storageName}bgSize`, window.prompt('Enter the size of the wallpaper. \nPossible values are: \ncover, contain, auto or custom percentage ending with %.', 'cover'));
         updateStyles();
         showToast()
-        
     } else if (e.detail.value == 'Wallpaper Position') {
         window.localStorage.setItem(`${window.storageName}bgPosition`, window.prompt('Enter the position of the wallpaper. \nPossible values are: \nbottom, top, left, right and center.', 'center'));
         updateStyles();
         showToast()
-
+        
     } else if (e.detail.value == 'Wallpaper Repeat') {
         window.localStorage.setItem(`${window.storageName}bgRepeat`, window.prompt('Enter the repeat of the wallpaper. \nPossible values are: \nno-repeat, repeat-x, repeat-y, repeat, round and space.', 'no-repeat'));
         showToast()
