@@ -11,6 +11,7 @@ function showToastMessage(icon = '', messageText = 'Message', duration = 10000) 
 
         let toastIcon = document.createElement('i');
         toastIcon.classList.add('material-icons');
+        toastIcon.innerHTML = icon;
 
 
         wrapper.append(toastIcon, createDialogMessage(messageText)); // append all items to the dialog wrapper
