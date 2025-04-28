@@ -36,7 +36,7 @@
 
     display:flex;
     flex-direction:row;
-    gap:8px;
+    align-items:center;
 }
 
 .toastMessage .dialogMessage {
@@ -52,7 +52,9 @@
 .toastIcon {
     border-radius:200px;
     background-color: var(--tertiaryContainer);
-    color:var(--tertiaryContainerTextColor)
+    color:var(--tertiaryContainerTextColor);
+
+    margin-left:8px;
 }
 
 .titleWrapper {
