@@ -2,8 +2,6 @@ import { generate3ColorPallete } from "./AI/palleteMaker.js";
 import { removeSimpleDrawer, createSimpleDrawer } from "./elements/drawers/drawers.js";
 import { generateDynamicIcon } from './elements/images/logo.js';
 
-import { showToastMessage } from './elements/notifiers/toast.js';
-
 import { getListOfElements } from './utils/customeElementsDefine.js';
 
 import { optimizeTextColor } from './utils/extraFunctions.js';
@@ -192,8 +190,6 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
                     //alert(key)
                 } else {
                     updateStyles(i, window.localStorage.getItem(i));
-
-                    showToastMessage('autorenew', 'Applying Changes');
                 }
             }
         }
