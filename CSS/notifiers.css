@@ -30,6 +30,11 @@
     border-radius:300px;
 
     background-color:var(--tertiary);
+
+    position:fixed;
+
+    right:8px;
+    top:8px;
 }
 
 .toastMessage .dialogMessage {
