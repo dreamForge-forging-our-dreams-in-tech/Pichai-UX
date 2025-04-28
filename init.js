@@ -187,9 +187,11 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         for (i in localStorage) {
             if (String(i).includes(window.storageName)) {
                 if ((window.localStorage.getItem(i) == '' || window.localStorage.getItem(i) == null)) {
-                    alert(key)
+                    //alert(key)
                 } else {
                     updateStyles(i, window.localStorage.getItem(i));
+
+                    showToastMessage('', 'Applying Changes');
                 }
             }
         }

@@ -35,6 +35,7 @@ import './elements/templates/quickSettings.js';
 import './elements/notifiers/dialogs.js';
 import './elements/notifiers/conforim.js';
 import './elements/notifiers/alert.js';
+import './elements/notifiers/toast.js';
 
 //util imports
 import './utils/localFOrage.js';

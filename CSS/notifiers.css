@@ -24,6 +24,18 @@
     background-color:var(--tertiary);
 }
 
+.toastMessage {
+    padding:8px;
+    
+    border-radius:300px;
+
+    background-color:var(--tertiary);
+}
+
+.toastMessage .dialogMessage {
+    color:var(--tertiaryTextColor);
+}
+
 .titleWrapper {
     display:flex;
     flex-direction:row-reverse;

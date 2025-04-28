@@ -19,7 +19,7 @@ import { createDialogMessage, createDialogTitle } from './notifierUtils/text.js'
 * Events and Functions can be attached to all elements.
 */
 
-function showAlertDialog(titleText = 'Dialog', messageText = 'Message') { // creates a confirm dialog
+function showAlertDialog(titleText = 'Dialog', messageText = 'Message') { // creates a alert dialog
     return new Promise((resolve) => {
         let shadow = document.createElement('article');
         shadow.classList.add('dialogWrapper');
