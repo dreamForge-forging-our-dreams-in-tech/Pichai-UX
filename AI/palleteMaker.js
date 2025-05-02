@@ -75,7 +75,7 @@ function getPallete(options) {
 
         } else { // for color generation from an image
             document.body.style.backgroundImage = `url(${options.source})`;
-            
+
             const colorThief = new ColorThief();
             const img = new Image();
 
@@ -203,7 +203,9 @@ async function generate3ColorPallete(options) {
     root.style.setProperty('--noteContainerTextColor', `${getTextColor(signContainerTextColors[2])}`);
     root.style.setProperty('--checkContainerTextColor', `${getTextColor(signContainerTextColors[3])}`);
 
-    window.dispatchEvent(loaded); // dispatches the pichaiUXLoaded event to let the user/developer know that pichai ux has been loaded and is ready to use.
+    window.setTimeout(() => { // temporary timeout to dispatch event later, because right now it happens correctly but too fast.
+        window.dispatchEvent(loaded); // dispatches the pichaiUXLoaded event to let the user/developer know that pichai ux has been loaded and is ready to use.
+    }, 1000);
 }
 
 export { generate3ColorPallete };
