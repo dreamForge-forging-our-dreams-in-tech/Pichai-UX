@@ -4,6 +4,8 @@ import { getTextColor } from './textColorFInder.js';
 
 import { PichaiUX } from '../init.js';
 
+const loaded = new Event("pichaiUXLoaded");
+
 function hslToHex(h, s, l) {
     l /= 100;
     const a = s * Math.min(l, 1 - l) / 100;
@@ -200,6 +202,8 @@ async function generate3ColorPallete(options) {
     root.style.setProperty('--warningContainerTextColor', `${getTextColor(signContainerTextColors[1])}`);
     root.style.setProperty('--noteContainerTextColor', `${getTextColor(signContainerTextColors[2])}`);
     root.style.setProperty('--checkContainerTextColor', `${getTextColor(signContainerTextColors[3])}`);
+
+    window.dispatchEvent(loaded); // dispatches the pichaiUXLoaded event to let the user/developer know that pichai ux has been loaded and is ready to use.
 }
 
 export { generate3ColorPallete };
