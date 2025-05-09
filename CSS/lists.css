@@ -8,63 +8,63 @@ li {
    List-style-position: inside;
 }
 
-li:nth-child(7n+1) {
+ul li:nth-child(7n+1) {
    list-style-image: url('../assets/shapes/star.svg');
 }
 
-li:nth-child(7n+2) {
+ul li:nth-child(7n+2) {
    list-style-image: url('../assets/shapes/circle.svg');
 }
 
-li:nth-child(7n+3) {
+ul li:nth-child(7n+3) {
    list-style-image: url('../assets/shapes/scallop.svg');
 }
 
-li:nth-child(7n+4) {
+ul li:nth-child(7n+4) {
    list-style-image: url('../assets/shapes/square.svg');
 }
 
-li:nth-child(7n+5) {
+ul li:nth-child(7n+5) {
    list-style-image: url('../assets/shapes/pentagon.svg');
 }
 
-li:nth-child(7n+6) {
+ul li:nth-child(7n+6) {
    list-style-image: url('../assets/shapes/triangle.svg');
 }
 
-li:nth-child(7n+7) {
+ul li:nth-child(7n+7) {
    list-style-image: url('../assets/shapes/heart.svg');
 }
 
-li.black:nth-child(7n+1) {
+ul li.black:nth-child(7n+1) {
    list-style-image: url('../assets/shapes/star_black.svg');
 }
 
-li.black:nth-child(7n+2) {
+ul li.black:nth-child(7n+2) {
    list-style-image: url('../assets/shapes/circle_black.svg');
 }
 
-li.black:nth-child(7n+3) {
+ul li.black:nth-child(7n+3) {
    list-style-image: url('../assets/shapes/scallop_black.svg');
 }
 
-li.black:nth-child(7n+4) {
+ul li.black:nth-child(7n+4) {
    list-style-image: url('../assets/shapes/square_black.svg');
 }
 
-li.black:nth-child(7n+5) {
+ul li.black:nth-child(7n+5) {
    list-style-image: url('../assets/shapes/pentagon_black.svg');
 }
 
-li.black:nth-child(7n+6) {
+ul li.black:nth-child(7n+6) {
    list-style-image: url('../assets/shapes/triangle_black.svg');
 }
 
-li.black:nth-child(7n+7) {
+ul li.black:nth-child(7n+7) {
    list-style-image: url('../assets/shapes/heart_black.svg');
 }
 
-.tabBarHolder li.black, .tabBarHolder li {
+.tabBarHolder ul li.black, .tabBarHolder ul li {
    list-style-type: none;
    list-style-image:none;
 }
