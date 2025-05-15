@@ -31,7 +31,6 @@
     --wallpaperSize: cover;
     --wallpaperPosition: center;
     --wallpaperRepeat: no-repeat;
-    --wallpaperOpacity: 100%;
 }
 
 body {
@@ -40,7 +39,7 @@ body {
     background-repeat: var(--wallpaperRepeat);
     
     filter: contrast(var(--contrast)) invert(var(--inversion)) hue-rotate(var(--hueRotation));
-    backdrop-filter: opacity(var(--wallpaperOpacity)) blur(var(--wallpaperBlur)) brightness(var(--wallpaperBrightness)) invert(var(--wallpaperInversion)) hue-rotate(calc( -1 * var(--hueRotation)));
+    backdrop-filter: blur(var(--wallpaperBlur)) brightness(var(--wallpaperBrightness)) invert(var(--wallpaperInversion)) hue-rotate(calc( -1 * var(--hueRotation)));
 }
 
 body,

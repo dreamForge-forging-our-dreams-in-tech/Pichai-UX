@@ -34,7 +34,7 @@ function detectCustomization(e) {
         panel.listItems = ['Color Order', 'Hue-Rotation'];
 
     } else if (e.detail.value == 'Wallpaper') {
-        panel.listItems = ['Change Wallpaper', 'Wallpaper Blur', 'Wallpaper Brightness', 'Wallpaper Inversion', 'Wallpaper Size', 'Wallpaper Position', 'Wallpaper Repeat', 'Wallpaper Opacity'];
+        panel.listItems = ['Change Wallpaper', 'Wallpaper Blur', 'Wallpaper Brightness', 'Wallpaper Inversion', 'Wallpaper Size', 'Wallpaper Position', 'Wallpaper Repeat'];
 
     } else if (e.detail.value == 'Color Order') {
         window.localStorage.setItem(`${window.storageName}extractionPosition`, Number(window.prompt('Enter the position of the color extraction (0-10)', 0)));
@@ -50,10 +50,6 @@ function detectCustomization(e) {
 
     } else if (e.detail.value == 'Wallpaper Blur') {
         window.localStorage.setItem(`${window.storageName}blur`, Number(window.prompt('Enter the blur for the wallpaper', 1)));
-        showToast()
-
-    } else if (e.detail.value == 'Wallpaper Opacity') {
-        window.localStorage.setItem(`${window.storageName}opacity`, Number(window.prompt('Enter the opacity for the wallpaper', 1)));
         showToast()
 
     } else if (e.detail.value == 'Wallpaper Brightness') {
