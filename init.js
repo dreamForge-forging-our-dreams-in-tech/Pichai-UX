@@ -27,6 +27,7 @@ class PichaiUX {
             wallpaperInversion:0,
             hueRotation:0,
             inversion: 0,
+            wallpaperOpacity: 100,
             wallpaperSize: 'cover',
             wallpaperPosition: 'center',
             wallpaperRepeat: 'no-repeat',
@@ -164,6 +165,9 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
 
     } else if (key == `${window.storageName}blur`) {
         options.wallpaperBlur = value;
+
+    } else if (key == `${window.storageName}opacity`) {
+        options.wallpaperOpacity = value;
 
     } else if (key == `${window.storageName}wInversion`) {
         options.wallpaperInversion = value;

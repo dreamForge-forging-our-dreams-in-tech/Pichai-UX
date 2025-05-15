@@ -154,6 +154,7 @@ async function generate3ColorPallete(options) {
     root.style.setProperty('--wallpaperSize', options.wallpaperSize);
     root.style.setProperty('--wallpaperPosition', options.wallpaperPosition);
     root.style.setProperty('--wallpaperRepeat', options.wallpaperRepeat);
+    root.style.setProperty('--wallpaperOpacity', options.wallpaperOpacity + '%');
 
     root.style.setProperty('--primary', `rgba(${colors[position].join(',')}, ${alpha})`);
     root.style.setProperty('--secondairy', `rgba(${colors[position + 4].join(',')}, ${alpha})`);
