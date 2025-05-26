@@ -67,7 +67,8 @@ html {
     overscroll-behavior: none;
 
     font-family: var(--font);
-    font-weight: bolder;
+    font-weight: lighter;
+    letter-spacing:3;
     font-size: 17px;
 
     border-style: solid;
