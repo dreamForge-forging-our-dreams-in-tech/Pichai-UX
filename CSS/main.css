@@ -21,7 +21,7 @@
 
 :root{
     --borderRadius:10px;
-    --font: sans-serif; /*variable that changes based on user selected font */
+    --font: 'Yusei'; /*variable that changes based on user selected font */
     --contrast: 1; /*variable that changes based on user selected contrast */
     --wallpaperBlur: 0px;
     --inversion: 0;
@@ -31,6 +31,13 @@
     --wallpaperSize: cover;
     --wallpaperPosition: center;
     --wallpaperRepeat: no-repeat;
+}
+
+@font-face {
+    font-family: 'Yusei';
+    /*a name to be used later*/
+    src: url('../assets/fonts/YuseiMagic-Regular.ttf');
+    /*URL to font*/
 }
 
 body {
