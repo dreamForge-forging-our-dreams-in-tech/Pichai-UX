@@ -21,7 +21,7 @@
 
 :root{
     --borderRadius:10px;
-    --font: 'Yusei'; /*variable that changes based on user selected font */
+    --font: 'DynaPuff'; /*variable that changes based on user selected font */
     --contrast: 1; /*variable that changes based on user selected contrast */
     --wallpaperBlur: 0px;
     --inversion: 0;
@@ -34,7 +34,7 @@
 }
 
 @font-face {
-    font-family: 'Yusei';
+    font-family: 'DynaPuff';
     /*a name to be used later*/
     src: url('../assets/fonts/DynaPuff-VariableFont_wdth\,wght.ttf');
     /*URL to font*/
