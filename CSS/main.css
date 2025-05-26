@@ -36,7 +36,7 @@
 @font-face {
     font-family: 'Yusei';
     /*a name to be used later*/
-    src: url('../assets/fonts/YuseiMagic-Regular.ttf');
+    src: url('../assets/fonts/Knewave-Regular.ttf');
     /*URL to font*/
 }
 
@@ -67,6 +67,7 @@ html {
     overscroll-behavior: none;
 
     font-family: var(--font);
+    font-weight: bolder;
     font-size: 17px;
 
     border-style: solid;
