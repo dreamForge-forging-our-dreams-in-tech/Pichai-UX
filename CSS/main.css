@@ -68,7 +68,7 @@ html {
 
     font-family: var(--font);
     font-weight: lighter;
-    letter-spacing:2px;
+    letter-spacing:1px;
     font-size: 16px;
 
     border-style: solid;
