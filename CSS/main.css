@@ -36,7 +36,7 @@
 @font-face {
     font-family: 'DynaPuff';
     /*a name to be used later*/
-    src: url('../assets/fonts/VarelaRound-Regular.ttf');
+    src: url('../assets/fonts/DynaPuff-VariableFont_wdth\,wght.ttf');
     /*URL to font*/
 }
 
@@ -67,9 +67,9 @@ html {
     overscroll-behavior: none;
 
     font-family: var(--font);
-    /* font-weight: lighter; */
+    font-weight: lighter;
     letter-spacing:1px;
-    font-size: 17px;
+    font-size: 14px;
 
     border-style: solid;
     border-radius: var(--borderRadius);
