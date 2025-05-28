@@ -73,7 +73,7 @@ class PichaiUX {
             let head = document.getElementsByTagName('head')[0];
 
             addCSSSheets(typeof exports !== 'undefined' ? 'Pichai-UX/CSS/main.css' : 'https://dreamforge-forging-our-dreams-in-tech.github.io/Pichai-UX/CSS/main.css', cssId, head);
-            addCSSSheets('https://fonts.googleapis.com/icon?family=Material+Icons', 'google', head);
+            addCSSSheets('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded', 'google', head);
             addCSSSheets(this.options.iconsPack, 'fonts', head);
         }
 
