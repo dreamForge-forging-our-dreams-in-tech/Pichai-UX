@@ -21,7 +21,7 @@
 
 :root{
     --borderRadius:10px;
-    --font: 'DynaPuff'; /*variable that changes based on user selected font */
+    --font: 'Varela'; /*variable that changes based on user selected font */
     --contrast: 1; /*variable that changes based on user selected contrast */
     --wallpaperBlur: 0px;
     --inversion: 0;
@@ -34,9 +34,9 @@
 }
 
 @font-face {
-    font-family: 'DynaPuff';
+    font-family: 'Varela';
     /*a name to be used later*/
-    src: url('../assets/fonts/DynaPuff-VariableFont_wdth\,wght.ttf');
+    src: url('../assets/fonts/VarelaRound-Regular.ttf');
     /*URL to font*/
 }
 
@@ -67,9 +67,9 @@ html {
     overscroll-behavior: none;
 
     font-family: var(--font);
-    font-weight: lighter;
+    /* font-weight: lighter; */
     letter-spacing:1px;
-    font-size: 14px;
+    font-size: 17px;
 
     border-style: solid;
     border-radius: var(--borderRadius);
