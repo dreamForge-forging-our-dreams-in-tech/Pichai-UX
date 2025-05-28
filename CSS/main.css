@@ -67,9 +67,9 @@ html {
     overscroll-behavior: none;
 
     font-family: var(--font);
-    font-weight: lighter;
+    /* font-weight: lighter; */
     letter-spacing:1px;
-    font-size: 14px;
+    font-size: 17px;
 
     border-style: solid;
     border-radius: var(--borderRadius);
