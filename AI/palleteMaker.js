@@ -155,6 +155,8 @@ async function generate3ColorPallete(options) {
     root.style.setProperty('--wallpaperPosition', options.wallpaperPosition);
     root.style.setProperty('--wallpaperRepeat', options.wallpaperRepeat);
 
+    root.style.setProperty('--backgroundColor', `rgba(${colors[position].join(',')}, 0.4)`); // generates a background color for the website based of the primary color
+
     root.style.setProperty('--primary', `rgba(${colors[position].join(',')}, ${alpha})`);
     root.style.setProperty('--secondairy', `rgba(${colors[position + 4].join(',')}, ${alpha})`);
     root.style.setProperty('--tertiary', `rgba(${colors[position + 9].join(',')}, ${alpha})`);
