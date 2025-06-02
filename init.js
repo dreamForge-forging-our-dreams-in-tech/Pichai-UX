@@ -150,6 +150,7 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         let image = String(comp['backgroundImage']);
         image = image.substring(5, image.length - 2);
         image = value == null ? image : value;
+        console.log(image)
 
         window.document.body.style.backgroundImage = `url('${image}')`;
         options.source = image;
