@@ -48,6 +48,12 @@ function detectCustomization(e) {
         window.localStorage.setItem(`${window.storageName}contrast`, Number(window.prompt('Enter the contrast of the elements.', 1)));
         showToast()
 
+    } else if (e.detail.value == 'Change Wallpaper') {
+       panel.listItems = ['Upload Wallpaper', 'Default Wallpaper', 'Hide Wallpaper'];
+
+    }  else if (e.detail.value == 'Default Wallpaper') {
+       window.localStorage.removeItem(`${window.storageName}bgImageChange`);
+
     } else if (e.detail.value == 'Wallpaper Blur') {
         window.localStorage.setItem(`${window.storageName}blur`, Number(window.prompt('Enter the blur for the wallpaper', 1)));
         showToast()
@@ -70,7 +76,7 @@ function detectCustomization(e) {
         window.localStorage.setItem(`${window.storageName}wInversion`, 0); // sets the wallpaper inversion too since this is a global filter, wInversion only exists for dark mode
         showToast()
 
-    } else if (e.detail.value == 'Change Wallpaper') {
+    } else if (e.detail.value == 'Upload Wallpaper') {
         pickFiles(function (file) {
             window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
 
@@ -86,7 +92,7 @@ function detectCustomization(e) {
         window.localStorage.setItem(`${window.storageName}bgPosition`, window.prompt('Enter the position of the wallpaper. \nPossible values are: \nbottom, top, left, right and center.', 'center'));
         updateStyles();
         showToast()
-        
+
     } else if (e.detail.value == 'Wallpaper Repeat') {
         window.localStorage.setItem(`${window.storageName}bgRepeat`, window.prompt('Enter the repeat of the wallpaper. \nPossible values are: \nno-repeat, repeat-x, repeat-y, repeat, round and space.', 'no-repeat'));
         showToast()
