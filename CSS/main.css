@@ -40,6 +40,10 @@
     /*URL to font*/
 }
 
+html {
+    background-color:var(--backgroundColor);
+}
+
 body {
     background-size: var(--wallpaperSize);
     background-position: var(--wallpaperPosition);
