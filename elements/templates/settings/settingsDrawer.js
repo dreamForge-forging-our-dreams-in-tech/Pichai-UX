@@ -52,7 +52,7 @@ function detectCustomization(e) {
         panel.listItems = ['Upload Wallpaper', 'Default Wallpaper', 'Hide Wallpaper'];
 
     } else if (e.detail.value == 'Default Wallpaper') {
-        window.localStorage.removeItem(`${window.storageName}bgImageChange`);
+        window.localStorage.setItem(`${window.storageName}bgImageChange`, 'revert');
 
 
     } else if (e.detail.value == 'Wallpaper Blur') {
