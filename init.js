@@ -149,9 +149,10 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         let comp = window.getComputedStyle(document.body);
         let image = String(comp['backgroundImage']);
         image = image.substring(5, image.length - 2);
+        image = value == null ? image : value;
 
-        window.document.body.style.backgroundImage = `url('${value}')`;
-        options.source = value == null ? image : value;
+        window.document.body.style.backgroundImage = `url('${image}')`;
+        options.source = image;
     } else if (key == `${window.storageName}extractionPosition`) {
         options.extractionPosition = value;
     } else if (key == `${window.storageName}transperncy`) {
