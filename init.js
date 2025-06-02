@@ -149,6 +149,7 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         let comp = window.getComputedStyle(document.body);
         let image = String(comp['backgroundImage']);
         image = image.substring(5, image.length - 2);
+        console.log(image)
         image = value == null ? image : value;
         console.log(image)
 
