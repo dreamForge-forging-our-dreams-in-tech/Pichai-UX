@@ -67,7 +67,6 @@ function RGBToHSL(value) {
 }
 
 function getPallete(options) {
-    console.log(options.source)
     return new Promise((resolve) => {
         if (options.source.length == 1) { // for generation from a single supplied color
 
