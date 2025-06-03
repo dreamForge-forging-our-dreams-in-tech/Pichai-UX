@@ -52,7 +52,12 @@ function detectCustomization(e) {
         panel.listItems = ['Upload Wallpaper', 'Default Wallpaper', 'Hide Wallpaper'];
 
     } else if (e.detail.value == 'Default Wallpaper') {
-        window.localStorage.removeItem(`${window.storageName}bgImageChange`);
+        document.body.style.backgroundImage = 'none';
+        let comp = window.getComputedStyle(document.body);
+        let image = String(comp['backgroundImage']);
+        image = image.substring(5, image.length - 2);
+        console.log(image)
+        //window.localStorage.removeItem(`${window.storageName}bgImageChange`);
 
     } else if (e.detail.value == 'Wallpaper Blur') {
         window.localStorage.setItem(`${window.storageName}blur`, Number(window.prompt('Enter the blur for the wallpaper', 1)));
