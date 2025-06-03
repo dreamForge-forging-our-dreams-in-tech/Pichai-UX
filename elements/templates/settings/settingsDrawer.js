@@ -53,6 +53,8 @@ function detectCustomization(e) {
 
     } else if (e.detail.value == 'Default Wallpaper') {
         document.body.style.backgroundImage = 'none';
+        console.log(document.body.style.backgroundImage)
+
         let comp = window.getComputedStyle(document.body);
         let image = String(comp['backgroundImage']);
         image = image.substring(5, image.length - 2);
