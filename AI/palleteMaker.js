@@ -155,8 +155,6 @@ async function generate3ColorPallete(options) {
     root.style.setProperty('--wallpaperPosition', options.wallpaperPosition);
     root.style.setProperty('--wallpaperRepeat', options.wallpaperRepeat);
 
-    root.style.setProperty('--backgroundColor', `rgba(${colors[position].join(',')}, 0.4)`); // generates a background color for the website based of the primary color
-
     root.style.setProperty('--primary', `rgba(${colors[position].join(',')}, ${alpha})`);
     root.style.setProperty('--secondairy', `rgba(${colors[position + 4].join(',')}, ${alpha})`);
     root.style.setProperty('--tertiary', `rgba(${colors[position + 9].join(',')}, ${alpha})`);
@@ -164,6 +162,8 @@ async function generate3ColorPallete(options) {
     root.style.setProperty('--primaryTextColor', getTextColor(colors[0]));
     root.style.setProperty('--secondairyTextColor', getTextColor(colors[4]));
     root.style.setProperty('--tertiaryTextColor', getTextColor(colors[9]));
+
+    root.style.setProperty('--backgroundColor', `rgba(${colors[position].join(',')}, ${root.style.getPropertyValue('--primaryTextColor') == 'white' ? 0.6 : 0.4})`); // generates a background color for the website based of the primary color
 
     let hls = generateContainerColor(colors);
 
