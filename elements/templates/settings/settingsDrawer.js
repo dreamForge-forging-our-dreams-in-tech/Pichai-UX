@@ -57,7 +57,6 @@ function detectCustomization(e) {
 
         let comp = window.getComputedStyle(document.body);
         let image = String(comp['backgroundImage']);
-        image = image.substring(5, image.length - 2);
         console.log(image)
         //window.localStorage.removeItem(`${window.storageName}bgImageChange`);
 
