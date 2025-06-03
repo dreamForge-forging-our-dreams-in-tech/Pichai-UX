@@ -59,6 +59,8 @@ class PichaiUX {
         let image = String(comp['backgroundImage']);
         image = image.substring(5, image.length - 2);
 
+        window.sessionStorage.setItem(`${window.storageName}previousWallpaper`, image); //save the wallpaper so that the user can later revert to the default one if wanted to
+
         if (window.localStorage.getItem(`${window.storageName}bgImageChange`)) {
             image = window.localStorage.getItem(`${window.storageName}bgImageChange`);
         }
@@ -146,11 +148,6 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
     let i;
 
     if (key == `${window.storageName}bgImageChange`) {
-        let comp = window.getComputedStyle(document.body);
-        let image = String(comp['backgroundImage']);
-        image = image.substring(5, image.length - 2);
-
-        window.sessionStorage.setItem(`${window.storageName}previousWallpaper`, image)
         window.document.body.style.backgroundImage = `url('${value}')`;
         options.source = value;
     } else if (key == `${window.storageName}extractionPosition`) {
