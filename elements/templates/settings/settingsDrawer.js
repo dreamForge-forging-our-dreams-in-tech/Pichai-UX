@@ -52,7 +52,7 @@ function detectCustomization(e) {
         panel.listItems = ['Upload Wallpaper', 'Default Wallpaper', 'Hide Wallpaper'];
 
     } else if (e.detail.value == 'Default Wallpaper') {
-        document.body.style.backgroundImage = 'none';
+        document.body.style.removeProperty('backgroundImage');
         console.log(document.body.style.backgroundImage)
 
         let comp = window.getComputedStyle(document.body);
