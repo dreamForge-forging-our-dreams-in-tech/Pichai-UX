@@ -53,6 +53,7 @@ function detectCustomization(e) {
 
     } else if (e.detail.value == 'Default Wallpaper') {
         document.body.style.removeProperty('backgroundImage');
+        document.body.style.removeProperty('backgroundImage');
         console.log(document.body.style.backgroundImage)
 
         let comp = window.getComputedStyle(document.body);
