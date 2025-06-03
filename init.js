@@ -24,8 +24,8 @@ class PichaiUX {
             contrast: 1,
             wallpaperBlur: 0,
             wallpaperBrightness: 1,
-            wallpaperInversion:0,
-            hueRotation:0,
+            wallpaperInversion: 0,
+            hueRotation: 0,
             inversion: 0,
             wallpaperSize: 'cover',
             wallpaperPosition: 'center',
@@ -50,7 +50,7 @@ class PichaiUX {
 
     async initialize() {
         checkCustomizationChanges(this.options); //starts listening to any adjustments to customization from the user
-        
+
         let siteName = window.location.pathname.split('/')[1];
         window.storageName = window.localStorage.getItem(`Pichai-UX ${siteName}storageKey`) || this.options.storageName;
         window.storageName = window.storageName + ' ';
@@ -63,9 +63,9 @@ class PichaiUX {
             image = window.localStorage.getItem(`${window.storageName}bgImageChange`);
         }
 
-        if(this.options.source == 'auto') {
+        if (this.options.source == 'auto') {
             this.options.source = image || '#008dcd';
-        } 
+        }
 
         //inject required css
         let cssId = 'PichaiUXCss';
@@ -146,6 +146,11 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
     let i;
 
     if (key == `${window.storageName}bgImageChange`) {
+        let comp = window.getComputedStyle(document.body);
+        let image = String(comp['backgroundImage']);
+        image = image.substring(5, image.length - 2);
+
+        window.sessionStorage.setItem(`${window.storageName}previousWallpaper`, image)
         window.document.body.style.backgroundImage = `url('${value}')`;
         options.source = value;
     } else if (key == `${window.storageName}extractionPosition`) {
@@ -159,7 +164,7 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
     } else if (key == `${window.storageName}contrast`) {
         options.contrast = value;
 
-    }  else if (key == `${window.storageName}brightness`) {
+    } else if (key == `${window.storageName}brightness`) {
         options.wallpaperBrightness = value;
 
     } else if (key == `${window.storageName}blur`) {
@@ -174,7 +179,7 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
     } else if (key == `${window.storageName}rotation`) {
         options.hueRotation = value;
 
-    }  else if (key == `${window.storageName}bgSize`) {
+    } else if (key == `${window.storageName}bgSize`) {
         options.wallpaperSize = value;
 
     } else if (key == `${window.storageName}bgPosition`) {

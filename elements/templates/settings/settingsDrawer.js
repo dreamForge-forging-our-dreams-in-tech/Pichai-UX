@@ -52,14 +52,8 @@ function detectCustomization(e) {
         panel.listItems = ['Upload Wallpaper', 'Default Wallpaper', 'Hide Wallpaper'];
 
     } else if (e.detail.value == 'Default Wallpaper') {
-        document.body.style.removeProperty('backgroundImage');
-        document.body.style.removeProperty('backgroundImage');
-        console.log(document.body.style.backgroundImage)
-
-        let comp = window.getComputedStyle(document.body);
-        let image = String(comp['backgroundImage']);
-        console.log(image)
-        //window.localStorage.removeItem(`${window.storageName}bgImageChange`);
+        window.localStorage.setItem(`${window.storageName}bgImageChange`, window.sessionStorage.getItem(`${window.storageName}previousWallpaper`));
+        showToast()
 
     } else if (e.detail.value == 'Wallpaper Blur') {
         window.localStorage.setItem(`${window.storageName}blur`, Number(window.prompt('Enter the blur for the wallpaper', 1)));
