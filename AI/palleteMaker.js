@@ -163,7 +163,7 @@ async function generate3ColorPallete(options) {
     root.style.setProperty('--secondairyTextColor', getTextColor(colors[4]));
     root.style.setProperty('--tertiaryTextColor', getTextColor(colors[9]));
 
-    root.style.setProperty('--backgroundColor', `rgba(${colors[position].join(',')}, ${root.style.getPropertyValue('--primaryTextColor') == 'white' ? 0.6 : 0.4})`); // generates a background color for the website based of the primary color
+    root.style.setProperty('--backgroundColor', `rgba(${colors[position].join(',')}, ${root.style.getPropertyValue('--primaryTextColor') == 'white' ? 0.7 : 0.3})`); // generates a background color for the website based of the primary color
 
     let hls = generateContainerColor(colors);
 
