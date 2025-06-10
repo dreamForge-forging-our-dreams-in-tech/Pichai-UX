@@ -237,7 +237,7 @@ async function generate3ColorPallete(options) {
             for(i of allElements) {
                 console.log(i, elementsWithTransparentBg)
                 if(elementsWithTransparentBg.includes(i)) {} else {
-                    i.style.filter = 'blur(15px)'; // Just for demonstration
+                    i.style.backdropFilter = 'blur(15px)'; // Just for demonstration
                 }
             }
         } else {
