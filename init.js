@@ -155,7 +155,8 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         options.extractionPosition = value;
     } else if (key == `${window.storageName}wallpaperHiden`) {
         if (window.localStorage.getItem(`${window.storageName}wallpaperHiden`) == 'true') {
-            document.body.style.backgroundImage = 'none';
+            console.log('hidden')
+            document.body.style.backgroundImage = 'none !important';
         }
     } else if (key == `${window.storageName}eBlur`) {
         options.blur = value;
