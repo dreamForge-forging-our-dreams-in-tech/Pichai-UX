@@ -28,7 +28,7 @@ function detectStorage(e) {
 
 function detectCustomization(e) {
     if (e.detail.value == 'Filters') {
-        panel.listItems = ['Contrast', 'Transparency', 'Inversion'];
+        panel.listItems = ['Contrast', 'Transparency', 'Inversion', 'Blur'];
 
     } else if (e.detail.value == 'Colors') {
         panel.listItems = ['Color Order', 'Hue-Rotation'];
@@ -75,6 +75,11 @@ function detectCustomization(e) {
         let value = Number(window.prompt('Enter the color inversion for the website (0 - 1)', 1))
         window.localStorage.setItem(`${window.storageName}inversion`, value);
         window.localStorage.setItem(`${window.storageName}wInversion`, 0); // sets the wallpaper inversion too since this is a global filter, wInversion only exists for dark mode
+        showToast()
+
+    } else if (e.detail.value == 'Blur') {
+        let value = Number(window.prompt('Enter the color blur for the website (0 - 1)', 1))
+        window.localStorage.setItem(`${window.storageName}eBlur`, value);
         showToast()
 
     } else if (e.detail.value == 'Upload Wallpaper') {

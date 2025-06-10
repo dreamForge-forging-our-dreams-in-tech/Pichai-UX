@@ -222,8 +222,3 @@ a {
 .selected {
     opacity:0.5;
 }
-
-/* Class to remove blur from children */
-.no-blur-children * {
-    backdrop-filter:blur(0px) !important; 
-}
