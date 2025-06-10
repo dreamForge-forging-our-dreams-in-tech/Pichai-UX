@@ -146,7 +146,7 @@ function getTransparentBackgroundElements() {
 
         // Check if the computed background-color is transparent or rgba(0, 0, 0, 0)
         // Note: Browsers might return 'transparent' or 'rgba(0, 0, 0, 0)'
-        if (bgColor === 'transparent' || bgColor === 'rgba(0, 0, 0, 0)') {
+        if (!bgColor === 'transparent' || !bgColor === 'rgba(0, 0, 0, 0)') {
             transparentElements.push(element);
         }
     });
