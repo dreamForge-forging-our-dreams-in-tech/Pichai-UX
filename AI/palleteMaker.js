@@ -235,6 +235,7 @@ async function generate3ColorPallete(options) {
             console.log('Elements with transparent background:', elementsWithTransparentBg);
             // You can iterate through them and do something, e.g., add a border for visibility
             for(i of allElements) {
+                console.log(i, elementsWithTransparentBg)
                 if(elementsWithTransparentBg.includes(i)) {} else {
                     i.style.filter = 'blur(15px)'; // Just for demonstration
                 }
