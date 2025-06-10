@@ -137,21 +137,34 @@ function generateContainerTextColor(colors) {
 }
 
 function getTransparentBackgroundElements() {
-    const allElements = document.querySelectorAll('*'); // Selects all elements on the page
-    const transparentElements = [];
+    const allElements = document.querySelectorAll('*'); // Get all elements in the document
+    const nonTransparentElements = [];
 
     allElements.forEach(element => {
+        // Skip non-visual tags (like script, style, meta, link, title)
+        if (element.tagName === 'SCRIPT' || element.tagName === 'STYLE' || element.tagName === 'LINK' || element.tagName === 'META' || element.tagName === 'TITLE') {
+            return;
+        }
+
         const computedStyle = window.getComputedStyle(element);
         const bgColor = computedStyle.getPropertyValue('background-color');
 
-        // Check if the computed background-color is transparent or rgba(0, 0, 0, 0)
-        // Note: Browsers might return 'transparent' or 'rgba(0, 0, 0, 0)'
-        if (!bgColor === 'transparent' || !bgColor === 'rgba(0, 0, 0, 0)') {
-            transparentElements.push(element);
+        // Check if the background color is NOT 'rgba(0, 0, 0, 0)' AND NOT 'transparent'
+        // 'transparent' keyword usually resolves to 'rgba(0, 0, 0, 0)' in computed style,
+        // but it's good to check both for robustness.
+        if (bgColor !== 'rgba(0, 0, 0, 0)' && bgColor !== 'transparent') {
+            // Also, consider if you want to exclude elements with opacity: 0,
+            // as they would effectively be invisible regardless of background color.
+            // If you want to exclude them, add this condition:
+            // if (parseFloat(computedStyle.opacity) !== 0) {
+            //     nonTransparentElements.push(element);
+            // }
+            // Otherwise, if you only care about background-color specifically:
+            nonTransparentElements.push(element);
         }
     });
 
-    return transparentElements;
+    return nonTransparentElements;
 }
 
 async function generate3ColorPallete(options) {
