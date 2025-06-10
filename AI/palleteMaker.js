@@ -136,6 +136,24 @@ function generateContainerTextColor(colors) {
     return newColors;
 }
 
+function getTransparentBackgroundElements() {
+    const allElements = document.querySelectorAll('*'); // Selects all elements on the page
+    const transparentElements = [];
+
+    allElements.forEach(element => {
+        const computedStyle = window.getComputedStyle(element);
+        const bgColor = computedStyle.getPropertyValue('background-color');
+
+        // Check if the computed background-color is transparent or rgba(0, 0, 0, 0)
+        // Note: Browsers might return 'transparent' or 'rgba(0, 0, 0, 0)'
+        if (bgColor === 'transparent' || bgColor === 'rgba(0, 0, 0, 0)') {
+            transparentElements.push(element);
+        }
+    });
+
+    return transparentElements;
+}
+
 async function generate3ColorPallete(options) {
     let colors = await getPallete(options);
     colors = colors.concat(colors);
@@ -207,6 +225,19 @@ async function generate3ColorPallete(options) {
 
     window.setTimeout(() => { // temporary timeout to dispatch event later, because right now it happens correctly but too fast.
         window.dispatchEvent(loaded); // dispatches the pichaiUXLoaded event to let the user/developer know that pichai ux has been loaded and is ready to use.
+
+        // How to use it:
+        const elementsWithTransparentBg = getTransparentBackgroundElements();
+
+        if (elementsWithTransparentBg.length > 0) {
+            console.log('Elements with transparent background:', elementsWithTransparentBg);
+            // You can iterate through them and do something, e.g., add a border for visibility
+            elementsWithTransparentBg.forEach(el => {
+                el.style.border = '1px solid red'; // Just for demonstration
+            });
+        } else {
+            console.log('No elements found with explicitly transparent background.');
+        }
     }, 600);
 }
 
