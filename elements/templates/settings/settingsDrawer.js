@@ -55,6 +55,10 @@ function detectCustomization(e) {
         window.localStorage.setItem(`${window.storageName}bgImageChange`, window.sessionStorage.getItem(`${window.storageName}previousWallpaper`));
         showToast()
 
+    } else if (e.detail.value == 'Hide Wallpaper') {
+        window.localStorage.setItem(`${window.storageName}wallpaperHiden`, confirm('Disable showing the wallpaper?, wallpaper will show again when uploading a new one'));
+        showToast()
+
     } else if (e.detail.value == 'Wallpaper Blur') {
         window.localStorage.setItem(`${window.storageName}blur`, Number(window.prompt('Enter the blur for the wallpaper', 1)));
         showToast()
@@ -85,7 +89,8 @@ function detectCustomization(e) {
     } else if (e.detail.value == 'Upload Wallpaper') {
         pickFiles(function (file) {
             window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
-
+            window.localStorage.setItem(`${window.storageName}wallpaperHiden`,'true');
+            
             updateStyles();
             showToast()
         });

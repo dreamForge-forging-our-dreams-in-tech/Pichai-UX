@@ -27,7 +27,7 @@ class PichaiUX {
             wallpaperInversion: 0,
             hueRotation: 0,
             inversion: 0,
-            blur:'0px',
+            blur: '0px',
             wallpaperSize: 'cover',
             wallpaperPosition: 'center',
             wallpaperRepeat: 'no-repeat',
@@ -153,6 +153,10 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         options.source = value;
     } else if (key == `${window.storageName}extractionPosition`) {
         options.extractionPosition = value;
+    } else if (key == `${window.storageName}wallpaperHiden`) {
+        if (window.localStorage.getItem(`${window.storageName}wallpaperHiden`) == 'true') {
+            document.body.style.backgroundImage = 'none';
+        }
     } else if (key == `${window.storageName}eBlur`) {
         options.blur = value;
     } else if (key == `${window.storageName}transperncy`) {
