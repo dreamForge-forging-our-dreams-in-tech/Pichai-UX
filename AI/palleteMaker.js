@@ -74,7 +74,7 @@ function getPallete(options) {
             resolve(options.source);
 
         } else { // for color generation from an image
-            document.body.style.backgroundImage = `url(${options.source})`;
+            //document.body.style.backgroundImage = `url(${options.source})`;
 
             const colorThief = new ColorThief();
             const img = new Image();
