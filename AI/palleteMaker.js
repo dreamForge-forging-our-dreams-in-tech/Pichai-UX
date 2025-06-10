@@ -225,7 +225,9 @@ async function generate3ColorPallete(options) {
 
     window.setTimeout(() => { // temporary timeout to dispatch event later, because right now it happens correctly but too fast.
         window.dispatchEvent(loaded); // dispatches the pichaiUXLoaded event to let the user/developer know that pichai ux has been loaded and is ready to use.
+    }, 600);
 
+    window.setInterval(() => {
         // How to use it:
         const elementsWithTransparentBg = getTransparentBackgroundElements();
         let allElements = document.querySelectorAll('*');
@@ -243,7 +245,7 @@ async function generate3ColorPallete(options) {
         } else {
             console.log('No elements found with explicitly transparent background.');
         }
-    }, 600);
+    },500)
 }
 
 export { generate3ColorPallete };
