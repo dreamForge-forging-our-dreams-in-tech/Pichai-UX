@@ -59,7 +59,7 @@ function detectCustomization(e) {
         window.localStorage.setItem(`${window.storageName}wallpaperHiden`, confirm('Disable showing the wallpaper?, wallpaper will show again when uploading a new one'));
         showToast()
 
-    } else if (e.detail.value == 'SHow Wallpaper') {
+    } else if (e.detail.value == 'Show Wallpaper') {
         window.localStorage.setItem(`${window.storageName}wallpaperHiden`, 'false');
         showToast()
 
