@@ -149,15 +149,15 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
     let i;
 
     if (key == `${window.storageName}bgImageChange`) {
-        window.document.body.style.backgroundImage = `url('${value}')`;
+        if (window.localStorage.getItem(`${window.storageName}wallpaperHiden`) == 'true') {
+            console.log('hidden')
+            document.body.style.backgroundImage = 'none';
+        } else {
+            window.document.body.style.backgroundImage = `url('${value}')`;
+        }
         options.source = value;
     } else if (key == `${window.storageName}extractionPosition`) {
         options.extractionPosition = value;
-    } else if (key == `${window.storageName}wallpaperHiden`) {
-        if (window.localStorage.getItem(`${window.storageName}wallpaperHiden`) == 'true') {
-            console.log('hidden')
-            document.body.style.backgroundImage = 'none !important';
-        }
     } else if (key == `${window.storageName}eBlur`) {
         options.blur = value;
     } else if (key == `${window.storageName}transperncy`) {
