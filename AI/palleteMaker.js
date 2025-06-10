@@ -234,18 +234,16 @@ async function generate3ColorPallete(options) {
         let i;
 
         if (elementsWithTransparentBg.length > 0) {
-            console.log('Elements with transparent background:', elementsWithTransparentBg);
             // You can iterate through them and do something, e.g., add a border for visibility
             for(i of allElements) {
-                console.log(i, elementsWithTransparentBg)
-                if(elementsWithTransparentBg.includes(i)) {} else {
+                if(elementsWithTransparentBg.includes(i) || i == document.documentElement) {} else {
                     i.style.backdropFilter = 'blur(15px)'; // Just for demonstration
                 }
             }
         } else {
             console.log('No elements found with explicitly transparent background.');
         }
-    },500)
+    },2000);
 }
 
 export { generate3ColorPallete };
