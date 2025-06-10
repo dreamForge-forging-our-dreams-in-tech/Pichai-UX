@@ -89,7 +89,7 @@ function detectCustomization(e) {
     } else if (e.detail.value == 'Upload Wallpaper') {
         pickFiles(function (file) {
             window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
-            window.localStorage.setItem(`${window.storageName}wallpaperHiden`,'true');
+            window.localStorage.setItem(`${window.storageName}wallpaperHiden`,'false');
             
             updateStyles();
             showToast()
