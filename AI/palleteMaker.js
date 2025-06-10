@@ -136,7 +136,7 @@ function generateContainerTextColor(colors) {
     return newColors;
 }
 
-function getTransparentBackgroundElements() {
+function getTransparentBackgroundElements() { //gather all transparent elements that blur should ignore
     const allElements = document.querySelectorAll('*'); // Selects all elements on the page
     const transparentElements = [];
 
@@ -227,7 +227,8 @@ async function generate3ColorPallete(options) {
         window.dispatchEvent(loaded); // dispatches the pichaiUXLoaded event to let the user/developer know that pichai ux has been loaded and is ready to use.
     }, 600);
 
-    // How to use it:
+
+    // add a blur effect to all elements that are not transparent
     const elementsWithTransparentBg = getTransparentBackgroundElements();
     let allElements = document.querySelectorAll('*');
     let i;
