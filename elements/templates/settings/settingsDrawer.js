@@ -118,7 +118,7 @@ function detectCustomization(e) {
             style.innerHTML = `
       @font-face {
         font-family: '${fontName}';
-        src: url('${fontUrl}');
+        src: url('${fontData}');
       }
     `;
             document.head.appendChild(style);
