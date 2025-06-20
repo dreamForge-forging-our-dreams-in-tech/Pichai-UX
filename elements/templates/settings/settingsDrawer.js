@@ -30,7 +30,7 @@ function detectCustomization(e) {
     if (e.detail.value == 'Filters') {
         panel.listItems = ['Contrast', 'Transparency', 'Inversion', 'Blur'];
 
-    } else if (e.detail.value == 'Colors') {
+    } else if (e.detail.value == 'Looks') {
         panel.listItems = ['Color Order', 'Hue-Rotation'];
 
     } else if (e.detail.value == 'Wallpaper') {
@@ -154,7 +154,7 @@ class SettingsDrawer extends HTMLElement {
             panel.firstTime = true;
 
             if (e.detail.value == 'Customization') {
-                panel.listItems = ['Wallpaper', 'Colors', 'Filters'];
+                panel.listItems = ['Wallpaper', 'Looks', 'Filters'];
 
             } else if (e.detail.value == 'Storage') {
                 panel.listItems = ['Clear Storage', 'Storage Key'];
