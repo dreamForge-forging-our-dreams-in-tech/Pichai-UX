@@ -104,10 +104,10 @@ function detectCustomization(e) {
         pickFiles(function (file) {
             window.localStorage.setItem(`${window.storageName}fontFamily`, file);
 
-            var myfont = new FontFace('Sriracha', 'url(' + file + ')');
+            let myfont = new FontFace('Sriracha', 'url(' + file + ')');
             myfont.load().then(function (loadedFont) {
                 document.fonts.add(loadedFont);
-                document.body.style.fontFamily = 'Sriracha !important';
+                r.style.setProperty('--font', 'url(' + file + ')');
             }).catch(function (error) {
                 // error occurred
             });
