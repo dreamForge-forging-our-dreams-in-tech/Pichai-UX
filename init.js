@@ -8,6 +8,8 @@ import { optimizeTextColor } from './utils/extraFunctions.js';
 
 import { varExists } from "./utils/cssVars.js";
 
+let r = document.querySelector(':root');
+
 let i;
 window['options'] = {};
 
@@ -160,7 +162,9 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         options.extractionPosition = value;
     } else if (key == `${window.storageName}fontFamily`) {
         let head = document.getElementsByTagName('head')[0];
-        addCSSSheets(value, 'font', head);
+        addCSSSheets(`https://fonts.googleapis.com/css2?family=${value}&display=swap`, 'font', head);
+        r.style.setProperty('--font', `'${value}', Varela`);
+
     } else if (key == `${window.storageName}eBlur`) {
         options.blur = value;
     } else if (key == `${window.storageName}transperncy`) {

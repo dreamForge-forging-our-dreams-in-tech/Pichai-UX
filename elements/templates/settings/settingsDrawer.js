@@ -5,8 +5,6 @@ import { updateStyles } from '../../../init.js';
 
 import { showToastMessage } from '../../notifiers/toast.js';
 
-let r = document.querySelector(':root');
-
 function showToast() {
     showToastMessage('autorenew', 'Applying Changes', 2000);
 }
@@ -101,7 +99,7 @@ function detectCustomization(e) {
         });
 
     } else if (e.detail.value == 'Font Family') {
-        window.localStorage.setItem(`${window.storageName}fontFamily`, window.prompt('enter the Google Fonts url linking towards your desired font family'));
+        window.localStorage.setItem(`${window.storageName}fontFamily`, window.prompt('Enter the name of the Google Fonts font you want to use'));
         showToast()
 
     } else if (e.detail.value == 'Wallpaper Size') {
