@@ -77,7 +77,7 @@ class PichaiUX {
 
             addCSSSheets(typeof exports !== 'undefined' ? 'Pichai-UX/CSS/main.css' : 'https://dreamforge-forging-our-dreams-in-tech.github.io/Pichai-UX/CSS/main.css', cssId, head);
             addCSSSheets('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded', 'google', head);
-            addCSSSheets(this.options.iconsPack, 'fonts', head);
+            addCSSSheets(this.options.iconsPack, 'iconPack', head);
         }
 
         // generate pallete based on bg image and set proper text colors
@@ -157,6 +157,8 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         }
         options.source = value;
     } else if (key == `${window.storageName}extractionPosition`) {
+        addCSSSheets(value, 'font', head);
+    }  else if (key == `${window.storageName}fontFamily`) {
         options.extractionPosition = value;
     } else if (key == `${window.storageName}eBlur`) {
         options.blur = value;
