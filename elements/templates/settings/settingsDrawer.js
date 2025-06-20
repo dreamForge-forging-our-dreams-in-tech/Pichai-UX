@@ -107,7 +107,7 @@ function detectCustomization(e) {
             var myfont = new FontFace('Sriracha', 'url(' + file + ')');
             myfont.load().then(function (loadedFont) {
                 document.fonts.add(loadedFont);
-                 r.style.setProperty('--font', 'Sriracha');
+                document.body.style.fontFamily = 'Sriracha !important';
             }).catch(function (error) {
                 // error occurred
             });
