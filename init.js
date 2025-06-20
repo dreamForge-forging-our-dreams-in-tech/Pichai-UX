@@ -158,8 +158,8 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         options.source = value;
     } else if (key == `${window.storageName}extractionPosition`) {
         options.extractionPosition = value;
-    }  else if (key == `${window.storageName}fontFamily`) {
-                let head = document.getElementsByTagName('head')[0];
+    } else if (key == `${window.storageName}fontFamily`) {
+        let head = document.getElementsByTagName('head')[0];
         addCSSSheets(value, 'font', head);
     } else if (key == `${window.storageName}eBlur`) {
         options.blur = value;
@@ -237,7 +237,11 @@ function addCSSSheets(url, id, head) {
     link.href = url;
     link.media = 'all';
 
-    head.prepend(link);
+    if(id == 'font') {
+         head.append(link);
+    } else {
+         head.prepend(link);
+    }
 }
 
 export { PichaiUX, updateStyles };
