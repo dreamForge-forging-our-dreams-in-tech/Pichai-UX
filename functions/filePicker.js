@@ -1,4 +1,4 @@
-function pickFiles (callback) {
+function pickFiles (type, callback) { //type == base64or array
     let input = document.createElement('input');
         input.type = 'file';
 
@@ -9,13 +9,17 @@ function pickFiles (callback) {
 
             // setting up the reader
             var reader = new FileReader();
-            reader.readAsDataURL(file, 'UTF-8');
+            if(type == 'base64') {
+                reader.readAsDataURL(file, 'UTF-8');
+            } else {
+                reader.readAsArrayBuffer(file);
+             }
 
             // here we tell the reader what to do when it's done reading...
             reader.onload = readerEvent => {
 
                 try {
-                    callback(readerEvent.target.result);
+                    callback(readerEvent);
                 } catch(e) {}
             }
 

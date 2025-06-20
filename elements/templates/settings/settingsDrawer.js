@@ -93,17 +93,18 @@ function detectCustomization(e) {
         showToast()
 
     } else if (e.detail.value == 'Upload Wallpaper') {
-        pickFiles(function (file) {
-            window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
+        pickFiles('base64', function (file) {
+            window.localStorage.setItem(`${window.storageName}bgImageChange`, file.target.result);
 
             updateStyles();
             showToast()
         });
 
     } else if (e.detail.value == 'Font Family') {
-        const reader = new FileReader();
-        reader.onload = function (event) {
-            const fontData = event.target.result;
+        pickFiles('array', function (file) {
+            window.localStorage.setItem(`${window.storageName}bgImageChange`, file.target.result);
+
+            const fontData = file.target.result;
 
             // Create a blob URL for the uploaded font
             const fontBlob = new Blob([fontData], { type: file.type });
@@ -125,9 +126,10 @@ function detectCustomization(e) {
             // Apply uploaded font to the element
             document.getElementById("text").style.fontFamily = fontName;
             r.style.setProeprty('--font', fontName);
-        };
 
-        reader.readAsArrayBuffer(file);
+            updateStyles();
+            showToast()
+        });
 
     } else if (e.detail.value == 'Wallpaper Size') {
         window.localStorage.setItem(`${window.storageName}bgSize`, window.prompt('Enter the size of the wallpaper. \nPossible values are: \ncover, contain, auto or custom percentage ending with %.', 'cover'));
