@@ -75,11 +75,10 @@ class PichaiUX {
         //inject required css
         let cssId = 'PichaiUXCss';
         if (!document.getElementById(cssId)) {
-            let head = document.getElementsByTagName('head')[0];
 
-            addCSSSheets(typeof exports !== 'undefined' ? 'Pichai-UX/CSS/main.css' : 'https://dreamforge-forging-our-dreams-in-tech.github.io/Pichai-UX/CSS/main.css', cssId, head);
-            addCSSSheets('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded', 'google', head);
-            addCSSSheets(this.options.iconsPack, 'iconPack', head);
+            addCSSSheets(typeof exports !== 'undefined' ? 'Pichai-UX/CSS/main.css' : 'https://dreamforge-forging-our-dreams-in-tech.github.io/Pichai-UX/CSS/main.css', cssId);
+            addCSSSheets('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded', 'google');
+            addCSSSheets(this.options.iconsPack, 'iconPack');
         }
 
         // generate pallete based on bg image and set proper text colors
@@ -161,8 +160,7 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
     } else if (key == `${window.storageName}extractionPosition`) {
         options.extractionPosition = value;
     } else if (key == `${window.storageName}fontFamily`) {
-        let head = document.getElementsByTagName('head')[0];
-        addCSSSheets(`https://fonts.googleapis.com/css2?family=${value}&display=swap`, 'font', head);
+        addCSSSheets(`https://fonts.googleapis.com/css2?family=${value}&display=swap`, 'font');
         r.style.setProperty('--font', `'${value}', Varela`);
 
     } else if (key == `${window.storageName}eBlur`) {
@@ -233,7 +231,9 @@ async function createThemedFavIcon(options) {
     }
 }
 
-function addCSSSheets(url, id, head) {
+function addCSSSheets(url, id) {
+    let head = document.getElementsByTagName('head')[0];
+
     let link = document.createElement('link');
     link.id = id;
     link.rel = 'stylesheet';
