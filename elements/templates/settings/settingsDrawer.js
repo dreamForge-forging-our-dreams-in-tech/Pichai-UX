@@ -5,6 +5,8 @@ import { updateStyles } from '../../../init.js';
 
 import { showToastMessage } from '../../notifiers/toast.js';
 
+let r = document.querySelector(':root');
+
 function showToast() {
     showToastMessage('autorenew', 'Applying Changes', 2000);
 }
@@ -31,7 +33,7 @@ function detectCustomization(e) {
         panel.listItems = ['Contrast', 'Transparency', 'Inversion', 'Blur'];
 
     } else if (e.detail.value == 'Looks') {
-        panel.listItems = ['Color Order', 'Hue-Rotation'];
+        panel.listItems = ['Color Order', 'Hue-Rotation', 'Font Family'];
 
     } else if (e.detail.value == 'Wallpaper') {
         panel.listItems = ['Change Wallpaper', 'Wallpaper Blur', 'Wallpaper Brightness', 'Wallpaper Inversion', 'Wallpaper Size', 'Wallpaper Position', 'Wallpaper Repeat'];
@@ -93,6 +95,22 @@ function detectCustomization(e) {
     } else if (e.detail.value == 'Upload Wallpaper') {
         pickFiles(function (file) {
             window.localStorage.setItem(`${window.storageName}bgImageChange`, file);
+
+            updateStyles();
+            showToast()
+        });
+
+    } else if (e.detail.value == 'Font Family') {
+        pickFiles(function (file) {
+            window.localStorage.setItem(`${window.storageName}fontFamily`, file);
+
+            var myfont = new FontFace('Sriracha', 'url(' + file + ')');
+            myfont.load().then(function (loadedFont) {
+                document.fonts.add(loadedFont);
+                 r.style.setProperty('--font', 'Sriracha');
+            }).catch(function (error) {
+                // error occurred
+            });
 
             updateStyles();
             showToast()
