@@ -157,6 +157,7 @@ async function updateStyles(key = 'all', value) { //update any set styles from s
         }
         options.source = value;
     } else if (key == `${window.storageName}extractionPosition`) {
+        let head = document.getElementsByTagName('head')[0];
         addCSSSheets(value, 'font', head);
     }  else if (key == `${window.storageName}fontFamily`) {
         options.extractionPosition = value;
