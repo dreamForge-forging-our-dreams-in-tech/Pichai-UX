@@ -101,20 +101,33 @@ function detectCustomization(e) {
         });
 
     } else if (e.detail.value == 'Font Family') {
-        pickFiles(function (file) {
-            window.localStorage.setItem(`${window.storageName}fontFamily`, file);
+        const reader = new FileReader();
+        reader.onload = function (event) {
+            const fontData = event.target.result;
 
-            let myfont = new FontFace('Sriracha', 'url(' + file + ')');
-            myfont.load().then(function (loadedFont) {
-                document.fonts.add(loadedFont);
-                r.style.setProperty('--font', 'url(' + file + ')');
-            }).catch(function (error) {
-                // error occurred
-            });
+            // Create a blob URL for the uploaded font
+            const fontBlob = new Blob([fontData], { type: file.type });
+            const fontUrl = URL.createObjectURL(fontBlob);
 
-            updateStyles();
-            showToast()
-        });
+            // Create a unique font name using file name or timestamp
+            const fontName = "UserFont_" + Date.now();
+
+            // Inject @font-face rule into a new style element
+            const style = document.createElement("style");
+            style.innerHTML = `
+      @font-face {
+        font-family: '${fontName}';
+        src: url('${fontUrl}');
+      }
+    `;
+            document.head.appendChild(style);
+
+            // Apply uploaded font to the element
+            document.getElementById("text").style.fontFamily = fontName;
+            r.style.setProeprty('--font', fontName);
+        };
+
+        reader.readAsArrayBuffer(file);
 
     } else if (e.detail.value == 'Wallpaper Size') {
         window.localStorage.setItem(`${window.storageName}bgSize`, window.prompt('Enter the size of the wallpaper. \nPossible values are: \ncover, contain, auto or custom percentage ending with %.', 'cover'));
