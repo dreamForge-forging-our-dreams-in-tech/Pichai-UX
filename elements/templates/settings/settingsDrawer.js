@@ -93,7 +93,7 @@ function detectCustomization(e) {
         showToast()
 
     } else if (e.detail.value == 'Upload Wallpaper') {
-        pickFiles('base64', function (file) {
+        pickFiles(function (file) {
             window.localStorage.setItem(`${window.storageName}bgImageChange`, file.target.result);
 
             updateStyles();
