@@ -44,7 +44,7 @@ html {
     background-color:var(--backgroundColor);
 }
 
-body {
+body, html {
     background-size: var(--wallpaperSize);
     background-position: var(--wallpaperPosition);
     background-repeat: var(--wallpaperRepeat);
