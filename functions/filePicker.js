@@ -1,4 +1,4 @@
-function pickFiles(type, callback) { //type == base64or array
+function pickFiles(callback) { //type == base64or array
     let input = document.createElement('input');
     input.type = 'file';
 
@@ -14,11 +14,8 @@ function pickFiles(type, callback) { //type == base64or array
         reader.onload = readerEvent => {
 
             try {
-                console.log(readerEvent)
                 callback(readerEvent);
-            } catch (e) {
-                console.error(e)
-            }
+            } catch (e) { }
         }
 
     }
