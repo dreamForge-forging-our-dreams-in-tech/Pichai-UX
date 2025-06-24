@@ -43,6 +43,7 @@
 html {
     background-color:var(--backgroundColor);
     filter: hue-rotate(var(--hueRotation));
+    backdrop-filter: hue-rotate(var(--hueRotation));
 }
 
 body {
