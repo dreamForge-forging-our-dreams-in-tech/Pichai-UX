@@ -16,7 +16,9 @@ function pickFiles(type, callback) { //type == base64or array
             try {
                 console.log(readerEvent)
                 callback(readerEvent);
-            } catch (e) { }
+            } catch (e) {
+                console.error(e)
+            }
         }
 
     }
