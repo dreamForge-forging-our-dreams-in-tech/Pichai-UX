@@ -46,7 +46,7 @@ html {
     backdrop-filter: hue-rotate(var(--hueRotation));
 }
 
-body {
+body, img {
     background-size: var(--wallpaperSize);
     background-position: var(--wallpaperPosition);
     background-repeat: var(--wallpaperRepeat);
