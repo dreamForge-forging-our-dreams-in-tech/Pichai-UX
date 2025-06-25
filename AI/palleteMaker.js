@@ -164,7 +164,7 @@ async function generate3ColorPallete(options) {
         let image = String(window.wallpaper);
         image = image.substring(5, image.length - 2);
 
-        options.source = img;
+        options.source = image;
     }
 
     let colors = await getPallete(options);
