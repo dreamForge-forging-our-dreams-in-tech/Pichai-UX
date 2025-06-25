@@ -155,7 +155,12 @@ function getTransparentBackgroundElements() { //gather all transparent elements 
 async function generate3ColorPallete(options) {
     if (options.hueRotation != '0') {
         options.source = 'https://lukeplays33.github.io/Pichai/assets/bg.jpeg'; // sets the wallpaper to a default image so that hue rotation will always be consistent
+
+        window.wallpaper = document.body.style.backgroundImage;
         document.body.style.backgroundImage = 'none'; // removes the background image so that the hue rotation can be applied correctly
+    } else {
+        options.source = String(window.wallpaper).substring(3, String(window.wallpaper).length);
+        document.body.style.backgroundImage = window.wallpaper;
     }
 
     let colors = await getPallete(options);
