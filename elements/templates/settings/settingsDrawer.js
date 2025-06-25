@@ -7,10 +7,7 @@ import { showToastMessage } from '../../notifiers/toast.js';
 
 function showToast() {
         showToastMessage('autorenew', 'Applying Changes', 2000);
-
-        window.setTimeout(() => {
-            updateStyles();
-        }, 1000);
+        updateStyles();
 }
 
 let panel;
