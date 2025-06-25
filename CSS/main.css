@@ -92,6 +92,10 @@ html {
     position:relative;
 }
 
+img, iframe img, video, canvas, svg {
+    filter: hue-rotate(calc( -1 * var(--hueRotation)));
+}
+
 .transparencyMode * :not(body) {
     opacity:0.9
 }
