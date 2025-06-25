@@ -52,6 +52,7 @@ function detectCustomization(e) {
         panel.listItems = ['Upload Wallpaper', 'Default Wallpaper', 'Hide Wallpaper', 'Show Wallpaper'];
 
     } else if (e.detail.value == 'Default Wallpaper') {
+        window.localStorage.setItem(`${window.storageName}rotation`, '0'); // sets the hue rotation to 0 since the wallpaper is changed
         window.localStorage.setItem(`${window.storageName}bgImageChange`, window.sessionStorage.getItem(`${window.storageName}previousWallpaper`));
         showToast()
 
@@ -61,6 +62,7 @@ function detectCustomization(e) {
 
     } else if (e.detail.value == 'Show Wallpaper') {
         window.localStorage.setItem(`${window.storageName}wallpaperHiden`, 'false');
+        window.localStorage.setItem(`${window.storageName}rotation`, '0'); // sets the hue rotation to 0 since the wallpaper is changed
         showToast()
 
     } else if (e.detail.value == 'Wallpaper Blur') {
@@ -72,7 +74,7 @@ function detectCustomization(e) {
         showToast()
 
     } else if (e.detail.value == 'Hue-Rotation') {
-        window.localStorage.setItem(`${window.storageName}rotation`, Number(window.prompt('Enter the hue-rotation \nHue-Rotation allows you so set custom colors for your elements, colors wich are not taken from the wallpaper.', 1)));
+        window.localStorage.setItem(`${window.storageName}rotation`, Number(window.prompt('Enter the hue-rotation \nHue-Rotation allows you so set custom colors for your elements, colors wich are not taken from the wallpaper. \n Note: When setting the hue rotation the wallpaper will be disabled and when setting a wallpaper hue rotation will be disabled, to avoid any eye strain.', 1)));
         showToast()
 
     } else if (e.detail.value == 'Wallpaper Inversion') {
@@ -94,6 +96,7 @@ function detectCustomization(e) {
         pickFiles(function (file) {
             window.localStorage.setItem(`${window.storageName}bgImageChange`, file.target.result);
 
+            window.localStorage.setItem(`${window.storageName}rotation`, '0'); // sets the hue rotation to 0 since the wallpaper is changed
             updateStyles();
             showToast()
         });
