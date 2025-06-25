@@ -159,6 +159,9 @@ async function generate3ColorPallete(options) {
         window.wallpaper = document.body.style.backgroundImage;
         document.body.style.backgroundImage = 'none'; // removes the background image so that the hue rotation can be applied correctly
     } else {
+        if(window.wallpaper) {
+            window.wallpaper = document.body.style.backgroundImage
+        }
         document.body.style.removeProperty('background-image');
 
         let image = String(window.wallpaper);
