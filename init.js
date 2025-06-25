@@ -67,7 +67,7 @@ class PichaiUX {
         if (window.localStorage.getItem(`${window.storageName}bgImageChange`)) {
             image = window.localStorage.getItem(`${window.storageName}bgImageChange`);
         } else {
-            window.sessionStorage.setItem(`${window.storageName}bgImageChange`, image); // extra safe for when applying styles breaks
+            window.localStorage.setItem(`${window.storageName}bgImageChange`, image); // extra safe for when applying styles breaks
         }
 
         if (this.options.source == 'auto') {
