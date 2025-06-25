@@ -6,8 +6,11 @@ import { updateStyles } from '../../../init.js';
 import { showToastMessage } from '../../notifiers/toast.js';
 
 function showToast() {
-    updateStyles();
     showToastMessage('autorenew', 'Applying Changes', 2000);
+
+    window.setTimeout(() => {
+        updateStyles();
+    }, 1000);
 }
 
 let panel;
