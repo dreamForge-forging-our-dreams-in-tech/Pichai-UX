@@ -92,7 +92,7 @@ html {
     position:relative;
 }
 
-img, iframe iframe img, video, canvas, svg {
+img, video, canvas, svg, .noHueRotation { 
     filter: hue-rotate(calc( -1 * var(--hueRotation)));
 }
 
