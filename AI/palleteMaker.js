@@ -68,9 +68,7 @@ function RGBToHSL(value) {
 
 function getPallete(options) {
     return new Promise((resolve) => {
-        if (options.source.length == 1) { // for generation from a single supplied color
-
-        } else if (options.source.length == 10) {// for generation for a array with 10 supplied rgb colors
+        if (options.source.length == 10) {// for generation for a array with 10 supplied rgb colors
             resolve(options.source);
 
         } else { // for color generation from an image
@@ -155,6 +153,11 @@ function getTransparentBackgroundElements() { //gather all transparent elements 
 }
 
 async function generate3ColorPallete(options) {
+    if (options.hueRotation != '0') {
+        options.source = 'https://lukeplays33.github.io/Mod-Docs/assets/images/images/mountains.png'; // sets the wallpaper to a default image so that hue rotation will always be consistent
+        document.body.style.bacgroundImage = 'none'; // removes the background image so that the hue rotation can be applied correctly
+    }
+    
     let colors = await getPallete(options);
     colors = colors.concat(colors);
 
