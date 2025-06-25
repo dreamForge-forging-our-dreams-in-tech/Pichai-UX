@@ -42,8 +42,6 @@
 
 html {
     background-color:var(--backgroundColor);
-    filter: hue-rotate(var(--hueRotation));
-    backdrop-filter: hue-rotate(var(--hueRotation));
 }
 
 body, img, iframe img, video, canvas, svg {
@@ -51,7 +49,7 @@ body, img, iframe img, video, canvas, svg {
     background-position: var(--wallpaperPosition);
     background-repeat: var(--wallpaperRepeat);
     
-    filter: contrast(var(--contrast)) invert(var(--inversion));
+    filter: contrast(var(--contrast)) invert(var(--inversion)) hue-rotate(var(--hueRotation));
     backdrop-filter: blur(var(--wallpaperBlur)) brightness(var(--wallpaperBrightness)) invert(var(--wallpaperInversion)) hue-rotate(calc( -1 * var(--hueRotation)));
 }
 
