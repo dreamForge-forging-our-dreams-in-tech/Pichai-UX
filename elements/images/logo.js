@@ -25,10 +25,6 @@ function deTranslate(canvas, dynamicImage, context) {
 }
 
 async function generateDynamicIcon(image) {
-    console.log(image.split(/(\\|\/)/g).pop())
-
-    console.log(rendered[String(image.split(/(\\|\/)/g).pop())])
-    console.log(rendered)
 
         await varExists('--primary');
 
@@ -103,6 +99,8 @@ async function generateDynamicIcon(image) {
 }
 
 async function setDynamicIcon(img, faviconUrl) {
+        console.log(faviconUrl[String(image.split(/(\\|\/)/g).pop())])
+
     let newIcon = await generateDynamicIcon(faviconUrl);
     rendered[String(faviconUrl.split(/(\\|\/)/g).pop())] = newIcon;
     img.style.backgroundImage = `url(${newIcon})`;
