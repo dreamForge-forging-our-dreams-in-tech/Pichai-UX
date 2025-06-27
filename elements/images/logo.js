@@ -51,10 +51,9 @@ async function generateDynamicIcon(image) {
 
             setTranslate(canvas2, dynamicImage, context2);
 
-
             // Get the entire image data as an array of pixel data
             let imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-            let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'rgb(255, 255, 255)' ? 0 : 255;
+            let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'rgb(255, 255, 255)' ? 'white' : 'black';
 
             let colorClass;
 
@@ -75,7 +74,7 @@ async function generateDynamicIcon(image) {
 
                     if (colorClass != findColorClass(red, green, blue)) {
                         // Replace the pixel with a 5x5 square
-                        context2.fillStyle = textColor == 255 ? 'white' : 'black'; // Set your desired color here
+                        context2.fillStyle = textColor; // Set your desired color here
                         context2.fillRect(x, y, 2.5, 2.5); // Draw a 5x5 square
 
                         colorClass = findColorClass(red, green, blue);
