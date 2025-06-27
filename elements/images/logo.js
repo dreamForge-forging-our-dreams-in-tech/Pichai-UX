@@ -78,6 +78,8 @@ async function generateDynamicIcon(image) {
                         context2.fillRect(x, y, 2.5, 2.5); // Draw a 5x5 square
 
                         colorClass = findColorClass(red, green, blue);
+                    } else {
+                        x++;
                     }
                 }
             }

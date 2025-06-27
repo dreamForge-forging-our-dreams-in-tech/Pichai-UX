@@ -1,4 +1,4 @@
-export function trainAI(net, trainingData, saveKey) {
+export function trainAI(net, trainingData, saveKey) {// saves the training data under the given ey and trains the ai
   if (window.localStorage.getItem(saveKey)) {
     net.fromJSON(JSON.parse(window.localStorage.getItem(saveKey)));
   } else {
