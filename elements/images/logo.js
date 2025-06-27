@@ -79,7 +79,7 @@ async function generateDynamicIcon(image) {
 
                         colorClass = findColorClass(red, green, blue);
                     } else {
-                        x+=2;
+                        x+=4;
                     }
                 }
             }
