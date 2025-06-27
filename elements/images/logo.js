@@ -20,7 +20,7 @@ function deTranslate(canvas, dynamicImage, context) {
     context.translate(-3, -3);
 }
 
-async function generateDynamicIcon(image, radius = 360) {
+async function generateDynamicIcon(image) {
     await varExists('--primary');
 
     return new Promise((resolve) => {
@@ -54,7 +54,7 @@ async function generateDynamicIcon(image, radius = 360) {
 
             // Get the entire image data as an array of pixel data
             let imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-            let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'black' ? 0 : 255;
+            let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'rgb(255, 255, 255)' ? 0 : 255;
 
             let colorClass;
 
