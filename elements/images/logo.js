@@ -5,6 +5,8 @@ import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js
 
 import { varExists } from '../../utils/cssVars.js';
 
+import '../../utils/localFOrage.js';
+
 let rgb;
 
 function setTranslate(canvas, dynamicImage, context) {
@@ -98,7 +100,7 @@ async function generateDynamicIcon(image) {
 
                 context.drawImage(canvas2, 0, 0);
 
-                window.localForage.setItem(String(image), canvas.toDataURL());
+                window.localforage.setItem(String(image), canvas.toDataURL());
                 resolve(canvas.toDataURL());
             };
         });
