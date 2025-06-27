@@ -98,6 +98,7 @@ async function generateDynamicIcon(image) {
                 context.drawImage(canvas2, 0, 0);
 
                 rendered[String(image.split(/(\\|\/)/g).pop())] = canvas.toDataURL();
+                console.log(rendered)
                 resolve(canvas.toDataURL());
             };
         });
