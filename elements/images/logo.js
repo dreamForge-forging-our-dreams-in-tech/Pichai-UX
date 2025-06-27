@@ -74,12 +74,12 @@ async function generateDynamicIcon(image) {
 
                     let colorClass = findColorClass(red, green, blue);
 
-                    if (colorClass != colorClass) {
+                    if (colorClass != findColorClass(red, green, blue)) {
                         // Replace the pixel with a 5x5 square
                         context2.fillStyle = textColor; // Set your desired color here
                         context2.fillRect(x, y, 2.5, 2.5); // Draw a 5x5 square
 
-                        colorClass = colorClass;
+                        colorClass = findColorClass(red, green, blue);
                     }
                 }
             }
