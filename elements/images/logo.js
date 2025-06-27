@@ -62,36 +62,25 @@ async function generateDynamicIcon(image) {
 
             let x, y;
 
-            x = 0;
-            y = 0;
-            colorClass = null;
+            for (y = 0; y < canvas.height; y++) {
+                for (x = 0; x < canvas.width; x++) {
+                    const index = (y * canvas.width + x) * 4;
+                    const red = imageData.data[index];
+                    const green = imageData.data[index + 1];
+                    const blue = imageData.data[index + 2];
 
-            const interval = setInterval(() => {
-                if (y >= canvas.height) {
-                    clearInterval(interval);
-                    context.clearRect(-2, -2, canvas.width + 5, canvas.height + 5);
-                    context.drawImage(canvas2, 0, 0);
-                    resolve(canvas.toDataURL());
-                    return;
+                    //context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
+                    //context.fillRect(x, y, 1, 1); // Draw a 5x5 square
+
+                    if (colorClass != findColorClass(red, green, blue)) {
+                        // Replace the pixel with a 5x5 square
+                        context2.fillStyle = textColor; // Set your desired color here
+                        context2.fillRect(x, y, 2.5, 2.5); // Draw a 5x5 square
+
+                        colorClass = findColorClass(red, green, blue);
+                    }
                 }
-
-                const index = (y * canvas.width + x) * 4;
-                const red = imageData.data[index];
-                const green = imageData.data[index + 1];
-                const blue = imageData.data[index + 2];
-
-                if (colorClass != findColorClass(red, green, blue)) {
-                    context2.fillStyle = textColor;
-                    context2.fillRect(x, y, 2.5, 2.5);
-                    colorClass = findColorClass(red, green, blue);
-                }
-
-                x++;
-                if (x >= canvas.width) {
-                    x = 0;
-                    y++;
-                }
-            }, 0);
+            }
 
             context.clearRect(-2, -2, canvas.width + 5, canvas.height + 5);
 
