@@ -61,26 +61,49 @@ async function generateDynamicIcon(image) {
             deTranslate(canvas2, dynamicImage, context2);
 
             let x, y;
+            // Convert imageData to a typed array for faster access
+            const data = imageData.data;
+            const width = canvas.width;
+            const height = canvas.height;
+            let prevColorClass = null;
 
-            for (y = 0; y < canvas.height; y++) {
-                for (x = 0; x < canvas.width; x++) {
-                    const index = (y * canvas.width + x) * 4;
-                    const red = imageData.data[index];
-                    const green = imageData.data[index + 1];
-                    const blue = imageData.data[index + 2];
+            // Use a single loop for better cache locality
+            for (let i = 0, len = width * height; i < len; i++) {
+                const index = i * 4;
+                const red = data[index];
+                const green = data[index + 1];
+                const blue = data[index + 2];
 
-                    //context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
-                    //context.fillRect(x, y, 1, 1); // Draw a 5x5 square
+                const currentColorClass = findColorClass(red, green, blue);
 
-                    if (colorClass != findColorClass(red, green, blue)) {
-                        // Replace the pixel with a 5x5 square
-                        context2.fillStyle = textColor; // Set your desired color here
-                        context2.fillRect(x, y, 2.5, 2.5); // Draw a 5x5 square
-
-                        colorClass = findColorClass(red, green, blue);
-                    }
+                if (prevColorClass !== currentColorClass) {
+                    context2.fillStyle = textColor;
+                    // Calculate x, y from i
+                    const px = i % width;
+                    const py = (i / width) | 0;
+                    context2.fillRect(px, py, 2.5, 2.5);
+                    prevColorClass = currentColorClass;
                 }
             }
+            // for (y = 0; y < canvas.height; y++) {
+            //     for (x = 0; x < canvas.width; x++) {
+            //         const index = (y * canvas.width + x) * 4;
+            //         const red = imageData.data[index];
+            //         const green = imageData.data[index + 1];
+            //         const blue = imageData.data[index + 2];
+
+            //         //context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
+            //         //context.fillRect(x, y, 1, 1); // Draw a 5x5 square
+
+            //         if (colorClass != findColorClass(red, green, blue)) {
+            //             // Replace the pixel with a 5x5 square
+            //             context2.fillStyle = textColor; // Set your desired color here
+            //             context2.fillRect(x, y, 2.5, 2.5); // Draw a 5x5 square
+
+            //             colorClass = findColorClass(red, green, blue);
+            //         }
+            //     }
+            // }
 
             context.clearRect(-2, -2, canvas.width + 5, canvas.height + 5);
 
