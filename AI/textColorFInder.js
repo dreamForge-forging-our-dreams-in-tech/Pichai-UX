@@ -234,7 +234,7 @@ let trainingData = [{
 },
 ]
 
-trainAI(net, trainingData);
+trainAI(net, trainingData, 'textColorTrainingData');
 
 function getTextColor(color) {
   try {

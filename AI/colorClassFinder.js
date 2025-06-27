@@ -36,7 +36,7 @@ const trainingData = [
 
 // Create and configure the neural network
 const net = new brain.NeuralNetwork();
-trainAI(net, trainingData);
+trainAI(net, trainingData, 'colorClassTrainingData');
 
 // Function to recognize color based on RGB values
 function recognizeColor(r, g, b) {

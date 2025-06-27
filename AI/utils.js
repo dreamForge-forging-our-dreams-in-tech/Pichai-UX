@@ -1,9 +1,9 @@
-export function trainAI(net, trainingData) {
-  if (window.localStorage.getItem('colorClassTrainingData')) {
-    net.fromJSON(JSON.parse(window.localStorage.getItem('colorClassTrainingData')));
+export function trainAI(net, trainingData, saveKey) {
+  if (window.localStorage.getItem(saveKey)) {
+    net.fromJSON(JSON.parse(window.localStorage.getItem(saveKey)));
   } else {
     // If no training data is found, train the network with the sample dataset
     net.train(trainingData);
   }
-  window.localStorage.setItem('colorClassTrainingData', JSON.stringify(net.toJSON()));
+  window.localStorage.setItem(saveKey, JSON.stringify(net.toJSON()));
 }
