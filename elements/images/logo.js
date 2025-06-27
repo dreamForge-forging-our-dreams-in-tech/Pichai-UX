@@ -100,14 +100,20 @@ async function generateDynamicIcon(image) {
 
                     context.drawImage(canvas2, 0, 0);
 
-                    window.localforage.setItem(String(image), canvas.toDataURL());
+                    localforage.setItem(String(image), canvas.toDataURL()).then(function (value) {
+                        // Do other things once the value has been saved.
+                        console.log(value);
+                    }).catch(function (err) {
+                        // This code runs if there were any errors
+                        console.log(err);
+                    });
                     resolve(canvas.toDataURL());
                 };
             });
         } else {
             resolve(value);
         }
-    }).catch(async (err) => {});
+    }).catch(async (err) => { });
 }
 
 async function setDynamicIcon(img, faviconUrl, radius) {
