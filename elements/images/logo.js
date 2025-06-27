@@ -20,18 +20,6 @@ function deTranslate(canvas, dynamicImage, context) {
     context.translate(-3, -3);
 }
 
-function drawCircle(canvas, radius) {
-    let context = canvas.getContext("2d", { willReadFrequently: true });
-
-    context.strokeStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
-    context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
-
-    context.beginPath();
-    context.roundRect(2, 2, canvas.width + 1, canvas.height + 1, radius);
-    context.fill();
-
-}
-
 async function generateDynamicIcon(image, radius = 360) {
     await varExists('--primary');
 
@@ -96,7 +84,6 @@ async function generateDynamicIcon(image, radius = 360) {
             }
 
             context.clearRect(-2, -2, canvas.width + 5, canvas.height + 5);
-            //drawCircle(canvas, radius); //draws a circle following the user set radius after the canvas has cleared itself
 
             context.drawImage(canvas2, 0, 0);
 
