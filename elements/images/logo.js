@@ -26,7 +26,7 @@ async function generateDynamicIcon(image) {
     console.log(image)
 
 
-    localforage.getItem(String(image)).then((value) => {
+    localforage.getItem(String(image)).then(async (value) => {
         // This code runs once the value has been loaded
         // from the offline store.
         console.log(value);
@@ -109,7 +109,7 @@ async function generateDynamicIcon(image) {
         } else {
             resolve(value);
         }
-    }).catch(async (err) => { });
+    }).catch(async (err) => {});
 }
 
 async function setDynamicIcon(img, faviconUrl, radius) {
