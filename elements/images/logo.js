@@ -27,7 +27,7 @@ function deTranslate(canvas, dynamicImage, context) {
 async function generateDynamicIcon(image) {
     console.log(image.split(/(\\|\/)/g).pop())
 
-    console.log(rendered[String(image)])
+    console.log(rendered[String(image.split(/(\\|\/)/g).pop())])
     console.log(rendered)
 
         await varExists('--primary');
@@ -97,7 +97,7 @@ async function generateDynamicIcon(image) {
 
                 context.drawImage(canvas2, 0, 0);
 
-                rendered[String(image)] = canvas.toDataURL();
+                rendered[String(image.split(/(\\|\/)/g).pop())] = canvas.toDataURL();
                 resolve(canvas.toDataURL());
             };
         });
