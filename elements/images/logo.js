@@ -29,7 +29,6 @@ async function generateDynamicIcon(image) {
     localforage.getItem(String(image)).then(async (value) => {
         // This code runs once the value has been loaded
         // from the offline store.
-        console.log(value);
         if (!value) {
             console.log('ee')
 
@@ -111,6 +110,7 @@ async function generateDynamicIcon(image) {
                 };
             });
         } else {
+            console.log(value)
             resolve(value);
         }
     }).catch(async (err) => { });
