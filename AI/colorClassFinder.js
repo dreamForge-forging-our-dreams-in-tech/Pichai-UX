@@ -1,5 +1,7 @@
 import './Brain.js';
 
+import { trainAI } from './utils.js';
+
 // Sample dataset
 const trainingData = [
   { input: { r: 0.8, g: 0.2, b: 0.2 }, output: { red: 1 } },
@@ -32,19 +34,9 @@ const trainingData = [
   { input: { r: (1 / 255), g: (19 / 255), b: (34 / 255) }, output: { black: 1 } },
 ];
 
-function trainAI(net) {
-  if (window.localStorage.getItem('colorClassTrainingData')) {
-    net.fromJSON(JSON.parse(window.localStorage.getItem('colorClassTrainingData')));
-  } else {
-    // If no training data is found, train the network with the sample dataset
-    net.train(trainingData);
-  }
-  window.localStorage.setItem('colorClassTrainingData', JSON.stringify(net.toJSON()));
-}
-
 // Create and configure the neural network
 const net = new brain.NeuralNetwork();
-trainAI(net);
+trainAI(net, trainingData);
 
 // Function to recognize color based on RGB values
 function recognizeColor(r, g, b) {

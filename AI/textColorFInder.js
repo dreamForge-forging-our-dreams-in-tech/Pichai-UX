@@ -1,8 +1,9 @@
 import './Brain.js';
+import { trainAI } from './utils.js';
 
 var net = new brain.NeuralNetwork();
 
-net.train([{
+let trainingData = [{
   input: {
     r: 0.03,
     g: 0.7,
@@ -231,7 +232,9 @@ net.train([{
     black: 1
   }
 },
-]);
+]
+
+trainAI(net, trainingData);
 
 function getTextColor(color) {
   try {
