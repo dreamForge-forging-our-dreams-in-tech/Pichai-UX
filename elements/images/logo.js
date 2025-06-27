@@ -26,6 +26,8 @@ async function generateDynamicIcon(image) {
     return new Promise((resolve) => {
         //create 2 canvases 1 for reading and 1 for rendering the icon properly
         const canvas = document.createElement('canvas');
+        const canvasWidth = canvas.width;
+        const canvasHeight = canvas.height;
         const context = canvas.getContext("2d", { willReadFrequently: true });
 
         const canvas2 = document.createElement('canvas');
@@ -52,7 +54,7 @@ async function generateDynamicIcon(image) {
             setTranslate(canvas2, dynamicImage, context2);
 
             // Get the entire image data as an array of pixel data
-            let imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+            let imageData = context.getImageData(0, 0, canvasWidth, canvas.height);
             let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'rgb(255, 255, 255)' ? 'black' : 'white';
 
             let colorClass;
@@ -62,9 +64,9 @@ async function generateDynamicIcon(image) {
 
             let x, y;
 
-            for (y = 0; y < canvas.height; y++) {
-                for (x = 0; x < canvas.width; x++) {
-                    const index = (y * canvas.width + x) * 4;
+            for (y = 0; y < canvasHeight; y++) {
+                for (x = 0; x < canvasWidth; x++) {
+                    const index = (y * canvasWidth + x) * 4;
                     const red = imageData.data[index];
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
@@ -84,7 +86,7 @@ async function generateDynamicIcon(image) {
                 }
             }
 
-            context.clearRect(-2, -2, canvas.width + 5, canvas.height + 5);
+            context.clearRect(-2, -2, canvasWidth + 5, canvasHeight + 5);
 
             context.drawImage(canvas2, 0, 0);
 
