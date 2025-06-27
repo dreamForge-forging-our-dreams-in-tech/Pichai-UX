@@ -31,6 +31,7 @@ async function generateDynamicIcon(image) {
         // from the offline store.
         console.log(value);
         if (value) {
+            console.log('ee')
 
             // This code runs if there were any errors
             console.log(err);
