@@ -99,8 +99,8 @@ async function generateDynamicIcon(image) {
 }
 
 async function setDynamicIcon(img, faviconUrl) {
-        console.log(faviconUrl[String(image.split(/(\\|\/)/g).pop())])
-
+        console.log(rendered[String(faviconUrl.split(/(\\|\/)/g).pop())])
+        
     let newIcon = await generateDynamicIcon(faviconUrl);
     rendered[String(faviconUrl.split(/(\\|\/)/g).pop())] = newIcon;
     img.style.backgroundImage = `url(${newIcon})`;
