@@ -25,7 +25,7 @@ function deTranslate(canvas, dynamicImage, context) {
 }
 
 async function generateDynamicIcon(image) {
-    console.log(image)
+    console.log(image.split(/(\\|\/)/g).pop())
 
     console.log(rendered[String(image)])
     console.log(rendered)
