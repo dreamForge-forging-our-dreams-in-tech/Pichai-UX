@@ -9,6 +9,8 @@ import '../../utils/localFOrage.js';
 
 let rgb;
 
+let rendered = {}
+
 function setTranslate(canvas, dynamicImage, context) {
     canvas.width = dynamicImage.width;
     canvas.height = dynamicImage.height;
@@ -24,6 +26,8 @@ function deTranslate(canvas, dynamicImage, context) {
 
 async function generateDynamicIcon(image) {
     console.log(image)
+
+    console.log(rendered[image])
 
         await varExists('--primary');
 
@@ -92,7 +96,7 @@ async function generateDynamicIcon(image) {
 
                 context.drawImage(canvas2, 0, 0);
 
-                window.localforage.setItem(String(image), canvas.toDataURL());
+                rendered[image] = canvas.toDataURL();
                 resolve(canvas.toDataURL());
             };
         });
