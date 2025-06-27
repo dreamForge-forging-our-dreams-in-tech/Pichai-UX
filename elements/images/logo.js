@@ -53,7 +53,7 @@ async function generateDynamicIcon(image) {
 
             // Get the entire image data as an array of pixel data
             let imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-            let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'rgb(255, 255, 255)' ? 'white' : 'black';
+            let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'rgb(255, 255, 255)' ? 'black' : 'white';
 
             let colorClass;
 
