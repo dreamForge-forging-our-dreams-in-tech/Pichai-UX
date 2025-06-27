@@ -28,6 +28,7 @@ async function generateDynamicIcon(image) {
     console.log(image.split(/(\\|\/)/g).pop())
 
     console.log(rendered[String(image.split(/(\\|\/)/g).pop())])
+    console.log(rendered)
 
         await varExists('--primary');
 
@@ -96,15 +97,14 @@ async function generateDynamicIcon(image) {
 
                 context.drawImage(canvas2, 0, 0);
 
-                rendered[String(image.split(/(\\|\/)/g).pop())] = canvas.toDataURL();
-                console.log(rendered)
                 resolve(canvas.toDataURL());
             };
         });
 }
 
-async function setDynamicIcon(img, faviconUrl, radius) {
-    let newIcon = await generateDynamicIcon(faviconUrl, parseInt(radius));
+async function setDynamicIcon(img, faviconUrl) {
+    let newIcon = await generateDynamicIcon(faviconUrl);
+    rendered[String(image.split(/(\\|\/)/g).pop())] = newIcon;
     img.style.backgroundImage = `url(${newIcon})`;
 }
 
