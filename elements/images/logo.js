@@ -28,7 +28,6 @@ async function generateDynamicIcon(image) {
     console.log(image.split(/(\\|\/)/g).pop())
 
     console.log(rendered[String(image.split(/(\\|\/)/g).pop())])
-    console.log(rendered)
 
         await varExists('--primary');
 
