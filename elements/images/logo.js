@@ -21,6 +21,7 @@ function deTranslate(canvas, dynamicImage, context) {
 }
 
 async function generateDynamicIcon(image) {
+    console.log(image)
     await varExists('--primary');
 
     return new Promise((resolve) => {
