@@ -28,6 +28,7 @@ async function generateDynamicIcon(image) {
     console.log(image)
 
     console.log(rendered[image])
+    console.log(rendered)
 
         await varExists('--primary');
 
