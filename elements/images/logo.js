@@ -9,8 +9,6 @@ import '../../utils/localFOrage.js';
 
 let rgb;
 
-let rendered = {}
-
 function setTranslate(canvas, dynamicImage, context) {
     canvas.width = dynamicImage.width;
     canvas.height = dynamicImage.height;
@@ -99,10 +97,7 @@ async function generateDynamicIcon(image) {
 }
 
 async function setDynamicIcon(img, faviconUrl) {
-        console.log(rendered[String(faviconUrl.split(/(\\|\/)/g).pop())])
-        
     let newIcon = await generateDynamicIcon(faviconUrl);
-    rendered[String(faviconUrl.split(/(\\|\/)/g).pop())] = newIcon;
     img.style.backgroundImage = `url(${newIcon})`;
 }
 
