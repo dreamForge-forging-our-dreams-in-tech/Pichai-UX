@@ -28,14 +28,23 @@ const trainingData = [
   { input: { r: 0, g: 0.5, b: 0.5 }, output: { teal: 1 } },
   { input: { r: 0.8, g: 0.1, b: 0.1 }, output: { brown: 1 } },
   { input: { r: 0, g: 0, b: 0 }, output: { black: 1 } },
-  { input: { r: (132/255), g: (160/255), b: (160/255) }, output: { white: 1 } },
-  { input: { r: (1/255), g: (19/255), b: (34/255) }, output: { black: 1 } },
+  { input: { r: (132 / 255), g: (160 / 255), b: (160 / 255) }, output: { white: 1 } },
+  { input: { r: (1 / 255), g: (19 / 255), b: (34 / 255) }, output: { black: 1 } },
 ];
+
+function trainAI(net) {
+  if (window.localStorage.getItem('colorClassTrainingData')) {
+    net.fromJSON(JSON.parse(window.localStorage.getItem('colorClassTrainingData')));
+  } else {
+    // If no training data is found, train the network with the sample dataset
+    net.train(trainingData);
+  }
+  window.localStorage.setItem('colorClassTrainingData', JSON.stringify(net.toJSON()));
+}
 
 // Create and configure the neural network
 const net = new brain.NeuralNetwork();
-net.train(trainingData);
-console.log(JSON.stringify(net.toJSON()))
+trainAI(net);
 
 // Function to recognize color based on RGB values
 function recognizeColor(r, g, b) {
@@ -52,8 +61,8 @@ function recognizeColor(r, g, b) {
   return colorName;
 }
 
-function findColorClass (r,g,b) {
-  return recognizeColor(r / 255,g / 255,b / 255);
+function findColorClass(r, g, b) {
+  return recognizeColor(r / 255, g / 255, b / 255);
 }
 
 export { findColorClass };
