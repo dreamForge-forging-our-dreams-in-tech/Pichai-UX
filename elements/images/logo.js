@@ -84,6 +84,26 @@ async function generateDynamicIcon(image) {
                 }
             }
 
+            for (x = 0; x < canvas.height; x++) {
+                for (y = 0; y < canvas.width; y++) {
+                    const index = (y * canvas.width + x) * 4;
+                    const red = imageData.data[index];
+                    const green = imageData.data[index + 1];
+                    const blue = imageData.data[index + 2];
+
+                    //context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
+                    //context.fillRect(x, y, 1, 1); // Draw a 5x5 square
+
+                    if (colorClass != findColorClass(red, green, blue)) {
+                        // Replace the pixel with a 5x5 square
+                        context2.fillStyle = textColor; // Set your desired color here
+                        context2.fillRect(x, y, 6, 6); // Draw a 5x5 square
+
+                        colorClass = findColorClass(red, green, blue);
+                    }
+                }
+            }
+
             context.clearRect(-2, -2, 224 + 5, 224 + 5);
 
             context.drawImage(canvas2, 0, 0);
