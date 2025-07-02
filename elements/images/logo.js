@@ -63,7 +63,7 @@ async function generateDynamicIcon(image) {
             let colorClass;
 
             deTranslate(context);
-            //deTranslate(canvas2, dynamicImage, context2);
+            deTranslate(canvas2, dynamicImage, context2);
 
             let x, y;
 
