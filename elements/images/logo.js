@@ -41,8 +41,7 @@ async function generateDynamicIcon(image) {
             dynamicImage.referrerPolicy = 'no-referrer'; // to avoid CORS issues
             dynamicImage.decoding = 'async'; // to improve performance
             dynamicImage.loading = 'lazy'; // to improve performance
-            dynamicImage.style.width = '224px'; // to ensure the image fits the canvas
-            dynamicImage.style.height = '224px'; // to ensure the image fits the canvas
+
 
             dynamicImage.src = image;
 
