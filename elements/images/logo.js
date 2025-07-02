@@ -21,7 +21,7 @@ function setTranslate(canvas, dynamicImage, context) {
 function deTranslate(canvas, dynamicImage, context) {
     context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
     context.translate(-3, -3);
-    context.rotate(0); // Rotate the canvas by 22.5 degrees
+    context.rotate(0 * Math.PI / 180); // Rotate the canvas by 22.5 degrees
 }
 
 async function generateDynamicIcon(image) {
@@ -42,8 +42,6 @@ async function generateDynamicIcon(image) {
         dynamicImage.crossOrigin = 'anonymous';
         dynamicImage.referrerPolicy = 'no-referrer'; // to avoid CORS issues
         dynamicImage.decoding = 'async'; // to improve performance
-
-
         dynamicImage.src = image;
 
         dynamicImage.onload = function () {
