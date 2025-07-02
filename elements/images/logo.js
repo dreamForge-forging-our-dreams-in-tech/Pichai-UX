@@ -9,9 +9,12 @@ import '../../utils/localFOrage.js';
 
 let rgb;
 
+let pixelSize = 6; // size of the pixel squares that are drawn on the canvas
+let size = 224; // size of the canvas
+
 function setTranslate(canvas, dynamicImage, context) {
-    canvas.width = 224;
-    canvas.height = 224;
+    canvas.width = size;
+    canvas.height = size;
 
     context.save();
 }
@@ -49,12 +52,12 @@ async function generateDynamicIcon(image) {
             rgb = rgb.split(',');
 
             setTranslate(canvas, dynamicImage, context);
-            context.drawImage(dynamicImage, 0, 0, 224, 224);
+            context.drawImage(dynamicImage, 0, 0, size, size);
 
             setTranslate(canvas2, dynamicImage, context2);
 
             // Get the entire image data as an array of pixel data
-            let imageData = context.getImageData(0, 0, 224, 224);
+            let imageData = context.getImageData(0, 0, size, size);
             let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'rgb(255, 255, 255)' ? 'black' : 'white';
 
             let colorClass;
@@ -71,13 +74,10 @@ async function generateDynamicIcon(image) {
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
 
-                    //context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
-                    //context.fillRect(x, y, 1, 1); // Draw a 5x5 square
-
                     if (colorClass != findColorClass(red, green, blue)) {
                         // Replace the pixel with a 5x5 square
                         context2.fillStyle = textColor; // Set your desired color here
-                        context2.fillRect(x, y, 6, 6); // Draw a 5x5 square
+                        context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
 
                         colorClass = findColorClass(red, green, blue);
                     }
@@ -91,20 +91,17 @@ async function generateDynamicIcon(image) {
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
 
-                    //context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
-                    //context.fillRect(x, y, 1, 1); // Draw a 5x5 square
-
                     if (colorClass != findColorClass(red, green, blue)) {
                         // Replace the pixel with a 5x5 square
                         context2.fillStyle = textColor; // Set your desired color here
-                        context2.fillRect(x, y, 6, 6); // Draw a 5x5 square
+                        context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
 
                         colorClass = findColorClass(red, green, blue);
                     }
                 }
             }
 
-            context.clearRect(-2, -2, 224 + 5, 224 + 5);
+            context.clearRect(-2, -2, size + 5, size + 5);
 
             context.drawImage(canvas2, 0, 0);
 
