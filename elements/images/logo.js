@@ -88,7 +88,7 @@ async function generateDynamicIcon(image) {
                 }
             }
 
-            //context.clearRect(-2, -2, 224 + 5, 224 + 5);
+            context.clearRect(-2, -2, 224 + 5, 224 + 5);
 
             context.drawImage(canvas2, 0, 0);
 
