@@ -15,13 +15,11 @@ function setTranslate(canvas, dynamicImage, context) {
 
     context.save();
     context.translate(0, 0);
-    context.rotate(22.5 * Math.PI / 180); // Rotate the canvas by 22.5 degrees
 }
 
 function deTranslate(canvas, dynamicImage, context) {
     context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
     context.translate(-3, -3);
-    context.rotate(0 * Math.PI / 180); // Rotate the canvas by 22.5 degrees
 }
 
 async function generateDynamicIcon(image) {
@@ -53,7 +51,7 @@ async function generateDynamicIcon(image) {
             rgb = rgb.split(',');
 
             setTranslate(canvas, dynamicImage, context);
-            context.drawImage(dynamicImage, 0, 22.5, 224, 224);
+            context.drawImage(dynamicImage, 0, 0, 224, 224);
 
             setTranslate(canvas2, dynamicImage, context2);
 
