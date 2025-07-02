@@ -53,7 +53,7 @@ async function generateDynamicIcon(image) {
             rgb = rgb.split(',');
 
             setTranslate(canvas, dynamicImage, context);
-            context.drawImage(dynamicImage, 224, 224);
+            context.drawImage(dynamicImage, 224 / 2, -224 / 2, 224, 224);
 
             setTranslate(canvas2, dynamicImage, context2);
 
