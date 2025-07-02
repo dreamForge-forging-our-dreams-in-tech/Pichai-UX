@@ -132,6 +132,8 @@ class Logo extends HTMLElement {
             faviconUrl = window.newFavIcon;
         }
 
+        console.log(window.newFavIcon);
+
         this.style.backgroundImage = `url("${faviconUrl}")`; // display standard iamage till dynamic finished loading or an error occured
 
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
