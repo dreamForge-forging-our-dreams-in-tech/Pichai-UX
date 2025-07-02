@@ -99,6 +99,8 @@ async function setDynamicIcon(img, faviconUrl, favIcon) {
         // If the newFavIcon is set we do not need to generate a new one
         window.newFavIcon = await generateDynamicIcon(faviconUrl);
         img.style.backgroundImage = `url(${window.newFavIcon})`;
+
+        console.log(window.newFavIcon);
         return;
     }
 
