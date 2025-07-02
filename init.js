@@ -229,7 +229,9 @@ async function createThemedFavIcon(options) {
             link.rel = 'icon';
             document.head.appendChild(link);
         }
-        link.href = await generateDynamicIcon(faviconUrl);
+
+        window.newFavIcon = await generateDynamicIcon(faviconUrl);
+        link.href = window.newFavIcon;
     }
 }
 
