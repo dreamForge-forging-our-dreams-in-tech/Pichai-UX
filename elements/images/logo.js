@@ -15,7 +15,7 @@ function setTranslate(canvas, dynamicImage, context) {
 
     context.save();
     context.translate(0, 0);
-    context.rotate(22.5)
+    context.rotate(22.5 * Math.PI / 180); // Rotate the canvas by 22.5 degrees
 }
 
 function deTranslate(canvas, dynamicImage, context) {
