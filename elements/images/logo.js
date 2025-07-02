@@ -125,12 +125,9 @@ class Logo extends HTMLElement {
 
         // Get the favicon URL
         let faviconUrl = faviconLink ? faviconLink.href : null;
-        if (this.hasAttribute('src')) {
-            console.log('using src attribute');
+        if (this.hasAttribute('src')) { 
             faviconUrl = this.getAttribute('src');
         }
-
-        console.log(window.newFavIcon);
 
         this.style.backgroundImage = `url("${faviconUrl}")`; // display standard iamage till dynamic finished loading or an error occured
 
