@@ -126,6 +126,7 @@ class Logo extends HTMLElement {
         // Get the favicon URL
         let faviconUrl = faviconLink ? faviconLink.href : null;
         if (this.hasAttribute('src')) {
+            console.log('using src attribute');
             faviconUrl = this.getAttribute('src');
         }
 
