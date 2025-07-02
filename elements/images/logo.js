@@ -10,16 +10,16 @@ import '../../utils/localFOrage.js';
 let rgb;
 
 let pixelSize = 6; // size of the pixel squares that are drawn on the canvas
-let size = 224; // size of the canvas
+let size = 224; // size of the canvas or image, this should be a square image
 
-function setTranslate(canvas, dynamicImage, context) {
+function setTranslate(canvas, context) {
     canvas.width = size;
     canvas.height = size;
 
     context.save();
 }
 
-function deTranslate(canvas, dynamicImage, context) {
+function deTranslate(context) {
     context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
 }
 
@@ -51,7 +51,7 @@ async function generateDynamicIcon(image) {
             rgb = rgb.substring(5, rgb.length - 1);
             rgb = rgb.split(',');
 
-            setTranslate(canvas, dynamicImage, context);
+            setTranslate(canvas, context);
             context.drawImage(dynamicImage, 0, 0, size, size);
 
             setTranslate(canvas2, dynamicImage, context2);
@@ -62,8 +62,8 @@ async function generateDynamicIcon(image) {
 
             let colorClass;
 
-            deTranslate(canvas, dynamicImage, context);
-            deTranslate(canvas2, dynamicImage, context2);
+            deTranslate(context);
+            //deTranslate(canvas2, dynamicImage, context2);
 
             let x, y;
 
