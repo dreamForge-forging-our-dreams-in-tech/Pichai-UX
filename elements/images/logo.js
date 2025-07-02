@@ -41,9 +41,6 @@ async function generateDynamicIcon(image) {
         dynamicImage.referrerPolicy = 'no-referrer'; // to avoid CORS issues
         dynamicImage.decoding = 'async'; // to improve performance
 
-        dynamicImage.style.width = '224px'; // Set the width of the image
-        dynamicImage.style.height = '224px'; // Set the height of the image
-
 
         dynamicImage.src = image;
 
@@ -56,7 +53,7 @@ async function generateDynamicIcon(image) {
             rgb = rgb.split(',');
 
             setTranslate(canvas, dynamicImage, context);
-            context.drawImage(dynamicImage, -224 / 2, -224 / 2);
+            context.drawImage(dynamicImage, 224, 224);
 
             setTranslate(canvas2, dynamicImage, context2);
 
