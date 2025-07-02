@@ -94,8 +94,8 @@ async function generateDynamicIcon(image) {
         });
 }
 
-async function setDynamicIcon(img, faviconUrl) {
-    if(!window.newFavIcon) {
+async function setDynamicIcon(img, faviconUrl, favIcon) {
+    if(!window.newFavIcon && !favIcon) { // If the newFavIcon is not set and no src is provided then render and cahce the favIcon
         // If the newFavIcon is set we do not need to generate a new one
         window.newFavIcon = await generateDynamicIcon(faviconUrl);
         img.style.backgroundImage = `url(${window.newFavIcon})`;
@@ -143,7 +143,7 @@ class Logo extends HTMLElement {
         this.style.backgroundImage = `url("${faviconUrl}")`; // display standard iamage till dynamic finished loading or an error occured
 
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
-            setDynamicIcon(this, faviconUrl);
+            setDynamicIcon(this, faviconUrl, this.hasAttribute('src'));
         }
 
     }
