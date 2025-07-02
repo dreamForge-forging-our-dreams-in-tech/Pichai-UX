@@ -52,7 +52,7 @@ async function generateDynamicIcon(image) {
             setTranslate(canvas);
             context.drawImage(dynamicImage, 0, 0, size, size);
 
-            setTranslate(canvas2, dynamicImage, context2);
+            setTranslate(canvas2);
 
             // Get the entire image data as an array of pixel data
             let imageData = context.getImageData(0, 0, size, size);
@@ -61,7 +61,7 @@ async function generateDynamicIcon(image) {
             let colorClass;
 
             deTranslate(context);
-            deTranslate(canvas2, dynamicImage, context2);
+            deTranslate(context2);
 
             let x, y;
 
