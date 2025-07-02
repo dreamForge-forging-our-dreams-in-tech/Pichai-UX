@@ -14,7 +14,7 @@ function setTranslate(canvas, dynamicImage, context) {
     canvas.height = 224;
 
     context.save();
-    context.translate(224/2, 224/2);
+    context.translate(0, 0);
 }
 
 function deTranslate(canvas, dynamicImage, context) {
