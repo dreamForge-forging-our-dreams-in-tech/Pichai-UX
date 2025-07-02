@@ -40,7 +40,6 @@ async function generateDynamicIcon(image) {
             dynamicImage.crossOrigin = 'anonymous';
             dynamicImage.referrerPolicy = 'no-referrer'; // to avoid CORS issues
             dynamicImage.decoding = 'async'; // to improve performance
-            dynamicImage.loading = 'lazy'; // to improve performance
 
 
             dynamicImage.src = image;
