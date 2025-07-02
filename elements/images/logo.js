@@ -24,77 +24,80 @@ function deTranslate(canvas, dynamicImage, context) {
 
 async function generateDynamicIcon(image) {
 
-        await varExists('--primary');
+    await varExists('--primary');
 
-        return new Promise((resolve) => {
-            //create 2 canvases 1 for reading and 1 for rendering the icon properly
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext("2d", { willReadFrequently: true });
+    return new Promise((resolve) => {
+        //create 2 canvases 1 for reading and 1 for rendering the icon properly
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext("2d", { willReadFrequently: true });
 
-            const canvas2 = document.createElement('canvas');
-            const context2 = canvas2.getContext("2d", { willReadFrequently: true });
-
-
-            // Load your image onto the canvas
-            let dynamicImage = new Image();
-            dynamicImage.crossOrigin = 'anonymous';
-            dynamicImage.referrerPolicy = 'no-referrer'; // to avoid CORS issues
-            dynamicImage.decoding = 'async'; // to improve performance
+        const canvas2 = document.createElement('canvas');
+        const context2 = canvas2.getContext("2d", { willReadFrequently: true });
 
 
-            dynamicImage.src = image;
+        // Load your image onto the canvas
+        let dynamicImage = new Image();
+        dynamicImage.crossOrigin = 'anonymous';
+        dynamicImage.referrerPolicy = 'no-referrer'; // to avoid CORS issues
+        dynamicImage.decoding = 'async'; // to improve performance
 
-            dynamicImage.onload = function () {
-                const root = document.documentElement;
+        dynamicImage.style.width = '224px'; // to ensure the image fits the canvas
+        dynamicImage.style.height = '224px'; // to ensure the image fits the canvas
 
-                rgb = getComputedStyle(root).getPropertyValue('--primary');
 
-                rgb = rgb.substring(5, rgb.length - 1);
-                rgb = rgb.split(',');
+        dynamicImage.src = image;
 
-                setTranslate(canvas, dynamicImage, context);
-                context.drawImage(dynamicImage, -dynamicImage.width / 2, -dynamicImage.height / 2);
+        dynamicImage.onload = function () {
+            const root = document.documentElement;
 
-                setTranslate(canvas2, dynamicImage, context2);
+            rgb = getComputedStyle(root).getPropertyValue('--primary');
 
-                // Get the entire image data as an array of pixel data
-                let imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-                let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'rgb(255, 255, 255)' ? 'black' : 'white';
+            rgb = rgb.substring(5, rgb.length - 1);
+            rgb = rgb.split(',');
 
-                let colorClass;
+            setTranslate(canvas, dynamicImage, context);
+            context.drawImage(dynamicImage, -dynamicImage.width / 2, -dynamicImage.height / 2);
 
-                deTranslate(canvas, dynamicImage, context);
-                deTranslate(canvas2, dynamicImage, context2);
+            setTranslate(canvas2, dynamicImage, context2);
 
-                let x, y;
+            // Get the entire image data as an array of pixel data
+            let imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+            let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'rgb(255, 255, 255)' ? 'black' : 'white';
 
-                for (y = 0; y < canvas.height; y++) {
-                    for (x = 0; x < canvas.width; x++) {
-                        const index = (y * canvas.width + x) * 4;
-                        const red = imageData.data[index];
-                        const green = imageData.data[index + 1];
-                        const blue = imageData.data[index + 2];
+            let colorClass;
 
-                        //context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
-                        //context.fillRect(x, y, 1, 1); // Draw a 5x5 square
+            deTranslate(canvas, dynamicImage, context);
+            deTranslate(canvas2, dynamicImage, context2);
 
-                        if (colorClass != findColorClass(red, green, blue)) {
-                            // Replace the pixel with a 5x5 square
-                            context2.fillStyle = textColor; // Set your desired color here
-                            context2.fillRect(x, y, 2.5, 2.5); // Draw a 5x5 square
+            let x, y;
 
-                            colorClass = findColorClass(red, green, blue);
-                        }
+            for (y = 0; y < canvas.height; y++) {
+                for (x = 0; x < canvas.width; x++) {
+                    const index = (y * canvas.width + x) * 4;
+                    const red = imageData.data[index];
+                    const green = imageData.data[index + 1];
+                    const blue = imageData.data[index + 2];
+
+                    //context.fillStyle = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`; // Set your desired color here
+                    //context.fillRect(x, y, 1, 1); // Draw a 5x5 square
+
+                    if (colorClass != findColorClass(red, green, blue)) {
+                        // Replace the pixel with a 5x5 square
+                        context2.fillStyle = textColor; // Set your desired color here
+                        context2.fillRect(x, y, 2.5, 2.5); // Draw a 5x5 square
+
+                        colorClass = findColorClass(red, green, blue);
                     }
                 }
+            }
 
-                context.clearRect(-2, -2, canvas.width + 5, canvas.height + 5);
+            context.clearRect(-2, -2, canvas.width + 5, canvas.height + 5);
 
-                context.drawImage(canvas2, 0, 0);
+            context.drawImage(canvas2, 0, 0);
 
-                resolve(canvas.toDataURL());
-            };
-        });
+            resolve(canvas.toDataURL());
+        };
+    });
 }
 
 async function setDynamicIcon(img, faviconUrl) {
@@ -128,7 +131,7 @@ class Logo extends HTMLElement {
 
         // Get the favicon URL
         let faviconUrl = faviconLink ? faviconLink.href : null;
-        if (this.hasAttribute('src')) { 
+        if (this.hasAttribute('src')) {
             faviconUrl = this.getAttribute('src');
         }
 
