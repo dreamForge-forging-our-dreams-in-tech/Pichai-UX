@@ -230,8 +230,7 @@ async function createThemedFavIcon(options) {
             document.head.appendChild(link);
         }
 
-        window.newFavIcon = await generateDynamicIcon(faviconUrl);
-        link.href = window.newFavIcon;
+        link.href = await generateDynamicIcon(faviconUrl);
     }
 }
 

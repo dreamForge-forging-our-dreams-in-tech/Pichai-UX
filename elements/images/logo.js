@@ -94,15 +94,7 @@ async function generateDynamicIcon(image) {
         });
 }
 
-async function setDynamicIcon(img, faviconUrl, favIcon) {
-    if(!window.newFavIcon && !favIcon) { // If the newFavIcon is not set and no src is provided then render and cahce the favIcon
-        // If the newFavIcon is set we do not need to generate a new one
-        window.newFavIcon = await generateDynamicIcon(faviconUrl);
-        img.style.backgroundImage = `url(${window.newFavIcon})`;
-
-        console.log(window.newFavIcon);
-        return;
-    }
+async function setDynamicIcon(img, faviconUrl) {
 
     let newIcon = await generateDynamicIcon(faviconUrl);
     img.style.backgroundImage = `url(${newIcon})`;
@@ -135,9 +127,6 @@ class Logo extends HTMLElement {
         let faviconUrl = faviconLink ? faviconLink.href : null;
         if (this.hasAttribute('src')) {
             faviconUrl = this.getAttribute('src');
-        } else if(window.newFavIcon) {
-            faviconUrl = window.newFavIcon;
-            return; // if the newFavIcon is set we do not need to generate a new one
         }
 
         console.log(window.newFavIcon);
@@ -145,7 +134,7 @@ class Logo extends HTMLElement {
         this.style.backgroundImage = `url("${faviconUrl}")`; // display standard iamage till dynamic finished loading or an error occured
 
         if (!this.hasAttribute('dynamic') || this.getAttribute('dynamic') == 'true') {
-            setDynamicIcon(this, faviconUrl, this.hasAttribute('src'));
+            setDynamicIcon(this, faviconUrl);
         }
 
     }
