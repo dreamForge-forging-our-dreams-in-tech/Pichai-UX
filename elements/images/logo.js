@@ -10,8 +10,8 @@ import '../../utils/localFOrage.js';
 let rgb;
 
 function setTranslate(canvas, dynamicImage, context) {
-    canvas.width = '224px';
-    canvas.height = '224px';
+    canvas.width = 224;
+    canvas.height = 224;
 
     context.save();
     context.translate(224 / 2, 224 / 2);
