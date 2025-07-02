@@ -31,6 +31,7 @@
     --wallpaperSize: cover;
     --wallpaperPosition: center;
     --wallpaperRepeat: no-repeat;
+    --elementBlur: 0px;
 }
 
 @font-face {
@@ -90,6 +91,8 @@ html {
     background-position: center;
 
     position:relative;
+
+    backdrop-filter:blur(var(--elementBlur));
 }
 
 img, video, canvas, svg, .noHueRotation { 

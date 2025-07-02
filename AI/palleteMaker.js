@@ -177,6 +177,7 @@ async function generate3ColorPallete(options) {
     root.style.setProperty('--wallpaperSize', options.wallpaperSize);
     root.style.setProperty('--wallpaperPosition', options.wallpaperPosition);
     root.style.setProperty('--wallpaperRepeat', options.wallpaperRepeat);
+    root.style.setProperty('--elementBlur', options.blur);
 
     root.style.setProperty('--primary', `rgba(${colors[position].join(',')}, ${alpha})`);
     root.style.setProperty('--secondairy', `rgba(${colors[position + 4].join(',')}, ${alpha})`);
@@ -232,24 +233,24 @@ async function generate3ColorPallete(options) {
         window.dispatchEvent(loaded); // dispatches the pichaiUXLoaded event to let the user/developer know that pichai ux has been loaded and is ready to use.
     }, 600);
 
-    window.setInterval(() => {
-        // add a blur effect to all elements that are not transparent
-        const elementsWithTransparentBg = getTransparentBackgroundElements();
-        let allElements = document.querySelectorAll('*');
-        let i;
+    // window.setInterval(() => {
+    //     // add a blur effect to all elements that are not transparent
+    //     const elementsWithTransparentBg = getTransparentBackgroundElements();
+    //     let allElements = document.querySelectorAll('*');
+    //     let i;
 
-        if (elementsWithTransparentBg.length > 0) {
-            // You can iterate through them and do something, e.g., add a border for visibility
-            for (i of allElements) {
-                if (elementsWithTransparentBg.includes(i) || i == document.documentElement) { } else {
-                    i.style.backdropFilter = `blur(${options.blur}px)`; //add the blur effect
-                    console.log(i)
-                }
-            }
-        } else {
-            console.log('No elements found with explicitly transparent background.');
-        }
-    }, 500);
+    //     if (elementsWithTransparentBg.length > 0) {
+    //         // You can iterate through them and do something, e.g., add a border for visibility
+    //         for (i of allElements) {
+    //             if (elementsWithTransparentBg.includes(i) || i == document.documentElement) { } else {
+    //                 i.style.backdropFilter = `blur(${options.blur}px)`; //add the blur effect
+    //                 console.log(i)
+    //             }
+    //         }
+    //     } else {
+    //         console.log('No elements found with explicitly transparent background.');
+    //     }
+    // }, 500);
 }
 
 export { generate3ColorPallete };
