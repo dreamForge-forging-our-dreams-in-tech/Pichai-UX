@@ -10,11 +10,11 @@ import '../../utils/localFOrage.js';
 let rgb;
 
 function setTranslate(canvas, dynamicImage, context) {
-    canvas.width = dynamicImage.width;
-    canvas.height = dynamicImage.height;
+    canvas.width = '224px';
+    canvas.height = '224px';
 
     context.save();
-    context.translate(canvas.width / 2, canvas.height / 2);
+    context.translate(224 / 2, 224 / 2);
 }
 
 function deTranslate(canvas, dynamicImage, context) {
@@ -41,9 +41,6 @@ async function generateDynamicIcon(image) {
         dynamicImage.referrerPolicy = 'no-referrer'; // to avoid CORS issues
         dynamicImage.decoding = 'async'; // to improve performance
 
-        dynamicImage.style.width = '224px'; // to ensure the image fits the canvas
-        dynamicImage.style.height = '224px'; // to ensure the image fits the canvas
-
 
         dynamicImage.src = image;
 
@@ -56,12 +53,12 @@ async function generateDynamicIcon(image) {
             rgb = rgb.split(',');
 
             setTranslate(canvas, dynamicImage, context);
-            context.drawImage(dynamicImage, -dynamicImage.width / 2, -dynamicImage.height / 2);
+            context.drawImage(dynamicImage, -224 / 2, -224 / 2);
 
             setTranslate(canvas2, dynamicImage, context2);
 
             // Get the entire image data as an array of pixel data
-            let imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+            let imageData = context.getImageData(0, 0, 224, 224);
             let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'rgb(255, 255, 255)' ? 'black' : 'white';
 
             let colorClass;
@@ -91,7 +88,7 @@ async function generateDynamicIcon(image) {
                 }
             }
 
-            context.clearRect(-2, -2, canvas.width + 5, canvas.height + 5);
+            context.clearRect(-2, -2, 224 + 5, 224 + 5);
 
             context.drawImage(canvas2, 0, 0);
 
