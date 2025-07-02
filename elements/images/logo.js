@@ -14,10 +14,12 @@ function setTranslate(canvas, dynamicImage, context) {
     canvas.height = 224;
 
     context.save();
+    context.translate(0, 0);
 }
 
 function deTranslate(canvas, dynamicImage, context) {
     context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
+    context.translate(-3, -3);
 }
 
 async function generateDynamicIcon(image) {
@@ -48,7 +50,7 @@ async function generateDynamicIcon(image) {
             rgb = rgb.substring(5, rgb.length - 1);
             rgb = rgb.split(',');
 
-            //setTranslate(canvas, dynamicImage, context);
+            setTranslate(canvas, dynamicImage, context);
             context.drawImage(dynamicImage, 0, 0, 224, 224);
 
             setTranslate(canvas2, dynamicImage, context2);
@@ -59,8 +61,8 @@ async function generateDynamicIcon(image) {
 
             let colorClass;
 
-            //deTranslate(canvas, dynamicImage, context);
-            //deTranslate(canvas2, dynamicImage, context2);
+            deTranslate(canvas, dynamicImage, context);
+            deTranslate(canvas2, dynamicImage, context2);
 
             let x, y;
 
