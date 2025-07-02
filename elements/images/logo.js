@@ -78,7 +78,7 @@ async function generateDynamicIcon(image) {
                         if (colorClass != findColorClass(red, green, blue)) {
                             // Replace the pixel with a 5x5 square
                             context2.fillStyle = textColor; // Set your desired color here
-                            context2.fillRect(x, y, 1, 1); // Draw a 5x5 square
+                            context2.fillRect(x, y, 2.5, 2.5); // Draw a 5x5 square
 
                             colorClass = findColorClass(red, green, blue);
                         }
