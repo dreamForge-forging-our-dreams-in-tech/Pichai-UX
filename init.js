@@ -17,8 +17,6 @@ class PichaiUX {
     constructor(options = {}) {
         let opt = {
             source: 'auto', // allows the developer to supply a image, an array of 10 rgb colors splitted into a array or a single rgb array splitted e.g. [100, 255, 30], auto means Pichai-UX will calculate everything itself
-            darkMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
-            overrideColorsOnScroll: true,
             themedFavIcon: true,
             extractionPosition: 0,
             transparency: 0.7,
