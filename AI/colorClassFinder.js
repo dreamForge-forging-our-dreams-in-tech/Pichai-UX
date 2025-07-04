@@ -2,7 +2,23 @@ import './Brain.js';
 
 import { trainAI } from './utils.js';
 
-// Sample dataset
+/**
+ * An array of training data objects for color classification.
+ * Each object contains:
+ * - `input`: An object with normalized RGB values (`r`, `g`, `b`) ranging from 0 to 1.
+ * - `output`: An object with a single key representing the color class and a value of 1.
+ *
+ * Example:
+ * {
+ *   input: { r: 0.8, g: 0.2, b: 0.2 },
+ *   output: { red: 1 }
+ * }
+ *
+ * @type {Array<{
+ *   input: { r: number, g: number, b: number },
+ *   output: { [color: string]: 1 }
+ * }>}
+ */
 const trainingData = [
   { input: { r: 0.8, g: 0.2, b: 0.2 }, output: { red: 1 } },
   { input: { r: 0.7, g: 0.0, b: 0.0 }, output: { red: 1 } },

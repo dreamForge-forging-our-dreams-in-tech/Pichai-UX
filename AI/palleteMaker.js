@@ -6,6 +6,14 @@ import { PichaiUX } from '../init.js';
 
 const loaded = new Event("pichaiUXLoaded");
 
+/**
+ * Converts HSL color values to a hexadecimal color string.
+ * @param {number} h - Hue (0-360).
+ * @param {number} s - Saturation (0-100).
+ * @param {number} l - Lightness (0-100).
+ * @returns {string} Hexadecimal color string (e.g., "#aabbcc").
+ */
+
 function hslToHex(h, s, l) {
     l /= 100;
     const a = s * Math.min(l, 1 - l) / 100;
@@ -17,10 +25,22 @@ function hslToHex(h, s, l) {
     return `#${f(0)}${f(8)}${f(4)}`;
 }
 
+/**
+ * Converts a hexadecimal color string to an RGB array.
+ * @param {string} hex - Hexadecimal color string (e.g., "#aabbcc").
+ * @returns {string[]|null} Array of RGB values as strings, or null if invalid.
+ */
+
 function hexToRgb(hex) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}`.split(',') : null;
 }
+
+/**
+ * Converts an RGB color array to an HSL string.
+ * @param {number[]} value - Array containing RGB values [r, g, b].
+ * @returns {string} HSL values as a comma-separated string (e.g., "120, 50, 60").
+ */
 
 function RGBToHSL(value) {
     let r = value[0];
@@ -66,6 +86,13 @@ function RGBToHSL(value) {
     return `${h}, ${s}, ${l}`;
 }
 
+/**
+ * Generates a color palette from either an array of RGB colors or an image source.
+ * @param {Object} options - Options for palette generation.
+ * @param {string|Array} options.source - Image URL or array of RGB colors.
+ * @returns {Promise<Array>} Promise resolving to an array of RGB colors.
+ */
+
 function getPallete(options) {
     return new Promise((resolve) => {
         if (options.source.length == 10) {// for generation for a array with 10 supplied rgb colors
@@ -87,6 +114,12 @@ function getPallete(options) {
     });
 }
 
+/**
+ * Generates container colors by increasing the lightness of the given colors.
+ * @param {Array} colors - Array of RGB or HSL color arrays.
+ * @returns {Array} Array of HSL color arrays with increased lightness.
+ */
+
 function generateContainerColor(colors) {
     let i;
     let newColors = [];
@@ -102,6 +135,13 @@ function generateContainerColor(colors) {
 
     return newColors;
 }
+
+/**
+ * Generates additional sign colors (error, warning, note, check) based on given hues and a main color.
+ * @param {number[]} hues - Array of hue values.
+ * @param {number[]} color - Main color as an RGB array.
+ * @returns {Array} Array of HSL color arrays for sign colors.
+ */
 
 function generateSignColors(hues, color) { // generateaa additional colors with the given hue mixed with the the given main color
     let i;
@@ -120,6 +160,12 @@ function generateSignColors(hues, color) { // generateaa additional colors with 
     return newColors;
 }
 
+/**
+ * Converts an array of HSL colors to their corresponding RGB values for text color calculation.
+ * @param {Array} colors - Array of HSL color arrays.
+ * @returns {Array} Array of RGB color arrays.
+ */
+
 function generateContainerTextColor(colors) {
     let i;
     let newColors = [];
@@ -133,6 +179,11 @@ function generateContainerTextColor(colors) {
 
     return newColors;
 }
+
+/**
+ * Retrieves all elements on the page with a transparent background.
+ * @returns {Element[]} Array of DOM elements with transparent backgrounds.
+ */
 
 function getTransparentBackgroundElements() { //gather all transparent elements that blur should ignore
     const allElements = document.querySelectorAll('*'); // Selects all elements on the page
@@ -151,6 +202,26 @@ function getTransparentBackgroundElements() { //gather all transparent elements 
 
     return transparentElements;
 }
+
+/**
+ * Generates and applies a 3-color palette to CSS variables for the UI, based on options and extracted colors.
+ * @async
+ * @param {Object} options - Options for palette generation and UI styling.
+ * @param {string|Array} options.source - Image URL or array of RGB colors.
+ * @param {number} options.transparency - Alpha value for color transparency.
+ * @param {number} options.extractionPosition - Index for color extraction.
+ * @param {string} options.contrast - CSS contrast value.
+ * @param {number} options.wallpaperBlur - Blur amount for wallpaper.
+ * @param {string} options.inversion - CSS inversion value.
+ * @param {string} options.wallpaperBrightness - CSS brightness value.
+ * @param {string} options.hueRotation - CSS hue-rotate value.
+ * @param {string} options.wallpaperInversion - CSS inversion for wallpaper.
+ * @param {string} options.wallpaperSize - CSS background-size value.
+ * @param {string} options.wallpaperPosition - CSS background-position value.
+ * @param {string} options.wallpaperRepeat - CSS background-repeat value.
+ * @param {string} options.blur - Blur amount for elements.
+ * @returns {Promise<void>} Resolves when palette is generated and applied.
+ */
 
 async function generate3ColorPallete(options) {
     if (options.hueRotation != '0') {

@@ -1,3 +1,12 @@
+/**
+ * Trains a neural network to determine the optimal text color (black or white)
+ * for a given background color using RGB values normalized between 0 and 1.
+ * 
+ * @module textColorFinder
+ * @requires ./Brain.js
+ * @requires ./utils.js
+ */
+
 import './Brain.js';
 import { trainAI } from './utils.js';
 
@@ -235,6 +244,15 @@ let trainingData = [{
 ]
 
 trainAI(net, trainingData, 'textColorTrainingData');
+
+/**
+ * Returns the recommended text color ('black' or 'white') for a given background color.
+ *
+ * @function
+ * @name getTextColor
+ * @param {number[]} color - An array of three numbers representing the RGB values of the background color (each between 0 and 255).
+ * @returns {string|undefined} The recommended text color ('black' or 'white'), or undefined if an error occurs.
+ */
 
 function getTextColor(color) {
   try {
