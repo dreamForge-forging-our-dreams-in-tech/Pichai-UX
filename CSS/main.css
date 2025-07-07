@@ -93,6 +93,10 @@ html {
     position:relative;
 }
 
+* * {
+    backdrop-filter:blur(0px) !important;
+}
+
 img, video, canvas, svg, .noHueRotation { 
     filter: hue-rotate(calc( -1 * var(--hueRotation)));
 }
