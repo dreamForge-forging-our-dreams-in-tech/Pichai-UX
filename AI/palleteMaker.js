@@ -227,7 +227,7 @@ async function generate3ColorPallete(options) {
     if (options.hueRotation != '0') {
         options.source = 'https://lukeplays33.github.io/Pichai/assets/bg.jpeg'; // sets the wallpaper to a default image so that hue rotation will always be consistent
         document.body.style.backgroundImage = 'none'; // removes the background image so that the hue rotation can be applied correctly
-    } else{
+    } else {
         options.source = window.localStorage.getItem(`${window.storageName}bgImageChange`);
     }
 
@@ -303,6 +303,25 @@ async function generate3ColorPallete(options) {
     window.setTimeout(() => { // temporary timeout to dispatch event later, because right now it happens correctly but too fast.
         window.dispatchEvent(loaded); // dispatches the pichaiUXLoaded event to let the user/developer know that pichai ux has been loaded and is ready to use.
     }, 600);
+
+    window.setInterval(() => {
+        // add a blur effect to all elements that are not transparent
+        const elementsWithTransparentBg = getTransparentBackgroundElements();
+        let allElements = document.querySelectorAll('*');
+        let i;
+
+        if (elementsWithTransparentBg.length > 0) {
+            // You can iterate through them and do something, e.g., add a border for visibility
+            for (i of allElements) {
+                if (elementsWithTransparentBg.includes(i) || i == document.documentElement) { } else {
+                    i.style.backdropFilter = `blur(${options.blur}px)`; //add the blur effect
+                    console.log(i)
+                }
+            }
+        } else {
+            console.log('No elements found with explicitly transparent background.');
+        }
+    }, 500);
 
 }
 

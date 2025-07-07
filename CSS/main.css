@@ -91,12 +91,6 @@ html {
     background-position: center;
 
     position:relative;
-
-    backdrop-filter:blur(var(--elementBlur));
-}
-
-* [style*="background-color"], * [style*="background-color: transparent" i] {
-  backdrop-filter:blur(0px) !important; /* Or any other backdrop-filter effect you want */
 }
 
 img, video, canvas, svg, .noHueRotation { 
