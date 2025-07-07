@@ -193,10 +193,6 @@ a {
     font-size: 14px;
 }
 
-*:disabled {
-    opacity: 0.6
-}
-
 .Hidden { /* class to hide a element */
     display:none;
 }
@@ -222,10 +218,10 @@ a {
     text-decoration:none;
 }
 
-*:disabled {
+*:disabled { /* class for making elements disabled */
     opacity:0.7;
 }
 
-.selected {
+/* .selected {
     opacity:0.5;
-}
+} */
