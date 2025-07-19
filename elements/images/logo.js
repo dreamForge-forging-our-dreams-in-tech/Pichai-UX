@@ -79,7 +79,7 @@ async function generateDynamicIcon(image) {
 
                         colorClass = findColorClass(red, green, blue);
                     } else {
-                        x += pixelSize - 1;
+                        x += pixelSize;
                     }
                 }
             }
@@ -98,7 +98,7 @@ async function generateDynamicIcon(image) {
 
                         colorClass = findColorClass(red, green, blue);
                     } else {
-                        y += pixelSize - 1;
+                        y += pixelSize;
                     }
                 }
             }
