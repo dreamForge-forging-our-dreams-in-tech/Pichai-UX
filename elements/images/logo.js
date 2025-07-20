@@ -10,7 +10,7 @@ import '../../utils/localFOrage.js';
 let rgb;
 
 let pixelSize = 4; // size of the pixel squares that are drawn on the canvas
-let size = 187; //224; // size of the canvas or image, this should be a square image
+let size = 100; //224; // size of the canvas or image, this should be a square image
 
 function setTranslate(canvas) {
     canvas.width = size;
