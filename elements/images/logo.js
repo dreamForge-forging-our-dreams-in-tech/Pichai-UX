@@ -113,11 +113,11 @@ async function generateDynamicIcon(image) {
 async function setDynamicIcon(img, faviconUrl) {
     console.log(faviconUrl)
 
-    renderedIcons[faviconUrl] = true;
-    console.log(renderedIcons)
-
     let newIcon = await generateDynamicIcon(faviconUrl);
     img.style.backgroundImage = `url(${newIcon})`;
+
+        renderedIcons[faviconUrl] = newIcon;
+    console.log(renderedIcons)
 }
 
 // Create a class for the element
