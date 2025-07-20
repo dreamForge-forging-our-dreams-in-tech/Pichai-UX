@@ -109,8 +109,8 @@ async function generateDynamicIcon(image) {
 }
 
 async function setDynamicIcon(img, faviconUrl) {
-    console.log(img)
-
+    console.log(faviconUrl)
+    
     let newIcon = await generateDynamicIcon(faviconUrl);
     img.style.backgroundImage = `url(${newIcon})`;
 }
