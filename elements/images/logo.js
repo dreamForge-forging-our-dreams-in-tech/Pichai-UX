@@ -114,14 +114,14 @@ async function setDynamicIcon(img, faviconUrl) {
     console.log(faviconUrl)
 
     if(renderedIcons.hasownProperty(faviconUrl)) {
-        img.style.backgroundImage = renderedIcons[faviconUrl].style.backgroundImage;
+        img.style.backgroundImage = renderedIcons[faviconUrl];
         return;
     }
 
     let newIcon = await generateDynamicIcon(faviconUrl);
     img.style.backgroundImage = `url(${newIcon})`;
 
-    renderedIcons[faviconUrl] = img;
+    renderedIcons[faviconUrl] = newIcon;
     console.log(renderedIcons)
 }
 
