@@ -6,7 +6,7 @@ import { varExists } from '../../utils/cssVars.js';
 
 import '../../utils/localFOrage.js';
 
-let rgb;
+let rgb, colorClass, textColor;
 
 let pixelSize = 2.7; // og:6 size of the pixel squares that are drawn on the canvas
 let size = 90; //og 224 // size of the canvas or image, this should be a square image
@@ -55,9 +55,7 @@ async function generateDynamicIcon(image) {
 
             // Get the entire image data as an array of pixel data
             let imageData = context.getImageData(0, 0, size, size);
-            let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'rgb(255, 255, 255)' ? 'black' : 'white';
-
-            let colorClass;
+            textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'rgb(255, 255, 255)' ? 'black' : 'white';
 
             deTranslate(context);
             deTranslate(context2);
