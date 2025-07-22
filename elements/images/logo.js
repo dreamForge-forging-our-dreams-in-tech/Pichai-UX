@@ -8,8 +8,8 @@ import '../../utils/localFOrage.js';
 
 let rgb;
 
-let pixelSize = 2.7; // og:6 size of the pixel squares that are drawn on the canvas
-let size = 90; //og 224 // size of the canvas or image, this should be a square image
+let pixelSize = 1.2; // og:6 size of the pixel squares that are drawn on the canvas
+let size = 45; //og 224 // size of the canvas or image, this should be a square image
 
 function setTranslate(canvas) {
     canvas.width = size;
@@ -77,8 +77,6 @@ async function generateDynamicIcon(image) {
                         context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
 
                         colorClass = findColorClass(red, green, blue);
-                    } else {
-                        x += pixelSize / 2;
                     }
                 }
             }
@@ -96,8 +94,6 @@ async function generateDynamicIcon(image) {
                         context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
 
                         colorClass = findColorClass(red, green, blue);
-                    } else {
-                        y += pixelSize / 2;
                     }
                 }
             }
