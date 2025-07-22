@@ -77,6 +77,8 @@ async function generateDynamicIcon(image) {
                         context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
 
                         colorClass = findColorClass(red, green, blue);
+                    } else {
+                        x += pizelSize;
                     }
                 }
             }
@@ -94,6 +96,8 @@ async function generateDynamicIcon(image) {
                         context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
 
                         colorClass = findColorClass(red, green, blue);
+                    } else {
+                        y += pizelSize;
                     }
                 }
             }
