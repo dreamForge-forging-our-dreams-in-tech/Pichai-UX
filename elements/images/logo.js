@@ -95,7 +95,7 @@ async function generateDynamicIcon(image) {
     });
 }
 
-function drawSquares(reg, green, blue) {
+function drawSquares(red, green, blue) {
     if (colorClass != findColorClass(red, green, blue)) {
         // Replace the pixel with a 5x5 square
         console.log(colorClass, findColorClass(red, green, blue));
