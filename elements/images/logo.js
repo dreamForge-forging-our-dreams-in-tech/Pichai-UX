@@ -6,7 +6,7 @@ import { varExists } from '../../utils/cssVars.js';
 
 import '../../utils/localFOrage.js';
 
-let rgb, colorClass, x,y, context2, textColor;
+let rgb;
 
 let pixelSize = 2.7; // og:6 size of the pixel squares that are drawn on the canvas
 let size = 90; //og 224 // size of the canvas or image, this should be a square image
@@ -30,7 +30,7 @@ async function generateDynamicIcon(image) {
         const context = canvas.getContext("2d", { willReadFrequently: true });
 
         const canvas2 = document.createElement('canvas');
-        context2 = canvas2.getContext("2d", { willReadFrequently: true });
+        const context2 = canvas2.getContext("2d", { willReadFrequently: true });
 
 
         // Load your image onto the canvas
@@ -41,6 +41,18 @@ async function generateDynamicIcon(image) {
         dynamicImage.src = image;
 
         dynamicImage.onload = function () {
+            function drawSquares(red, green, blue, alpha) {
+                if (colorClass != findColorClass(red, green, blue)) {
+                    // Replace the pixel with a 5x5 square
+                    if (alpha == 0) { } else {
+                        context2.fillStyle = textColor; // Set your desired color here
+                        context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
+                    }
+
+                    colorClass = findColorClass(red, green, blue);
+                }
+            }
+
             const root = document.documentElement;
 
             rgb = getComputedStyle(root).getPropertyValue('--primary');
@@ -55,10 +67,14 @@ async function generateDynamicIcon(image) {
 
             // Get the entire image data as an array of pixel data
             let imageData = context.getImageData(0, 0, size, size);
-            textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'rgb(255, 255, 255)' ? 'black' : 'white';
+            let textColor = getComputedStyle(root).getPropertyValue('--primaryTextColor') == 'rgb(255, 255, 255)' ? 'black' : 'white';
+
+            let colorClass;
 
             deTranslate(context);
             deTranslate(context2);
+
+            let x, y;
 
             for (y = 0; y < canvas.height; y++) {
                 for (x = 0; x < canvas.width; x++) {
@@ -89,20 +105,6 @@ async function generateDynamicIcon(image) {
             resolve(canvas.toDataURL());
         };
     });
-}
-
-function drawSquares(red, green, blue, alpha) {
-    if (colorClass != findColorClass(red, green, blue)) {
-        // Replace the pixel with a 5x5 square
-        // if (alpha == 0) {
-        //     console.log(alpha);
-        // } else {
-            context2.fillStyle = textColor; // Set your desired color here
-            context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
-        //}
-
-        colorClass = findColorClass(red, green, blue);
-    }
 }
 
 async function setDynamicIcon(img, faviconUrl) {
