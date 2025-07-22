@@ -111,16 +111,16 @@ async function generateDynamicIcon(image) {
                     }
                     if (x >= canvas.height) {
                         clearInterval(interval);
-                        console.log(canvas.toDataURL())
+                        console.log(canvas.toDataURL());
+
+                        context.clearRect(-2, -2, size + 5, size + 5);
+
+                        context.drawImage(canvas2, 0, 0);
+
+                        resolve(canvas.toDataURL());
                     }
                 }
             }, 0); // You can set this to a small value like 1 or 5 for visible delay
-
-            context.clearRect(-2, -2, size + 5, size + 5);
-
-            context.drawImage(canvas2, 0, 0);
-
-            resolve(canvas.toDataURL());
         };
     });
 }
