@@ -6,7 +6,7 @@ import { varExists } from '../../utils/cssVars.js';
 
 import '../../utils/localFOrage.js';
 
-let rgb, colorClass, textColor;
+let rgb, colorClass, textColor, context2;
 
 let pixelSize = 2.7; // og:6 size of the pixel squares that are drawn on the canvas
 let size = 90; //og 224 // size of the canvas or image, this should be a square image
@@ -30,7 +30,7 @@ async function generateDynamicIcon(image) {
         const context = canvas.getContext("2d", { willReadFrequently: true });
 
         const canvas2 = document.createElement('canvas');
-        const context2 = canvas2.getContext("2d", { willReadFrequently: true });
+        context2 = canvas2.getContext("2d", { willReadFrequently: true });
 
 
         // Load your image onto the canvas
