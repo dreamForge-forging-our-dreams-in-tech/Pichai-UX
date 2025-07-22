@@ -71,7 +71,7 @@ async function generateDynamicIcon(image) {
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
 
-                    drawSquares(red, green, blue);
+                    drawSquares(red, green, blue, imageData.data[index + 3]);
                 }
             }
 
@@ -82,7 +82,7 @@ async function generateDynamicIcon(image) {
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
 
-                    drawSquares(red, green, blue);
+                    drawSquares(red, green, blue, imageData.data[index + 3]);
                 }
             }
 
@@ -95,10 +95,10 @@ async function generateDynamicIcon(image) {
     });
 }
 
-function drawSquares(red, green, blue) {
+function drawSquares(red, green, blue, alpha) {
     if (colorClass != findColorClass(red, green, blue)) {
         // Replace the pixel with a 5x5 square
-        console.log(colorClass, findColorClass(red, green, blue));
+        console.log(alpha);
         if (colorClass == 'white' || colorClass == 'black') { } else {
             context2.fillStyle = textColor; // Set your desired color here
             context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
