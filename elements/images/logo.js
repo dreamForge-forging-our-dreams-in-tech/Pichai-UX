@@ -1,3 +1,4 @@
+
 import { findColorClass } from '../../AI/colorClassFinder.js';
 
 import { registry, doAttributeCheck } from '../../utils/customeElementsDefine.js';
@@ -41,19 +42,6 @@ async function generateDynamicIcon(image) {
         dynamicImage.src = image;
 
         dynamicImage.onload = function () {
-            function drawSquares(red, green, blue, alpha) {
-                if (colorClass != findColorClass(red, green, blue)) {
-                    // Replace the pixel with a 5x5 square
-                    if (alpha == 0) { } else {
-                        console.log(colorClass)
-                        context2.fillStyle = textColor; // Set your desired color here
-                        context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
-                    }
-
-                    colorClass = findColorClass(red, green, blue);
-                }
-            }
-
             const root = document.documentElement;
 
             rgb = getComputedStyle(root).getPropertyValue('--primary');
@@ -84,7 +72,13 @@ async function generateDynamicIcon(image) {
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
 
-                    drawSquares(red, green, blue, imageData.data[index + 3]);
+                    if (colorClass != findColorClass(red, green, blue)) {
+                        // Replace the pixel with a 5x5 square
+                        context2.fillStyle = textColor; // Set your desired color here
+                        context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
+
+                        colorClass = findColorClass(red, green, blue);
+                    }
                 }
             }
 
@@ -95,7 +89,13 @@ async function generateDynamicIcon(image) {
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
 
-                    drawSquares(red, green, blue, imageData.data[index + 3]);
+                    if (colorClass != findColorClass(red, green, blue)) {
+                        // Replace the pixel with a 5x5 square
+                        context2.fillStyle = textColor; // Set your desired color here
+                        context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
+
+                        colorClass = findColorClass(red, green, blue);
+                    }
                 }
             }
 
@@ -161,5 +161,3 @@ class Logo extends HTMLElement {
 registry.define("x-icon", Logo);
 
 export { generateDynamicIcon };
-
-// rule 14 is the cross origin  if there comes more issues 
