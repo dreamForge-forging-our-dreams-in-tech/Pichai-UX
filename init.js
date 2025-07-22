@@ -13,9 +13,9 @@ let r = document.querySelector(':root');
 let i;
 window['options'] = {};
 
-console.time('PageLoadScript'); // some debugging scripts for testing loading speeds when rendering icons
+console.time('pageLoadedIn'); // some debugging scripts for testing loading speeds when rendering icons
 window.onload = function () {
-    console.timeEnd('PageLoadScript');
+    console.timeEnd('pageLoadedIn');
 }
 
 class PichaiUX {
