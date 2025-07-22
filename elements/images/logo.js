@@ -41,6 +41,19 @@ async function generateDynamicIcon(image) {
         dynamicImage.src = image;
 
         dynamicImage.onload = function () {
+            function drawSquares(red, green, blue, alpha) {
+                if (colorClass != findColorClass(red, green, blue)) {
+                    // Replace the pixel with a 5x5 square
+                    console.log(alpha);
+                    if (alpha == 0) { } else {
+                        context2.fillStyle = textColor; // Set your desired color here
+                        context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
+                    }
+
+                    colorClass = findColorClass(red, green, blue);
+                }
+            }
+
             const root = document.documentElement;
 
             rgb = getComputedStyle(root).getPropertyValue('--primary');
@@ -93,19 +106,6 @@ async function generateDynamicIcon(image) {
             resolve(canvas.toDataURL());
         };
     });
-
-    function drawSquares(red, green, blue, alpha) {
-    if (colorClass != findColorClass(red, green, blue)) {
-        // Replace the pixel with a 5x5 square
-        console.log(alpha);
-        if (alpha == 0) { } else {
-            context2.fillStyle = textColor; // Set your desired color here
-            context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
-        }
-
-        colorClass = findColorClass(red, green, blue);
-    }
-}
 }
 
 async function setDynamicIcon(img, faviconUrl) {
