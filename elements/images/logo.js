@@ -94,8 +94,9 @@ async function generateDynamicIcon(image) {
 function drawSquares(red, green, blue, alpha) {
     if (colorClass != findColorClass(red, green, blue)) {
         // Replace the pixel with a 5x5 square
-        console.log(alpha);
-        if (alpha == 0) { } else {
+        if (alpha == 0) {
+            console.log(alpha);
+        } else {
             context2.fillStyle = textColor; // Set your desired color here
             context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
         }
