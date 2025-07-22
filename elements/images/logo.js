@@ -9,9 +9,6 @@ import '../../utils/localFOrage.js';
 
 let rgb;
 
-let step = 1; // adjust for performance/speed
-let phase = 0; // 0 = first loop, 1 = second loop
-
 let pixelSize = 2.7; // og:6 size of the pixel squares that are drawn on the canvas
 let size = 90; //og 224 // size of the canvas or image, this should be a square image
 
@@ -68,59 +65,45 @@ async function generateDynamicIcon(image) {
 
             let x, y;
 
-            const interval = setInterval(() => {
-                if (phase === 0) {
+            for (y = 0; y < canvas.height; y++) {
+                for (x = 0; x < canvas.width; x++) {
                     const index = (y * canvas.width + x) * 4;
                     const red = imageData.data[index];
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
 
-                    if (colorClass !== findColorClass(red, green, blue)) {
-                        context2.fillStyle = textColor;
-                        context2.fillRect(x, y, pixelSize, pixelSize);
+                    if (colorClass != findColorClass(red, green, blue)) {
+                        // Replace the pixel with a 5x5 square
+                        context2.fillStyle = textColor; // Set your desired color here
+                        context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
+
                         colorClass = findColorClass(red, green, blue);
-                    }
-
-                    x += step;
-                    if (x >= canvas.width) {
-                        x = 0;
-                        y += step;
-                    }
-                    if (y >= canvas.height) {
-                        // Move to second loop
-                        phase = 1;
-                        x = 0;
-                        y = 0;
-                    }
-                } else if (phase === 1) {
-                    const index = (y * canvas.width + x) * 4;
-                    const red = imageData.data[index];
-                    const green = imageData.data[index + 1];
-                    const blue = imageData.data[index + 2];
-
-                    if (colorClass !== findColorClass(red, green, blue)) {
-                        context2.fillStyle = textColor;
-                        context2.fillRect(x, y, pixelSize, pixelSize);
-                        colorClass = findColorClass(red, green, blue);
-                    }
-
-                    y += step;
-                    if (y >= canvas.width) {
-                        y = 0;
-                        x += step;
-                    }
-                    if (x >= canvas.height) {
-                        clearInterval(interval);
-                        console.log(canvas.toDataURL());
-
-                        context.clearRect(-2, -2, size + 5, size + 5);
-
-                        context.drawImage(canvas2, 0, 0);
-
-                        resolve(canvas.toDataURL());
                     }
                 }
-            }, 0); // You can set this to a small value like 1 or 5 for visible delay
+            }
+
+            for (x = 0; x < canvas.height; x++) {
+                for (y = 0; y < canvas.width; y++) {
+                    const index = (y * canvas.width + x) * 4;
+                    const red = imageData.data[index];
+                    const green = imageData.data[index + 1];
+                    const blue = imageData.data[index + 2];
+
+                    if (colorClass != findColorClass(red, green, blue)) {
+                        // Replace the pixel with a 5x5 square
+                        context2.fillStyle = textColor; // Set your desired color here
+                        context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
+
+                        colorClass = findColorClass(red, green, blue);
+                    }
+                }
+            }
+
+            context.clearRect(-2, -2, size + 5, size + 5);
+
+            context.drawImage(canvas2, 0, 0);
+
+            resolve(canvas.toDataURL());
         };
     });
 }
