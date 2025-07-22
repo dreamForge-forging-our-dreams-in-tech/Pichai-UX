@@ -65,6 +65,8 @@ html {
     margin: 0px;
 
     overscroll-behavior: none;
+
+    border-radius:0px !important;
 }
 
 * {
