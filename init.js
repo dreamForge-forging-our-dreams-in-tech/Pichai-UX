@@ -13,6 +13,11 @@ let r = document.querySelector(':root');
 let i;
 window['options'] = {};
 
+console.time('PageLoadScript'); // some debugging scripts for testing loading speeds when rendering icons
+window.onload = function () {
+    console.timeEnd('PageLoadScript');
+}
+
 class PichaiUX {
     constructor(options = {}) {
         let opt = {
@@ -242,10 +247,10 @@ function addCSSSheets(url, id) {
     link.href = url;
     link.media = 'all';
 
-    if(id == 'font') {
-         head.append(link);
+    if (id == 'font') {
+        head.append(link);
     } else {
-         head.prepend(link);
+        head.prepend(link);
     }
 }
 
