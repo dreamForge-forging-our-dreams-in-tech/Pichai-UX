@@ -311,7 +311,6 @@ async function generate3ColorPallete(options) {
         let i;
 
         if (elementsWithTransparentBg.length > 0) {
-            // You can iterate through them and do something, e.g., add a border for visibility
             for (i of allElements) {
                 if (elementsWithTransparentBg.includes(i) || i == document.documentElement) { } else {
                     if (i.parentNode.style.backdropFilter == `blur(${parseInt(options.blur)}px)`) {
@@ -320,7 +319,6 @@ async function generate3ColorPallete(options) {
                     } else {
                         i.style.backdropFilter = `blur(${parseInt(options.blur)}px)`; //add the blur effect
                     }
-                    //console.log(parseInt(options.blur))
                 }
             }
         } else {
