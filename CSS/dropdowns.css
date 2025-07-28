@@ -1,4 +1,4 @@
-accordion-dropdown h5 :not(accordion-dropdown .accordionItems h5) {
+accordion-dropdown h5, accordion-dropdown:not(.accordionItems h5) {
     width:calc(100% - 3px);
 
     height:max-content;
