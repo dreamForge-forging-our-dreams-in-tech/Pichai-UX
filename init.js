@@ -8,6 +8,8 @@ import { optimizeTextColor } from './utils/extraFunctions.js';
 
 import { varExists } from "./utils/cssVars.js";
 
+import { pickFiles } from './functions/filePicker.js';
+
 let r = document.querySelector(':root');
 
 let i;
@@ -113,6 +115,10 @@ class PichaiUX {
 
     removeSimpleDrawer(e) {
         removeSimpleDrawer(e);
+    }
+
+    pickFiles (callback) {
+        pickFiles(callback);
     }
 
     async updateStyling() { // allowsw the user to force an update to pichai if it isn't odne automatically
