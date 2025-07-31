@@ -31,10 +31,8 @@ async function generateDynamicIcon(image, element) {
     return new Promise((resolve) => {
         //create 2 canvases 1 for reading and 1 for rendering the icon properly
         const canvas = document.createElement('canvas');
-
-        console.log(element)
-        element.replaceWith(canvas);
         const context = canvas.getContext("2d", { willReadFrequently: true });
+        element.replaceWith(canvas);
 
         const canvas2 = document.createElement('canvas');
         const context2 = canvas2.getContext("2d", { willReadFrequently: true });
@@ -69,7 +67,7 @@ async function generateDynamicIcon(image, element) {
             deTranslate(context);
             deTranslate(context2);
 
-            let x, y;
+            let x, y = 0;
 
             const interval = setInterval(() => {
                 console.log(y, canvas.width + x, (y * canvas.width + x) * 4);
