@@ -72,6 +72,7 @@ async function generateDynamicIcon(image, element) {
             let x, y;
 
             const interval = setInterval(() => {
+                console.log(y, canvas.width + x, (y * canvas.width + x) * 4);
                 if (phase === 0) {
                     const index = (y * canvas.width + x) * 4;
                     const red = imageData.data[index];
