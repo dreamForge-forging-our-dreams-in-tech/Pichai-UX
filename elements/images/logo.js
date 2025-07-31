@@ -78,7 +78,7 @@ async function generateDynamicIcon(image, element) {
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
 
-                                    console.log(inndex)
+                                    console.log(index)
 
                     if (colorClass !== findColorClass(red, green, blue)) {
                         context2.fillStyle = textColor;
