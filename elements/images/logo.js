@@ -14,6 +14,8 @@ let size = 90; //og 224 // size of the canvas or image, this should be a square 
 
 let step = 1; // adjust for performance/speed
 let phase = 0; // 0 = first loop, 1 = second loop
+let x = 0;
+let y = 0;
 
 function setTranslate(canvas) {
     canvas.width = size;
@@ -66,8 +68,6 @@ async function generateDynamicIcon(image, element) {
 
             deTranslate(context);
             deTranslate(context2);
-
-            let x, y = 0;
 
             const interval = setInterval(() => {
                 console.log(y, canvas.width + x, (y * canvas.width + x) * 4);
