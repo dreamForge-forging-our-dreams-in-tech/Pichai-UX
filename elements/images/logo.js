@@ -12,6 +12,9 @@ let rgb;
 let pixelSize = 2.7; // og:6 size of the pixel squares that are drawn on the canvas
 let size = 90; //og 224 // size of the canvas or image, this should be a square image
 
+let step = 1; // adjust for performance/speed
+let phase = 0; // 0 = first loop, 1 = second loop
+
 function setTranslate(canvas) {
     canvas.width = size;
     canvas.height = size;
@@ -21,13 +24,14 @@ function deTranslate(context) {
     context.setTransform(1, 0, 0, 1, 0, 0); // This resets the canvas to its original state
 }
 
-async function generateDynamicIcon(image) {
+async function generateDynamicIcon(image, element) {
 
     await varExists('--primary');
 
     return new Promise((resolve) => {
         //create 2 canvases 1 for reading and 1 for rendering the icon properly
         const canvas = document.createElement('canvas');
+        element.replaceWith(canvas);
         const context = canvas.getContext("2d", { willReadFrequently: true });
 
         const canvas2 = document.createElement('canvas');
@@ -65,51 +69,64 @@ async function generateDynamicIcon(image) {
 
             let x, y;
 
-            for (y = 0; y < canvas.height; y++) {
-                for (x = 0; x < canvas.width; x++) {
+            const interval = setInterval(() => {
+                if (phase === 0) {
                     const index = (y * canvas.width + x) * 4;
                     const red = imageData.data[index];
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
 
-                    if (colorClass != findColorClass(red, green, blue)) {
-                        // Replace the pixel with a 5x5 square
-                        context2.fillStyle = textColor; // Set your desired color here
-                        context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
-
+                    if (colorClass !== findColorClass(red, green, blue)) {
+                        context2.fillStyle = textColor;
+                        context2.fillRect(x, y, pixelSize, pixelSize);
                         colorClass = findColorClass(red, green, blue);
                     }
-                }
-            }
 
-            for (x = 0; x < canvas.height; x++) {
-                for (y = 0; y < canvas.width; y++) {
+                    x += step;
+                    if (x >= canvas.width) {
+                        x = 0;
+                        y += step;
+                    }
+                    if (y >= canvas.height) {
+                        // Move to second loop
+                        phase = 1;
+                        x = 0;
+                        y = 0;
+                    }
+                } else if (phase === 1) {
                     const index = (y * canvas.width + x) * 4;
                     const red = imageData.data[index];
                     const green = imageData.data[index + 1];
                     const blue = imageData.data[index + 2];
 
-                    if (colorClass != findColorClass(red, green, blue)) {
-                        // Replace the pixel with a 5x5 square
-                        context2.fillStyle = textColor; // Set your desired color here
-                        context2.fillRect(x, y, pixelSize, pixelSize); // Draw a 5x5 square
-
+                    if (colorClass !== findColorClass(red, green, blue)) {
+                        context2.fillStyle = textColor;
+                        context2.fillRect(x, y, pixelSize, pixelSize);
                         colorClass = findColorClass(red, green, blue);
                     }
+
+                    y += step;
+                    if (y >= canvas.width) {
+                        y = 0;
+                        x += step;
+                    }
+                    if (x >= canvas.height) {
+                        clearInterval(interval);
+
+                        context.clearRect(-2, -2, size + 5, size + 5);
+
+                        context.drawImage(canvas2, 0, 0);
+
+                        resolve(canvas.toDataURL());
+                    }
                 }
-            }
-
-            context.clearRect(-2, -2, size + 5, size + 5);
-
-            context.drawImage(canvas2, 0, 0);
-
-            resolve(canvas.toDataURL());
+            }, 0); // You can set this to a small value like 1 or 5 for visible delay
         };
     });
 }
 
 async function setDynamicIcon(img, faviconUrl) {
-    let newIcon = await generateDynamicIcon(faviconUrl);
+    let newIcon = await generateDynamicIcon(faviconUrl, img);
     img.style.backgroundImage = `url(${newIcon})`;
 }
 
