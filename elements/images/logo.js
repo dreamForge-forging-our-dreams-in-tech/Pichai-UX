@@ -31,6 +31,8 @@ async function generateDynamicIcon(image, element) {
     return new Promise((resolve) => {
         //create 2 canvases 1 for reading and 1 for rendering the icon properly
         const canvas = document.createElement('canvas');
+
+        console.log(element)
         element.replaceWith(canvas);
         const context = canvas.getContext("2d", { willReadFrequently: true });
 
