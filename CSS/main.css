@@ -98,7 +98,7 @@ html {
 }
 
 *:hover {
-    overflow:auto;
+    overflow-y:auto;
 }
 
 img, video, canvas, svg, .noHueRotation { 
