@@ -30,7 +30,7 @@ class PichaiUX {
             rtl: false,
             contrast: 1,
             wallpaperBlur: 0,
-            wallpaperBrightness: 0.9,
+            wallpaperBrightness: 0.83,
             wallpaperInversion: 0,
             hueRotation: 0, // use this when wanting to suppy a custom color hue instead of a bg image or array of colors.
             inversion: 0,
