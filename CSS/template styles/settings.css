@@ -12,6 +12,19 @@
     background-color:TRANSPARENT;
 }
 
+ @media screen and (orientation:landscape) {
+    #quickSettingsPanel{
+    top:58px;
+}
+ }
+
+ @media screen and (orientation:portrait) {
+    #quickSettingsPanel{
+    min-width:calc(100% - 16px);
+    bottom:8px;
+}
+ }
+
 #quickSettingsPanel list-viewer {
     display:grid;
 
