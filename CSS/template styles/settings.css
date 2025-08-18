@@ -20,6 +20,7 @@
  @media screen and (orientation:portrait) {
     #quickSettingsPanel{
     max-width:calc(100% - 16px);
+    min-width:calc(100% - 16px);
     bottom:8px;
 }
  }
