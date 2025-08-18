@@ -29,6 +29,8 @@
   width: 150px;
 
   border-radius: 200px;
+
+  white-space: nowrap;
 }
 
 .tabBarHolder .current {

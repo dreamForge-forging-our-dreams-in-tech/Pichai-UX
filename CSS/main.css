@@ -73,8 +73,6 @@ html {
     overflow-wrap: break-word;
     overscroll-behavior: none;
 
-    white-space: nowrap;
-
     font-family: var(--font);
     /* font-weight: lighter; */
     letter-spacing:1px;
