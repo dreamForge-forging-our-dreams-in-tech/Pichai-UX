@@ -24,9 +24,9 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
 }
 
 function toggleDrawerFunc(el) { // function to toggle the drawer menu open or closed.
-    console.log(el.parentNode.platform)
-     if (el.parentNode.platform == 'mobile') {
-                el.parentNode.toggle.click();
+    console.log(el.platform)
+     if (el.platform == 'mobile') {
+                el.toggle.click();
             }
 }
 
