@@ -32,7 +32,16 @@ function setAutoSize(el, mode) {
     autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
     el.platform = mode == 'auto' ? autoSize : mode;
 
-    toggleDrawerFunc(el); // close the drawer if user is in portrait mode
+    autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
+    el.platform = mode == 'auto' ? autoSize : mode;
+
+    if (el.platform == 'desktop') {
+        el.toggle.classList.remove('closedDrawerToggle');
+        el.toggle.click();
+    } else {
+        el.toggle.classList.add('closedDrawerToggle');
+        el.toggle.click();
+    }
 
     screen.orientation.addEventListener('change', function () {
         autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
