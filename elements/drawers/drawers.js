@@ -32,10 +32,11 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
 
         if (element.platform == 'mobile') {
             element.toggle.classList.add('closedDrawerToggle');
+            element.toggleDrawer();
         } else {
             element.toggle.classList.remove('closedDrawerToggle');
+            element.toggleDrawer();
         }
-        element.toggleDrawer();
     });
 }
 
