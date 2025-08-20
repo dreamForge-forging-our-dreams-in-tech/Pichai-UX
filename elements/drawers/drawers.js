@@ -37,7 +37,7 @@ function setAutoSize (el, mode) {
     },1);
 
     screen.orientation.addEventListener('change', function () {
-            if (el.platform == 'mobile') {
+            if (el.platform == 'desktop') {
                 el.toggle.classList.remove('closedDrawerToggle');
                 el.toggle.click();
             } else {
