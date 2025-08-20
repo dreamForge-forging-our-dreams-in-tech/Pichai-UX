@@ -1,6 +1,6 @@
 let autoSize;
 
-function createSimpleDrawer(element, mode, open = true) { // turns a simple element into a drawer menu
+function createSimpleDrawer(element, mode, open = false) { // turns a simple element into a drawer menu
     //mode can be desktop, mobile or auto. desktop: drawer is visible from the start, ,obile: drawer is closed from the start and closes when you click on an item, auto: picks any of the first two based on screen size
     let i;
 
