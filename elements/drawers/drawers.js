@@ -31,7 +31,7 @@ function getOrientation(el, mode) {
 }
 
 function setAutoSize (el, mode) {
-    window.setnterval ( () => {
+    window.setInterval ( () => {
         autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
         el.platform = mode == 'auto' ? autoSize : mode;
     },1);
