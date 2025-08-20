@@ -5,10 +5,10 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
     let i;
 
     setAutoSize(element, mode);
+    toggleDrawerFunc(); // close the drawer if user is in portrait mode, is overwritten by the "open" property
 
     element.classList.add('drawer');
     element.toggle = createDrawerButton(element);
-    element.platform = mode == 'auto' ? autoSize : mode;
 
     element.toggleDrawer = function () {
         element.toggle.click(); // open or closes the drawer menu depending on it's state
