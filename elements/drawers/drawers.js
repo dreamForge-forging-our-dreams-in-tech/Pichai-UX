@@ -34,12 +34,14 @@ function setAutoSize (el, mode) {
     window.setInterval (() => {
         autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
         el.platform = mode == 'auto' ? autoSize : mode;
+    },1);
 
-             if (el.platform == 'mobile') {
+    screen.orientation.addEventListener('change', function () {
+                     if (el.platform == 'mobile') {
                 el.toggle.classList.remove('closedDrawerToggle');
                 el.toggle.click();
             }
-    },1);
+    });
 }
 
 function removeSimpleDrawer(element) { // removes the drawer menu effect from an element
