@@ -2,7 +2,7 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
     //mode can be desktop, mobile or auto. desktop: drawer is visible from the start, ,obile: drawer is closed from the start and closes when you click on an item, auto: picks any of the first two based on screen size
     let i;
 
-    let autoSize = screen.width < 600 ? 'mobile' : 'desktop';
+    let autoSize = screen.orientation.angle = 0 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
 
     element.classList.add('drawer');
     element.toggle = createDrawerButton(element);
@@ -12,13 +12,19 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
         element.toggle.click(); // open or closes the drawer menu depending on it's state
     }
 
-    if(!open) { // closes the drawer menu if the user doesnt want it to be open on launch
+    if (!open) { // closes the drawer menu if the user doesnt want it to be open on launch
         element.toggle.click();
     }
 
     for (i of element.children) { // click event somehow handles mobile mode aswel
         i.addEventListener('click', function () {
-            if(this.parentNode.platform == 'mobile') {
+            if (this.parentNode.platform == 'mobile') {
+                this.parentNode.toggle.click();
+            }
+        });
+
+        i.addEventListener('deviceorientation', function () {
+            if (this.parentNode.platform == 'mobile') {
                 this.parentNode.toggle.click();
             }
         });
