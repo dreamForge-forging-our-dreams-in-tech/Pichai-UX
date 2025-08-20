@@ -18,10 +18,9 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
         element.toggle.click();
     }
 
-    console.log(this, element)
     for (i of element.children) { // click event somehow handles mobile mode aswel
-        i.addEventListener('click', getOrientation(this));
-        screen.orientation.addEventListener("change", getOrientation(this));
+        i.addEventListener('click', getOrientation(element));
+        screen.orientation.addEventListener("change", getOrientation(element));
     }
 }
 
