@@ -5,8 +5,6 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
     let i;
 
     setAutoSize(element, mode);
-    autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
-    element.platform = mode == 'auto' ? autoSize : mode;
 
     element.classList.add('drawer');
     element.toggle = createDrawerButton(element);
@@ -31,6 +29,9 @@ function toggleDrawerFunc(el) { // function to toggle the drawer menu open or cl
 }
 
 function setAutoSize(el, mode) {
+    autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
+    element.platform = mode == 'auto' ? autoSize : mode;
+
     screen.orientation.addEventListener('change', function () {
         autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
         el.platform = mode == 'auto' ? autoSize : mode;
