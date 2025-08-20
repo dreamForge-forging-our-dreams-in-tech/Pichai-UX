@@ -4,7 +4,7 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
     //mode can be desktop, mobile or auto. desktop: drawer is visible from the start, ,obile: drawer is closed from the start and closes when you click on an item, auto: picks any of the first two based on screen size
     let i;
 
-    setAutoSize(element));
+    setAutoSize(element);
 
     element.classList.add('drawer');
     element.toggle = createDrawerButton(element);
