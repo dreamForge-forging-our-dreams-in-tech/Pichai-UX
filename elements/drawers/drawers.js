@@ -5,7 +5,8 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
     let i;
 
     setAutoSize(element, mode);
-    console.log(element.platform)
+    autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
+    el.platform = mode == 'auto' ? autoSize : mode;
 
     element.classList.add('drawer');
     element.toggle = createDrawerButton(element);
@@ -26,26 +27,24 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
 }
 
 function toggleDrawerFunc(el) { // function to toggle the drawer menu open or closed.
-    console.log(el.platform)
-     if (el.platform == 'mobile') {
-                el.toggleDrawer();
-            }
+    if (el.platform == 'mobile') {
+        el.toggleDrawer();
+    }
 }
 
-function setAutoSize (el, mode) {
-    window.setInterval (() => {
-        autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
-        el.platform = mode == 'auto' ? autoSize : mode;
-    },1);
+function setAutoSize(el, mode) {
 
     screen.orientation.addEventListener('change', function () {
-            if (el.platform == 'desktop') {
-                el.toggle.classList.remove('closedDrawerToggle');
-                el.toggle.click();
-            } else {
-                el.toggle.classList.add('closedDrawerToggle');
-                el.toggle.click();
-            }
+        autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
+        el.platform = mode == 'auto' ? autoSize : mode;
+
+        if (el.platform == 'desktop') {
+            el.toggle.classList.remove('closedDrawerToggle');
+            el.toggle.click();
+        } else {
+            el.toggle.classList.add('closedDrawerToggle');
+            el.toggle.click();
+        }
     });
 }
 
