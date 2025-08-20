@@ -1,49 +1,28 @@
-let autoSize;
-
 function createSimpleDrawer(element, mode, open = true) { // turns a simple element into a drawer menu
     //mode can be desktop, mobile or auto. desktop: drawer is visible from the start, ,obile: drawer is closed from the start and closes when you click on an item, auto: picks any of the first two based on screen size
     let i;
 
-    setAutoSize(element, mode);
+    let autoSize = screen.orientation.angle == 90 ? 'mobile' : 'desktop';
 
     element.classList.add('drawer');
     element.toggle = createDrawerButton(element);
+    element.platform = mode == 'auto' ? autoSize : mode;
 
     element.toggleDrawer = function () {
         element.toggle.click(); // open or closes the drawer menu depending on it's state
     }
 
-    if (!open) { // closes the drawer menu if the user doesnt want it to be open on launch
-        element.toggleDrawer();
+    if(!open) { // closes the drawer menu if the user doesnt want it to be open on launch
+        element.toggle.click();
     }
 
     for (i of element.children) { // click event somehow handles mobile mode aswel
-        i.addEventListener('click', toggleDrawerFunc(element));
+        i.addEventListener('click', function () {
+            if(this.parentNode.platform == 'mobile') {
+                this.parentNode.toggle.click();
+            }
+        });
     }
-}
-
-function toggleDrawerFunc(el) { // function to toggle the drawer menu open or closed.
-    if (el.platform == 'mobile') {
-        el.toggleDrawer();
-    }
-}
-
-function setAutoSize(el, mode) {
-    autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
-    el.platform = mode == 'auto' ? autoSize : mode;
-
-    screen.orientation.addEventListener('change', function () {
-        autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
-        el.platform = mode == 'auto' ? autoSize : mode;
-
-        if (el.platform == 'desktop') {
-            el.toggle.classList.remove('closedDrawerToggle');
-            el.toggle.click();
-        } else {
-            el.toggle.classList.add('closedDrawerToggle');
-            el.toggle.click();
-        }
-    });
 }
 
 function removeSimpleDrawer(element) { // removes the drawer menu effect from an element
