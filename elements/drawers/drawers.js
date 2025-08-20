@@ -8,6 +8,8 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
     autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
     element.platform = mode == 'auto' ? autoSize : mode;
 
+    toggleDrawerFunc(element); // close the drawer if user is in portrait mode
+
     element.classList.add('drawer');
     element.toggle = createDrawerButton(element);
 
@@ -17,8 +19,6 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
 
     if (!open) { // closes the drawer menu if the user doesnt want it to be open on launch
         element.toggleDrawer();
-
-        toggleDrawerFunc(element); // close the drawer if user is in portrait mode
     }
 
     for (i of element.children) { // click event somehow handles mobile mode aswel
