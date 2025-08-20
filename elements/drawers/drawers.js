@@ -33,6 +33,7 @@ function getOrientation() {
 
 function setAutoSize () {
     autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
+    console.log(autoSize)
 }
 
 function removeSimpleDrawer(element) { // removes the drawer menu effect from an element
