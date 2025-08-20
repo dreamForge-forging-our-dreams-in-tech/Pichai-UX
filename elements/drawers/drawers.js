@@ -15,7 +15,7 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
         element.toggle.click(); // open or closes the drawer menu depending on it's state
     }
 
-    if (!open && element.platform == 'mobile') { // closes the drawer menu if the user doesnt want it to be open on launch
+    if (!open) { // closes the drawer menu if the user doesnt want it to be open on launch
         element.toggleDrawer();
     }
 
