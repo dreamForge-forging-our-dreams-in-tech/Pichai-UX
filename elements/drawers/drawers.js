@@ -35,7 +35,10 @@ function setAutoSize (el, mode) {
         autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
         el.platform = mode == 'auto' ? autoSize : mode;
 
-        toggleDrawerFunc(el);
+             if (el.platform == 'mobile') {
+                el.toggle.classList.remove('closedDrawerToggle');
+                el.toggle.click();
+            }
     },1);
 }
 
