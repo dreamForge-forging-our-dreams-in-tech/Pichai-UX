@@ -19,12 +19,12 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
     }
 
     for (i of element.children) { // click event somehow handles mobile mode aswel
-        i.addEventListener('click', getOrientation(element, mode));
-        screen.orientation.addEventListener("change", getOrientation(element, mode));
+        i.addEventListener('click', toggleDrawerFunc(element));
+        screen.orientation.addEventListener("change", toggleDrawerFunc(element));
     }
 }
 
-function getOrientation(el, mode) {
+function toggleDrawerFunc(el) { // function to toggle the drawer menu open or closed.
      if (el.parentNode.platform == 'mobile') {
                 el.parentNode.toggle.click();
             }
@@ -34,6 +34,8 @@ function setAutoSize (el, mode) {
     window.setInterval ( () => {
         autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
         el.platform = mode == 'auto' ? autoSize : mode;
+
+        toggleDrawerFunc(el);
     },1);
 }
 
