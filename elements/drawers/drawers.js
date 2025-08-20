@@ -17,18 +17,15 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
     }
 
     for (i of element.children) { // click event somehow handles mobile mode aswel
-        i.addEventListener('click', function () {
-            if (this.parentNode.platform == 'mobile') {
-                this.parentNode.toggle.click();
-            }
-        });
-
-        i.addEventListener('deviceorientation', function () {
-            if (this.parentNode.platform == 'mobile') {
-                this.parentNode.toggle.click();
-            }
-        });
+        i.addEventListener('click', getOrientation());
+        i.addEventListener('deviceorientation', getOrientation());
     }
+}
+
+function getOrientation() {
+     if (this.parentNode.platform == 'mobile') {
+                this.parentNode.toggle.click();
+            }
 }
 
 function removeSimpleDrawer(element) { // removes the drawer menu effect from an element
