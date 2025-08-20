@@ -20,7 +20,6 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
 
     for (i of element.children) { // click event somehow handles mobile mode aswel
         i.addEventListener('click', toggleDrawerFunc(element));
-        screen.orientation.addEventListener("change", toggleDrawerFunc(element));
     }
 }
 
@@ -35,9 +34,7 @@ function setAutoSize (el, mode) {
         autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
         el.platform = mode == 'auto' ? autoSize : mode;
 
-             if (el.parentNode.platform == 'mobile') {
-                el.parentNode.toggle.click();
-            }
+        toggleDrawerFunc(el);
     },1);
 }
 
