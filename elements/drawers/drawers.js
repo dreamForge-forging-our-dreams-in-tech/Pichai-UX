@@ -6,7 +6,7 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
 
     setAutoSize(element, mode);
     autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
-    el.platform = mode == 'auto' ? autoSize : mode;
+    element.platform = mode == 'auto' ? autoSize : mode;
 
     element.classList.add('drawer');
     element.toggle = createDrawerButton(element);
