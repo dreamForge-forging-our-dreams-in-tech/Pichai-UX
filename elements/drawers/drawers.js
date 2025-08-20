@@ -20,7 +20,7 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
 
     for (i of element.children) { // click event somehow handles mobile mode aswel
         i.addEventListener('click', getOrientation(this));
-        i.addEventListener('deviceorientation', getOrientation(this));
+        screen.orientation.addEventListener("change", getOrientation(this));
     }
 }
 
