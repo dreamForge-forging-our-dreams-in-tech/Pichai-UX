@@ -30,7 +30,7 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
         autoSize = screen.orientation.angle == 0 ? 'mobile' : 'desktop';
         element.platform = mode == 'auto' ? autoSize : mode;
 
-        if (element.platform == 'desktop') {
+        if (element.platform == 'desktop') { // sets the state of the drawer for screen orientation, it's purposely flipped to trick the toggleDrawer function
             element.toggle.classList.add('closedDrawerToggle');
         } else {
             element.toggle.classList.remove('closedDrawerToggle');
