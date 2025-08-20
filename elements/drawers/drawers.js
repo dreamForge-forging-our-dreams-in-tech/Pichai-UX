@@ -24,8 +24,8 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
     }
 }
 
-function getOrientation(el) {
-    setAutoSize(el);
+function getOrientation(el, mode) {
+    setAutoSize(el, mode);
     console.log(autoSize)
      if (el.parentNode.platform == 'mobile') {
                 el.parentNode.toggle.click();
