@@ -26,6 +26,7 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
 
 function getOrientation(el) {
     setAutoSize();
+    console.log(autoSize)
      if (el.parentNode.platform == 'mobile') {
                 el.parentNode.toggle.click();
             }
@@ -33,7 +34,6 @@ function getOrientation(el) {
 
 function setAutoSize () {
     autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
-    console.log(autoSize)
 }
 
 function removeSimpleDrawer(element) { // removes the drawer menu effect from an element
