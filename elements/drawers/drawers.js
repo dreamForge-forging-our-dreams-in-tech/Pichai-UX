@@ -25,13 +25,14 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
 }
 
 function toggleDrawerFunc(el) { // function to toggle the drawer menu open or closed.
+    console.trace()
      if (el.parentNode.platform == 'mobile') {
                 el.parentNode.toggle.click();
             }
 }
 
 function setAutoSize (el, mode) {
-    window.setInterval ( () => {
+    window.setInterval (() => {
         autoSize = screen.orientation.angle == 90 ? 'desktop' : 'mobile'; // desktop is landscape and mobile is portrait mode
         el.platform = mode == 'auto' ? autoSize : mode;
 
