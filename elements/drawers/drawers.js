@@ -5,22 +5,22 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
     let i;
 
     autoSize = screen.orientation.angle == 0 ? 'mobile' : 'desktop';
+    element.platform = mode == 'auto' ? autoSize : mode;
 
     element.classList.add('drawer');
     element.toggle = createDrawerButton(element);
-    element.platform = mode == 'auto' ? autoSize : mode;
 
     element.toggleDrawer = function () {
         element.toggle.click(); // open or closes the drawer menu depending on it's state
     }
 
-    if(!open) { // closes the drawer menu if the user doesnt want it to be open on launch
+    if (!open) { // closes the drawer menu if the user doesnt want it to be open on launch
         element.toggleDrawer();
     }
 
     for (i of element.children) { // click event somehow handles mobile mode aswel
         i.addEventListener('click', function () {
-            if(this.parentNode.platform == 'mobile') {
+            if (this.parentNode.platform == 'mobile') {
                 this.parentNode.toggle.click();
             }
         });
@@ -30,9 +30,12 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
         autoSize = screen.orientation.angle == 0 ? 'mobile' : 'desktop';
         element.platform = mode == 'auto' ? autoSize : mode;
 
-        if(element.platform == 'mobile') {
-                element.toggle.click();
-            }
+        if (element.platform == 'mobile') {
+            element.toggle.classList.add('closedDrawerToggle');
+        } else {
+            element.toggle.classList.remove('closedDrawerToggle');
+        }
+        element.toggleDrawer();
     });
 }
 
