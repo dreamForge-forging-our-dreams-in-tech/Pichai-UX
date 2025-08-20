@@ -5,6 +5,7 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
     let i;
 
     setAutoSize(element, mode);
+    console.log(element.platform)
 
     element.classList.add('drawer');
     element.toggle = createDrawerButton(element);
@@ -14,7 +15,7 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
     }
 
     if (!open) { // closes the drawer menu if the user doesnt want it to be open on launch
-        element.toggle.click();
+        element.toggleDrawer();
 
         toggleDrawerFunc(element); // close the drawer if user is in portrait mode
     }
@@ -27,7 +28,7 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
 function toggleDrawerFunc(el) { // function to toggle the drawer menu open or closed.
     console.log(el.platform)
      if (el.platform == 'mobile') {
-                el.toggle.click();
+                el.toggleDrawer();
             }
 }
 
