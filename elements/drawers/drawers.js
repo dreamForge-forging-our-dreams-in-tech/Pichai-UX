@@ -40,6 +40,9 @@ function setAutoSize (el, mode) {
             if (el.platform == 'mobile') {
                 el.toggle.classList.remove('closedDrawerToggle');
                 el.toggle.click();
+            } else {
+                el.toggle.classList.add('closedDrawerToggle');
+                el.toggle.click();
             }
     });
 }
