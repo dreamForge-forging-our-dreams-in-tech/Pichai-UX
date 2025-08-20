@@ -19,15 +19,15 @@ function createSimpleDrawer(element, mode, open = true) { // turns a simple elem
     }
 
     for (i of element.children) { // click event somehow handles mobile mode aswel
-        i.addEventListener('click', getOrientation);
-        i.addEventListener('deviceorientation', getOrientation);
+        i.addEventListener('click', getOrientation(this));
+        i.addEventListener('deviceorientation', getOrientation(this));
     }
 }
 
-function getOrientation() {
+function getOrientation(el) {
     setAutoSize();
-     if (this.parentNode.platform == 'mobile') {
-                this.parentNode.toggle.click();
+     if (el.parentNode.platform == 'mobile') {
+                el.parentNode.toggle.click();
             }
 }
 
